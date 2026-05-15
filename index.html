@@ -3,577 +3,566 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F5F1EA">
-<title>SpotOne Realty — Selección inmobiliaria con criterio</title>
-<meta name="description" content="Asesoría inmobiliaria boutique en Panamá. Lectura, estrategia y proceso. Dario Jhangimal, corredor PN-1240 desde 2006.">
+<meta name="theme-color" content="#ffffff">
+<title>SpotOne Realty · Selección inmobiliaria en Panamá · Dario Jhangimal</title>
+<meta name="description" content="Asesoría inmobiliaria con criterio en Panamá. Una lectura clara del mercado y del momento. Dario Jhangimal, corredor PN-1240 desde 2006.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
-  --paper:#F5F1EA;
-  --paper-2:#EFEAE0;
-  --ink:#1C1A18;
-  --ink-2:#3A3733;
-  --muted:#6F6862;
-  --line:#DDD5C6;
-  --line-soft:#E8E1D2;
-  --accent:#8B5A3C;       /* cognac cálido */
-  --accent-deep:#6E4630;
-  --accent-soft:#E4D6C5;
-  --max:1180px;
+  --blue:    #1E396B;
+  --blue-dk: #162F59;
+  --blue-sk: #9BB6D8;
+  --ink:     #111111;
+  --body:    #535961;
+  --body-2:  #4F555D;
+  --body-3:  #454C54;
+  --muted:   #8A9097;
+  --line:    #E2E2DE;
+  --soft:    #F5F5F2;
+  --dark:    #101214;
+  --max:     1100px;
+  --gut:     64px;
+  --sec:     96px;
 }
-html{
-  scroll-behavior:smooth;
-  -webkit-text-size-adjust:100%;
-  font-feature-settings:"ss01","cv11","kern";
-}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  font-size:17px;
-  line-height:1.65;
+  font-family:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background:#fff;color:var(--ink);
+  font-size:15.8px;line-height:1.66;font-weight:300;
+  letter-spacing:-.004em;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
   overflow-x:hidden;
   -webkit-tap-highlight-color:transparent;
 }
-.serif{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto;font-variation-settings:"SOFT" 30,"WONK" 0}
-.italic{font-style:italic;font-feature-settings:"ss01"}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
+img{display:block;max-width:100%}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-::selection{background:var(--accent);color:#fff}
-hr{border:none;height:1px;background:var(--line);margin:0}
+::selection{background:var(--blue);color:#fff}
 
-.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 
-/* ============ TOPLINE ============ */
-.topline{
-  border-bottom:1px solid var(--line);
-  font-size:13px;color:var(--muted);
-  padding:10px 0;letter-spacing:.02em;
+.eyebrow{
+  font-size:10.5px;color:var(--blue);
+  letter-spacing:.16em;text-transform:uppercase;font-weight:500;
 }
-.topline .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.topline .left{display:flex;gap:18px}
-.topline a:hover{color:var(--ink)}
-.lang{display:inline-flex;gap:8px;align-items:center}
-.lang a{padding:2px 6px;border-radius:4px;font-weight:500}
-.lang a.on{background:var(--ink);color:var(--paper)}
-@media(max-width:700px){.topline .left span:nth-child(2){display:none}}
+em{color:var(--blue-sk);font-style:italic;font-weight:400}
 
-/* ============ NAV ============ */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(245,241,234,.86);
-  backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid var(--line);
+/* ================ TOP STRIP ================ */
+.topstrip{
+  background:#fff;border-bottom:1px solid var(--line);
+  font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.01em;
 }
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.topstrip .container{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px;gap:18px;flex-wrap:wrap}
+.topstrip .left{display:flex;gap:18px;align-items:center}
+.topstrip .right{display:flex;gap:18px;align-items:center}
+.topstrip a{transition:color .15s}
+.topstrip a:hover{color:var(--ink)}
+.lang{display:inline-flex;align-items:center;gap:6px}
+.lang a{padding:1px 6px;border-radius:3px}
+.lang a.on{background:var(--ink);color:#fff;font-weight:500}
+.topstrip .accent{color:var(--blue);font-weight:500}
+@media(max-width:760px){
+  .topstrip .left span:nth-child(2){display:none}
+}
+
+/* ================ HEADER ================ */
+.site-header{
+  height:76px;padding:0 var(--gut);
+  background:#fff;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:60;
+}
 .brand{display:flex;align-items:baseline;gap:10px;line-height:1}
-.brand .mark{
-  font-family:'Fraunces',serif;
-  font-weight:500;font-size:26px;letter-spacing:-.02em;
-  font-variation-settings:"opsz" 144;
+.brand .mark{font-size:21px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{color:var(--blue-sk);font-style:italic;font-weight:400}
+.brand small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-left:4px;display:inline-block}
+
+.site-nav{display:flex;align-items:center;gap:34px}
+.site-nav a{
+  font-size:14.5px;font-weight:400;color:var(--body-2);
+  letter-spacing:.002em;transition:color .15s;
+  padding:6px 0;position:relative;
 }
-.brand .mark em{font-style:italic;font-weight:400;color:var(--accent)}
-.brand small{display:none;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:500}
-.nav-links{display:flex;gap:34px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:var(--ink-2);position:relative;padding:6px 0;letter-spacing:.01em;transition:color .25s ease}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
-  background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s ease;
+.site-nav a:hover{color:var(--ink)}
+.site-nav a.cta{
+  background:var(--blue);color:#fff;border-radius:2px;
+  padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:.015em;
 }
-.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
-.nav-cta{display:flex;align-items:center;gap:14px}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-weight:500;font-size:14px;letter-spacing:.02em;
-  padding:11px 20px;border-radius:999px;
-  transition:all .25s ease;
-  border:1px solid transparent;
-}
-.btn-ink{background:var(--ink);color:var(--paper)}
-.btn-ink:hover{background:var(--accent);transform:translateY(-1px)}
-.btn-ghost{color:var(--ink);border-color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--paper)}
-.btn-line{padding:0;border-radius:0;color:var(--ink);font-weight:500;letter-spacing:.02em;border-bottom:1px solid var(--ink);padding-bottom:2px}
-.btn-line:hover{color:var(--accent);border-color:var(--accent)}
-.btn-lg{padding:15px 26px;font-size:15px}
+.site-nav a.cta:hover{background:var(--blue-dk);color:#fff}
 
 .menu-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;color:var(--ink)}
 .menu-toggle svg{width:22px;height:22px}
 
 @media(max-width:880px){
-  .nav-links{display:none}
+  .site-header{padding:0 42px}
+  .site-nav .lnk{display:none}
   .menu-toggle{display:inline-flex}
-  .nav-cta .btn{padding:9px 16px;font-size:13px}
+}
+@media(max-width:760px){
+  .site-header{height:64px;padding:0 20px}
+  .brand .mark{font-size:19px}
+  .brand small{display:none}
 }
 
-.mobile-menu{
-  position:fixed;inset:0;z-index:80;
-  background:var(--paper);
-  transform:translateY(-100%);transition:transform .4s cubic-bezier(.65,0,.35,1);
-  display:flex;flex-direction:column;padding:24px 32px;
+/* mobile menu drawer */
+.mm{
+  position:fixed;inset:0;z-index:90;background:#fff;
+  transform:translateY(-101%);transition:transform .4s cubic-bezier(.65,0,.35,1);
+  display:flex;flex-direction:column;padding:20px var(--gut);
 }
-.mobile-menu.open{transform:translateY(0)}
-.mobile-menu .top{display:flex;justify-content:space-between;align-items:center;height:54px}
-.mobile-menu .close{font-size:28px;color:var(--ink);width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;background:none;border:none}
-.mobile-menu nav{margin-top:50px;display:flex;flex-direction:column;gap:6px}
-.mobile-menu nav a{
-  font-family:'Fraunces',serif;font-size:38px;font-weight:400;
-  color:var(--ink);padding:10px 0;letter-spacing:-.02em;
-  border-bottom:1px solid var(--line);
+.mm.on{transform:translateY(0)}
+.mm .top{display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid var(--line)}
+.mm .close{font-size:28px;color:var(--ink);width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.mm nav{margin-top:46px;display:flex;flex-direction:column;gap:0}
+.mm nav a{
+  font-size:30px;font-weight:300;color:var(--ink);letter-spacing:-.018em;
+  padding:18px 0;border-bottom:1px solid var(--line);line-height:1.1;
 }
-.mobile-menu nav a em{font-style:italic;color:var(--accent)}
-.mobile-menu .foot{margin-top:auto;padding-top:40px;display:flex;flex-direction:column;gap:14px;color:var(--muted);font-size:14px}
-.mobile-menu .foot a{color:var(--ink)}
+.mm nav a em{font-style:italic;color:var(--blue-sk)}
+.mm .foot{margin-top:auto;padding:30px 0 calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:13.5px}
+.mm .foot a{color:var(--ink)}
+@media(max-width:760px){.mm{padding:14px 20px}}
 
-/* ============ HERO ============ */
+/* ================ HERO ================ */
 .hero{
-  padding:100px 0 110px;
-  position:relative;
+  position:relative;min-height:84vh;overflow:hidden;
+  display:flex;align-items:flex-end;background:var(--dark);
+  padding:0 var(--gut) 72px;
+}
+.hero-image{
+  position:absolute;inset:0;
+  background-image:url("images/hero-main.jpg");
+  background-size:cover;background-position:center 40%;
+  filter:saturate(.92);
+}
+.hero-shade{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to right,  rgba(10,14,16,.62) 0%, rgba(10,14,16,.22) 50%, rgba(10,14,16,.08) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0)      0%, rgba(0,0,0,.08)    40%, rgba(0,0,0,.40)   100%);
+}
+.hero-content{
+  position:relative;z-index:2;max-width:560px;color:#fff;
+  margin-bottom:8px;
 }
 .hero .eyebrow{
-  font-size:12px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.22em;font-weight:500;
-  margin-bottom:36px;
-  display:inline-flex;align-items:center;gap:14px;
+  color:rgba(255,255,255,.78);font-size:11px;letter-spacing:.22em;
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:30px;
 }
 .hero .eyebrow::before{
-  content:"";width:34px;height:1px;background:var(--ink);
+  content:"";width:28px;height:1px;background:rgba(255,255,255,.55);
 }
 .hero h1{
-  font-family:'Fraunces',serif;
-  font-size:clamp(46px,7.4vw,108px);
-  font-weight:400;
-  line-height:.98;
-  letter-spacing:-.035em;
-  color:var(--ink);
-  margin-bottom:42px;
-  font-variation-settings:"opsz" 144,"SOFT" 50;
-  max-width:14ch;
+  font-size:clamp(34px,4.4vw,58px);
+  line-height:1.04;font-weight:400;letter-spacing:-.022em;color:#fff;
+  margin:0 0 22px;
 }
-.hero h1 em{
-  font-style:italic;color:var(--accent);font-weight:400;
-}
+.hero h1 em{font-style:italic;color:var(--blue-sk);font-weight:400;font-size:.96em}
 .hero .lead{
-  font-family:'Fraunces',serif;
-  font-size:clamp(20px,2vw,26px);
-  font-weight:300;line-height:1.45;color:var(--ink-2);
-  max-width:46ch;margin-bottom:48px;
-  font-variation-settings:"opsz" 30;
+  font-size:17px;line-height:1.55;color:rgba(255,255,255,.86);
+  font-weight:300;max-width:46ch;margin:0 0 34px;letter-spacing:.005em;
 }
-.hero .actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.hero .meta{
-  position:absolute;right:32px;top:120px;text-align:right;
-  font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;
-  display:flex;flex-direction:column;gap:6px;line-height:1.5;
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:#fff;font-weight:500;font-size:13.5px;
+  letter-spacing:.02em;padding:13px 22px;border-radius:2px;
+  transition:background .2s, transform .2s;
 }
-.hero .meta b{color:var(--ink);font-weight:500;letter-spacing:0;text-transform:none;font-family:'Fraunces',serif;font-style:italic;font-size:15px}
-@media(max-width:880px){.hero .meta{display:none}}
-@media(max-width:760px){.hero{padding:54px 0 70px}.hero .eyebrow{margin-bottom:24px}.hero h1{margin-bottom:28px}.hero .lead{margin-bottom:32px}}
+.btn:hover{background:var(--blue-dk)}
+.btn.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn-line{
+  color:#fff;font-size:13px;font-weight:500;letter-spacing:.02em;
+  border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;
+  transition:color .15s,border-color .15s;
+}
+.btn-line:hover{color:var(--blue-sk);border-color:var(--blue-sk)}
+.btn-line.dark{color:var(--ink);border-color:var(--ink)}
+.btn-line.dark:hover{color:var(--blue);border-color:var(--blue)}
 
-/* ============ PRINCIPLE ============ */
-.principle{
-  padding:120px 0;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:var(--paper-2);
+.hero-meta{
+  position:absolute;right:var(--gut);top:50%;transform:translateY(-50%);z-index:2;
+  text-align:right;color:rgba(255,255,255,.72);
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;line-height:1.9;font-weight:500;
 }
-.principle .wrap{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:start}
-.principle .quote{
-  font-family:'Fraunces',serif;
-  font-size:clamp(34px,4.5vw,64px);
-  font-weight:300;
-  line-height:1.05;letter-spacing:-.025em;color:var(--ink);
-  font-variation-settings:"opsz" 144;
-}
-.principle .quote em{font-style:italic;color:var(--accent)}
-.principle .body{padding-top:14px}
-.principle .body p{font-size:17px;color:var(--ink-2);margin-bottom:18px;line-height:1.7;max-width:46ch}
-.principle .body p:last-child{margin-bottom:0}
-.principle .body p strong{color:var(--ink);font-weight:500}
-.principle .body .sign{margin-top:36px;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--muted)}
-.principle .body .sign .line{width:36px;height:1px;background:var(--muted)}
-@media(max-width:880px){.principle{padding:64px 0}.principle .wrap{grid-template-columns:1fr;gap:36px}}
+.hero-meta b{display:block;color:#fff;font-style:italic;font-weight:400;font-size:14px;letter-spacing:0;text-transform:none}
+@media(max-width:880px){.hero-meta{display:none}}
+@media(max-width:760px){.hero{min-height:78vh;padding:0 20px 56px}.hero h1{font-size:34px}.hero .lead{font-size:15.5px;margin-bottom:28px}}
 
-/* ============ SERVICES ============ */
-.services{padding:120px 0 80px}
-.section-head{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:end;margin-bottom:70px}
-.section-tag{
-  font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.22em;font-weight:500;
-  display:inline-flex;align-items:center;gap:14px;
-}
-.section-tag::before{content:"";width:24px;height:1px;background:var(--muted)}
+/* ================ SECTIONS ================ */
+section{padding:var(--sec) 0}
+.section-head{margin-bottom:60px;max-width:680px}
+.section-head .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px}
+.section-head .eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
 .section-head h2{
-  font-family:'Fraunces',serif;
-  font-size:clamp(36px,4.6vw,60px);
-  font-weight:400;line-height:1;letter-spacing:-.025em;color:var(--ink);
-  margin-top:18px;
-  font-variation-settings:"opsz" 144;
+  font-size:clamp(28px,2.8vw,38px);
+  line-height:1.08;font-weight:400;letter-spacing:-.018em;color:var(--ink);
 }
-.section-head h2 em{font-style:italic;color:var(--accent)}
-.section-head .right p{color:var(--muted);font-size:17px;max-width:48ch;line-height:1.65}
-@media(max-width:760px){.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:40px}}
+.section-head h2 em{font-style:italic;color:var(--blue-sk)}
+.section-head .lead{margin-top:18px;font-size:16px;color:var(--body);line-height:1.66;max-width:54ch}
 
-.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
-.svc{
-  padding:42px 0;
-  border-bottom:1px solid var(--line);
-  display:grid;grid-template-columns:auto 1fr;gap:30px;
-  align-items:start;position:relative;
-  transition:padding-left .35s ease;
+/* ================ PRINCIPLE (manifest) ================ */
+.principle{background:#fff}
+.principle .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.principle .quote{
+  font-size:clamp(28px,3.2vw,42px);
+  line-height:1.06;font-weight:400;letter-spacing:-.020em;color:var(--ink);
 }
-.svc:nth-child(odd){padding-right:50px;border-right:1px solid var(--line)}
-.svc:nth-child(even){padding-left:50px}
-.svc:hover{padding-left:60px}
-.svc:nth-child(odd):hover{padding-left:10px;padding-right:40px}
-.svc:nth-child(even):hover{padding-left:60px}
-.svc .num{
-  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
-  color:var(--accent);font-size:22px;letter-spacing:.02em;
-  font-variation-settings:"opsz" 30;
-}
-.svc h3{
-  font-family:'Fraunces',serif;font-weight:400;font-size:28px;letter-spacing:-.015em;color:var(--ink);
-  margin-bottom:12px;line-height:1.15;
-  font-variation-settings:"opsz" 144;
-}
-.svc p{color:var(--muted);font-size:15px;line-height:1.7;max-width:38ch}
-@media(max-width:760px){.svc-list{grid-template-columns:1fr}.svc,.svc:nth-child(odd),.svc:nth-child(even){padding:30px 0;border-right:none;padding-left:0!important;padding-right:0!important}.svc:hover{padding-left:0!important}.svc h3{font-size:22px}}
+.principle .quote em{font-style:italic;color:var(--blue-sk)}
+.principle .text p{font-size:15.6px;color:var(--body-2);line-height:1.7;margin-bottom:18px}
+.principle .text p:last-child{margin-bottom:0}
+.principle .text p strong{color:var(--ink);font-weight:500}
+.principle .sign{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);letter-spacing:.04em;display:flex;gap:12px;align-items:center}
+.principle .sign b{font-weight:500;color:var(--ink)}
+@media(max-width:880px){.principle .split{grid-template-columns:1fr;gap:36px}}
 
-/* ============ PROCESS ============ */
-.process{padding:120px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
-.pstep .num{
-  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
-  font-size:42px;color:var(--accent);letter-spacing:-.02em;line-height:1;margin-bottom:22px;
-  font-variation-settings:"opsz" 144;
+/* ================ APPROACH (qué hago) ================ */
+.approach{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.approach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.app-item{
+  padding:36px 0;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;
+  transition:background .2s;
 }
-.pstep h4{
-  font-family:'Fraunces',serif;font-weight:500;font-size:21px;letter-spacing:-.015em;color:var(--ink);
-  margin-bottom:10px;line-height:1.2;
+.app-item:nth-child(odd){padding-right:50px;border-right:1px solid var(--line)}
+.app-item:nth-child(even){padding-left:50px}
+.app-num{
+  color:var(--blue);font-size:11px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;line-height:1;padding-top:6px;min-width:30px;
 }
-.pstep p{color:var(--muted);font-size:15px;line-height:1.65}
-@media(max-width:880px){.process{padding:64px 0}.process-steps{grid-template-columns:1fr 1fr;gap:36px 28px}}
-@media(max-width:560px){.process-steps{grid-template-columns:1fr;gap:30px}}
+.app-item h3{
+  font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-.005em;margin-bottom:8px;line-height:1.3;
+}
+.app-item h3 em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.app-item p{font-size:14.6px;color:var(--body-3);line-height:1.68;max-width:42ch}
+@media(max-width:760px){.approach-grid{grid-template-columns:1fr}.app-item,.app-item:nth-child(odd),.app-item:nth-child(even){padding:26px 0;border-right:none;padding-left:0!important;padding-right:0!important}}
 
-/* ============ BEFORE / FILTER ============ */
-.before{padding:120px 0}
-.before .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
-.before h2{
-  font-family:'Fraunces',serif;font-weight:400;
-  font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.02em;
-  margin-top:18px;
-  font-variation-settings:"opsz" 144;
+/* ================ PROCESS ================ */
+.process{background:#fff}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;border-top:1px solid var(--line);padding-top:48px}
+.pstep .pnum{
+  font-size:10.5px;color:var(--blue);letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1;margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
 }
-.before h2 em{font-style:italic;color:var(--accent)}
-.before .list{display:flex;flex-direction:column;gap:0}
-.before .list li{
-  list-style:none;padding:24px 0;border-bottom:1px solid var(--line);
+.pstep .pnum::before{content:"";width:18px;height:1px;background:var(--blue)}
+.pstep h4{font-size:17px;font-weight:500;color:var(--ink);letter-spacing:-.005em;line-height:1.25;margin-bottom:10px}
+.pstep h4 em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.pstep p{font-size:14.4px;color:var(--body-2);line-height:1.66}
+@media(max-width:880px){.proc-grid{grid-template-columns:1fr 1fr;gap:32px 28px}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ================ BEFORE / FILTER ================ */
+.before{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.before-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+.before-grid h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em;margin-top:18px}
+.before-grid h2 em{font-style:italic;color:var(--blue-sk)}
+.before-grid .lead{font-size:15.6px;color:var(--body-2);line-height:1.7;margin-top:22px;max-width:36ch}
+.flist{display:flex;flex-direction:column}
+.flist .it{
+  padding:24px 0;border-bottom:1px solid var(--line);
   display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;
 }
-.before .list li:last-child{border-bottom:none}
-.before .list li::before{
-  content:"";display:block;width:8px;height:8px;border-radius:50%;
-  background:var(--accent);margin-top:10px;
+.flist .it:first-child{border-top:1px solid var(--line)}
+.flist .it::before{
+  content:"";display:block;width:6px;height:6px;border-radius:50%;
+  background:var(--blue-sk);margin-top:10px;
 }
-.before .list h5{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
-.before .list p{color:var(--muted);font-size:15px;line-height:1.65}
-@media(max-width:880px){.before{padding:64px 0}.before .wrap{grid-template-columns:1fr;gap:36px}}
+.flist h5{font-size:16px;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:-.005em;line-height:1.3}
+.flist h5 em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.flist p{font-size:14.6px;color:var(--body-3);line-height:1.68}
+@media(max-width:880px){.before-grid{grid-template-columns:1fr;gap:30px}}
 
-/* ============ MANIFESTO STRIP ============ */
-.manifesto{
-  background:var(--ink);color:var(--paper);
-  padding:120px 0;text-align:center;
+/* ================ MANIFESTO (dark) ================ */
+.manifest{background:var(--dark);color:#fff;text-align:center;padding:calc(var(--sec) + 10px) 0}
+.manifest blockquote{
+  font-size:clamp(28px,3.4vw,46px);
+  line-height:1.12;font-weight:300;letter-spacing:-.020em;color:#fff;
+  max-width:22ch;margin:0 auto;
 }
-.manifesto blockquote{
-  font-family:'Fraunces',serif;font-weight:300;
-  font-size:clamp(32px,4.6vw,60px);
-  line-height:1.15;letter-spacing:-.025em;
-  max-width:18ch;margin:0 auto;
-  font-variation-settings:"opsz" 144;
+.manifest blockquote em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.manifest cite{
+  display:block;font-style:normal;margin-top:30px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  color:rgba(255,255,255,.62);
 }
-.manifesto blockquote em{font-style:italic;color:var(--accent-soft)}
-.manifesto cite{
-  display:block;font-style:normal;
-  margin-top:36px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(245,241,234,.6);font-family:'Inter',sans-serif;font-weight:500;
-}
-.manifesto cite::before{content:"";display:inline-block;width:24px;height:1px;background:rgba(245,241,234,.6);vertical-align:middle;margin-right:14px}
-@media(max-width:760px){.manifesto{padding:72px 0}}
+.manifest cite::before{content:"";display:inline-block;width:22px;height:1px;background:rgba(255,255,255,.6);vertical-align:middle;margin-right:12px}
 
-/* ============ ABOUT DARIO ============ */
-.about{padding:120px 0}
-.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
-.about-portrait{
-  aspect-ratio:3/4;
-  background:linear-gradient(160deg,var(--accent-soft),var(--paper-2));
-  border:1px solid var(--line);
+/* ================ ABOUT ================ */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.portrait{
+  aspect-ratio:4/5;
+  background:linear-gradient(165deg,#dfe6ef 0%,#bdc8d6 50%,#9BB6D8 100%);
   position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;justify-content:flex-start;padding:24px;
+  display:flex;align-items:flex-end;padding:20px;
+  border:1px solid var(--line);
 }
-.about-portrait::before{
-  content:"DJ";position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);
-  font-family:'Fraunces',serif;font-weight:300;font-size:180px;color:var(--accent);opacity:.18;letter-spacing:-.04em;line-height:1;
-  font-variation-settings:"opsz" 144;
+.portrait::before{
+  content:"DJ";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  font-size:200px;line-height:1;font-weight:300;color:rgba(30,57,107,.20);
+  letter-spacing:-.04em;font-style:italic;
 }
-.about-portrait .tag{
-  font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:14px;
-  background:rgba(245,241,234,.9);padding:6px 12px;border-radius:999px;font-weight:400;
-  position:relative;z-index:1;
+.portrait .ptag{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  color:#fff;background:rgba(17,17,17,.45);backdrop-filter:blur(6px);
+  padding:6px 12px;border-radius:2px;position:relative;z-index:1;
 }
-.about h2{
-  font-family:'Fraunces',serif;font-weight:400;
-  font-size:clamp(36px,4.4vw,56px);line-height:1.04;letter-spacing:-.025em;
-  margin-top:16px;
-}
-.about h2 em{font-style:italic;color:var(--accent)}
-.about p{font-size:17px;color:var(--ink-2);line-height:1.7;margin-top:24px;max-width:50ch}
-.about .stats{display:grid;grid-template-columns:repeat(3,auto);gap:40px;margin-top:42px;padding-top:32px;border-top:1px solid var(--line)}
-.about .stats .s b{
-  font-family:'Fraunces',serif;font-weight:400;font-size:34px;color:var(--ink);
-  font-variation-settings:"opsz" 144;letter-spacing:-.02em;line-height:1;display:block;
-}
-.about .stats .s small{display:block;margin-top:6px;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
-.about .signature{
-  margin-top:40px;display:inline-flex;align-items:center;gap:14px;
-  font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:22px;color:var(--accent);
-}
-.about .signature::after{content:"";width:60px;height:1px;background:var(--accent)}
-@media(max-width:880px){.about{padding:64px 0}.about .wrap{grid-template-columns:1fr;gap:40px}.about-portrait{max-width:380px}}
-@media(max-width:520px){.about .stats{grid-template-columns:1fr 1fr;gap:24px}}
+.about .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px}
+.about .eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
+.about h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em}
+.about h2 em{font-style:italic;color:var(--blue-sk)}
+.about p{font-size:15.6px;color:var(--body-2);line-height:1.7;margin-top:20px;max-width:50ch}
+.about p strong{color:var(--ink);font-weight:500}
+.about .stats{display:grid;grid-template-columns:repeat(3,auto);gap:42px;margin-top:42px;padding-top:30px;border-top:1px solid var(--line)}
+.about .stats .s b{font-size:24px;font-weight:400;color:var(--ink);letter-spacing:-.01em;line-height:1;display:block}
+.about .stats .s small{display:block;margin-top:6px;font-size:10.5px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.signature{margin-top:34px;font-style:italic;color:var(--blue);font-size:18px;font-weight:400;display:inline-flex;align-items:center;gap:14px}
+.signature::after{content:"";width:48px;height:1px;background:var(--blue)}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:36px}.portrait{max-width:340px}.about .stats{gap:30px 24px}}
+@media(max-width:480px){.about .stats{grid-template-columns:1fr 1fr;gap:24px}}
 
-/* ============ FAQ ============ */
-.faq{padding:120px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.faq .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start}
-.faq h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.025em;margin-top:16px}
-.faq h2 em{font-style:italic;color:var(--accent)}
-.faq-list{display:flex;flex-direction:column}
+/* ================ FAQ ================ */
+.faq{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.9fr 1.4fr;gap:80px;align-items:start}
+.faq-grid h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em;margin-top:18px}
+.faq-grid h2 em{font-style:italic;color:var(--blue-sk)}
+.faq-grid .lead{margin-top:22px;font-size:15.4px;color:var(--body-2);line-height:1.7;max-width:34ch}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
-.faq-item:first-child{border-top:1px solid var(--line)}
 .faq-item summary{
-  padding:24px 0;cursor:pointer;
-  font-family:'Fraunces',serif;font-size:21px;font-weight:500;letter-spacing:-.01em;color:var(--ink);
-  display:flex;justify-content:space-between;align-items:flex-start;gap:24px;list-style:none;line-height:1.3;
+  list-style:none;padding:22px 0;cursor:pointer;
+  font-size:17px;font-weight:500;color:var(--ink);letter-spacing:-.005em;line-height:1.3;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
 }
+.faq-item summary em{font-style:italic;color:var(--blue-sk);font-weight:400}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{
-  content:"";flex-shrink:0;width:14px;height:14px;
-  background:
-    linear-gradient(var(--ink),var(--ink)) center/14px 1px no-repeat,
-    linear-gradient(var(--ink),var(--ink)) center/1px 14px no-repeat;
-  transition:transform .35s ease;margin-top:8px;
+  content:"";flex-shrink:0;width:13px;height:13px;margin-top:8px;
+  background:linear-gradient(var(--ink),var(--ink)) center/13px 1px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1px 13px no-repeat;
+  transition:transform .3s ease;
 }
 .faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-item .body{padding:0 36px 28px 0;color:var(--ink-2);font-size:16px;line-height:1.7;max-width:60ch}
-@media(max-width:880px){.faq{padding:64px 0}.faq .wrap{grid-template-columns:1fr;gap:32px}}
+.faq-item .body{padding:0 36px 26px 0;color:var(--body-2);font-size:15px;line-height:1.7;max-width:58ch}
+@media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:32px}}
 
-/* ============ FINAL ============ */
-.final{padding:140px 0;text-align:center}
-.final .eyebrow{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.22em;font-weight:500;margin-bottom:30px}
+/* ================ FINAL CTA ================ */
+.final{background:#fff;text-align:center;padding:calc(var(--sec) + 20px) 0}
+.final .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px}
+.final .eyebrow::before{content:"";width:22px;height:1px;background:var(--blue)}
+.final .eyebrow::after{content:"";width:22px;height:1px;background:var(--blue)}
 .final h2{
-  font-family:'Fraunces',serif;font-weight:300;
-  font-size:clamp(46px,7vw,108px);
-  line-height:1;letter-spacing:-.03em;
-  font-variation-settings:"opsz" 144;
-  max-width:14ch;margin:0 auto 28px;
+  font-size:clamp(36px,5vw,68px);
+  font-weight:300;line-height:1.02;letter-spacing:-.025em;color:var(--ink);
+  max-width:16ch;margin:0 auto 24px;
 }
-.final h2 em{font-style:italic;color:var(--accent)}
-.final p{color:var(--muted);max-width:42ch;margin:0 auto 44px;font-size:18px;line-height:1.6}
-.final .actions{display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center}
-.final .channels{margin-top:64px;padding-top:36px;border-top:1px solid var(--line);max-width:600px;margin-left:auto;margin-right:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.final .channels a{display:flex;flex-direction:column;gap:4px;align-items:center;font-size:14px;color:var(--ink-2)}
-.final .channels a small{font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
-.final .channels a:hover{color:var(--accent)}
-@media(max-width:760px){.final{padding:80px 0}.final .channels{gap:20px}}
+.final h2 em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.final .lead{font-size:17px;color:var(--body);line-height:1.6;max-width:44ch;margin:0 auto 40px;font-weight:300}
+.final .actions{display:inline-flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center}
+.final .channels{
+  margin-top:64px;padding-top:36px;border-top:1px solid var(--line);
+  max-width:660px;margin-left:auto;margin-right:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.final .channels a{display:flex;flex-direction:column;gap:5px;align-items:center;font-size:14px;color:var(--ink);transition:color .15s}
+.final .channels a small{font-size:10.5px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.final .channels a:hover{color:var(--blue)}
+@media(max-width:760px){.final{padding:64px 0}.final .channels{grid-template-columns:1fr;gap:22px;margin-top:42px}}
 
-/* ============ FOOTER ============ */
-footer{padding:64px 0 36px;border-top:1px solid var(--line)}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:50px}
-.foot-grid h6{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.22em;font-weight:500;margin-bottom:18px;font-family:'Inter',sans-serif}
-.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-grid a{font-size:14px;color:var(--ink-2);transition:color .2s}
-.foot-grid a:hover{color:var(--accent)}
-.foot-brand .mark{font-family:'Fraunces',serif;font-weight:500;font-size:28px;letter-spacing:-.02em;line-height:1;color:var(--ink);font-variation-settings:"opsz" 144}
-.foot-brand .mark em{font-style:italic;font-weight:400;color:var(--accent)}
-.foot-brand p{font-size:14px;color:var(--muted);margin-top:16px;max-width:34ch;line-height:1.65}
-.foot-brand .lic{margin-top:18px;font-size:13px;color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+/* ================ FOOTER ================ */
+footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:42px}
+.foot-grid h6{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.20em;font-weight:500;margin-bottom:16px}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-grid a{font-size:13.5px;color:var(--body-2);transition:color .15s}
+.foot-grid a:hover{color:var(--blue)}
+.foot-brand .mark{font-size:21px;font-weight:500;letter-spacing:-.01em;color:var(--ink);line-height:1}
+.foot-brand .mark em{font-style:italic;color:var(--blue-sk);font-weight:400}
+.foot-brand p{font-size:13.5px;color:var(--body);margin-top:16px;max-width:32ch;line-height:1.66}
+.foot-brand .lic{margin-top:18px;font-size:12.5px;color:var(--ink);font-style:italic;font-weight:400}
 .foot-bottom{
   display:flex;justify-content:space-between;align-items:center;
-  padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);flex-wrap:wrap;gap:14px;
+  padding-top:22px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--muted);flex-wrap:wrap;gap:12px;
 }
-.foot-bottom .credit em{font-style:italic;color:var(--ink-2)}
-@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
-@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot-bottom em{font-style:italic;color:var(--body-2)}
+@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr;gap:28px}}
 
-/* ============ MOBILE OVERALL ============ */
+/* ================ MOBILE ================ */
+@media(max-width:1080px){:root{--gut:42px;--sec:80px}}
 @media(max-width:760px){
-  .wrap{padding:0 22px}
-  .topline .wrap{justify-content:center;gap:12px;font-size:12px}
-  .topline .left{gap:14px}
-  .nav .wrap{height:64px}
-  .brand .mark{font-size:22px}
-  .nav-cta{gap:8px}
-  .btn{padding:10px 16px;font-size:13px;min-height:42px}
-  .btn-lg{padding:13px 22px;font-size:14px}
-  .principle .quote{font-size:32px}
-  .principle .body p{font-size:15px}
-  .svc h3{font-size:20px}
-  .pstep .num{font-size:36px;margin-bottom:14px}
-  .pstep h4{font-size:18px}
-  .manifesto blockquote{font-size:30px}
-  .about-portrait::before{font-size:120px}
-  .faq-item summary{font-size:18px;padding:20px 0}
-  .faq-item .body{font-size:15px;padding-bottom:22px}
+  :root{--gut:20px;--sec:60px}
+  .topstrip .container{justify-content:center;font-size:11px;gap:12px}
+  .topstrip .right .lang{margin-left:0}
+  .principle .quote{font-size:28px}
+  .principle .text p{font-size:15px}
+  .approach-grid{border-top:1px solid var(--line)}
+  .app-item{padding:24px 0}
+  .pstep .pnum{margin-bottom:14px}
+  .pstep h4{font-size:16px}
+  .manifest blockquote{font-size:28px}
+  .portrait::before{font-size:140px}
+  .final h2{font-size:38px}
+  .final .lead{font-size:15.5px}
+  .faq-item summary{font-size:16px;padding:20px 0}
+  .faq-item .body{font-size:14.5px;padding-bottom:22px}
+  .about p{font-size:15.4px}
+  .btn{padding:13px 20px;font-size:13px;min-height:44px}
   input,textarea,select{font-size:16px !important}
 }
 @media(max-width:380px){
-  .wrap{padding:0 18px}
-  .topline .right{display:none}
+  :root{--gut:16px}
+  .topstrip .right{display:none}
+  .brand small{display:none}
 }
 
 @supports(padding:env(safe-area-inset-bottom)){
-  footer{padding-bottom:calc(36px + env(safe-area-inset-bottom))}
+  footer{padding-bottom:calc(30px + env(safe-area-inset-bottom))}
 }
 
 /* reveal */
-.r{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.r{opacity:0;transform:translateY(18px);transition:opacity .85s ease,transform .85s ease}
 .r.on{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<!-- TOPLINE -->
-<div class="topline">
-  <div class="wrap">
+<!-- ================ TOPSTRIP ================ -->
+<div class="topstrip">
+  <div class="container">
     <div class="left">
-      <span><em class="serif italic">Boutique inmobiliaria — Panamá</em></span>
-      <span>Licencia PN-1240 · Desde 2006</span>
+      <span>Dario Jhangimal · <span class="accent">PN-1240</span></span>
+      <span>Selección inmobiliaria en Panamá</span>
     </div>
     <div class="right">
+      <a href="tel:+50766758127">+507 6675-8127</a>
       <span class="lang"><a href="#" class="on">ES</a> · <a href="#en">EN</a></span>
     </div>
   </div>
 </div>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="wrap">
-    <a href="#" class="brand">
-      <span class="mark">Spot<em>One</em>.</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#principio">Principio</a></li>
-      <li><a href="#servicios">Qué hago</a></li>
-      <li><a href="#proceso">Cómo trabajo</a></li>
-      <li><a href="#dario">Dario</a></li>
-      <li><a href="#faq">Preguntas</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="#conversemos" class="btn btn-ink">Conversemos</a>
-      <button class="menu-toggle" id="menuOpen" aria-label="Menú">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-    </div>
-  </div>
+<!-- ================ HEADER ================ -->
+<header class="site-header">
+  <a href="#" class="brand">
+    <span class="mark">SpotOne<span class="dot">.</span></span>
+    <small>Realty</small>
+  </a>
+  <nav class="site-nav">
+    <a href="#" class="lnk">Inicio</a>
+    <a href="#que-hago" class="lnk">Qué hago</a>
+    <a href="#dario" class="lnk">Dario</a>
+    <a href="#contacto" class="lnk">Contacto</a>
+    <a href="#contacto" class="cta">Conversemos</a>
+    <button class="menu-toggle" id="menuOpen" aria-label="Menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </nav>
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<!-- mobile drawer -->
+<div class="mm" id="mobileMenu">
   <div class="top">
-    <span class="brand"><span class="mark serif">Spot<em>One</em>.</span></span>
+    <span class="brand"><span class="mark">SpotOne<span class="dot">.</span></span></span>
     <button class="close" id="menuClose" aria-label="Cerrar">×</button>
   </div>
   <nav>
-    <a href="#principio">Princip<em>i</em>o</a>
-    <a href="#servicios">Qué h<em>a</em>go</a>
+    <a href="#">Inic<em>i</em>o</a>
+    <a href="#que-hago">Qué h<em>a</em>go</a>
     <a href="#proceso">Cómo trab<em>a</em>jo</a>
     <a href="#dario">D<em>a</em>rio</a>
     <a href="#faq">Pregunt<em>a</em>s</a>
+    <a href="#contacto">Cont<em>a</em>cto</a>
   </nav>
   <div class="foot">
-    <a href="https://wa.me/50766758127">+507 6675-8127 · WhatsApp</a>
+    <a href="tel:+50766758127">+507 6675-8127</a>
     <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
     <a href="https://instagram.com/spotonerealty">@spotonerealty</a>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- ================ HERO ================ -->
 <section class="hero">
-  <div class="wrap">
+  <div class="hero-image" role="img" aria-label="Apartamento en altura con vista a la ciudad"></div>
+  <div class="hero-shade"></div>
+
+  <div class="hero-content">
     <span class="eyebrow">SpotOne Realty · Panamá</span>
-    <h1 class="serif">Selección inmobiliaria <em>con criterio</em>.</h1>
-    <p class="lead serif">Lectura del mercado, posicionamiento real y un proceso que no necesita empujar. Trabajo con pocos clientes a la vez. Por elección.</p>
-    <div class="actions">
-      <a href="#conversemos" class="btn btn-ink btn-lg">Conversemos →</a>
-      <a href="#servicios" class="btn-line">Qué hago</a>
+    <h1>Selección inmobiliaria <em>con criterio</em>.</h1>
+    <p class="lead">Una lectura clara del mercado y del momento. Pocos clientes a la vez, por elección.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn">Conversemos</a>
+      <a href="#que-hago" class="btn-line">Qué hago →</a>
     </div>
-    <div class="meta">
-      <span>Dario Jhangimal</span>
-      <b>Corredor PN-1240</b>
-      <span>Desde 2006</span>
-    </div>
+  </div>
+
+  <div class="hero-meta">
+    <span>Dario Jhangimal</span>
+    <b>Corredor PN-1240</b>
+    <span>Desde 2006</span>
   </div>
 </section>
 
-<!-- PRINCIPLE -->
+<!-- ================ PRINCIPLE ================ -->
 <section id="principio" class="principle r">
-  <div class="wrap">
-    <p class="quote serif">El mercado <em>se lee</em>. No se adivina.</p>
-    <div class="body">
-      <p>Hay propiedades que se venden y hay propiedades que se <strong>publican</strong>. La diferencia entre una y otra no es la suerte: es la lectura.</p>
-      <p>Trabajo con quien está dispuesto a tomar decisiones con información — no con intuición, no con presión, no con prisa. La asesoría empieza antes de cualquier listado, antes de cualquier visita.</p>
-      <p>Si la lectura del mercado dice que aún no es el momento, lo digo. Si dice que sí, lo digo también. Ese es el trabajo.</p>
-      <div class="sign"><span class="line"></span><span>Dario Jhangimal · PN-1240</span></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Principio</span>
+    </div>
+    <div class="split">
+      <div class="quote">El mercado <em>se lee</em>.<br>No se adivina.</div>
+      <div class="text">
+        <p>No toda propiedad publicada está correctamente posicionada. <strong>Publicar no es lo mismo que salir al mercado.</strong> Lo que se mueve, se mueve por precio, momento y lectura.</p>
+        <p>Trabajo con quien está dispuesto a tomar decisiones con información — no con intuición, no con presión, no con prisa.</p>
+        <p>Si la lectura dice que aún no es el momento, lo digo. Si dice que sí, lo digo también. Ese es el trabajo.</p>
+        <div class="sign"><b>Dario Jhangimal</b> · PN-1240</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="servicios" class="services r">
-  <div class="wrap">
+<!-- ================ APPROACH ================ -->
+<section id="que-hago" class="approach r">
+  <div class="container">
     <div class="section-head">
-      <div>
-        <span class="section-tag">Qué hago</span>
-        <h2 class="serif">Asesoría boutique, <em>no catálogo</em>.</h2>
-      </div>
-      <div class="right">
-        <p>Cuatro maneras en que puedo ayudarte. Todas comparten lo mismo: tiempo, criterio y un proceso medido. Ningún paquete, ningún apuro.</p>
-      </div>
+      <span class="eyebrow">Qué hago</span>
+      <h2>Asesoría boutique, <em>no catálogo</em>.</h2>
+      <p class="lead">Cuatro formas de trabajar. Todas comparten lo mismo: tiempo, criterio y proceso. Sin paquetes, sin guion comercial.</p>
     </div>
 
-    <div class="svc-list">
-      <div class="svc">
-        <span class="num">i.</span>
+    <div class="approach-grid">
+      <div class="app-item">
+        <span class="app-num">i.</span>
         <div>
-          <h3 class="serif">Compra estratégica</h3>
-          <p>Búsqueda enfocada según lo que realmente necesitas — uso, horizonte, presupuesto. Antes de mostrarte propiedades, entendemos por qué.</p>
+          <h3>Compra <em>estratégica</em></h3>
+          <p>Búsqueda enfocada según uso, horizonte y presupuesto. Antes de mostrarte propiedades, entendemos por qué.</p>
         </div>
       </div>
-      <div class="svc">
-        <span class="num">ii.</span>
+      <div class="app-item">
+        <span class="app-num">ii.</span>
         <div>
-          <h3 class="serif">Venta posicionada</h3>
-          <p>Publicar no es lo mismo que salir al mercado. Tu propiedad sale al precio correcto, en el canal correcto, con la narrativa correcta. O no sale.</p>
+          <h3>Venta <em>posicionada</em></h3>
+          <p>Tu propiedad sale al precio correcto, en el canal correcto, con la narrativa correcta. O no sale.</p>
         </div>
       </div>
-      <div class="svc">
-        <span class="num">iii.</span>
+      <div class="app-item">
+        <span class="app-num">iii.</span>
         <div>
-          <h3 class="serif">Lectura de mercado</h3>
-          <p>Análisis específico para tu activo: comparables reales, tiempos de mercado, demanda actual. Sin promesas — datos.</p>
+          <h3>Lectura <em>de mercado</em></h3>
+          <p>Análisis específico para tu activo: comparables reales, tiempos de mercado, demanda actual. Datos, no opiniones.</p>
         </div>
       </div>
-      <div class="svc">
-        <span class="num">iv.</span>
+      <div class="app-item">
+        <span class="app-num">iv.</span>
         <div>
-          <h3 class="serif">Asesoría preliminar</h3>
+          <h3>Asesoría <em>preliminar</em></h3>
           <p>Antes de listar, antes de comprar, antes de mover capital. Una conversación honesta que muchas veces ahorra meses de error.</p>
         </div>
       </div>
@@ -581,155 +570,158 @@ footer{padding:64px 0 36px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ================ PROCESS ================ -->
 <section id="proceso" class="process r">
-  <div class="wrap">
+  <div class="container">
     <div class="section-head">
-      <div>
-        <span class="section-tag">Cómo trabajo</span>
-        <h2 class="serif">Un proceso, <em>sin guion</em>.</h2>
-      </div>
-      <div class="right">
-        <p>No hay dos clientes iguales, pero hay una secuencia. Sirve para asegurar que cada decisión tenga su contexto.</p>
-      </div>
+      <span class="eyebrow">Cómo trabajo</span>
+      <h2>Un proceso, <em>sin guion</em>.</h2>
+      <p class="lead">No hay dos clientes iguales, pero hay una secuencia. Sirve para que cada decisión tenga su contexto.</p>
     </div>
 
-    <div class="process-steps">
+    <div class="proc-grid">
       <div class="pstep">
-        <div class="num serif italic">01</div>
-        <h4 class="serif">Conversación</h4>
-        <p>Una reunión sin compromiso. Entender qué se busca y por qué. A veces termina con "no lo hagas todavía".</p>
+        <div class="pnum">Paso 01</div>
+        <h4>Conver<em>sación</em></h4>
+        <p>Reunión sin compromiso. Entender qué se busca y por qué. A veces termina con "no lo hagas todavía".</p>
       </div>
       <div class="pstep">
-        <div class="num serif italic">02</div>
-        <h4 class="serif">Lectura</h4>
+        <div class="pnum">Paso 02</div>
+        <h4>Lec<em>tura</em></h4>
         <p>Análisis del activo o del segmento: comparables, demanda, posicionamiento. Sin esto, lo demás es ruido.</p>
       </div>
       <div class="pstep">
-        <div class="num serif italic">03</div>
-        <h4 class="serif">Estrategia</h4>
-        <p>Precio, narrativa, canal, calendario. Cada decisión justificada. Tú entiendes el porqué de cada paso.</p>
+        <div class="pnum">Paso 03</div>
+        <h4>Estra<em>tegia</em></h4>
+        <p>Precio, narrativa, canal, calendario. Cada decisión justificada. Entiendes el porqué de cada paso.</p>
       </div>
       <div class="pstep">
-        <div class="num serif italic">04</div>
-        <h4 class="serif">Ejecución</h4>
+        <div class="pnum">Paso 04</div>
+        <h4>Ejecu<em>ción</em></h4>
         <p>Acompañamiento hasta el cierre. Negociación con calma. Sin presión sobre ti ni sobre la otra parte.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BEFORE / FILTER -->
+<!-- ================ BEFORE / FILTER ================ -->
 <section class="before r">
-  <div class="wrap">
-    <div>
-      <span class="section-tag">Antes de avanzar</span>
-      <h2 class="serif">Trabajamos <em>bien juntos</em> si…</h2>
-      <p style="color:var(--muted);margin-top:24px;font-size:15px;max-width:34ch">Esto no es venta, es filtro. Para que tu tiempo y el mío sirvan.</p>
+  <div class="container">
+    <div class="before-grid">
+      <div>
+        <span class="eyebrow">Antes de avanzar</span>
+        <h2>Trabajamos <em>bien juntos</em> si…</h2>
+        <p class="lead">Antes de buscar, comprar, vender o alquilar, conviene entender dónde estás parado: zona, precio, momento y margen real de negociación.</p>
+      </div>
+      <ul class="flist">
+        <li class="it">
+          <div>
+            <h5>Buscas <em>criterio</em>, no urgencia</h5>
+            <p>Estás dispuesto a tomar decisiones con tiempo. No necesitas que te cierren rápido — necesitas que te lean bien.</p>
+          </div>
+        </li>
+        <li class="it">
+          <div>
+            <h5>Valoras información <em>sobre opinión</em></h5>
+            <p>Prefieres datos comparables y argumentos a "yo creo que…". Te interesa entender el porqué de cada movimiento.</p>
+          </div>
+        </li>
+        <li class="it">
+          <div>
+            <h5>Aceptas un <em>"todavía no"</em></h5>
+            <p>Si la lectura dice que no es el momento, lo escuchas con apertura. La paciencia es parte de la estrategia.</p>
+          </div>
+        </li>
+        <li class="it">
+          <div>
+            <h5>Quieres una <em>relación</em>, no una transacción</h5>
+            <p>No se trata de cuántas opciones existen, sino de cuáles tienen sentido para ti.</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul class="list">
-      <li>
-        <div>
-          <h5 class="serif">Buscas criterio, no urgencia</h5>
-          <p>Estás dispuesto a tomar decisiones con tiempo. No necesitas que te cierren rápido — necesitas que te lean bien.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h5 class="serif">Valoras información sobre opinión</h5>
-          <p>Prefieres datos comparables y argumentos a "yo creo que…". Te interesa entender el porqué de cada movimiento.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h5 class="serif">Aceptas un "todavía no"</h5>
-          <p>Si la lectura dice que no es el momento, lo escuchas con apertura. La paciencia es parte de la estrategia.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h5 class="serif">Quieres una relación, no una transacción</h5>
-          <p>Algunos clientes vuelven cinco años después. Otros refieren amigos. Trabajo para ambos.</p>
-        </div>
-      </li>
-    </ul>
   </div>
 </section>
 
-<!-- MANIFESTO -->
-<section class="manifesto r">
-  <div class="wrap">
-    <blockquote class="serif">No persigo cierres. Persigo <em>decisiones bien tomadas</em>.</blockquote>
+<!-- ================ MANIFESTO ================ -->
+<section class="manifest r">
+  <div class="container">
+    <blockquote>No trabajo por volumen ni exposición masiva.<br>Trabajo con <em>lectura, estrategia y proceso</em>.</blockquote>
     <cite>Dario Jhangimal · SpotOne Realty</cite>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ================ ABOUT ================ -->
 <section id="dario" class="about r">
-  <div class="wrap">
-    <div class="about-portrait" aria-hidden="true">
-      <span class="tag serif italic">Dario, en una visita</span>
-    </div>
-    <div>
-      <span class="section-tag">Sobre Dario</span>
-      <h2 class="serif">Casi dos décadas leyendo <em>el mismo mercado</em>.</h2>
-      <p>Empecé en 2006. He visto al mercado panameño expandirse, corregirse, recalibrar. He vendido, he asesorado a quien no compró, he convencido a clientes de no listar todavía. La constante es la misma: leer antes de actuar.</p>
-      <p>SpotOne es una práctica boutique por decisión. Trabajo con pocos clientes a la vez porque cada uno requiere tiempo real — no plantillas, no shortcuts, no algoritmos.</p>
-      <div class="stats">
-        <div class="s"><b>18+</b><small>años en el mercado</small></div>
-        <div class="s"><b>PN-1240</b><small>licencia activa</small></div>
-        <div class="s"><b>1:1</b><small>relación con cada cliente</small></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="portrait" aria-hidden="true">
+        <span class="ptag">Dario · en visita</span>
       </div>
-      <span class="signature serif italic">Dario Jhangimal</span>
+      <div>
+        <span class="eyebrow">Sobre Dario</span>
+        <h2>Casi dos décadas leyendo <em>el mismo mercado</em>.</h2>
+        <p>Trabajo el mercado inmobiliario en Panamá <strong>desde 2006</strong>. He visto al mercado expandirse, corregirse, recalibrar. He vendido. He asesorado a quien no compró. He convencido a clientes de no listar todavía.</p>
+        <p>SpotOne es una práctica boutique por decisión. <strong>No trabajo por volumen ni exposición masiva.</strong> Trabajo con lectura, estrategia y proceso.</p>
+        <div class="stats">
+          <div class="s"><b>18+</b><small>años en mercado</small></div>
+          <div class="s"><b>PN-1240</b><small>licencia activa</small></div>
+          <div class="s"><b>1:1</b><small>relación</small></div>
+        </div>
+        <div class="signature">Dario Jhangimal</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ================ FAQ ================ -->
 <section id="faq" class="faq r">
-  <div class="wrap">
-    <div>
-      <span class="section-tag">Preguntas</span>
-      <h2 class="serif">Lo que <em>solemos</em> aclarar.</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary class="serif">¿Cobras por la asesoría preliminar?</summary>
-        <div class="body">No. La primera conversación es sin compromiso y sin costo. Sale gratis para ambos descubrir si tiene sentido seguir trabajando juntos.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="serif">¿Trabajas con cualquier propiedad?</summary>
-        <div class="body">Trabajo donde puedo aportar criterio. Si tu caso requiere algo fuera de mi alcance (un mercado que no conozco, un segmento que no domino) lo digo y te oriento hacia alguien que sí. La honestidad es parte del servicio.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="serif">¿Por qué hablas tan poco de "buenas oportunidades"?</summary>
-        <div class="body">Porque "oportunidad" es un término que se usa con demasiada ligereza. Una buena decisión no se mide por el descuento que ofrece — se mide por cómo encaja con quien la toma. Eso requiere lectura, no titular.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="serif">¿Cuánto tiempo toma vender una propiedad bien posicionada?</summary>
-        <div class="body">Depende del segmento y del momento. Una propiedad correctamente leída — precio, narrativa, canal — se mueve más rápido que el promedio. Pero el objetivo nunca es velocidad por velocidad: es cierre en términos correctos.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="serif">¿Cómo cobras?</summary>
-        <div class="body">Comisión estándar de mercado al cierre. Lo conversamos abiertamente al inicio. Sin sorpresas, sin letras chicas, sin estructuras que premien volumen sobre criterio.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="serif">¿Atiendes clientes internacionales?</summary>
-        <div class="body">Sí. La asesoría se puede hacer remota — videollamada, lectura compartida, decisiones documentadas. La visita física puede esperar hasta que tenga sentido hacerla.</div>
-      </details>
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <span class="eyebrow">Preguntas</span>
+        <h2>Lo que <em>solemos</em> aclarar.</h2>
+        <p class="lead">Las dudas que más se repiten — respondidas con la misma franqueza con la que trabajamos.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>¿Cobras por la asesoría <em>preliminar</em>?</summary>
+          <div class="body">No. La primera conversación es sin compromiso y sin costo. Para ambos sale gratis descubrir si tiene sentido seguir trabajando juntos.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Trabajas con <em>cualquier</em> propiedad?</summary>
+          <div class="body">Trabajo donde puedo aportar criterio. Si tu caso requiere algo fuera de mi alcance lo digo y te oriento hacia alguien que sí. La honestidad es parte del servicio.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Por qué hablas tan poco de <em>"buenas oportunidades"</em>?</summary>
+          <div class="body">Porque "oportunidad" es un término que se usa con demasiada ligereza. Una buena decisión no se mide por el descuento que ofrece — se mide por cómo encaja con quien la toma. Eso requiere lectura, no titular.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto toma <em>vender</em> una propiedad bien posicionada?</summary>
+          <div class="body">Depende del segmento y del momento. Una propiedad correctamente leída — precio, narrativa, canal — se mueve más rápido que el promedio. Pero el objetivo nunca es velocidad por velocidad: es cierre en términos correctos.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo <em>cobras</em>?</summary>
+          <div class="body">Comisión estándar de mercado al cierre. Lo conversamos abiertamente al inicio. Sin sorpresas, sin letras chicas, sin estructuras que premien volumen sobre criterio.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Atiendes clientes <em>internacionales</em>?</summary>
+          <div class="body">Sí. La asesoría se puede hacer remota — videollamada, lectura compartida, decisiones documentadas. La visita física puede esperar hasta que tenga sentido hacerla.</div>
+        </details>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL -->
-<section id="conversemos" class="final r">
-  <div class="wrap">
+<!-- ================ FINAL CTA ================ -->
+<section id="contacto" class="final r">
+  <div class="container">
     <span class="eyebrow">Conversemos</span>
-    <h2 class="serif">¿Tiene <em>sentido</em> hablar?</h2>
-    <p>Una conversación honesta de 30 minutos. Sin agenda comercial. Si después no es el momento, no es el momento.</p>
+    <h2>¿Tiene <em>sentido</em> hablar?</h2>
+    <p class="lead">Una conversación honesta. Sin agenda comercial. Si después no es el momento, no es el momento.</p>
     <div class="actions">
-      <a href="https://wa.me/50766758127?text=Hola%20Dario,%20me%20interesa%20conversar%20sobre%20una%20propiedad" class="btn btn-ink btn-lg">Escribir por WhatsApp →</a>
-      <a href="mailto:info@spotonerealty.com" class="btn-line">o por correo</a>
+      <a href="https://wa.me/50766758127?text=Hola%20Dario,%20me%20interesa%20conversar." class="btn">Escribir por WhatsApp</a>
+      <a href="mailto:info@spotonerealty.com" class="btn-line dark">o por correo</a>
     </div>
     <div class="channels">
       <a href="https://wa.me/50766758127"><small>WhatsApp</small>+507 6675-8127</a>
@@ -739,20 +731,20 @@ footer{padding:64px 0 36px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================ FOOTER ================ -->
 <footer>
-  <div class="wrap">
+  <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="mark">Spot<em>One</em>.</div>
-        <p>Asesoría inmobiliaria con criterio, en Panamá. Trabajo personal y selectivo, por elección.</p>
-        <div class="lic">Lic. PN-1240 — desde 2006</div>
+        <div class="mark">SpotOne<span style="color:var(--blue-sk);font-style:italic">.</span></div>
+        <p>Selección inmobiliaria con criterio. Una lectura clara del mercado y del momento.</p>
+        <div class="lic">Dario Jhangimal · Lic. PN-1240 · Desde 2006</div>
       </div>
       <div>
         <h6>Práctica</h6>
         <ul>
           <li><a href="#principio">Principio</a></li>
-          <li><a href="#servicios">Qué hago</a></li>
+          <li><a href="#que-hago">Qué hago</a></li>
           <li><a href="#proceso">Cómo trabajo</a></li>
           <li><a href="#dario">Sobre Dario</a></li>
         </ul>
@@ -768,14 +760,14 @@ footer{padding:64px 0 36px;border-top:1px solid var(--line)}
       <div>
         <h6>Idioma</h6>
         <ul>
-          <li><a href="#" style="color:var(--accent);font-weight:500">Español</a></li>
+          <li><a href="#" style="color:var(--blue);font-weight:500">Español</a></li>
           <li><a href="#en">English</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 SpotOne Realty. Todos los derechos reservados.</span>
-      <span class="credit">Hecho con <em>criterio</em> en Panamá.</span>
+      <span>Panamá · <em>con criterio</em>.</span>
     </div>
   </div>
 </footer>
@@ -783,9 +775,9 @@ footer{padding:64px 0 36px;border-top:1px solid var(--line)}
 <script>
   // mobile menu
   const mm = document.getElementById('mobileMenu');
-  document.getElementById('menuOpen').addEventListener('click', ()=>mm.classList.add('open'));
-  document.getElementById('menuClose').addEventListener('click', ()=>mm.classList.remove('open'));
-  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>mm.classList.remove('open')));
+  document.getElementById('menuOpen').addEventListener('click', ()=>mm.classList.add('on'));
+  document.getElementById('menuClose').addEventListener('click', ()=>mm.classList.remove('on'));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>mm.classList.remove('on')));
 
   // reveal on scroll
   const obs = new IntersectionObserver((entries)=>{
