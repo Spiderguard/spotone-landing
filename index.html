@@ -312,11 +312,12 @@ section[id]{scroll-margin-top:96px}
 .about{background:#fff}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
 .portrait{
-  aspect-ratio:4/5;
+  aspect-ratio:2/3;
   position:relative;overflow:hidden;
   border:1px solid var(--line);
+  background:#444548;
 }
-.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.02)}
+.portrait img{width:100%;height:100%;object-fit:contain;object-position:center center;filter:contrast(1.02);display:block}
 .about .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px}
 .about .eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
 .about h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em}
@@ -492,7 +493,6 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="hero-shade"></div>
 
   <div class="hero-content">
-    <span class="eyebrow">Compra · alquiler · venta en Panamá</span>
     <h1>Selección inmobiliaria <em>con criterio</em>.</h1>
     <p class="lead">Con una lectura clara del mercado y del momento. Pocos clientes a la vez, por elección.</p>
     <div class="hero-actions">
@@ -647,7 +647,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="about-grid">
       <div class="portrait">
-        <img src="images/dario-brand-vertical.jpg" alt="Dario Jhangimal" width="800" height="1000" loading="lazy" decoding="async">
+        <img src="images/dario-brand-vertical.jpg" alt="Dario Jhangimal" width="960" height="1440" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow">Sobre Dario</span>
