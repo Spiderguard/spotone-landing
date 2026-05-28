@@ -71,8 +71,8 @@ em{color:var(--blue-sk);font-style:italic;font-weight:400}
   display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:60;
 }
-.brand{display:flex;align-items:center;gap:10px;line-height:1}
-.brand-logo{width:30px;height:30px;display:block}
+.brand{display:flex;align-items:center;gap:12px;line-height:1}
+.brand-logo{width:36px;height:36px;display:block}
 .brand-text{font-size:20px;font-weight:500;letter-spacing:-.006em;color:var(--ink)}
 .site-nav{display:flex;align-items:center;gap:34px}
 .site-nav a{
@@ -107,7 +107,7 @@ em{color:var(--blue-sk);font-style:italic;font-weight:400}
   .site-header{height:64px;padding:0 20px}
   .site-nav{gap:12px}
   .site-nav a.cta{padding:8px 13px;font-size:12.5px}
-  .brand-logo{width:28px;height:28px}
+  .brand-logo{width:30px;height:30px}
   .brand-text{font-size:18px}
 }
 @media(max-width:620px){.site-nav a.cta{display:none}}
@@ -144,26 +144,27 @@ body.menu-open{overflow:hidden}
 }
 .hero-image{
   position:absolute;inset:0;
-  background-image:url("images/hero-main.jpg");
+  background-image:url("images/hero-main-desktop.jpg");
   background-size:cover;background-position:center 46%;
-  filter:saturate(.94) contrast(.98);
+  filter:none;
 }
 .hero-shade{
   position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(to right,  rgba(10,14,16,.58) 0%, rgba(10,14,16,.22) 50%, rgba(10,14,16,.08) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.04)    0%, rgba(0,0,0,.10)    42%, rgba(0,0,0,.44)   100%);
+    linear-gradient(to right,  rgba(10,14,16,.52) 0%, rgba(10,14,16,.18) 52%, rgba(10,14,16,.05) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.03)    0%, rgba(0,0,0,.08)    42%, rgba(0,0,0,.38)   100%);
 }
 .hero-content{
   position:relative;z-index:2;max-width:560px;color:#fff;
   margin-bottom:8px;
 }
 .hero .eyebrow{
-  color:rgba(255,255,255,.78);font-size:11px;letter-spacing:.22em;
+  color:rgba(255,255,255,.9);font-size:10.8px;letter-spacing:.18em;
   display:inline-flex;align-items:center;gap:14px;margin-bottom:30px;
+  line-height:1.35;text-shadow:0 1px 14px rgba(0,0,0,.42);
 }
 .hero .eyebrow::before{
-  content:"";width:28px;height:1px;background:rgba(255,255,255,.55);
+  content:"";width:28px;height:1px;background:rgba(255,255,255,.68);
 }
 .hero h1{
   font-size:clamp(34px,4.4vw,58px);
@@ -184,7 +185,7 @@ body.menu-open{overflow:hidden}
 }
 .btn:hover{background:var(--blue-dk)}
 .btn:focus-visible,.btn-line:focus-visible,.site-nav a:focus-visible,.foot-grid a:focus-visible,.final .channels a:focus-visible{
-  outline:1px solid rgba(30,57,107,.32);outline-offset:5px;
+  outline:1px solid rgba(17,17,17,.22);outline-offset:5px;
 }
 .btn.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
 .btn.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
@@ -199,7 +200,10 @@ body.menu-open{overflow:hidden}
 
 @media(max-width:760px){
   .hero{min-height:calc(100svh - 64px);padding:0 20px calc(46px + env(safe-area-inset-bottom))}
-  .hero-image{background-position:60% 50%}
+  .hero-image{
+    background-image:url("images/hero-main-mobile.jpg");
+    background-position:center 50%;
+  }
   .hero-shade{background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.18) 42%, rgba(0,0,0,.66) 100%)}
   .hero h1{font-size:clamp(32px,10vw,40px);max-width:11.8ch}
   .hero .lead{font-size:15.5px;margin-bottom:28px;max-width:32ch}
@@ -312,7 +316,7 @@ section[id]{scroll-margin-top:96px}
   position:relative;overflow:hidden;
   border:1px solid var(--line);
 }
-.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:contrast(1.02)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.02)}
 .about .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px}
 .about .eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
 .about h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em}
@@ -338,6 +342,7 @@ section[id]{scroll-margin-top:96px}
   display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
 }
 .faq-item summary:focus,.faq-item summary:focus-visible{outline:none}
+.faq-item summary:focus-visible{background:rgba(17,17,17,.025)}
 .faq-item summary em{font-style:italic;color:var(--blue-sk);font-weight:400}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{
@@ -346,7 +351,7 @@ section[id]{scroll-margin-top:96px}
   transition:transform .3s ease;
 }
 .faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-item summary:focus-visible::after{background:linear-gradient(var(--blue),var(--blue)) center/13px 1px no-repeat,linear-gradient(var(--blue),var(--blue)) center/1px 13px no-repeat}
+.faq-item summary:focus-visible::after{background:linear-gradient(var(--ink),var(--ink)) center/13px 1px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1px 13px no-repeat}
 .faq-item .body{padding:0 36px 26px 0;color:var(--body-2);font-size:15px;line-height:1.7;max-width:58ch}
 @media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:32px}}
 
@@ -487,9 +492,9 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="hero-shade"></div>
 
   <div class="hero-content">
-    <span class="eyebrow">Real estate market · Panama</span>
-    <h1>Real estate guidance <em>with judgment</em>.</h1>
-    <p class="lead">Buy, rent or sell with a clear read of the market and the moment. A small number of clients at a time, by design.</p>
+    <span class="eyebrow">Buy · rent · sell in Panama</span>
+    <h1>Real estate guidance <em>with clear judgment</em>.</h1>
+    <p class="lead">With a clear read of the market and the moment. Focused guidance, a clear process and no pressure.</p>
     <div class="hero-actions">
       <a href="#contacto" class="btn">Let's talk</a>
       <a href="#que-hago" class="btn-line">What I do →</a>
@@ -506,7 +511,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
     <div class="split">
       <div class="quote">The market is <em>read</em>.<br>Not guessed.</div>
       <div class="text">
-        <p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as going to market.</strong> What moves, moves because of price, timing and market reading.</p>
+        <p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as going to market.</strong> Properties move when price, timing and positioning line up.</p>
         <p>I work with people who are willing to make decisions with information, not instinct, pressure or haste.</p>
         <p>If the read says it is not the right moment yet, I say so. If it says yes, I say that too. That is the work.</p>
       </div>
@@ -519,8 +524,8 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">What I do</span>
-      <h2>Boutique advisory, <em>not a catalog</em>.</h2>
-      <p class="lead">Four ways of working. All share the same foundation: filter, judgment and process. No packages, no sales script.</p>
+      <h2>Clear guidance, <em>not a catalog</em>.</h2>
+      <p class="lead">Four ways of working. Each starts from the same foundation: filter, market reading and process. No packages, no sales script.</p>
     </div>
 
     <div class="approach-grid">
@@ -548,7 +553,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       <div class="app-item">
         <span class="app-num">iv.</span>
         <div>
-          <h3>Preliminary <em>filter</em></h3>
+          <h3>First <em>read</em></h3>
           <p>Before listing, buying, renting or moving capital. Sometimes one first exchange is enough to know whether it is worth moving forward.</p>
         </div>
       </div>
@@ -562,18 +567,18 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
     <div class="section-head">
       <span class="eyebrow">How I work</span>
       <h2>A process, <em>without noise</em>.</h2>
-      <p class="lead">No two clients are the same, but there is a way to filter. It gives every decision context before time is spent.</p>
+      <p class="lead">Before moving forward, I organize the context: what you are looking for, why now and what is worth looking at. That keeps the work focused from the start.</p>
     </div>
 
     <div class="proc-grid">
       <div class="pstep">
         <div class="pnum">Step 01</div>
-        <h4>First filter</h4>
+        <h4>First read</h4>
         <p>A brief exchange to understand what you are looking for, where and why. If moving forward does not make sense, I say so early.</p>
       </div>
       <div class="pstep">
         <div class="pnum">Step 02</div>
-        <h4>Read</h4>
+        <h4>Market read</h4>
         <p>Analysis of the asset or segment: comparables, demand, positioning. Without this, everything else is noise.</p>
       </div>
       <div class="pstep">
@@ -596,14 +601,14 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
     <div class="before-grid">
       <div>
         <span class="eyebrow">Before moving forward</span>
-        <h2>We work <em>well together</em> if…</h2>
-        <p class="lead">Before searching, buying, selling or renting, it helps to understand where you stand: area, price, timing and real negotiation room.</p>
+        <h2>This works <em>best</em> when…</h2>
+        <p class="lead">Before searching, buying, selling or renting, it helps to know where you stand: area, price, timing and real negotiation room.</p>
       </div>
       <ul class="flist">
         <li class="it">
           <div>
-            <h5>You seek <em>judgment</em>, not urgency</h5>
-            <p>You are willing to make decisions with time. You do not need to be pushed quickly; you need the situation to be read well.</p>
+            <h5>You want a <em>clear read</em>, not urgency</h5>
+            <p>You are willing to take the time to decide well. You do not need to be pushed quickly; you need the situation to be read well.</p>
           </div>
         </li>
         <li class="it">
@@ -642,13 +647,13 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="about-grid">
       <div class="portrait">
-        <img src="images/dario-portrait.jpg" alt="Dario Jhangimal">
+        <img src="images/dario-brand-vertical.jpg" alt="Dario Jhangimal" width="800" height="1000" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow">About Dario</span>
         <h2>Judgment before haste.</h2>
-        <p>I approach real estate by reading the context, not by applying pressure. Before moving a property, a search or a negotiation, I want to understand what is behind it: timing, people, price, real margin and what can be sustained with clarity.</p>
-        <p>Some operations require depth. Others require speed. The form may change; the judgment does not.</p>
+        <p>I approach real estate by reading the context, not by applying pressure. Before a property goes to market, a search begins or a negotiation starts, I want to understand what is behind it: timing, people, price, real margin and what can be sustained with clarity.</p>
+        <p>Some operations require depth. Others require speed. The form may change; the criterion does not.</p>
         <p class="about-credential">Licensed broker PN-1240.</p>
         <div class="signature">Dario Jhangimal</div>
       </div>
@@ -663,32 +668,48 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       <div>
         <span class="eyebrow">Questions</span>
         <h2>What we <em>usually</em> clarify.</h2>
-        <p class="lead">The questions that come up most often, answered with the same directness with which we work.</p>
+        <p class="lead">The questions that come up most often, answered with the same directness I bring to the work.</p>
       </div>
       <div class="faq-list">
         <details class="faq-item" open>
-          <summary>Do you charge for the preliminary consultation?</summary>
-          <div class="body">It does not always start with a meeting. Sometimes a first exchange by WhatsApp or email is enough to understand what you are evaluating and whether I can truly add value.<br><br>If it makes sense to move forward, we schedule a call. If not, I tell you from the start.</div>
+          <summary>Do you charge for the first conversation?</summary>
+          <div class="body">No. First, I understand what you are evaluating and whether I can truly add value. Sometimes a WhatsApp or email exchange is enough. If moving forward makes sense, we schedule a call.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help if I am not clear on the area or budget yet?</summary>
+          <div class="body">Yes. Part of the work is to organize that: area, use, time horizon, budget and real decision margin. Before seeing properties, it helps to know what is worth looking at.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you handle rentals, or only purchases and sales?</summary>
+          <div class="body">I work with purchases, rentals and sales when there is room to add real value. It is not only about the type of transaction; it is about whether I can help you decide better.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do you choose the properties you show me?</summary>
+          <div class="body">I do not work by volume. I filter by location, price, condition, comparables, market moment and fit with your case. I prefer to show fewer options, with better context.</div>
         </details>
         <details class="faq-item">
           <summary>Do you work with any property?</summary>
-          <div class="body">I work where I can bring judgment. If your case requires something outside my scope, I say so and point you toward someone better suited. Honesty is part of the service.</div>
+          <div class="body">I work where I can add real value. If your case requires something outside my scope, I say so and point you toward someone better suited. Honesty is part of the service.</div>
         </details>
         <details class="faq-item">
           <summary>Why do you say so little about “good opportunities”?</summary>
-          <div class="body">Because “opportunity” is a word used too lightly. A good decision is not measured by the discount it offers; it is measured by how well it fits the person making it. That requires a read, not a headline.</div>
+          <div class="body">Because “opportunity” is a word used too lightly. A good decision is not measured only by the discount; it is measured by how well it fits the person making it. That requires a read, not a headline.</div>
         </details>
         <details class="faq-item">
           <summary>How long does it take to sell a well-positioned property?</summary>
-          <div class="body">It depends on the segment and the moment. A property that is correctly read, in price, narrative and channel, tends to move faster than average. But speed for its own sake is never the goal: closing on the right terms is.</div>
+          <div class="body">It depends on the segment and the moment. A property that is correctly read, in price, narrative and channel, tends to move better than average. But speed for its own sake is not the goal: closing on the right terms is.</div>
         </details>
         <details class="faq-item">
           <summary>How do you charge?</summary>
           <div class="body">I work with the standard market commission, usually at closing. We discuss it from the beginning according to the type of case, so everything is clear from the start.</div>
         </details>
         <details class="faq-item">
-          <summary>Do you work with international clients?</summary>
-          <div class="body">Yes. Advisory can start remotely: WhatsApp, email, video call, shared market reading and documented decisions. The physical visit can wait until it makes sense to make it.</div>
+          <summary>Can I start the process if I am outside Panama?</summary>
+          <div class="body">Yes. We can start remotely by WhatsApp, email or video call, with market reading and documented decisions. The physical visit can wait until it makes sense to make it.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if you do not see a good decision for me?</summary>
+          <div class="body">I tell you. Sometimes the best guidance is not to move yet, adjust the price, change the area or wait for another moment. That is also part of protecting the decision.</div>
         </details>
       </div>
     </div>
@@ -700,7 +721,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <span class="eyebrow">Let's talk</span>
     <h2>Does it make <em>sense</em> to talk?</h2>
-    <p class="lead">Tell me what you are evaluating: buying, selling, renting or simply understanding the market better. If I see that I can help, we move forward. If not, I will also tell you clearly.</p>
+    <p class="lead">Tell me what you are evaluating: buying, selling, renting or simply trying to understand the market better. If I can help, we move forward. If not, I will tell you clearly.</p>
     <div class="actions">
       <a href="https://wa.me/50766758127?text=Hi%20Dario,%20I%20would%20like%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama." class="btn">Write on WhatsApp</a>
       <a href="mailto:info@spotonerealty.com?subject=English%20inquiry" class="btn-line dark">or by email</a>
@@ -718,8 +739,8 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="mark"><img src="images/logo.svg" alt="">SpotOne Realty</div>
-        <p>Boutique real estate practice in Panama.</p>
+        <div class="mark"><img src="images/logo.svg" alt="">SpotOne.</div>
+        <p>Real estate guidance with clarity in Panama.</p>
       </div>
       <div>
         <h6>Practice</h6>
@@ -739,8 +760,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 SpotOne Realty. All rights reserved.</span>
-      <span>Panama · <em>with judgment</em>.</span>
+      <span>© 2026 SpotOne Realty · Panama</span>
     </div>
   </div>
 </footer>

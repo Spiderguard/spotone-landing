@@ -1,5 +1,8 @@
 .DS_Store
 *.log
 .env
+.netlify/
+images/hero-main-original.jpg
+images/hero-main-retouched.png
 .vscode/
 .idea/

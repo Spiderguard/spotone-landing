@@ -71,8 +71,8 @@ em{color:var(--blue-sk);font-style:italic;font-weight:400}
   display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:60;
 }
-.brand{display:flex;align-items:center;gap:10px;line-height:1}
-.brand-logo{width:30px;height:30px;display:block}
+.brand{display:flex;align-items:center;gap:12px;line-height:1}
+.brand-logo{width:36px;height:36px;display:block}
 .brand-text{font-size:20px;font-weight:500;letter-spacing:-.006em;color:var(--ink)}
 .site-nav{display:flex;align-items:center;gap:34px}
 .site-nav a{
@@ -107,7 +107,7 @@ em{color:var(--blue-sk);font-style:italic;font-weight:400}
   .site-header{height:64px;padding:0 20px}
   .site-nav{gap:12px}
   .site-nav a.cta{padding:8px 13px;font-size:12.5px}
-  .brand-logo{width:28px;height:28px}
+  .brand-logo{width:30px;height:30px}
   .brand-text{font-size:18px}
 }
 @media(max-width:620px){.site-nav a.cta{display:none}}
@@ -144,26 +144,27 @@ body.menu-open{overflow:hidden}
 }
 .hero-image{
   position:absolute;inset:0;
-  background-image:url("images/hero-main.jpg");
+  background-image:url("images/hero-main-desktop.jpg");
   background-size:cover;background-position:center 46%;
-  filter:saturate(.94) contrast(.98);
+  filter:none;
 }
 .hero-shade{
   position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(to right,  rgba(10,14,16,.58) 0%, rgba(10,14,16,.22) 50%, rgba(10,14,16,.08) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.04)    0%, rgba(0,0,0,.10)    42%, rgba(0,0,0,.44)   100%);
+    linear-gradient(to right,  rgba(10,14,16,.52) 0%, rgba(10,14,16,.18) 52%, rgba(10,14,16,.05) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.03)    0%, rgba(0,0,0,.08)    42%, rgba(0,0,0,.38)   100%);
 }
 .hero-content{
   position:relative;z-index:2;max-width:560px;color:#fff;
   margin-bottom:8px;
 }
 .hero .eyebrow{
-  color:rgba(255,255,255,.78);font-size:11px;letter-spacing:.22em;
+  color:rgba(255,255,255,.9);font-size:10.8px;letter-spacing:.18em;
   display:inline-flex;align-items:center;gap:14px;margin-bottom:30px;
+  line-height:1.35;text-shadow:0 1px 14px rgba(0,0,0,.42);
 }
 .hero .eyebrow::before{
-  content:"";width:28px;height:1px;background:rgba(255,255,255,.55);
+  content:"";width:28px;height:1px;background:rgba(255,255,255,.68);
 }
 .hero h1{
   font-size:clamp(34px,4.4vw,58px);
@@ -184,7 +185,7 @@ body.menu-open{overflow:hidden}
 }
 .btn:hover{background:var(--blue-dk)}
 .btn:focus-visible,.btn-line:focus-visible,.site-nav a:focus-visible,.foot-grid a:focus-visible,.final .channels a:focus-visible{
-  outline:1px solid rgba(30,57,107,.32);outline-offset:5px;
+  outline:1px solid rgba(17,17,17,.22);outline-offset:5px;
 }
 .btn.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
 .btn.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
@@ -199,7 +200,10 @@ body.menu-open{overflow:hidden}
 
 @media(max-width:760px){
   .hero{min-height:calc(100svh - 64px);padding:0 20px calc(46px + env(safe-area-inset-bottom))}
-  .hero-image{background-position:60% 50%}
+  .hero-image{
+    background-image:url("images/hero-main-mobile.jpg");
+    background-position:center 50%;
+  }
   .hero-shade{background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.18) 42%, rgba(0,0,0,.66) 100%)}
   .hero h1{font-size:clamp(32px,10vw,40px);max-width:11.8ch}
   .hero .lead{font-size:15.5px;margin-bottom:28px;max-width:32ch}
@@ -312,7 +316,7 @@ section[id]{scroll-margin-top:96px}
   position:relative;overflow:hidden;
   border:1px solid var(--line);
 }
-.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:contrast(1.02)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.02)}
 .about .eyebrow{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px}
 .about .eyebrow::before{content:"";width:24px;height:1px;background:var(--blue)}
 .about h2{font-size:clamp(28px,2.8vw,38px);line-height:1.08;font-weight:400;letter-spacing:-.018em}
@@ -338,6 +342,7 @@ section[id]{scroll-margin-top:96px}
   display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
 }
 .faq-item summary:focus,.faq-item summary:focus-visible{outline:none}
+.faq-item summary:focus-visible{background:rgba(17,17,17,.025)}
 .faq-item summary em{font-style:italic;color:var(--blue-sk);font-weight:400}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{
@@ -346,7 +351,7 @@ section[id]{scroll-margin-top:96px}
   transition:transform .3s ease;
 }
 .faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-item summary:focus-visible::after{background:linear-gradient(var(--blue),var(--blue)) center/13px 1px no-repeat,linear-gradient(var(--blue),var(--blue)) center/1px 13px no-repeat}
+.faq-item summary:focus-visible::after{background:linear-gradient(var(--ink),var(--ink)) center/13px 1px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1px 13px no-repeat}
 .faq-item .body{padding:0 36px 26px 0;color:var(--body-2);font-size:15px;line-height:1.7;max-width:58ch}
 @media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:32px}}
 
@@ -487,9 +492,9 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="hero-shade"></div>
 
   <div class="hero-content">
-    <span class="eyebrow">Mercado inmobiliario · Panamá</span>
+    <span class="eyebrow">Compra · alquiler · venta en Panamá</span>
     <h1>Selección inmobiliaria <em>con criterio</em>.</h1>
-    <p class="lead">Compra, alquiler o venta con una lectura clara del mercado y del momento. Pocos clientes a la vez, por elección.</p>
+    <p class="lead">Con una lectura clara del mercado y del momento. Pocos clientes a la vez, por elección.</p>
     <div class="hero-actions">
       <a href="#contacto" class="btn">Conversemos</a>
       <a href="#que-hago" class="btn-line">Qué hago →</a>
@@ -519,8 +524,8 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Qué hago</span>
-      <h2>Asesoría boutique, <em>no catálogo</em>.</h2>
-      <p class="lead">Cuatro formas de trabajar. Todas comparten lo mismo: filtro, criterio y proceso. Sin paquetes, sin guion comercial.</p>
+      <h2>Asesoría clara, <em>no catálogo</em>.</h2>
+      <p class="lead">Cuatro formas de trabajar. Todas comparten lo mismo: filtro, lectura y proceso. Sin paquetes, sin guion comercial.</p>
     </div>
 
     <div class="approach-grid">
@@ -548,7 +553,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       <div class="app-item">
         <span class="app-num">iv.</span>
         <div>
-          <h3>Filtro <em>preliminar</em></h3>
+          <h3>Primera <em>lectura</em></h3>
           <p>Antes de listar, comprar, alquilar o mover capital. A veces basta un primer intercambio para saber si vale la pena avanzar.</p>
         </div>
       </div>
@@ -562,13 +567,13 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
     <div class="section-head">
       <span class="eyebrow">Cómo trabajo</span>
       <h2>Un proceso, <em>sin ruido</em>.</h2>
-      <p class="lead">No hay dos clientes iguales, pero sí una forma de filtrar. Sirve para que cada decisión tenga contexto antes de consumir tiempo.</p>
+      <p class="lead">Antes de avanzar, ordeno el contexto: qué buscas, por qué ahora y qué vale la pena mirar. Así el tiempo se usa mejor, desde el inicio.</p>
     </div>
 
     <div class="proc-grid">
       <div class="pstep">
         <div class="pnum">Paso 01</div>
-        <h4>Primer filtro</h4>
+        <h4>Primera lectura</h4>
         <p>Un intercambio breve para entender qué se busca, dónde y por qué. Si no tiene sentido avanzar, lo digo temprano.</p>
       </div>
       <div class="pstep">
@@ -642,7 +647,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="about-grid">
       <div class="portrait">
-        <img src="images/dario-portrait.jpg" alt="Dario Jhangimal">
+        <img src="images/dario-brand-vertical.jpg" alt="Dario Jhangimal" width="800" height="1000" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow">Sobre Dario</span>
@@ -667,28 +672,44 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       </div>
       <div class="faq-list">
         <details class="faq-item" open>
-          <summary>¿Cobras por la asesoría preliminar?</summary>
-          <div class="body">No siempre empieza con una reunión. A veces basta un primer intercambio por WhatsApp o correo para entender qué estás evaluando y si realmente puedo aportar valor.<br><br>Si hace sentido avanzar, coordinamos una llamada. Si no, te lo digo desde el inicio.</div>
+          <summary>¿Cobras por la primera conversación?</summary>
+          <div class="body">No. Primero entiendo qué estás evaluando y si realmente puedo aportar valor. A veces basta un intercambio por WhatsApp o correo. Si hace sentido avanzar, coordinamos una llamada.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Me ayudas si todavía no tengo clara la zona o el presupuesto?</summary>
+          <div class="body">Sí. Parte del trabajo es ordenar eso: zona, uso, horizonte, presupuesto y margen real de decisión. Antes de ver propiedades, conviene saber qué tiene sentido mirar.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Trabajas también alquileres o solo compras y ventas?</summary>
+          <div class="body">Trabajo compra, alquiler y venta cuando hay espacio para aportar criterio. No se trata solo del tipo de operación, sino de si puedo ayudarte a decidir mejor.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo seleccionas las propiedades que me muestras?</summary>
+          <div class="body">No trabajo por volumen. Filtro por ubicación, precio, estado, comparables, momento de mercado y encaje con tu caso. Prefiero mostrar menos opciones, pero mejor leídas.</div>
         </details>
         <details class="faq-item">
           <summary>¿Trabajas con cualquier propiedad?</summary>
-          <div class="body">Trabajo donde puedo aportar criterio. Si tu caso requiere algo fuera de mi alcance lo digo y te oriento hacia alguien que sí. La honestidad es parte del servicio.</div>
+          <div class="body">Trabajo donde puedo aportar criterio. Si tu caso requiere algo fuera de mi alcance, lo digo y te oriento hacia alguien que sí. La honestidad también es parte del servicio.</div>
         </details>
         <details class="faq-item">
           <summary>¿Por qué hablas tan poco de "buenas oportunidades"?</summary>
-          <div class="body">Porque "oportunidad" es un término que se usa con demasiada ligereza. Una buena decisión no se mide por el descuento que ofrece — se mide por cómo encaja con quien la toma. Eso requiere lectura, no titular.</div>
+          <div class="body">Porque "oportunidad" es un término que se usa con demasiada ligereza. Una buena decisión no se mide solo por el descuento: se mide por cómo encaja con quien la toma. Eso requiere lectura, no titular.</div>
         </details>
         <details class="faq-item">
           <summary>¿Cuánto toma vender una propiedad bien posicionada?</summary>
-          <div class="body">Depende del segmento y del momento. Una propiedad correctamente leída — precio, narrativa, canal — se mueve más rápido que el promedio. Pero el objetivo nunca es velocidad por velocidad: es cierre en términos correctos.</div>
+          <div class="body">Depende del segmento y del momento. Una propiedad correctamente leída — precio, narrativa y canal — tiende a moverse mejor que el promedio. Pero el objetivo no es velocidad por velocidad: es cerrar en términos correctos.</div>
         </details>
         <details class="faq-item">
           <summary>¿Cómo cobras?</summary>
           <div class="body">Trabajo con comisión estándar de mercado, normalmente al cierre de la operación. Lo conversamos desde el inicio según el tipo de caso, para que todo quede claro desde el principio.</div>
         </details>
         <details class="faq-item">
-          <summary>¿Atiendes clientes internacionales?</summary>
-          <div class="body">Sí. La asesoría puede empezar remota: WhatsApp, correo, videollamada, lectura compartida y decisiones documentadas. La visita física puede esperar hasta que tenga sentido hacerla.</div>
+          <summary>¿Puedo empezar el proceso si estoy fuera de Panamá?</summary>
+          <div class="body">Sí. Podemos empezar remoto por WhatsApp, correo o videollamada, con lectura de mercado y decisiones documentadas. La visita física puede esperar hasta que tenga sentido hacerla.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si no ves una buena decisión para mí?</summary>
+          <div class="body">Te lo digo. A veces la mejor asesoría es no moverse todavía, ajustar el precio, cambiar la zona o esperar otro momento. Eso también es proteger la decisión.</div>
         </details>
       </div>
     </div>
@@ -718,8 +739,8 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="mark"><img src="images/logo.svg" alt="">SpotOne Realty</div>
-        <p>Práctica inmobiliaria boutique en Panamá.</p>
+        <div class="mark"><img src="images/logo.svg" alt="">SpotOne.</div>
+        <p>Selección inmobiliaria con criterio en Panamá.</p>
       </div>
       <div>
         <h6>Práctica</h6>
@@ -739,8 +760,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 SpotOne Realty. Todos los derechos reservados.</span>
-      <span>Panamá · <em>con criterio</em>.</span>
+      <span>© 2026 SpotOne Realty · Panamá</span>
     </div>
   </div>
 </footer>
