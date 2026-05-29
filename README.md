@@ -15,6 +15,14 @@ cd ~/Projects/spotone-landing
 ```
 spotone-landing/
 ├── index.html
+├── index-en.html
+├── favicon-32.png
+├── favicon-180.png
+├── images/
+│   ├── logo.svg
+│   ├── hero-main-desktop.jpg
+│   ├── hero-main-mobile.jpg
+│   └── dario-brand-vertical.jpg
 ├── deploy.sh
 ├── .nojekyll
 └── README.md
@@ -31,7 +39,6 @@ spotone-landing/
 Las imágenes oficiales de Dario son únicamente las versiones con saco ink navy, camisa crema y manos dentro de los bolsillos.
 
 - Vertical oficial para web: `images/dario-brand-vertical.jpg` (`1023 × 1537`)
-- Horizontal oficial para marca: `images/dario-brand-horizontal.jpg` (`1537 × 1023`)
-- Fuentes PNG preservadas: `images/dario-brand-vertical.png` y `images/dario-brand-horizontal.png`
+- Horizontal oficial y fuentes PNG: `/Users/dario/Downloads/SpotOne Realty/Brand Manual/assets/images/`
 
-No usar las versiones anteriores con camisa celeste ni retratos sentados. En la web, la sección “Sobre Dario” debe usar la vertical oficial sin crop; la horizontal queda como activo de marca para piezas editoriales, manual y layouts con espacio de texto.
+No usar las versiones anteriores con camisa celeste ni retratos sentados. El repo web solo debe incluir assets que la página usa en producción; los archivos maestros viven en el manual de marca.
