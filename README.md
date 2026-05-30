@@ -16,8 +16,14 @@ cd ~/Projects/spotone-landing
 spotone-landing/
 ├── index.html
 ├── index-en.html
+├── CNAME
 ├── favicon-32.png
 ├── favicon-180.png
+├── en/
+├── contacto/
+├── contact/
+├── que-hago/
+├── what-i-do/
 ├── images/
 │   ├── logo.svg
 │   ├── hero-main-desktop.jpg
@@ -27,6 +33,17 @@ spotone-landing/
 ├── .nojekyll
 └── README.md
 ```
+
+## Dominio
+
+GitHub Pages publica el sitio desde `main` y usa `www.spotonerealty.com` como dominio canonico.
+
+DNS esperado:
+
+- `www` CNAME -> `spiderguard.github.io`
+- `spotonerealty.com` con A records de GitHub Pages
+
+El sitio no depende de Netlify. Las carpetas `en/`, `contacto/`, `contact/`, `que-hago/` y `what-i-do/` reemplazan los redirects de Netlify con rutas estaticas utiles.
 
 ## Brand notes
 
