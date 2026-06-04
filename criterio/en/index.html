@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>Judgment · Real estate read for Panama · SpotOne Realty</title>
-<meta name="description" content="Judgment: a real estate read for Panama. Market, decisions and signals to buy, sell, rent or invest better. By Dario Jhangimal, licensed broker PN-1240.">
+<title>Perspective · A clearer read on Panama real estate · SpotOne Realty</title>
+<meta name="description" content="Perspective by SpotOne Realty: a clearer read on Panama real estate. Market signals, decisions and practical context to buy, sell, rent or invest better. By Dario Jhangimal, licensed broker PN-1240.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpotOne Realty">
-<meta property="og:title" content="Judgment · Real estate read for Panama">
-<meta property="og:description" content="Market, decisions and signals to buy, sell, rent or invest better.">
+<meta property="og:title" content="Perspective · A clearer read on Panama real estate">
+<meta property="og:description" content="Market signals, decisions and practical context to buy, sell, rent or invest better.">
 <meta property="og:url" content="https://www.spotonerealty.com/criterio/en/">
 <meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <meta property="og:locale" content="en_US">
@@ -27,13 +27,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/criterio/criterio.css">
 <style>
-  .crit-search{width:100%;max-width:480px;border:none;border-bottom:1px solid var(--line);background:transparent;
-    font-family:inherit;font-size:17px;color:var(--ink);padding:11px 2px;margin-top:26px;outline:none;display:block}
-  .crit-search::placeholder{color:var(--muted)}
-  .crit-search:focus{border-bottom-color:var(--blue)}
+  .crit-search{width:100%;max-width:760px;border:none;border-bottom:1px solid #ECECE8;background:transparent;
+    font-family:inherit;font-size:clamp(24px,3.2vw,38px);font-weight:300;letter-spacing:-.02em;color:var(--ink);
+    padding:6px 2px 14px;margin-top:16px;outline:none;display:block}
+  .crit-search::placeholder{color:#C7C7C1;font-weight:300}
+  .crit-search:focus{border-bottom-color:var(--blue-sk)}
+  .pillars{padding-top:34px}
   .pillars .chip{cursor:pointer;user-select:none;border-color:#EAEAE6;transition:background .18s,color .18s,border-color .18s}
   .pillars .chip:hover{border-color:var(--line);color:var(--ink)}
-  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line)}
+  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px}
 </style>
 </head>
 <body>
@@ -46,7 +48,7 @@
   <nav class="site-nav">
     <a href="/index-en.html" class="lnk">Home</a>
     <a href="/index-en.html#que-hago" class="lnk">What I do</a>
-    <a href="/criterio/en/" class="lnk here">Judgment</a>
+    <a href="/criterio/en/" class="lnk here">Perspective</a>
     <a href="/index-en.html#dario" class="lnk">Dario</a>
     <a href="/index-en.html#contacto" class="lnk">Contact</a>
     <a href="/index-en.html#contacto" class="cta">Let's talk</a>
@@ -69,7 +71,7 @@
   <nav>
     <a href="/index-en.html">Home</a>
     <a href="/index-en.html#que-hago">What I do</a>
-    <a href="/criterio/en/">Judgment</a>
+    <a href="/criterio/en/">Perspective</a>
     <a href="/index-en.html#dario">Dario</a>
     <a href="/index-en.html#contacto">Contact</a>
   </nav>
@@ -83,19 +85,19 @@
   <div class="crit-wrap">
     <header class="crit-mast">
       <div class="eyebrow">By SpotOne Realty</div>
-      <h1 style="margin-top:14px">Judgment</h1>
-      <p class="sub">A real estate read for Panama. Market, decisions and signals to buy, sell, rent or invest better.</p>
-      <p class="manifesto">More judgment. Less noise.</p>
-      <input id="q" class="crit-search" type="search" placeholder="What do you want to understand better?" aria-label="Search">
+      <h1 style="margin-top:14px">Perspective</h1>
+      <p class="sub">A clearer read on Panama real estate. Market signals, decisions and practical context to buy, sell, rent or invest better.</p>
+      <p class="manifesto">Better perspective. Less noise.</p>
+      <input id="q" class="crit-search" type="search" placeholder="Search a topic, question or read…" aria-label="Search">
     </header>
 
     <div class="pillars" id="pillars">
       <span class="chip on" data-p="All">All</span>
       <span class="chip" data-p="Market">Market</span>
       <span class="chip" data-p="Buying &amp; Selling">Buying &amp; Selling</span>
-      <span class="chip" data-p="Buildings &amp; Areas">Buildings &amp; Areas</span>
+      <span class="chip" data-p="Buildings &amp; Neighborhoods">Buildings &amp; Neighborhoods</span>
       <span class="chip" data-p="AI &amp; Tools">AI &amp; Tools</span>
-      <span class="chip" data-p="Judgment">Judgment</span>
+      <span class="chip" data-p="Decisions">Decisions</span>
     </div>
 
     <div id="list"></div>
@@ -113,7 +115,7 @@
         <h6>Practice</h6>
         <ul>
           <li><a href="/index-en.html#que-hago">What I do</a></li>
-          <li><a href="/criterio/en/">Judgment</a></li>
+          <li><a href="/criterio/en/">Perspective</a></li>
           <li><a href="/index-en.html#dario">About Dario</a></li>
           <li><a href="/index-en.html#contacto">Contact</a></li>
         </ul>
@@ -135,12 +137,12 @@
 <script>
   const ARTICLES = [
     { pillar:"Market", title:"When the same apartment shows up five times", dek:"And what it actually tells you when you see it repeated.", url:"/criterio/the-same-apartment-five-times/", kw:"listings repeated exclusivity zombies prices buying selling outdated portals" },
-    { pillar:"AI &amp; Tools", title:"AI saves me time. The judgment is still mine.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent judgment tools automation" }
+    { pillar:"AI &amp; Tools", title:"AI saves me time. The thinking is still mine.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent thinking tools automation" }
   ];
   const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"All" };
   const listEl = document.getElementById('list');
-  const row = a => '<a class="crit-row" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div></a>';
+  const MORE = "Read note →";
   function render(){
     const q = norm(state.q.trim());
     const sel = norm(state.pillar);
@@ -148,15 +150,10 @@
       (state.pillar==="All" || norm(a.pillar)===sel) &&
       (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
     );
-    if(!rows.length){ listEl.innerHTML = '<div class="crit-list"><div class="crit-noresults">No results. Try another term or category.</div></div>'; return; }
-    const feat = rows[0], rest = rows.slice(1);
-    let html = '<div class="crit-seclabel">Featured read</div>';
-    html += '<a class="crit-featured" href="'+feat.url+'"><span class="tag">'+feat.pillar+'</span><div class="t">'+feat.title+'</div><div class="dek">'+feat.dek+'</div></a>';
-    if(rest.length){
-      html += '<div class="crit-seclabel">More reads</div>';
-      html += '<div class="crit-list">'+rest.map(row).join("")+'</div>';
-    }
-    listEl.innerHTML = html;
+    if(!rows.length){ listEl.innerHTML = '<div class="crit-entries"><div class="crit-noresults">No results. Try another term or category.</div></div>'; return; }
+    listEl.innerHTML = '<div class="crit-entries">' + rows.map((a,i) =>
+      '<a class="crit-entry'+(i===0?' lead':'')+'" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div><span class="more">'+MORE+'</span></a>'
+    ).join("") + '</div>';
   }
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
   document.getElementById('pillars').addEventListener('click', e => {

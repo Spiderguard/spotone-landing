@@ -27,13 +27,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/criterio/criterio.css">
 <style>
-  .crit-search{width:100%;max-width:480px;border:none;border-bottom:1px solid var(--line);background:transparent;
-    font-family:inherit;font-size:17px;color:var(--ink);padding:11px 2px;margin-top:26px;outline:none;display:block}
-  .crit-search::placeholder{color:var(--muted)}
-  .crit-search:focus{border-bottom-color:var(--blue)}
+  .crit-search{width:100%;max-width:760px;border:none;border-bottom:1px solid #ECECE8;background:transparent;
+    font-family:inherit;font-size:clamp(24px,3.2vw,38px);font-weight:300;letter-spacing:-.02em;color:var(--ink);
+    padding:6px 2px 14px;margin-top:16px;outline:none;display:block}
+  .crit-search::placeholder{color:#C7C7C1;font-weight:300}
+  .crit-search:focus{border-bottom-color:var(--blue-sk)}
+  .pillars{padding-top:34px}
   .pillars .chip{cursor:pointer;user-select:none;border-color:#EAEAE6;transition:background .18s,color .18s,border-color .18s}
   .pillars .chip:hover{border-color:var(--line);color:var(--ink)}
-  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line)}
+  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px}
 </style>
 </head>
 <body>
@@ -86,16 +88,16 @@
       <h1 style="margin-top:14px">Criterio</h1>
       <p class="sub">Lectura inmobiliaria para Panamá. Mercado, decisiones y señales para comprar, vender, alquilar o invertir mejor.</p>
       <p class="manifesto">Más criterio. Menos ruido.</p>
-      <input id="q" class="crit-search" type="search" placeholder="¿Qué quieres entender mejor?" aria-label="Buscar">
+      <input id="q" class="crit-search" type="search" placeholder="Buscar tema, pregunta o nota…" aria-label="Buscar">
     </header>
 
     <div class="pillars" id="pillars">
       <span class="chip on" data-p="Todo">Todo</span>
       <span class="chip" data-p="Mercado">Mercado</span>
-      <span class="chip" data-p="Comprar &amp; Vender">Comprar &amp; Vender</span>
-      <span class="chip" data-p="Edificios &amp; Zonas">Edificios &amp; Zonas</span>
-      <span class="chip" data-p="IA &amp; Herramientas">IA &amp; Herramientas</span>
-      <span class="chip" data-p="Criterio">Criterio</span>
+      <span class="chip" data-p="Comprar &amp; vender">Comprar &amp; vender</span>
+      <span class="chip" data-p="Edificios &amp; zonas">Edificios &amp; zonas</span>
+      <span class="chip" data-p="IA &amp; herramientas">IA &amp; herramientas</span>
+      <span class="chip" data-p="Decisiones">Decisiones</span>
     </div>
 
     <div id="list"></div>
@@ -135,12 +137,12 @@
 <script>
   const ARTICLES = [
     { pillar:"Mercado", title:"Cuando el mismo apartamento aparece cinco veces", dek:"Y qué te dice de verdad cuando lo ves repetido.", url:"/criterio/el-mismo-apartamento-cinco-veces/", kw:"listings anuncios repetidos exclusividad zombies precios saturacion vender comprar desactualizados portales" },
-    { pillar:"IA &amp; Herramientas", title:"La IA me ahorra tiempo. El criterio todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
+    { pillar:"IA &amp; herramientas", title:"La IA me ahorra tiempo. El criterio todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
   ];
   const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"Todo" };
   const listEl = document.getElementById('list');
-  const row = a => '<a class="crit-row" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div></a>';
+  const MORE = "Leer nota →";
   function render(){
     const q = norm(state.q.trim());
     const sel = norm(state.pillar);
@@ -148,15 +150,10 @@
       (state.pillar==="Todo" || norm(a.pillar)===sel) &&
       (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
     );
-    if(!rows.length){ listEl.innerHTML = '<div class="crit-list"><div class="crit-noresults">Sin resultados. Prueba con otro término o categoría.</div></div>'; return; }
-    const feat = rows[0], rest = rows.slice(1);
-    let html = '<div class="crit-seclabel">Lectura destacada</div>';
-    html += '<a class="crit-featured" href="'+feat.url+'"><span class="tag">'+feat.pillar+'</span><div class="t">'+feat.title+'</div><div class="dek">'+feat.dek+'</div></a>';
-    if(rest.length){
-      html += '<div class="crit-seclabel">Más lecturas</div>';
-      html += '<div class="crit-list">'+rest.map(row).join("")+'</div>';
-    }
-    listEl.innerHTML = html;
+    if(!rows.length){ listEl.innerHTML = '<div class="crit-entries"><div class="crit-noresults">Sin resultados. Prueba con otro término o categoría.</div></div>'; return; }
+    listEl.innerHTML = '<div class="crit-entries">' + rows.map((a,i) =>
+      '<a class="crit-entry'+(i===0?' lead':'')+'" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div><span class="more">'+MORE+'</span></a>'
+    ).join("") + '</div>';
   }
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
   document.getElementById('pillars').addEventListener('click', e => {
