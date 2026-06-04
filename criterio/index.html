@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpotOne Realty">
 <meta property="og:title" content="Criterio · Lectura inmobiliaria para Panamá">
-<meta property="og:description" content="Cómo está cambiando el mercado inmobiliario y cómo decidir mejor. Más criterio. Menos ruido.">
+<meta property="og:description" content="Cómo está cambiando el mercado inmobiliario y cómo decidir mejor.">
 <meta property="og:url" content="https://www.spotonerealty.com/criterio/">
 <meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <meta property="og:locale" content="es_PA">
@@ -22,8 +22,16 @@
 <link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/criterio/criterio.css">
+<style>
+  .crit-search{width:100%;max-width:440px;border:none;border-bottom:1px solid var(--line);background:transparent;
+    font-family:inherit;font-size:17px;color:var(--ink);padding:11px 2px;margin-top:30px;outline:none;display:block}
+  .crit-search::placeholder{color:var(--muted)}
+  .crit-search:focus{border-bottom-color:var(--blue)}
+  .pillars .chip{cursor:pointer;user-select:none;transition:background .15s,color .15s,border-color .15s}
+  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line)}
+</style>
 </head>
 <body>
 
@@ -75,23 +83,18 @@
       <h1 style="margin-top:14px">Criterio</h1>
       <p class="sub">Lectura inmobiliaria para Panamá. Cómo está cambiando el mercado — y cómo decidir mejor. Para quien compra, vende, alquila o invierte.</p>
       <p class="manifesto">Más criterio. Menos ruido.</p>
+      <input id="q" class="crit-search" type="search" placeholder="Buscar una nota…" aria-label="Buscar">
     </header>
 
-    <div class="pillars">
-      <span class="chip on">Todo</span>
-      <span class="chip">Mercado</span>
-      <span class="chip">Tendencias</span>
-      <span class="chip">Tech &amp; Herramientas</span>
-      <span class="chip">Decisiones</span>
+    <div class="pillars" id="pillars">
+      <span class="chip on" data-p="Todo">Todo</span>
+      <span class="chip" data-p="Mercado">Mercado</span>
+      <span class="chip" data-p="Tendencias">Tendencias</span>
+      <span class="chip" data-p="Tech &amp; Herramientas">Tech &amp; Herramientas</span>
+      <span class="chip" data-p="Decisiones">Decisiones</span>
     </div>
 
-    <div class="crit-list">
-      <a class="crit-row" href="/criterio/la-ia-no-te-va-a-reemplazar/">
-        <span class="tag">Tech &amp; Herramientas</span>
-        <div class="t">La IA no te va a reemplazar. Te va a ahorrar la parte aburrida.</div>
-        <div class="dek">Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.</div>
-      </a>
-    </div>
+    <div class="crit-list" id="list"></div>
   </div>
 </main>
 
@@ -126,6 +129,32 @@
 </footer>
 
 <script>
+  const ARTICLES = [
+    { pillar:"Mercado", title:"Por qué el mismo apartamento aparece cinco veces", dek:"Y qué te dice de verdad cuando lo ves repetido.", url:"/criterio/el-mismo-apartamento-cinco-veces/", kw:"listings anuncios repetidos exclusividad zombies precios saturacion vender comprar desactualizados portales" },
+    { pillar:"Tech & Herramientas", title:"La IA no te va a reemplazar. Te va a ahorrar la parte aburrida.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
+  ];
+  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+  let state = { q:"", pillar:"Todo" };
+  const listEl = document.getElementById('list');
+  function render(){
+    const q = norm(state.q.trim());
+    const rows = ARTICLES.filter(a =>
+      (state.pillar==="Todo" || a.pillar===state.pillar) &&
+      (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
+    );
+    if(!rows.length){ listEl.innerHTML = '<div class="crit-noresults">Sin resultados. Prueba con otro término o pilar.</div>'; return; }
+    listEl.innerHTML = rows.map(a =>
+      '<a class="crit-row" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div></a>'
+    ).join("");
+  }
+  document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
+  document.getElementById('pillars').addEventListener('click', e => {
+    const chip = e.target.closest('.chip'); if(!chip) return;
+    document.querySelectorAll('#pillars .chip').forEach(c => c.classList.remove('on'));
+    chip.classList.add('on'); state.pillar = chip.dataset.p; render();
+  });
+  render();
+
   const mm=document.getElementById('mobileMenu');
   document.getElementById('menuOpen').onclick=()=>{mm.classList.add('on');document.body.classList.add('menu-open')};
   document.getElementById('menuClose').onclick=()=>{mm.classList.remove('on');document.body.classList.remove('menu-open')};
