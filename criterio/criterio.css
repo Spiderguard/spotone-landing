@@ -56,7 +56,7 @@ body.menu-open{overflow:hidden}
 .crit-back{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .crit-back:hover{color:var(--blue)}
 .crit-tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:500;margin-top:34px;display:block}
-.crit-title{font-size:clamp(30px,4.2vw,46px);font-weight:300;letter-spacing:-.026em;line-height:1.07;margin:16px 0 20px;color:var(--ink)}
+.crit-title{font-size:clamp(28px,2.8vw,38px);font-weight:400;letter-spacing:-.018em;line-height:1.1;margin:16px 0 18px;color:var(--ink)}
 .crit-dek{font-size:19px;line-height:1.5;color:var(--body);font-weight:300}
 .crit-meta{font-size:12.5px;color:var(--muted);margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
 .crit-body{margin-top:38px}
@@ -89,7 +89,7 @@ body.menu-open{overflow:hidden}
 .crit-entry{display:block;border-top:1px solid var(--line);padding:40px 0}
 .crit-entry.lead{padding:50px 0 54px}
 .crit-entry .tag{font-size:12.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--blue);font-weight:600}
-.crit-entry .t{font-size:clamp(32px,4.4vw,50px);font-weight:400;letter-spacing:-.027em;line-height:1.06;margin:16px 0 14px;color:var(--ink);transition:color .15s;max-width:20ch}
+.crit-entry .t{font-size:clamp(28px,2.8vw,38px);font-weight:400;letter-spacing:-.018em;line-height:1.1;margin:14px 0 12px;color:var(--ink);transition:color .15s;max-width:24ch}
 .crit-entry:hover .t{color:var(--blue)}
 .crit-entry .dek{font-size:18px;color:var(--body);max-width:56ch;line-height:1.5}
 .crit-entry .more{display:inline-block;margin-top:20px;font-size:14px;color:var(--blue);font-weight:500;letter-spacing:.01em}
