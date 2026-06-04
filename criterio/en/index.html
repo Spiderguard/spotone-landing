@@ -25,18 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/criterio/criterio.css?v=2">
-<style>
-  .crit-search{width:100%;max-width:760px;border:none;border-bottom:1px solid #ECECE8;background:transparent;
-    font-family:inherit;font-size:clamp(24px,3.2vw,38px);font-weight:300;letter-spacing:-.02em;color:var(--ink);
-    padding:6px 2px 14px;margin-top:16px;outline:none;display:block}
-  .crit-search::placeholder{color:#C7C7C1;font-weight:300}
-  .crit-search:focus{border-bottom-color:var(--blue-sk)}
-  .pillars{padding-top:34px}
-  .pillars .chip{cursor:pointer;user-select:none;border-color:#EAEAE6;transition:background .18s,color .18s,border-color .18s}
-  .pillars .chip:hover{border-color:var(--line);color:var(--ink)}
-  .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px}
-</style>
+<link rel="stylesheet" href="/criterio/criterio.css?v=3">
 </head>
 <body>
 
@@ -85,10 +74,13 @@
   <div class="crit-wrap">
     <header class="crit-mast">
       <div class="eyebrow">By SpotOne Realty</div>
-      <h1 style="margin-top:14px">Perspective</h1>
+      <h1>Perspective</h1>
       <p class="sub">A clearer read on Panama real estate. Market signals, decisions and practical context to buy, sell, rent or invest better.</p>
       <p class="manifesto">Better perspective. Less noise.</p>
-      <input id="q" class="crit-search" type="search" placeholder="Search a topic, question or read…" aria-label="Search">
+      <div class="crit-search-block">
+        <span class="crit-search-label">Search Perspective</span>
+        <input id="q" class="crit-search" type="search" placeholder="Topic, question or keyword" aria-label="Search Perspective">
+      </div>
     </header>
 
     <div class="pillars" id="pillars">
