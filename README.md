@@ -1,6 +1,6 @@
 # SpotOne Realty — Landing
 
-Sitio editorial boutique para SpotOne Realty, publicado vía GitHub Pages.
+Sitio editorial para SpotOne Realty, publicado vía GitHub Pages.
 
 ## Edición y deploy
 
@@ -19,6 +19,8 @@ spotone-landing/
 ├── CNAME
 ├── favicon-32.png
 ├── favicon-180.png
+├── robots.txt
+├── sitemap.xml
 ├── en/
 ├── contacto/
 ├── contact/
