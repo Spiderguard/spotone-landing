@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <title>Judgment · Real estate read for Panama · SpotOne Realty</title>
-<meta name="description" content="Judgment: how the real estate market is changing and how to make better decisions in Panama. For buyers, sellers, renters and investors. By Dario Jhangimal, licensed broker PN-1240.">
+<meta name="description" content="Judgment: a real estate read for Panama. Market, decisions and signals to buy, sell, rent or invest better. By Dario Jhangimal, licensed broker PN-1240.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpotOne Realty">
 <meta property="og:title" content="Judgment · Real estate read for Panama">
-<meta property="og:description" content="How the real estate market is changing — and how to decide better.">
+<meta property="og:description" content="Market, decisions and signals to buy, sell, rent or invest better.">
 <meta property="og:url" content="https://www.spotonerealty.com/criterio/en/">
 <meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <meta property="og:locale" content="en_US">
@@ -27,11 +27,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/criterio/criterio.css">
 <style>
-  .crit-search{width:100%;max-width:440px;border:none;border-bottom:1px solid var(--line);background:transparent;
-    font-family:inherit;font-size:17px;color:var(--ink);padding:11px 2px;margin-top:30px;outline:none;display:block}
+  .crit-search{width:100%;max-width:480px;border:none;border-bottom:1px solid var(--line);background:transparent;
+    font-family:inherit;font-size:17px;color:var(--ink);padding:11px 2px;margin-top:26px;outline:none;display:block}
   .crit-search::placeholder{color:var(--muted)}
   .crit-search:focus{border-bottom-color:var(--blue)}
-  .pillars .chip{cursor:pointer;user-select:none;transition:background .15s,color .15s,border-color .15s}
+  .pillars .chip{cursor:pointer;user-select:none;border-color:#EAEAE6;transition:background .18s,color .18s,border-color .18s}
+  .pillars .chip:hover{border-color:var(--line);color:var(--ink)}
   .crit-noresults{padding:44px 0;color:var(--muted);font-size:15px;border-bottom:1px solid var(--line)}
 </style>
 </head>
@@ -83,20 +84,21 @@
     <header class="crit-mast">
       <div class="eyebrow">By SpotOne Realty</div>
       <h1 style="margin-top:14px">Judgment</h1>
-      <p class="sub">A real estate read for Panama. How the market is changing — and how to decide better. For buyers, sellers, renters and investors.</p>
+      <p class="sub">A real estate read for Panama. Market, decisions and signals to buy, sell, rent or invest better.</p>
       <p class="manifesto">More judgment. Less noise.</p>
-      <input id="q" class="crit-search" type="search" placeholder="Search a piece…" aria-label="Search">
+      <input id="q" class="crit-search" type="search" placeholder="What do you want to understand better?" aria-label="Search">
     </header>
 
     <div class="pillars" id="pillars">
       <span class="chip on" data-p="All">All</span>
       <span class="chip" data-p="Market">Market</span>
-      <span class="chip" data-p="Trends">Trends</span>
-      <span class="chip" data-p="Tech &amp; Tools">Tech &amp; Tools</span>
-      <span class="chip" data-p="Decisions">Decisions</span>
+      <span class="chip" data-p="Buying &amp; Selling">Buying &amp; Selling</span>
+      <span class="chip" data-p="Buildings &amp; Areas">Buildings &amp; Areas</span>
+      <span class="chip" data-p="AI &amp; Tools">AI &amp; Tools</span>
+      <span class="chip" data-p="Judgment">Judgment</span>
     </div>
 
-    <div class="crit-list" id="list"></div>
+    <div id="list"></div>
   </div>
 </main>
 
@@ -133,21 +135,28 @@
 <script>
   const ARTICLES = [
     { pillar:"Market", title:"When the same apartment shows up five times", dek:"And what it actually tells you when you see it repeated.", url:"/criterio/the-same-apartment-five-times/", kw:"listings repeated exclusivity zombies prices buying selling outdated portals" },
-    { pillar:"Tech & Tools", title:"AI won't replace you. It'll take the boring part off your plate.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent judgment tools automation" }
+    { pillar:"AI &amp; Tools", title:"AI saves me time. The judgment is still mine.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent judgment tools automation" }
   ];
-  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"All" };
   const listEl = document.getElementById('list');
+  const row = a => '<a class="crit-row" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div></a>';
   function render(){
     const q = norm(state.q.trim());
+    const sel = norm(state.pillar);
     const rows = ARTICLES.filter(a =>
-      (state.pillar==="All" || a.pillar===state.pillar) &&
+      (state.pillar==="All" || norm(a.pillar)===sel) &&
       (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
     );
-    if(!rows.length){ listEl.innerHTML = '<div class="crit-noresults">No results. Try another term or pillar.</div>'; return; }
-    listEl.innerHTML = rows.map(a =>
-      '<a class="crit-row" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div></a>'
-    ).join("");
+    if(!rows.length){ listEl.innerHTML = '<div class="crit-list"><div class="crit-noresults">No results. Try another term or category.</div></div>'; return; }
+    const feat = rows[0], rest = rows.slice(1);
+    let html = '<div class="crit-seclabel">Featured read</div>';
+    html += '<a class="crit-featured" href="'+feat.url+'"><span class="tag">'+feat.pillar+'</span><div class="t">'+feat.title+'</div><div class="dek">'+feat.dek+'</div></a>';
+    if(rest.length){
+      html += '<div class="crit-seclabel">More reads</div>';
+      html += '<div class="crit-list">'+rest.map(row).join("")+'</div>';
+    }
+    listEl.innerHTML = html;
   }
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
   document.getElementById('pillars').addEventListener('click', e => {
