@@ -64,7 +64,7 @@ body.menu-open{overflow:hidden}
 .crit-body p strong{font-weight:500;color:var(--ink)}
 .crit-pull{font-size:23px;font-weight:300;font-style:italic;color:var(--blue);border-left:2px solid var(--blue-sk);padding-left:24px;margin:36px 0;line-height:1.42}
 .crit-close{font-size:15px;color:var(--blue);font-style:italic;margin-top:6px}
-.crit-body .em{font-size:25px;font-weight:600;color:var(--blue);letter-spacing:-.012em;line-height:1.25;margin:32px 0}
+.crit-body .em{font-size:33px;font-weight:600;color:var(--blue);letter-spacing:-.016em;line-height:1.28;margin:52px 0;padding-left:26px;border-left:2px solid var(--blue-sk)}
 .crit-body .qh{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:42px 0 6px}
 .crit-body .pt{margin-bottom:20px}
 .crit-body .pt b{font-weight:600;color:var(--ink)}
