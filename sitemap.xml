@@ -201,4 +201,18 @@
     <lastmod>2026-06-05</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/alquilar-o-comprar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/alquilar-o-comprar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/rent-or-buy/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/rent-or-buy/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/alquilar-o-comprar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/rent-or-buy/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
