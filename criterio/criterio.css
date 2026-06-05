@@ -103,16 +103,14 @@ body.menu-open{overflow:hidden}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .crit-noresults{padding:42px 0;color:var(--muted);font-size:15px;border-top:1px solid var(--line);margin-top:36px}
 /* listado = módulo editorial (hereda .approach-grid de "Qué hago") */
-.crit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line);margin-top:36px}
-.crit-cell{padding:38px 0;border-bottom:1px solid var(--line);display:block;min-width:0}
-.crit-cell:nth-child(odd){padding-right:50px;border-right:1px solid var(--line)}
-.crit-cell:nth-child(even){padding-left:50px}
-.crit-cell .tag{display:block;color:var(--blue);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;line-height:1;margin-bottom:16px}
-.crit-cell .t{font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-.008em;line-height:1.3;margin-bottom:9px;transition:color .15s}
+.crit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:72px;row-gap:0;border-top:1px solid var(--line);margin-top:36px}
+.crit-cell{padding:36px 0 42px;border-bottom:1px solid var(--line);display:block;min-width:0}
+.crit-cell .tag{display:block;color:var(--blue);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;line-height:1;margin-bottom:18px}
+.crit-cell .t{font-size:18.5px;font-weight:500;color:var(--ink);letter-spacing:-.005em;line-height:1.32;margin-bottom:10px;transition:color .15s}
 .crit-cell .t em{font-style:italic;color:var(--blue-sk);font-weight:400}
 .crit-cell:hover .t{color:var(--blue)}
 .crit-cell .dek{font-size:14.6px;color:var(--body-3);line-height:1.68;max-width:42ch}
-.crit-cell .more{display:inline-block;margin-top:18px;font-size:13px;color:var(--blue);font-weight:500;letter-spacing:.01em}
+.crit-cell .more{display:inline-block;margin-top:20px;font-size:12.5px;color:var(--blue);font-weight:400;letter-spacing:.01em}
 @media(max-width:760px){
   .crit-index{padding:48px 0 20px}
   .crit-index>.container{box-sizing:border-box;width:100%;max-width:100%;padding-left:20px;padding-right:20px;margin:0;overflow-x:hidden}
