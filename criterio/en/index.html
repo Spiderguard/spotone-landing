@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/criterio/criterio.css?v=6">
+<link rel="stylesheet" href="/criterio/criterio.css?v=7">
 </head>
 <body>
 
@@ -129,10 +129,10 @@
 
 <script>
   const ARTICLES = [
-    { pillar:"Market", title:"When the same apartment shows up five times", dek:"And what it actually tells you when you see it repeated.", url:"/criterio/the-same-apartment-five-times/", kw:"listings repeated exclusivity zombies prices buying selling outdated portals" },
-    { pillar:"AI &amp; Tools", title:"AI saves me time. The thinking is still mine.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent thinking tools automation" }
+    { pillar:"Market", title:"When the same apartment shows up <em>five times</em>", dek:"And what it actually tells you when you see it repeated.", url:"/criterio/the-same-apartment-five-times/", kw:"listings repeated exclusivity zombies prices buying selling outdated portals" },
+    { pillar:"AI &amp; Tools", title:"AI saves me time. <em>The thinking</em> is still mine.", dek:"What artificial intelligence does change in real estate — and what it can't touch.", url:"/criterio/ai-wont-replace-you/", kw:"artificial intelligence ai technology agent thinking tools automation" }
   ];
-  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&amp;/g,"&");
+  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"All" };
   const listEl = document.getElementById('list');
   const MORE = "Read note →";

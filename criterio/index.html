@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/criterio/criterio.css?v=6">
+<link rel="stylesheet" href="/criterio/criterio.css?v=7">
 </head>
 <body>
 
@@ -129,10 +129,10 @@
 
 <script>
   const ARTICLES = [
-    { pillar:"Mercado", title:"Cuando el mismo apartamento aparece cinco veces", dek:"Y qué te dice de verdad cuando lo ves repetido.", url:"/criterio/el-mismo-apartamento-cinco-veces/", kw:"listings anuncios repetidos exclusividad zombies precios saturacion vender comprar desactualizados portales" },
-    { pillar:"IA &amp; herramientas", title:"La IA me ahorra tiempo. El criterio todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
+    { pillar:"Mercado", title:"Cuando el mismo apartamento aparece <em>cinco veces</em>", dek:"Y qué te dice de verdad cuando lo ves repetido.", url:"/criterio/el-mismo-apartamento-cinco-veces/", kw:"listings anuncios repetidos exclusividad zombies precios saturacion vender comprar desactualizados portales" },
+    { pillar:"IA &amp; herramientas", title:"La IA me ahorra tiempo. <em>El criterio</em> todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
   ];
-  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&amp;/g,"&");
+  const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"Todo" };
   const listEl = document.getElementById('list');
   const MORE = "Leer nota →";
