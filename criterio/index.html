@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/criterio/criterio.css?v=4">
+<link rel="stylesheet" href="/criterio/criterio.css?v=6">
 </head>
 <body>
 
@@ -71,29 +71,30 @@
 </div>
 
 <main>
-  <div class="crit-wrap">
-    <header class="crit-mast">
-      <div class="eyebrow">Por SpotOne Realty</div>
-      <h1>Criterio</h1>
-      <p class="sub">Lectura inmobiliaria para Panamá. Mercado, decisiones y señales para comprar, vender, alquilar o invertir mejor.</p>
-      <p class="manifesto">Más criterio. Menos ruido.</p>
-      <div class="crit-search-block">
-        <span class="crit-search-label">Buscar en Criterio</span>
-        <input id="q" class="crit-search" type="search" placeholder="Tema, pregunta o palabra clave" aria-label="Buscar en Criterio">
+  <section class="crit-index">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Por SpotOne Realty</span>
+        <h1>Criterio</h1>
+        <p class="lead">Lectura inmobiliaria para Panamá. Mercado, decisiones y señales para comprar, vender, alquilar o invertir mejor — <em>con criterio, no con ruido</em>.</p>
+        <div class="crit-search-block">
+          <span class="crit-search-label">Buscar en Criterio</span>
+          <input id="q" class="crit-search" type="search" placeholder="Tema, pregunta o palabra clave" aria-label="Buscar en Criterio">
+        </div>
       </div>
-    </header>
 
-    <div class="pillars" id="pillars">
-      <span class="chip on" data-p="Todo">Todo</span>
-      <span class="chip" data-p="Mercado">Mercado</span>
-      <span class="chip" data-p="Comprar &amp; vender">Comprar &amp; vender</span>
-      <span class="chip" data-p="Edificios &amp; zonas">Edificios &amp; zonas</span>
-      <span class="chip" data-p="IA &amp; herramientas">IA &amp; herramientas</span>
-      <span class="chip" data-p="Decisiones">Decisiones</span>
+      <div class="pillars" id="pillars">
+        <span class="chip on" data-p="Todo">Todo</span>
+        <span class="chip" data-p="Mercado">Mercado</span>
+        <span class="chip" data-p="Comprar &amp; vender">Comprar &amp; vender</span>
+        <span class="chip" data-p="Edificios &amp; zonas">Edificios &amp; zonas</span>
+        <span class="chip" data-p="IA &amp; herramientas">IA &amp; herramientas</span>
+        <span class="chip" data-p="Decisiones">Decisiones</span>
+      </div>
+
+      <div id="list"></div>
     </div>
-
-    <div id="list"></div>
-  </div>
+  </section>
 </main>
 
 <footer>
@@ -142,9 +143,9 @@
       (state.pillar==="Todo" || norm(a.pillar)===sel) &&
       (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
     );
-    if(!rows.length){ listEl.innerHTML = '<div class="crit-entries"><div class="crit-noresults">Sin resultados. Prueba con otro término o categoría.</div></div>'; return; }
-    listEl.innerHTML = '<div class="crit-entries">' + rows.map((a,i) =>
-      '<a class="crit-entry'+(i===0?' lead':'')+'" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div><span class="more">'+MORE+'</span></a>'
+    if(!rows.length){ listEl.innerHTML = '<div class="crit-noresults">Sin resultados. Prueba con otro término o categoría.</div>'; return; }
+    listEl.innerHTML = '<div class="crit-grid">' + rows.map(a =>
+      '<a class="crit-cell" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div><span class="more">'+MORE+'</span></a>'
     ).join("") + '</div>';
   }
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
