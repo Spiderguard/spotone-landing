@@ -103,4 +103,18 @@
     <lastmod>2026-06-04</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/vivir-no-es-invertir/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/vivir-no-es-invertir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/living-vs-investing/"/>
+    <lastmod>2026-06-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/living-vs-investing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/vivir-no-es-invertir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/living-vs-investing/"/>
+    <lastmod>2026-06-04</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
