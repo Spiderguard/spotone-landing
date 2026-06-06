@@ -35,45 +35,75 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "@id": "https://www.spotonerealty.com/#spotone",
-  "name": "SpotOne Realty",
-  "url": "https://www.spotonerealty.com/",
-  "logo": "https://www.spotonerealty.com/images/logo.svg",
-  "image": [
-    "https://www.spotonerealty.com/images/hero-main-desktop.jpg",
-    "https://www.spotonerealty.com/images/dario-brand-vertical.jpg"
-  ],
-  "telephone": "+50766758127",
-  "email": "info@spotonerealty.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Panamá",
-    "addressCountry": "PA"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Ciudad de Panamá" },
-    { "@type": "Place", "name": "Costa del Este" },
-    { "@type": "Place", "name": "Coco del Mar" },
-    { "@type": "Place", "name": "San Francisco" },
-    { "@type": "Place", "name": "Punta Pacífica" },
-    { "@type": "Place", "name": "Punta Paitilla" },
-    { "@type": "Place", "name": "Casco Antiguo" }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 8.9824,
-    "longitude": -79.5199
-  },
-  "knowsLanguage": ["es", "en"],
-  "founder": {
-    "@type": "Person",
-    "name": "Dario Jhangimal",
-    "jobTitle": "Corredor inmobiliario",
-    "identifier": "PN-1240"
-  },
-  "sameAs": ["https://instagram.com/spotonerealty"],
-  "description": "Asesoría inmobiliaria con criterio en Panamá para comprar, vender o alquilar con lectura de mercado, estrategia y proceso."
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.spotonerealty.com/#dario",
+      "name": "Dario Jhangimal",
+      "url": "https://www.spotonerealty.com/#dario",
+      "image": "https://www.spotonerealty.com/images/dario-brand-vertical.jpg",
+      "jobTitle": "Corredor de Bienes Raíces",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Licencia de corredor (Panamá)",
+        "value": "PN-1240"
+      },
+      "worksFor": { "@id": "https://www.spotonerealty.com/#spotone" },
+      "knowsLanguage": ["es", "en"],
+      "knowsAbout": [
+        "Bienes raíces en Panamá",
+        "Inversión inmobiliaria",
+        "Lectura de mercado inmobiliario",
+        "Captación y venta de propiedades"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/dario-jhangimal-v-14449751/",
+        "https://www.facebook.com/dario.jhangimal",
+        "https://instagram.com/spotonerealty",
+        "https://www.twinglobal.org/twin-global/speakers/dario-jhangimal"
+      ],
+      "description": "Corredor de bienes raíces en Panamá (licencia PN-1240) y fundador de SpotOne Realty. Acompaña a dueños y compradores con lectura de mercado: criterio antes que prisa."
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://www.spotonerealty.com/#spotone",
+      "name": "SpotOne Realty",
+      "url": "https://www.spotonerealty.com/",
+      "logo": "https://www.spotonerealty.com/images/logo.svg",
+      "image": [
+        "https://www.spotonerealty.com/images/hero-main-desktop.jpg",
+        "https://www.spotonerealty.com/images/dario-brand-vertical.jpg"
+      ],
+      "telephone": "+50766758127",
+      "email": "info@spotonerealty.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Panamá",
+        "addressCountry": "PA"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Ciudad de Panamá" },
+        { "@type": "Place", "name": "Costa del Este" },
+        { "@type": "Place", "name": "Coco del Mar" },
+        { "@type": "Place", "name": "San Francisco" },
+        { "@type": "Place", "name": "Punta Pacífica" },
+        { "@type": "Place", "name": "Punta Paitilla" },
+        { "@type": "Place", "name": "Casco Antiguo" }
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.9824,
+        "longitude": -79.5199
+      },
+      "knowsLanguage": ["es", "en"],
+      "founder": { "@id": "https://www.spotonerealty.com/#dario" },
+      "employee": { "@id": "https://www.spotonerealty.com/#dario" },
+      "sameAs": [
+        "https://instagram.com/spotonerealty"
+      ],
+      "description": "Asesoría inmobiliaria con criterio en Panamá para comprar, vender o alquilar con lectura de mercado, estrategia y proceso."
+    }
+  ]
 }
 </script>
 <style>
@@ -791,6 +821,8 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
       <a href="https://wa.me/50766758127"><small>WhatsApp</small>+507 6675-8127</a>
       <a href="mailto:info@spotonerealty.com"><small>Correo</small>info@spotonerealty.com</a>
       <a href="https://instagram.com/spotonerealty"><small>Instagram</small>@spotonerealty</a>
+      <a href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" rel="me"><small>LinkedIn</small>Dario Jhangimal</a>
+      <a href="https://www.facebook.com/dario.jhangimal" rel="me"><small>Facebook</small>Dario Jhangimal</a>
     </div>
   </div>
 </section>
