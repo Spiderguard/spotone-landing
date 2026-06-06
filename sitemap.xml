@@ -257,4 +257,18 @@
     <lastmod>2026-06-05</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/donde-vivir-en-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/donde-vivir-en-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/where-to-live-in-panama/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/where-to-live-in-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/donde-vivir-en-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/where-to-live-in-panama/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
