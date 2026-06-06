@@ -271,4 +271,18 @@
     <lastmod>2026-06-05</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/la-plusvalia-no-esta-garantizada/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/la-plusvalia-no-esta-garantizada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/real-estate-doesnt-always-go-up/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/real-estate-doesnt-always-go-up/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/la-plusvalia-no-esta-garantizada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/real-estate-doesnt-always-go-up/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
