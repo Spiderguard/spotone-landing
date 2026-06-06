@@ -285,4 +285,18 @@
     <lastmod>2026-06-05</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/mercado-compradores-o-vendedores/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/mercado-compradores-o-vendedores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buyers-or-sellers-market/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/buyers-or-sellers-market/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/mercado-compradores-o-vendedores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buyers-or-sellers-market/"/>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
