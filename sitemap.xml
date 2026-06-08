@@ -34,6 +34,20 @@
 
   <!-- Notas -->
   <url>
+    <loc>https://www.spotonerealty.com/criterio/tamano-propiedad-reventa/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/tamano-propiedad-reventa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/bigger-isnt-always-worth-more/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/bigger-isnt-always-worth-more/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/tamano-propiedad-reventa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/bigger-isnt-always-worth-more/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/remodelar-antes-de-vender/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/remodelar-antes-de-vender/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/renovate-before-selling/"/>
