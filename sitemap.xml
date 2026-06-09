@@ -437,4 +437,18 @@
     <lastmod>2026-06-08</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
