@@ -95,6 +95,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-living-far-really-costs/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/donde-vivir-en-panama/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/donde-vivir-en-panama/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/where-to-live-in-panama/"/>
@@ -189,6 +203,13 @@
     <loc>https://www.spotonerealty.com/criterio/lo-que-ya-gastaste-no-decide/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/lo-que-ya-gastaste-no-decide/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-you-already-spent/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
     <lastmod>2026-06-08</lastmod>
     <priority>0.8</priority>
   </url>
@@ -389,6 +410,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/what-living-far-really-costs/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-living-far-really-costs/"/>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/what-you-already-spent/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/lo-que-ya-gastaste-no-decide/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-you-already-spent/"/>
@@ -424,31 +452,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-living-far-really-costs/"/>
-    <lastmod>2026-06-08</lastmod>
+    <loc>https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.spotonerealty.com/criterio/what-living-far-really-costs/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-living-far-really-costs/"/>
-    <lastmod>2026-06-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
-    <lastmod>2026-06-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuota-mantenimiento-ph/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/low-condo-maintenance-fee/"/>
-    <lastmod>2026-06-08</lastmod>
+    <loc>https://www.spotonerealty.com/criterio/pay-cash-or-finance/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
