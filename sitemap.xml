@@ -479,4 +479,18 @@
     <lastmod>2026-06-09</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/buy-new-or-resale/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
