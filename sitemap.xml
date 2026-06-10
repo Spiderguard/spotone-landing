@@ -493,4 +493,18 @@
     <lastmod>2026-06-09</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/spot-an-appreciating-area/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
