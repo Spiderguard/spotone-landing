@@ -21,14 +21,14 @@
     <loc>https://www.spotonerealty.com/criterio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -56,7 +56,7 @@
     <loc>https://www.spotonerealty.com/criterio/alquilar-o-comprar/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/alquilar-o-comprar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/rent-or-buy/"/>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -74,6 +74,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/buy-new-or-resale/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/buy-to-rent/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-para-alquilar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-to-rent/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/buyers-or-sellers-market/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/mercado-compradores-o-vendedores/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buyers-or-sellers-market/"/>
@@ -88,6 +102,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/comprar-desde-afuera/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-desde-afuera/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buying-from-abroad/"/>
@@ -95,10 +116,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/comprar-para-alquilar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-para-alquilar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-to-rent/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/costo-de-vivir-lejos/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/what-living-far-really-costs/"/>
     <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/cuanto-dar-de-inicial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuanto-dar-de-inicial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/how-much-down-payment/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -155,6 +197,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/gangas-reales-vs-instagram/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/real-vs-instagram-bargains/"/>
     <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/how-much-down-payment/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/cuanto-dar-de-inicial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/how-much-down-payment/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -228,10 +277,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/paneles-solares-valor-o-ahorro/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/paneles-solares-valor-o-ahorro/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/solar-panels-value-or-savings/"/>
     <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/pay-cash-or-finance/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -301,21 +364,21 @@
     <loc>https://www.spotonerealty.com/criterio/rent-or-buy/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/alquilar-o-comprar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/rent-or-buy/"/>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/second-home-strategy/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/segunda-vivienda-estrategia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/second-home-strategy/"/>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/segunda-vivienda-estrategia/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/segunda-vivienda-estrategia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/second-home-strategy/"/>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -323,6 +386,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/paneles-solares-valor-o-ahorro/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/solar-panels-value-or-savings/"/>
     <lastmod>2026-06-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/spot-an-appreciating-area/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -450,61 +520,5 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/your-unit-doesnt-always-follow/"/>
     <lastmod>2026-06-08</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/pay-cash-or-finance/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/pagar-contado-o-financiar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pay-cash-or-finance/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/comprar-para-alquilar/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-para-alquilar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-to-rent/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/buy-to-rent/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-para-alquilar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-to-rent/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/buy-new-or-resale/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/comprar-nuevo-o-usado/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buy-new-or-resale/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/spot-an-appreciating-area/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/como-saber-si-una-zona-se-valoriza/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/spot-an-appreciating-area/"/>
-    <lastmod>2026-06-09</lastmod>
-    <priority>0.7</priority>
   </url>
 </urlset>
