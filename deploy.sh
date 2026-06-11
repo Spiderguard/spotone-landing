@@ -4,6 +4,11 @@ cd "$(dirname "$0")"
 
 MSG="${1:-update}"
 
+# Regenera el sitemap automaticamente leyendo lo que cada pagina declara.
+# Asi nunca hay que editar sitemap.xml a mano.
+echo "→ Generando sitemap.xml…"
+python3 build-sitemap.py
+
 if [[ -z "$(git status --porcelain)" ]]; then
   echo "✓ Sin cambios para publicar."
   exit 0
