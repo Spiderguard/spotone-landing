@@ -17,7 +17,7 @@
   "use strict";
 
   // ── Pega aquí tu ID de GA4 ──────────────────────────────────────────────
-  var MEASUREMENT_ID = "G-XXXXXXXXXX";
+  var MEASUREMENT_ID = "G-J68CEBVH69";
   // ────────────────────────────────────────────────────────────────────────
 
   var CONFIGURED =
