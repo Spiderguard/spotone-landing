@@ -221,6 +221,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/ia-reemplaza-corredores/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/ia-reemplaza-corredores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/will-ai-replace-real-estate-agents/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/ia-reemplaza-corredores/"/>
+    <lastmod>2026-06-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/income-or-appreciation/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/renta-por-operacion-o-plusvalia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/income-or-appreciation/"/>
@@ -567,6 +575,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/por-que-no-se-vende-tu-propiedad/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/why-your-property-isnt-selling/"/>
     <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/will-ai-replace-real-estate-agents/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/ia-reemplaza-corredores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/will-ai-replace-real-estate-agents/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/ia-reemplaza-corredores/"/>
+    <lastmod>2026-06-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
