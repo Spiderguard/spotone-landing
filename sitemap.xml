@@ -21,14 +21,14 @@
     <loc>https://www.spotonerealty.com/criterio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -221,6 +221,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/income-or-appreciation/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/renta-por-operacion-o-plusvalia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/income-or-appreciation/"/>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/is-it-a-good-time-to-buy/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/es-buen-momento-para-comprar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/is-it-a-good-time-to-buy/"/>
@@ -386,6 +393,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/alquilar-o-comprar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/rent-or-buy/"/>
     <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/renta-por-operacion-o-plusvalia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/renta-por-operacion-o-plusvalia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/income-or-appreciation/"/>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
