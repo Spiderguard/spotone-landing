@@ -21,14 +21,14 @@
     <loc>https://www.spotonerealty.com/criterio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -312,6 +312,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/panama-residency-by-investment/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/residencia-por-inversion-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/panama-residency-by-investment/"/>
+    <lastmod>2026-06-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/paneles-solares-valor-o-ahorro/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/paneles-solares-valor-o-ahorro/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/solar-panels-value-or-savings/"/>
@@ -400,6 +407,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/renta-por-operacion-o-plusvalia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/income-or-appreciation/"/>
     <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/residencia-por-inversion-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/residencia-por-inversion-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/panama-residency-by-investment/"/>
+    <lastmod>2026-06-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
