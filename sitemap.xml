@@ -21,14 +21,14 @@
     <loc>https://www.spotonerealty.com/criterio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -373,6 +373,22 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/preventa-apostar-al-tiempo/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/pre-construction-betting-on-time/"/>
     <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/proptech-doesnt-decide-for-you/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/proptech-no-digitaliza-la-decision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/proptech-doesnt-decide-for-you/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/proptech-no-digitaliza-la-decision/"/>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/proptech-no-digitaliza-la-decision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/proptech-no-digitaliza-la-decision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/proptech-doesnt-decide-for-you/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/proptech-no-digitaliza-la-decision/"/>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
