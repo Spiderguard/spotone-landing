@@ -67,7 +67,9 @@
         "Preventa inmobiliaria",
         "Inversión inmobiliaria",
         "Lectura de mercado inmobiliario",
-        "Captación y venta de propiedades"
+        "Captación y venta de propiedades",
+        "Relocalización residencial en Panamá",
+        "Orientación residencial para expatriados"
       ],
       "sameAs": [
         "https://www.linkedin.com/in/dario-jhangimal-v-14449751/",
@@ -392,7 +394,14 @@ section[id]{scroll-margin-top:96px}
 }
 .app-item h3 em{font-style:italic;color:var(--blue-sk);font-weight:400}
 .app-item p{font-size:14.6px;color:var(--body-3);line-height:1.68;max-width:42ch}
-@media(max-width:760px){.approach-grid{grid-template-columns:1fr}.app-item,.app-item:nth-child(odd),.app-item:nth-child(even){padding:26px 0;border-right:none;padding-left:0!important;padding-right:0!important}}
+.app-item.app-full{grid-column:1/-1;border-right:none!important;padding-right:0!important;padding-left:0}
+.app-item.app-full .app-full-inner{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem;align-items:start}
+.app-item.app-full p{max-width:none}
+.app-full-proof{padding-top:.25rem;display:flex;flex-direction:column;gap:1rem}
+.app-full-proof-item{border-left:1px solid var(--line);padding-left:1rem}
+.app-full-proof-item strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:500}
+.app-full-proof-item span{font-size:13.8px;color:var(--body-3);line-height:1.6}
+@media(max-width:760px){.approach-grid{grid-template-columns:1fr}.app-item,.app-item:nth-child(odd),.app-item:nth-child(even){padding:26px 0;border-right:none;padding-left:0!important;padding-right:0!important}.app-item.app-full .app-full-inner{grid-template-columns:1fr;gap:1.5rem 0}}
 
 /* ================ PROCESS ================ */
 .process{background:#fff}
@@ -657,7 +666,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
     <div class="section-head">
       <span class="eyebrow">Qué hago</span>
       <h2>Asesoría clara, <em>no catálogo</em>.</h2>
-      <p class="lead">Cuatro formas de trabajar. Todas comparten lo mismo: filtro, lectura y proceso. Sin paquetes, sin guion comercial.</p>
+      <p class="lead">Cinco formas de trabajar. Todas comparten lo mismo: filtro, lectura y proceso. Sin paquetes, sin guion comercial.</p>
     </div>
 
     <div class="approach-grid">
@@ -687,6 +696,29 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
         <div>
           <h3>Primera <em>lectura</em></h3>
           <p>Antes de listar, comprar, alquilar o mover capital. A veces basta un primer intercambio para saber si vale la pena avanzar.</p>
+        </div>
+      </div>
+      <div class="app-item app-full">
+        <span class="app-num">v.</span>
+        <div class="app-full-inner">
+          <div>
+            <h3>Llegada a Panamá <em>con orientación</em></h3>
+            <p>Para familias o ejecutivos que se mudan al país. Antes de buscar propiedades, recorremos las zonas que hacen sentido según colegios, trayectos y estilo de vida. La zona correcta antes que el apartamento correcto.</p>
+          </div>
+          <div class="app-full-proof">
+            <div class="app-full-proof-item">
+              <strong>Zonas</strong>
+              <span>Casco, San Francisco, Costa del Este, Clayton — con criterio según tu ritmo de vida.</span>
+            </div>
+            <div class="app-full-proof-item">
+              <strong>Logística previa</strong>
+              <span>Colegios, trayectos y servicios antes de abrir el primer portal.</span>
+            </div>
+            <div class="app-full-proof-item">
+              <strong>Sin costo para ti</strong>
+              <span>Mi comisión la paga el propietario o desarrollador. Tu búsqueda no tiene tarifa adicional.</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -843,6 +875,14 @@ footer{background:#fff;border-top:1px solid var(--line);padding:54px 0 30px}
         <details class="faq-item">
           <summary>¿Puedo empezar el proceso si estoy fuera de Panamá?</summary>
           <div class="body">Sí. Podemos empezar remoto por WhatsApp, correo o videollamada, con lectura de mercado y decisiones documentadas. La visita física puede esperar hasta que tenga sentido hacerla.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Me ayudas si me estoy mudando a Panamá desde otro país?</summary>
+          <div class="body">Sí. Primero hacemos un recorrido de orientación por las zonas que tienen sentido para tu caso: colegios, trayectos diarios y estilo de vida. Luego buscamos propiedades con criterio. Mi comisión la paga el propietario o desarrollador — en las operaciones que manejo, a ti no te cuesta nada.</div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Por qué la zona importa más que la propiedad al mudarse a Panamá?</summary>
+          <div class="body">Porque elegir la zona incorrecta es la decisión más difícil de revertir. Un apartamento puede ajustarse; la zona define la vida diaria. Para alguien que viene de fuera, esa orientación es el punto de partida.</div>
         </details>
         <details class="faq-item">
           <summary>¿Trabajas con empresas o clientes corporativos?</summary>
