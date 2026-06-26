@@ -10,15 +10,13 @@
   --ink:    #1a1a18;
   --body:   #46463f;
   --body-2: #3a3a36;
-  --body-3: #3a3a36;
   --muted:  #a7a299;
   --line:   #d8d2c6;
   --soft:   #f6f4ef;
   --warm:   #efebe1;
   --dark:   #14213a;
-  --accent: #16314f;
+  --accent: #162F59;
   --accent-sk: #9fb6d4;
-  --bronze: #a8854f;
   --max:    1100px;
   --gut:    64px;
 }
@@ -38,7 +36,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 .eyebrow{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:11px;color:var(--accent);letter-spacing:.20em;text-transform:uppercase;font-weight:600;
+  font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;font-weight:600;
 }
 em{color:var(--accent-sk);font-style:italic;font-weight:300}
 
@@ -202,14 +200,14 @@ body.menu-open{overflow:hidden}
 .crit-eyebrow-line{width:38px;height:1px;background:var(--accent);flex-shrink:0}
 .crit-eyebrow{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;
+  font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;
 }
 .crit-h1{
   font-family:'Newsreader',serif;
   font-size:clamp(52px,6.5vw,88px);line-height:.98;
   letter-spacing:-.025em;font-weight:300;margin:0 0 24px;color:var(--ink);
 }
-.crit-dot{color:var(--bronze)}
+.crit-dot{color:var(--muted)}
 .crit-lead{font-size:21px;line-height:1.55;color:var(--body);margin:0;max-width:520px}
 
 /* Search — right column */
@@ -266,13 +264,13 @@ body.menu-open{overflow:hidden}
 .feat-num-col{display:flex;flex-direction:column;gap:14px}
 .feat-eyebrow-label{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--bronze);text-transform:uppercase;
+  font-size:11px;font-weight:600;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;
 }
 .feat-num{
   font-family:'Newsreader',serif;
   font-size:clamp(64px,7vw,96px);line-height:.85;font-weight:300;color:var(--accent);
 }
-.feat-line-accent{width:34px;height:1px;background:var(--bronze)}
+.feat-line-accent{width:34px;height:1px;background:var(--muted)}
 .feat-body{max-width:760px}
 .feat-cat{
   font-family:'Hanken Grotesk',sans-serif;
@@ -349,7 +347,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .foot-grid h6{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:10.5px;color:rgba(246,244,239,.4);
-  text-transform:uppercase;letter-spacing:.20em;font-weight:600;margin-bottom:16px;
+  text-transform:uppercase;letter-spacing:.10em;font-weight:600;margin-bottom:16px;
 }
 .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .foot-grid a{font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:rgba(246,244,239,.65);transition:color .15s}
