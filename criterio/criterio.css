@@ -209,6 +209,7 @@ body.menu-open{overflow:hidden}
 }
 .crit-dot{color:var(--muted)}
 .crit-lead{font-size:21px;line-height:1.55;color:var(--body);margin:0;max-width:520px}
+.crit-posture{font-size:16px;line-height:1.6;color:var(--muted);margin-top:18px;max-width:480px}
 
 /* Search — right column */
 .crit-hero-right{padding-bottom:8px}
