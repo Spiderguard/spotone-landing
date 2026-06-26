@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f6f4ef">
 <title>Perspective · A clearer read on Panama real estate · SpotOne Realty</title>
 <meta name="description" content="Perspective by SpotOne Realty: a clearer read on Panama real estate. Market signals, decisions and practical context to buy, sell, rent or invest better. By Dario Jhangimal, licensed broker PN-1240.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -13,31 +13,33 @@
 <meta property="og:description" content="Market signals, decisions and practical context to buy, sell, rent or invest better.">
 <meta property="og:url" content="https://www.spotonerealty.com/criterio/en/">
 <meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_PA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <link rel="canonical" href="https://www.spotonerealty.com/criterio/en/">
 <link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/">
 <link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/">
-<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/">
+
+<link rel="icon" href="/images/logo-favicon-negro.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/criterio/criterio.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/criterio/criterio.css?v=11">
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
 
 <header class="site-header">
   <a href="/index-en.html" class="brand" aria-label="SpotOne Realty">
-    <img src="/images/logo.svg" alt="" class="brand-logo">
+    <img src="/images/logo-mark-negro.png" alt="" class="brand-logo">
     <span class="brand-text">SpotOne Realty</span>
   </a>
   <nav class="site-nav">
     <a href="/index-en.html" class="lnk">Home</a>
     <a href="/index-en.html#que-hago" class="lnk">What I do</a>
+    <a href="/index-en.html#relocation" class="lnk">Relocation</a>
     <a href="/criterio/en/" class="lnk here">Perspective</a>
     <a href="/index-en.html#dario" class="lnk">Dario</a>
     <a href="/index-en.html#contacto" class="lnk">Contact</a>
@@ -55,7 +57,7 @@
 
 <div class="mm" id="mobileMenu">
   <div class="top">
-    <span class="brand"><img src="/images/logo.svg" alt="" class="brand-logo"><span class="brand-text">SpotOne Realty</span></span>
+    <span class="brand"><img src="/images/logo-mark-negro.png" alt="" class="brand-logo"><span class="brand-text">SpotOne Realty</span></span>
     <button class="close" id="menuClose" aria-label="Close">×</button>
   </div>
   <nav>
@@ -75,7 +77,7 @@
   <section class="crit-index">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">By SpotOne Realty</span>
+        <span class="eyebrow">Market reading</span>
         <h1>Perspective</h1>
         <p class="lead">A clearer read on Panama real estate. Market signals, decisions and practical context to buy, sell, rent or invest better.</p>
         <div class="crit-search-block">
@@ -102,8 +104,8 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="mark"><img src="/images/logo.svg" alt="">SpotOne.</div>
-        <p>Real estate selection with judgment in Panama.</p>
+        <div class="mark"><img src="/images/logo-mark-blanco.png" alt="">SpotOne Realty</div>
+        <p>Real estate advisory with judgment in Panama.</p>
       </div>
       <div>
         <h6>Practice</h6>
@@ -118,7 +120,7 @@
         <h6>Language</h6>
         <ul>
           <li><a href="/criterio/">Español</a></li>
-          <li><a href="#" style="color:var(--blue);font-weight:500">English</a></li>
+          <li><a href="#" style="color:var(--soft);font-weight:500">English</a></li>
         </ul>
       </div>
     </div>
@@ -174,19 +176,55 @@
   ];
   const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&");
   let state = { q:"", pillar:"All" };
+  const FEATURED_URL = "/criterio/panama-residency-by-investment/";
   const listEl = document.getElementById('list');
-  const MORE = "Read note →";
+
   function render(){
     const q = norm(state.q.trim());
     const sel = norm(state.pillar);
+    const showFeatured = state.pillar === "All" && q === "";
+    const featured = ARTICLES.find(a => a.url === FEATURED_URL);
+
     const rows = ARTICLES.filter(a =>
-      (state.pillar==="All" || norm(a.pillar)===sel) &&
-      (q==="" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
+      (showFeatured && a.url === FEATURED_URL ? false : true) &&
+      (state.pillar === "All" || norm(a.pillar) === sel) &&
+      (q === "" || norm(a.title+" "+a.dek+" "+a.kw+" "+a.pillar).includes(q))
     );
-    if(!rows.length){ listEl.innerHTML = '<div class="crit-noresults">No results. Try another term or category.</div>'; return; }
-    listEl.innerHTML = '<div class="crit-grid">' + rows.map(a =>
-      '<a class="crit-cell" href="'+a.url+'"><span class="tag">'+a.pillar+'</span><div class="t">'+a.title+'</div><div class="dek">'+a.dek+'</div><span class="more">'+MORE+'</span></a>'
-    ).join("") + '</div>';
+
+    let html = "";
+
+    if(showFeatured && featured){
+      const cat = featured.pillar.replace(/&amp;/g,"&");
+      html += `<a class="feat-card" href="${featured.url}">
+        <div class="feat-num-col">
+          <span class="feat-eyebrow-label">Featured read</span>
+          <span class="feat-num">01</span>
+          <span class="feat-line-accent"></span>
+        </div>
+        <div class="feat-body">
+          <div class="feat-cat">${cat}</div>
+          <h2 class="feat-title">${featured.title}</h2>
+          <p class="feat-excerpt">${featured.dek}</p>
+          <span class="feat-link">Read note <span class="arrow">→</span></span>
+        </div>
+      </a>`;
+    }
+
+    if(!rows.length){
+      html += '<div class="crit-noresults">No results. Try another term or category.</div>';
+    } else {
+      html += '<div class="crit-grid">' + rows.map(a => {
+        const cat = a.pillar.replace(/&amp;/g,"&");
+        return `<a class="crit-card" href="${a.url}">
+          <div class="crit-card-cat">${cat}</div>
+          <div class="crit-card-title">${a.title}</div>
+          <div class="crit-card-dek">${a.dek}</div>
+          <span class="crit-card-link">Read note <span class="arrow">→</span></span>
+        </a>`;
+      }).join("") + '</div>';
+    }
+
+    listEl.innerHTML = html;
   }
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
   document.getElementById('pillars').addEventListener('click', e => {
