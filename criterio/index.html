@@ -106,6 +106,7 @@
         <span class="chip" data-p="Decisiones">Decisiones</span>
       </div>
       <div class="crit-divider"></div>
+      <div id="crit-count" style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;padding:18px 0 0"></div>
 
       <!-- Dynamic: featured + grid -->
       <div id="list"></div>
@@ -119,6 +120,7 @@
       <div class="foot-brand">
         <div class="mark"><img src="/images/logo-mark-blanco.png" alt="">SpotOne Realty</div>
         <p>Asesoría inmobiliaria y relocation en Panamá.</p>
+        <p class="foot-cred">Dario Jhangimal · Corredor de Bienes Raíces · Licencia PN-1240</p>
       </div>
       <div>
         <h6>Práctica</h6>
@@ -239,6 +241,13 @@
     }
 
     listEl.innerHTML = html;
+    const countEl = document.getElementById('crit-count');
+    if(countEl){
+      const n = rows.length + (showFeatured && featured ? 1 : 0);
+      countEl.textContent = q || state.pillar !== "Todo"
+        ? (n === 0 ? "" : n + " nota" + (n !== 1 ? "s" : ""))
+        : n + " notas";
+    }
   }
 
   document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
