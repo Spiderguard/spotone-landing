@@ -171,14 +171,14 @@
   --accent-sk: #9fb6d4;
   --max:    1320px;
   --gut:    56px;
-  --sec:    152px;
+  --sec:    168px;
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
   background:var(--soft);color:var(--ink);
-  font-size:16px;line-height:1.66;font-weight:300;
+  font-size:18px;line-height:1.66;font-weight:300;
   letter-spacing:-.004em;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -333,7 +333,7 @@ body.menu-open{overflow:hidden}
 }
 .hero h1{
   font-family:'Newsreader',serif;
-  font-size:62px;
+  font-size:60px;
   line-height:1.02;font-weight:300;letter-spacing:-.022em;color:#fff;
   margin:0 0 28px;
   text-shadow:0 1px 18px rgba(0,0,0,.35);
@@ -383,14 +383,14 @@ section{padding:var(--sec) 0}
 section[id]{scroll-margin-top:96px}
 
 /* Section heading shared styles */
-.section-head{margin-bottom:60px}
+.section-head{margin-bottom:72px}
 .section-head h2{
   font-family:'Newsreader',serif;
-  font-size:46px;
-  line-height:1.04;font-weight:300;letter-spacing:-.02em;color:var(--ink);
+  font-size:42px;
+  line-height:1.06;font-weight:300;letter-spacing:-.02em;color:var(--ink);
 }
 .section-head h2 em{font-style:italic;color:var(--accent);font-weight:300}
-.section-head .lead{margin-top:22px;font-size:19px;color:var(--body);line-height:1.62;max-width:52ch}
+.section-head .lead{margin-top:26px;font-size:19px;color:var(--body);line-height:1.65;max-width:52ch}
 
 /* ================ PRINCIPIO (dark) ================ */
 .principio-sect{background:var(--dark);color:#fff;padding:var(--sec) 0}
@@ -545,7 +545,7 @@ section[id]{scroll-margin-top:96px}
 .portrait img{width:100%;height:100%;object-fit:contain;object-position:center center;filter:contrast(1.02);display:block}
 .about-content h2{
   font-family:'Newsreader',serif;
-  font-size:clamp(30px,3.2vw,46px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
+  font-size:clamp(28px,3vw,42px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
   color:var(--ink);margin:0 0 24px
 }
 .about-content h2 em{font-style:italic;color:var(--accent);font-weight:300}
@@ -572,7 +572,7 @@ section[id]{scroll-margin-top:96px}
 .faq-sticky{position:sticky;top:110px}
 .faq-sticky h2{
   font-family:'Newsreader',serif;
-  font-size:clamp(30px,3.2vw,46px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
+  font-size:clamp(28px,3vw,42px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
   color:var(--ink);margin:0 0 18px
 }
 .faq-sticky h2 em{font-style:italic;color:var(--accent);font-weight:300}
@@ -583,7 +583,7 @@ section[id]{scroll-margin-top:96px}
 .faq-item summary{
   list-style:none;padding:26px 4px;cursor:pointer;
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:17px;font-weight:500;color:var(--ink);letter-spacing:-.005em;line-height:1.3;
+  font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-.005em;line-height:1.3;
   display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
   transition:color .2s ease;
 }
@@ -599,14 +599,14 @@ section[id]{scroll-margin-top:96px}
   opacity:.65;
 }
 .faq-item[open] summary::after{transform:rotate(45deg);opacity:1;background:linear-gradient(var(--accent),var(--accent)) center/14px 1px no-repeat,linear-gradient(var(--accent),var(--accent)) center/1px 14px no-repeat}
-.faq-item .body{padding:0 36px 30px 4px;font-family:'Hanken Grotesk',sans-serif;color:var(--body-2);font-size:17px;line-height:1.68;max-width:58ch}
+.faq-item .body{padding:0 36px 30px 4px;font-family:'Hanken Grotesk',sans-serif;color:var(--body-2);font-size:18px;line-height:1.68;max-width:58ch}
 @media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:40px}.faq-sticky{position:static}}
 
 /* ================ FINAL CTA ================ */
 .final{background:var(--soft);text-align:center;padding:calc(var(--sec) + 20px) 0}
 .final h2{
   font-family:'Newsreader',serif;
-  font-size:clamp(28px,4vw,46px);
+  font-size:clamp(26px,3.5vw,42px);
   font-weight:300;line-height:1.02;letter-spacing:-.025em;color:var(--ink);
   max-width:16ch;margin:0 auto 24px;
 }
@@ -654,12 +654,12 @@ footer{background:var(--dark);padding:56px 0 32px}
   :root{--gut:20px;--sec:72px}
   section[id]{scroll-margin-top:76px}
   .section-head h2{font-size:clamp(28px,8vw,48px)}
-  .section-head .lead{font-size:17px}
-  .final h2{font-size:38px}
-  .final .lead{font-size:16px}
-  .faq-item summary{font-size:16px;padding:20px 0}
-  .faq-item .body{font-size:15.5px;padding-bottom:22px}
-  .about-content p{font-size:17px}
+  .section-head .lead{font-size:18px}
+  .final h2{font-size:36px}
+  .final .lead{font-size:17px}
+  .faq-item summary{font-size:17px;padding:20px 0}
+  .faq-item .body{font-size:16px;padding-bottom:22px}
+  .about-content p{font-size:18px}
   .btn{padding:13px 22px;font-size:13px;min-height:44px}
   input,textarea,select{font-size:16px !important}
 }
@@ -924,8 +924,8 @@ footer{background:var(--dark);padding:56px 0 32px}
         <img src="images/dario-neutra.png" alt="Dario Jhangimal" width="998" height="1328" loading="lazy" decoding="async">
       </div>
       <div class="about-content">
-        <h2>Process and reading <em>before speed</em>.</h2>
-        <p>I approach real estate by reading the moment, not by applying pressure. Before entering the market — with a property, a search or a negotiation — I want to understand what is behind it: timing, people, price, real margin and what can be sustained with clarity.</p>
+        <h2>I read the situation <em>before I act</em>.</h2>
+        <p>I work real estate in Panama. What matters to me is not the close — it is reaching the correct read before anyone moves capital. That means understanding the timing, the people, the real price and what can be sustained.</p>
         <p>The operation may be residential, commercial, land, beach, pre-construction or investment. The asset type changes; the reading remains the starting point.</p>
         <p>SpotOne is the practice I wanted to build: deliberate, clear, without shortcuts. Not an agency.</p>
         <p>Some operations require depth. Others require speed. The form may change; the read does not.</p>
