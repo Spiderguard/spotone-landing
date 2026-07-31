@@ -54,16 +54,44 @@ ALT_RE = re.compile(
 )
 
 
+_DIRTY: set[str] | None = None
+
+
+def dirty_paths() -> set[str]:
+    """Un solo `git status` para todo el repo.
+
+    Antes se llamaba una vez por pagina. Con el repo en iCloud cada llamada
+    cuesta ~37s de I/O (git refresca el indice recorriendo todo el worktree),
+    asi que 84 paginas = ~52 min y el deploy nunca terminaba. Una sola llamada
+    y despues busqueda en memoria.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=ROOT, capture_output=True, text=True, check=True,
+        ).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return set()
+    paths = set()
+    for line in out.splitlines():
+        if len(line) <= 3:
+            continue
+        p = line[3:].strip()
+        if " -> " in p:  # renombrados: "viejo -> nuevo"
+            p = p.split(" -> ", 1)[1]
+        paths.add(p.strip('"'))
+    return paths
+
+
 def git_lastmod(relpath: str) -> str:
     """Hoy si el archivo cambio en el working tree; si no, fecha del ultimo commit."""
+    global _DIRTY
     today = datetime.date.today().isoformat()
+    if _DIRTY is None:
+        _DIRTY = dirty_paths()
+    if relpath in _DIRTY:
+        return today
     try:
-        dirty = subprocess.run(
-            ["git", "status", "--porcelain", "--", relpath],
-            cwd=ROOT, capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        if dirty:
-            return today
         committed = subprocess.run(
             ["git", "log", "-1", "--format=%cs", "--", relpath],
             cwd=ROOT, capture_output=True, text=True, check=True,
