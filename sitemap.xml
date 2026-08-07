@@ -68,10 +68,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/appraisal-below-purchase-price/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/avaluo-debajo-precio-compra/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/appraisal-below-purchase-price/"/>
+    <lastmod>2026-08-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/aprender-no-reemplaza-operar/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/aprender-no-reemplaza-operar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/learning-isnt-operating/"/>
     <lastmod>2026-08-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/avaluo-debajo-precio-compra/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/avaluo-debajo-precio-compra/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/appraisal-below-purchase-price/"/>
+    <lastmod>2026-08-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -169,7 +183,7 @@
     <loc>https://www.spotonerealty.com/criterio/el-avaluo-no-es-el-precio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/el-avaluo-no-es-el-precio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/the-appraisal-isnt-the-price/"/>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -486,7 +500,7 @@
     <loc>https://www.spotonerealty.com/criterio/the-appraisal-isnt-the-price/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/el-avaluo-no-es-el-precio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/the-appraisal-isnt-the-price/"/>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
