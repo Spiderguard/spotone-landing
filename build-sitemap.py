@@ -35,6 +35,7 @@ INCLUDE_GLOBS = [
     "criterio/en/index.html",
     "criterio/*/index.html",
     "peatonal68/index.html",
+    "peatonal68/en/index.html",
 ]
 
 # Prioridad por URL exacta; el resto (articulos) usa DEFAULT_PRIORITY.
@@ -44,6 +45,7 @@ PRIORITY = {
     f"{BASE}/criterio/": "0.9",
     f"{BASE}/criterio/en/": "0.8",
     f"{BASE}/peatonal68/": "0.9",
+    f"{BASE}/peatonal68/en/": "0.8",
 }
 DEFAULT_PRIORITY = "0.8"
 
