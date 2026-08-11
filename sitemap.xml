@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/index-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/"/>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -14,14 +14,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/index-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/"/>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -29,7 +29,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/"/>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -72,20 +72,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/avaluo-debajo-precio-compra/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/appraisal-below-purchase-price/"/>
     <lastmod>2026-08-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/"/>
-    <lastmod>2026-08-11</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/"/>
-    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -428,6 +414,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/"/>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/real-estate-doesnt-always-go-up/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/la-plusvalia-no-esta-garantizada/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/real-estate-doesnt-always-go-up/"/>
@@ -613,6 +606,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/donde-vivir-en-panama/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/where-to-live-in-panama/"/>
     <lastmod>2026-06-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/quien-paga-electrodomesticos-alquiler-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/who-pays-appliance-damage-rental-panama/"/>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
