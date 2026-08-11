@@ -317,9 +317,46 @@ section{padding:clamp(72px,8vw,128px) 0}
 .lang a[aria-current="true"]{opacity:1;font-weight:600}
 .lang span{opacity:.34}
 @media(max-width:900px){.lang{margin-left:12px}}
+
+/* --- logo del header: +25% sobre los 26px medidos --- */
+.lock{height:33px;width:auto;display:block}
+/* --- pie de ficha alineado entre tarjetas --- */
+.grid{align-items:stretch}
+.ub{display:flex;flex-direction:column;flex:1}
+.uacts{display:block;margin-top:auto;padding-bottom:12px}
+.uacts .btn-d{display:block;width:100%;height:54px;line-height:54px;padding:0 20px;text-align:center;margin-top:30px}
+.uacts2{display:flex;flex-wrap:wrap;gap:24px;margin-top:19px}
+.uacts2 .linkm{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.uacts2 .linkm:hover,.uacts2 .linkm:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+.loc-l::after{content:" \2191";font-size:11px}
+details.calc{margin-top:16px}
+/* --- tooltip de la fachada --- */
+.tip{position:absolute;z-index:40;background:var(--navy);color:#fff;padding:10px 13px;border-radius:2px;
+ font-size:13.5px;line-height:1.4;pointer-events:none;opacity:0;transition:opacity .14s;white-space:nowrap;
+ box-shadow:0 12px 34px -14px rgba(5,14,30,.6);left:0;top:0}
+.tip[data-on="1"]{opacity:1}
+.tip b{display:block;font-weight:600}
+.tip span{display:block;color:rgba(255,255,255,.76);font-variant-numeric:tabular-nums}
+/* --- mapa --- */
+.mapwrap{position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--warm)}
+.mapwrap iframe{display:block;width:100%;aspect-ratio:3/2;border:0}
+.mapbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;
+ padding:14px 18px;background:rgba(246,244,239,.96);border-top:1px solid var(--line)}
+.mapbar div b{display:block;font-size:15.5px;font-weight:500;color:var(--ink)}
+.mapbar div span{font-size:14px;color:var(--muted)}
+.mapbar .btn{padding:11px 18px;font-size:13.5px;white-space:nowrap}
+@media(max-width:760px){
+  .tip{display:none}
+  .uacts2{gap:12px}
+  .uacts2 .linkm{min-height:44px;display:inline-flex;align-items:center}
+  .mapwrap iframe{aspect-ratio:auto;height:260px}
+  .mapbar{padding:13px 15px}
+  .mapbar .btn{width:100%;text-align:center}
+}
+@media(max-width:400px){ .uacts2{flex-direction:column;gap:12px} }
 </style>
 <header class="hdr"><div class="wrap">
-<a class="brand" href="https://www.spotonerealty.com/" target="_blank" rel="noopener" aria-label="SpotOne Realty"><svg class="lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
+<a class="brand" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty — go to the main site"><svg class="lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
 <nav class="nav"><a href="#disponibilidad">Availability</a><a href="#plaza">The plaza</a><a href="#ubicacion">Location</a><a href="#faq">FAQ</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page" class="cta">Get in touch</a><span class="lang"><a href="https://www.spotonerealty.com/peatonal68/" hreflang="es-PA">ES</a><span>·</span><a href="https://www.spotonerealty.com/peatonal68/en/" aria-current="true" hreflang="en">EN</a></span></nav>
 </div></header>
 
@@ -370,7 +407,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$175.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$1,590.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$1,700.25</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$175.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -380,8 +417,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2011">Ask about this unit</a>
-    <button class="linkm" data-locate="11">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1zPV4Z-Z_bxW_NJhv9jCZGjLTXkBxxL40" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2011">Ask about Unit 11</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1zPV4Z-Z_bxW_NJhv9jCZGjLTXkBxxL40" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="11">Show it on the facade</button></div>
   </div>
 </div></article><article class="u" id="local-13" data-u="13" data-floor="1" data-area="120" data-comb="0">
 <button class="shot" data-gal="l13" data-loc="13" aria-label="View the 5 photos of unit 13"><img src="../img/local-13a.jpg" alt="Unit 13, first floor" loading="lazy"><span class="cnt">5 photos</span></button>
@@ -395,7 +432,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$300.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$2,715.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$2,904.00</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$300.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -405,8 +442,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2013">Ask about this unit</a>
-    <button class="linkm" data-locate="13">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1zg3sQEpvb6rNE3hSOrBGJsermayRV6BO" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2013">Ask about Unit 13</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1zg3sQEpvb6rNE3hSOrBGJsermayRV6BO" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="13">Show it on the facade</button></div>
   </div>
 </div></article><article class="u" id="local-15" data-u="15" data-floor="1" data-area="120" data-comb="0">
 <button class="shot" data-gal="l15" data-loc="15" aria-label="View the 5 photos of unit 15"><img src="../img/local-15a.jpg" alt="Unit 15, first floor" loading="lazy"><span class="cnt">5 photos</span></button>
@@ -420,7 +457,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$300.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$2,715.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$2,904.00</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$300.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -430,8 +467,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2015">Ask about this unit</a>
-    <button class="linkm" data-locate="15">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1qAov_SU3fBxulqI6RB3B92Vhkzk-fOQB" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2015">Ask about Unit 15</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1qAov_SU3fBxulqI6RB3B92Vhkzk-fOQB" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="15">Show it on the facade</button></div>
   </div>
 </div></article><article class="u" id="local-16" data-u="16" data-floor="1" data-area="200" data-comb="0">
 <button class="shot" data-gal="l16" data-loc="16" aria-label="View the 5 photos of unit 16"><img src="../img/local-16a.jpg" alt="Unit 16, first floor" loading="lazy"><span class="cnt">5 photos</span></button>
@@ -445,7 +482,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$500.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$4,515.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$4,830.00</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$4,000.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$500.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -455,8 +492,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2016">Ask about this unit</a>
-    <button class="linkm" data-locate="16">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1qmNDDFHAZBeclbOsQrwFa_35Sw2u5nNF" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2016">Ask about Unit 16</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1qmNDDFHAZBeclbOsQrwFa_35Sw2u5nNF" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="16">Show it on the facade</button></div>
   </div>
 </div></article></div>
 </div></section>
@@ -474,7 +511,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$192.50 maintenance · $15.00 waste collection</div>
     <div class="sub">$1,593.50 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$1,704.00</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,386.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$192.50</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -484,8 +521,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2021">Ask about this unit</a>
-    <button class="linkm" data-locate="21">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1NHBhV0DjsXFyMCZPmL_Mbor8WsQzx18G" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2021">Ask about Unit 21</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1NHBhV0DjsXFyMCZPmL_Mbor8WsQzx18G" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="21">Show it on the facade</button></div>
   </div>
 </div></article><article class="u" id="local-22" data-u="22" data-floor="2" data-area="100" data-comb="1">
 <button class="shot" data-gal="l22" data-loc="22" aria-label="View the 4 photos of unit 22"><img src="../img/local-22a.jpg" alt="Unit 22, second floor" loading="lazy"><span class="cnt">4 photos</span></button>
@@ -499,7 +536,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$250.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$2,065.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$2,208.50</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$250.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -509,8 +546,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2022">Ask about this unit</a>
-    <button class="linkm" data-locate="22">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1-zuwbTi3St88w3Q3l-2fP9ku_XHyfiNn" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2022">Ask about Unit 22</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1-zuwbTi3St88w3Q3l-2fP9ku_XHyfiNn" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="22">Show it on the facade</button></div>
   </div>
 </div></article><article class="u" id="local-23" data-u="23" data-floor="2" data-area="100" data-comb="1">
 <button class="shot" data-gal="l23" data-loc="23" aria-label="View the 4 photos of unit 23"><img src="../img/local-23a.jpg" alt="Unit 23, second floor" loading="lazy"><span class="cnt">4 photos</span></button>
@@ -524,7 +561,7 @@ section{padding:clamp(72px,8vw,128px) 0}
     <div class="brk">$250.00 maintenance · $15.00 waste collection</div>
     <div class="sub">$2,065.00 before ITBMS</div>
     <div class="tt">Total monthly with ITBMS: <b>$2,208.50</b></div>
-    <details class="calc"><summary>See the breakdown</summary><dl>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$250.00</dd></div>
       <div><dt>Waste collection — ITBMS-exempt</dt><dd>$15.00</dd></div>
@@ -534,8 +571,8 @@ section{padding:clamp(72px,8vw,128px) 0}
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2023">Ask about this unit</a>
-    <button class="linkm" data-locate="23">Show it on the facade</button><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1uP0Kh68tHbzQ_qR142VdXGb5pjuZHnc9" target="_blank" rel="noopener">Download high-res photos</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20-%20Unit%2023">Ask about Unit 23</a>
+    <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1uP0Kh68tHbzQ_qR142VdXGb5pjuZHnc9" target="_blank" rel="noopener">See all the photos</a><button class="linkm loc-l" data-locate="23">Show it on the facade</button></div>
   </div>
 </div></article></div>
 </div></section>
@@ -593,8 +630,7 @@ section{padding:clamp(72px,8vw,128px) 0}
 <h2>Calle 68 Este, San Francisco</h2>
 <div class="locgrid">
   <div><p class="lead" style="margin-top:0">The vehicle entrance is on Calle 68 Este. The covered parking is reached by the same ramp, and from there an elevator or stairs take you up to the commercial levels.</p></div>
-  <aside class="loccard"><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 36s12-11.4 12-19.8A12 12 0 0 0 8 16.2C8 24.6 20 36 20 36z"/><circle cx="20" cy="16" r="4.4"/></svg><b>Plaza La Peatonal 68</b><span>Calle 68 Este, San Francisco<br>Panama City</span>
-  <a class="btn btn-o" href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">Open in Google Maps</a></aside>
+  <aside class="mapwrap"><iframe src="https://maps.google.com/maps?q=La+Peatonal+68,Calle+68+Este,San+Francisco,Panama&amp;ll=8.9943381,-79.5112507&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Plaza La Peatonal 68 on Calle 68 Este, San Francisco"></iframe><div class="mapbar"><div><b>Plaza La Peatonal 68</b><span>Calle 68 Este, San Francisco &middot; Panama City</span></div><a class="btn btn-o" href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">Open in Google Maps</a></div></aside>
 </div>
 <div class="infra">
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="2.5"/><path d="M15 28V13h6.2a4.4 4.4 0 0 1 0 8.8H15"/></svg><b>60 parking spaces</b><p>14 at street level and 46 covered in the basement.</p></div>
@@ -623,6 +659,7 @@ section{padding:clamp(72px,8vw,128px) 0}
 <p class="lg">Plaza La Peatonal 68 is marketed under the exclusive representation of Dario Jhangimal, licensed real estate broker PN-1240. Availability and pricing updated August 11, 2026 and subject to confirmation. Published totals include base rent, maintenance, ITBMS and the waste collection fee.</p>
 </div></footer>
 
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
 <div class="qc" id="qc" role="dialog" aria-label="Unit detail"><button class="qc-x" id="qcx" aria-label="Close">&times;</button><div id="qcb"></div></div>
 <div class="selbar" id="sb"><div class="wrap"><div class="txt"><b id="sbt"></b> <span class="s" id="sbs"></span></div>
 <div style="display:flex;gap:10px;flex-shrink:0"><a class="btn btn-p" id="sbc" href="#">Get in touch</a><button class="btn btn-s" id="sbx">Clear</button></div></div></div>
@@ -636,11 +673,28 @@ section{padding:clamp(72px,8vw,128px) 0}
 const U={"11": {"id": 11, "floor": 1, "area": 70, "rent": 1400, "total": 1700.25, "status": "available", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": 4000, "total": 4830.0, "status": "available", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": 1386, "total": 1704.0, "status": "available", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l23"}}, COMBOS=[[21, 22], [21, 22, 23]], GAL={"l11": [{"src": "../img/local-11a.jpg", "cap": "Main area"}, {"src": "../img/letrero.jpg", "cap": "Looking toward the back"}, {"src": "../img/foto-12.jpg", "cap": "Second area"}, {"src": "../img/foto-13.jpg", "cap": "Storefront onto the walkway"}], "l13": [{"src": "../img/local-13a.jpg", "cap": "Main area with glass partitions"}, {"src": "../img/foto-14.jpg", "cap": "Meeting room"}, {"src": "../img/foto-15.jpg", "cap": "Kitchen"}, {"src": "../img/local-13a.jpg", "cap": "Second area"}, {"src": "../img/foto-16.jpg", "cap": "Interior bathroom"}], "l21": [{"src": "../img/local-21a.jpg", "cap": "Main area with picture window"}, {"src": "../img/foto-17.jpg", "cap": "Second angle"}, {"src": "../img/foto-18.jpg", "cap": "Entrance"}, {"src": "../img/foto-19.jpg", "cap": "Bathroom"}], "l23": [{"src": "../img/local-23a.jpg", "cap": "Storefront seen from the walkway"}, {"src": "../img/foto-20.jpg", "cap": "Private office"}, {"src": "../img/foto-21.jpg", "cap": "Corridor between offices"}, {"src": "../img/foto-22.jpg", "cap": "Interior bathroom"}], "l15": [{"src": "../img/local-15a.jpg", "cap": "Picture window onto the street"}, {"src": "../img/foto-23.jpg", "cap": "Main area"}, {"src": "../img/foto-24.jpg", "cap": "Back of the unit"}, {"src": "../img/foto-25.jpg", "cap": "Corner"}, {"src": "../img/foto-26.jpg", "cap": "Bathroom"}], "l16": [{"src": "../img/local-16a.jpg", "cap": "Balcony with city view"}, {"src": "../img/foto-27.jpg", "cap": "Main area"}, {"src": "../img/foto-28.jpg", "cap": "Balcony"}, {"src": "../img/foto-29.jpg", "cap": "Kitchen"}, {"src": "../img/foto-30.jpg", "cap": "Second area"}], "l22": [{"src": "../img/local-22a.jpg", "cap": "Main area"}, {"src": "../img/foto-31.jpg", "cap": "Second angle"}, {"src": "../img/foto-32.jpg", "cap": "Back of the unit"}, {"src": "../img/foto-33.jpg", "cap": "Service area"}]};
 const FL={1:"First floor",2:"Second floor"};
 const money=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-let sel=[], filt='all';
+let sel=[], filt='all', inDisp=false;
+const closeQc=()=>{const q=document.getElementById('qc'); if(q)q.dataset.on='0'; const t=document.getElementById('tip'); if(t)t.dataset.on='0';};
 const WAB='https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const compatOf=id=>{const s=new Set();COMBOS.forEach(c=>{if(c.includes(id))c.forEach(x=>{if(x!==id)s.add(x)})});return [...s]};
-const validCombo=a=>{if(a.length<2)return null;const k=[...a].sort((x,y)=>x-y).join(',');return COMBOS.find(c=>[...c].sort((x,y)=>x-y).join(',')===k)||null};
+const srt=a=>[...a].sort((x,y)=>x-y);
+const isPrefix=(a,c)=>a.length<=c.length&&a.every((v,i)=>v===c[i]);
+// una combinacion solo es valida si es prefijo de una publicada en COMBOS:
+// [21,22] y [21,22,23] si; [21,23] y [22,23] no (no son contiguos).
+const validCombo=a=>a.length<2?null:(COMBOS.find(c=>isPrefix(srt(a),c))||null);
+const canAdd=(a,x)=>!a.includes(x)&&COMBOS.some(c=>isPrefix(srt([...a,x]),c));
+const compatOf=id=>Object.keys(U).map(Number).filter(x=>canAdd([id],x)&&U[x].status==='available');
+// describe las combinaciones REALES en las que entra este local
+const comboText=id=>{
+  const cs=COMBOS.filter(c=>c.includes(id)&&c.every(x=>U[x].status==='available'));
+  if(!cs.length) return '';
+  const f=cs.map(c=>{const o=c.filter(x=>x!==id);
+    return {o,ar:c.reduce((s,i)=>s+U[i].area,0),txt:(o.length>1?'Units ':'Unit ')+o.join(' and ')};});
+  if(f.length===1){const x=f[0];
+    return (x.o.length>1?'Joins ':'Can be joined with ')+x.txt+' to form '+x.ar+' m² of continuous space.';}
+  const a=f[0], b=f[f.length-1], ex=b.o.filter(x=>!a.o.includes(x));
+  return 'Can be joined with '+a.txt+' to form '+a.ar+' m². Adding '+
+    (ex.length>1?'Units ':'Unit ')+ex.join(' and ')+' as well, '+b.ar+' m² of continuous space.';};
 
 function paint(){
   $$('.hot').forEach(b=>{const id=+b.dataset.u;
@@ -656,30 +710,34 @@ function paint(){
   const ar=ids.reduce((s,i)=>s+U[i].area,0), rt=ids.reduce((s,i)=>s+U[i].rent,0);
   const S=$('#st');
   if(!sel.length){ S.textContent='Select a unit to see its details and possible combinations.'; }
-  else if(sel.length===1){ const cp=compatOf(sel[0]).filter(x=>U[x].status==='available');
-    S.innerHTML='<b>Unit '+sel[0]+' selected</b> · '+U[sel[0]].area+' m²'+(cp.length?' · Can be joined with '+(cp.length>1?'los locales ':'el Local ')+cp.join(' o '):''); }
+  else if(sel.length===1){ const ct=comboText(sel[0]);
+    S.innerHTML='<b>Unit '+sel[0]+' selected</b> · '+U[sel[0]].area+' m²'+(ct?' · '+ct:''); }
   else { S.innerHTML='<b>'+ar+' m² of continuous space selected</b> · Units '+ids.join(' + '); }
   if(sel.length>1){
-    $('#sbt').textContent=ar+' m² continuos';
-    $('#sbs').textContent='· Units '+ids.join(' + ')+' · Base rent $'+money(rt)+'/mes'+(c?'':' · to be confirmed');
-    $('#sbc').textContent='Consultar los '+ar+' m²';
+    $('#sbt').textContent=ar+' m² continuous';
+    $('#sbs').textContent='· Units '+ids.join(' + ')+' · combined base rent quoted on request';
+    $('#sbc').textContent='Ask about the '+ar+' m²';
     $('#sbc').href=WAB+'%20-%20Units%20'+ids.join('%2B')+'%20('+ar+'%20m2)';
-    $('#sb').dataset.on='1';
+    $('#sb').dataset.on=inDisp?'1':'0';
   } else if(sel.length===1){
-    $('#sbt').textContent='Local '+sel[0];
-    $('#sbs').textContent='· '+U[sel[0]].area+' m² · Base rent $'+money(U[sel[0]].rent)+'/mes';
-    $('#sbc').textContent='Consultar el Local '+sel[0];
+    $('#sbt').textContent='Unit '+sel[0];
+    $('#sbs').textContent='· '+U[sel[0]].area+' m² · Base rent $'+money(U[sel[0]].rent)+'/mo';
+    $('#sbc').textContent='Ask about Unit '+sel[0];
     $('#sbc').href=WAB+'%20-%20Unit%20'+sel[0];
-    $('#sb').dataset.on='1';
+    $('#sb').dataset.on=inDisp?'1':'0';
   } else $('#sb').dataset.on='0';
 }
 function qcard(id){
-  const u=U[id], cp=compatOf(id);
-  let cb='';
-  if(cp.length){const opts=COMBOS.filter(c=>c.includes(id)).map(c=>{const ar=c.reduce((s,i)=>s+U[i].area,0);return 'con '+c.filter(x=>x!==id).join(' y ')+' forma '+ar+' m²'});cb='<p class="cb"><b>Can be joined</b> — '+opts.join('; ')+'.</p>';}
+  const u=U[id], ct=comboText(id), on=sel.includes(id);
+  const cb=ct?'<p class="cb"><b>Combinable</b> — '+ct+'</p>':'';
+  const add=on?compatOf(id).filter(x=>canAdd(sel,x)):[];
   $('#qcb').innerHTML='<h4>Unit '+id+' · '+u.area+' m²</h4><p class="m">'+FL[u.floor]+(id===16?' · narrow frontage; the unit runs deep':'')+'</p>'+
    '<p class="p">Base rent: <b>$'+money(u.rent)+' per month</b></p><p class="t">Estimated monthly total $'+money(u.total)+'</p>'+cb+
-   '<div class="qa"><button class="btn btn-d" data-sel2="'+id+'">Select unit</button><button class="btn btn-o" data-go="'+id+'">See full listing</button>'+
+   '<div class="qa">'+
+   (on ? (add.length?'<button class="btn btn-d" data-add2="'+add[0]+'">Add Unit '+add[0]+'</button>':'')
+         +'<button class="btn btn-o" data-unsel2="'+id+'">Clear selection</button>'
+       : '<button class="btn btn-d" data-sel2="'+id+'">Select unit</button>')+
+   '<button class="btn btn-o" data-go="'+id+'">See full listing</button>'+
    '<a class="btn btn-o" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068%20-%20Unit%20'+id+'">Ask about this unit</a></div>';
   $('#qc').dataset.on='1';
 }
@@ -693,27 +751,35 @@ function place(btn){
 $$('.hot').forEach(b=>b.addEventListener('click',()=>{
   const id=+b.dataset.u; if(U[id].status!=='available') return;
   if(sel.includes(id)) sel=sel.filter(x=>x!==id);
-  else if(sel.length && compatOf(sel[sel.length-1]).includes(id)) sel.push(id);
+  else if(sel.length && canAdd(sel,id)) sel.push(id);
   else sel=[id];
-  paint(); if(sel.length===1){qcard(id);place(b);} else $('#qc').dataset.on='0';
+  paint(); if(sel.length===1){qcard(id);place(b);} else closeQc();
 }));
 $('#qcx').addEventListener('click',()=>$('#qc').dataset.on='0');
-$('#qcb').addEventListener('click',e=>{const s2=e.target.closest('[data-sel2]'); if(s2){const i=+s2.dataset.sel2; if(!sel.includes(i))sel=[i]; paint(); return;}
+$('#qcb').addEventListener('click',e=>{
+  const s2=e.target.closest('[data-sel2]'); if(s2){const i=+s2.dataset.sel2; if(!sel.includes(i))sel=[i]; paint(); qcard(i); return;}
+  const un=e.target.closest('[data-unsel2]'); if(un){const i=+un.dataset.unsel2; sel=sel.filter(x=>x!==i); paint(); if(sel.length===1)qcard(sel[0]); else if(!sel.length)qcard(i); return;}
+  const ad=e.target.closest('[data-add2]'); if(ad){const i=+ad.dataset.add2; if(canAdd(sel,i))sel.push(i); paint(); closeQc(); return;}
   const g=e.target.closest('[data-go]'); if(!g)return;
-  $('#qc').dataset.on='0'; goTo(+g.dataset.go);});
-$('#sbx').addEventListener('click',()=>{sel=[];paint();$('#qc').dataset.on='0';});
+  closeQc(); goTo(+g.dataset.go);});
+$('#sbx').addEventListener('click',()=>{sel=[];paint();closeQc();});
 function goTo(id){const el=document.getElementById('local-'+id); if(!el)return;
   history.replaceState(null,'','#local-'+id); el.scrollIntoView({behavior:'smooth',block:'start'});
   el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'),2000);
   const h=el.querySelector('h3'); if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}}
-$$('[data-locate]').forEach(b=>b.addEventListener('click',()=>{
-  const id=+b.dataset.locate; sel=[id]; paint();
 const hdr=document.querySelector('.hdr');
 addEventListener('scroll',()=>{hdr.dataset.s = scrollY>60?'1':'0';},{passive:true});
 const secs=['disponibilidad','plaza','ubicacion','faq'].map(i=>document.getElementById(i)).filter(Boolean);
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
   document.querySelectorAll('.nav a[href^="#"]').forEach(a=>a.setAttribute('aria-current', a.getAttribute('href')==='#'+e.target.id?'true':'false'));}})},{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>io.observe(s));
+// la barra de seleccion solo vive dentro de Disponibilidad
+const dispEl=document.getElementById('disponibilidad');
+if(dispEl) new IntersectionObserver(([e])=>{inDisp=e.isIntersecting;paint();},{rootMargin:'0px 0px -35% 0px'}).observe(dispEl);
+// al navegar fuera del explorador, la ficha emergente se cierra
+$$('.nav a[href^="#"], a.cta[href^="#"], .hero a[href^="#"]').forEach(a=>a.addEventListener('click',closeQc));
+$$('[data-locate]').forEach(b=>b.addEventListener('click',()=>{
+  const id=+b.dataset.locate; sel=[id]; paint();
   document.getElementById('disponibilidad').scrollIntoView({behavior:'smooth',block:'start'});
   setTimeout(()=>{const h=document.querySelector('.hot[data-u="'+id+'"]'); if(h){qcard(id);place(h);}},600);}));
 $$('.chip').forEach(c=>c.addEventListener('click',()=>{
@@ -738,13 +804,28 @@ $('#lbX').addEventListener('click',closeLb);$('#lbP').addEventListener('click',(
 $('#lb').addEventListener('click',e=>{if(e.target===$('#lb'))closeLb();});
 document.addEventListener('keydown',e=>{
   if($('#lb').classList.contains('on')){if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1);return;}
-  if(e.key==='Escape'){$('#qc').dataset.on='0';}});
+  if(e.key==='Escape'){closeQc();}});
 // sticky móvil
 const hero=document.querySelector('.hero');
 new IntersectionObserver(([e])=>{$('#stk').dataset.on=(e.isIntersecting||sel.length)?'0':'1';},{threshold:0}).observe(hero);
 // ancla directa
 if(location.hash.startsWith('#local-')){const id=+location.hash.replace('#local-','');
   window.addEventListener('load',()=>setTimeout(()=>goTo(id),120));}
+// tooltip: los datos del local al pasar por encima o al enfocar con teclado
+const TIP=$('#tip');
+function showTip(b){const id=+b.dataset.u,u=U[id];
+  if(!u||u.status!=='available'){TIP.dataset.on='0';return;}
+  TIP.innerHTML='<b>Unit '+id+' · '+u.area+' m²</b><span>Base rent $'+money(u.rent)+'/mo</span>';
+  TIP.dataset.on='1';
+  const r=b.getBoundingClientRect(), tr=TIP.getBoundingClientRect();
+  let l=r.left+scrollX+r.width/2-tr.width/2;
+  l=Math.max(scrollX+10,Math.min(l,scrollX+document.documentElement.clientWidth-tr.width-10));
+  let t=r.top+scrollY-tr.height-12; if(t<scrollY+8) t=r.bottom+scrollY+12;
+  TIP.style.left=l+'px'; TIP.style.top=t+'px';}
+const hideTip=()=>TIP.dataset.on='0';
+$$('.hot').forEach(b=>{b.addEventListener('mouseenter',()=>showTip(b));b.addEventListener('mouseleave',hideTip);
+  b.addEventListener('focus',()=>showTip(b));b.addEventListener('blur',hideTip);});
+addEventListener('scroll',hideTip,{passive:true});
 paint();
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Place", "name": "Plaza La Peatonal 68", "address": {"@type": "PostalAddress", "streetAddress": "Calle 68 Este", "addressLocality": "San Francisco", "addressRegion": "Panama City", "addressCountry": "PA"}, "url": "https://www.spotonerealty.com/peatonal68/en/", "image": "https://www.spotonerealty.com/peatonal68/img/hero.jpg", "hasMap": "https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9", "makesOffer": [{"@type": "Offer", "name": "Unit 11", "price": 1400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-11", "description": "70 m², first floor"}, {"@type": "Offer", "name": "Unit 13", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-13", "description": "120 m², first floor"}, {"@type": "Offer", "name": "Unit 15", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-15", "description": "120 m², first floor"}, {"@type": "Offer", "name": "Unit 16", "price": 4000, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-16", "description": "200 m², first floor"}, {"@type": "Offer", "name": "Unit 21", "price": 1386, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-21", "description": "77 m², second floor"}, {"@type": "Offer", "name": "Unit 22", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-22", "description": "100 m², second floor"}, {"@type": "Offer", "name": "Unit 23", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-23", "description": "100 m², second floor"}], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "60 estacionamientos gratis", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Estacionamiento cubierto", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Elevador", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Escaleras", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Ocho restaurantes en planta baja", "value": true}]}</script>

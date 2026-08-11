@@ -629,7 +629,7 @@ section[id]{scroll-margin-top:96px}
 
 /* ================ FOOTER ================ */
 footer{background:var(--dark);padding:56px 0 32px}
-.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:48px;margin-bottom:44px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
 .foot-grid h6{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:10.5px;color:rgba(246,244,239,.4);
@@ -676,6 +676,34 @@ footer{background:var(--dark);padding:56px 0 32px}
 .r{opacity:0;transform:translateY(24px);transition:opacity 1.1s cubic-bezier(.16,.7,.2,1), transform 1.1s cubic-bezier(.16,.7,.2,1)}
 .r.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+
+/* ---- Propiedades que represento ---- */
+.props{background:var(--soft);padding:var(--sec) 0}
+.prop-card{display:grid;grid-template-columns:46fr 54fr;gap:0;background:#fff;
+ border:1px solid var(--line);border-radius:2px;overflow:hidden;align-items:stretch;
+ transition:border-color .2s,box-shadow .2s,transform .2s}
+.prop-card:hover{border-color:var(--accent-sk);box-shadow:0 18px 44px -28px rgba(20,33,58,.34);transform:translateY(-2px)}
+.prop-card:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+.prop-img{position:relative;min-height:270px;background:var(--warm)}
+.prop-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.prop-body{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
+.prop-tag{font-family:'Hanken Grotesk',sans-serif;font-size:10.5px;font-weight:600;
+ letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.prop-body h3{font-family:'Newsreader',serif;font-size:34px;font-weight:300;letter-spacing:-.02em;
+ color:var(--ink);line-height:1.1;margin:14px 0 0}
+.prop-meta{font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:var(--muted);margin-top:10px}
+.prop-txt{font-family:'Hanken Grotesk',sans-serif;font-size:16px;color:var(--body);
+ line-height:1.6;margin-top:18px;max-width:44ch}
+.prop-cta{font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:500;color:var(--accent);
+ margin-top:26px;border-bottom:1px solid var(--line);padding-bottom:3px;align-self:flex-start;
+ transition:border-color .18s}
+.prop-card:hover .prop-cta{border-color:var(--accent)}
+@media(max-width:860px){
+  .prop-card{grid-template-columns:1fr}
+  .prop-img{min-height:0;aspect-ratio:16/9}
+  .prop-body{padding:30px 24px}
+  .prop-body h3{font-size:28px}
+}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -693,6 +721,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   <nav class="site-nav">
     <a href="#" class="lnk">Inicio</a>
     <a href="#que-hago" class="lnk">Qué hago</a>
+    <a href="#propiedades" class="lnk">Propiedades</a>
     <a href="#relocation" class="lnk">Relocation</a>
     <a href="criterio/" class="lnk">Criterio</a>
     <a href="#dario" class="lnk">Dario</a>
@@ -805,6 +834,28 @@ footer{background:var(--dark);padding:56px 0 32px}
         <p class="svc-body">Si todavía no sabes si conviene vender, arrendar, comprar o esperar, ordeno primero la situación. Reviso zona, precio, momento y margen real para identificar qué se sostiene, qué necesita ajuste y cuál sería el siguiente paso.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ================ PROPIEDADES ================ -->
+<section id="propiedades" class="props r">
+  <div class="container">
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">Inventario propio</span></div>
+    <div class="section-head" style="margin-bottom:44px">
+      <h2>Propiedades que <em>represento</em>.</h2>
+      <p class="lead">Representación directa, con página propia y disponibilidad al día.</p>
+    </div>
+    <a class="prop-card" href="https://www.spotonerealty.com/peatonal68/">
+      <span class="prop-img"><img src="peatonal68/img/fachada.jpg" alt="Fachada de Plaza La Peatonal 68, sobre Calle 68 Este, San Francisco" loading="lazy" width="1920" height="620"></span>
+      <span class="prop-body">
+        <span class="prop-tag">Representación exclusiva</span>
+        <h3>Plaza La Peatonal 68</h3>
+        <span class="prop-meta">Locales comerciales de 70 a 200 m² · San Francisco</span>
+        <span class="prop-txt">Consulta disponibilidad, precios, fotografías y configuraciones combinables.</span>
+        <span class="prop-cta">Explorar los locales &rarr;</span>
+      </span>
+    </a>
   </div>
 </section>
 
@@ -1018,6 +1069,13 @@ footer{background:var(--dark);padding:56px 0 32px}
           <li><a href="criterio/">Criterio</a></li>
           <li><a href="#proceso">Cómo trabajo</a></li>
           <li><a href="#dario">Sobre Dario</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Propiedades</h6>
+        <ul>
+          <li><a href="#propiedades">Propiedades que represento</a></li>
+          <li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li>
         </ul>
       </div>
       <div>
