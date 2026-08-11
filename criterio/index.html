@@ -147,6 +147,7 @@
 
 <script>
   const ARTICLES = [
+    { pillar:"Decisiones", title:"Se dañó la lavadora. <em>La pregunta no es quién la usó.</em>", dek:"Cuando un equipo incluido en el alquiler deja de funcionar, la responsabilidad depende de la causa, del contrato y de lo que pueda demostrarse.", url:"/criterio/quien-paga-electrodomesticos-alquiler-panama/", kw:"quien paga los electrodomesticos en un alquiler se dano la lavadora nevera aire acondicionado apartamento alquilado reparaciones arrendador arrendatario contrato tipo b miviot inventario de entrega deposito desgaste normal panama" },
     { pillar:"Decisiones", title:"Acordaron el precio. <em>El avalúo llegó por debajo.</em>", dek:"No necesariamente mata el negocio. Pero puede cambiar cuánto efectivo necesita el comprador — justo cuando ya hay una promesa firmada.", url:"/criterio/avaluo-debajo-precio-compra/", kw:"avaluo por debajo del precio de compra avaluo bancario panama avaluo menor al precio diferencia entre avaluo y precio financiamiento hipotecario promesa de compraventa efectivo cierre banco valuador referencias comparables" },
     { pillar:"Decisiones", title:"Aprender <em>no reemplaza</em> operar.", dek:"Un curso puede ayudarte a entender. La experiencia empieza cuando el riesgo ya es tuyo.", url:"/criterio/aprender-no-reemplaza-operar/", kw:"curso bienes raices aprender invertir formacion inmobiliaria mentoria gurus flips vivir de rentas experiencia operar criterio excel vacancia contexto mercado panama miami" },
     { pillar:"IA &amp; herramientas", title:"Proptech: digitalizar el trámite <em>no es digitalizar la decisión.</em>", dek:"Las plataformas proptech digitalizan el proceso de compra —buscar, comparar, papeleo—. Es buenísimo. Pero hay una parte que ninguna app hace por ti, y es la que de verdad decide.", url:"/criterio/proptech-no-digitaliza-la-decision/", kw:"proptech panama plataformas inmobiliarias marketplace inmobiliario tecnologia inmobiliaria comprar propiedad en linea app inmobiliaria digitalizacion inmobiliaria criterio corredor panama" },
@@ -192,7 +193,7 @@
     { pillar:"IA &amp; herramientas", title:"La IA me ahorra tiempo. <em>El criterio</em> todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
   ];
   const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&");
-  const FEATURED_URL = "/criterio/aprender-no-reemplaza-operar/";
+  const FEATURED_URL = "/criterio/quien-paga-electrodomesticos-alquiler-panama/";
   let state = { q:"", pillar:"Todo" };
   const listEl = document.getElementById('list');
 

@@ -379,3 +379,26 @@ footer{background:var(--dark);padding:56px 0 32px}
 @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media(max-width:760px){:root{--gut:20px}.crit-body p{font-size:17.5px}}
 @media(max-width:520px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ── Notas de consulta (serie En la práctica) ──────────────────────────────
+   Notas largas que se leen por partes: llegan desde búsqueda y se recorren.
+   Subtítulo, etiqueta de bloque y lista. Todo por debajo del H1 en jerarquía:
+   la regla sigue siendo que nada en Criterio grite más que "Sobre Dario". */
+.crit-body h2{
+  font-family:'Newsreader',serif;
+  font-size:clamp(21px,2vw,25px);font-weight:400;letter-spacing:-.014em;line-height:1.2;
+  color:var(--ink);margin:14px 0 18px;
+}
+.crit-body .crit-label{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A9097;font-weight:600;
+  margin:54px 0 0;display:flex;align-items:center;gap:12px;
+}
+.crit-body .crit-label::before{content:"";width:18px;height:1px;background:#C9C9C4;flex:none}
+.crit-body ul{list-style:none;margin:22px 0;padding:0}
+.crit-body ul li{
+  position:relative;padding-left:26px;margin:0 0 12px;
+  font-size:inherit;line-height:inherit;color:inherit;
+}
+.crit-body ul li::before{content:"—";position:absolute;left:0;color:var(--accent-sk)}
+.crit-body cite{font-style:italic}
