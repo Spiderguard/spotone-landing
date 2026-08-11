@@ -353,7 +353,21 @@ details.calc{margin-top:16px}
   .mapbar{padding:13px 15px}
   .mapbar .btn{width:100%;text-align:center}
 }
-@media(max-width:400px){ .uacts2{flex-direction:column;gap:12px} }
+@media(max-width:400px){ .uacts2{flex-direction:column;gap:12px} .uacts2 .linkm{align-self:flex-start} }
+
+/* ---- bloque de precios: concepto a la izquierda, importe a la derecha ---- */
+.price .pk{font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.13em;
+ text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px}
+.prow{margin:22px 0 0;border-top:1px solid var(--line)}
+.prow>div{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+ padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px;font-variant-numeric:tabular-nums}
+.prow dt{color:var(--muted);margin:0}
+.prow dd{margin:0;color:var(--body);text-align:right}
+.prow .r-sub dt,.prow .r-sub dd{color:var(--body-2)}
+.prow .r-tot{border-bottom:none;border-top:1px solid var(--line);padding-top:12px;margin-top:1px}
+.prow .r-tot dt{color:var(--ink);font-weight:500}
+.prow .r-tot dd{color:var(--ink);font-weight:600;font-size:18px}
+@media(max-width:760px){ .prow>div{font-size:15px} .prow .r-tot dd{font-size:17px} }
 </style>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty — go to the main site"><svg class="lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
@@ -402,11 +416,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Double storefront, facing the main elevator</li><li>Three areas: front, rear and a private office</li><li>A/C ducting and light fixtures installed</li><li>Ceramic tile floor</li></ul>
   <p class="deliv">Delivered at 70 m² with the bathroom finished.</p>
   <div class="price">
-    <div class="c">$1,400.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 11 · $20.00 per m²</div>
-    <div class="brk">$175.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$1,590.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$1,700.25</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$1,400.00</div>
+    <div class="cl">$20.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$175.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$1,590.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$1,700.25</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$175.00</dd></div>
@@ -427,11 +445,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>2 interior bathrooms</li><li>Central air conditioning installed</li><li>Kitchen</li><li>Lightweight partition walls — they can be moved</li><li>Ceramic tile floor</li></ul>
   
   <div class="price">
-    <div class="c">$2,400.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 13 · $20.00 per m²</div>
-    <div class="brk">$300.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$2,715.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$2,904.00</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$2,400.00</div>
+    <div class="cl">$20.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$300.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$2,904.00</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$300.00</dd></div>
@@ -452,11 +474,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>Corner unit with a picture window and street exposure</li></ul>
   <p class="deliv">Delivered painted, with central air and lighting installed.</p>
   <div class="price">
-    <div class="c">$2,400.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 15 · $20.00 per m²</div>
-    <div class="brk">$300.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$2,715.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$2,904.00</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$2,400.00</div>
+    <div class="cl">$20.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$300.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$2,904.00</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$300.00</dd></div>
@@ -477,11 +503,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>3 bathrooms, two full with shower</li><li>Two 5-ton central A/C units</li><li>Kitchen and balcony</li><li>Lighting installed</li><li>Ceramic tile floor</li></ul>
   
   <div class="price">
-    <div class="c">$4,000.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 16 · $20.00 per m²</div>
-    <div class="brk">$500.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$4,515.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$4,830.00</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$4,000.00</div>
+    <div class="cl">$20.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$500.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$4,515.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$4,830.00</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$4,000.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$500.00</dd></div>
@@ -506,11 +536,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Currently connected to Unit 22</li></ul>
   
   <div class="price">
-    <div class="c">$1,386.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 21 · $18.00 per m²</div>
-    <div class="brk">$192.50 maintenance · $15.00 waste collection</div>
-    <div class="sub">$1,593.50 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$1,704.00</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$1,386.00</div>
+    <div class="cl">$18.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$192.50</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$1,593.50</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$1,704.00</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,386.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$192.50</dd></div>
@@ -531,11 +565,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Open plan, easy to adapt</li></ul>
   
   <div class="price">
-    <div class="c">$1,800.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 22 · $18.00 per m²</div>
-    <div class="brk">$250.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$2,065.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$2,208.50</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$1,800.00</div>
+    <div class="cl">$18.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$250.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$2,208.50</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$250.00</dd></div>
@@ -556,11 +594,15 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 interior bathroom</li><li>Currently laid out as six private offices</li><li>Ceramic tile floor</li></ul>
   <p class="deliv">Delivered as open plan; management is removing the partitions.</p>
   <div class="price">
-    <div class="c">$1,800.00<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 23 · $18.00 per m²</div>
-    <div class="brk">$250.00 maintenance · $15.00 waste collection</div>
-    <div class="sub">$2,065.00 before ITBMS</div>
-    <div class="tt">Total monthly with ITBMS: <b>$2,208.50</b></div>
+    <div class="pk">Monthly base rent</div>
+    <div class="c">$1,800.00</div>
+    <div class="cl">$18.00 per m²</div>
+    <dl class="prow">
+      <div><dt>Maintenance</dt><dd>$250.00</dd></div>
+      <div><dt>Waste collection</dt><dd>$15.00</dd></div>
+      <div class="r-sub"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+      <div class="r-tot"><dt>Total monthly with ITBMS</dt><dd>$2,208.50</dd></div>
+    </dl>
     <details class="calc"><summary>See the monthly breakdown</summary><dl>
       <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance ($2.50/m²)</dt><dd>$250.00</dd></div>
@@ -597,11 +639,11 @@ details.calc{margin-top:16px}
 <div><img src="../img/estacionamientos.jpg" alt="Street-level parking in front of the units" loading="lazy">
 <h3>Sixty parking spaces</h3>
 <p>Fourteen at street level and forty-six covered in the basement, two of them accessible.</p>
-<p>Each unit gets one assigned space. The rest are for the plaza's customers. For a business that runs on appointments or classes, parking on site answers one of the most common objections to operating in San Francisco.</p></div>
+<p>Each lease includes one space for the tenant's use. When it is not in use, it stays available to the plaza's customers. For a business that runs on appointments or classes, parking on site answers one of the most common objections to operating in San Francisco.</p></div>
 <div><img src="../img/mural.jpg" alt="La Peatonal 68 mural on Calle 68 Este" loading="lazy">
 <h3>Eight restaurants on the ground floor</h3>
 <p>They draw visitors day and night, across eight different kinds of food.</p>
-<p>Calle 68 Este is an established block: slow traffic and settled retail around it.</p></div>
+<p>The plaza is located on Calle 68 Este, in an established area of San Francisco surrounded by restaurants, shops and services.</p></div>
 </div>
 </div></section>
 
@@ -637,13 +679,13 @@ details.calc{margin-top:16px}
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M20 4v32"/><path d="M14 18.5 11.8 15 9.6 18.5z" fill="var(--accent)" stroke="none"/><path d="M11.8 15v7.5"/><path d="M26 21.5 28.2 25l2.2-3.5z" fill="var(--accent)" stroke="none"/><path d="M28.2 25v-7.5"/></svg><b>Elevator</b><p>Elevator access to the commercial levels.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 33h7v-6.5h7V20h7v-6.5h7"/><path d="M5 33V26.5h7"/></svg><b>Stairs</b><p>Internal circulation across the three levels.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h30"/><path d="M9 10v2.5M31 10v2.5"/><path d="M11.5 31v-4.6l2.6-5.8a2.1 2.1 0 0 1 1.9-1.3h9.8a2.1 2.1 0 0 1 1.9 1.3l2.6 5.8V31"/><path d="M11.5 26.6h18.8"/><circle cx="15.6" cy="31" r="2"/><circle cx="26.2" cy="31" r="2"/><path d="M4 37l4.6-4.2"/></svg><b>Covered parking</b><p>46 covered spaces, reached by ramp from Calle 68 Este.</p></div>
-<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v30M31 5v30"/><path d="M9 35h22M9 5h22" stroke-dasharray="2.5 3.5"/><path d="M17.5 15.5 20.5 13v14"/><path d="M17.6 27h5.8"/></svg><b>One assigned space per unit</b><p>Each unit gets one assigned space. The rest are for the plaza's customers.</p></div>
+<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v30M31 5v30"/><path d="M9 35h22M9 5h22" stroke-dasharray="2.5 3.5"/><path d="M17.5 15.5 20.5 13v14"/><path d="M17.6 27h5.8"/></svg><b>For the tenant's use</b><p>One space can be assigned to whoever signs the lease. If it goes unused, it stays available to customers.</p></div>
 </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
 <div class="ebrow"><span class="eb">Frequently asked questions</span><span class="r"></span></div>
-<div class="faq"><details><summary>Does the base rent include maintenance and ITBMS?</summary><div class="a"><p>No. Each listing shows the monthly base rent first and then, separately, maintenance, waste collection and ITBMS. You can also open the breakdown to see the total billed monthly.</p></div></details><details><summary>How is ITBMS calculated?</summary><div class="a"><p>ITBMS is Panama's 7% VAT, and it applies to base rent plus maintenance. The $15.00 waste collection fee is exempt, because it is privately contracted collection.</p></div></details><details><summary>What do I need to sign?</summary><div class="a"><p>Signing requires payment of the <b>first month plus one month as a security deposit</b>.</p></div></details><details><summary>What is not included?</summary><div class="a"><p>Electricity, internet, permits, build-out, insurance, the business's own consumption and any other service the tenant contracts directly are not included.</p></div></details><details><summary>What condition is the unit delivered in?</summary><div class="a"><p>It varies by unit. Each listing states the existing bathrooms, air conditioning, partitions, kitchen and lighting.</p><p>Before signing, what stays, what is removed and the delivery condition are all put in writing.</p></div></details><details><summary>What kinds of business can operate here?</summary><div class="a"><p>Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require.</p><p>Tell me what you intend to operate and I will check which units can work before we set up a visit.</p></div></details><details><summary>Do all the units have water, drainage, gas and extraction?</summary><div class="a"><p>No. Infrastructure varies by unit.</p><p>If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before putting an offer together.</p></div></details><details><summary>Can I lease more than one unit?</summary><div class="a"><p>Yes. Units 21 and 22 can form 177 m². Together with Unit 23 they reach 277 m² of continuous space, subject to availability.</p></div></details><details><summary>What are the frontage and depth dimensions?</summary><div class="a"><p>They vary by unit. Send me the number and I will send the floor plan and the dimensions on file.</p></div></details><details><summary>How does the parking work?</summary><div class="a"><p>The plaza has 60 parking spaces: fourteen at street level and forty-six covered in the basement, two of them accessible.</p><p>Each unit gets one assigned space. The rest are for the plaza's customers.</p></div></details><details><summary>How do I arrange a visit?</summary><div class="a"><p>Send me the unit you are interested in, the type of business and any technical requirement you cannot do without.</p><p>First I confirm the space and the infrastructure make sense for your operation; then we set up the visit.</p></div></details></div>
+<div class="faq"><details><summary>Does the base rent include maintenance and ITBMS?</summary><div class="a"><p>No. Each listing shows the monthly base rent first and then, separately, maintenance, waste collection and ITBMS. You can also open the breakdown to see the total billed monthly.</p></div></details><details><summary>How is ITBMS calculated?</summary><div class="a"><p>ITBMS is Panama's 7% VAT, and it applies to base rent plus maintenance. The $15.00 waste collection fee is exempt, because it is privately contracted collection.</p></div></details><details><summary>What do I need to sign?</summary><div class="a"><p>Signing requires payment of the <b>first month plus one month as a security deposit</b>.</p></div></details><details><summary>What is not included?</summary><div class="a"><p>Electricity, internet, permits, build-out, insurance, the business's own consumption and any other service the tenant contracts directly are not included.</p></div></details><details><summary>What condition is the unit delivered in?</summary><div class="a"><p>It varies by unit. Each listing states the existing bathrooms, air conditioning, partitions, kitchen and lighting.</p><p>Before signing, what stays, what is removed and the delivery condition are all put in writing.</p></div></details><details><summary>What kinds of business can operate here?</summary><div class="a"><p>Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require.</p><p>Tell me what you intend to operate and I will check which units can work before we set up a visit.</p></div></details><details><summary>Do all the units have water, drainage, gas and extraction?</summary><div class="a"><p>No. Infrastructure varies by unit.</p><p>If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before putting an offer together.</p></div></details><details><summary>Can I lease more than one unit?</summary><div class="a"><p>Yes. Units 21 and 22 can form 177 m². Together with Unit 23 they reach 277 m² of continuous space, subject to availability.</p></div></details><details><summary>What are the frontage and depth dimensions?</summary><div class="a"><p>They vary by unit. Send me the number and I will send the floor plan and the dimensions on file.</p></div></details><details><summary>How does the parking work?</summary><div class="a"><p>The plaza has 60 parking spaces: fourteen at street level and forty-six covered in the basement, two of them accessible.</p><p>Each lease includes one space for the tenant's use. When it is not in use, it stays available to the plaza's customers.</p></div></details><details><summary>How do I arrange a visit?</summary><div class="a"><p>Send me the unit you are interested in, the type of business and any technical requirement you cannot do without.</p><p>First I confirm the space and the infrastructure make sense for your operation; then we set up the visit.</p></div></details></div>
 </div></section>
 
 <section class="close"><div class="wrap">
@@ -738,7 +780,7 @@ function qcard(id){
          +'<button class="btn btn-o" data-unsel2="'+id+'">Clear selection</button>'
        : '<button class="btn btn-d" data-sel2="'+id+'">Select unit</button>')+
    '<button class="btn btn-o" data-go="'+id+'">See full listing</button>'+
-   '<a class="btn btn-o" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068%20-%20Unit%20'+id+'">Ask about this unit</a></div>';
+   '<a class="btn btn-o" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068%20-%20Unit%20'+id+'">Ask about Unit '+id+'</a></div>';
   $('#qc').dataset.on='1';
 }
 function place(btn){
