@@ -85,22 +85,44 @@ def dirty_paths() -> set[str]:
     return paths
 
 
+_COMMITTED: dict[str, str] | None = None
+
+
+def committed_dates() -> dict[str, str]:
+    """Un solo `git log` para todo el repo: ruta -> fecha del ultimo commit.
+
+    Mismo motivo que dirty_paths(): `git log -1 -- <ruta>` por pagina tambien
+    toca el indice, y sobre iCloud eso eran 84 llamadas de ~37s. Una pasada con
+    --name-only recorre el historial una vez y se resuelve en memoria.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "log", "--name-only", "--format=%x00%cs", "--diff-filter=AMR"],
+            cwd=ROOT, capture_output=True, text=True, check=True,
+        ).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return {}
+    dates: dict[str, str] = {}
+    fecha = ""
+    for line in out.splitlines():
+        if line.startswith("\x00"):
+            fecha = line[1:].strip()
+        elif line.strip() and fecha:
+            dates.setdefault(line.strip(), fecha)  # el log viene del mas reciente
+    return dates
+
+
 def git_lastmod(relpath: str) -> str:
     """Hoy si el archivo cambio en el working tree; si no, fecha del ultimo commit."""
-    global _DIRTY
+    global _DIRTY, _COMMITTED
     today = datetime.date.today().isoformat()
     if _DIRTY is None:
         _DIRTY = dirty_paths()
     if relpath in _DIRTY:
         return today
-    try:
-        committed = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", relpath],
-            cwd=ROOT, capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        return committed or today
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return today
+    if _COMMITTED is None:
+        _COMMITTED = committed_dates()
+    return _COMMITTED.get(relpath) or today
 
 
 def collect_files() -> list[str]:
