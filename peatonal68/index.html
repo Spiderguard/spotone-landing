@@ -47,7 +47,7 @@
 @font-face{font-family:'Newsreader';src:url(fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 :root{--ink:#1a1a18;--body:#46463f;--muted:#5A5F69;--faint:#a7a299;--line:#d8d2c6;--soft:#f6f4ef;--warm:#efebe1;
- --navy:var(--brand-navy);--dark:var(--brand-navy);--accent:#162F59;--sky:#9fb6d4;--ivory:#F4F1EA;--max:1440px;--gut:clamp(20px,7vw,112px)}
+ --navy:var(--brand-navy);--dark:var(--brand-navy);--accent:var(--brand-navy);--sky:#9fb6d4;--ivory:#F4F1EA;--max:1440px;--gut:clamp(20px,7vw,112px)}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--soft);color:var(--ink);font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
  font-size:18px;line-height:1.6;font-weight:300;letter-spacing:-.004em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
@@ -108,10 +108,10 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .hot[data-sel="1"] .ck{display:inline;margin-right:5px}
 .fac{position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--warm)}
 .fac img{width:100%;display:block}
-.hot{position:absolute;border:0;background:rgba(22,47,89,.24);box-shadow:inset 0 0 0 3px var(--accent),0 2px 10px rgba(var(--brand-navy-rgb),.25);padding:0;cursor:pointer;transition:background .18s,box-shadow .18s,opacity .18s;font-family:inherit}
-.hot:hover{background:rgba(22,47,89,.40);box-shadow:inset 0 0 0 3px var(--accent)}
-.hot[data-sel="1"]{background:rgba(22,47,89,.55);box-shadow:inset 0 0 0 3px var(--accent)}
-.hot[data-compat="1"]{background:rgba(22,47,89,.22);box-shadow:inset 0 0 0 2.5px var(--accent);outline:2.5px dashed var(--accent);outline-offset:-2px}
+.hot{position:absolute;border:0;background:rgba(var(--brand-navy-rgb),.24);box-shadow:inset 0 0 0 3px var(--accent),0 2px 10px rgba(var(--brand-navy-rgb),.25);padding:0;cursor:pointer;transition:background .18s,box-shadow .18s,opacity .18s;font-family:inherit}
+.hot:hover{background:rgba(var(--brand-navy-rgb),.40);box-shadow:inset 0 0 0 3px var(--accent)}
+.hot[data-sel="1"]{background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 3px var(--accent)}
+.hot[data-compat="1"]{background:rgba(var(--brand-navy-rgb),.22);box-shadow:inset 0 0 0 2.5px var(--accent);outline:2.5px dashed var(--accent);outline-offset:-2px}
 .hot[data-dim="1"]{opacity:.55}
 .hot span{position:absolute;left:0;top:0;transform:translateY(-104%);background:var(--accent);color:#fff;font-size:clamp(12px,1.1vw,15px);
  font-weight:600;line-height:1;padding:8px 12px;border-radius:3px;font-variant-numeric:tabular-nums;white-space:nowrap;transition:.18s}
@@ -121,8 +121,8 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .hot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .legend{display:flex;flex-wrap:wrap;gap:26px;margin-top:18px;font-size:15px;color:var(--muted)}
 .legend i{display:inline-block;width:22px;height:16px;border-radius:2px;margin-right:9px;vertical-align:-3px}
-.i-av{background:rgba(22,47,89,.24);box-shadow:inset 0 0 0 3px var(--accent)}
-.i-cb{background:rgba(22,47,89,.22);box-shadow:inset 0 0 0 2.5px var(--accent);outline:2px dashed var(--accent);outline-offset:-2px}
+.i-av{background:rgba(var(--brand-navy-rgb),.24);box-shadow:inset 0 0 0 3px var(--accent)}
+.i-cb{background:rgba(var(--brand-navy-rgb),.22);box-shadow:inset 0 0 0 2.5px var(--accent);outline:2px dashed var(--accent);outline-offset:-2px}
 .i-ls{background:rgba(90,95,105,.18);box-shadow:inset 0 0 0 1px var(--muted)}
 .hint{font-size:15px;color:var(--muted);margin:16px 0 0}
 /* quick card */
@@ -458,7 +458,7 @@ details.calc{margin-top:16px}
 </div>
 <p class="status" id="st">Selecciona un local para ver sus datos y posibles combinaciones.</p>
 <div class="fac"><img src="img/fachada.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Local 11, 70 metros cuadrados, primer piso"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Local 13, 120 metros cuadrados, primer piso"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Local 15, 120 metros cuadrados, primer piso"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Local 16, 200 metros cuadrados, primer piso"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 21, 77 metros cuadrados, segundo piso"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 22, 100 metros cuadrados, segundo piso"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Local 23, 100 metros cuadrados, segundo piso"><span>23</span></button></div>
-<div class="legend"><span><i class="i-av"></i>Disponible</span><span><i class="i-cb"></i>Se puede combinar</span><span><i class="i-sl" style="background:rgba(22,47,89,.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Seleccionado</span></div>
+<div class="legend"><span><i class="i-av"></i>Disponible</span><span><i class="i-cb"></i>Se puede combinar</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Seleccionado</span></div>
 
 </div></section>
 

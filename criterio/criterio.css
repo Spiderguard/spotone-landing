@@ -15,7 +15,7 @@
   --soft:   #f6f4ef;
   --warm:   #efebe1;
   --dark:   #050E1E;
-  --accent: #162F59;
+  --accent: var(--brand-navy);
   --accent-sk: #9fb6d4;
   --max:    1100px;
   --gut:    64px;
