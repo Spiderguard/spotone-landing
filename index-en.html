@@ -776,6 +776,19 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
 /* el header se alinea con la misma retícula del contenido */
 .site-header{padding:0}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;height:100%}
+
+/* ---- tarjeta de representación exclusiva ---- */
+.prop-card{grid-template-columns:54fr 46fr}
+.prop-img{min-height:350px}
+.prop-img img{object-position:center 60%}
+.prop-body{padding:48px 52px}
+@media(max-width:1080px){ .prop-body{padding:40px 42px} }
+@media(max-width:860px){
+  .prop-card{grid-template-columns:1fr}
+  .prop-img{min-height:0;aspect-ratio:16/10}
+  .prop-body{padding:30px 28px}
+  .prop-cta{min-height:44px;display:inline-flex;align-items:center}
+}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -909,16 +922,19 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
   <div class="container">
     <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">Exclusive representation</span></div>
     <div class="section-head" style="margin-bottom:44px">
-      <h2>Property under <em>exclusive representation</em>.</h2>
-      <p class="lead">Direct representation, each with its own page and availability kept current.</p>
+      <!-- EXCLUSIVES = 1. With two or more, change ONLY this h2 to:
+       <h2>Properties I <em>represent directly</em>.</h2> -->
+      <h2>A property I <em>represent directly</em>.</h2>
+      <p class="lead">Dedicated marketing, current availability and a complete experience for exploring every space.</p>
     </div>
-    <a class="prop-card" href="https://www.spotonerealty.com/peatonal68/en/">
-      <span class="prop-img"><img src="peatonal68/img/hero.jpg" alt="Plaza La Peatonal 68 at night, sign lit, on Calle 68 Este" loading="lazy" width="1332" height="1065"></span>
+    <a class="prop-card" href="https://www.spotonerealty.com/peatonal68/en/" aria-label="Explore available commercial spaces at Plaza La Peatonal 68">
+      <span class="prop-img"><img src="peatonal68/img/hero.jpg" alt="Illuminated exterior of Plaza La Peatonal 68 in San Francisco, Panama" loading="lazy" width="1332" height="1065"></span>
       <span class="prop-body">
+        <span class="prop-tag">Exclusive representation</span>
         <h3>Plaza La Peatonal 68</h3>
-        <span class="prop-meta">Retail units from 70 to 200 m² · San Francisco</span>
-        <span class="prop-txt">Check availability, pricing, photos and combinable configurations.</span>
-        <span class="prop-cta">Explore the units &rarr;</span>
+        <span class="prop-meta">Commercial spaces from 70 to 200 m² · San Francisco</span>
+        <span class="prop-txt">Review current availability, asking rents, photographs and combinable configurations.</span>
+        <span class="prop-cta">Explore Plaza La Peatonal 68 &rarr;</span>
       </span>
     </a>
   </div>
