@@ -815,6 +815,89 @@ footer{padding:44px 0 24px}
 .foot-bottom{padding-top:15px;margin-top:15px}
 .foot-brand p{margin-top:12px}
 @media(max-width:760px){footer{padding:38px 0 22px}}
+/* ===== HEADER B (prototipo) ===== */
+:root{--hdr-h:72px;--hdr-h-s:67px}
+.hdr,.site-header{height:var(--hdr-h)}
+.hdr[data-s="1"],.site-header.scrolled{
+  height:var(--hdr-h-s);
+  background:rgba(246,244,239,.95)!important;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(5,14,30,.10);
+  transition:height .2s ease,background .2s ease,border-color .2s ease}
+.hdr[data-s="1"]::before{opacity:0}
+.hdr[data-s="1"] .nav a,.site-header.scrolled .site-nav .lnk{color:#3A3A36}
+.hdr[data-s="1"] .nav a:hover,.hdr[data-s="1"] .nav a[aria-current="true"],
+.site-header.scrolled .site-nav .lnk:hover{color:#050E1E}
+.hdr[data-s="1"] .nav a[aria-current="true"]{border-bottom-color:#050E1E}
+.hdr[data-s="1"] .nav a.cta,.site-header.scrolled .site-nav a.cta{
+  border-color:#050E1E!important;color:#050E1E!important;background:transparent!important}
+.hdr[data-s="1"] .nav a.cta:hover{background:rgba(5,14,30,.06)!important}
+.hdr[data-s="1"] .lang a,.site-header.scrolled .lang-switch a{color:#5A5F69}
+.hdr[data-s="1"] .lang a[aria-current="true"],
+.site-header.scrolled .lang-switch a.active{color:#050E1E}
+.hdr[data-s="1"] .lock [fill="#F4F1EA"],.site-header.scrolled .lock [fill="#F4F1EA"]{fill:#050E1E}
+.hdr[data-s="1"] .lock [stroke="#F4F1EA"],.site-header.scrolled .lock [stroke="#F4F1EA"]{stroke:#050E1E}
+.site-header.scrolled .menu-toggle{color:#050E1E}
+@media(max-width:760px){:root{--hdr-h:64px;--hdr-h-s:60px}}
+
+/* ===== CÓMO TRABAJO (bloque fusionado) ===== */
+.metodo{background:var(--soft);padding:var(--sec) 0}
+.metodo .section-head{margin-bottom:52px}
+.mpasos{display:grid;grid-template-columns:repeat(2,1fr);gap:38px 56px;margin-top:8px}
+.mpaso{border-top:1px solid var(--line);padding-top:20px}
+.mpaso .n{font-family:'Newsreader',serif;font-size:15px;letter-spacing:.14em;color:var(--muted)}
+.mpaso h3{font-family:'Newsreader',serif;font-size:26px;font-weight:300;letter-spacing:-.015em;
+  color:var(--ink);line-height:1.15;margin:8px 0 10px}
+.mpaso p{font-size:16.5px;line-height:1.62;color:var(--body);max-width:46ch}
+.mcierre{margin-top:52px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:18px;line-height:1.6;color:var(--body-2);max-width:62ch}
+@media(max-width:860px){.mpasos{grid-template-columns:1fr;gap:30px}}
+
+/* ===== COMPACTACIÓN (prototipo) ===== */
+/* principio: banda navy de 609 -> ~320px */
+.principio-sect{padding:88px 0}
+/* relocation -160 */
+.reloc-section{padding:calc(var(--sec) - 44px) 0}
+.reloc-blocks{gap:34px}
+/* dario -140 */
+#dario{padding:calc(var(--sec) - 40px) 0}
+.about-content .signature{margin-top:26px}
+/* faq -70 */
+#faq{padding:calc(var(--sec) - 22px) 0}
+.faq-item summary{padding:20px 0}
+/* contacto -50 */
+.final{padding:96px 0}
+@media(max-width:760px){
+  .principio-sect{padding:60px 0}
+  .final{padding:68px 0}
+}
+
+/* ===== ÚLTIMA PASADA (home) ===== */
+section[id]{scroll-margin-top:calc(var(--hdr-h-s) + 24px)}
+footer .container{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:0 40px}
+.foot-grid{display:contents}
+.foot-bottom{grid-column:1/-1;margin-top:26px;padding-top:18px;border-top:1px solid var(--on-navy-line)}
+footer{padding:64px 0 30px}
+@media(max-width:880px){ footer .container{grid-template-columns:1fr 1fr;gap:0 28px} }
+@media(max-width:520px){ footer .container{grid-template-columns:1fr} }
+
+/* ===== CIERRE: hover de la propiedad ===== */
+.prop-card{transition:border-color .2s ease,box-shadow .2s ease}
+.prop-card:hover,.prop-card:focus-visible{border-color:var(--brand-navy);
+  box-shadow:0 14px 36px -30px rgba(var(--brand-navy-rgb),.4);transform:none}
+.prop-img img{transition:transform .35s cubic-bezier(.16,.7,.2,1)}
+.prop-card:hover .prop-img img{transform:scale(1.02)}
+.prop-cta{transition:border-color .18s}
+.prop-card:hover .prop-cta{border-color:var(--brand-navy);text-decoration:none}
+.prop-cta::after{content:"";display:inline-block;width:0}
+.prop-card:hover .prop-cta,.prop-card:focus-visible .prop-cta{padding-right:4px}
+@media(prefers-reduced-motion:reduce){.prop-img img,.prop-card{transition:none}
+  .prop-card:hover .prop-img img{transform:none}}
+
+/* el atributo height del HTML no debe fijar la altura cuando el CSS controla el ancho */
+img{max-width:100%}
+.duo img,.fac img,.prop-img img,.shot img,.hero>img,.mapwrap iframe{height:auto}
+.prop-img img,.shot img,.hero>img{height:100%}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -857,7 +940,7 @@ footer{padding:44px 0 24px}
     <a href="#que-hago">What I do</a>
     <a href="#relocation">Relocation</a>
     <a href="/criterio/en/">Perspective</a>
-    <a href="#proceso">How I work</a>
+    <a href="#metodo">How I work</a>
     <a href="#dario">Dario</a>
     <a href="#faq">Questions</a>
     <a href="#contacto">Contact</a>
@@ -1004,58 +1087,20 @@ footer{padding:44px 0 24px}
 </section>
 
 <!-- ================ PROCESS ================ -->
-<section id="proceso" class="process r">
+<section class="metodo r" id="metodo">
   <div class="container">
-    <div class="section-head">
-      <h2>A process, <em>without noise</em>.</h2>
-      <p class="lead">The approach is the same in every case: read the situation before acting. Every decision has clarity before time is spent.</p>
-    </div>
-
-    <div class="proc-grid">
-      <div class="pstep">
-        <span class="pnum">Step 01</span>
-        <h4>Context</h4>
-        <p>Before listing, searching or recommending a zone, I want to understand what is behind it: objectives, timeline and priorities. If it makes sense to move forward, I formalize the working agreement before any action.</p>
-      </div>
-      <div class="pstep">
-        <span class="pnum">Step 02</span>
-        <h4>Market read</h4>
-        <p>The decision is built with information. Similar properties currently on the market, recent price adjustments, economic indicators, and urban developments that may affect the decision. The objective is not to predict. It is to reduce uncertainty.</p>
-      </div>
-      <div class="pstep">
-        <span class="pnum">Step 03</span>
-        <h4>Strategy</h4>
-        <p>Every situation requires a different combination: price, narrative, area, timing, negotiation or decision structure. Each step is explained.</p>
-      </div>
-      <div class="pstep">
-        <span class="pnum">Step 04</span>
-        <h4>Execution</h4>
-        <p>Representation, negotiation, relocation support and guidance through closing. The objective is not to complete a transaction. It is to make a good decision and execute it correctly.</p>
-      </div>
-    </div>
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">How I work</span></div>
+    <div class="section-head"><h2>Read first.<br><em>Execute second</em>.</h2><p class="lead">I begin by understanding the decision: what you want to achieve, what could shape the outcome and how much room actually exists. I then compare the situation with the market, define a strategy and guide its execution through closing.</p></div>
+    <div class="mpasos"><div class="mpaso"><div class="n">01</div><h3>Context</h3><p>Objectives, priorities, timing and real budget. Before searching, listing or negotiating, we define what the transaction needs to solve.</p></div><div class="mpaso"><div class="n">02</div><h3>Market reading</h3><p>I compare the situation with active inventory, recent adjustments and signals that may affect the decision. Not to predict, but to reduce uncertainty.</p></div><div class="mpaso"><div class="n">03</div><h3>Strategy</h3><p>I define the right combination of price, location, positioning, negotiation and timing. Every recommendation should be explainable.</p></div><div class="mpaso"><div class="n">04</div><h3>Execution</h3><p>I coordinate the search or marketing process, viewings, negotiation and follow-through to closing, through one point of contact.</p></div></div>
+    <p class="mcierre">The work is not about showing you more. It is about helping you decide better. If the evidence suggests waiting, adjusting or not moving forward, I will tell you that as well.</p>
   </div>
 </section>
 
 <!-- ================ BEFORE WE MOVE FORWARD ================ -->
-<section class="before r">
-  <div class="container">
-    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">How I work</span></div>
-    <div class="before-head">
-      <h2>The job is not to show more.<br>It is to help you <em>decide better</em>.</h2>
-      <p class="lead">Before recommending a property or taking one to market, I review what it competes with, what information is missing, what risk is not yet visible and what is worth negotiating. Then I carry that read into execution: search, positioning, viewings, negotiation and closing.</p>
-      <p class="lead" style="margin-top:14px">The transaction may be residential, commercial, investment, beach, land, pre-construction or relocation. The asset changes; the standard of work does not.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- ================ MANIFESTO ================ -->
-<section class="manifest r">
-  <div class="container">
-    <div class="manifest-line"></div>
-    <p class="manifest-text">I do not work by volume or noise.<br>I work through <em>market reading, strategy and execution</em>.</p>
-    <p class="manifest-attr">Dario Jhangimal · SpotOne</p>
-  </div>
-</section>
+
 
 <!-- ================ ABOUT ================ -->
 <section id="dario" class="about r">
@@ -1113,6 +1158,22 @@ footer{padding:44px 0 24px}
 </section>
 
 <!-- ================ FOOTER ================ -->
+<section id="contacto" class="final r">
+  <div class="container">
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">Let's talk</span></div>
+    <h2>Does it make sense <em>for us to talk</em>?</h2>
+    <p class="lead">Tell me what you are evaluating — the property, the area, the timing or the decision itself. If it makes sense to move forward, you will know in the first conversation.</p>
+    <div class="actions">
+      <a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama." class="btn">Message on WhatsApp</a>
+      <a href="mailto:info@spotonerealty.com" class="btn-line dark">or by email</a>
+    </div>
+    <div class="channels">
+      <a href="https://wa.me/50766758127"><small>WhatsApp</small>+507 6675-8127</a>
+      <a href="mailto:info@spotonerealty.com"><small>Email</small>info@spotonerealty.com</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1121,23 +1182,16 @@ footer{padding:44px 0 24px}
         <p>Real estate advisory with judgment in Panama.</p>
         <p class="foot-cred">Dario Jhangimal · Real Estate Broker · License PN-1240</p>
       </div>
-      <div>
-        <h6>Practice</h6>
-        <ul>
+      <div><h6>Practice</h6><ul>
           <li><a href="#que-hago">What I do</a></li>
           <li><a href="#relocation">Relocation</a></li>
           <li><a href="criterio/en/">Perspective</a></li>
-          <li><a href="#proceso">How I work</a></li>
+          <li><a href="#metodo">How I work</a></li>
           <li><a href="#dario">About Dario</a></li>
-        </ul>
-      </div>
-      <div>
-        <h6>Properties</h6>
-        <ul>
+        </ul><h6 style="margin-top:24px">Properties</h6><ul>
           <li><a href="#propiedades">Exclusive representation</a></li>
           <li><a href="https://www.spotonerealty.com/peatonal68/en/">Plaza La Peatonal 68</a></li>
-        </ul>
-      </div>
+        </ul></div>
       <div>
         <h6>Contact</h6>
         <ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li><li><a href="index.html" style="margin-top:6px;display:block">Español</a></li><li><a href="#" style="color:var(--soft);font-weight:500">English</a></li></ul>

@@ -444,20 +444,198 @@ details.calc{margin-top:16px}
 .close+.foot{border-top:1px solid var(--line)}
 @media(max-width:760px){ .close{padding:64px 0} }
 .close h2{color:var(--ink)}
-.close p{color:var(--body)}
+.close p{color:var(--body);margin-bottom:12px}
 .close .cred{color:var(--muted)}
 .close .cred b{color:var(--ink)}
 .close .acts{margin-bottom:0}
 
 .foot{padding:52px 0 28px}
-.fgrid{margin-bottom:34px}
 @media(max-width:760px){ .foot{padding:44px 0 24px} }
 /* footer al rango 380-420px, identico en las dos propiedades */
 .foot{padding:44px 0 24px}
-.fgrid{margin-bottom:26px;gap:36px}
-.fbottom{padding-top:15px;margin-top:15px}
 .fbrand p{margin-top:12px}
 @media(max-width:760px){.foot{padding:38px 0 22px}}
+
+/* ===== HEADER B (prototipo) ===== */
+:root{--hdr-h:72px;--hdr-h-s:67px}
+.hdr,.site-header{height:var(--hdr-h)}
+.hdr[data-s="1"],.site-header.scrolled{
+  height:var(--hdr-h-s);
+  background:rgba(246,244,239,.95)!important;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(5,14,30,.10);
+  transition:height .2s ease,background .2s ease,border-color .2s ease}
+.hdr[data-s="1"]::before{opacity:0}
+.hdr[data-s="1"] .nav a,.site-header.scrolled .site-nav .lnk{color:#3A3A36}
+.hdr[data-s="1"] .nav a:hover,.hdr[data-s="1"] .nav a[aria-current="true"],
+.site-header.scrolled .site-nav .lnk:hover{color:#050E1E}
+.hdr[data-s="1"] .nav a[aria-current="true"]{border-bottom-color:#050E1E}
+.hdr[data-s="1"] .nav a.cta,.site-header.scrolled .site-nav a.cta{
+  border-color:#050E1E!important;color:#050E1E!important;background:transparent!important}
+.hdr[data-s="1"] .nav a.cta:hover{background:rgba(5,14,30,.06)!important}
+.hdr[data-s="1"] .lang a,.site-header.scrolled .lang-switch a{color:#5A5F69}
+.hdr[data-s="1"] .lang a[aria-current="true"],
+.site-header.scrolled .lang-switch a.active{color:#050E1E}
+.hdr[data-s="1"] .lock [fill="#F4F1EA"],.site-header.scrolled .lock [fill="#F4F1EA"]{fill:#050E1E}
+.hdr[data-s="1"] .lock [stroke="#F4F1EA"],.site-header.scrolled .lock [stroke="#F4F1EA"]{stroke:#050E1E}
+.site-header.scrolled .menu-toggle{color:#050E1E}
+@media(max-width:760px){:root{--hdr-h:64px;--hdr-h-s:60px}}
+
+/* ===== EXPLORADOR (prototipo) ===== */
+.facnav{display:flex;gap:0;margin-bottom:14px;border:1px solid var(--line);
+  border-radius:2px;overflow:hidden;width:max-content}
+.facnav button{appearance:none;border:0;background:transparent;font:inherit;font-size:14px;
+  padding:0 18px;min-height:44px;cursor:pointer;color:var(--muted);letter-spacing:.01em}
+.facnav button[aria-selected="true"]{background:var(--brand-navy);color:var(--on-navy)}
+.facnav button+button{border-left:1px solid var(--line)}
+.facnav button:focus-visible{outline:2px solid var(--brand-navy);outline-offset:-3px}
+.facpisos{display:none;gap:8px;margin-bottom:12px}
+.facpisos button{appearance:none;border:1px solid var(--line);background:transparent;font:inherit;
+  font-size:14px;padding:0 16px;min-height:44px;border-radius:2px;cursor:pointer;color:var(--muted)}
+.facpisos button[aria-selected="true"]{border-color:var(--brand-navy);color:var(--brand-navy);font-weight:500}
+.facview[hidden]{display:none}
+.elev{width:100%;height:auto;display:block;background:var(--soft)}
+.elevbox{border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.u-g{cursor:pointer}
+.u-g .uh{fill:transparent;stroke:var(--brand-navy);stroke-width:2.5;transition:fill .16s}
+.u-g .uc{opacity:0;pointer-events:none}
+.u-g .un{fill:var(--brand-navy);pointer-events:none}
+.u-g:hover .uh,.u-g:focus-visible .uh{fill:#EFEBE1}
+.u-g:focus-visible{outline:none}
+.u-g:focus-visible .uh{stroke-width:4}
+.u-g[aria-pressed="true"] .uh{fill:var(--brand-navy);fill-opacity:.82}
+.u-g[aria-pressed="true"] .un{fill:var(--soft)}
+.u-g[data-comb="1"] .uc{opacity:1}
+.u-g[aria-disabled="true"]{cursor:default}
+.u-g[aria-disabled="true"] .uh{stroke:#B9B2A4;stroke-width:1.5;fill:#EFEBE1;fill-opacity:.55}
+.u-g[aria-disabled="true"] .un{fill:#B9B2A4}
+.u-g[data-dim="1"]{opacity:.32}
+.facnote{font-size:13px;color:var(--muted);line-height:1.55;margin-top:12px;max-width:74ch}
+.elevbox{position:relative}
+.uctrl{display:none}
+@media(max-width:760px){
+  .facpisos{display:flex}
+  .facnav{width:100%}
+  .facnav button{flex:1;text-align:center}
+  .u-g .un{display:none}
+  .u-g[data-off="1"]{display:none}
+  /* controles reales sobre el dibujo: 44px garantizados y texto a tamaño de pantalla */
+  .uctrl{display:block;position:absolute;transform:translate(-50%,-50%);
+    min-width:44px;min-height:44px;padding:0 10px;border:2px solid var(--brand-navy);
+    border-radius:2px;background:rgba(246,244,239,.94);color:var(--brand-navy);
+    font:600 15px/1 'Hanken Grotesk',sans-serif;cursor:pointer}
+  .uctrl[aria-pressed="true"]{background:var(--brand-navy);color:var(--soft)}
+  .uctrl[data-comb="1"]{border-style:dashed}
+  .uctrl[data-off="1"]{display:none}
+  .uctrl:focus-visible{outline:3px solid var(--brand-navy);outline-offset:2px}
+}
+
+/* ===== DIAGRAMA MÓVIL POR PISO ===== */
+.mdiag{display:none}
+@media(max-width:760px){
+  .elevbox{display:none}
+  .uctrl{display:none}
+  .mdiag{display:block}
+  .mdiag[hidden]{display:none}
+  .mrow{display:flex;gap:8px}
+  .mblk{flex:1;min-width:0;min-height:92px;padding:12px 6px 10px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    border:2px solid var(--brand-navy);border-radius:2px;background:transparent;
+    font-family:'Hanken Grotesk',sans-serif;cursor:pointer;color:var(--brand-navy)}
+  .mblk .mn{font-size:24px;font-weight:600;line-height:1}
+  .mblk .mm{font-size:14px;color:var(--muted)}
+  .mblk .mst{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .mblk[aria-pressed="true"]{background:var(--brand-navy);color:var(--soft)}
+  .mblk[aria-pressed="true"] .mm,.mblk[aria-pressed="true"] .mst{color:rgba(246,244,239,.78)}
+  .mblk[data-comb="1"]{border-style:dashed;background:rgba(5,14,30,.05)}
+  .mblk[aria-disabled="true"]{border-color:#B9B2A4;color:#B9B2A4;cursor:default;background:rgba(0,0,0,.02)}
+  .mblk[aria-disabled="true"] .mm,.mblk[aria-disabled="true"] .mst{color:#B9B2A4}
+  .mblk:focus-visible{outline:3px solid var(--brand-navy);outline-offset:3px}
+  .munion{margin-top:10px;display:flex;flex-direction:column;gap:7px}
+  .ub{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted)}
+  .ub i{display:block;height:2px;background:var(--brand-navy);opacity:.5;border-radius:1px;flex:none}
+  .ub1 i{width:64%}
+  .ub2 i{width:100%}
+  .mnota{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:12px}
+}
+
+/* ===== ÚLTIMA PASADA ===== */
+section[id],[id^="local-"]{scroll-margin-top:calc(var(--hdr-h-s) + 24px)}
+/* leyenda de uniones */
+.ubt{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:2px}
+/* ficha rápida bajo el diagrama móvil */
+.mrapida{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.mr-t{font-size:14.5px;line-height:1.5;color:var(--body);margin:0}
+.mr-a{margin-top:12px;appearance:none;border:1px solid var(--brand-navy);background:transparent;
+  color:var(--brand-navy);font:500 15px/1 'Hanken Grotesk',sans-serif;min-height:48px;
+  padding:0 18px;border-radius:2px;cursor:pointer;width:100%}
+.mr-a:focus-visible{outline:3px solid var(--brand-navy);outline-offset:2px}
+/* 3. fotografías editoriales: nunca una franja vertical */
+
+@media(max-width:760px){ .duo img{aspect-ratio:4/3} }
+/* 4. CTA compacto en dos columnas */
+.close{padding:64px 0}
+.close .cgrid{gap:56px;margin-top:26px;align-items:start}
+.close h2{margin-bottom:0}
+.close .cgrid>div>p:first-child{margin-top:0}
+.close .cred{margin:0 0 22px;line-height:1.55}
+.close .acts{gap:12px;margin-bottom:0}
+.close .acts .btn{min-height:53px;display:inline-flex;align-items:center}
+@media(max-width:760px){ .close{padding:60px 0} .close .acts .btn{width:100%;justify-content:center} }
+/* 6. footer: el legal ocupa una fila completa de la retícula */
+.fbottom{grid-column:1/-1;margin-top:24px;padding-top:16px;border-top:1px solid var(--on-navy-line)}
+.foot{padding:64px 0 30px}
+@media(max-width:880px){ .foot .wrap{grid-template-columns:1fr 1fr;gap:0 28px} }
+@media(max-width:520px){ .foot .wrap{grid-template-columns:1fr} }
+
+/* ===== CIERRE: ledger financiero ===== */
+.ledger{margin:20px 0 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.ledger>div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.ledger dt{color:var(--muted);margin:0;white-space:nowrap}
+.ledger dd{margin:0;color:var(--body);text-align:right;white-space:nowrap}
+.ledger .lsub{border-bottom:none;border-top:1px solid var(--line);margin-top:1px;padding-top:11px}
+.ledger .lsub dt{color:var(--ink);font-weight:500}
+.ledger .lsub dd{color:var(--ink);font-weight:600;font-size:17px}
+.ledger .ltot{border-bottom:none;border-top:1.5px solid var(--brand-navy);padding-top:11px;margin-top:1px}
+.ledger .ltot dt{color:var(--ink);font-weight:600}
+.ledger .ltot dd{color:var(--ink);font-weight:700;font-size:17px}
+.price .noitb{font-size:13.5px;color:var(--muted);margin-top:9px}
+details.calc{margin-top:14px}
+/* ===== CIERRE: fotografías editoriales ===== */
+.duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.duo img{aspect-ratio:16/9;object-fit:cover;width:100%;max-width:100%}
+@media(max-width:860px){ .duo{grid-template-columns:minmax(0,1fr)} .duo img{aspect-ratio:4/3} }
+/* ===== CIERRE: CTA 7/5 ===== */
+.close{padding:64px 0}
+.close .cgrid{grid-template-columns:7fr 5fr;gap:72px;align-items:start;margin-top:26px}
+.close h2{max-width:16ch;margin:0}
+.close .acts{gap:12px;margin:0}
+.close .acts .btn{min-height:53px;flex:1;justify-content:center;display:inline-flex;align-items:center}
+@media(max-width:860px){ .close .cgrid{grid-template-columns:1fr;gap:34px} }
+@media(max-width:760px){ .close{padding:56px 0} .close .acts{flex-direction:column} .close .acts .btn{width:100%} }
+/* ===== CIERRE: footer de 3 columnas ===== */
+.foot .wrap{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:0 56px}
+.fgrid{display:contents}
+.fcol-idioma{display:none}
+.flegal{grid-column:1/-1;max-width:none;margin-top:44px;padding-top:0;border-top:0;
+  font-size:12.5px;line-height:1.55}
+.fbottom{grid-column:1/-1;margin-top:24px;padding-top:16px;border-top:1px solid var(--on-navy-line);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.fidiomas{display:flex;gap:14px;align-items:center}
+.fidiomas a{min-height:44px;display:inline-flex;align-items:center}
+.foot{padding:64px 0 30px}
+@media(max-width:880px){ .foot .wrap{grid-template-columns:1fr 1fr;gap:0 28px} }
+@media(max-width:520px){ .foot .wrap{grid-template-columns:1fr} }
+/* ===== CIERRE: hover del explorador ===== */
+.hot:hover{background:rgba(var(--brand-navy-rgb),.41)}
+.u-g{cursor:pointer}
+
+/* el atributo height del HTML no debe fijar la altura cuando el CSS controla el ancho */
+img{max-width:100%}
+.duo img,.fac img,.prop-img img,.shot img,.hero>img,.mapwrap iframe{height:auto}
+.prop-img img,.shot img,.hero>img{height:100%}
 </style>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty — go to the main site"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
@@ -492,7 +670,47 @@ details.calc{margin-top:16px}
 <button class="chip" data-f="c" aria-pressed="false">Combinable</button>
 </div>
 <p class="status" id="st" role="status" aria-live="polite" aria-atomic="true">Select a unit to see its details and possible combinations.</p>
-<div class="fac"><img src="../img/fachada.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="1920" height="620"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Unit 11, 70 square meters, first floor" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Unit 13, 120 square meters, first floor" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Unit 15, 120 square meters, first floor" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Unit 16, 200 square meters, first floor" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 21, 77 square meters, second floor" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 22, 100 square meters, second floor" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Unit 23, 100 square meters, second floor" aria-pressed="false"><span>23</span></button></div>
+<div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="plano">Location plan</button><button role="tab" aria-selected="false" data-view="foto">Actual facade</button></div><div class="facpisos" role="tablist" aria-label="Level"><button role="tab" aria-selected="true" data-piso="1">First floor</button><button role="tab" aria-selected="false" data-piso="2">Second floor</button></div><div class="facview" data-view="plano"><div class="elevbox"><svg class="elev" viewBox="0 0 1920 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic location plan of the seven units at Plaza La Peatonal 68">
+<defs><pattern id="comb" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#050E1E" stroke-width="2" opacity=".33"/></pattern></defs>
+<rect x="0" y="58" width="1920" height="458" fill="#F6F4EF"/>
+<rect x="0" y="126" width="1920" height="140" fill="#E7E4DB"/>
+<rect x="0" y="288" width="1920" height="92" fill="#E7E4DB"/>
+<rect x="0" y="402" width="1920" height="114" fill="#EFEBE1"/>
+<rect x="0" y="382" width="1920" height="20" fill="#050E1E" opacity=".82"/>
+<line x1="0" y1="122" x2="1920" y2="122" stroke="#B9B2A4" stroke-width="2"/>
+<line x1="0" y1="266" x2="1920" y2="266" stroke="#B9B2A4" stroke-width="2"/>
+<line x1="0" y1="288" x2="1920" y2="288" stroke="#B9B2A4" stroke-width="2"/>
+<line x1="0" y1="380" x2="1920" y2="380" stroke="#B9B2A4" stroke-width="2"/>
+<line x1="0" y1="516" x2="1920" y2="516" stroke="#B9B2A4" stroke-width="2"/>
+<line x1="0" y1="58" x2="1920" y2="58" stroke="#B9B2A4" stroke-width="2.5"/>
+<line x1="0" y1="516" x2="1920" y2="516" stroke="#050E1E" stroke-width="2.5" opacity=".55"/>
+<line x1="0" y1="122" x2="0" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="152" y1="122" x2="152" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="304" y1="122" x2="304" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="456" y1="122" x2="456" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="608" y1="122" x2="608" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="760" y1="122" x2="760" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="872" y1="122" x2="872" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1010" y1="122" x2="1010" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1150" y1="122" x2="1150" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1300" y1="122" x2="1300" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1450" y1="122" x2="1450" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1600" y1="122" x2="1600" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1750" y1="122" x2="1750" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<line x1="1920" y1="122" x2="1920" y2="380" stroke="#D8D2C6" stroke-width="1.5"/>
+<rect x="872" y="382" width="138" height="134" fill="#F6F4EF" stroke="#B9B2A4" stroke-width="2"/>
+<text x="941.0" y="490" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="19" letter-spacing="2.4" fill="#050E1E" opacity=".62">ACCESO</text>
+<text x="24" y="202.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">SEGUNDO PISO</text>
+<text x="24" y="340.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">PRIMER PISO</text>
+<text x="24" y="465.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">PLANTA BAJA</text>
+<g class="u-g" data-u="11" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 11, 70 square meters, first floor"><rect class="uh" x="652" y="284" width="188" height="88" rx="1"/><rect class="uc" x="652" y="284" width="188" height="88" rx="1" fill="url(#comb)"/><text class="un" x="746.0" y="337.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">11</text></g>
+<g class="u-g" data-u="13" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 13, 120 square meters, first floor"><rect class="uh" x="1228" y="284" width="192" height="90" rx="1"/><rect class="uc" x="1228" y="284" width="192" height="90" rx="1" fill="url(#comb)"/><text class="un" x="1324.0" y="338.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">13</text></g>
+<g class="u-g" data-u="15" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 15, 120 square meters, first floor"><rect class="uh" x="1627" y="284" width="235" height="89" rx="1"/><rect class="uc" x="1627" y="284" width="235" height="89" rx="1" fill="url(#comb)"/><text class="un" x="1744.5" y="337.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">15</text></g>
+<g class="u-g" data-u="16" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 16, 200 square meters, first floor"><rect class="uh" x="876" y="288" width="64" height="88" rx="1"/><rect class="uc" x="876" y="288" width="64" height="88" rx="1" fill="url(#comb)"/><text class="un" x="908.0" y="341.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">16</text></g>
+<g class="u-g" data-u="21" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 21, 77 square meters, second floor"><rect class="uh" x="962" y="135" width="214" height="111" rx="1"/><rect class="uc" x="962" y="135" width="214" height="111" rx="1" fill="url(#comb)"/><text class="un" x="1069.0" y="199.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">21</text></g>
+<g class="u-g" data-u="22" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor"><rect class="uh" x="1176" y="135" width="214" height="111" rx="1"/><rect class="uc" x="1176" y="135" width="214" height="111" rx="1" fill="url(#comb)"/><text class="un" x="1283.0" y="199.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">22</text></g>
+<g class="u-g" data-u="23" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"><rect class="uh" x="1388" y="136" width="212" height="119" rx="1"/><rect class="uc" x="1388" y="136" width="212" height="119" rx="1" fill="url(#comb)"/><text class="un" x="1494.0" y="204.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">23</text></g>
+</svg></div><div class="mdiag" data-piso="1"><div class="mrow"><button class="mblk" data-u="11" data-floor="1" aria-pressed="false" aria-label="Unit 11, 70 square meters, available"><span class="mn">11</span><span class="mm">70 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="16" data-floor="1" aria-pressed="false" aria-label="Unit 16, 200 square meters, available"><span class="mn">16</span><span class="mm">200 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="13" data-floor="1" aria-pressed="false" aria-label="Unit 13, 120 square meters, available"><span class="mn">13</span><span class="mm">120 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="15" data-floor="1" aria-pressed="false" aria-label="Unit 15, 120 square meters, available"><span class="mn">15</span><span class="mm">120 m²</span><span class="mst">Available</span></button></div><p class="mnota">Floor diagram — it preserves the order of the units, not their scale.</p></div><div class="mdiag" data-piso="2" hidden><div class="mrow"><button class="mblk" data-u="21" data-floor="2" aria-pressed="false" aria-label="Unit 21, 77 square meters, available"><span class="mn">21</span><span class="mm">77 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="mn">22</span><span class="mm">100 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="mn">23</span><span class="mm">100 m²</span><span class="mst">Available</span></button></div><div class="munion" aria-hidden="true"><span class="ubt">Units that can be combined</span><span class="ub ub1"><i></i><b>21 + 22 · 177 m²</b></span><span class="ub ub2"><i></i><b>21 + 22 + 23 · 277 m² of continuous space</b></span></div><p class="mnota">Floor diagram — it preserves the order of the units, not their scale.</p></div></div><div class="facview" data-view="foto" hidden><div class="fac"><img src="../img/fachada.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="1920" height="620"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Unit 11, 70 square meters, first floor" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Unit 13, 120 square meters, first floor" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Unit 15, 120 square meters, first floor" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Unit 16, 200 square meters, first floor" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 21, 77 square meters, second floor" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 22, 100 square meters, second floor" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Unit 23, 100 square meters, second floor" aria-pressed="false"><span>23</span></button></div></div><p class="facnote">Schematic representation to locate the units. Dimensions and layouts are confirmed on each unit's floor plan. The diagram shows the location and visible frontage of each unit, not its floor area or interior layout.</p>
 <div class="legend"><span><i class="i-av"></i>Available</span><span><i class="i-cb"></i>Can be combined</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Selected</span></div>
 
 </div></section>
@@ -506,17 +724,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Double storefront, facing the main elevator</li><li>Three areas: front, rear and a private office</li><li>A/C ducting and light fixtures installed</li><li>Ceramic tile floor</li></ul>
   <p class="deliv">Delivered at 70 m² with the bathroom finished.</p>
   <div class="price">
-    <div class="c">$1,400<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 11 · $20/m²</div>
-    <div class="brk">Maintenance: $175 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$1,400.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$1,400.00</dd></div>
       <div><dt>Maintenance</dt><dd>$175.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$1,590.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$1,590.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$1,575.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$110.25</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$1,700.25</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$1,700.25</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -530,17 +748,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>2 interior bathrooms</li><li>Central air conditioning installed</li><li>Kitchen</li><li>Lightweight partition walls — they can be moved</li><li>Ceramic tile floor</li></ul>
   
   <div class="price">
-    <div class="c">$2,400<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 13 · $20/m²</div>
-    <div class="brk">Maintenance: $300 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance</dt><dd>$300.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$2,700.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$189.00</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$2,904.00</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$2,904.00</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -554,17 +772,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>Corner unit with a picture window and street exposure</li></ul>
   <p class="deliv">Delivered painted, with central air and lighting installed.</p>
   <div class="price">
-    <div class="c">$2,400<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 15 · $20/m²</div>
-    <div class="brk">Maintenance: $300 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$2,400.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$2,400.00</dd></div>
       <div><dt>Maintenance</dt><dd>$300.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$2,715.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$2,700.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$189.00</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$2,904.00</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$2,904.00</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -578,17 +796,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>3 bathrooms, two full with shower</li><li>Two 5-ton central A/C units</li><li>Kitchen and balcony</li><li>Lighting installed</li><li>Ceramic tile floor</li></ul>
   
   <div class="price">
-    <div class="c">$4,000<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 16 · $20/m²</div>
-    <div class="brk">Maintenance: $500 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$4,000.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$4,000.00</dd></div>
       <div><dt>Maintenance</dt><dd>$500.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$4,515.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$4,515.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$4,500.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$315.00</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$4,830.00</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$4,830.00</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -606,17 +824,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Currently connected to Unit 22</li></ul>
   
   <div class="price">
-    <div class="c">$1,386<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 21 · $18/m²</div>
-    <div class="brk">Maintenance: $192.50 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$1,386.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$1,386.00</dd></div>
       <div><dt>Maintenance</dt><dd>$192.50</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$1,593.50</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$1,593.50</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$1,578.50</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$110.50</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$1,704.00</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$1,704.00</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -630,17 +848,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 bathroom</li><li>Open plan, easy to adapt</li></ul>
   
   <div class="price">
-    <div class="c">$1,800<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 22 · $18/m²</div>
-    <div class="brk">Maintenance: $250 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance</dt><dd>$250.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$2,050.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$143.50</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$2,208.50</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$2,208.50</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -654,17 +872,17 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 interior bathroom</li><li>Currently laid out as six private offices</li><li>Ceramic tile floor</li></ul>
   <p class="deliv">Delivered as open plan; management is removing the partitions.</p>
   <div class="price">
-    <div class="c">$1,800<span>  per month</span></div>
-    <div class="cl">Base rent for Unit 23 · $18/m²</div>
-    <div class="brk">Maintenance: $250 · Waste collection: $15</div>
-    <div class="noitb">ITBMS not included</div>
-    <details class="calc"><summary>See the monthly breakdown</summary><dl>
-      <div><dt>Base rent</dt><dd>$1,800.00</dd></div>
+    <dl class="ledger">
+      <div><dt>Monthly base rent</dt><dd>$1,800.00</dd></div>
       <div><dt>Maintenance</dt><dd>$250.00</dd></div>
       <div><dt>Waste collection</dt><dd>$15.00</dd></div>
-      <div class="st"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+      <div class="lsub"><dt>Subtotal before ITBMS</dt><dd>$2,065.00</dd></div>
+    </dl>
+    <p class="noitb">ITBMS not included.</p>
+    <details class="calc"><summary>See the monthly breakdown</summary><dl class="ledger">
+      <div><dt>Taxable base (base rent + maintenance)</dt><dd>$2,050.00</dd></div>
       <div><dt>ITBMS 7%</dt><dd>$143.50</dd></div>
-      <div class="tot"><dt>Total billed monthly</dt><dd>$2,208.50</dd></div>
+      <div class="ltot"><dt>Estimated monthly total</dt><dd>$2,208.50</dd></div>
     </dl></details>
   </div>
   <div class="uacts">
@@ -706,8 +924,8 @@ details.calc{margin-top:16px}
 <div class="ebrow"><span class="eb">Who is already there</span><span class="r"></span></div>
 <h2>The plaza is already running</h2>
 <p class="lead">Nineteen businesses are operating today, plus the management office. The mix runs from eight ground-floor restaurants to health, beauty, fitness and specialty commerce on the upper levels.</p>
-<div class="dirsum"><div><b>Ground floor</b><span>8 restaurants</span></div><div><b>First floor</b><span>Health, beauty and commerce · 6 businesses</span></div><div><b>Second floor</b><span>Fitness and commerce · 6 businesses</span></div></div><details class="dirdet"><summary>See the businesses</summary><div class="cols3"><div><h4>Ground floor</h4><p class="sub">Eight restaurants</p><ul><li>Rock Burger <em>Burgers</em></li><li>Sushark <em>Sushi</em></li><li>Mr Bross <em>Colombian grill</em></li><li>Tapeo y Vinos <em>Tapas and wine</em></li><li>Pizza 90 <em>Pizzeria</em></li><li>Churrería Manolo <em>Churros and coffee</em></li><li>Oakberry <em>Açaí and bowls</em></li><li>Padrón <em>Mexican food</em></li></ul></div><div><h4>First floor</h4><p class="sub">Health, beauty and commerce</p><ul><li>Smile Up <em>Dentistry</em></li><li>Tenua <em>Physical rehabilitation</em></li><li>Kapellos <em>Hair salon</em></li><li>Nail Bar <em>Nail salon</em></li><li>TA Boutique <em>Womenswear</em></li><li>Management office <em>Plaza administration</em></li></ul></div><div><h4>Second floor</h4><p class="sub">Fitness and commerce</p><ul><li>Budo Zen <em>Karate</em></li><li>Black Box <em>Boxing gym</em></li><li>Sculpt Yourself <em>Yoga</em></li><li>Rêve <em>Ballet wear</em></li><li>Proud Beauty <em>Hair salon</em></li><li>Strada Eleganza <em>Menswear</em></li></ul></div></div></details>
-<p class="lead" style="margin-top:40px">Before moving ahead we check that the new business fits the tenant mix and the technical condition of the unit. If we see a direct conflict, we raise it before going further.</p>
+<div class="dirsum"><div><b>Ground floor</b><span>8 restaurants</span></div><div><b>First floor</b><span>Health, beauty and commerce · 5 businesses + management</span></div><div><b>Second floor</b><span>Fitness and commerce · 6 businesses</span></div></div><details class="dirdet"><summary>See the businesses</summary><div class="cols3"><div><h4>Ground floor</h4><p class="sub">Eight restaurants</p><ul><li>Rock Burger <em>Burgers</em></li><li>Sushark <em>Sushi</em></li><li>Mr Bross <em>Colombian grill</em></li><li>Tapeo y Vinos <em>Tapas and wine</em></li><li>Pizza 90 <em>Pizzeria</em></li><li>Churrería Manolo <em>Churros and coffee</em></li><li>Oakberry <em>Açaí and bowls</em></li><li>Padrón <em>Mexican food</em></li></ul></div><div><h4>First floor</h4><p class="sub">Health, beauty and commerce</p><ul><li>Smile Up <em>Dentistry</em></li><li>Tenua <em>Physical rehabilitation</em></li><li>Kapellos <em>Hair salon</em></li><li>Nail Bar <em>Nail salon</em></li><li>TA Boutique <em>Womenswear</em></li><li>Management office <em>Plaza administration</em></li></ul></div><div><h4>Second floor</h4><p class="sub">Fitness and commerce</p><ul><li>Budo Zen <em>Karate</em></li><li>Black Box <em>Boxing gym</em></li><li>Sculpt Yourself <em>Yoga</em></li><li>Rêve <em>Ballet wear</em></li><li>Proud Beauty <em>Hair salon</em></li><li>Strada Eleganza <em>Menswear</em></li></ul></div></div></details>
+
 </div></section>
 
 <section><div class="wrap">
@@ -754,12 +972,11 @@ details.calc{margin-top:16px}
 <footer class="foot"><div class="wrap">
 <div class="fgrid">
   <div class="fbrand"><div class="mark"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></div><p>Real estate advisory and relocation in Panama.</p><p class="fcred">Dario Jhangimal · Licensed Real Estate Broker · License PN-1240</p></div>
-  <div><h6>Practice</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/index-en.html#proceso">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li></ul></div>
-  <div><h6>Properties</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#propiedades">Exclusive representation</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></div>
-  <div><h6>Contact</h6><ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">ES</a></li><li><a href="https://www.spotonerealty.com/peatonal68/en/">EN</a></li></ul></div>
+  <div><h6>Practice</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/#metodo">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li></ul><h6 style="margin-top:24px">Properties</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#propiedades">Exclusive representation</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></div>
+  <div><h6>Contact</h6><ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li></ul></div>
 </div>
 <p class="flegal">Plaza La Peatonal 68 is marketed under the exclusive representation of Dario Jhangimal, licensed real estate broker PN-1240. Published base rents do not include ITBMS. Each unit shows maintenance and waste collection charges; the monthly breakdown presents the applicable tax and estimated total. Availability, pricing and terms are subject to confirmation.</p>
-<div class="fbottom"><span>© 2026 SpotOne Realty · Panama · Licensed Real Estate Broker · License PN-1240</span><a href="https://www.spotonerealty.com/">spotonerealty.com</a></div>
+<div class="fbottom"><span class="fidiomas"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="true">ES</a><a href="https://www.spotonerealty.com/peatonal68/en/">EN</a></span><span>© 2026 SpotOne Realty · Panama · Licensed Real Estate Broker · License PN-1240</span><a href="https://www.spotonerealty.com/">spotonerealty.com</a></div>
 </div></footer>
 
 <div class="tip" id="tip" aria-hidden="true"></div>
@@ -936,5 +1153,91 @@ addEventListener('scroll',hideTip,{passive:true});
 paint();
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "@id": "https://www.spotonerealty.com/#spotone", "name": "SpotOne Realty", "url": "https://www.spotonerealty.com/", "telephone": "+507 6675-8127", "founder": {"@id": "https://www.spotonerealty.com/index-en.html#dario"}, "sameAs": ["https://instagram.com/spotonerealty"]}, {"@type": "Person", "@id": "https://www.spotonerealty.com/index-en.html#dario", "name": "Dario Jhangimal", "url": "https://www.spotonerealty.com/", "jobTitle": "Licensed Real Estate Broker (PN-1240)", "identifier": {"@type": "PropertyValue", "name": "Broker license (Panama)", "value": "PN-1240"}, "worksFor": {"@id": "https://www.spotonerealty.com/#spotone"}, "sameAs": ["https://www.linkedin.com/in/dario-jhangimal-v-14449751/", "https://instagram.com/spotonerealty"]}, {"@type": "Place", "name": "Plaza La Peatonal 68", "address": {"@type": "PostalAddress", "streetAddress": "Calle 68 Este", "addressLocality": "San Francisco", "addressRegion": "Panama City", "addressCountry": "PA"}, "url": "https://www.spotonerealty.com/peatonal68/en/", "image": "https://www.spotonerealty.com/peatonal68/img/hero.jpg", "hasMap": "https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9", "makesOffer": [{"@type": "Offer", "name": "Unit 11", "price": 1400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-11", "description": "70 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 13", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-13", "description": "120 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 15", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-15", "description": "120 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 16", "price": 4000, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-16", "description": "200 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 21", "price": 1386, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-21", "description": "77 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 22", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-22", "description": "100 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 23", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-23", "description": "100 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "60 free parking spaces", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Covered parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Elevator", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Stairs", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Eight ground-floor restaurants", "value": true}]}]}</script>
-</body>
+
+<script>
+(function(){
+ const nav=document.querySelector('.facnav'), pisos=document.querySelector('.facpisos');
+ if(!nav) return;
+ const svg=document.querySelector('.elev'), caja=document.querySelector('.elevbox');
+ const VB={0:'0 0 1920 620', 1:'612 239 1290 182', 2:'922 90 718 210'};
+ const movil=()=>matchMedia('(max-width:760px)').matches;
+ function camara(piso){
+   svg.setAttribute('viewBox', movil()? VB[piso] : VB[0]);
+   document.querySelectorAll('.u-g').forEach(g=>
+     g.dataset.off = (movil() && +g.dataset.floor!==piso) ? '1':'0');
+   colocar(piso);
+ }
+ function colocar(piso){
+   caja.querySelectorAll('.uctrl').forEach(b=>b.remove());
+   if(!movil()) return;
+   const [vx,vy,vw,vh]=svg.getAttribute('viewBox').split(' ').map(Number);
+   const r=svg.getBoundingClientRect();
+   document.querySelectorAll('.u-g').forEach(g=>{
+     if(+g.dataset.floor!==piso) return;
+     const rect=g.querySelector('.uh');
+     const cx=+rect.getAttribute('x')+ +rect.getAttribute('width')/2;
+     const cy=+rect.getAttribute('y')+ +rect.getAttribute('height')/2;
+     const b=document.createElement('button');
+     b.className='uctrl'; b.textContent=g.dataset.u;
+     b.setAttribute('aria-pressed', g.getAttribute('aria-pressed')||'false');
+     b.setAttribute('aria-label', g.getAttribute('aria-label'));
+     b.style.left=((cx-vx)/vw*100)+'%'; b.style.top=((cy-vy)/vh*100)+'%';
+     b.addEventListener('click',()=>g.dispatchEvent(new Event('click')));
+     caja.appendChild(b);
+   });
+ }
+ addEventListener('resize',()=>camara(+(pisos.querySelector('[aria-selected="true"]')||{dataset:{piso:1}}).dataset.piso));
+ nav.addEventListener('click',e=>{const b=e.target.closest('[data-view]'); if(!b)return;
+   nav.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
+   document.querySelectorAll('.facview').forEach(v=>v.hidden = v.dataset.view!==b.dataset.view);});
+ pisos.addEventListener('click',e=>{const b=e.target.closest('[data-piso]'); if(!b)return;
+   pisos.querySelectorAll('[data-piso]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
+   camara(+b.dataset.piso);});
+ camara(1);
+ // el plano comparte la seleccion con los hotspots de la foto
+ document.querySelectorAll('.u-g[role="button"]').forEach(g=>{
+   const disparar=()=>{const b=document.querySelector('.hot[data-u="'+g.dataset.u+'"]'); if(b)b.click();
+     document.querySelectorAll('.u-g').forEach(x=>{const h=document.querySelector('.hot[data-u="'+x.dataset.u+'"]');
+       if(h){x.setAttribute('aria-pressed',h.dataset.sel==='1'?'true':'false');
+             x.dataset.comb=h.dataset.compat==='1'?'1':'0';}});};
+   g.addEventListener('click',disparar);
+   g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();disparar();}});});
+})();
+</script>
+<script>
+(function(){
+ const pisos=document.querySelector('.facpisos');
+ const sync=()=>{
+   document.querySelectorAll('.mblk').forEach(b=>{
+     const hot=document.querySelector('.hot[data-u="'+b.dataset.u+'"]');
+     if(!hot||b.hasAttribute('disabled'))return;
+     b.setAttribute('aria-pressed', hot.dataset.sel==='1'?'true':'false');
+     b.dataset.comb = hot.dataset.compat==='1'?'1':'0';});};
+ document.querySelectorAll('.mblk:not([disabled])').forEach(b=>{
+   b.addEventListener('click',()=>{
+     const hot=document.querySelector('.hot[data-u="'+b.dataset.u+'"]');
+     if(hot){hot.click(); setTimeout(()=>{sync();rapida();},60);}});});
+ if(pisos) pisos.addEventListener('click',e=>{
+   const t=e.target.closest('[data-piso]'); if(!t)return;
+   document.querySelectorAll('.mdiag').forEach(d=>d.hidden = d.dataset.piso!==t.dataset.piso);});
+ function rapida(){
+   document.querySelectorAll('.mrapida').forEach(x=>x.remove());
+   const sel=[...document.querySelectorAll('.hot[data-sel="1"]')].map(x=>x.dataset.u);
+   if(!sel.length) return;
+   const cont=document.querySelector('.mdiag:not([hidden])');
+   if(!cont) return;
+   const U=window.__U||{};
+   const uno=sel.length===1?sel[0]:null;
+   const div=document.createElement('div'); div.className='mrapida';
+   const st=document.getElementById('st');
+   div.innerHTML='<p class="mr-t">'+(st?st.innerHTML:'')+'</p>'+
+     (uno?'<button class="mr-a" data-go="'+uno+'">Ver detalles del Local '+uno+' &rarr;</button>':'');
+   cont.appendChild(div);
+   const a=div.querySelector('[data-go]');
+   if(a) a.addEventListener('click',()=>{const f=document.getElementById('local-'+a.dataset.go);
+     if(f) f.scrollIntoView({behavior:'smooth',block:'start'});});
+ }
+ sync();
+})();
+</script></body>
 </html>
