@@ -795,6 +795,26 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
 .soc{display:flex;align-items:center;gap:8px;min-height:44px}
 .soc svg{flex:none;opacity:.75}
 .soc:hover svg,.soc:focus-visible svg{opacity:1}
+
+/* interlineados: H3 a 1.20, H2 dentro de 1.04-1.12 */
+.before-cell h3,.svc-title,.pstep h4,.faq-item summary{line-height:1.2}
+h3{line-height:1.22}
+.section-head h2,.before-head h2,.reloc-intro h2{line-height:1.06}
+
+/* footer compacto: 478 -> ~400px */
+footer{padding:52px 0 28px}
+.foot-grid{margin-bottom:34px}
+.foot-bottom{padding-top:18px}
+@media(max-width:760px){ footer{padding:44px 0 24px} }
+/* contacto: menos aire vertical */
+.final{padding:112px 0}
+@media(max-width:760px){ .final{padding:76px 0} }
+/* footer al rango 380-420px, identico en las dos propiedades */
+footer{padding:44px 0 24px}
+.foot-grid{margin-bottom:26px;gap:36px}
+.foot-bottom{padding-top:15px;margin-top:15px}
+.foot-brand p{margin-top:12px}
+@media(max-width:760px){footer{padding:38px 0 22px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -1019,31 +1039,11 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
 <!-- ================ ANTES DE AVANZAR ================ -->
 <section class="before r">
   <div class="container">
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">Cómo trabajo</span></div>
     <div class="before-head">
-      <h2>Trabajo bien<br>con quien<br><em>ya lo sabe</em>.</h2>
-      <p class="lead">No todo el mundo está listo para este proceso. Eso está bien. Lo que importa es saberlo antes de empezar.</p>
-    </div>
-    <div class="before-grid-2x2">
-      <div class="before-cell">
-        <div class="before-num">i</div>
-        <h3>Criterio sobre <em>emoción</em></h3>
-        <p>Las decisiones inmobiliarias que funcionan se toman con información, no con urgencia ni con el primer inmueble que se siente bien.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">ii</div>
-        <h3>Información <em>completa</em></h3>
-        <p>El proceso requiere claridad sobre presupuesto real, timing y objetivos. Sin eso, no hay lectura posible.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">iii</div>
-        <h3>Todavía no <em>es el momento</em></h3>
-        <p>Si la lectura dice que aún no es ahora, lo digo. Hay clientes con los que hablo hoy y trabajo en seis meses.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">iv</div>
-        <h3>Continuidad, <em>no transacciones</em></h3>
-        <p>No manejo operaciones aisladas. Si buscas quien te mande veinte opciones por WhatsApp, no soy el encaje correcto.</p>
-      </div>
+      <h2>El trabajo no es mostrar más.<br>Es ayudarte a <em>decidir mejor</em>.</h2>
+      <p class="lead">Antes de recomendar una propiedad o llevarla al mercado, reviso con qué compite, qué información falta, qué riesgo todavía no se está viendo y qué conviene negociar. Después llevo esa lectura a la ejecución: búsqueda, posicionamiento, visitas, negociación y cierre.</p>
+      <p class="lead" style="margin-top:14px">La operación puede ser residencial, comercial, de inversión, playa, lote, preventa o relocation. El activo cambia; el estándar de trabajo no.</p>
     </div>
   </div>
 </section>
@@ -1088,7 +1088,7 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
       <div class="faq-list">
         <details class="faq-item" open>
           <summary>¿Cómo funciona la primera conversación?</summary>
-          <div class="body">Sin costo. Es una llamada de 20 minutos para entender qué estás evaluando: por qué Panamá, dónde vas a trabajar o vivir, qué necesita tu familia, qué zonas aplican para tu perfil. Al final tienes un criterio inicial claro — y yo decido si puedo aportar valor real.</div>
+          <div class="body">Sin costo. Sirve para entender qué estás evaluando, qué necesitas y para cuándo. Puede empezar por WhatsApp, correo o una llamada breve. Al final ambos sabemos si tiene sentido avanzar y cuál sería el siguiente paso.</div>
         </details>
         <details class="faq-item">
           <summary>¿Cómo funciona trabajar conmigo si soy comprador?</summary>
@@ -1100,11 +1100,11 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
         </details>
         <details class="faq-item">
           <summary>¿Cómo compra un extranjero propiedad en Panamá?</summary>
-          <div class="body">Con los mismos derechos que un panameño en la mayoría de los casos. El proceso involucra escritura pública, registro en el Registro Público y en ocasiones sociedad anónima. Te guío en cada paso.</div>
+          <div class="body">En la mayoría de los casos un extranjero puede adquirir propiedad en Panamá. La estructura de compra, las restricciones que puedan aplicar y la documentación deben revisarse con un abogado antes de firmar o transferir fondos. Te acompaño en el proceso y coordino con tu abogado; esta información es orientativa y no sustituye la revisión legal.</div>
         </details>
         <details class="faq-item">
           <summary>¿Cómo cobras?</summary>
-          <div class="body">Para compradores: la comisión la paga el vendedor al cierre — no hay costo directo para ti. Para propietarios: comisión estándar de mercado al cierre, según el tipo de operación. Si el proceso requiere una gira de zonas — áreas, escuelas, propiedades pre-seleccionadas — hay un honorario que se descuenta en su totalidad si cerramos juntos.</div>
+          <div class="body">Para compradores: en muchas operaciones la comisión es reconocida por la propiedad o por el corredor que la representa. Si una búsqueda requiere honorarios directos o un servicio adicional, se acuerda antes de empezar. Para propietarios: comisión estándar de mercado al cierre, según el tipo de operación. Si el proceso requiere una gira de zonas — áreas, escuelas, propiedades pre-seleccionadas — hay un honorario que se descuenta en su totalidad si cerramos juntos.</div>
         </details>
         <details class="faq-item">
           <summary>¿Puedes empezar antes de que me mude a Panamá?</summary>

@@ -795,6 +795,26 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
 .soc{display:flex;align-items:center;gap:8px;min-height:44px}
 .soc svg{flex:none;opacity:.75}
 .soc:hover svg,.soc:focus-visible svg{opacity:1}
+
+/* interlineados: H3 a 1.20, H2 dentro de 1.04-1.12 */
+.before-cell h3,.svc-title,.pstep h4,.faq-item summary{line-height:1.2}
+h3{line-height:1.22}
+.section-head h2,.before-head h2,.reloc-intro h2{line-height:1.06}
+
+/* footer compacto: 478 -> ~400px */
+footer{padding:52px 0 28px}
+.foot-grid{margin-bottom:34px}
+.foot-bottom{padding-top:18px}
+@media(max-width:760px){ footer{padding:44px 0 24px} }
+/* contacto: menos aire vertical */
+.final{padding:112px 0}
+@media(max-width:760px){ .final{padding:76px 0} }
+/* footer al rango 380-420px, identico en las dos propiedades */
+footer{padding:44px 0 24px}
+.foot-grid{margin-bottom:26px;gap:36px}
+.foot-bottom{padding-top:15px;margin-top:15px}
+.foot-brand p{margin-top:12px}
+@media(max-width:760px){footer{padding:38px 0 22px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -1019,31 +1039,11 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
 <!-- ================ BEFORE WE MOVE FORWARD ================ -->
 <section class="before r">
   <div class="container">
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">How I work</span></div>
     <div class="before-head">
-      <h2>I work best<br>with those who<br><em>already know this</em>.</h2>
-      <p class="lead">Not everyone is ready for this. That is fine. What matters is knowing it before starting.</p>
-    </div>
-    <div class="before-grid-2x2">
-      <div class="before-cell">
-        <div class="before-num">i</div>
-        <h3>Judgment over <em>emotion</em></h3>
-        <p>Real estate decisions that work are made with information, not urgency or the first property that feels right.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">ii</div>
-        <h3>Complete <em>information</em></h3>
-        <p>This requires clarity on real budget, timing and objectives. Without that, no useful read is possible.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">iii</div>
-        <h3>Not yet <em>the right moment</em></h3>
-        <p>If the read says it is not the moment, I say so. There are clients I speak with today and work with six months later.</p>
-      </div>
-      <div class="before-cell">
-        <div class="before-num">iv</div>
-        <h3>Continuity, <em>not transactions</em></h3>
-        <p>I do not handle isolated operations. If you are looking for someone to send you twenty options by WhatsApp, I am not the right fit.</p>
-      </div>
+      <h2>The job is not to show more.<br>It is to help you <em>decide better</em>.</h2>
+      <p class="lead">Before recommending a property or taking one to market, I review what it competes with, what information is missing, what risk is not yet visible and what is worth negotiating. Then I carry that read into execution: search, positioning, viewings, negotiation and closing.</p>
+      <p class="lead" style="margin-top:14px">The transaction may be residential, commercial, investment, beach, land, pre-construction or relocation. The asset changes; the standard of work does not.</p>
     </div>
   </div>
 </section>
@@ -1087,9 +1087,7 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
       </div>
       <div class="faq-list">
         <details class="faq-item" open>
-          <summary>Do you charge for the first conversation?</summary>
-          <div class="body">No. First, I understand what you are evaluating and whether I can truly add value. Sometimes a WhatsApp or email exchange is enough. If moving forward makes sense, I schedule a call.</div>
-        </details>
+          <summary>How does the first conversation work?</summary><div class="body"><p>No charge. The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, we both know whether moving forward makes sense and what the next step would be.</p></div></details>
         <details class="faq-item">
           <summary>How do I work with you as a buyer?</summary>
           <div class="body">First, a context conversation — no cost — to understand what you are actually looking for. From there, the agreement is clear: one point of contact, in both directions. If you spot a property on any portal, send it to me and I will find it, review it and organize it for you. The commission is paid by the seller at closing — for the buyer, my work has no direct cost.</div>
@@ -1099,35 +1097,10 @@ footer{background:var(--brand-navy);padding:64px 0 32px}
           <div class="body">Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market, the ideal buyer profile and the right channel. I do not list for the sake of listing. Before a property moves, there is a read on price, timing and narrative. What goes out well positioned moves.</div>
         </details>
         <details class="faq-item">
-          <summary>How does a foreigner buy property in Panama?</summary>
-          <div class="body">With the same rights as a Panamanian in most cases. The process involves a public deed, registration with the Public Registry and in some cases a Panamanian corporation. I guide you through every step.</div>
-        </details>
+          <summary>How does a foreigner buy property in Panama?</summary><div class="body"><p>In most cases a foreigner can acquire property in Panama. The purchase structure, any restrictions that may apply and the documentation should be reviewed with a lawyer before signing or transferring funds. I walk you through the process and coordinate with your lawyer; this information is for guidance and does not replace legal review.</p></div></details>
         <details class="faq-item">
           <summary>How do you charge?</summary>
-          <div class="body">For buyers: the commission is paid by the seller at closing — for the buyer, my work has no direct cost. For owners: standard market commission at closing, based on the type of operation. If the process calls for an area orientation tour — a guided visit of neighborhoods, schools and pre-selected properties — there is a fee for that work, which is fully credited toward the commission if I close the operation. Everything is clear from the first conversation, before any move is made.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can you start before I relocate to Panama?</summary>
-          <div class="body">Yes. The process can begin remotely: area orientation, market reading, evaluation of options by WhatsApp or video call. You do not need to be in the country to make informed decisions.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What if the best decision is not to move forward?</summary>
-          <div class="body">I tell you. Sometimes the best guidance is not to move yet, adjust the price, change the area or wait for another moment. That is also part of the work.</div>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================ FINAL CTA ================ -->
-<section id="contacto" class="final r">
-  <div class="container">
-    <div class="eyebrow-row">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow">Let's talk</span>
-    </div>
-    <h2>Does it make <em>sense</em> to talk?</h2>
-    <p class="lead">Tell me what you are evaluating. If it makes sense, I will tell you so.</p>
+          <div class="body">For buyers: in many transactions the commission is recognised by the property or by the broker representing it. If a search requires direct fees or an additional service, that is agreed before we start.</p>
     <div class="actions">
       <a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20would%20like%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama." class="btn">Write on WhatsApp</a>
       <a href="mailto:info@spotonerealty.com?subject=English%20inquiry" class="btn-line dark">or by email</a>
