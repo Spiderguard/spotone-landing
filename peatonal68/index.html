@@ -25,7 +25,7 @@
 <style>
 /* ============ TOKENS DE MARCA — fuente unica ============
    Navy oficial #050E1E (Brand System V1, migrado 2026-08-11).
-   Sustituye #14213A y #030A15. El acento #162F59 se conserva. */
+   Un solo azul: sustituye #14213A, #030A15 y el acento #162F59. */
 :root{
   --brand-navy:#050E1E;
   --brand-navy-rgb:5,14,30;
@@ -47,7 +47,7 @@
 @font-face{font-family:'Newsreader';src:url(fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 :root{--ink:#1a1a18;--body:#46463f;--muted:#5A5F69;--faint:#a7a299;--line:#d8d2c6;--soft:#f6f4ef;--warm:#efebe1;
- --navy:var(--brand-navy);--dark:var(--brand-navy);--accent:var(--brand-navy);--sky:#9fb6d4;--ivory:#F4F1EA;--max:1440px;--gut:clamp(20px,7vw,112px)}
+ --navy:var(--brand-navy);--dark:var(--brand-navy);--accent:var(--brand-navy);--sky:#9fb6d4;--ivory:#F4F1EA;--max:1320px;--gut:56px}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--soft);color:var(--ink);font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
  font-size:18px;line-height:1.6;font-weight:300;letter-spacing:-.004em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
@@ -329,9 +329,6 @@ section{padding:clamp(72px,8vw,128px) 0}
   .grid{gap:48px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
-.colegas{display:block;margin-top:14px;font-size:13px;line-height:1.5;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:14px}
-.colegas:hover{color:var(--accent)}
-.colegas::after{content:" ↓"}
 .lang{display:inline-flex;align-items:center;gap:6px;margin-left:18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .lang a{opacity:.62;text-decoration:none}
 .lang a:hover{opacity:1}
@@ -352,12 +349,11 @@ section{padding:clamp(72px,8vw,128px) 0}
 .loc-l::after{content:" \2191";font-size:11px}
 details.calc{margin-top:16px}
 /* --- tooltip de la fachada --- */
-.tip{position:absolute;z-index:40;background:var(--navy);color:#fff;padding:10px 13px;border-radius:2px;
- font-size:13.5px;line-height:1.4;pointer-events:none;opacity:0;transition:opacity .14s;white-space:nowrap;
- box-shadow:0 12px 34px -14px rgba(var(--brand-navy-rgb),.6);left:0;top:0}
+.tip{position:absolute;z-index:40;background:rgba(var(--brand-navy-rgb),.96);color:var(--on-navy);padding:11px 14px;border-radius:2px;font-size:14.5px;line-height:1.45;pointer-events:none;opacity:0;transition:opacity .14s;white-space:nowrap;box-shadow:0 8px 24px -10px rgba(var(--brand-navy-rgb),.5);left:0;top:0}
 .tip[data-on="1"]{opacity:1}
-.tip b{display:block;font-weight:600}
-.tip span{display:block;color:rgba(255,255,255,.76);font-variant-numeric:tabular-nums}
+.tip em{display:block;font-style:normal;color:var(--on-navy-muted);font-size:13px;margin-top:5px}
+.tip b{display:block;font-weight:600;font-size:14.5px}
+.tip span{display:block;color:var(--on-navy-muted);font-variant-numeric:tabular-nums}
 /* --- mapa --- */
 .mapwrap{position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--warm)}
 .mapwrap iframe{display:block;width:100%;aspect-ratio:3/2;border:0}
@@ -367,7 +363,7 @@ details.calc{margin-top:16px}
 .mapbar div span{font-size:14px;color:var(--muted)}
 .mapbar .btn{padding:11px 18px;font-size:13.5px;white-space:nowrap}
 @media(max-width:760px){
-  .tip{display:none}
+  .tip{white-space:normal;max-width:70vw}
   .uacts2{gap:12px}
   .uacts2 .linkm{min-height:44px;display:inline-flex;align-items:center}
   .mapwrap iframe{aspect-ratio:auto;height:260px}
@@ -423,6 +419,15 @@ details.calc{margin-top:16px}
 @media(max-width:880px){ .fgrid{grid-template-columns:1fr 1fr;gap:32px} }
 @media(max-width:760px){ .foot{padding:48px 0 28px} }
 @media(max-width:520px){ .fgrid{grid-template-columns:1fr;gap:28px} }
+/* retícula compartida con la home: mismos breakpoints de gutter */
+@media(max-width:1080px){:root{--gut:42px}}
+@media(max-width:760px){:root{--gut:20px}}
+@media(max-width:380px){:root{--gut:16px}}
+
+/* estado cerrado: canon primero, sin subtotal ni total */
+.price .brk{margin-top:12px}
+.price .noitb{font-size:14px;color:var(--muted);margin-top:6px}
+.prow{display:none}
 </style>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty — ir a la página principal"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
@@ -456,8 +461,8 @@ details.calc{margin-top:16px}
 <button class="chip" data-f="l" aria-pressed="false">Más de 100 m²</button>
 <button class="chip" data-f="c" aria-pressed="false">Combinables</button>
 </div>
-<p class="status" id="st">Selecciona un local para ver sus datos y posibles combinaciones.</p>
-<div class="fac"><img src="img/fachada.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Local 11, 70 metros cuadrados, primer piso"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Local 13, 120 metros cuadrados, primer piso"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Local 15, 120 metros cuadrados, primer piso"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Local 16, 200 metros cuadrados, primer piso"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 21, 77 metros cuadrados, segundo piso"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 22, 100 metros cuadrados, segundo piso"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Local 23, 100 metros cuadrados, segundo piso"><span>23</span></button></div>
+<p class="status" id="st" role="status" aria-live="polite" aria-atomic="true">Selecciona un local para ver sus datos y posibles combinaciones.</p>
+<div class="fac"><img src="img/fachada.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Local 11, 70 metros cuadrados, primer piso" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Local 13, 120 metros cuadrados, primer piso" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Local 15, 120 metros cuadrados, primer piso" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Local 16, 200 metros cuadrados, primer piso" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 21, 77 metros cuadrados, segundo piso" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 22, 100 metros cuadrados, segundo piso" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Local 23, 100 metros cuadrados, segundo piso" aria-pressed="false"><span>23</span></button></div>
 <div class="legend"><span><i class="i-av"></i>Disponible</span><span><i class="i-cb"></i>Se puede combinar</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Seleccionado</span></div>
 
 </div></section>
@@ -471,21 +476,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 baño</li><li>Doble vitrina, frente al ascensor principal</li><li>Tres ambientes: frontal, posterior y cubículo</li><li>Ductos de aire acondicionado y lámparas instaladas</li><li>Piso de cerámica</li></ul>
   <p class="deliv">Se entrega en 70 m² con baño terminado.</p>
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$1,400.00</div>
-    <div class="cl">$20.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$175.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$1,590.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$1,700.25</dd></div>
-    </dl>
+    <div class="c">$1,400<span> al mes</span></div>
+    <div class="cl">Canon del Local 11 · $20/m²</div>
+    <div class="brk">Mantenimiento: $175 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$1,400.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$175.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$175.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$1,590.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$110.25</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$110.25</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$1,700.25</dd></div>
     </dl></details>
   </div>
@@ -500,21 +500,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>2 baños internos</li><li>Aire acondicionado central instalado</li><li>Cocina</li><li>Divisiones de pared liviana — se pueden mover</li><li>Piso de cerámica</li></ul>
   
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$2,400.00</div>
-    <div class="cl">$20.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$300.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$2,715.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$2,904.00</dd></div>
-    </dl>
+    <div class="c">$2,400<span> al mes</span></div>
+    <div class="cl">Canon del Local 13 · $20/m²</div>
+    <div class="brk">Mantenimiento: $300 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$2,400.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$300.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$300.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$2,715.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$189.00</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$189.00</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$2,904.00</dd></div>
     </dl></details>
   </div>
@@ -529,21 +524,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>Local de esquina con ventanal y exposición hacia la calle</li></ul>
   <p class="deliv">Se entrega pintado, con aire central y luces instaladas.</p>
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$2,400.00</div>
-    <div class="cl">$20.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$300.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$2,715.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$2,904.00</dd></div>
-    </dl>
+    <div class="c">$2,400<span> al mes</span></div>
+    <div class="cl">Canon del Local 15 · $20/m²</div>
+    <div class="brk">Mantenimiento: $300 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$2,400.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$300.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$300.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$2,715.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$189.00</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$189.00</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$2,904.00</dd></div>
     </dl></details>
   </div>
@@ -558,21 +548,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>3 baños, dos completos con regadera</li><li>Dos aires centrales de 5 toneladas cada uno</li><li>Cocina y balcón</li><li>Iluminación instalada</li><li>Piso de cerámica</li></ul>
   
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$4,000.00</div>
-    <div class="cl">$20.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$500.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$4,515.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$4,830.00</dd></div>
-    </dl>
+    <div class="c">$4,000<span> al mes</span></div>
+    <div class="cl">Canon del Local 16 · $20/m²</div>
+    <div class="brk">Mantenimiento: $500 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$4,000.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$500.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$500.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$4,515.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$315.00</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$315.00</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$4,830.00</dd></div>
     </dl></details>
   </div>
@@ -591,21 +576,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 baño</li><li>Hoy comunicado con el Local 22</li></ul>
   
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$1,386.00</div>
-    <div class="cl">$18.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$192.50</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$1,593.50</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$1,704.00</dd></div>
-    </dl>
+    <div class="c">$1,386<span> al mes</span></div>
+    <div class="cl">Canon del Local 21 · $18/m²</div>
+    <div class="brk">Mantenimiento: $192.50 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$1,386.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$192.50</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$192.50</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$1,593.50</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$110.50</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$110.50</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$1,704.00</dd></div>
     </dl></details>
   </div>
@@ -620,21 +600,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 baño</li><li>Planta abierta y adaptable</li></ul>
   
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$1,800.00</div>
-    <div class="cl">$18.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$250.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$2,065.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$2,208.50</dd></div>
-    </dl>
+    <div class="c">$1,800<span> al mes</span></div>
+    <div class="cl">Canon del Local 22 · $18/m²</div>
+    <div class="brk">Mantenimiento: $250 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$1,800.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$250.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$250.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$2,065.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$143.50</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$143.50</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$2,208.50</dd></div>
     </dl></details>
   </div>
@@ -649,21 +624,16 @@ details.calc{margin-top:16px}
   <ul class="feats"><li>1 baño interno</li><li>Distribución actual en seis cubículos privados</li><li>Piso de cerámica</li></ul>
   <p class="deliv">Se entrega en planta abierta; la administración está removiendo los cubículos.</p>
   <div class="price">
-    <div class="pk">Canon mensual</div>
-    <div class="c">$1,800.00</div>
-    <div class="cl">$18.00 por m²</div>
-    <dl class="prow">
-      <div><dt>Mantenimiento</dt><dd>$250.00</dd></div>
-      <div><dt>Aseo</dt><dd>$15.00</dd></div>
-      <div class="r-sub"><dt>Subtotal antes de ITBMS</dt><dd>$2,065.00</dd></div>
-      <div class="r-tot"><dt>Total mensual con ITBMS</dt><dd>$2,208.50</dd></div>
-    </dl>
+    <div class="c">$1,800<span> al mes</span></div>
+    <div class="cl">Canon del Local 23 · $18/m²</div>
+    <div class="brk">Mantenimiento: $250 · Aseo: $15</div>
+    <div class="noitb">ITBMS no incluido</div>
     <details class="calc"><summary>Ver desglose mensual</summary><dl>
       <div><dt>Canon</dt><dd>$1,800.00</dd></div>
-      <div><dt>Mantenimiento ($2.50/m²)</dt><dd>$250.00</dd></div>
-      <div><dt>Aseo — exento de ITBMS</dt><dd>$15.00</dd></div>
+      <div><dt>Mantenimiento</dt><dd>$250.00</dd></div>
+      <div><dt>Aseo</dt><dd>$15.00</dd></div>
       <div class="st"><dt>Subtotal antes de ITBMS</dt><dd>$2,065.00</dd></div>
-      <div><dt>ITBMS 7% sobre canon y mantenimiento</dt><dd>$143.50</dd></div>
+      <div><dt>ITBMS 7%</dt><dd>$143.50</dd></div>
       <div class="tot"><dt>Total mensual facturado</dt><dd>$2,208.50</dd></div>
     </dl></details>
   </div>
@@ -748,7 +718,7 @@ details.calc{margin-top:16px}
 <div class="cgrid">
 <div><p>Te envío las medidas, el plano y las condiciones de entrada.</p>
 <p>Si todavía no sabes cuál te sirve, dime qué negocio vas a operar, cuánto espacio necesitas y qué instalaciones son indispensables. Con eso reviso las opciones antes de coordinar una visita.</p></div>
-<div><div class="cred"><b>Dario Jhangimal</b>Corredor de bienes raíces · PN-1240<br>Representante exclusivo de Plaza La Peatonal 68<br>SpotOne Realty</div><div class="acts" style="margin-bottom:0;flex-direction:column;align-items:stretch;max-width:340px"><a class="btn btn-p" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Escribir por WhatsApp</a><a class="btn btn-s" href="ficha-la-peatonal-68.pdf" download>Descargar disponibilidad en PDF</a><a class="colegas" href="paquete-brokers-la-peatonal-68.pdf" download>¿Eres corredor? Paquete para colegas — 11 páginas, fotos y condiciones de co-broke</a></div></div>
+<div><div class="cred"><b>Dario Jhangimal</b>Corredor de bienes raíces · PN-1240<br>Representante exclusivo de Plaza La Peatonal 68<br>SpotOne Realty</div><div class="acts" style="margin-bottom:0;flex-direction:column;align-items:stretch;max-width:340px"><a class="btn btn-p" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Escribir por WhatsApp</a><a class="btn btn-s" href="ficha-la-peatonal-68.pdf" download>Descargar disponibilidad en PDF</a></div></div>
 </div></div></section>
 
 <footer class="foot"><div class="wrap">
@@ -762,7 +732,7 @@ details.calc{margin-top:16px}
 <div class="fbottom"><span>© 2026 SpotOne Realty · Panamá · Corredor de Bienes Raíces · Licencia PN-1240</span><a href="https://www.spotonerealty.com/">spotonerealty.com</a></div>
 </div></footer>
 
-<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<div class="tip" id="tip" aria-hidden="true"></div>
 <div class="qc" id="qc" role="dialog" aria-label="Detalle del local"><button class="qc-x" id="qcx" aria-label="Cerrar">&times;</button><div id="qcb"></div></div>
 <div class="selbar" id="sb"><div class="wrap"><div class="txt"><b id="sbt"></b> <span class="s" id="sbs"></span></div>
 <div style="display:flex;gap:10px;flex-shrink:0"><a class="btn btn-p" id="sbc" href="#">Consultar</a><button class="btn btn-s" id="sbx">Limpiar</button></div></div></div>
@@ -770,13 +740,13 @@ details.calc{margin-top:16px}
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería de fotos">
 <div class="lbt"><span id="lbT"></span><button class="lbx" id="lbX" aria-label="Cerrar galería">&times;</button></div>
-<div class="lbs"><button class="lbn lbp" id="lbP" aria-label="Anterior">&#8249;</button><img id="lbI" src="" alt=""><button class="lbn lbnx" id="lbN" aria-label="Siguiente">&#8250;</button></div>
+<div class="lbs"><button class="lbn lbp" id="lbP" aria-label="Anterior">&#8249;</button><img id="lbI" alt=""><button class="lbn lbnx" id="lbN" aria-label="Siguiente">&#8250;</button></div>
 <div class="lbf"><span id="lbC"></span><span id="lbNu"></span></div></div>
 <script>
 const U={"11": {"id": 11, "floor": 1, "area": 70, "rent": 1400, "total": 1700.25, "status": "available", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": 4000, "total": 4830.0, "status": "available", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": 1386, "total": 1704.0, "status": "available", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l23"}}, COMBOS=[[21, 22], [21, 22, 23]], GAL={"l11": [{"src": "img/local-11a.jpg", "cap": "\u00c1rea principal"}, {"src": "img/letrero.jpg", "cap": "Hacia el fondo"}, {"src": "img/foto-12.jpg", "cap": "Segundo ambiente"}, {"src": "img/foto-13.jpg", "cap": "Vitrina hacia el pasillo"}], "l13": [{"src": "img/local-13a.jpg", "cap": "\u00c1rea principal con divisiones de vidrio"}, {"src": "img/foto-14.jpg", "cap": "Sala de reuniones"}, {"src": "img/foto-15.jpg", "cap": "Cocina"}, {"src": "img/local-13a.jpg", "cap": "Segundo ambiente"}, {"src": "img/foto-16.jpg", "cap": "Ba\u00f1o interno"}], "l21": [{"src": "img/local-21a.jpg", "cap": "\u00c1rea principal con ventanal"}, {"src": "img/foto-17.jpg", "cap": "Segundo \u00e1ngulo"}, {"src": "img/foto-18.jpg", "cap": "Acceso"}, {"src": "img/foto-19.jpg", "cap": "Ba\u00f1o"}], "l23": [{"src": "img/local-23a.jpg", "cap": "Vitrina desde el pasillo"}, {"src": "img/foto-20.jpg", "cap": "Cub\u00edculo privado"}, {"src": "img/foto-21.jpg", "cap": "Pasillo de cub\u00edculos"}, {"src": "img/foto-22.jpg", "cap": "Ba\u00f1o interno"}], "l15": [{"src": "img/local-15a.jpg", "cap": "Ventanal hacia la calle"}, {"src": "img/foto-23.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-24.jpg", "cap": "Fondo del local"}, {"src": "img/foto-25.jpg", "cap": "Rinc\u00f3n"}, {"src": "img/foto-26.jpg", "cap": "Ba\u00f1o"}], "l16": [{"src": "img/local-16a.jpg", "cap": "Balc\u00f3n con vista a la ciudad"}, {"src": "img/foto-27.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-28.jpg", "cap": "Balc\u00f3n"}, {"src": "img/foto-29.jpg", "cap": "Cocina"}, {"src": "img/foto-30.jpg", "cap": "Segundo ambiente"}], "l22": [{"src": "img/local-22a.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-31.jpg", "cap": "Segundo \u00e1ngulo"}, {"src": "img/foto-32.jpg", "cap": "Fondo del local"}, {"src": "img/foto-33.jpg", "cap": "\u00c1rea de servicio"}]};
 const FL={1:"Primer piso",2:"Segundo piso"};
 const money=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-let sel=[], filt='all', inDisp=false;
+let sel=[], filt='all', inDisp=false, tocado=null;
 const closeQc=()=>{const q=document.getElementById('qc'); if(q)q.dataset.on='0'; const t=document.getElementById('tip'); if(t)t.dataset.on='0';};
 const WAB='https://wa.me/50766758127?text=Hola%20Dario%2C%20consulta%20La%20Peatonal%2068';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -804,7 +774,7 @@ function paint(){
     b.dataset.sel = sel.includes(id)?'1':'0';
     const compat = sel.length===1 && compatOf(sel[0]).includes(id) && !sel.includes(id);
     b.dataset.compat = compat?'1':'0';
-    b.setAttribute('aria-current', sel.includes(id)?'true':'false');
+    b.setAttribute('aria-pressed', sel.includes(id)?'true':'false');
     b.dataset.dim = (sel.length && !sel.includes(id) && !compat)?'1':'0';
     const lab=b.querySelector('span'); const n=b.dataset.u;
     lab.innerHTML = sel.includes(id) ? '<span class="ck">✓</span>'+n : n;
@@ -852,6 +822,7 @@ function place(btn){
   q.style.left=l+'px'; q.style.top=t+'px';
 }
 $$('.hot').forEach(b=>b.addEventListener('click',()=>{
+  tocado=null; hideTip();
   const id=+b.dataset.u; if(U[id].status!=='available') return;
   if(sel.includes(id)) sel=sel.filter(x=>x!==id);
   else if(sel.length && canAdd(sel,id)) sel.push(id);
@@ -918,15 +889,18 @@ if(location.hash.startsWith('#local-')){const id=+location.hash.replace('#local-
 const TIP=$('#tip');
 function showTip(b){const id=+b.dataset.u,u=U[id];
   if(!u||u.status!=='available'){TIP.dataset.on='0';return;}
-  TIP.innerHTML='<b>Local '+id+' · '+u.area+' m²</b><span>Canon $'+money(u.rent)+'/mes</span>';
+  TIP.innerHTML='<b>Local '+id+' · '+u.area+' m²</b><span>Canon $'+money(u.rent)+'/mes</span><em>'+(sel.includes(id)?'Quitar selección':'Seleccionar local')+'</em>';
   TIP.dataset.on='1';
   const r=b.getBoundingClientRect(), tr=TIP.getBoundingClientRect();
   let l=r.left+scrollX+r.width/2-tr.width/2;
   l=Math.max(scrollX+10,Math.min(l,scrollX+document.documentElement.clientWidth-tr.width-10));
-  let t=r.top+scrollY-tr.height-12; if(t<scrollY+8) t=r.bottom+scrollY+12;
+  // debajo del hotspot: encima vive la etiqueta con el número
+  let t=r.bottom+scrollY+12;
+  if(t+tr.height>scrollY+document.documentElement.clientHeight-8) t=r.top+scrollY-tr.height-12;
   TIP.style.left=l+'px'; TIP.style.top=t+'px';}
 const hideTip=()=>TIP.dataset.on='0';
 $$('.hot').forEach(b=>{b.addEventListener('mouseenter',()=>showTip(b));b.addEventListener('mouseleave',hideTip);
+  b.addEventListener('touchstart',e=>{if(tocado!==b){e.preventDefault();tocado=b;showTip(b);}},{passive:false});
   b.addEventListener('focus',()=>showTip(b));b.addEventListener('blur',hideTip);});
 addEventListener('scroll',hideTip,{passive:true});
 paint();
