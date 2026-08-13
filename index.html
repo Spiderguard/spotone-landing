@@ -1140,7 +1140,181 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
 .fcred,.foot-cred{line-height:1.6}
 
 @media(min-width:901px){footer{padding-top:30px}footer h6:not(:first-child){margin-top:8px}.fnap{gap:7px}}
-</style>
+
+
+
+
+
+
+
+/* ⟦CIERRE-V3-INICIO⟧ */
+/* ═══════════════════════════════════════════════════════════════════════════
+   CIERRE v3 — prefooter en marfil + footer institucional en navy
+   Un solo sistema: mismo contenedor (--max/--gut), mismos tokens, mismo
+   lockup y mismos breakpoints que el header. Sin sombras, sin radios, sin
+   color fuera de la paleta oficial.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. prefooter ───────────────────────────────────────────────────────── */
+.pf{background:var(--soft);padding:72px 0;border-top:1px solid var(--line)}
+.pf-grid{display:grid;grid-template-columns:7fr 5fr;gap:0 84px;align-items:start}
+.pf-eb{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted);margin:0 0 18px}
+.pf-h{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,4vw,54px);
+  line-height:1.06;letter-spacing:-.022em;color:var(--ink);margin:0;text-wrap:balance}
+.pf-p{font-size:17px;line-height:1.6;color:var(--body);margin:20px 0 0;max-width:56ch}
+.pf-r{padding-top:6px}
+.pf-cred{font-size:14.5px;line-height:1.6;color:var(--body);margin:0 0 24px}
+.pf-cred b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:21px;
+  letter-spacing:-.012em;color:var(--ink);margin-bottom:6px}
+.pf-acts{display:flex;flex-direction:column;align-items:stretch;gap:12px;max-width:360px}
+.pf-b1,.pf-b2{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:54px;padding:0 24px;font-size:15.5px;font-weight:500;letter-spacing:-.004em;
+  border-radius:2px;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.pf-b1{background:var(--brand-navy);color:var(--on-navy);border:1.5px solid var(--brand-navy)}
+.pf-b1:hover{background:#0C1930;border-color:#0C1930}
+.pf-b1 svg{flex:none;color:var(--on-navy)}
+.pf-b2{background:transparent;color:var(--brand-navy);border:1.5px solid var(--brand-navy)}
+.pf-b2:hover{background:var(--warm)}
+.pf-b3{display:inline-flex;align-items:center;min-height:44px;font-size:15px;
+  color:var(--brand-navy);border-bottom:1px solid transparent;align-self:flex-start}
+.pf-b3:hover,.pf-b3:focus-visible{border-bottom-color:var(--brand-navy)}
+.pf-b1:focus-visible,.pf-b2:focus-visible,.pf-b3:focus-visible{
+  outline:3px solid var(--brand-navy);outline-offset:3px}
+@media(max-width:900px){
+  .pf{padding:56px 0}
+  .pf-grid{grid-template-columns:1fr;gap:24px}
+  .pf-p{margin-top:16px}
+  .pf-r{padding-top:0}
+  .pf-cred{margin-bottom:20px}
+  .pf-acts{max-width:none;gap:12px}
+}
+
+/* ── 2. footer institucional ────────────────────────────────────────────── */
+footer.sf{background:var(--brand-navy);color:var(--on-navy-muted);border-radius:0;
+  padding:44px 0 24px;margin:0}
+footer.sf .sf-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:32px;row-gap:0;align-items:start}
+.sf a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid transparent}
+.sf a:hover,.sf a:focus-visible{border-bottom-color:var(--on-navy-muted)}
+.sf a:focus-visible{outline:3px solid var(--on-navy);outline-offset:3px;border-bottom-color:transparent}
+
+.sf-id{grid-column:1 / span 4}
+.sf-lock{display:inline-block;border:0;line-height:0;margin-bottom:20px}
+.sf-lock:hover{border:0}
+.sf-lock svg{width:auto;height:22px;display:block}
+.sf-desc{font-size:14.5px;line-height:1.55;color:var(--on-navy-muted);margin:0;max-width:30ch}
+.sf-cred{font-size:14.5px;line-height:1.55;color:rgba(244,241,234,.5);margin:20px 0 0;max-width:32ch}
+
+.sf-nav{grid-column:6 / span 4}
+.sf-nav>summary{display:none}
+.sf-h-nav{display:block}
+.sf-navcols{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;
+  grid-template-rows:repeat(3,auto);gap:9px 32px}
+.sf-navcols li{margin:0}
+.sf-navcols a,.sf-c1 a,.sf-c2 a{font-size:14.5px;line-height:1.4;display:inline-block;min-height:24px}
+
+.sf-con{grid-column:10 / span 3}
+.sf-h{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(244,241,234,.5);margin:0 0 10px}
+.sf-c1,.sf-c2{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.sf-c2{margin-top:9px}
+.sf-c1 li,.sf-c2 li{margin:0}
+
+.sf-lang{display:none}
+.sf-disc{grid-column:1 / -1;font-size:12.5px;line-height:1.6;
+  color:rgba(244,241,234,.55);margin:28px 0 0;max-width:none}
+.sf-rule{grid-column:1 / -1;height:1px;background:var(--on-navy-line);margin-top:28px}
+.sf-disc + .sf-rule{margin-top:22px}
+.sf-bottom{grid-column:1 / -1;display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;margin-top:16px}
+.sf-copy{font-size:12.5px;line-height:1.6;color:rgba(244,241,234,.55);margin:0}
+.sf-end{display:flex;align-items:baseline;gap:22px}
+.sf-lang-d{display:flex;align-items:baseline;gap:9px;font-size:12.5px;margin:0}
+.sf-lang-d a{color:rgba(244,241,234,.55);min-width:24px;text-align:center}
+.sf-lang-d a[aria-current="page"]{color:var(--on-navy);font-weight:500}
+.sf-lang-d span{color:rgba(244,241,234,.3)}
+.sf-dom{font-size:12.5px;color:rgba(244,241,234,.55)}
+
+/* ── 3. móvil: orden editorial, nada flotando ───────────────────────────── */
+@media(max-width:900px){
+  footer.sf{padding:44px 0 26px}
+  footer.sf .sf-wrap{display:flex;flex-direction:column;align-items:stretch}
+  /* orden obligatorio en movil; en escritorio manda grid-column */
+  .sf-id{order:1}.sf-con{order:2}.sf-nav{order:3}.sf-lang{order:4}
+  .sf-disc{order:5}.sf-rule{order:6}.sf-bottom{order:7}
+  .sf-lock svg{height:20px}
+  .sf-desc,.sf-cred{max-width:none}
+  .sf-c1,.sf-c2{grid-template-columns:1fr 1fr;gap:0 24px}
+  .sf-c1{margin-top:20px}.sf-c2{margin-top:0}
+  .sf-c1 li a,.sf-c2 li a{min-height:44px;display:inline-flex;align-items:center}
+  .sf-con .sf-h{display:none}
+  .sf-nav{display:block;margin-top:18px;border-top:1px solid var(--on-navy-line);
+    border-bottom:1px solid var(--on-navy-line)}
+  .sf-h-nav{display:none}
+  .sf-nav>summary{display:flex;align-items:center;justify-content:space-between;
+    min-height:48px;font-size:14.5px;color:var(--on-navy);cursor:pointer;list-style:none}
+  .sf-nav>summary::-webkit-details-marker{display:none}
+  .sf-nav>summary::after{content:"+";font-size:19px;line-height:1;color:var(--on-navy-muted)}
+  .sf-nav[open]>summary::after{content:"–"}
+  .sf-navcols{grid-template-columns:1fr 1fr;grid-auto-flow:row;grid-template-rows:none;
+    gap:0 24px;padding-bottom:4px}
+  .sf-navcols a{min-height:44px;display:inline-flex;align-items:center}
+  .sf-lang{display:flex;align-items:center;gap:9px;font-size:13px;margin:18px 0 0}
+  .sf-lang a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;
+    justify-content:center;color:rgba(244,241,234,.55)}
+  .sf-lang a[aria-current="page"]{color:var(--on-navy);font-weight:500}
+  .sf-lang span{color:rgba(244,241,234,.3)}
+  .sf-disc{margin-top:22px}
+  .sf-rule{margin-top:22px}
+  .sf-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:18px}
+  .sf-end{flex-direction:column;align-items:flex-start;gap:4px}
+  .sf-lang-d{display:none}
+}
+/* ── 4. aislamiento: el pie v3 no hereda reglas de pies anteriores ─────── */
+footer.sf a{min-width:0;min-height:0}
+footer.sf p{margin:0}
+.sf-lock{min-height:0}
+@media(max-width:900px){
+  footer.sf{padding:30px 0 20px}
+  footer.sf a{min-height:0;min-width:0}
+  .sf-c1 li a,.sf-c2 li a,.sf-navcols a{min-height:44px;display:inline-flex;align-items:center}
+  .sf-lang a{min-width:44px;min-height:44px}
+  .sf-desc,.sf-cred{font-size:14px;line-height:1.5}
+  .sf-cred{margin-top:6px}
+  .sf-disc{line-height:1.45;margin-top:12px}
+  .sf-rule{margin-top:14px}
+  .sf-bottom{margin-top:10px;gap:4px}
+  .sf-lang{margin-top:8px}
+  .sf-nav{margin-top:12px}
+  .sf-c1{margin-top:12px}
+}
+
+/* ── 5. objetivos de puntero dentro del pie ─────────────────────────────
+   44 px en anchos tactiles; 24 px (minimo AA de WCAG 2.2) con puntero.
+   Se escriben con footer.sf delante para ganar al reset de la seccion 4. */
+footer.sf .sf-lock{display:inline-flex;align-items:center;min-height:24px}
+@media(min-width:901px){
+  footer.sf .sf-navcols a,footer.sf .sf-c1 a,footer.sf .sf-c2 a{
+    display:inline-block;min-height:24px;line-height:24px}
+  footer.sf .sf-lang-d a{display:inline-block;min-width:24px;min-height:24px;
+    line-height:24px;text-align:center}
+  footer.sf .sf-dom{display:inline-block;min-height:24px;line-height:24px}
+  footer.sf .sf-lock svg{height:22px}
+}
+@media(max-width:900px){
+  footer.sf .sf-lock{min-height:44px}
+  footer.sf .sf-navcols a,footer.sf .sf-c1 a,footer.sf .sf-c2 a{
+    display:inline-flex;align-items:center;min-height:44px}
+  footer.sf .sf-lang a{display:inline-flex;align-items:center;justify-content:center;
+    min-width:44px;min-height:44px}
+  footer.sf .sf-nav{width:100%;align-self:stretch}
+  footer.sf .sf-nav>summary{min-height:48px;width:100%}
+  footer.sf .sf-c1 a,footer.sf .sf-c2 a{min-width:44px;justify-content:flex-start}
+  footer.sf .sf-dom{display:inline-flex;align-items:center;min-height:44px}
+}
+/* ⟦CIERRE-V3-FIN⟧ */</style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
@@ -1369,53 +1543,10 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
 </section>
 
 <!-- ================ FINAL CTA ================ -->
-<section id="contacto" class="final r">
-  <div class="container">
-    <div class="eyebrow-row">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow">Conversemos</span>
-    </div>
-    <h2>¿Tiene sentido <em>que hablemos</em>?</h2>
-    <p class="lead">Cuéntame qué estás evaluando — la propiedad, la zona, el momento o la decisión. Si tiene sentido avanzar, lo sabes en la primera conversación.</p>
-    <div class="actions">
-      <a href="https://wa.me/50766758127?text=Hola%20Dario,%20quiero%20evaluar%20una%20decisi%C3%B3n%20inmobiliaria%20en%20Panam%C3%A1." class="btn">Escribir por WhatsApp</a>
-      <a href="mailto:info@spotonerealty.com" class="btn-line dark">o por correo</a>
-    </div>
-    <div class="channels">
-      <a href="https://wa.me/50766758127"><small>WhatsApp</small>+507 6675-8127</a>
-      <a href="mailto:info@spotonerealty.com"><small>Correo</small>info@spotonerealty.com</a>
-    </div>
-  </div>
-</section>
+<section class="pf" id="contacto"><div class="container pf-grid"><div class="pf-l"><p class="pf-eb">Conversemos</p><h2 class="pf-h">¿Estás evaluando una propiedad o una mudanza?</h2><p class="pf-p">Cuéntame qué necesitas resolver. Te digo qué información hace falta y si tiene sentido avanzar.</p></div><div class="pf-r"><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20evaluar%20una%20decisi%C3%B3n%20inmobiliaria%20en%20Panam%C3%A1."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Escribir por WhatsApp</span></a><a class="pf-b3" href="mailto:info@spotonerealty.com">o escribir por correo</a></div></div></div></section>
 
 <!-- ================ FOOTER ================ -->
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="mark"><img src="images/logo-mark-blanco.png" alt="" width="1080" height="1080" loading="lazy" decoding="async">SpotOne Realty</div>
-        <p>Asesoría inmobiliaria y relocation en Panamá.</p>
-        <p class="foot-cred"><b>Dario Jhangimal</b>Corredor de Bienes Raíces<br>Licencia PN-1240 · Junta Técnica de Bienes Raíces</p>
-      </div>
-      <div><h6>Práctica</h6><ul>
-          <li><a href="#que-hago">Qué hago</a></li>
-          <li><a href="#relocation">Relocation</a></li>
-          <li><a href="criterio/">Criterio</a></li>
-          <li><a href="#metodo">Cómo trabajo</a></li>
-          <li><a href="#dario">Sobre Dario</a></li>
-        </ul></div><div><h6>Propiedades</h6><ul>
-          <li><a href="#propiedades">Representación exclusiva</a></li>
-          <li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li>
-        </ul></div>
-      <div>
-        <h6>Contacto</h6><ul class="fnap"><li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><a href="https://wa.me/50766758127">+507 6675-8127</a></li><li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li><li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/></svg><span>Ciudad de Panamá, Panamá</span></li></ul><h6>Redes</h6><ul class="foot-redes"><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li></ul><h6>Idioma</h6><p class="foot-lang"><a href="https://www.spotonerealty.com/" aria-current="page">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html">EN</a></p>
-      </div>
-    </div>
-    <p class="foot-legal">SpotOne Realty · Dario Jhangimal, corredor de bienes raíces con licencia PN-1240 de la Junta Técnica de Bienes Raíces de Panamá. La información publicada es referencial y está sujeta a confirmación. Precios, disponibilidad y condiciones pueden cambiar sin previo aviso.</p><div class="foot-bottom">
-      <span>© 2026 SpotOne Realty · Panamá</span>
-    </div>
-  </div>
-</footer>
+<footer class="sf"><div class="container sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p><p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces PN-1240</p></div><details class="sf-nav"><summary>Enlaces</summary><h2 class="sf-h sf-h-nav">Enlaces</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/#que-hago">Qué hago</a></li><li><a href="https://www.spotonerealty.com/#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/">Criterio</a></li><li><a href="https://www.spotonerealty.com/#metodo">Cómo trabajo</a></li><li><a href="https://www.spotonerealty.com/#dario">Sobre Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contacto</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Correo</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div><p class="sf-lang"><a href="https://www.spotonerealty.com/" aria-current="page" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html" lang="en">EN</a></p><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panamá · Corredor de Bienes Raíces PN-1240</p><div class="sf-end"><p class="sf-lang sf-lang-d"><a href="https://www.spotonerealty.com/" aria-current="page" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html" lang="en">EN</a></p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></div></footer>
 
 <script>
   // mobile menu
@@ -1474,6 +1605,32 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
       }
     },{passive:true});
   }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// el bloque de enlaces del pie es acordeon en movil y retícula en escritorio
+(function(){var d=document.querySelector('.sf-nav'); if(!d) return;
+ var m=matchMedia('(min-width:901px)');
+ var s=function(){ d.open = m.matches ? true : false; };
+ s(); m.addEventListener('change',s);})();
 </script>
 </body>
 </html>
