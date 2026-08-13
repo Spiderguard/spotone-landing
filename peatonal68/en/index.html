@@ -162,7 +162,7 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .shot .cnt{position:absolute;left:14px;bottom:14px;background:rgba(var(--brand-navy-rgb),.86);color:#fff;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:2px}
 .shot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .ub{padding-top:22px}
-.uh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+
 .uh .fl{font-size:14px;color:var(--muted)}
 .ar{margin-left:auto;font-weight:500;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .price{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)}
@@ -489,74 +489,15 @@ details.calc{margin-top:16px}
 .facnav button[aria-selected="true"]{background:var(--brand-navy);color:var(--on-navy)}
 .facnav button+button{border-left:1px solid var(--line)}
 .facnav button:focus-visible{outline:2px solid var(--brand-navy);outline-offset:-3px}
-.facpisos{display:none;gap:8px;margin-bottom:12px}
-.facpisos button{appearance:none;border:1px solid var(--line);background:transparent;font:inherit;
-  font-size:14px;padding:0 16px;min-height:44px;border-radius:2px;cursor:pointer;color:var(--muted)}
-.facpisos button[aria-selected="true"]{border-color:var(--brand-navy);color:var(--brand-navy);font-weight:500}
+
 .facview[hidden]{display:none}
-.elev{width:100%;height:auto;display:block;background:var(--soft)}
-.elevbox{border:1px solid var(--line);border-radius:2px;overflow:hidden}
-.u-g{cursor:pointer}
-.u-g .uh{fill:transparent;stroke:var(--brand-navy);stroke-width:2.5;transition:fill .16s}
-.u-g .uc{opacity:0;pointer-events:none}
-.u-g .un{fill:var(--brand-navy);pointer-events:none}
-.u-g:hover .uh,.u-g:focus-visible .uh{fill:#EFEBE1}
-.u-g:focus-visible{outline:none}
-.u-g:focus-visible .uh{stroke-width:4}
-.u-g[aria-pressed="true"] .uh{fill:var(--brand-navy);fill-opacity:.82}
-.u-g[aria-pressed="true"] .un{fill:var(--soft)}
-.u-g[data-comb="1"] .uc{opacity:1}
-.u-g[aria-disabled="true"]{cursor:default}
-.u-g[aria-disabled="true"] .uh{stroke:#B9B2A4;stroke-width:1.5;fill:#EFEBE1;fill-opacity:.55}
-.u-g[aria-disabled="true"] .un{fill:#B9B2A4}
-.u-g[data-dim="1"]{opacity:.32}
+
 .facnote{font-size:13px;color:var(--muted);line-height:1.55;margin-top:12px;max-width:74ch}
-.elevbox{position:relative}
-.uctrl{display:none}
+
 @media(max-width:760px){
-  .facpisos{display:flex}
+  
   .facnav{width:100%}
   .facnav button{flex:1;text-align:center}
-  .u-g .un{display:none}
-  .u-g[data-off="1"]{display:none}
-  /* controles reales sobre el dibujo: 44px garantizados y texto a tamaño de pantalla */
-  .uctrl{display:block;position:absolute;transform:translate(-50%,-50%);
-    min-width:44px;min-height:44px;padding:0 10px;border:2px solid var(--brand-navy);
-    border-radius:2px;background:rgba(246,244,239,.94);color:var(--brand-navy);
-    font:600 15px/1 'Hanken Grotesk',sans-serif;cursor:pointer}
-  .uctrl[aria-pressed="true"]{background:var(--brand-navy);color:var(--soft)}
-  .uctrl[data-comb="1"]{border-style:dashed}
-  .uctrl[data-off="1"]{display:none}
-  .uctrl:focus-visible{outline:3px solid var(--brand-navy);outline-offset:2px}
-}
-
-/* ===== DIAGRAMA MÓVIL POR PISO ===== */
-.mdiag{display:none}
-@media(max-width:760px){
-  .elevbox{display:none}
-  .uctrl{display:none}
-  .mdiag{display:block}
-  .mdiag[hidden]{display:none}
-  .mrow{display:flex;gap:8px}
-  .mblk{flex:1;min-width:0;min-height:92px;padding:12px 6px 10px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-    border:2px solid var(--brand-navy);border-radius:2px;background:transparent;
-    font-family:'Hanken Grotesk',sans-serif;cursor:pointer;color:var(--brand-navy)}
-  .mblk .mn{font-size:24px;font-weight:600;line-height:1}
-  .mblk .mm{font-size:14px;color:var(--muted)}
-  .mblk .mst{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  .mblk[aria-pressed="true"]{background:var(--brand-navy);color:var(--soft)}
-  .mblk[aria-pressed="true"] .mm,.mblk[aria-pressed="true"] .mst{color:rgba(246,244,239,.78)}
-  .mblk[data-comb="1"]{border-style:dashed;background:rgba(5,14,30,.05)}
-  .mblk[aria-disabled="true"]{border-color:#B9B2A4;color:#B9B2A4;cursor:default;background:rgba(0,0,0,.02)}
-  .mblk[aria-disabled="true"] .mm,.mblk[aria-disabled="true"] .mst{color:#B9B2A4}
-  .mblk:focus-visible{outline:3px solid var(--brand-navy);outline-offset:3px}
-  .munion{margin-top:10px;display:flex;flex-direction:column;gap:7px}
-  .ub{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted)}
-  .ub i{display:block;height:2px;background:var(--brand-navy);opacity:.5;border-radius:1px;flex:none}
-  .ub1 i{width:64%}
-  .ub2 i{width:100%}
-  .mnota{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:12px}
 }
 
 /* ===== ÚLTIMA PASADA ===== */
@@ -630,7 +571,6 @@ details.calc{margin-top:14px}
 @media(max-width:520px){ .foot .wrap{grid-template-columns:1fr} }
 /* ===== CIERRE: hover del explorador ===== */
 .hot:hover{background:rgba(var(--brand-navy-rgb),.41)}
-.u-g{cursor:pointer}
 
 /* el atributo height del HTML no debe fijar la altura cuando el CSS controla el ancho */
 img{max-width:100%}
@@ -653,13 +593,265 @@ img{max-width:100%}
 @media(max-width:560px){.foot .wrap{grid-template-columns:1fr}}
 
 /* ═══ esquema de ubicación: menos dibujo, más información ═══ */
-.infrastrip{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;margin:16px 0 0;padding:14px 0 0;
-  border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.infrastrip li{display:flex;align-items:center;gap:8px}
-.infrastrip svg{color:var(--brand-navy);opacity:.62;flex:none}
-/* hover al 20% como se pidió, no relleno beige */
-.u-g:hover .uh,.u-g:focus-visible .uh{fill:rgba(var(--brand-navy-rgb),.20)}
-@media(max-width:760px){.infrastrip{gap:8px 18px;font-size:13.5px}}
+
+@media(max-width:760px){}
+
+/* ═══ LOCALES POR NIVEL: filas editoriales, sin simular arquitectura ═══ */
+.niveles{margin-top:4px}
+.lvl-tabs{display:none;gap:8px;margin-bottom:20px}
+.lvl-tabs button{appearance:none;border:1px solid var(--line);background:transparent;font:inherit;
+  font-size:14.5px;padding:0 16px;min-height:44px;border-radius:2px;cursor:pointer;color:var(--muted)}
+.lvl-tabs button[aria-selected="true"]{border-color:var(--brand-navy);color:var(--brand-navy);font-weight:500}
+.lvl{margin-bottom:44px}
+.lvl:last-child{margin-bottom:0}
+.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin:0 0 14px}
+.lvl-row{display:grid;gap:0 40px;align-items:start}
+.lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lvl[data-piso="1"] .lvl-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lvl-u{appearance:none;background:none;border:0;border-top:2px solid var(--brand-navy);
+  padding:16px 12px 18px;text-align:left;font:inherit;cursor:pointer;display:block;width:100%;
+  transition:background .16s}
+.lvl-u:hover,.lvl-u:focus-visible{background:var(--warm)}
+.lvl-u:focus-visible{outline:2px solid var(--brand-navy);outline-offset:-2px}
+.lvl-n{display:block;font-family:'Newsreader',serif;font-size:30px;font-weight:300;
+  letter-spacing:-.02em;color:var(--brand-navy);line-height:1}
+.lvl-m{display:block;font-size:15.5px;color:var(--body);margin-top:7px}
+.lvl-s{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.lvl-u[aria-pressed="true"]{background:var(--brand-navy)}
+.lvl-u[aria-pressed="true"] .lvl-n{color:var(--soft)}
+.lvl-u[aria-pressed="true"] .lvl-m,.lvl-u[aria-pressed="true"] .lvl-s{color:rgba(246,244,239,.78)}
+.lvl-u[data-comb="1"]{border-top-style:dashed;background:rgba(239,235,225,.55)}
+.lvl-u[data-dim="1"]{opacity:.4}
+.lvl-u[aria-disabled="true"]{border-top-color:#B9B2A4;cursor:default}
+.lvl-u[aria-disabled="true"] .lvl-n{color:#B9B2A4}
+/* ═══ resumen inline: sustituye al modal ═══ */
+.selres{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:none}
+.selres[data-on="1"]{display:block}
+.selres .sr-t{font-family:'Newsreader',serif;font-size:24px;font-weight:300;letter-spacing:-.015em;
+  color:var(--ink);margin:0}
+.selres .sr-d{font-size:16px;color:var(--body);margin:8px 0 0;line-height:1.55;max-width:62ch}
+.selres .sr-a{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:18px;align-items:center}
+.selres .sr-a .btn{min-height:48px;display:inline-flex;align-items:center}
+.selres .sr-a button.linkm{min-height:44px}
+/* ═══ acceso e infraestructura ═══ */
+.infra-band{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.infra-h{font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 18px}
+.infra-band ul{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:22px 28px;margin:0;padding:0}
+.infra-band li{display:flex;gap:11px;align-items:flex-start}
+.infra-band svg{color:var(--brand-navy);opacity:.6;flex:none;margin-top:2px}
+.infra-band b{display:block;font-size:15px;font-weight:500;color:var(--ink)}
+.infra-band em{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+@media(max-width:1024px){.infra-band ul{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){
+  .lvl-tabs{display:flex}
+  .lvl[hidden]{display:none}
+  .lvl[data-piso="1"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+  .lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 14px}
+  .lvl-n{font-size:26px}
+  .infra-band ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+}
+@media(max-width:430px){.lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ═══ EXPLORADOR: lista editorial de locales por nivel ═══ */
+.lvl-tabs{display:none;gap:10px;margin-bottom:22px}
+.lvl-tabs [role="tab"]{font:inherit;font-size:14px;letter-spacing:.02em;background:none;
+  border:1px solid var(--line);border-radius:2px;color:var(--muted);padding:0 16px;
+  min-height:44px;cursor:pointer;transition:.16s}
+.lvl-tabs [role="tab"][aria-selected="true"]{background:var(--brand-navy);border-color:var(--brand-navy);color:var(--ivory)}
+.lvl{margin-bottom:38px}
+.lvl:last-child{margin-bottom:0}
+.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 4px;
+  padding-bottom:10px;border-bottom:1px solid var(--line)}
+.lvl-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lvl-u{display:block;width:100%;text-align:left;background:none;border:0;
+  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  padding:18px 20px 20px;cursor:pointer;font:inherit;color:inherit;
+  transition:background .16s,color .16s,box-shadow .16s}
+.lvl-row .lvl-u:last-child{border-right:0}
+.lvl-n{display:block;font-family:'Newsreader',serif;font-size:30px;line-height:1;
+  color:var(--ink);letter-spacing:-.02em}
+.lvl-m{display:block;font-size:15.5px;color:var(--body);margin-top:8px}
+.lvl-s{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-top:6px}
+/* hover inequivoco */
+.lvl-u:hover,.lvl-u:focus-visible{background:var(--warm);box-shadow:inset 3px 0 0 var(--brand-navy)}
+.lvl-u:hover .lvl-n,.lvl-u:focus-visible .lvl-n{color:var(--brand-navy)}
+.lvl-u:hover .lvl-s,.lvl-u:focus-visible .lvl-s{color:var(--ink)}
+/* seleccionado: navy solido */
+.lvl-u[data-sel="1"]{background:var(--brand-navy);box-shadow:none}
+.lvl-u[data-sel="1"] .lvl-n{color:var(--ivory)}
+.lvl-u[data-sel="1"] .lvl-m{color:rgba(244,241,234,.86)}
+.lvl-u[data-sel="1"] .lvl-s{color:rgba(244,241,234,.72)}
+/* combinable: borde discontinuo y fondo tenue */
+.lvl-u[data-comb="1"]{background:rgba(var(--brand-navy-rgb),.045);
+  box-shadow:inset 0 0 0 1.5px transparent;outline:1.5px dashed rgba(var(--brand-navy-rgb),.55);
+  outline-offset:-4px}
+.lvl-u[data-comb="1"] .lvl-s::after{content:" · combinable";color:var(--brand-navy)}
+/* no compatible y fuera de filtro: atenuado */
+.lvl-u[data-dim="1"]{opacity:.34}
+.lvl-u[data-filt="0"]{opacity:.22;pointer-events:none}
+@media(max-width:760px){
+  .lvl-tabs{display:flex}
+  .lvl[data-act="0"]{display:none}
+  .lvl{margin-bottom:0}
+  .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lvl-u{min-height:88px;padding:16px 14px 18px;border-right:1px solid var(--line)}
+  .lvl-row .lvl-u:nth-child(2n){border-right:0}
+  .lvl-n{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){.lvl-u{transition:none}}
+
+/* ═══ EXPLORADOR: resumen inline (sustituye a la ficha emergente) ═══ */
+.selres{display:none}
+.selres[data-on="1"]{display:block;margin-top:26px;padding-top:22px;
+  border-top:1.5px solid var(--brand-navy)}
+.sr-t{font-family:'Newsreader',serif;font-size:clamp(23px,2.1vw,28px);line-height:1.18;
+  letter-spacing:-.018em;color:var(--ink);margin:0}
+.sr-d{font-size:16.5px;line-height:1.6;color:var(--body);margin:9px 0 0;max-width:62ch}
+.sr-a{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sr-a .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+.btn-t{background:none;border:0;color:var(--muted);text-decoration:underline;
+  text-underline-offset:3px;cursor:pointer;font:inherit;padding:0 8px}
+.btn-t:hover{color:var(--ink)}
+@media(max-width:560px){.sr-a{flex-direction:column;align-items:stretch}
+  .sr-a .btn{width:100%}}
+#st[hidden]{display:none}
+
+/* ═══ FASE 3: fichas alineadas como reporte financiero ═══ */
+.grid{align-items:stretch}
+.u{display:flex;flex-direction:column;height:100%}
+.ub{display:flex;flex-direction:column;flex:1 1 auto}
+.feats{margin-bottom:0}
+.deliv{margin-bottom:0}
+/* el bloque economico y todo lo que sigue se apoyan abajo: por eso el inicio
+   del canon, el boton principal y los enlaces secundarios quedan alineados
+   entre todas las fichas de una misma fila */
+.u .price{margin-top:auto}
+.uacts{margin-top:20px}
+.uacts .btn-d{width:100%;justify-content:center;display:inline-flex;align-items:center;min-height:50px}
+.uacts2{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:12px}
+
+/* ═══ FASE 3: CTA a dos columnas reales ═══ */
+.close .cgrid{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:start;margin-top:28px}
+.close .acts{display:flex;flex-direction:column;align-items:stretch;gap:10px;
+  margin:22px 0 0;max-width:360px}
+.close .acts .btn{width:100%;min-height:52px;display:inline-flex;align-items:center;justify-content:center}
+.close .cred{margin:0}
+@media(max-width:860px){.close .cgrid{grid-template-columns:1fr;gap:32px}
+  .close .acts{max-width:none}}
+
+/* ═══ FASE 3: footer de cuatro grupos ═══ */
+.foot .wrap{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:0 48px;align-items:start}
+.fgrid{display:contents}
+.fcol-idioma{display:none}
+.foot h6{margin:0 0 12px}
+.fcol4 h6:not(:first-child){margin-top:22px}
+.fcol4 ul{margin:0}
+.fidiomas{display:flex;gap:10px;align-items:center;margin:0;font-size:14px}
+.fidiomas a{min-height:44px;display:inline-flex;align-items:center}
+.fidiomas a[aria-current="page"]{color:var(--on-navy);font-weight:500}
+.fidiomas span{color:var(--on-navy-line)}
+.flegal{grid-column:1/-1;max-width:none;margin-top:46px;padding-top:0;border-top:0;
+  font-size:12.5px;line-height:1.6}
+.fbottom{grid-column:1/-1;margin-top:22px;padding-top:18px;
+  border-top:1px solid var(--on-navy-line);display:flex;justify-content:space-between;
+  align-items:center;gap:20px;flex-wrap:wrap;font-size:12.5px}
+.foot{padding:64px 0 30px}
+@media(max-width:880px){.foot .wrap{grid-template-columns:1fr 1fr;gap:0 32px}}
+@media(max-width:560px){
+  .foot .wrap{grid-template-columns:1fr;gap:0}
+  .fgrid>div{padding:20px 0;border-top:1px solid var(--on-navy-line)}
+  .fbrand{border-top:0;padding-top:0}
+  .foot ul{margin:0}
+  .flegal{margin-top:26px}
+}
+
+/* ═══ FASE 5: objetivos de puntero y areas tactiles ═══ */
+.fidiomas a{min-width:24px;justify-content:center;padding:0 4px}
+@media(min-width:901px){.nav a{min-height:26px}}
+details.calc summary{min-height:26px;display:flex;align-items:center}
+.linkm{min-height:26px;display:inline-flex;align-items:center}
+@media(max-width:900px){
+  .hdr .brand{min-height:44px;display:inline-flex;align-items:center}
+  details.calc summary{min-height:44px}
+  .linkm{min-height:44px}
+  .foot a{min-height:44px;display:inline-flex;align-items:center}
+}
+/* ═══ FASE 5: pie compacto ═══ */
+.foot{padding:46px 0 22px}
+.foot h6:not(:first-child),.fcol4 h6:not(:first-child){margin-top:15px}
+.foot h6{margin:0 0 9px;line-height:1.3}
+.foot ul li a{line-height:1.75}
+.fcol4 ul{list-style:none;padding:0}
+.fcol4 ul:nth-of-type(2){display:flex;flex-wrap:wrap;gap:6px 18px}
+.fidiomas{line-height:1.75}
+.fidiomas a{min-height:0}
+@media(max-width:760px){.fidiomas a{min-width:44px;min-height:44px}}
+.flegal{margin-top:28px;line-height:1.55}
+.fbottom{margin-top:14px;padding-top:12px}
+
+/* ═══ FASE 5b: el pie respira sin inflarse en escritorio ═══ */
+@media(min-width:901px){
+  .soc{min-height:0;line-height:1.7}
+  footer ul li a,.foot ul li a{min-height:0;line-height:1.7}
+  .foot-redes li,.fcol4 li{min-height:0}
+}
+
+/* ═══ FASE 5e: objetivos táctiles ═══
+   Controles (nav, pestañas, desplegables, cambio de idioma) a 44 px en todos
+   los anchos. Los enlaces de texto en listas del pie mantienen 44 px en táctil
+   y ≥24 px en escritorio, donde el puntero es preciso. */
+details.calc summary{min-height:44px;display:flex;align-items:center}
+.linkm{min-height:44px;display:inline-flex;align-items:center}
+
+@media(min-width:901px){
+  .nav a{min-height:44px;display:inline-flex;align-items:center}
+  .fidiomas a{min-width:44px;min-height:24px;justify-content:center}
+}
+@media(max-width:900px){
+  .hdr .brand{min-height:44px;display:inline-flex;align-items:center}
+  .foot a{min-height:44px;min-width:44px;display:inline-flex;align-items:center}
+  .fidiomas a{min-width:44px;min-height:44px;justify-content:center}
+}
+
+@media(min-width:901px){.site-nav .lnk,.nav a{min-width:44px;justify-content:center}}
+@media(max-width:900px){.foot-lang a,.fidiomas a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+
+/* ═══ FASE 5f: los enlaces del pie son objetivo real de 24 px con puntero ═══
+   La caja en linea medía 19 px aunque la línea ocupara 23,2. Se fija la caja
+   sin crecer en alto, para no sacar al pie de su rango. */
+@media(min-width:901px){
+  footer ul li a,.foot ul li a{display:inline-block;min-height:24px;line-height:24px}
+  .soc{min-height:24px;line-height:24px}
+  .foot-lang a,.fidiomas a{min-height:24px;line-height:24px}
+}
+
+@media(min-width:901px){.fbottom a,.foot-bottom a{display:inline-block;min-height:24px;line-height:24px}}
+
+/* ═══ FASE 5g: contraste AA medido sobre píxel real ═══
+   Las etiquetas de las cifras iban en #9fb6d4 (11.5px) sobre fotografía: entre
+   2.6:1 y 4.13:1 segun la zona. Pasan a marfil, que no depende de la foto. */
+.fig span{color:var(--on-navy)}
+.lang span{color:var(--on-navy-muted)}
+
+/* ═══ FASE 5h: cabecera de ficha y tope de altura de la fotografía ═══
+   La regla .uh se perdió al limpiar el CSS del esquema retirado; se restituye.
+   Los topes de alto evitan que la foto domine la ficha: 330 px en primer piso
+   y 250 px en segundo, con recorte (no deformación). En móvil manda el 4:3. */
+.uh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+#g1 .shot{aspect-ratio:auto;height:330px}
+#g2 .shot{aspect-ratio:auto;height:250px}
+#g1 .shot img,#g2 .shot img{height:100%;object-fit:cover}
+@media(max-width:760px){
+  #g1 .shot,#g2 .shot{aspect-ratio:4/3;height:auto}
+  #g1 .shot img,#g2 .shot img{height:100%}
+}
 </style>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty — go to the main site"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
@@ -684,7 +876,7 @@ img{max-width:100%}
 <section id="disponibilidad"><div class="wrap">
 <div class="ebrow"><span class="eb">Availability</span><span class="r"></span></div>
 <h2>Locate and combine the available units</h2>
-<p class="lead">Hover over a unit to see its details. Select compatible spaces to price a combined configuration. If you already know what business you plan to run, tell me its requirements — the units do not all share the same infrastructure.</p>
+<p class="lead">Select a unit on the facade or in the list by floor to see its size and base rent. If two spaces are adjacent, you can add them together and see the continuous floor area that results. If you already know what business you plan to run, tell me its requirements: not every unit has the same infrastructure.</p>
 <div class="filters" style="margin-top:36px" role="group" aria-label="Filter units">
 <button class="chip" data-f="all" aria-pressed="true">All</button>
 <button class="chip" data-f="f1" aria-pressed="false">First floor</button>
@@ -693,49 +885,9 @@ img{max-width:100%}
 <button class="chip" data-f="l" aria-pressed="false">Over 100 m²</button>
 <button class="chip" data-f="c" aria-pressed="false">Combinable</button>
 </div>
-<p class="status" id="st" role="status" aria-live="polite" aria-atomic="true">Select a unit to see its details and possible combinations.</p>
-<div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="plano">Where the units are</button><button role="tab" aria-selected="false" data-view="foto">Actual facade</button></div><div class="facpisos" role="tablist" aria-label="Level"><button role="tab" aria-selected="true" data-piso="1">First floor</button><button role="tab" aria-selected="false" data-piso="2">Second floor</button></div><div class="facview" data-view="plano"><div class="elevbox"><svg class="elev" viewBox="0 0 1920 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Location diagram of the seven units at Plaza La Peatonal 68">
-<defs><pattern id="comb" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#050E1E" stroke-width="2" opacity=".33"/></pattern></defs>
-<rect x="0" y="58" width="1920" height="458" fill="#F6F4EF"/>
-<rect x="0" y="126" width="1920" height="140" fill="#E7E4DB"/>
-<rect x="0" y="288" width="1920" height="92" fill="#E7E4DB"/>
-<rect x="0" y="402" width="1920" height="114" fill="#EFEBE1"/>
-<rect x="0" y="382" width="1920" height="20" fill="#050E1E" opacity=".82"/>
-<line x1="0" y1="122" x2="1920" y2="122" stroke="#B9B2A4" stroke-width="2"/>
-<line x1="0" y1="266" x2="1920" y2="266" stroke="#B9B2A4" stroke-width="2"/>
-<line x1="0" y1="288" x2="1920" y2="288" stroke="#B9B2A4" stroke-width="2"/>
-<line x1="0" y1="380" x2="1920" y2="380" stroke="#B9B2A4" stroke-width="2"/>
-<line x1="0" y1="516" x2="1920" y2="516" stroke="#B9B2A4" stroke-width="2"/>
-<line x1="0" y1="58" x2="1920" y2="58" stroke="#B9B2A4" stroke-width="2.5"/>
-<line x1="0" y1="516" x2="1920" y2="516" stroke="#050E1E" stroke-width="2.5" opacity=".55"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<rect x="872" y="382" width="138" height="134" fill="#F6F4EF" stroke="#B9B2A4" stroke-width="2"/>
-<text x="941.0" y="490" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="19" letter-spacing="2.4" fill="#050E1E" opacity=".62">ACCESO</text>
-<text x="24" y="202.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">SEGUNDO PISO</text>
-<text x="24" y="340.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">PRIMER PISO</text>
-<text x="24" y="465.0" font-family="Hanken Grotesk,sans-serif" font-size="17" letter-spacing="2.2" fill="#050E1E" opacity=".38">PLANTA BAJA</text>
-<g class="u-g" data-u="11" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 11, 70 square meters, first floor"><rect class="uh" x="652" y="284" width="188" height="88" rx="1"/><rect class="uc" x="652" y="284" width="188" height="88" rx="1" fill="url(#comb)"/><text class="un" x="746.0" y="337.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">11</text></g>
-<g class="u-g" data-u="13" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 13, 120 square meters, first floor"><rect class="uh" x="1228" y="284" width="192" height="90" rx="1"/><rect class="uc" x="1228" y="284" width="192" height="90" rx="1" fill="url(#comb)"/><text class="un" x="1324.0" y="338.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">13</text></g>
-<g class="u-g" data-u="15" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 15, 120 square meters, first floor"><rect class="uh" x="1627" y="284" width="235" height="89" rx="1"/><rect class="uc" x="1627" y="284" width="235" height="89" rx="1" fill="url(#comb)"/><text class="un" x="1744.5" y="337.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">15</text></g>
-<g class="u-g" data-u="16" data-floor="1" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 16, 200 square meters, first floor"><rect class="uh" x="876" y="288" width="64" height="88" rx="1"/><rect class="uc" x="876" y="288" width="64" height="88" rx="1" fill="url(#comb)"/><text class="un" x="908.0" y="341.0" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">16</text></g>
-<g class="u-g" data-u="21" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 21, 77 square meters, second floor"><rect class="uh" x="962" y="135" width="214" height="111" rx="1"/><rect class="uc" x="962" y="135" width="214" height="111" rx="1" fill="url(#comb)"/><text class="un" x="1069.0" y="199.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">21</text></g>
-<g class="u-g" data-u="22" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor"><rect class="uh" x="1176" y="135" width="214" height="111" rx="1"/><rect class="uc" x="1176" y="135" width="214" height="111" rx="1" fill="url(#comb)"/><text class="un" x="1283.0" y="199.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">22</text></g>
-<g class="u-g" data-u="23" data-floor="2" tabindex="0" role="button" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"><rect class="uh" x="1388" y="136" width="212" height="119" rx="1"/><rect class="uc" x="1388" y="136" width="212" height="119" rx="1" fill="url(#comb)"/><text class="un" x="1494.0" y="204.5" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="600" font-size="26">23</text></g>
-</svg></div><div class="mdiag" data-piso="1"><div class="mrow"><button class="mblk" data-u="11" data-floor="1" aria-pressed="false" aria-label="Unit 11, 70 square meters, available"><span class="mn">11</span><span class="mm">70 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="16" data-floor="1" aria-pressed="false" aria-label="Unit 16, 200 square meters, available"><span class="mn">16</span><span class="mm">200 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="13" data-floor="1" aria-pressed="false" aria-label="Unit 13, 120 square meters, available"><span class="mn">13</span><span class="mm">120 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="15" data-floor="1" aria-pressed="false" aria-label="Unit 15, 120 square meters, available"><span class="mn">15</span><span class="mm">120 m²</span><span class="mst">Available</span></button></div><p class="mnota">Floor diagram — it preserves the order of the units, not their scale.</p></div><div class="mdiag" data-piso="2" hidden><div class="mrow"><button class="mblk" data-u="21" data-floor="2" aria-pressed="false" aria-label="Unit 21, 77 square meters, available"><span class="mn">21</span><span class="mm">77 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="mn">22</span><span class="mm">100 m²</span><span class="mst">Available</span></button><button class="mblk" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="mn">23</span><span class="mm">100 m²</span><span class="mst">Available</span></button></div><div class="munion" aria-hidden="true"><span class="ubt">Units that can be combined</span><span class="ub ub1"><i></i><b>21 + 22 · 177 m²</b></span><span class="ub ub2"><i></i><b>21 + 22 + 23 · 277 m² of continuous space</b></span></div><p class="mnota">Floor diagram — it preserves the order of the units, not their scale.</p></div></div><div class="facview" data-view="foto" hidden><div class="fac"><img src="../img/fachada.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="1920" height="620"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Unit 11, 70 square meters, first floor" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Unit 13, 120 square meters, first floor" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Unit 15, 120 square meters, first floor" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Unit 16, 200 square meters, first floor" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 21, 77 square meters, second floor" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 22, 100 square meters, second floor" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Unit 23, 100 square meters, second floor" aria-pressed="false"><span>23</span></button></div></div><ul class="infrastrip" aria-label="Plaza infrastructure"><li><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg>60 parking spaces</li><li>14 at street level</li><li>46 covered</li><li><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg>Elevator</li><li><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg>Stairs</li></ul><p class="facnote">Schematic representation to locate the units. Dimensions and layouts are confirmed on each unit's floor plan. The diagram shows the location and visible frontage of each unit, not its floor area or interior layout.</p>
-<div class="legend"><span><i class="i-av"></i>Available</span><span><i class="i-cb"></i>Can be combined</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Selected</span></div>
+<p class="status" id="st">Select a unit to see its details and possible combinations.</p>
+<div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="foto">Actual facade</button><button role="tab" aria-selected="false" data-view="plano">Units by floor</button></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Level"><button role="tab" aria-selected="true" data-piso="1">First floor</button><button role="tab" aria-selected="false" data-piso="2">Second floor</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">First floor</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Unit 11, 70 square meters, available"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-label="Unit 16, 200 square meters, available"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-label="Unit 13, 120 square meters, available"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Unit 15, 120 square meters, available"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Available</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Second floor</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Unit 21, 77 square meters, available"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button></div></div></div><div class="facview" data-view="foto"><div class="fac"><img src="../img/fachada.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="1920" height="620"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Unit 11, 70 square meters, first floor" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="available" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Unit 13, 120 square meters, first floor" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Unit 15, 120 square meters, first floor" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="available" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Unit 16, 200 square meters, first floor" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 21, 77 square meters, second floor" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Unit 22, 100 square meters, second floor" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Unit 23, 100 square meters, second floor" aria-pressed="false"><span>23</span></button></div><p class="facnote">The outlines mark the location and visible frontage of each unit on the actual facade. They do not represent its floor area or interior layout: both are confirmed on the unit's floor plan.</p></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div><div class="legend"><span><i class="i-av"></i>Available</span><span><i class="i-cb"></i>Can be combined</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Selected</span></div>
+<div class="infra-band"><h3 class="infra-h">Access and infrastructure</h3><ul><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg><span><b>60 parking spaces</b><em>14 at street level · 46 covered</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg><span><b>Elevator</b><em>To the commercial floors</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span><b>Stairs</b><em>Circulation across all three floors</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/><path d="M4 16h16"/></svg><span><b>Vehicle access</b><em>From Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M4 19 15 7"/><path d="M15 7h5v12"/></svg><span><b>Covered parking access</b><em>By ramp</em></span></li></ul></div>
 
 </div></section>
 
@@ -985,21 +1137,18 @@ img{max-width:100%}
 <div class="cgrid">
 <div><p>I will send you the dimensions, the floor plan and the terms to move in.</p>
 <p>If you are not sure which one fits yet, tell me what business you plan to run, how much space you need and which installations are essential. I will review the options before we set up a visit.</p></div>
-<div><div class="cred"><b>Dario Jhangimal</b>Licensed real estate broker · PN-1240<br>Exclusive representative for Plaza La Peatonal 68<br>SpotOne Realty</div><div class="acts" style="margin-bottom:0;flex-direction:column;align-items:stretch;max-width:340px"><a class="btn btn-p" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Message on WhatsApp</a><a class="btn btn-s" href="../ficha-la-peatonal-68-en.pdf" download>Download availability as PDF</a></div></div>
+<div><div class="cred"><b>Dario Jhangimal</b>Licensed real estate broker · PN-1240<br>Exclusive representative for Plaza La Peatonal 68<br>SpotOne Realty</div><div class="acts"><a class="btn btn-p" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Message on WhatsApp</a><a class="btn btn-s" href="../ficha-la-peatonal-68-en.pdf" download>Download availability as PDF</a></div></div>
 </div></div></section>
 
 <footer class="foot"><div class="wrap">
 <div class="fgrid">
   <div class="fbrand"><div class="mark"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></div><p>Real estate advisory and relocation in Panama.</p><p class="fcred">Dario Jhangimal · Licensed Real Estate Broker · License PN-1240</p></div>
   <div><h6>Practice</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/#metodo">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li></ul></div><div><h6>Properties</h6><ul><li><a href="https://www.spotonerealty.com/index-en.html#propiedades">Exclusive representation</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></div>
-  <div><h6>Contact</h6><ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li></ul></div>
-</div>
+  <div class="fcol4"><h6>Contact</h6><ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li></ul><h6>Social</h6><ul><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li></ul><h6>Language</h6><p class="fidiomas"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="page">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/peatonal68/en/">EN</a></p></div></div>
 <p class="flegal">Plaza La Peatonal 68 is marketed under the exclusive representation of Dario Jhangimal, licensed real estate broker PN-1240. Published base rents do not include ITBMS. Each unit shows maintenance and waste collection charges; the monthly breakdown presents the applicable tax and estimated total. Availability, pricing and terms are subject to confirmation.</p>
-<div class="fbottom"><span class="fidiomas"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="true">ES</a><a href="https://www.spotonerealty.com/peatonal68/en/">EN</a></span><span>© 2026 SpotOne Realty · Panama · Licensed Real Estate Broker · License PN-1240</span><a href="https://www.spotonerealty.com/">spotonerealty.com</a></div>
+<div class="fbottom"><span>© 2026 SpotOne Realty · Panama · Licensed Real Estate Broker · License PN-1240</span><a href="https://www.spotonerealty.com/">spotonerealty.com</a></div>
 </div></footer>
 
-<div class="tip" id="tip" aria-hidden="true"></div>
-<div class="qc" id="qc" role="dialog" aria-label="Unit detail"><button class="qc-x" id="qcx" aria-label="Close">&times;</button><div id="qcb"></div></div>
 <div class="selbar" id="sb"><div class="wrap"><div class="txt"><b id="sbt"></b> <span class="s" id="sbs"></span></div>
 <div style="display:flex;gap:10px;flex-shrink:0"><a class="btn btn-p" id="sbc" href="#">Get in touch</a><button class="btn btn-s" id="sbx">Clear</button></div></div></div>
 <div class="sticky" id="stk"><a class="btn btn-p" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Get in touch</a></div>
@@ -1012,8 +1161,7 @@ img{max-width:100%}
 const U={"11": {"id": 11, "floor": 1, "area": 70, "rent": 1400, "total": 1700.25, "status": "available", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": 4000, "total": 4830.0, "status": "available", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": 1386, "total": 1704.0, "status": "available", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l23"}}, COMBOS=[[21, 22], [21, 22, 23]], GAL={"l11": [{"src": "../img/local-11a.jpg", "cap": "Main area"}, {"src": "../img/letrero.jpg", "cap": "Looking toward the back"}, {"src": "../img/foto-12.jpg", "cap": "Second area"}, {"src": "../img/foto-13.jpg", "cap": "Storefront onto the walkway"}], "l13": [{"src": "../img/local-13a.jpg", "cap": "Main area with glass partitions"}, {"src": "../img/foto-14.jpg", "cap": "Meeting room"}, {"src": "../img/foto-15.jpg", "cap": "Kitchen"}, {"src": "../img/local-13a.jpg", "cap": "Second area"}, {"src": "../img/foto-16.jpg", "cap": "Interior bathroom"}], "l21": [{"src": "../img/local-21a.jpg", "cap": "Main area with picture window"}, {"src": "../img/foto-17.jpg", "cap": "Second angle"}, {"src": "../img/foto-18.jpg", "cap": "Entrance"}, {"src": "../img/foto-19.jpg", "cap": "Bathroom"}], "l23": [{"src": "../img/local-23a.jpg", "cap": "Storefront seen from the walkway"}, {"src": "../img/foto-20.jpg", "cap": "Private office"}, {"src": "../img/foto-21.jpg", "cap": "Corridor between offices"}, {"src": "../img/foto-22.jpg", "cap": "Interior bathroom"}], "l15": [{"src": "../img/local-15a.jpg", "cap": "Picture window onto the street"}, {"src": "../img/foto-23.jpg", "cap": "Main area"}, {"src": "../img/foto-24.jpg", "cap": "Back of the unit"}, {"src": "../img/foto-25.jpg", "cap": "Corner"}, {"src": "../img/foto-26.jpg", "cap": "Bathroom"}], "l16": [{"src": "../img/local-16a.jpg", "cap": "Balcony with city view"}, {"src": "../img/foto-27.jpg", "cap": "Main area"}, {"src": "../img/foto-28.jpg", "cap": "Balcony"}, {"src": "../img/foto-29.jpg", "cap": "Kitchen"}, {"src": "../img/foto-30.jpg", "cap": "Second area"}], "l22": [{"src": "../img/local-22a.jpg", "cap": "Main area"}, {"src": "../img/foto-31.jpg", "cap": "Second angle"}, {"src": "../img/foto-32.jpg", "cap": "Back of the unit"}, {"src": "../img/foto-33.jpg", "cap": "Service area"}]};
 const FL={1:"First floor",2:"Second floor"};
 const money=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-let sel=[], filt='all', inDisp=false, tocado=null;
-const closeQc=()=>{const q=document.getElementById('qc'); if(q)q.dataset.on='0'; const t=document.getElementById('tip'); if(t)t.dataset.on='0';};
+let sel=[], filt='all', inDisp=false;
 const WAB='https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const srt=a=>[...a].sort((x,y)=>x-y);
@@ -1035,78 +1183,98 @@ const comboText=id=>{
   return 'Can be joined with '+a.txt+' to form '+a.ar+' m². Adding '+
     (ex.length>1?'Units ':'Unit ')+ex.join(' and ')+' as well, '+b.ar+' m² of continuous space.';};
 
+// ── vistas: fachada real y locales por nivel son excluyentes ──────────────
+const movil=()=>matchMedia('(max-width:760px)').matches;
+function setView(v){
+  $$('.facnav [role="tab"]').forEach(t=>t.setAttribute('aria-selected', t.dataset.view===v?'true':'false'));
+  $$('.facview').forEach(f=>{f.hidden = f.dataset.view!==v;});
+}
+$$('.facnav [role="tab"]').forEach(t=>t.addEventListener('click',()=>setView(t.dataset.view)));
+setView(movil()?'plano':'foto');
+
+// ── en movil se lee un piso a la vez ──────────────────────────────────────
+function setPiso(p){
+  $$('.lvl-tabs [role="tab"]').forEach(t=>t.setAttribute('aria-selected', t.dataset.piso===p?'true':'false'));
+  $$('.lvl').forEach(l=>{l.dataset.act = l.dataset.piso===p?'1':'0';});
+}
+$$('.lvl-tabs [role="tab"]').forEach(t=>t.addEventListener('click',()=>setPiso(t.dataset.piso)));
+setPiso('1');
+
+// ── un solo renderizador para fachada, lista y resumen ────────────────────
 function paint(){
-  $$('.hot').forEach(b=>{const id=+b.dataset.u;
-    b.dataset.sel = sel.includes(id)?'1':'0';
-    const compat = sel.length===1 && compatOf(sel[0]).includes(id) && !sel.includes(id);
-    b.dataset.compat = compat?'1':'0';
-    b.setAttribute('aria-pressed', sel.includes(id)?'true':'false');
-    b.dataset.dim = (sel.length && !sel.includes(id) && !compat)?'1':'0';
-    const lab=b.querySelector('span'); const n=b.dataset.u;
-    lab.innerHTML = sel.includes(id) ? '<span class="ck">✓</span>'+n : n;
+  const ids=[...sel].sort((a,b)=>a-b);
+  const estado=id=>({
+    sel: sel.includes(id),
+    compat: sel.length===1 && !sel.includes(id) && compatOf(sel[0]).includes(id),
   });
-  const c=validCombo(sel), ids=[...sel].sort((a,b)=>a-b);
-  const ar=ids.reduce((s,i)=>s+U[i].area,0), rt=ids.reduce((s,i)=>s+U[i].rent,0);
-  const S=$('#st');
-  if(!sel.length){ S.textContent='Select a unit to see its details and possible combinations.'; }
-  else if(sel.length===1){ const ct=comboText(sel[0]);
-    S.innerHTML='<b>Unit '+sel[0]+' selected</b> · '+U[sel[0]].area+' m²'+(ct?' · '+ct:''); }
-  else { S.innerHTML='<b>'+ar+' m² of continuous space selected</b> · Units '+ids.join(' + '); }
-  if(sel.length>1){
-    $('#sbt').textContent=ar+' m² continuous';
-    $('#sbs').textContent='· Units '+ids.join(' + ')+' · combined base rent quoted on request';
-    $('#sbc').textContent='Ask about the '+ar+' m²';
-    $('#sbc').href=WAB+'%20-%20Units%20'+ids.join('%2B')+'%20('+ar+'%20m2)';
-    $('#sb').dataset.on=inDisp?'1':'0';
-  } else if(sel.length===1){
-    $('#sbt').textContent='Unit '+sel[0];
-    $('#sbs').textContent='· '+U[sel[0]].area+' m² · Base rent $'+money(U[sel[0]].rent)+'/mo';
-    $('#sbc').textContent='Ask about Unit '+sel[0];
-    $('#sbc').href=WAB+'%20-%20Unit%20'+sel[0];
-    $('#sb').dataset.on=inDisp?'1':'0';
-  } else $('#sb').dataset.on='0';
+  $$('.hot').forEach(b=>{const id=+b.dataset.u, e=estado(id);
+    b.dataset.sel=e.sel?'1':'0';
+    b.dataset.compat=e.compat?'1':'0';
+    b.dataset.dim=(sel.length && !e.sel && !e.compat)?'1':'0';
+    b.setAttribute('aria-pressed', e.sel?'true':'false');
+    const lab=b.querySelector('span');
+    if(lab) lab.innerHTML = e.sel ? '<span class="ck">&#10003;</span>'+b.dataset.u : b.dataset.u;
+  });
+  $$('.lvl-u').forEach(b=>{const id=+b.dataset.u, e=estado(id);
+    b.dataset.sel=e.sel?'1':'0';
+    b.dataset.comb=e.compat?'1':'0';
+    b.dataset.dim=(sel.length && !e.sel && !e.compat)?'1':'0';
+    b.setAttribute('aria-pressed', e.sel?'true':'false');
+  });
+
+  const ar=ids.reduce((s,i)=>s+U[i].area,0);
+  const S=$('#st'); if(S) S.hidden = ids.length>0;
+  const R=$('#selres');
+  if(!ids.length){ if(R){R.dataset.on='0'; R.innerHTML='';} $('#sb').dataset.on='0'; return; }
+
+  let t,d;
+  if(ids.length===1){
+    const u=U[ids[0]]; t='Unit '+ids[0]+' &middot; '+u.area+' m&sup2;';
+    d='Base rent $'+money(u.rent)+' per month. VAT (ITBMS) not included.';
+    const ct=comboText(ids[0]); if(ct) d+=' '+ct;
+  } else {
+    t=ar+' m&sup2; of continuous space &middot; Units '+ids.join(' + ');
+    d='Continuous floor area combining '+ids.map(i=>U[i].area+' m&sup2;').join(' + ')+
+      '. The base rent for a combination is quoted when closing.';
+  }
+  const wa=WAB+(ids.length===1?('%20-%20Unit%20'+ids[0])
+              :('%20-%20Units%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
+  const consultar=ids.length===1?('Ask about Unit '+ids[0]):('Ask about the '+ar+' m&sup2;');
+  if(R){
+    R.dataset.on='1';
+    R.innerHTML='<p class="sr-t">'+t+'</p><p class="sr-d">'+d+'</p>'+
+      '<div class="sr-a"><a class="btn btn-d" href="'+wa+'">'+consultar+'</a>'+
+      '<button type="button" class="btn btn-o" data-go="'+ids[0]+'">See the Unit '+ids[0]+' listing &darr;</button>'+
+      '<button type="button" class="btn btn-t" data-clear="1">Clear selection</button></div>';
+  }
+  $('#sbt').textContent = ids.length===1?('Unit '+ids[0]):(ar+' m² continuous');
+  $('#sbs').textContent = ids.length===1
+    ? ('· '+U[ids[0]].area+' m² · Base rent $'+money(U[ids[0]].rent)+'/mo')
+    : ('· Units '+ids.join(' + ')+' · combined base rent quoted on request');
+  $('#sbc').textContent=consultar.replace('&sup2;','²');
+  $('#sbc').href=wa;
+  $('#sb').dataset.on=inDisp?'1':'0';
 }
-function qcard(id){
-  const u=U[id], ct=comboText(id), on=sel.includes(id);
-  const cb=ct?'<p class="cb"><b>Combinable</b> — '+ct+'</p>':'';
-  const add=on?compatOf(id).filter(x=>canAdd(sel,x)):[];
-  $('#qcb').innerHTML='<h4>Unit '+id+' · '+u.area+' m²</h4><p class="m">'+FL[u.floor]+(id===16?' · narrow frontage; the unit runs deep':'')+'</p>'+
-   '<p class="p">Base rent: <b>$'+money(u.rent)+' per month</b></p><p class="t">Estimated monthly total $'+money(u.total)+'</p>'+cb+
-   '<div class="qa">'+
-   (on ? (add.length?'<button class="btn btn-d" data-add2="'+add[0]+'">Add Unit '+add[0]+'</button>':'')
-         +'<button class="btn btn-o" data-unsel2="'+id+'">Clear selection</button>'
-       : '<button class="btn btn-d" data-sel2="'+id+'">Select unit</button>')+
-   '<button class="btn btn-o" data-go="'+id+'">See full listing</button>'+
-   '<a class="btn btn-o" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20a%20question%20about%20La%20Peatonal%2068%20-%20Unit%20'+id+'">Ask about Unit '+id+'</a></div>';
-  $('#qc').dataset.on='1';
-}
-function place(btn){
-  const q=$('#qc'); if(window.innerWidth<=760) return;
-  const r=btn.getBoundingClientRect(); const w=310;
-  let l=r.left+r.width/2-w/2; l=Math.max(16,Math.min(l,window.innerWidth-w-16));
-  let t=r.bottom+12; if(t+300>window.innerHeight) t=Math.max(16,r.top-312);
-  q.style.left=l+'px'; q.style.top=t+'px';
-}
-$$('.hot').forEach(b=>b.addEventListener('click',()=>{
-  tocado=null; hideTip();
-  const id=+b.dataset.u; if(U[id].status!=='available') return;
+
+// ── seleccion: un mismo gesto desde la fachada y desde la lista ───────────
+function toggle(id){
+  if(U[id].status!=='available') return;
   if(sel.includes(id)) sel=sel.filter(x=>x!==id);
   else if(sel.length && canAdd(sel,id)) sel.push(id);
   else sel=[id];
-  paint(); if(sel.length===1){qcard(id);place(b);} else closeQc();
-}));
-$('#qcx').addEventListener('click',()=>$('#qc').dataset.on='0');
-$('#qcb').addEventListener('click',e=>{
-  const s2=e.target.closest('[data-sel2]'); if(s2){const i=+s2.dataset.sel2; if(!sel.includes(i))sel=[i]; paint(); qcard(i); return;}
-  const un=e.target.closest('[data-unsel2]'); if(un){const i=+un.dataset.unsel2; sel=sel.filter(x=>x!==i); paint(); if(sel.length===1)qcard(sel[0]); else if(!sel.length)qcard(i); return;}
-  const ad=e.target.closest('[data-add2]'); if(ad){const i=+ad.dataset.add2; if(canAdd(sel,i))sel.push(i); paint(); closeQc(); return;}
-  const g=e.target.closest('[data-go]'); if(!g)return;
-  closeQc(); goTo(+g.dataset.go);});
-$('#sbx').addEventListener('click',()=>{sel=[];paint();closeQc();});
+  paint();
+}
+$$('.hot, .lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
+document.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]'); if(g){goTo(+g.dataset.go); return;}
+  const c=e.target.closest('[data-clear]'); if(c){sel=[]; paint();}
+});
+$('#sbx').addEventListener('click',()=>{sel=[];paint();});
+
 function goTo(id){const el=document.getElementById('local-'+id); if(!el)return;
   history.replaceState(null,'','#local-'+id); el.scrollIntoView({behavior:'smooth',block:'start'});
   el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'),2000);
-  const h=el.querySelector('h3'); if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}}
+  const t=el.querySelector('h3'); if(t){t.setAttribute('tabindex','-1');t.focus({preventScroll:true});}}
 const hdr=document.querySelector('.hdr');
 addEventListener('scroll',()=>{hdr.dataset.s = scrollY>48?'1':'0';},{passive:true});
 const secs=['disponibilidad','plaza','ubicacion','faq'].map(i=>document.getElementById(i)).filter(Boolean);
@@ -1117,11 +1285,10 @@ secs.forEach(s=>io.observe(s));
 const dispEl=document.getElementById('disponibilidad');
 if(dispEl) new IntersectionObserver(([e])=>{inDisp=e.isIntersecting;paint();},{rootMargin:'0px 0px -35% 0px'}).observe(dispEl);
 // al navegar fuera del explorador, la ficha emergente se cierra
-$$('.nav a[href^="#"], a.cta[href^="#"], .hero a[href^="#"]').forEach(a=>a.addEventListener('click',closeQc));
 $$('[data-locate]').forEach(b=>b.addEventListener('click',()=>{
   const id=+b.dataset.locate; sel=[id]; paint();
   document.getElementById('disponibilidad').scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(()=>{const h=document.querySelector('.hot[data-u="'+id+'"]'); if(h){qcard(id);place(h);}},600);}));
+}));
 $$('.chip').forEach(c=>c.addEventListener('click',()=>{
   filt=c.dataset.f; $$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
   $$('.u').forEach(u=>{const f=+u.dataset.floor,a=+u.dataset.area,cb=u.dataset.comb==='1';
@@ -1134,129 +1301,31 @@ $$('.chip').forEach(c=>c.addEventListener('click',()=>{
     else if(filt==='s')ok=u.area<=100; else if(filt==='l')ok=u.area>100;
     else if(filt==='c')ok=compatOf(id).length>0;
     b.style.opacity=ok?'1':'.25'; b.style.pointerEvents=ok?'auto':'none';});
+  $$('.lvl-u').forEach(b=>{const id=+b.dataset.u,u=U[id];
+    let ok=true; if(filt==='f1')ok=u.floor===1; else if(filt==='f2')ok=u.floor===2;
+    else if(filt==='s')ok=u.area<=100; else if(filt==='l')ok=u.area>100;
+    else if(filt==='c')ok=compatOf(id).length>0;
+    b.dataset.filt=ok?'1':'0';});
 }));
 // lightbox
 let cur=[],idx=0,op=null;
 const show=i=>{idx=(i+cur.length)%cur.length;$('#lbI').src=cur[idx].src;$('#lbI').alt=cur[idx].cap;$('#lbC').textContent=cur[idx].cap;$('#lbNu').textContent=(idx+1)+' / '+cur.length;};
-$$('.shot[data-gal]').forEach(b=>b.addEventListener('click',()=>{cur=GAL[b.dataset.gal];op=b;$('#lbT').textContent='Local '+b.dataset.loc;show(0);$('#lb').classList.add('on');document.body.style.overflow='hidden';$('#lbX').focus();}));
+$$('.shot[data-gal]').forEach(b=>b.addEventListener('click',()=>{cur=GAL[b.dataset.gal];op=b;$('#lbT').textContent='Unit '+b.dataset.loc;show(0);$('#lb').classList.add('on');document.body.style.overflow='hidden';$('#lbX').focus();}));
 const closeLb=()=>{$('#lb').classList.remove('on');document.body.style.overflow='';if(op)op.focus();};
 $('#lbX').addEventListener('click',closeLb);$('#lbP').addEventListener('click',()=>show(idx-1));$('#lbN').addEventListener('click',()=>show(idx+1));
 $('#lb').addEventListener('click',e=>{if(e.target===$('#lb'))closeLb();});
 document.addEventListener('keydown',e=>{
   if($('#lb').classList.contains('on')){if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1);return;}
-  if(e.key==='Escape'){closeQc();}});
+});
 // sticky móvil
 const hero=document.querySelector('.hero');
 new IntersectionObserver(([e])=>{$('#stk').dataset.on=(e.isIntersecting||sel.length)?'0':'1';},{threshold:0}).observe(hero);
 // ancla directa
 if(location.hash.startsWith('#local-')){const id=+location.hash.replace('#local-','');
   window.addEventListener('load',()=>setTimeout(()=>goTo(id),120));}
-// tooltip: los datos del local al pasar por encima o al enfocar con teclado
-const TIP=$('#tip');
-function showTip(b){const id=+b.dataset.u,u=U[id];
-  if(!u||u.status!=='available'){TIP.dataset.on='0';return;}
-  TIP.innerHTML='<b>Unit '+id+' · '+u.area+' m²</b><span>Canon $'+money(u.rent)+'/mes</span><em>'+(sel.includes(id)?'Clear selection':'Select unit')+'</em>';
-  TIP.dataset.on='1';
-  const r=b.getBoundingClientRect(), tr=TIP.getBoundingClientRect();
-  let l=r.left+scrollX+r.width/2-tr.width/2;
-  l=Math.max(scrollX+10,Math.min(l,scrollX+document.documentElement.clientWidth-tr.width-10));
-  // debajo del hotspot: encima vive la etiqueta con el número
-  let t=r.bottom+scrollY+12;
-  if(t+tr.height>scrollY+document.documentElement.clientHeight-8) t=r.top+scrollY-tr.height-12;
-  TIP.style.left=l+'px'; TIP.style.top=t+'px';}
-const hideTip=()=>TIP.dataset.on='0';
-$$('.hot').forEach(b=>{b.addEventListener('mouseenter',()=>showTip(b));b.addEventListener('mouseleave',hideTip);
-  b.addEventListener('touchstart',e=>{if(tocado!==b){e.preventDefault();tocado=b;showTip(b);}},{passive:false});
-  b.addEventListener('focus',()=>showTip(b));b.addEventListener('blur',hideTip);});
-addEventListener('scroll',hideTip,{passive:true});
 paint();
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "@id": "https://www.spotonerealty.com/#spotone", "name": "SpotOne Realty", "url": "https://www.spotonerealty.com/", "telephone": "+507 6675-8127", "founder": {"@id": "https://www.spotonerealty.com/index-en.html#dario"}, "sameAs": ["https://instagram.com/spotonerealty"]}, {"@type": "Person", "@id": "https://www.spotonerealty.com/index-en.html#dario", "name": "Dario Jhangimal", "url": "https://www.spotonerealty.com/", "jobTitle": "Licensed Real Estate Broker (PN-1240)", "identifier": {"@type": "PropertyValue", "name": "Broker license (Panama)", "value": "PN-1240"}, "worksFor": {"@id": "https://www.spotonerealty.com/#spotone"}, "sameAs": ["https://www.linkedin.com/in/dario-jhangimal-v-14449751/", "https://instagram.com/spotonerealty"]}, {"@type": "Place", "name": "Plaza La Peatonal 68", "address": {"@type": "PostalAddress", "streetAddress": "Calle 68 Este", "addressLocality": "San Francisco", "addressRegion": "Panama City", "addressCountry": "PA"}, "url": "https://www.spotonerealty.com/peatonal68/en/", "image": "https://www.spotonerealty.com/peatonal68/img/hero.jpg", "hasMap": "https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9", "makesOffer": [{"@type": "Offer", "name": "Unit 11", "price": 1400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-11", "description": "70 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 13", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-13", "description": "120 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 15", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-15", "description": "120 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 16", "price": 4000, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-16", "description": "200 m², first floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 21", "price": 1386, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-21", "description": "77 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 22", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-22", "description": "100 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Unit 23", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/en/#local-23", "description": "100 m², second floor", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "60 free parking spaces", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Covered parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Elevator", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Stairs", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Eight ground-floor restaurants", "value": true}]}]}</script>
 
-<script>
-(function(){
- const nav=document.querySelector('.facnav'), pisos=document.querySelector('.facpisos');
- if(!nav) return;
- const svg=document.querySelector('.elev'), caja=document.querySelector('.elevbox');
- const VB={0:'0 0 1920 620', 1:'612 239 1290 182', 2:'922 90 718 210'};
- const movil=()=>matchMedia('(max-width:760px)').matches;
- function camara(piso){
-   svg.setAttribute('viewBox', movil()? VB[piso] : VB[0]);
-   document.querySelectorAll('.u-g').forEach(g=>
-     g.dataset.off = (movil() && +g.dataset.floor!==piso) ? '1':'0');
-   colocar(piso);
- }
- function colocar(piso){
-   caja.querySelectorAll('.uctrl').forEach(b=>b.remove());
-   if(!movil()) return;
-   const [vx,vy,vw,vh]=svg.getAttribute('viewBox').split(' ').map(Number);
-   const r=svg.getBoundingClientRect();
-   document.querySelectorAll('.u-g').forEach(g=>{
-     if(+g.dataset.floor!==piso) return;
-     const rect=g.querySelector('.uh');
-     const cx=+rect.getAttribute('x')+ +rect.getAttribute('width')/2;
-     const cy=+rect.getAttribute('y')+ +rect.getAttribute('height')/2;
-     const b=document.createElement('button');
-     b.className='uctrl'; b.textContent=g.dataset.u;
-     b.setAttribute('aria-pressed', g.getAttribute('aria-pressed')||'false');
-     b.setAttribute('aria-label', g.getAttribute('aria-label'));
-     b.style.left=((cx-vx)/vw*100)+'%'; b.style.top=((cy-vy)/vh*100)+'%';
-     b.addEventListener('click',()=>g.dispatchEvent(new Event('click')));
-     caja.appendChild(b);
-   });
- }
- addEventListener('resize',()=>camara(+(pisos.querySelector('[aria-selected="true"]')||{dataset:{piso:1}}).dataset.piso));
- nav.addEventListener('click',e=>{const b=e.target.closest('[data-view]'); if(!b)return;
-   nav.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
-   document.querySelectorAll('.facview').forEach(v=>v.hidden = v.dataset.view!==b.dataset.view);});
- pisos.addEventListener('click',e=>{const b=e.target.closest('[data-piso]'); if(!b)return;
-   pisos.querySelectorAll('[data-piso]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
-   camara(+b.dataset.piso);});
- camara(1);
- // el plano comparte la seleccion con los hotspots de la foto
- document.querySelectorAll('.u-g[role="button"]').forEach(g=>{
-   const disparar=()=>{const b=document.querySelector('.hot[data-u="'+g.dataset.u+'"]'); if(b)b.click();
-     document.querySelectorAll('.u-g').forEach(x=>{const h=document.querySelector('.hot[data-u="'+x.dataset.u+'"]');
-       if(h){x.setAttribute('aria-pressed',h.dataset.sel==='1'?'true':'false');
-             x.dataset.comb=h.dataset.compat==='1'?'1':'0';}});};
-   g.addEventListener('click',disparar);
-   g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();disparar();}});});
-})();
-</script>
-<script>
-(function(){
- const pisos=document.querySelector('.facpisos');
- const sync=()=>{
-   document.querySelectorAll('.mblk').forEach(b=>{
-     const hot=document.querySelector('.hot[data-u="'+b.dataset.u+'"]');
-     if(!hot||b.hasAttribute('disabled'))return;
-     b.setAttribute('aria-pressed', hot.dataset.sel==='1'?'true':'false');
-     b.dataset.comb = hot.dataset.compat==='1'?'1':'0';});};
- document.querySelectorAll('.mblk:not([disabled])').forEach(b=>{
-   b.addEventListener('click',()=>{
-     const hot=document.querySelector('.hot[data-u="'+b.dataset.u+'"]');
-     if(hot){hot.click(); setTimeout(()=>{sync();rapida();},60);}});});
- if(pisos) pisos.addEventListener('click',e=>{
-   const t=e.target.closest('[data-piso]'); if(!t)return;
-   document.querySelectorAll('.mdiag').forEach(d=>d.hidden = d.dataset.piso!==t.dataset.piso);});
- function rapida(){
-   document.querySelectorAll('.mrapida').forEach(x=>x.remove());
-   const sel=[...document.querySelectorAll('.hot[data-sel="1"]')].map(x=>x.dataset.u);
-   if(!sel.length) return;
-   const cont=document.querySelector('.mdiag:not([hidden])');
-   if(!cont) return;
-   const U=window.__U||{};
-   const uno=sel.length===1?sel[0]:null;
-   const div=document.createElement('div'); div.className='mrapida';
-   const st=document.getElementById('st');
-   div.innerHTML='<p class="mr-t">'+(st?st.innerHTML:'')+'</p>'+
-     (uno?'<button class="mr-a" data-go="'+uno+'">Ver detalles del Local '+uno+' &rarr;</button>':'');
-   cont.appendChild(div);
-   const a=div.querySelector('[data-go]');
-   if(a) a.addEventListener('click',()=>{const f=document.getElementById('local-'+a.dataset.go);
-     if(f) f.scrollIntoView({behavior:'smooth',block:'start'});});
- }
- sync();
-})();
-</script></body>
+</body>
 </html>
