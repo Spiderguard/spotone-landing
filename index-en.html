@@ -898,6 +898,80 @@ footer{padding:64px 0 30px}
 img{max-width:100%}
 .duo img,.fac img,.prop-img img,.shot img,.hero>img,.mapwrap iframe{height:auto}
 .prop-img img,.shot img,.hero>img{height:100%}
+
+/* ═══ RECONSTRUCCIÓN: menos cajas, más jerarquía ═══ */
+
+/* 1 · Relocation: composición editorial, sin tarjetas ni calles beige */
+.reloc-section{background:var(--soft)}
+.reloc-blocks{display:grid;grid-template-columns:1fr 1fr;gap:0 72px;margin-top:52px;
+  background:none!important;padding:0!important;border:0;border-top:1px solid var(--line)}
+.reloc-block{background:none!important;border:0;border-radius:0;padding:26px 0 28px;
+  border-bottom:1px solid var(--line)}
+.reloc-blocks>.reloc-block:nth-last-child(-n+2){border-bottom:0}
+.reloc-block h5{font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand-navy);margin:0 0 9px}
+.reloc-block p{font-size:16.5px;line-height:1.62;color:var(--body);margin:0;max-width:44ch}
+@media(max-width:860px){.reloc-blocks{grid-template-columns:1fr;gap:0}}
+
+/* 2 · Principio: el navy sale de la segunda sección */
+.principio-sect{background:var(--warm);color:var(--body);padding:96px 0;
+  border-top:1px solid var(--line)}
+.principio-sect .eyebrow{color:var(--brand-navy)}
+.principio-sect .eyebrow-line{background:var(--brand-navy);opacity:1}
+.principio-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.principio-sect h2{color:var(--ink);margin:0}
+.principio-sect p{color:var(--body-2);font-size:18px;line-height:1.62;margin:0 0 16px;max-width:56ch}
+.principio-sect em{color:var(--brand-navy)}
+@media(max-width:860px){.principio-grid{grid-template-columns:1fr;gap:28px}
+  .principio-sect{padding:64px 0}}
+
+/* 3 · Propiedad: pieza editorial integrada, sin rectángulo blanco */
+.prop-card{display:grid;grid-template-columns:55fr 45fr;gap:48px;align-items:center;
+  background:none;border:0;border-radius:0;overflow:visible;box-shadow:none;
+  border-top:1px solid var(--line);padding-top:40px}
+.prop-card:hover,.prop-card:focus-visible{border-color:var(--line);box-shadow:none;transform:none}
+.prop-img{position:relative;min-height:0;aspect-ratio:16/10;overflow:hidden;border-radius:2px;background:var(--warm)}
+.prop-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:50% 58%;transition:transform .4s cubic-bezier(.16,.7,.2,1)}
+.prop-card:hover .prop-img img{transform:scale(1.015)}
+.prop-body{padding:0;display:flex;flex-direction:column;justify-content:center}
+.prop-body h3{font-size:38px;margin:0}
+.prop-meta{margin-top:12px}
+.prop-txt{margin-top:16px}
+.prop-cta{margin-top:24px;border-bottom:1px solid var(--line);align-self:flex-start;
+  padding-bottom:3px;position:relative}
+.prop-cta i{font-style:normal;display:inline-block;transition:transform .22s ease;margin-left:6px}
+.prop-card:hover .prop-cta i{transform:translateX(4px)}
+.prop-card:hover .prop-cta{border-color:var(--brand-navy)}
+@media(prefers-reduced-motion:reduce){.prop-img img,.prop-cta i{transition:none}
+  .prop-card:hover .prop-img img{transform:none}}
+@media(max-width:860px){.prop-card{grid-template-columns:1fr;gap:26px;padding-top:30px}
+  .prop-body h3{font-size:30px}}
+
+/* 4 · Footer: cuatro grupos y una fila inferior */
+footer .container{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:0 48px;align-items:start}
+.foot-grid{display:contents}
+.foot-grid>div{padding:0}
+.foot-social{display:flex;gap:18px;margin-top:18px}
+.foot-bottom{grid-column:1/-1;margin-top:44px;padding-top:20px;
+  border-top:1px solid var(--on-navy-line);display:flex;justify-content:space-between;
+  align-items:center;gap:24px;flex-wrap:wrap;font-size:12.5px}
+.foot-lang{display:flex;gap:16px}
+.foot-lang a{min-height:44px;display:inline-flex;align-items:center}
+footer{padding:60px 0 28px}
+@media(max-width:880px){footer .container{grid-template-columns:1fr 1fr;gap:36px 32px}}
+@media(max-width:560px){footer .container{grid-template-columns:1fr;gap:0}
+  .foot-grid>div{padding:22px 0;border-top:1px solid var(--on-navy-line)}
+  .foot-brand{border-top:0!important;padding-top:0!important}}
+
+/* footer al rango objetivo */
+footer{padding:52px 0 24px}
+.foot-bottom{margin-top:34px;padding-top:18px}
+.foot-brand p{margin-top:14px;line-height:1.5}
+.foot-cred{margin-top:8px}
+.foot-grid ul{gap:8px}
+.foot-social{margin-top:14px}
+@media(max-width:560px){footer{padding:44px 0 22px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -974,22 +1048,10 @@ img{max-width:100%}
 
 <!-- ================ PRINCIPLE ================ -->
 <section id="principio" class="principio-sect r">
-  <div class="container">
-    <div class="principio-grid">
-      <div>
-        <div class="eyebrow-row">
+  <div class="container"><div class="eyebrow-row">
           <span class="eyebrow-line"></span>
           <span class="eyebrow">01 — Principle</span>
-        </div>
-        <h2 class="principio-h">The market is <em>read</em>.<br>Not guessed.</h2>
-      </div>
-      <div class="principio-body">
-        <p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as going to market.</strong> Properties move when price, timing and positioning line up.</p>
-        <p>I work with people who are willing to make decisions with information — not instinct, not pressure, not haste.</p>
-        <p>If the read says it is not the right moment yet, I say so. If it says yes, I say that too. That is the work.</p>
-      </div>
-    </div>
-  </div>
+        </div><div class="principio-grid"><div></div><div><p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as going to market.</strong> Properties move when price, timing and positioning line up.</p><p>I work with people who are willing to make decisions with information — not instinct, not pressure, not haste.</p><p>If the read says it is not the right moment yet, I say so. If it says yes, I say that too. That is the work.</p></div></div></div>
 </section>
 
 <!-- ================ WHAT I DO ================ -->
@@ -1037,13 +1099,12 @@ img{max-width:100%}
       <p class="lead">Dedicated marketing, current availability and a complete experience for exploring every space.</p>
     </div>
     <a class="prop-card" href="https://www.spotonerealty.com/peatonal68/en/" aria-label="Explore available commercial spaces at Plaza La Peatonal 68">
-      <span class="prop-img"><img src="peatonal68/img/hero.jpg" alt="Illuminated exterior of Plaza La Peatonal 68 in San Francisco, Panama" loading="lazy" width="1332" height="1065"></span>
+      <span class="prop-img"><img src="images/plaza-noche.jpg" alt="Plaza La Peatonal 68 at night, sign lit, on Calle 68 Este" loading="lazy" width="1600" height="1000"></span>
       <span class="prop-body">
-        <span class="prop-tag">Exclusive representation</span>
         <h3>Plaza La Peatonal 68</h3>
         <span class="prop-meta">Commercial spaces from 70 to 200 m² · San Francisco</span>
         <span class="prop-txt">Review current availability, asking rents, photographs and combinable configurations.</span>
-        <span class="prop-cta">Explore Plaza La Peatonal 68 &rarr;</span>
+        <span class="prop-cta">See availability<i>&rarr;</i></span>
       </span>
     </a>
   </div>
@@ -1188,18 +1249,18 @@ img{max-width:100%}
           <li><a href="criterio/en/">Perspective</a></li>
           <li><a href="#metodo">How I work</a></li>
           <li><a href="#dario">About Dario</a></li>
-        </ul><h6 style="margin-top:24px">Properties</h6><ul>
+        </ul></div><div><h6>Properties</h6><ul>
           <li><a href="#propiedades">Exclusive representation</a></li>
           <li><a href="https://www.spotonerealty.com/peatonal68/en/">Plaza La Peatonal 68</a></li>
         </ul></div>
       <div>
         <h6>Contact</h6>
-        <ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li><li><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li><li><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></li><li><a href="index.html" style="margin-top:6px;display:block">Español</a></li><li><a href="#" style="color:var(--soft);font-weight:500">English</a></li></ul>
+        <ul><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li></ul><div class="foot-social"><a class="soc" href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a><a class="soc" href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5V17"/><circle cx="7.5" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>LinkedIn</a></div><ul style="display:none"></ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 SpotOne Realty · Panama · Real Estate Broker · License PN-1240</span>
-    </div>
+    <span class="foot-lang"></span></div>
   </div>
 </footer>
 
