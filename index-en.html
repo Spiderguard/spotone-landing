@@ -1171,24 +1171,22 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
 .pf-h{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,4vw,54px);
   line-height:1.06;letter-spacing:-.022em;color:var(--ink);margin:0;text-wrap:balance}
 .pf-p{font-size:17px;line-height:1.6;color:var(--body);margin:20px 0 0;max-width:56ch}
-.pf-r{padding-top:6px}
+.pf-r{padding-top:30px}
 .pf-cred{font-size:14.5px;line-height:1.6;color:var(--body);margin:0 0 24px}
 .pf-cred b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:21px;
   letter-spacing:-.012em;color:var(--ink);margin-bottom:6px}
-.pf-acts{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.pf-b1,.pf-b2{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;
-  min-height:54px;padding:0 24px;font-size:15.5px;font-weight:500;letter-spacing:-.004em;
-  border-radius:2px;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.pf-acts{display:flex;flex-direction:column;align-items:stretch;gap:13px;width:100%}
+.pf-b1,.pf-b2{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:54px;padding:0 24px;font-size:15.5px;font-weight:500;
+  letter-spacing:-.004em;line-height:1.2;border-radius:2px;text-align:center;
+  transition:background .16s ease,border-color .16s ease,color .16s ease}
+.pf-b1 svg,.pf-b2 svg{flex:none;width:18px;height:18px}
 .pf-b1{background:var(--brand-navy);color:var(--on-navy);border:1.5px solid var(--brand-navy)}
 .pf-b1:hover{background:#0C1930;border-color:#0C1930}
 .pf-b1 svg{flex:none;color:var(--on-navy)}
 .pf-b2{background:transparent;color:var(--brand-navy);border:1.5px solid var(--brand-navy)}
 .pf-b2:hover{background:var(--warm)}
-.pf-b3{display:inline-flex;align-items:center;min-height:44px;font-size:15px;
-  color:var(--brand-navy);border-bottom:1px solid transparent;align-self:flex-start}
-.pf-b3:hover,.pf-b3:focus-visible{border-bottom-color:var(--brand-navy)}
-.pf-b1:focus-visible,.pf-b2:focus-visible,.pf-b3:focus-visible{
-  outline:3px solid var(--brand-navy);outline-offset:3px}
+.pf-b1:focus-visible,.pf-b2:focus-visible{outline:3px solid var(--brand-navy);outline-offset:3px}
 @media(max-width:900px){
   .pf{padding:48px 0}
   .pf-grid{grid-template-columns:1fr;gap:22px}
@@ -1504,7 +1502,29 @@ footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; g
 .mm .brand{min-width:44px}
 .site-header .menu-toggle{background:none;border:0;padding:0;cursor:pointer;font:inherit}
 
-/* ⟦HEADER-CANON-FIN⟧ */</style>
+/* ⟦HEADER-CANON-FIN⟧ *//* ⟦RITMO-INICIO⟧ */
+/* ═══════════════════════════════════════════════════════════════════════════
+   RITMO VERTICAL — UN SOLO SISTEMA
+   El home tenia --sec:168px y encima una capa de parches por seccion
+   (calc(--sec - 44px), -40, -22, +20, y valores fijos de 60 a 112). Dos
+   secciones seguidas sumaban 336 px y el hueco real medido llegaba a 375 px.
+   Ahora el espacio sale del token y nada mas.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root{--sec:96px}
+@media(max-width:1024px){:root{--sec:80px}}
+@media(max-width:767px){:root{--sec:60px}}
+
+/* el hero y el prefooter conservan su composicion aprobada */
+body > section:not(.hero):not(.pf){
+  padding-top:var(--sec);padding-bottom:var(--sec);
+  margin-top:0;margin-bottom:0;min-height:0}
+
+/* si el script de revelado no corre, el contenido debe verse igual:
+   una seccion invisible con su altura reservada parece que no cargo */
+.r{will-change:opacity,transform}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+/* ⟦RITMO-FIN⟧ */</style>
+<noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}</style></noscript>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
@@ -1721,7 +1741,7 @@ footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; g
 </section>
 
 <!-- ================ FOOTER ================ -->
-<section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Let's talk</p><h2 class="pf-h">Is there a property decision you need to settle?</h2><p class="pf-p">Tell me what you are weighing. I will say plainly what information is missing and whether it makes sense to move forward.</p></div><div class="pf-r"><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Talk on WhatsApp</span></a><a class="pf-b3" href="mailto:info@spotonerealty.com">Write by email</a></div></div></div></section>
+<section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Let's talk</p><h2 class="pf-h">Is there a property decision you need to settle?</h2><p class="pf-p">Tell me what you are weighing. I will say plainly what information is missing and whether it makes sense to move forward.</p></div><div class="pf-r"><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Chat on WhatsApp</span></a><a class="pf-b2" href="mailto:info@spotonerealty.com"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span>Write by email</span></a></div></div></div></section>
 
 <footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/index-en.html" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Real estate advisory and relocation in Panama.</p><p class="sf-cred">Dario Jhangimal · Real Estate Broker&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Links</summary><h2 class="sf-h sf-h-nav">Links</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/index-en.html#metodo">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/en/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contact</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html" aria-current="page" lang="en">EN</a></p></div><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panama · License PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
 
@@ -1792,25 +1812,6 @@ footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; g
 
 
 
-<script>
-// FAQ en acordeon: la primera abierta al cargar, cierre mutuo al abrir otra.
-// Se apoya en <details> nativo, asi que el teclado y el foco siguen intactos.
-(function(){
-  document.querySelectorAll('[data-faq]').forEach(function(grupo){
-    var items = [].slice.call(grupo.querySelectorAll('details'));
-    if(!items.length) return;
-    items.forEach(function(d,i){
-      d.open = (i===0);
-      d.addEventListener('toggle', function(){
-        if(!d.open) return;                       // cerrar es libre
-        items.forEach(function(o){ if(o!==d) o.open = false; });
-      });
-    });
-  });
-})();
-</script>
-
-
 
 
 
@@ -1840,6 +1841,41 @@ footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; g
   mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
   document.addEventListener('keydown', function(e){
     if(e.key==='Escape' && mm.classList.contains('on')) close(); });
+})();
+</script>
+<script>
+// FAQ: todas cerradas al cargar. Al abrir una, se cierran las demas.
+// <details>/<summary> ya da Enter y Espacio; aqui se anade el estado ARIA,
+// el cierre con Escape y la devolucion del foco.
+(function(){
+  document.querySelectorAll('[data-faq]').forEach(function(grupo){
+    var items = [].slice.call(grupo.querySelectorAll('details'));
+    if(!items.length) return;
+    items.forEach(function(d){
+      d.open = false;                                   // sin estado heredado
+      var s = d.querySelector('summary');
+      if(s) s.setAttribute('aria-expanded','false');
+      d.addEventListener('toggle', function(){
+        if(s) s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+        if(!d.open) return;
+        items.forEach(function(o){
+          if(o!==d && o.open){
+            o.open = false;
+            var t = o.querySelector('summary');
+            if(t) t.setAttribute('aria-expanded','false');
+          }
+        });
+      });
+    });
+    grupo.addEventListener('keydown', function(e){
+      if(e.key!=='Escape') return;
+      var abierta = items.filter(function(d){ return d.open; })[0];
+      if(!abierta) return;
+      abierta.open = false;
+      var s = abierta.querySelector('summary');
+      if(s){ s.setAttribute('aria-expanded','false'); s.focus(); }
+    });
+  });
 })();
 </script>
 </body>
