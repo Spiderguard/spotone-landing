@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "levels": {
+    "1": {
+      "es": "Primer piso",
+      "en": "Level 1 · above the restaurant level"
+    },
+    "2": {
+      "es": "Segundo piso",
+      "en": "Level 2"
+    }
+  },
+  "units": [
+    {
+      "id": 11,
+      "floor": 1,
+      "area": 70,
+      "rent": 1400,
+      "total": 1700.25,
+      "status": "available",
+      "features": {
+        "es": [
+          "1 baño",
+          "Doble vitrina, frente al ascensor principal",
+          "Tres ambientes: frontal, posterior y cubículo",
+          "Ductos de aire acondicionado y lámparas instaladas",
+          "Piso de cerámica"
+        ],
+        "en": [
+          "1 bathroom",
+          "Double storefront, facing the main elevator",
+          "Three areas: front, rear and a private office",
+          "A/C ducting and light fixtures installed",
+          "Ceramic tile floor"
+        ]
+      },
+      "delivery": {
+        "es": "Se entrega en 70 m² con baño terminado.",
+        "en": "Delivered at 70 m² with the bathroom finished."
+      },
+      "photos": [
+        {
+          "src": "/peatonal68/img/local-11a.jpg",
+          "alt": {
+            "es": "Local 11: Área principal",
+            "en": "Unit 11: Main area"
+          },
+          "width": 1100,
+          "height": 825,
+          "srcset": [
+            {
+              "src": "/peatonal68/img/local-11a-480.webp",
+              "width": 480
+            },
+            {
+              "src": "/peatonal68/img/local-11a-768.webp",
+              "width": 768
+            },
+            {
+              "src": "/peatonal68/img/local-11a-1100.webp",
+              "width": 1100
+            }
+          ]
+        },
+        {
+          "src": "/peatonal68/img/letrero.jpg",
+          "alt": {
+            "es": "Local 11: Hacia el fondo",
+            "en": "Unit 11: Looking toward the back"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-12.jpg",
+          "alt": {
+            "es": "Local 11: Segundo ambiente",
+            "en": "Unit 11: Second area"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-13.jpg",
+          "alt": {
+            "es": "Local 11: Vitrina hacia el pasillo",
+            "en": "Unit 11: Storefront onto the walkway"
+          },
+          "width": 1100,
+          "height": 825
+        }
+      ],
+      "maintenance": 175.0,
+      "waste": 15.0
+    },
+    {
+      "id": 13,
+      "floor": 1,
+      "area": 120,
+      "rent": null,
+      "total": null,
+      "status": "rented",
+      "features": {
+        "es": [],
+        "en": []
+      },
+      "delivery": {
+        "es": "",
+        "en": ""
+      },
+      "photos": [],
+      "maintenance": null,
+      "waste": null
+    },
+    {
+      "id": 15,
+      "floor": 1,
+      "area": 120,
+      "rent": 2400,
+      "total": 2904.0,
+      "status": "available",
+      "features": {
+        "es": [
+          "Local de esquina con ventanal y exposición hacia la calle"
+        ],
+        "en": [
+          "Corner unit with a picture window and street exposure"
+        ]
+      },
+      "delivery": {
+        "es": "Se entrega pintado, con aire central y luces instaladas.",
+        "en": "Delivered painted, with central air and lighting installed."
+      },
+      "photos": [
+        {
+          "src": "/peatonal68/img/local-15a.jpg",
+          "alt": {
+            "es": "Local 15: Ventanal hacia la calle",
+            "en": "Unit 15: Picture window onto the street"
+          },
+          "width": 1100,
+          "height": 825,
+          "srcset": [
+            {
+              "src": "/peatonal68/img/local-15a-480.webp",
+              "width": 480
+            },
+            {
+              "src": "/peatonal68/img/local-15a-768.webp",
+              "width": 768
+            },
+            {
+              "src": "/peatonal68/img/local-15a-1100.webp",
+              "width": 1100
+            }
+          ]
+        },
+        {
+          "src": "/peatonal68/img/foto-23.jpg",
+          "alt": {
+            "es": "Local 15: Área principal",
+            "en": "Unit 15: Main area"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-24.jpg",
+          "alt": {
+            "es": "Local 15: Fondo del local",
+            "en": "Unit 15: Back of the unit"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-25.jpg",
+          "alt": {
+            "es": "Local 15: Rincón",
+            "en": "Unit 15: Corner"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-26.jpg",
+          "alt": {
+            "es": "Local 15: Baño",
+            "en": "Unit 15: Bathroom"
+          },
+          "width": 1100,
+          "height": 825
+        }
+      ],
+      "maintenance": 300.0,
+      "waste": 15.0
+    },
+    {
+      "id": 16,
+      "floor": 1,
+      "area": 200,
+      "rent": null,
+      "total": null,
+      "status": "occupied",
+      "features": {
+        "es": [],
+        "en": []
+      },
+      "delivery": {
+        "es": "",
+        "en": ""
+      },
+      "photos": [],
+      "maintenance": null,
+      "waste": null
+    },
+    {
+      "id": 21,
+      "floor": 2,
+      "area": 77,
+      "rent": 1386,
+      "total": 1704.0,
+      "status": "available",
+      "features": {
+        "es": [
+          "1 baño",
+          "Hoy comunicado con el Local 22"
+        ],
+        "en": [
+          "1 bathroom",
+          "Currently connected to Unit 22"
+        ]
+      },
+      "delivery": {
+        "es": "",
+        "en": ""
+      },
+      "photos": [
+        {
+          "src": "/peatonal68/img/local-21a.jpg",
+          "alt": {
+            "es": "Local 21: Área principal con ventanal",
+            "en": "Unit 21: Main area with picture window"
+          },
+          "width": 1100,
+          "height": 825,
+          "srcset": [
+            {
+              "src": "/peatonal68/img/local-21a-480.webp",
+              "width": 480
+            },
+            {
+              "src": "/peatonal68/img/local-21a-768.webp",
+              "width": 768
+            },
+            {
+              "src": "/peatonal68/img/local-21a-1100.webp",
+              "width": 1100
+            }
+          ]
+        },
+        {
+          "src": "/peatonal68/img/foto-17.jpg",
+          "alt": {
+            "es": "Local 21: Segundo ángulo",
+            "en": "Unit 21: Second angle"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-18.jpg",
+          "alt": {
+            "es": "Local 21: Acceso",
+            "en": "Unit 21: Entrance"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-19.jpg",
+          "alt": {
+            "es": "Local 21: Baño",
+            "en": "Unit 21: Bathroom"
+          },
+          "width": 1100,
+          "height": 825
+        }
+      ],
+      "maintenance": 192.5,
+      "waste": 15.0
+    },
+    {
+      "id": 22,
+      "floor": 2,
+      "area": 100,
+      "rent": 1800,
+      "total": 2208.5,
+      "status": "available",
+      "features": {
+        "es": [
+          "1 baño",
+          "Planta abierta y adaptable"
+        ],
+        "en": [
+          "1 bathroom",
+          "Open plan, easy to adapt"
+        ]
+      },
+      "delivery": {
+        "es": "",
+        "en": ""
+      },
+      "photos": [
+        {
+          "src": "/peatonal68/img/local-22a.jpg",
+          "alt": {
+            "es": "Local 22: Área principal",
+            "en": "Unit 22: Main area"
+          },
+          "width": 1100,
+          "height": 825,
+          "srcset": [
+            {
+              "src": "/peatonal68/img/local-22a-480.webp",
+              "width": 480
+            },
+            {
+              "src": "/peatonal68/img/local-22a-768.webp",
+              "width": 768
+            },
+            {
+              "src": "/peatonal68/img/local-22a-1100.webp",
+              "width": 1100
+            }
+          ]
+        },
+        {
+          "src": "/peatonal68/img/foto-31.jpg",
+          "alt": {
+            "es": "Local 22: Segundo ángulo",
+            "en": "Unit 22: Second angle"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-32.jpg",
+          "alt": {
+            "es": "Local 22: Fondo del local",
+            "en": "Unit 22: Back of the unit"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-33.jpg",
+          "alt": {
+            "es": "Local 22: Área de servicio",
+            "en": "Unit 22: Service area"
+          },
+          "width": 1100,
+          "height": 825
+        }
+      ],
+      "maintenance": 250.0,
+      "waste": 15.0
+    },
+    {
+      "id": 23,
+      "floor": 2,
+      "area": 100,
+      "rent": 1800,
+      "total": 2208.5,
+      "status": "available",
+      "features": {
+        "es": [
+          "1 baño interno",
+          "Distribución actual en seis cubículos privados",
+          "Piso de cerámica"
+        ],
+        "en": [
+          "1 interior bathroom",
+          "Currently laid out as six private offices",
+          "Ceramic tile floor"
+        ]
+      },
+      "delivery": {
+        "es": "Se entrega en planta abierta; la administración está removiendo los cubículos.",
+        "en": "Delivered as open plan; management is removing the partitions."
+      },
+      "photos": [
+        {
+          "src": "/peatonal68/img/local-23a.jpg",
+          "alt": {
+            "es": "Local 23: Vitrina desde el pasillo",
+            "en": "Unit 23: Storefront seen from the walkway"
+          },
+          "width": 1100,
+          "height": 825,
+          "srcset": [
+            {
+              "src": "/peatonal68/img/local-23a-480.webp",
+              "width": 480
+            },
+            {
+              "src": "/peatonal68/img/local-23a-768.webp",
+              "width": 768
+            },
+            {
+              "src": "/peatonal68/img/local-23a-1100.webp",
+              "width": 1100
+            }
+          ]
+        },
+        {
+          "src": "/peatonal68/img/foto-20.jpg",
+          "alt": {
+            "es": "Local 23: Cubículo privado",
+            "en": "Unit 23: Private office"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-21.jpg",
+          "alt": {
+            "es": "Local 23: Pasillo de cubículos",
+            "en": "Unit 23: Corridor between offices"
+          },
+          "width": 1100,
+          "height": 825
+        },
+        {
+          "src": "/peatonal68/img/foto-22.jpg",
+          "alt": {
+            "es": "Local 23: Baño interno",
+            "en": "Unit 23: Interior bathroom"
+          },
+          "width": 1100,
+          "height": 825
+        }
+      ],
+      "maintenance": 250.0,
+      "waste": 15.0
+    }
+  ],
+  "combinations": [
+    [
+      21,
+      22
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      21,
+      22,
+      23
+    ]
+  ],
+  "facade": {
+    "image": "/peatonal68/img/fachada.jpg",
+    "hotspots": {
+      "11": {
+        "left": 33.958,
+        "top": 45.806,
+        "width": 9.792,
+        "height": 14.194
+      },
+      "13": {
+        "left": 63.958,
+        "top": 45.806,
+        "width": 10.0,
+        "height": 14.516
+      },
+      "15": {
+        "left": 84.74,
+        "top": 45.806,
+        "width": 12.24,
+        "height": 14.355
+      },
+      "16": {
+        "left": 45.625,
+        "top": 46.452,
+        "width": 3.333,
+        "height": 14.194
+      },
+      "21": {
+        "left": 50.104,
+        "top": 21.774,
+        "width": 11.146,
+        "height": 17.903
+      },
+      "22": {
+        "left": 61.25,
+        "top": 21.774,
+        "width": 11.146,
+        "height": 17.903
+      },
+      "23": {
+        "left": 72.292,
+        "top": 21.935,
+        "width": 11.042,
+        "height": 19.194
+      }
+    }
+  },
+  "terms": {
+    "es": [
+      "Precios y condiciones sujetos a confirmación.",
+      "La infraestructura y las condiciones de entrega se verifican para cada actividad antes de presentar una oferta."
+    ],
+    "en": [
+      "Prices and conditions are subject to confirmation.",
+      "Infrastructure and delivery terms are checked for each proposed business before an offer is submitted."
+    ]
+  },
+  "facts": {
+    "parking": 60,
+    "coveredParking": 46,
+    "streetParking": 14,
+    "restaurants": 8,
+    "assignedParkingPerLease": null,
+    "accessibleSpaces": null
+  },
+  "photos": [
+    {
+      "src": "/peatonal68/img/dron/fachada-completa-1200.jpg",
+      "alt": {
+        "es": "Plaza La Peatonal 68 desde el aire",
+        "en": "Aerial view of Plaza La Peatonal 68"
+      },
+      "width": 1200,
+      "height": 900,
+      "role": "general",
+      "derivatives": {
+        "webp": [
+          {
+            "src": "/peatonal68/img/dron/fachada-completa-1200-r06-640.webp",
+            "width": 640,
+            "height": 480
+          },
+          {
+            "src": "/peatonal68/img/dron/fachada-completa-1200-r06-1200.webp",
+            "width": 1200,
+            "height": 900
+          }
+        ],
+        "avif": [
+          {
+            "src": "/peatonal68/img/dron/fachada-completa-1200-r06-640.avif",
+            "width": 640,
+            "height": 480
+          },
+          {
+            "src": "/peatonal68/img/dron/fachada-completa-1200-r06-1200.avif",
+            "width": 1200,
+            "height": 900
+          }
+        ]
+      }
+    },
+    {
+      "src": "/peatonal68/img/dron/planta-baja-restaurantes-1200.jpg",
+      "role": "context",
+      "alt": {
+        "es": "Restaurantes y terrazas en planta baja",
+        "en": "Ground-level restaurants and terraces"
+      },
+      "width": 1200,
+      "height": 900,
+      "derivatives": {
+        "webp": [
+          {
+            "src": "/peatonal68/img/dron/planta-baja-restaurantes-1200-r06-640.webp",
+            "width": 640,
+            "height": 480
+          },
+          {
+            "src": "/peatonal68/img/dron/planta-baja-restaurantes-1200-r06-1200.webp",
+            "width": 1200,
+            "height": 900
+          }
+        ],
+        "avif": [
+          {
+            "src": "/peatonal68/img/dron/planta-baja-restaurantes-1200-r06-640.avif",
+            "width": 640,
+            "height": 480
+          },
+          {
+            "src": "/peatonal68/img/dron/planta-baja-restaurantes-1200-r06-1200.avif",
+            "width": 1200,
+            "height": 900
+          }
+        ]
+      }
+    },
+    {
+      "src": "/peatonal68/img/estacionamientos.jpg",
+      "role": "parking",
+      "alt": {
+        "es": "Estacionamiento cubierto con acceso al ascensor y escaleras",
+        "en": "Covered parking with lift and stair access"
+      },
+      "width": 1920,
+      "height": 1080,
+      "derivatives": {
+        "webp": [
+          {
+            "src": "/peatonal68/img/estacionamientos-r06-640.webp",
+            "width": 640,
+            "height": 360
+          },
+          {
+            "src": "/peatonal68/img/estacionamientos-r06-1920.webp",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "avif": [
+          {
+            "src": "/peatonal68/img/estacionamientos-r06-640.avif",
+            "width": 640,
+            "height": 360
+          },
+          {
+            "src": "/peatonal68/img/estacionamientos-r06-1920.avif",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      }
+    }
+  ],
+  "currency": "USD",
+  "entryTerms": {
+    "es": "Condición de entrada: primer mes de alquiler más un mes de depósito.",
+    "en": "Move-in requirement: the first month’s rent plus a one-month deposit."
+  }
+}

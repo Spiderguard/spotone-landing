@@ -1,0 +1,57 @@
+/* IMPLEMENTATION DECISION: inventory presentation; all colors reference canonical tokens. */
+.project-page{padding-bottom:100px;scroll-padding-bottom:120px}
+.project-page .wrap{max-width:1192px}
+.project-page #disponibilidad{padding-top:56px}
+.project-page .availability-meta{margin-bottom:24px}
+.project-page .compact-proof{padding:16px 0;border-block:1px solid var(--line);font-size:16px}
+.inventory-filters,.combo-options,.facade-tabs{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.inventory-filters button,.combo-choice,.facade-tabs button{font:inherit;font-size:16px;min-height:48px;padding:12px 20px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.inventory-filters [aria-pressed=true],.combo-choice[aria-pressed=true],.facade-tabs [aria-selected=true]{background:var(--brand-navy);color:var(--brand-ivory);border-color:var(--brand-navy)}
+.unit-list{margin:24px 0}
+.unit-record,.unit-reference{border-block-start:1px solid var(--line);margin:0}
+.unit-record:last-child{border-bottom:1px solid var(--line)}
+.unit-record>summary{display:grid;grid-template-columns:1fr 1.6fr 1fr .6fr 1.2fr .8fr;align-items:center;gap:16px;padding:24px 0;cursor:pointer;list-style:none}
+.unit-record>summary::-webkit-details-marker{display:none}
+.unit-name,.unit-reference h3{font:400 28px/1.2 Newsreader,serif}
+.unit-level,.unit-state{font-size:14px;line-height:1.5}
+.unit-rent{font-size:19px;white-space:nowrap}.unit-rent small{display:block;font-size:12px;white-space:normal}
+.unit-open-label{font-size:14px;text-decoration:underline;text-underline-offset:4px}.unit-open-label::after{content:' +'}
+.unit-record[open] .unit-open-label::after{content:' −'}
+.unit-content{padding:0 0 32px;max-width:850px}.unit-content ul{padding-left:24px;margin:16px 0}.unit-content img{max-width:100%;height:auto}
+.unit-content p{margin:16px 0}.unit-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.text-control{font:inherit;font-size:15px;min-height:44px;padding:12px 0;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer;color:var(--ink);display:inline-flex;align-items:center}
+.cost-breakdown summary{padding:16px 0;cursor:pointer;min-height:44px}.cost-breakdown dl{max-width:520px}.cost-breakdown dl>div{display:flex;justify-content:space-between;gap:24px;padding:8px 0;border-bottom:1px solid var(--line)}
+.unit-reference{display:grid;grid-template-columns:1fr 1.5fr .5fr 2fr;gap:16px;align-items:center;padding:24px 0;color:var(--ink);background:var(--warm)}.unit-reference strong{font-size:14px;font-weight:500}
+.combination-section{margin:48px 0}.combination-section h3{font:400 32px/1.2 Newsreader,serif}.combination-section p{max-width:760px;margin-top:16px}
+#selection-result{font-size:20px;min-height:32px;margin:16px 0}
+.level-group{padding:24px 0!important}.level-group h3{font-size:24px;margin-bottom:16px}.level-options{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.level-choice,.level-reference{padding:16px;border:1px solid var(--line);color:var(--ink);background:var(--soft);display:flex;flex-direction:column;gap:8px;font:inherit;text-align:left;min-height:110px}
+.level-choice{cursor:pointer}.level-choice b,.level-reference b{font:400 30px Newsreader,serif}.level-options span{font-size:13px}.level-choice[aria-pressed=true]{background:var(--brand-navy);color:var(--brand-ivory)}.level-reference{background:var(--warm)}
+.facade-visual{position:relative}.facade-visual img{width:100%;height:auto;display:block}.facade-marker{position:absolute;display:flex;align-items:center;justify-content:center;background:var(--brand-navy);color:var(--brand-ivory);border:1px solid var(--brand-ivory);font-size:14px}.facade-marker[data-selected=true]{outline:3px solid var(--brand-ivory);font-weight:700}.facade-marker[data-status=occupied],.facade-marker[data-status=rented]{background:var(--ink)}
+.state-legend{font-size:13px;line-height:1.8;margin-top:24px}.infrastructure-list{padding-left:24px}.infrastructure-list li{margin:16px 0}
+.project-page #plaza,.project-page #ubicacion,.project-page #faq{padding-block:56px}.project-page #faq details{padding:16px 0;border-bottom:1px solid var(--line)}.project-page #faq summary{cursor:pointer;min-height:44px}.project-page #faq p{margin:16px 0;max-width:760px}
+.context-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:var(--brand-ivory);border-top:1px solid var(--line)}
+.context-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;background:var(--brand-navy);color:var(--brand-ivory);text-decoration:none;max-width:1192px;margin:auto}
+.project-page footer{padding-bottom:48px}.project-page :is(button,a,summary){scroll-margin-bottom:120px}.project-page .facade-tabs{scroll-margin-top:100px}
+@media(min-width:761px){.context-cta{left:auto;width:350px;border:1px solid var(--line)}.project-page{padding-bottom:100px}}
+@media(max-width:760px){
+ .unit-record>summary{grid-template-columns:1fr 1fr;gap:8px 16px;padding:20px 0}.unit-name{font-size:26px}.unit-level{grid-column:1/-1;grid-row:2}.unit-state{grid-column:1;grid-row:3}.unit-area{grid-column:2;grid-row:3;text-align:right}.unit-rent{grid-column:2;grid-row:1;text-align:right}.unit-open-label{grid-column:1/-1;grid-row:4;min-height:28px}
+ .unit-reference{grid-template-columns:1fr 1fr;padding:20px 12px}.unit-reference strong,.unit-reference>span:first-of-type{grid-column:1/-1}.unit-reference h3{font-size:26px}
+ .level-options{grid-template-columns:repeat(2,1fr)}.level-group h3{font-size:22px}.combo-options{display:grid;grid-template-columns:1fr}.combo-choice{text-align:left}.unit-actions{display:grid;gap:12px}.unit-actions a{width:100%}.project-page .locgrid{grid-template-columns:1fr}.project-page .mapwrap{min-width:0}.project-page .mapwrap iframe{width:100%;height:240px}
+ .facade-marker{font-size:10px}.project-page #disponibilidad{padding-top:48px}
+}
+.unit-photo{margin:0 0 16px}.unit-photo img{display:block;width:100%;height:auto}.plaza-photo{margin-top:24px}.plaza-photo summary{cursor:pointer;min-height:48px;padding:12px 0}.plaza-photo img{display:block;max-width:100%;height:auto}
+#unit-gallery{margin:auto;border:1px solid var(--line);padding:24px;max-width:min(1000px,calc(100vw - 32px));max-height:calc(100dvh - 32px);background:var(--brand-ivory);color:var(--ink)}
+#unit-gallery::backdrop{background:rgba(5,14,30,.8)}#gallery-image{display:block;max-width:100%;max-height:65dvh;object-fit:contain;margin:16px auto}#unit-gallery button{min-height:44px;padding:12px 16px;border:1px solid var(--line);background:var(--brand-ivory);font:inherit;color:var(--ink);cursor:pointer}
+.map-address{padding:24px;background:var(--soft);color:var(--ink)}.map-address p{margin:16px 0}.project-page .mapwrap{min-height:0;display:block}.project-page .mapwrap>.text-control{margin:0 24px 24px}
+
+/* Contextual labels may wrap; preserve readable touch targets. */
+.context-cta a{text-align:center;padding:10px 12px;line-height:1.4}.pf-r>.text-control{display:inline-flex;min-height:44px;align-items:center}.pf-r>p{max-width:45ch}
+
+/* Evidence and geographic orientation are visible without disclosure controls. */
+.plaza-photo{margin:32px 0}.plaza-photo img{display:block;width:100%;height:auto}.plaza-photo figcaption{margin-top:12px;color:var(--body-2)}
+.mapwrap iframe{display:block;width:100%;height:340px;border:0;position:static}.mapwrap{height:auto;min-height:0}.map-address{padding:20px}
+.unit-record{scroll-margin-top:110px}.continuity{font-size:16px;line-height:1.6}.facade-marker[data-status="rented"],.facade-marker[data-status="occupied"]{font-size:clamp(7px,1.1vw,14px);line-height:1.1;overflow:visible;background:var(--brand-navy);color:var(--brand-ivory);height:auto!important;min-height:24px;text-align:center}
+.context-cta[hidden]{display:none!important}.context-cta a{text-wrap:balance}.pf-r>p{margin-block:20px}
+
+.facade-marker small{display:none}.facade-marker[data-status="rented"],.facade-marker[data-status="occupied"]{font-size:clamp(9px,1.1vw,14px);min-height:0;overflow:hidden}.facade-status{margin:12px 0;padding:12px 16px;border:1px solid var(--line);font-size:15px;line-height:1.5}.facade-status p{margin:4px 0}
