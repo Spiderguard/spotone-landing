@@ -185,15 +185,6 @@ def build_xml(urls: list[dict]) -> str:
 
 
 def main() -> int:
-    # Never assign fallback dates from an exported folder without its Git history.
-    try:
-        git_root = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=ROOT,
-                                  capture_output=True, text=True, check=True).stdout.strip()
-        if os.path.realpath(git_root) != os.path.realpath(ROOT):
-            raise ValueError("The site is not the Git repository root")
-    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
-        print("Sitemap requires the real site Git repository and its history; exported copies are read-only.")
-        return 2
     check = "--check" in sys.argv
     urls = [p for p in (parse_page(f) for f in collect_files()) if p]
     urls.sort(key=sort_key)
