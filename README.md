@@ -58,7 +58,5 @@ El sitio no depende de Netlify. Las carpetas `en/`, `contacto/`, `contact/`, `qu
 Imagen oficial de Dario (sesión real 2026): saco navy lavado, camisa blanca de cuello abierto, gafas Moscot oliva translúcidas, barba corta. Retrato auténtico, sin sobreedición de la cara.
 
 - Vertical oficial para web: `images/dario-brand-vertical.jpg` (`1086 × 1448`)
-- Maestros renombrados (vertical + cuadrada frontal + cuadrada alt): `/Users/dario/Documents/SpotOne/redes/fotos-perfil-2026/`
-- Horizontal oficial y fuentes PNG: `/Users/dario/Documents/SpotOne/Brand Manual/assets/images/`
 
 No usar las versiones anteriores: ni la de camisa celeste/retratos sentados, ni la sesión de estudio HD 2025 (fondo gris seamless, gafas negras, sobreeditada). El repo web solo debe incluir assets que la página usa en producción; los archivos maestros viven en el manual de marca.
