@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Locales comerciales en alquiler en San Francisco | Plaza La Peatonal 68</title>
+<title>Locales comerciales en alquiler en San Francisco, Ciudad de Panamá | Plaza La Peatonal 68</title>
 <meta name="description" content="Cinco locales comerciales disponibles, de 70 a 120 m² y combinables hasta 277 m², en Plaza La Peatonal 68, Calle 68 Este, San Francisco, Panamá. Canon, costo mensual, fotos, 60 estacionamientos y disponibilidad al día.">
 <link rel="canonical" href="https://www.spotonerealty.com/peatonal68/">
 <link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/peatonal68/">
@@ -23,7 +23,7 @@
   <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
-<title>Locales comerciales en alquiler en San Francisco | Plaza La Peatonal 68</title>
+
 <style>
 /* ============ TOKENS DE MARCA — fuente unica ============
    Navy oficial #050E1E (Brand System V1, migrado 2026-08-11).
@@ -103,7 +103,7 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .hot .ck{display:none}
 .hot[data-sel="1"] .ck{display:inline;margin-right:5px}
 .fac{position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--warm)}
-.fac img{width:100%;height:auto;display:block;aspect-ratio:1920/620}
+.fac img{width:100%;height:auto;display:block;aspect-ratio:2048/768}
 .hot{position:absolute;border:0;background:rgba(var(--brand-navy-rgb),.24);box-shadow:inset 0 0 0 3px var(--accent),0 2px 10px rgba(var(--brand-navy-rgb),.25);padding:0;cursor:pointer;transition:background .18s,box-shadow .18s,opacity .18s;font-family:inherit}
 .hot:hover{background:rgba(var(--brand-navy-rgb),.40);box-shadow:inset 0 0 0 3px var(--accent)}
 .hot[data-sel="1"]{background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 3px var(--accent)}
@@ -115,6 +115,51 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .hot[data-st="leased"]{background:rgba(90,95,105,.14);cursor:default;box-shadow:none}
 .hot[data-st="leased"] span{background:rgba(90,95,105,.85);font-weight:400}
 .hot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* ── fachada real: máster verificado 21-sep-2026 ──────────────────────────
+   Estado normal = fachada limpia: sin relleno, sin trazo, sin etiqueta.
+   El velo es ÁMBAR (desplaza el tono) y el borde es doble —halo marfil debajo,
+   línea navy encima—: ninguno de los dos depende del valor del fondo, así que
+   se perciben igual sobre el vidrio claro y sobre el oscuro.
+   Geometría normalizada 0-1 sobre el máster: el registro es exacto a cualquier
+   ancho porque el SVG usa viewBox 0 0 1 1 con preserveAspectRatio none. */
+.fac{--velo-rgb:176,132,58}
+.faclayer{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}
+.faclayer .zona{fill:rgba(var(--brand-navy-rgb),0);stroke:none;cursor:pointer;
+  transition:fill .13s ease,stroke .13s ease}
+.faclayer .zona[data-st="leased"]{cursor:default;pointer-events:none}
+/* hover, foco y "se puede combinar" comparten la intensidad baja */
+/* COMBINABLE. El sitio ya dice «se puede combinar» con borde discontinuo en las
+   cards (.lvl-u[data-comb="1"]); la fachada reutiliza ese mismo lenguaje en vez de
+   inventar otro. La señal es POSITIVA: se marca lo que puede sumarse, no lo que no.
+   El local no combinable no recibe nada y sigue siendo pulsable: cambiar de
+   selección es una acción legítima. */
+.faclayer .zona[data-compat="1"]{fill:rgba(var(--velo-rgb),.10);
+  stroke:var(--brand-navy);stroke-width:1.4;stroke-opacity:.85;
+  stroke-dasharray:3 3;vector-effect:non-scaling-stroke}
+/* el hover es sólido y manda sobre la señal de combinable */
+.faclayer .zona[data-hov="1"]{fill:rgba(var(--velo-rgb),.13);
+  stroke:var(--brand-navy);stroke-width:1.4;stroke-opacity:.9;
+  stroke-dasharray:none;vector-effect:non-scaling-stroke}
+/* seleccionado sube a la intensidad alta; en combinación lo lleva el perímetro */
+.fac:not([data-combo="1"]) .faclayer .zona[data-sel="1"]{
+  fill:rgba(var(--velo-rgb),.17);stroke:var(--brand-navy);stroke-width:1.65;
+  stroke-opacity:.9;vector-effect:non-scaling-stroke}
+.faclayer .halo{fill:none;stroke:var(--ivory);stroke-opacity:.88;pointer-events:none;
+  vector-effect:non-scaling-stroke;stroke-width:2.85}
+.faclayer .halo[data-lo="1"]{stroke-width:2.6}
+/* combinación: UN solo perímetro exterior, cero divisiones interiores */
+.faclayer .combo{fill:rgba(var(--velo-rgb),.17);stroke:var(--brand-navy);stroke-width:1.65;
+  stroke-opacity:.9;vector-effect:non-scaling-stroke;pointer-events:none}
+.faclayer .zona:focus{outline:none}
+.faclayer .zona:focus-visible{stroke:var(--accent);stroke-width:1.8;stroke-dasharray:5 4;
+  vector-effect:non-scaling-stroke;fill:rgba(var(--velo-rgb),.13)}
+/* la etiqueta vive en HTML, no en el SVG: el SVG está estirado y la deformaría */
+.faclbl{position:absolute;z-index:5;pointer-events:none;
+  font:600 11.5px/1 'Hanken Grotesk',-apple-system,sans-serif;letter-spacing:.13em;
+  color:#1C232C;background:rgba(244,241,234,.96);
+  border:1px solid rgba(var(--brand-navy-rgb),.14);border-radius:1px;
+  padding:4px 8px 3px;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.faclayer .zona{transition:none}}
 .legend{display:flex;flex-wrap:wrap;gap:26px;margin-top:18px;font-size:15px;color:var(--muted)}
 .legend i{display:inline-block;width:22px;height:16px;border-radius:2px;margin-right:9px;vertical-align:-3px}
 .i-av{background:rgba(var(--brand-navy-rgb),.24);box-shadow:inset 0 0 0 3px var(--accent)}
@@ -224,15 +269,16 @@ details.calc .st dt,details.calc .st dd{color:var(--body);font-weight:400}
  .infra>div:nth-child(-n+3){grid-column:span 2}
  .infra>div:nth-child(4){grid-column:2/span 2}.infra>div:nth-child(5){grid-column:4/span 2}}
 @media(max-width:760px){.infra{grid-template-columns:repeat(2,1fr);gap:30px 22px}.infra>div:last-child{grid-column:1/-1}}
-@media(max-width:430px){.infra{grid-template-columns:1fr}.infra>div:last-child{grid-column:auto}}
+@media(max-width:430px){.infra{grid-template-columns:1fr;gap:24px}
+ .infra>div:last-child{grid-column:auto}
+ .infra svg{width:30px;height:30px;margin-bottom:12px}
+ .infra b{margin-bottom:9px}}
 .locgrid{display:grid;grid-template-columns:55fr 45fr;gap:56px;align-items:start;margin-top:34px}
 @media(max-width:900px){.locgrid{grid-template-columns:1fr;gap:32px}}
 .loccard{border:1px solid var(--line);border-radius:2px;padding:30px 32px;background:var(--soft)}
 .loccard svg{margin-bottom:4px}
 .loccard b{display:block;font-family:'Newsreader',serif;font-size:24px;font-weight:300;letter-spacing:-.015em;margin:16px 0 8px}
 .loccard span{display:block;color:var(--muted);font-size:15.5px;margin-bottom:22px}
-@media(max-width:1000px){.infra{grid-template-columns:repeat(2,1fr);gap:26px}}
-@media(max-width:600px){.infra{grid-template-columns:1fr}}
 .infra svg{margin-bottom:24px;display:block}
 .infra b{display:block;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:15px;line-height:1.35}
 .infra p{margin:0;font-size:15.5px;color:var(--body)}
@@ -459,6 +505,11 @@ details.calc{margin-top:16px}
 .facnav button:focus-visible{outline:2px solid var(--brand-navy);outline-offset:-3px}
 
 .facview[hidden]{display:none}
+/* la fachada es una panoramica: en movil se desliza en vez de encogerse */
+.facsc{overflow-x:auto;overscroll-behavior-x:contain}
+@media(max-width:760px){
+  .facsc .fac{min-width:880px}
+}
 
 .facnote{font-size:13px;color:var(--muted);line-height:1.55;margin-top:12px;max-width:74ch}
 
@@ -572,7 +623,7 @@ img{max-width:100%}
 .lvl-tabs button[aria-selected="true"]{border-color:var(--brand-navy);color:var(--brand-navy);font-weight:500}
 .lvl{margin-bottom:44px}
 .lvl:last-child{margin-bottom:0}
-.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--muted);font-weight:600;margin:0 0 14px}
 .lvl-row{display:grid;gap:0 40px;align-items:start}
 .lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -582,10 +633,10 @@ img{max-width:100%}
   transition:background .16s}
 .lvl-u:hover,.lvl-u:focus-visible{background:var(--warm)}
 .lvl-u:focus-visible{outline:2px solid var(--brand-navy);outline-offset:-2px}
-.lvl-n{display:block;font-family:'Newsreader',serif;font-size:30px;font-weight:300;
+.lvl-n{display:block;font-family:'Newsreader',serif;font-size:40px;font-weight:300;
   letter-spacing:-.02em;color:var(--brand-navy);line-height:1}
-.lvl-m{display:block;font-size:15.5px;color:var(--body);margin-top:7px}
-.lvl-s{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.lvl-m{display:block;font-size:18.5px;color:var(--body);margin-top:7px}
+.lvl-s{display:block;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-top:5px}
 .lvl-u[aria-pressed="true"]{background:var(--brand-navy)}
 .lvl-u[aria-pressed="true"] .lvl-n{color:var(--soft)}
 .lvl-u[aria-pressed="true"] .lvl-m,.lvl-u[aria-pressed="true"] .lvl-s{color:rgba(246,244,239,.78)}
@@ -618,7 +669,7 @@ img{max-width:100%}
   .lvl[hidden]{display:none}
   .lvl[data-piso="1"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
   .lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 14px}
-  .lvl-n{font-size:26px}
+  .lvl-n{font-size:33px}
   .infra-band ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 }
 @media(max-width:430px){.lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -631,7 +682,7 @@ img{max-width:100%}
 .lvl-tabs [role="tab"][aria-selected="true"]{background:var(--brand-navy);border-color:var(--brand-navy);color:var(--ivory)}
 .lvl{margin-bottom:38px}
 .lvl:last-child{margin-bottom:0}
-.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.16em;
+.lvl-h{font-family:'Hanken Grotesk',sans-serif;font-size:12.5px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 4px;
   padding-bottom:10px;border-bottom:1px solid var(--line)}
 .lvl-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
@@ -641,10 +692,10 @@ img{max-width:100%}
   padding:18px 20px 20px;cursor:pointer;font:inherit;color:inherit;
   transition:background .16s,color .16s,box-shadow .16s}
 .lvl-row .lvl-u:last-child{border-right:0}
-.lvl-n{display:block;font-family:'Newsreader',serif;font-size:30px;line-height:1;
+.lvl-n{display:block;font-family:'Newsreader',serif;font-size:40px;line-height:1;
   color:var(--ink);letter-spacing:-.02em}
-.lvl-m{display:block;font-size:15.5px;color:var(--body);margin-top:8px}
-.lvl-s{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+.lvl-m{display:block;font-size:18.5px;color:var(--body);margin-top:8px}
+.lvl-s{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin-top:6px}
 /* hover inequivoco */
 .lvl-u:hover,.lvl-u:focus-visible{background:var(--warm);box-shadow:inset 3px 0 0 var(--brand-navy)}
@@ -671,7 +722,7 @@ img{max-width:100%}
   .lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .lvl-u{min-height:88px;padding:16px 14px 18px;border-right:1px solid var(--line)}
   .lvl-row .lvl-u:nth-child(2n){border-right:0}
-  .lvl-n{font-size:26px}
+  .lvl-n{font-size:33px}
 }
 @media(prefers-reduced-motion:reduce){.lvl-u{transition:none}}
 
@@ -848,12 +899,12 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
 
 .lvl-u{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;
   background:transparent;border:2px solid var(--brand-navy);border-radius:2px;
-  padding:16px 18px 18px;box-shadow:none;
+  padding:19px 20px 21px;box-shadow:none;
   transition:background 160ms ease,box-shadow 160ms ease,opacity 160ms ease}
-.lvl-n{display:block;font-family:'Newsreader',serif;font-size:30px;line-height:1;
+.lvl-n{display:block;font-family:'Newsreader',serif;font-size:40px;line-height:1;
   color:var(--ink);letter-spacing:-.02em}
-.lvl-m{display:block;font-size:15.5px;color:var(--body);margin-top:8px}
-.lvl-s{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+.lvl-m{display:block;font-size:18.5px;color:var(--body);margin-top:8px}
+.lvl-s{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--brand-muted);margin-top:6px;min-height:1.2em}
 
 /* hover: el grosor sube a 3 px sin mover un pixel de geometria */
@@ -883,8 +934,8 @@ details.calc summary{min-height:44px;display:flex;align-items:center}
 
 @media(max-width:760px){
   .lvl-row,.lvl[data-piso="2"] .lvl-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .lvl-u{min-height:96px;padding:14px 14px 16px}
-  .lvl-n{font-size:26px}
+  .lvl-u{min-height:106px;padding:16px 15px 18px}
+  .lvl-n{font-size:33px}
 }
 @media(prefers-reduced-motion:reduce){.lvl-u{transition:none}}
 /* ⟦ESTADOS-FIN⟧ *//* ⟦LEDGER-INICIO⟧ */
@@ -1309,34 +1360,6 @@ body > section:not(.hero):not(.pf){
 .u[data-alq="1"] .price{border-top:1px solid var(--line);padding-top:18px}
 .p-alq{font-size:15px;color:var(--muted);margin:0}
 /* ⟦ESTADO-ALQUILADO-FIN⟧ */
-/* ⟦ESQUEMA-INICIO⟧ Esquema de fachada: representación, no plano a escala.
-   Geometría derivada de los recuadros ya medidos sobre la fachada real. */
-.esq{border:1px solid var(--line);border-radius:2px;background:var(--soft);padding:20px 18px}
-.esq svg{width:100%;height:auto;display:block;overflow:visible}
-.esq .stack{display:none}
-@media(max-width:760px){.esq .wide{display:none}.esq .stack{display:block}.esq{padding:14px 10px}}
-.su{cursor:pointer}
-.su rect{fill:var(--soft);stroke:var(--brand-navy);stroke-width:2.5;transition:fill .16s}
-.su .n{fill:var(--brand-navy);font-family:'Newsreader',serif;font-weight:400}
-.su .m{fill:var(--body);font-family:'Hanken Grotesk',sans-serif;font-weight:400}
-.su .s{fill:var(--muted);font-family:'Hanken Grotesk',sans-serif;font-weight:500;letter-spacing:.06em}
-.su:hover rect{fill:var(--warm)}
-.su:focus{outline:none}
-.su:focus-visible rect{stroke-width:5}
-.su[data-sel="1"] rect{fill:var(--brand-navy)}
-.su[data-sel="1"] .n,.su[data-sel="1"] .m,.su[data-sel="1"] .s{fill:var(--soft)}
-.su[data-comb="1"] rect{stroke-dasharray:8 6;fill:rgba(var(--brand-navy-rgb),.05)}
-.su[data-dim="1"]{opacity:.34}
-.su[data-filt="0"]{opacity:.18;pointer-events:none}
-.su[data-alq="1"]{cursor:default;pointer-events:none}
-.su[data-alq="1"] rect{fill:#B9B2A4;stroke:#B9B2A4}
-.su[data-alq="1"] .n,.su[data-alq="1"] .m,.su[data-alq="1"] .s{fill:#2E2E2A}
-.esq .band{fill:none;stroke:var(--line);stroke-width:1.5}
-.esq .otros{fill:rgba(90,95,105,.06);stroke:var(--line);stroke-width:1}
-.esq .lab{fill:var(--muted);font-family:'Hanken Grotesk',sans-serif;font-size:19px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
-.esq .otxt{fill:var(--muted);font-family:'Hanken Grotesk',sans-serif;font-size:19px}
-.esq .street,.esq .entr{stroke:var(--line);stroke-width:2;fill:none}
-/* ⟦ESQUEMA-FIN⟧ */
 /* ⟦OCUPADOS-INICIO⟧ inventario no disponible, mostrado solo como referencia */
 .occ-sec{padding-top:0!important}
 .occ-h{font-size:clamp(23px,2.2vw,29px);font-weight:300;letter-spacing:-.015em;margin:0 0 14px}
@@ -1346,10 +1369,95 @@ body > section:not(.hero):not(.pf){
 .occ-grid .uh h3{font-size:24px}
 @media(max-width:760px){.occ-grid{grid-template-columns:1fr;gap:28px}}
 /* ⟦OCUPADOS-FIN⟧ */
+/* ⟦CTA-HEADER-INICIO⟧
+   Sobre el hero el boton se apoyaba en un filete al 45 %: medido lado a lado
+   contra la foto daba 2,33-3,61. Con --on-navy-muted (68 %), que ya es token
+   del sistema, sube a 3,34-6,17 y los cuatro lados pasan 3:1 sin tocar el
+   fondo del header. Al rotulo se le pone la MISMA sombra que ya llevan el h1
+   y el lead sobre esta foto, y solo mientras el header es transparente.
+   Hover, pulsacion y foco usan los valores ya aprobados. Caja, padding,
+   tipografia y posicion sin cambios: sigue siendo el secundario del marfil. */
+.site-header:not(.scrolled) .site-nav a.cta,
+.site-header:not(.scrolled) .nav a.cta{
+  border-color:var(--on-navy-muted);
+  text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.site-header:not(.scrolled) .site-nav a.cta:hover,
+.site-header:not(.scrolled) .site-nav a.cta:active,
+.site-header:not(.scrolled) .nav a.cta:hover,
+.site-header:not(.scrolled) .nav a.cta:active{
+  border-color:var(--on-navy);background:rgba(244,241,234,.10)}
+.site-nav a.cta:focus-visible,.nav a.cta:focus-visible{
+  outline:2px solid var(--accent-sk,var(--sky,#9fb6d4));outline-offset:3px}
+/* ⟦CTA-HEADER-FIN⟧ */
+
+/* ⟦MENU-CERRADO-INICIO⟧
+   El panel se ocultaba solo con transform: fuera de pantalla pero visible para
+   el teclado y para el lector. Medido: 13-15 enlaces enfocables con Tab y
+   presentes en el arbol de accesibilidad con el menu cerrado, tambien en
+   escritorio. Mismas tres declaraciones que ya tenia la home en espanol.
+   No cambia nada visible: el panel abierto sigue igual. */
+.mm{visibility:hidden}
+.mm.on{visibility:visible}
+@media(min-width:881px){.mm{display:none}}
+/* ⟦MENU-CERRADO-FIN⟧ */
+
+/* ── pasada de integración 21-sep-2026: jerarquía alrededor de la fachada ──
+   La nota baja a caption; se retiran la leyenda gráfica, el párrafo permanente
+   de 21/22 y la línea de instrucciones: la interfaz ya lo explica. */
+.facnote{font-size:12.5px;line-height:1.5;color:var(--faint);margin-top:10px;max-width:58ch}
+/* en escritorio la barra fija duplicaba el CTA del bloque de resultado */
+@media(min-width:761px){.selbar[data-on="1"]{display:none}}
+/* ── móvil ────────────────────────────────────────────────────────────────
+   Por defecto se ve la fachada ENTERA, para orientarse. El acercamiento solo
+   aparece al seleccionar, y se puede deshacer. */
+.facfit{display:none}
+@media(max-width:760px){
+  .facsc .fac{min-width:0}
+  body.facfoco .facsc .fac{min-width:880px}
+  .facfit{display:none;appearance:none;background:none;border:0;font:inherit;font-size:13px;
+    color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+    padding:10px 0 0;min-height:44px}
+  body.facfoco .facfit{display:inline-block}
+  /* «Por nivel»: escaneo rápido, no dos pantallas para cuatro locales */
+  .lvl-row{align-items:stretch}
+  .lvl-u{min-height:0;padding:11px 12px 12px}
+  .lvl-n{font-size:21px}
+  .lvl-m{font-size:14px;margin-top:3px}
+  .lvl-s{font-size:10px;letter-spacing:.1em;margin-top:3px}
+  .lvl-h{font-size:12px;margin-bottom:8px}
+  /* los no disponibles son contexto: menos peso visual */
+  .lvl-u[data-alq="1"]{padding:9px 12px 10px}
+  .lvl-u[data-alq="1"] .lvl-n{font-size:17px}
+  .lvl-u[data-alq="1"] .lvl-m{font-size:12.5px}
+  .lvl-u[data-alq="1"] .lvl-s{font-size:9.5px;line-height:1.35}
+}
+
+/* ── pasada P1 · 21-sep-2026 ──────────────────────────────────────────────
+   1 · CONTRASTE DEL MENÚ MÓVIL. El panel .mm es CLARO (--soft) y su texto ink
+   es el correcto; lo que se colaba era el background navy de la regla genérica
+   .foot, que dejaba tinta sobre navy: 1.09:1. Se retira ese fondo y el ink
+   sobre --soft da 15.9:1. No se cambia ni el layout ni el color del texto. */
+.mm .foot{background:transparent}
+
+/* 2 · EL SELECTOR DE VISTA NO ES UN FILTRO MÁS. Se rotula su función y se
+   distingue por forma: pastilla sobre --warm, más baja que los chips y del
+   ancho de su contenido. Los chips siguen siendo chips. */
+.facswitch{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:nowrap}
+.facswitch .facnav-lbl{color:var(--faint);flex:0 0 auto;white-space:nowrap}
+.facswitch .facnav{margin-bottom:0;background:var(--warm);border-color:transparent;
+  width:max-content;flex:0 0 auto}
+.facnav button{min-height:38px;padding:0 14px;font-size:13px;white-space:nowrap}
+.facnav button[aria-selected="true"]{background:var(--brand-navy);color:var(--on-navy)}
+@media(max-width:760px){
+  .filters{margin-bottom:18px}
+  .facswitch{gap:10px;margin-bottom:12px}
+  .facnav button{min-height:44px;padding:0 13px;font-size:13px}
+}
 </style>
-<noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}</style></noscript>
+<noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}
+</style></noscript>
 <header class="site-header"><div class="container hdr-in">
-  <a href="https://www.spotonerealty.com/" class="brand" aria-label="Ir al inicio de SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
+  <a href="https://www.spotonerealty.com/" class="brand" aria-label="Ir al inicio de SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
   <nav class="site-nav">
     <a href="#disponibilidad" class="lnk">Disponibilidad</a><a href="#plaza" class="lnk">La plaza</a><a href="#ubicacion" class="lnk">Ubicación</a><a href="#faq" class="lnk">FAQ</a>
     <a href="#contacto" class="cta">Consultar</a>
@@ -1394,11 +1502,11 @@ body > section:not(.hero):not(.pf){
 <div class="wrap">
 <div class="ebrow"><span class="eb">San Francisco · Calle 68 Este</span><span class="r" style="background:rgba(255,255,255,.25)"></span><span class="eb">Locales comerciales en alquiler</span></div>
 <h1>Plaza La Peatonal 68</h1>
-<p class="hlead">Cinco locales disponibles, de 70 a 120 m² cada uno y combinables hasta 277 m² continuos, en una plaza activa de San Francisco con ocho restaurantes y 60 estacionamientos para sus clientes. En cada ficha puedes comparar metraje, canon, costos de mantenimiento y condiciones de entrega.</p>
+<p class="hlead">Cinco locales disponibles. Cada uno mide entre 70 y 120 m², y los del segundo piso se combinan hasta 277 m² continuos. Están en una plaza activa de San Francisco con ocho restaurantes y 60 estacionamientos para sus clientes. En cada ficha puedes comparar metraje, canon, costos de mantenimiento y condiciones de entrega.</p>
 <div class="acts"><a class="btn btn-p" href="#disponibilidad">Ver locales disponibles</a><a class="btn btn-s" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Consultar por WhatsApp</a></div>
 <div class="figs">
 <div class="fig"><b id="cnt">5</b><span>Locales disponibles</span></div>
-<div class="fig"><b>70–120 m²</b><span>Por local · hasta 277 m² combinando</span></div>
+<div class="fig"><b>70–120 m²</b><span>Metraje por local</span></div><div class="fig"><b>277 m²</b><span>Máximo combinado</span></div>
 <div class="fig"><b>60</b><span>Estacionamientos</span></div>
 <div class="fig"><b>8</b><span>Restaurantes en planta baja</span></div>
 </div>
@@ -1408,7 +1516,7 @@ body > section:not(.hero):not(.pf){
 <section id="disponibilidad"><div class="wrap">
 <div class="ebrow"><span class="eb">Disponibilidad</span><span class="r"></span></div>
 <h2>Ubica y combina los locales disponibles</h2>
-<p class="lead">Selecciona un local sobre la fachada o en la lista por nivel para ver su metraje y su canon. Si dos espacios son contiguos, puedes sumarlos y ver la superficie continua que resulta. Si ya sabes qué negocio vas a operar, dime sus requerimientos: no todos los locales tienen la misma infraestructura.</p>
+<p class="lead">Explora la fachada para ver ubicación, metraje y combinaciones posibles.</p>
 <div class="filters" style="margin-top:36px" role="group" aria-label="Filtrar locales">
 <button class="chip" data-f="all" aria-pressed="true">Todos</button>
 <button class="chip" data-f="f1" aria-pressed="false">Primer piso</button>
@@ -1417,9 +1525,9 @@ body > section:not(.hero):not(.pf){
 <button class="chip" data-f="l" aria-pressed="false">Más de 100 m²</button>
 <button class="chip" data-f="c" aria-pressed="false">Combinables</button>
 </div>
-<p class="status" id="st">Selecciona un local para ver sus datos y posibles combinaciones.</p>
-<div class="facnav" role="tablist" aria-label="Vista de la fachada"><button role="tab" aria-selected="true" data-view="esquema">Esquema</button><button role="tab" aria-selected="false" data-view="foto">Fachada real</button><button role="tab" aria-selected="false" data-view="plano">Locales por nivel</button></div><div class="facview esq" data-view="esquema" hidden><svg class="wide" viewBox="0 0 1920 700" role="img" aria-label="Esquema de la fachada con los locales por nivel"><text class="lab" x="40" y="74">Segundo piso</text><rect class="band" x="40" y="90" width="1840" height="150" rx="3"/><text class="lab" x="40" y="274">Primer piso</text><rect class="band" x="40" y="290" width="1840" height="140" rx="3"/><rect class="otros" x="40" y="290" width="580" height="140" rx="3"/><rect class="otros" x="1060" y="290" width="130" height="140" rx="3"/><rect class="otros" x="1440" y="290" width="160" height="140" rx="3"/><rect class="otros" x="40" y="90" width="900" height="150" rx="3"/><rect class="otros" x="1616" y="90" width="264" height="150" rx="3"/><text class="otxt" x="60" y="365">Otros locales de la plaza</text><text class="otxt" x="60" y="170">Otros locales de la plaza</text><g class="su" data-u="11" tabindex="0" role="button" aria-pressed="false" aria-label="Local 11, 70 m², Disponible"><rect x="640" y="290" width="190" height="140" rx="3"/><text class="n" x="658" y="346" style="font-size:44px">11</text><text class="m" x="658" y="378" style="font-size:22px">70 m²</text><text class="s" x="658" y="408" style="font-size:17px">Disponible</text></g><g class="su" data-u="16" data-alq="1" role="button" aria-pressed="false" aria-label="Local 16, 200 m², Oficina de administración"><rect x="850" y="290" width="170" height="140" rx="3"/><text class="n" x="868" y="346" style="font-size:44px">16</text><text class="m" x="868" y="378" style="font-size:22px">200 m²</text><text class="s" x="868" y="408" style="font-size:17px">Ocupado</text></g><g class="su" data-u="13" data-alq="1" role="button" aria-pressed="false" aria-label="Local 13, 120 m², Alquilado"><rect x="1210" y="290" width="200" height="140" rx="3"/><text class="n" x="1228" y="346" style="font-size:44px">13</text><text class="m" x="1228" y="378" style="font-size:22px">120 m²</text><text class="s" x="1228" y="408" style="font-size:17px">Alquilado</text></g><g class="su" data-u="15" tabindex="0" role="button" aria-pressed="false" aria-label="Local 15, 120 m², Disponible"><rect x="1620" y="290" width="240" height="140" rx="3"/><text class="n" x="1638" y="346" style="font-size:44px">15</text><text class="m" x="1638" y="378" style="font-size:22px">120 m²</text><text class="s" x="1638" y="408" style="font-size:17px">Disponible</text></g><g class="su" data-u="21" tabindex="0" role="button" aria-pressed="false" aria-label="Local 21, 77 m², Disponible"><rect x="960" y="90" width="214" height="150" rx="3"/><text class="n" x="978" y="146" style="font-size:44px">21</text><text class="m" x="978" y="178" style="font-size:22px">77 m²</text><text class="s" x="978" y="208" style="font-size:17px">Disponible</text></g><g class="su" data-u="22" tabindex="0" role="button" aria-pressed="false" aria-label="Local 22, 100 m², Disponible"><rect x="1176" y="90" width="214" height="150" rx="3"/><text class="n" x="1194" y="146" style="font-size:44px">22</text><text class="m" x="1194" y="178" style="font-size:22px">100 m²</text><text class="s" x="1194" y="208" style="font-size:17px">Disponible</text></g><g class="su" data-u="23" tabindex="0" role="button" aria-pressed="false" aria-label="Local 23, 100 m², Disponible"><rect x="1392" y="90" width="212" height="150" rx="3"/><text class="n" x="1410" y="146" style="font-size:44px">23</text><text class="m" x="1410" y="178" style="font-size:22px">100 m²</text><text class="s" x="1410" y="208" style="font-size:17px">Disponible</text></g><text class="lab" x="40" y="454">Planta baja</text><rect class="otros" x="40" y="470" width="1840" height="110" rx="3"/><text class="otxt" x="60" y="532">Ocho restaurantes</text><path class="entr" d="M864 470v110"/><text class="otxt" x="884" y="532">Entrada</text><path class="street" d="M40 630h1840"/><text class="otxt" x="40" y="668">Calle 68 Este</text></svg><svg class="stack" viewBox="0 0 700 980" role="img" aria-label="Esquema de la fachada con los locales por nivel"><text class="lab" x="40" y="44" style="font-size:17px">Segundo piso</text><text class="lab" x="40" y="304" style="font-size:17px">Primer piso</text><g class="su" data-u="21" tabindex="0" role="button" aria-pressed="false" aria-label="Local 21, 77 m², Disponible"><rect x="40" y="70" width="200" height="180" rx="3"/><text class="n" x="58" y="121" style="font-size:40px">21</text><text class="m" x="58" y="150" style="font-size:20px">77 m²</text><text class="s" x="58" y="178" style="font-size:15px">Disponible</text></g><g class="su" data-u="22" tabindex="0" role="button" aria-pressed="false" aria-label="Local 22, 100 m², Disponible"><rect x="250" y="70" width="200" height="180" rx="3"/><text class="n" x="268" y="121" style="font-size:40px">22</text><text class="m" x="268" y="150" style="font-size:20px">100 m²</text><text class="s" x="268" y="178" style="font-size:15px">Disponible</text></g><g class="su" data-u="23" tabindex="0" role="button" aria-pressed="false" aria-label="Local 23, 100 m², Disponible"><rect x="460" y="70" width="200" height="180" rx="3"/><text class="n" x="478" y="121" style="font-size:40px">23</text><text class="m" x="478" y="150" style="font-size:20px">100 m²</text><text class="s" x="478" y="178" style="font-size:15px">Disponible</text></g><g class="su" data-u="11" tabindex="0" role="button" aria-pressed="false" aria-label="Local 11, 70 m², Disponible"><rect x="40" y="330" width="300" height="150" rx="3"/><text class="n" x="58" y="381" style="font-size:40px">11</text><text class="m" x="58" y="410" style="font-size:20px">70 m²</text><text class="s" x="58" y="438" style="font-size:15px">Disponible</text></g><g class="su" data-u="16" data-alq="1" role="button" aria-pressed="false" aria-label="Local 16, 200 m², Oficina de administración"><rect x="360" y="330" width="300" height="150" rx="3"/><text class="n" x="378" y="381" style="font-size:40px">16</text><text class="m" x="378" y="410" style="font-size:20px">200 m²</text><text class="s" x="378" y="438" style="font-size:15px">Ocupado</text></g><g class="su" data-u="13" data-alq="1" role="button" aria-pressed="false" aria-label="Local 13, 120 m², Alquilado"><rect x="40" y="500" width="300" height="150" rx="3"/><text class="n" x="58" y="551" style="font-size:40px">13</text><text class="m" x="58" y="580" style="font-size:20px">120 m²</text><text class="s" x="58" y="608" style="font-size:15px">Alquilado</text></g><g class="su" data-u="15" tabindex="0" role="button" aria-pressed="false" aria-label="Local 15, 120 m², Disponible"><rect x="360" y="500" width="300" height="150" rx="3"/><text class="n" x="378" y="551" style="font-size:40px">15</text><text class="m" x="378" y="580" style="font-size:20px">120 m²</text><text class="s" x="378" y="608" style="font-size:15px">Disponible</text></g><text class="lab" x="40" y="694" style="font-size:17px">Planta baja</text><rect class="otros" x="40" y="716" width="620" height="110" rx="3"/><text class="otxt" x="60" y="762" style="font-size:20px">Ocho restaurantes</text><text class="otxt" x="60" y="794" style="font-size:20px">Entrada</text><path class="street" d="M40 880h620"/><text class="otxt" x="40" y="918" style="font-size:20px">Calle 68 Este</text></svg><p class="facnote">Esquema de la fachada: ubicación y nivel de cada local, con los demás espacios en gris. Es una representación para orientarte, no un plano a escala; las medidas se confirman en el plano de cada local.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Nivel"><button role="tab" aria-selected="true" data-piso="1">Primer piso</button><button role="tab" aria-selected="false" data-piso="2">Segundo piso</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">Primer piso</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, disponible"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · OFICINA DE ADMINISTRACIÓN · OCUPADO"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">OFICINA DE ADMINISTRACIÓN · OCUPADO</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · ALQUILADO"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, disponible"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Disponible</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Segundo piso</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, disponible"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, disponible"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, disponible"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button></div></div></div><div class="facview" data-view="foto"><div class="fac"><img src="img/fachada.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados" width="1920" height="620"><button class="hot" data-u="11" data-st="available" style="left:33.958%;top:45.806%;width:9.792%;height:14.194%" aria-label="Local 11, 70 metros cuadrados, primer piso" aria-pressed="false"><span>11</span></button><button class="hot" data-u="13" data-st="leased" style="left:63.958%;top:45.806%;width:10.000%;height:14.516%" aria-label="Local 13, 120 metros cuadrados, primer piso" aria-pressed="false"><span>13</span></button><button class="hot" data-u="15" data-st="available" style="left:84.740%;top:45.806%;width:12.240%;height:14.355%" aria-label="Local 15, 120 metros cuadrados, primer piso" aria-pressed="false"><span>15</span></button><button class="hot" data-u="16" data-st="leased" style="left:45.625%;top:46.452%;width:3.333%;height:14.194%" aria-label="Local 16, 200 metros cuadrados, primer piso" aria-pressed="false"><span>16</span></button><button class="hot" data-u="21" data-st="available" style="left:50.104%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 21, 77 metros cuadrados, segundo piso" aria-pressed="false"><span>21</span></button><button class="hot" data-u="22" data-st="available" style="left:61.250%;top:21.774%;width:11.146%;height:17.903%" aria-label="Local 22, 100 metros cuadrados, segundo piso" aria-pressed="false"><span>22</span></button><button class="hot" data-u="23" data-st="available" style="left:72.292%;top:21.935%;width:11.042%;height:19.194%" aria-label="Local 23, 100 metros cuadrados, segundo piso" aria-pressed="false"><span>23</span></button></div><p class="facnote">Los recuadros señalan la ubicación y el frente visible de cada local sobre la fachada real. No representan su superficie ni su distribución interior: ambas se confirman en el plano del espacio.</p></div><p class="facnota2">Los locales 21 y 22 están comunicados actualmente. Si se alquilan por separado, se entrega la división correspondiente. Las configuraciones están sujetas a disponibilidad.</p><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div><div class="legend"><span><i class="i-av"></i>Disponible</span><span><i class="i-cb"></i>Se puede combinar</span><span><i class="i-sl" style="background:rgba(var(--brand-navy-rgb),.55);box-shadow:inset 0 0 0 2.5px var(--accent)"></i>Seleccionado</span></div>
-<div class="infra-band"><h3 class="infra-h">Acceso e infraestructura</h3><ul><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg><span><b>60 estacionamientos</b><em>14 en planta baja · 46 bajo techo</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg><span><b>Elevador</b><em>A los niveles comerciales</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span><b>Escaleras</b><em>Circulación entre los tres niveles</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/><path d="M4 16h16"/></svg><span><b>Acceso vehicular</b><em>Por Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M4 19 15 7"/><path d="M15 7h5v12"/></svg><span><b>Acceso al estacionamiento techado</b><em>Por rampa</em></span></li></ul></div>
+
+<div class="facswitch"><span class="eb facnav-lbl">Vista</span><div class="facnav" role="tablist" aria-label="Vista de la fachada"><button role="tab" aria-selected="true" data-view="foto">Fachada</button><button role="tab" aria-selected="false" data-view="plano">Por nivel</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="img/fachada-master-2026-09-21.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Fachada: locales disponibles"><polygon class="hot zona" data-u="11" data-st="available" points="0.3413,0.4583 0.4287,0.4583 0.4287,0.5417 0.3413,0.5417" role="button" tabindex="0" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="15" data-st="available" points="0.8286,0.457 0.9424,0.457 0.9424,0.5859 0.8286,0.5859" role="button" tabindex="0" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="21" data-st="available" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, segundo piso"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">Ver la fachada completa</button><p class="facnote">Ubicación visual de referencia. El metraje y distribución se confirman en la ficha de cada local.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Nivel"><button role="tab" aria-selected="true" data-piso="1">Primer piso</button><button role="tab" aria-selected="false" data-piso="2">Segundo piso</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">Primer piso</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, disponible"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · OFICINA DE ADMINISTRACIÓN · OCUPADO"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">OFICINA DE ADMINISTRACIÓN · OCUPADO</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · ALQUILADO"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, disponible"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Disponible</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Segundo piso</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, disponible"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, disponible"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, disponible"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="infra-band"><h3 class="infra-h">Acceso e infraestructura</h3><ul><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg><span><b>60 estacionamientos</b><em>14 en planta baja · 46 en el sótano</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg><span><b>Elevador</b><em>A los niveles comerciales</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span><b>Escaleras</b><em>Circulación entre los tres niveles</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/><path d="M4 16h16"/></svg><span><b>Acceso vehicular</b><em>Por Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M4 19 15 7"/><path d="M15 7h5v12"/></svg><span><b>Acceso al estacionamiento del sótano</b><em>Por rampa</em></span></li></ul></div>
 </div>
 </div></section>
 
@@ -1445,7 +1553,7 @@ body > section:not(.hero):not(.pf){
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%20-%20Local%2011">Consultar el Local 11</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%2C%20Local%2011">Consultar el Local 11</a>
     <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1zPV4Z-Z_bxW_NJhv9jCZGjLTXkBxxL40" target="_blank" rel="noopener">Ver todas las fotos</a><button class="linkm loc-l" data-locate="11">Ubicar en la fachada</button></div>
   </div>
 </div></article><article class="u" id="local-15" data-u="15" data-floor="1" data-area="120" data-comb="0">
@@ -1468,7 +1576,7 @@ body > section:not(.hero):not(.pf){
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%20-%20Local%2015">Consultar el Local 15</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%2C%20Local%2015">Consultar el Local 15</a>
     <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1qAov_SU3fBxulqI6RB3B92Vhkzk-fOQB" target="_blank" rel="noopener">Ver todas las fotos</a><button class="linkm loc-l" data-locate="15">Ubicar en la fachada</button></div>
   </div>
 </div></article></div>
@@ -1495,7 +1603,7 @@ body > section:not(.hero):not(.pf){
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%20-%20Local%2021">Consultar el Local 21</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%2C%20Local%2021">Consultar el Local 21</a>
     <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1NHBhV0DjsXFyMCZPmL_Mbor8WsQzx18G" target="_blank" rel="noopener">Ver todas las fotos</a><button class="linkm loc-l" data-locate="21">Ubicar en la fachada</button></div>
   </div>
 </div></article><article class="u" id="local-22" data-u="22" data-floor="2" data-area="100" data-comb="1">
@@ -1518,7 +1626,7 @@ body > section:not(.hero):not(.pf){
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%20-%20Local%2022">Consultar el Local 22</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%2C%20Local%2022">Consultar el Local 22</a>
     <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1-zuwbTi3St88w3Q3l-2fP9ku_XHyfiNn" target="_blank" rel="noopener">Ver todas las fotos</a><button class="linkm loc-l" data-locate="22">Ubicar en la fachada</button></div>
   </div>
 </div></article><article class="u" id="local-23" data-u="23" data-floor="2" data-area="100" data-comb="1">
@@ -1541,7 +1649,7 @@ body > section:not(.hero):not(.pf){
     </dl></details>
   </div>
   <div class="uacts">
-    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%20-%20Local%2023">Consultar el Local 23</a>
+    <a class="btn btn-d" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068%2C%20Local%2023">Consultar el Local 23</a>
     <div class="uacts2"><a class="linkm dl-drive" href="https://drive.google.com/drive/folders/1uP0Kh68tHbzQ_qR142VdXGb5pjuZHnc9" target="_blank" rel="noopener">Ver todas las fotos</a><button class="linkm loc-l" data-locate="23">Ubicar en la fachada</button></div>
   </div>
 </div></article></div>
@@ -1577,7 +1685,7 @@ body > section:not(.hero):not(.pf){
 <div class="duo" style="margin-top:52px">
 <figure><img src="img/estacionamientos.jpg" alt="Sótano bajo techo de Plaza La Peatonal 68 con el núcleo de ascensor y escaleras" loading="lazy" width="1920" height="1080">
 <figcaption><b>Sesenta estacionamientos</b>Catorce en planta baja y cuarenta y seis bajo techo en el sótano, con acceso directo por ascensor y escaleras.</figcaption></figure>
-<figure><img src="img/plaza-operando.jpg" alt="Plaza La Peatonal 68 desde Calle 68 Este, con la franja de restaurantes en planta baja" loading="lazy" width="1920" height="1080">
+<figure><img src="img/plaza-operando.jpg" alt="Planta baja de Plaza La Peatonal 68: terrazas de los restaurantes, entrada peatonal y estacionamiento de visitantes" loading="lazy" width="1920" height="1080">
 <figcaption><b>Ocho restaurantes en planta baja</b>Generan visitas de día y de noche, con ocho propuestas gastronómicas distintas.</figcaption></figure>
 </div>
 </div></section>
@@ -1606,7 +1714,7 @@ body > section:not(.hero):not(.pf){
 <div class="ebrow"><span class="eb">Infraestructura y acceso</span><span class="r"></span></div>
 <h2>Calle 68 Este, San Francisco</h2>
 <div class="locgrid">
-  <div><p class="lead" style="margin-top:0">La entrada vehicular está sobre Calle 68 Este. El estacionamiento bajo techo se accede por la misma rampa, con conexión a los niveles comerciales mediante elevador y escaleras.</p></div>
+  <div><p class="lead" style="margin-top:0">La entrada vehicular está sobre Calle 68 Este. Al estacionamiento bajo techo se accede por la misma rampa, con conexión a los niveles comerciales mediante elevador y escaleras.</p></div>
   <aside class="mapwrap"><iframe src="https://maps.google.com/maps?q=8.9943381,-79.5112507&amp;z=18&amp;t=h&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Plaza La Peatonal 68 en Calle 68 Este, San Francisco"></iframe><div class="mapbar"><div><b>Plaza La Peatonal 68</b><span>Calle 68 Este · San Francisco</span></div><a class="btn btn-o" href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></div></aside>
 </div>
 <div class="infra">
@@ -1625,7 +1733,7 @@ body > section:not(.hero):not(.pf){
 
 <section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Conversemos</p><h2 class="pf-h">Revisemos qué local encaja con tu operación.</h2><p class="pf-p">Dime el giro, el metraje y las instalaciones que necesitas. Comparo las opciones antes de coordinar una visita.</p></div><div class="pf-r"><p class="pf-cred"><b>Dario Jhangimal</b>Corredor de bienes raíces · PN-1240<br>Representante exclusivo de Plaza La Peatonal 68</p><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Conversar por WhatsApp</span></a><a class="pf-b2" href="ficha-la-peatonal-68.pdf" download><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4 20h16"/></svg><span>Descargar disponibilidad en PDF</span></a></div></div></div></section>
 
-<footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p><p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Enlaces</summary><h2 class="sf-h sf-h-nav">Enlaces</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/#que-hago">Qué hago</a></li><li><a href="https://www.spotonerealty.com/#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/">Criterio</a></li><li><a href="https://www.spotonerealty.com/#metodo">Cómo trabajo</a></li><li><a href="https://www.spotonerealty.com/#dario">Sobre Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contacto</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Correo</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="page" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/peatonal68/en/" lang="en">EN</a></p></div><p class="sf-disc">Plaza La Peatonal 68 es comercializada bajo representación exclusiva de Dario Jhangimal, corredor de bienes raíces PN-1240. Los cánones publicados no incluyen impuestos. Cada ficha muestra mantenimiento y aseo, y el desglose mensual presenta el total mensual antes de impuestos. Disponibilidad, precios y condiciones están sujetos a confirmación.</p><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panamá · Licencia PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
+<footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p><p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Enlaces</summary><h2 class="sf-h sf-h-nav">Enlaces</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/#que-hago">Qué hago</a></li><li><a href="https://www.spotonerealty.com/#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/">Criterio</a></li><li><a href="https://www.spotonerealty.com/#metodo">Cómo trabajo</a></li><li><a href="https://www.spotonerealty.com/#dario">Sobre Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contacto</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="page" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/peatonal68/en/" lang="en">EN</a></p></div><p class="sf-disc">Plaza La Peatonal 68 es comercializada bajo representación exclusiva de Dario Jhangimal, corredor de bienes raíces PN-1240. Los cánones publicados no incluyen impuestos. Cada ficha muestra mantenimiento y aseo, y el desglose mensual presenta el total mensual antes de impuestos. Disponibilidad, precios y condiciones están sujetos a confirmación.</p><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panamá · Licencia PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
 
 <div class="selbar" id="sb"><div class="wrap"><div class="txt"><b id="sbt"></b> <span class="s" id="sbs"></span></div>
 <div style="display:flex;gap:10px;flex-shrink:0"><a class="btn btn-p" id="sbc" href="#">Consultar</a><button class="btn btn-s" id="sbx">Limpiar</button></div></div></div>
@@ -1639,6 +1747,8 @@ body > section:not(.hero):not(.pf){
 <script>
 const U=window.PEATONAL_AVAILABILITY, COMBOS=window.PEATONAL_COMBINATIONS, GAL={"l11": [{"src": "img/local-11a.jpg", "cap": "\u00c1rea principal"}, {"src": "img/letrero.jpg", "cap": "Hacia el fondo"}, {"src": "img/foto-12.jpg", "cap": "Segundo ambiente"}, {"src": "img/foto-13.jpg", "cap": "Vitrina hacia el pasillo"}], "l13": [{"src": "img/local-13a.jpg", "cap": "\u00c1rea principal con divisiones de vidrio"}, {"src": "img/foto-14.jpg", "cap": "Sala de reuniones"}, {"src": "img/foto-15.jpg", "cap": "Cocina"}, {"src": "img/local-13a.jpg", "cap": "Segundo ambiente"}, {"src": "img/foto-16.jpg", "cap": "Ba\u00f1o interno"}], "l21": [{"src": "img/local-21a.jpg", "cap": "\u00c1rea principal con ventanal"}, {"src": "img/foto-17.jpg", "cap": "Segundo \u00e1ngulo"}, {"src": "img/foto-18.jpg", "cap": "Acceso"}, {"src": "img/foto-19.jpg", "cap": "Ba\u00f1o"}], "l23": [{"src": "img/local-23a.jpg", "cap": "Vitrina desde el pasillo"}, {"src": "img/foto-20.jpg", "cap": "Cub\u00edculo privado"}, {"src": "img/foto-21.jpg", "cap": "Pasillo de cub\u00edculos"}, {"src": "img/foto-22.jpg", "cap": "Ba\u00f1o interno"}], "l15": [{"src": "img/local-15a.jpg", "cap": "Ventanal hacia la calle"}, {"src": "img/foto-23.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-24.jpg", "cap": "Fondo del local"}, {"src": "img/foto-25.jpg", "cap": "Rinc\u00f3n"}, {"src": "img/foto-26.jpg", "cap": "Ba\u00f1o"}], "l16": [{"src": "img/local-16a.jpg", "cap": "Balc\u00f3n con vista a la ciudad"}, {"src": "img/foto-27.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-28.jpg", "cap": "Balc\u00f3n"}, {"src": "img/foto-29.jpg", "cap": "Cocina"}, {"src": "img/foto-30.jpg", "cap": "Segundo ambiente"}], "l22": [{"src": "img/local-22a.jpg", "cap": "\u00c1rea principal"}, {"src": "img/foto-31.jpg", "cap": "Segundo \u00e1ngulo"}, {"src": "img/foto-32.jpg", "cap": "Fondo del local"}, {"src": "img/foto-33.jpg", "cap": "\u00c1rea de servicio"}]};
 const FL={1:"Primer piso",2:"Segundo piso"};
+const N2122='Los locales 21 y 22 est&aacute;n comunicados actualmente. Si se alquilan por separado, se entrega la divisi&oacute;n correspondiente.';
+const A11={u:'Local',m2:'metros cuadrados',comb:', puede combinarse con la selección actual'};
 const EST={dis:'Disponible',comb:'Se puede combinar',sel:'Seleccionado',alq:'ALQUILADO',occupied:'OFICINA DE ADMINISTRACIÓN · OCUPADO'};
 const ESTC={occ:'Ocupado', alq:'Alquilado'};  // etiquetas cortas: solo para el esquema
 const money=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -1667,7 +1777,7 @@ function setView(v){
   $$('.facview').forEach(f=>{f.hidden = f.dataset.view!==v;});
 }
 $$('.facnav [role="tab"]').forEach(t=>t.addEventListener('click',()=>setView(t.dataset.view)));
-setView('esquema');
+setView('foto');
 
 // ── en movil se lee un piso a la vez ──────────────────────────────────────
 function setPiso(p){
@@ -1676,6 +1786,95 @@ function setPiso(p){
 }
 $$('.lvl-tabs [role="tab"]').forEach(t=>t.addEventListener('click',()=>setPiso(t.dataset.piso)));
 setPiso('1');
+
+// ── fachada real: capa interactiva sobre el máster verificado ─────────────
+// La geometría está en el marcado (polígonos normalizados 0-1, congelados el
+// 21-sep-2026). Aquí solo se derivan el perímetro de la combinación y la
+// etiqueta. La disponibilidad y las combinaciones siguen saliendo de
+// window.PEATONAL_AVAILABILITY / PEATONAL_COMBINATIONS: no se duplica nada.
+const FAC=document.querySelector('.fac'), FSVG=document.querySelector('.faclayer');
+const facPts=el=>el.getAttribute('points').trim().split(/\s+/).map(p=>p.split(',').map(Number));
+const facPol=id=>facPts(FSVG.querySelector('.zona[data-u="'+id+'"]'));
+// perímetro de la unión: se descartan las aristas que aparecen dos veces
+// (las compartidas) y se encadenan las que quedan en un solo contorno.
+function facPerim(ids,tol=0.014){
+  const cerca=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1])<tol, E=[];
+  ids.forEach(id=>{const P=facPol(id); P.forEach((v,i)=>E.push([v,P[(i+1)%P.length]]));});
+  const igual=(a,b)=>(cerca(a[0],b[0])&&cerca(a[1],b[1]))||(cerca(a[0],b[1])&&cerca(a[1],b[0]));
+  const libres=E.filter((e,i)=>!E.some((f,j)=>j!==i&&igual(e,f)));
+  if(libres.length<3) return null;
+  const out=[libres[0][0],libres[0][1]], usadas=new Set([0]); let g=0;
+  while(usadas.size<libres.length && g++<600){
+    const fin=out[out.length-1]; let k=-1;
+    for(let i=0;i<libres.length;i++){ if(usadas.has(i)) continue;
+      if(cerca(libres[i][0],fin)){k=i;out.push(libres[i][1]);break;}
+      if(cerca(libres[i][1],fin)){k=i;out.push(libres[i][0]);break;} }
+    if(k<0) break; usadas.add(k);
+  }
+  if(cerca(out[out.length-1],out[0])) out.pop();
+  return out;
+}
+function facSvgEl(tag,cls,pts,lo){
+  const e=document.createElementNS('http://www.w3.org/2000/svg',tag);
+  e.setAttribute('class',cls); e.setAttribute('points',pts.map(v=>v[0]+','+v[1]).join(' '));
+  if(lo) e.dataset.lo='1'; return e;
+}
+function facEtiqueta(ids,texto){
+  FAC.querySelectorAll('.faclbl').forEach(e=>e.remove());
+  const vs=ids.flatMap(facPol);
+  const el=document.createElement('div');
+  el.className='faclbl'; el.textContent=texto;
+  el.style.left=(Math.min(...vs.map(v=>v[0]))*100)+'%';
+  el.style.top=(Math.min(...vs.map(v=>v[1]))*100)+'%';
+  el.style.margin='9px 0 0 9px';
+  FAC.appendChild(el);
+}
+let facHov=null;
+function facExtras(ids){
+  FSVG.querySelectorAll('.halo,.combo').forEach(e=>e.remove());
+  FAC.querySelectorAll('.faclbl').forEach(e=>e.remove());
+  FAC.dataset.combo = ids.length>1 ? '1' : '0';
+  const primero=FSVG.querySelector('.zona');
+  if(ids.length>1){
+    const per=facPerim(ids);
+    if(per){ FSVG.insertBefore(facSvgEl('polygon','halo',per),primero);
+             FSVG.insertBefore(facSvgEl('polygon','combo',per),primero); }
+    facEtiqueta(ids, ids.join(' + '));
+  } else if(ids.length===1){
+    FSVG.insertBefore(facSvgEl('polygon','halo',facPol(ids[0])),primero);
+    facEtiqueta(ids, String(ids[0]));
+  } else if(facHov!==null){
+    FSVG.insertBefore(facSvgEl('polygon','halo',facPol(facHov),true),primero);
+    facEtiqueta([facHov], String(facHov));
+  }
+  // en movil la fachada se desliza (min-width 880px): si no se centra, la
+  // seleccion puede quedar fuera de pantalla y el resalte no se ve.
+  const esMov=matchMedia('(max-width:760px)').matches;
+  if(esMov) document.body.classList.toggle('facfoco', ids.length>0);
+  if(ids.length && esMov){
+    const sc=document.querySelector('.facsc'), f=document.querySelector('.fac');
+    if(sc&&f){ const xs=ids.flatMap(facPol).map(v=>v[0]);
+      const cx=(Math.min(...xs)+Math.max(...xs))/2;
+      sc.scrollTo({left:Math.max(0,cx*f.offsetWidth-sc.clientWidth/2),behavior:'smooth'}); }
+  }
+}
+const BFIT=document.getElementById('facfit');
+if(BFIT) BFIT.addEventListener('click',()=>{document.body.classList.remove('facfoco');
+  const sc=document.querySelector('.facsc'); if(sc) sc.scrollTo({left:0,behavior:'smooth'});});
+FSVG.querySelectorAll('.zona').forEach(z=>{
+  const id=+z.dataset.u;
+  const entra=()=>{ if(U[id].status!=='available') return;
+    facHov=id; z.dataset.hov='1'; if(!sel.length) facExtras([]); };
+  const sale=()=>{ facHov=null; z.dataset.hov='0';
+    if(!sel.length) facExtras([]); };
+  z.addEventListener('pointerenter',entra);
+  z.addEventListener('pointerleave',sale);
+  z.addEventListener('focus',entra);
+  z.addEventListener('blur',sale);
+  // un polígono con tabindex no dispara click con el teclado: hay que añadirlo
+  z.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(id); } });
+});
 
 // ── un solo renderizador para fachada, lista y resumen ────────────────────
 function paint(){
@@ -1688,7 +1887,11 @@ function paint(){
   $$('.hot').forEach(b=>{const id=+b.dataset.u, e=estado(id);
     b.dataset.st=U[id].status==='available'?'available':'leased';
     b.setAttribute('aria-disabled',U[id].status==='available'?'false':'true');
-    b.setAttribute('aria-label',b.dataset.u+' · '+(U[id].status==='occupied'?EST.occupied:U[id].status==='leased'?EST.alq:EST.dis));
+    // la compatibilidad se anuncia solo cuando existe selección y es positiva;
+    // la incompatibilidad no se anuncia: el local sigue siendo seleccionable
+    b.setAttribute('aria-label', A11.u+' '+id+', '+U[id].area+' '+A11.m2+', '+
+      (U[id].status==='occupied'?EST.occupied:U[id].status==='leased'?EST.alq:EST.dis).toLowerCase()+
+      (e.compat?A11.comb:''));
     b.dataset.sel=e.sel?'1':'0';
     b.dataset.compat=e.compat?'1':'0';
     b.dataset.dim=(sel.length && !e.sel && !e.compat)?'1':'0';
@@ -1709,20 +1912,11 @@ function paint(){
     if(et) et.textContent = alq ? (U[id].status==='occupied'?EST.occupied:EST.alq) : e.sel ? EST.sel : e.compat ? EST.comb : EST.dis;
   });
 
-  $$('.su').forEach(g=>{const id=+g.dataset.u, e=estado(id);
-    const alq = U[id].status!=='available';
-    g.dataset.sel=e.sel?'1':'0';
-    g.dataset.comb=(!alq && e.compat)?'1':'0';
-    g.dataset.dim=(!alq && sel.length && !e.sel && !e.compat)?'1':'0';
-    g.setAttribute('aria-pressed', e.sel?'true':'false');
-    const et=g.querySelector('.s');
-    if(et) et.textContent = alq ? (U[id].status==='occupied'?ESTC.occ:ESTC.alq) : e.sel ? EST.sel : e.compat ? EST.comb : EST.dis;
-  });
 
   const ar=ids.reduce((s,i)=>s+U[i].area,0);
   const S=$('#st'); if(S) S.hidden = ids.length>0;
   const R=$('#selres');
-  if(!ids.length){ if(R){R.dataset.on='0'; R.innerHTML='';} $('#sb').dataset.on='0'; return; }
+  if(!ids.length){ if(R){R.dataset.on='0'; R.innerHTML='';} $('#sb').dataset.on='0'; facExtras([]); return; }
 
   let t,d;
   if(ids.length===1){
@@ -1734,14 +1928,15 @@ function paint(){
     d='Superficie continua sumando '+ids.map(i=>U[i].area+' m&sup2;').join(' + ')+
       '. El canon de la combinaci&oacute;n se confirma con la administraci&oacute;n.';
   }
-  const wa=WAB+(ids.length===1?('%20-%20Local%20'+ids[0])
-              :('%20-%20Locales%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
+  if(ids.includes(21)||ids.includes(22)) d+=' '+N2122;
+  const wa=WAB+(ids.length===1?('%2C%20Local%20'+ids[0])
+              :('%2C%20Locales%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
   const consultar=ids.length===1?('Consultar el Local '+ids[0]):('Consultar los '+ar+' m&sup2;');
   if(R){
     R.dataset.on='1';
     R.innerHTML='<p class="sr-t">'+t+'</p><p class="sr-d">'+d+'</p>'+
       '<div class="sr-a"><a class="btn btn-d" href="'+wa+'">'+consultar+'</a>'+
-      '<button type="button" class="btn btn-o" data-go="'+ids[0]+'">Ver ficha del Local '+ids[0]+' &darr;</button>'+
+      '<button type="button" class="btn btn-o" data-go="'+ids[0]+'">Ver ficha completa &rarr;</button>'+
       '<button type="button" class="btn btn-t" data-clear="1">Quitar selecci&oacute;n</button></div>';
   }
   $('#sbt').textContent = ids.length===1?('Local '+ids[0]):(ar+' m² continuos');
@@ -1751,6 +1946,7 @@ function paint(){
   $('#sbc').textContent=consultar.replace('&sup2;','²');
   $('#sbc').href=wa;
   $('#sb').dataset.on=inDisp?'1':'0';
+  facExtras(ids);
 }
 
 // ── seleccion: un mismo gesto desde la fachada y desde la lista ───────────
@@ -1762,8 +1958,6 @@ function toggle(id){
   paint();
 }
 $$('.hot, .lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
-$$('.su').forEach(g=>{g.addEventListener('click',()=>toggle(+g.dataset.u));
-  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(+g.dataset.u);}});});
 document.addEventListener('click',e=>{
   const g=e.target.closest('[data-go]'); if(g){goTo(+g.dataset.go); return;}
   const c=e.target.closest('[data-clear]'); if(c){sel=[]; paint();}
@@ -1784,6 +1978,7 @@ if(dispEl) new IntersectionObserver(([e])=>{inDisp=e.isIntersecting;paint();},{r
 // al navegar fuera del explorador, la ficha emergente se cierra
 $$('[data-locate]').forEach(b=>b.addEventListener('click',()=>{
   const id=+b.dataset.locate; if(U[id].status!=='available') return; sel=[id]; paint();
+  setView('foto');
   document.getElementById('disponibilidad').scrollIntoView({behavior:'smooth',block:'start'});
 }));
 $$('.chip').forEach(c=>c.addEventListener('click',()=>{
@@ -1798,10 +1993,13 @@ $$('.chip').forEach(c=>c.addEventListener('click',()=>{
     else if(filt==='s')ok=u.area<=100; else if(filt==='l')ok=u.area>100;
     else if(filt==='c')ok=compatOf(id).length>0;
     b.style.opacity=ok?'1':'.25'; b.style.pointerEvents=ok?'auto':'none';});
-  $$('.lvl-u, .su').forEach(b=>{const id=+b.dataset.u,u=U[id];
+  $$('.lvl-u').forEach(b=>{const id=+b.dataset.u,u=U[id];
     let ok=true; if(filt==='f1')ok=u.floor===1; else if(filt==='f2')ok=u.floor===2;
     else if(filt==='s')ok=u.area<=100; else if(filt==='l')ok=u.area>100;
     else if(filt==='c')ok=compatOf(id).length>0;
+    // un filtro de disponibilidad no puede dar match en un espacio ocupado:
+    // 13 y 16 siguen visibles como contexto del edificio, nunca como resultado
+    if(filt!=='all') ok = ok && u.status==='available';
     b.dataset.filt=ok?'1':'0';});
 }));
 // lightbox
@@ -1822,7 +2020,7 @@ if(location.hash.startsWith('#local-')){const id=+location.hash.replace('#local-
   window.addEventListener('load',()=>setTimeout(()=>goTo(id),120));}
 paint();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "@id": "https://www.spotonerealty.com/#spotone", "name": "SpotOne Realty", "url": "https://www.spotonerealty.com/", "telephone": "+507 6675-8127", "founder": {"@id": "https://www.spotonerealty.com/#dario"}, "sameAs": ["https://instagram.com/spotonerealty"]}, {"@type": "Person", "@id": "https://www.spotonerealty.com/#dario", "name": "Dario Jhangimal", "url": "https://www.spotonerealty.com/", "jobTitle": "Corredor de Bienes Raíces (PN-1240)", "identifier": {"@type": "PropertyValue", "name": "Licencia de corredor (Panamá)", "value": "PN-1240"}, "worksFor": {"@id": "https://www.spotonerealty.com/#spotone"}, "sameAs": ["https://www.linkedin.com/in/dario-jhangimal-v-14449751/", "https://instagram.com/spotonerealty"]}, {"@type": "Place", "name": "Plaza La Peatonal 68", "address": {"@type": "PostalAddress", "streetAddress": "Calle 68 Este", "addressLocality": "San Francisco", "addressRegion": "Ciudad de Panamá", "addressCountry": "PA"}, "url": "https://www.spotonerealty.com/peatonal68/", "image": "https://www.spotonerealty.com/peatonal68/img/hero.jpg", "hasMap": "https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9", "makesOffer": [{"@type": "Offer", "name": "Local 11", "price": 1400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-11", "description": "70 m², primer piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 15", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-15", "description": "120 m², primer piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 21", "price": 1386, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-21", "description": "77 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 22", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-22", "description": "100 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 23", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-23", "description": "100 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "60 estacionamientos gratis", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Estacionamiento cubierto", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Elevador", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Escaleras", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Ocho restaurantes en planta baja", "value": true}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "@id": "https://www.spotonerealty.com/#spotone", "name": "SpotOne Realty", "url": "https://www.spotonerealty.com/", "telephone": "+507 6675-8127", "founder": {"@id": "https://www.spotonerealty.com/#dario"}, "sameAs": ["https://instagram.com/spotonerealty"]}, {"@type": "Person", "@id": "https://www.spotonerealty.com/#dario", "name": "Dario Jhangimal", "url": "https://www.spotonerealty.com/", "jobTitle": "Corredor de Bienes Raíces (PN-1240)", "identifier": {"@type": "PropertyValue", "name": "Licencia de corredor (Panamá)", "value": "PN-1240"}, "worksFor": {"@id": "https://www.spotonerealty.com/#spotone"}, "sameAs": ["https://www.linkedin.com/in/dario-jhangimal-14449751/", "https://instagram.com/spotonerealty"]}, {"@type": "Place", "name": "Plaza La Peatonal 68", "address": {"@type": "PostalAddress", "streetAddress": "Calle 68 Este", "addressLocality": "San Francisco", "addressRegion": "Ciudad de Panamá", "addressCountry": "PA"}, "url": "https://www.spotonerealty.com/peatonal68/", "image": "https://www.spotonerealty.com/peatonal68/img/hero.jpg", "hasMap": "https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9", "makesOffer": [{"@type": "Offer", "name": "Local 11", "price": 1400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-11", "description": "70 m², primer piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 15", "price": 2400, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-15", "description": "120 m², primer piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 21", "price": 1386, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-21", "description": "77 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 22", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-22", "description": "100 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}, {"@type": "Offer", "name": "Local 23", "price": 1800, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.spotonerealty.com/peatonal68/#local-23", "description": "100 m², segundo piso", "offeredBy": {"@id": "https://www.spotonerealty.com/#spotone"}}], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "60 estacionamientos gratis", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Estacionamiento cubierto", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Elevador", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Escaleras", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Ocho restaurantes en planta baja", "value": true}]}]}</script>
 
 
 
