@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#f6f4ef">
-<title>SpotOne Realty · Real estate advisory with judgment in Panama · Dario Jhangimal PN-1240</title>
-<meta name="description" content="Real estate advisory with judgment in Panama for buying, selling or renting with a clear read of the market. Dario Jhangimal, licensed broker PN-1240.">
+<title>SpotOne Realty · Real estate advisory and relocation in Panama · Dario Jhangimal PN-1240</title>
+<meta name="description" content="Buy, sell or rent property in Panama with Dario Jhangimal of SpotOne Realty. Real estate advice and relocation support. Licensed broker PN-1240.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpotOne Realty">
-<meta property="og:title" content="SpotOne Realty · Real estate advisory with judgment in Panama">
-<meta property="og:description" content="Buying, selling and renting with market reading, strategy and process. Dario Jhangimal, licensed broker PN-1240.">
+<meta property="og:title" content="SpotOne Realty · Real estate advisory and relocation in Panama">
+<meta property="og:description" content="Buy, sell or rent property in Panama with Dario Jhangimal of SpotOne Realty. Real estate advice and relocation support. Licensed broker PN-1240.">
 <meta property="og:url" content="https://www.spotonerealty.com/index-en.html">
 <meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SpotOne Realty · Real estate advisory with judgment in Panama">
-<meta name="twitter:description" content="Buying, selling and renting with market reading, strategy and process.">
+<meta name="twitter:description" content="Buy, sell or rent property in Panama with Dario Jhangimal of SpotOne Realty. Real estate advice and relocation support. Licensed broker PN-1240.">
 <meta name="twitter:image" content="https://www.spotonerealty.com/images/og-image.jpg">
 <link rel="canonical" href="https://www.spotonerealty.com/index-en.html">
 <link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/">
@@ -66,21 +66,23 @@
         "Residential real estate",
         "Commercial real estate",
         "Lots and land",
+        "Farms and rural land",
         "Beach properties",
         "Pre-construction real estate",
         "Real estate investment",
+        "Bank-owned properties",
         "Market analysis",
         "Property acquisition and sales",
         "Residential relocation in Panama",
         "Residential guidance for expatriates"
       ],
       "sameAs": [
-        "https://www.linkedin.com/in/dario-jhangimal-v-14449751/",
+        "https://www.linkedin.com/in/dario-jhangimal-14449751/",
         "https://www.facebook.com/dario.jhangimal",
         "https://instagram.com/spotonerealty",
         "https://www.twinglobal.org/twin-global/speakers/dario-jhangimal"
       ],
-      "description": "Licensed real estate broker in Panama (PN-1240), founder of SpotOne Realty. Works across the full real estate spectrum: residential, commercial, lots, beach, pre-construction and investment. SpotOne is the deliberate practice he built — market reading, clarity and judgment before any transaction."
+      "description": "Licensed real estate broker in Panama (PN-1240), founder of SpotOne Realty. Works with homes, commercial spaces, land and farms, beach properties, pre-construction projects and bank-owned properties. Finds and compares options, markets properties, coordinates viewings, negotiates and guides the process through closing. Works with other brokers when appropriate."
     },
     {
       "@type": "RealEstateAgent",
@@ -142,8 +144,7 @@
       "sameAs": [
         "https://instagram.com/spotonerealty"
       ],
-      "description": "Real estate advisory with judgment in Panama for buying, selling or renting with market reading, strategy and process.",
-      "priceRange": "$$$",
+      "description": "Buy, sell or rent property in Panama with Dario Jhangimal of SpotOne Realty. Real estate advice and relocation support. Licensed broker PN-1240.",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+50766758127",
@@ -373,12 +374,14 @@ body.menu-open{overflow:hidden}
 .btn{
   font-family:'Hanken Grotesk',sans-serif;
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--accent);color:#fff;font-weight:500;font-size:14px;
+  background:var(--brand-ivory);color:var(--brand-navy);font-weight:500;font-size:14px;
   letter-spacing:.02em;padding:14px 26px;border-radius:2px;
   transition:background .2s;
 }
-.btn:hover{background:var(--dark)}
-.btn:focus-visible{outline:1px solid rgba(26,26,24,.22);outline-offset:5px}
+.btn:hover{background:#fff}
+/* en tactil no hay hover: la pulsacion usa el mismo valor aprobado */
+.btn:active{background:#fff}
+.btn:focus-visible{outline:2px solid var(--accent-sk);outline-offset:3px}
 .btn-line{
   font-family:'Hanken Grotesk',sans-serif;
   color:#fff;font-size:13px;font-weight:500;letter-spacing:.02em;
@@ -557,16 +560,11 @@ section[id]{scroll-margin-top:96px}
 /* ================ ABOUT ================ */
 .about{background:var(--soft)}
 .about-grid{display:grid;grid-template-columns:0.8fr 1fr;gap:90px;align-items:start}
-.portrait{
-  aspect-ratio:3/4;
-  position:relative;overflow:hidden;
-  border:1px solid var(--line);
-  background:#444548;
-}
+.portrait{position:relative}
 @media(min-width:761px){
   .portrait{position:sticky;top:110px}
 }
-.portrait img{width:100%;height:100%;object-fit:contain;object-position:center center;filter:contrast(1.02);display:block}
+.portrait img{width:100%;height:auto;display:block;filter:contrast(1.02)}
 .about-content h2{
   font-family:'Newsreader',serif;
   font-size:clamp(28px,3vw,42px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
@@ -600,7 +598,7 @@ section[id]{scroll-margin-top:96px}
   color:var(--ink);margin:0 0 18px
 }
 .faq-sticky h2 em{font-style:italic;color:var(--accent);font-weight:300}
-.faq-sticky .lead{font-size:18px;color:var(--body-2);line-height:1.62;max-width:32ch}
+.faq-sticky .lead{font-size:18px;color:var(--body-2);line-height:1.62;max-width:var(--container-reading)}
 .faq-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line);transition:background .2s ease}
 .faq-item[open]{background:rgba(246,244,239,.8)}
@@ -749,7 +747,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .site-header .site-nav a.lnk[aria-current="true"]::after{width:100%}
 .site-header .site-nav a.cta,
 .site-header:not(.scrolled) .site-nav a.cta{
-  background:transparent;border:1px solid var(--on-navy-line);color:var(--on-navy);
+  background:transparent;border:1px solid rgba(244,241,234,.45);color:var(--on-navy);
   min-height:48px;display:inline-flex;align-items:center;white-space:nowrap;font-size:var(--text-small)}
 .site-header .site-nav a.cta:hover{background:rgba(244,241,234,.10);border-color:var(--on-navy)}
 .site-header .lang-switch a,
@@ -849,8 +847,10 @@ footer{padding:44px 0 24px}
 .mpaso h3{font-family:'Newsreader',serif;font-size:26px;font-weight:300;letter-spacing:-.015em;
   color:var(--ink);line-height:1.15;margin:8px 0 10px}
 .mpaso p{font-size:16.5px;line-height:1.62;color:var(--body);max-width:46ch}
-.mcierre{margin-top:52px;padding-top:26px;border-top:1px solid var(--line);
-  font-size:18px;line-height:1.6;color:var(--body-2);max-width:62ch}
+.mcierre{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
+/* la regla cierra la seccion entera; el texto se queda en la medida de lectura */
+.mcierre p{margin:0;font-size:18px;line-height:1.6;color:var(--body-2);
+  max-width:var(--container-reading)}
 @media(max-width:860px){.mpasos{grid-template-columns:1fr;gap:30px}}
 
 /* ===== COMPACTACIÓN (prototipo) ===== */
@@ -923,15 +923,15 @@ img{max-width:100%}
   .principio-sect{padding:64px 0}}
 
 /* 3 · Propiedad: pieza editorial integrada, sin rectángulo blanco */
-.prop-card{display:grid;grid-template-columns:55fr 45fr;gap:48px;align-items:center;
+.prop-card{display:grid;grid-template-columns:58fr 42fr;gap:48px;align-items:start;
   background:none;border:0;border-radius:0;overflow:visible;box-shadow:none;
   border-top:1px solid var(--line);padding-top:40px}
 .prop-card:hover,.prop-card:focus-visible{border-color:var(--line);box-shadow:none;transform:none}
-.prop-img{position:relative;min-height:0;aspect-ratio:16/10;overflow:hidden;border-radius:2px;background:var(--warm)}
+.prop-img{position:relative;min-height:0;aspect-ratio:3/2;overflow:hidden;border-radius:2px;background:var(--warm)}
 .prop-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:50% 58%;transition:transform .4s cubic-bezier(.16,.7,.2,1)}
 .prop-card:hover .prop-img img{transform:scale(1.015)}
-.prop-body{padding:0;display:flex;flex-direction:column;justify-content:center}
+.prop-body{padding:0;display:flex;flex-direction:column;justify-content:flex-start}
 .prop-body h3{font-size:38px;margin:0}
 .prop-meta{margin-top:12px}
 .prop-txt{margin-top:16px}
@@ -1412,7 +1412,7 @@ body.menu-open { overflow: hidden; }
 .site-header .site-nav .lnk::after { background: var(--on-navy); }
 .site-header .site-nav a.lnk[aria-current="true"] { color: var(--on-navy); }
 .site-header .site-nav a.lnk[aria-current="true"]::after { width: 100%; }
-.site-header .site-nav a.cta, .site-header:not(.scrolled) .site-nav a.cta { background: transparent; border: 1px solid var(--on-navy-line); color: var(--on-navy); min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap; font-size: var(--text-small); }
+.site-header .site-nav a.cta, .site-header:not(.scrolled) .site-nav a.cta { background: transparent; border: 1px solid rgba(244,241,234,.45); color: var(--on-navy); min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap; font-size: var(--text-small); }
 .site-header .site-nav a.cta:hover { background: rgba(244, 241, 234, 0.1); border-color: var(--on-navy); }
 .site-header .lang-switch a, .site-header:not(.scrolled) .lang-switch a { color: var(--on-navy-muted); }
 .site-header .lang-switch a.active, .site-header:not(.scrolled) .lang-switch a.active { color: var(--on-navy); }
@@ -1520,15 +1520,108 @@ body > section:not(.hero):not(.pf){
    una seccion invisible con su altura reservada parece que no cargo */
 .r{will-change:opacity,transform}
 @media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
-/* ⟦RITMO-FIN⟧ */</style>
-<noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}</style></noscript>
+/* ⟦CONTENEDOR-HERO-INICIO⟧
+   El hero metia su contenido con --gut (56 px) mientras el resto de la pagina
+   usa el contenedor centrado. Por debajo de 1320 px coinciden; por encima el
+   titular, el parrafo y el CTA quedaban 60 px a la izquierda del logo y de
+   todos los h2 de la MISMA pagina. Misma formula fluida que en la version ES;
+   sin coordenadas fijas. */
+:root{--container-max:1320px}
+.hero{padding-left:calc(var(--gut) + max(0px,(100% - var(--container-max))/2));
+      padding-right:calc(var(--gut) + max(0px,(100% - var(--container-max))/2))}
+/* ⟦CONTENEDOR-HERO-FIN⟧ */
+/* ⟦RITMO-FIN⟧ *//* ⟦CTA-HEADER-INICIO⟧
+   Sobre el hero el boton se apoyaba en un filete al 45 %: medido lado a lado
+   contra la foto daba 2,33-3,61. Con --on-navy-muted (68 %), que ya es token
+   del sistema, sube a 3,34-6,17 y los cuatro lados pasan 3:1 sin tocar el
+   fondo del header. Al rotulo se le pone la MISMA sombra que ya llevan el h1
+   y el lead sobre esta foto, y solo mientras el header es transparente.
+   Hover, pulsacion y foco usan los valores ya aprobados. Caja, padding,
+   tipografia y posicion sin cambios: sigue siendo el secundario del marfil. */
+.site-header:not(.scrolled) .site-nav a.cta,
+.site-header:not(.scrolled) .nav a.cta{
+  border-color:var(--on-navy-muted);
+  text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.site-header:not(.scrolled) .site-nav a.cta:hover,
+.site-header:not(.scrolled) .site-nav a.cta:active,
+.site-header:not(.scrolled) .nav a.cta:hover,
+.site-header:not(.scrolled) .nav a.cta:active{
+  border-color:var(--on-navy);background:rgba(244,241,234,.10)}
+.site-nav a.cta:focus-visible,.nav a.cta:focus-visible{
+  outline:2px solid var(--accent-sk,var(--sky,#9fb6d4));outline-offset:3px}
+/* ⟦CTA-HEADER-FIN⟧ */
+/* ⟦PRINCIPIO-INICIO⟧
+   Misma estructura que la version ES. El bloque traia una celda vacia de
+   477 px —columna fantasma— y el texto abria en 657, un eje que no usaba
+   nadie mas de la pagina. Ahora el rotulo ocupa el margen izquierdo y el
+   texto entra por el mismo eje que las filas de 'What I do':
+   carril(80) + hueco(40) + 0.9fr + hueco(40). Sin coordenadas fijas. */
+:root{--rail:80px;--rail-gap:40px;--container-reading:600px}
+.principio-grid{grid-template-columns:var(--rail) 0.9fr 1.1fr;row-gap:0;column-gap:var(--rail-gap)}
+.principio-col{grid-column:3}
+.principio-grid .eyebrow-row{grid-column:1/3;margin-bottom:0;padding-top:9px}
+.principio-sect p{max-width:var(--container-reading)}
+@media(max-width:1024px){
+  .principio-grid{grid-template-columns:1fr;row-gap:32px}
+  .principio-col{grid-column:1}
+  .principio-grid .eyebrow-row{grid-column:1;padding-top:0}
+}
+/* ⟦PRINCIPIO-FIN⟧ */
+
+/* ⟦RAG-LEAD⟧ El lead del hero dejaba una palabra sola en la ultima linea:
+   «capital.» a 768-1600 en ES y a 430 en EN. 'pretty' baja una palabra de
+   la penultima linea y no toca los anchos donde no hay huerfana; 'balance'
+   se descarto porque igualaba las tres lineas a 42 caracteres y encogia la
+   medida de 54 a 42. Sin saltos manuales y sin tocar el contenedor.
+   Donde el navegador no lo soporta, cae en el comportamiento actual. */
+.hero .lead{text-wrap:pretty}
+
+/* ⟦PROP-OPTICA⟧ El h3 se alineaba por el borde de la caja de texto, no por
+   la altura de mayuscula: caia 4 px bajo el borde superior de la foto.
+   Mismo valor que en la version ES. */
+.prop-body{margin-top:-4px}
+
+/* ⟦MENU-CERRADO-INICIO⟧
+   El panel se ocultaba solo con transform: fuera de pantalla pero visible para
+   el teclado y para el lector. Medido: 13-15 enlaces enfocables con Tab y
+   presentes en el arbol de accesibilidad con el menu cerrado, tambien en
+   escritorio. Mismas tres declaraciones que ya tenia la home en espanol.
+   No cambia nada visible: el panel abierto sigue igual. */
+.mm{visibility:hidden}
+.mm.on{visibility:visible}
+@media(min-width:881px){.mm{display:none}}
+/* ⟦MENU-CERRADO-FIN⟧ */
+/* ⟦EJE-EDITORIAL-INICIO⟧
+   Portado desde la home en espanol, donde ya estaba aprobado. Sin el, a 1024 px
+   la EN mantenia .about-grid y .faq-grid en dos columnas estrechas (378/472 px)
+   mientras la ES ya colapsaba a una. Medido: la entradilla del FAQ daba 32
+   caracteres en EN contra 54 en ES. */
+:root{
+  --eje-editorial:calc(160px + (100% - 160px) * 0.45);
+}
+@media(min-width:1081px){
+  .faq-grid,.about-grid{grid-template-columns:calc(var(--eje-editorial) - 90px) minmax(0,1fr)}
+}
+@media(min-width:901px){
+  .mpasos,.reloc-blocks{grid-template-columns:calc(var(--eje-editorial) - 56px) minmax(0,1fr)}
+}
+@media(max-width:1080px){
+  .faq-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+  .faq-sticky{position:static}
+  .portrait{width:min(100%,440px);margin:0}
+}
+/* ⟦EJE-EDITORIAL-FIN⟧ */
+</style>
+
+<noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}
+</style></noscript>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
 
 <!-- ================ HEADER ================ -->
 <header class="site-header"><div class="container hdr-in">
-  <a href="https://www.spotonerealty.com/index-en.html" class="brand" aria-label="Go to the SpotOne Realty homepage"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
+  <a href="https://www.spotonerealty.com/index-en.html" class="brand" aria-label="Go to the SpotOne Realty homepage"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
   <nav class="site-nav">
     <a href="#" class="lnk">Home</a><a href="#que-hago" class="lnk">What I do</a><a href="#propiedades" class="lnk">Properties</a><a href="#relocation" class="lnk">Relocation</a><a href="https://www.spotonerealty.com/criterio/en/" class="lnk">Perspective</a><a href="#dario" class="lnk">Dario</a><a href="#contacto" class="lnk">Contact</a>
     <a href="#contacto" class="cta">Let's talk</a>
@@ -1574,12 +1667,12 @@ body > section:not(.hero):not(.pf){
 
 <!-- ================ HERO ================ -->
 <section class="hero">
-  <div class="hero-image" role="img" aria-label="Aerial view of Panama City"></div>
+  <div class="hero-image"></div>
   <div class="hero-shade"></div>
 
   <div class="hero-content">
-    <h1>Real estate advisory <em>with judgment</em> in Panama.</h1>
-    <p class="lead">Every real estate decision in Panama has a correct read. My job is to reach it — before you commit.</p>
+    <h1>Real estate advisory <em>and relocation</em> in Panama.</h1>
+    <p class="lead">I help you buy, sell or rent property in Panama. We review your options, pricing and terms so you can make an informed decision.</p>
     <div class="hero-actions">
       <a href="#contacto" class="btn">Let's talk</a>
       <a href="#que-hago" class="btn-line">What I do →</a>
@@ -1589,30 +1682,31 @@ body > section:not(.hero):not(.pf){
 
 <!-- ================ PRINCIPLE ================ -->
 <section id="principio" class="principio-sect r">
-  <div class="container"><div class="eyebrow-row">
+  <div class="container"><div class="principio-grid"><div class="eyebrow-row">
           <span class="eyebrow-line"></span>
           <span class="eyebrow">01 — Principle</span>
-        </div><div class="principio-grid"><div></div><div><p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as going to market.</strong> Properties move when price, timing and positioning line up.</p><p>I work with people who are willing to make decisions with information — not instinct, not pressure, not haste.</p><p>If the read says it is not the right moment yet, I say so. If it says yes, I say that too. That is the work.</p></div></div></div>
+        </div><div class="principio-col"><p>Not every listed property is properly positioned. <strong>Publishing a listing is not the same as taking it to market.</strong> To recommend an asking price and marketing approach, I review the alternatives available to buyers.</p><p>We review the available information, what still needs checking and how it affects your decision.</p><p>If I find reasons to wait or rule out an option, I explain them.</p></div></div></div>
 </section>
 
 <!-- ================ WHAT I DO ================ -->
 <section id="que-hago" class="approach r">
   <div class="container">
     <div class="section-head">
-      <h2>Guidance with judgment, <em>not volume</em>.</h2>
-      <p class="lead">Four ways of working. All start the same way: understanding what's at stake before deciding.</p>
+      <h2>How I can help.</h2>
+      <p class="lead">I work with property owners, buyers, tenants and investors. I also help people relocating to Panama.</p>
+      <p class="lead" style="margin-top:14px">When the purchase is an investment, I compare the price against the rent it could achieve, the running costs, vacancy in the area and the resale options. I tell you which figures are verified and which are estimates.</p>
     </div>
 
     <div class="svc-rows">
       <div class="svc-row">
         <span class="svc-num">01</span>
         <h3 class="svc-title">Taking a property <em>to market</em></h3>
-        <p class="svc-body">Before a property goes live, I look at what it's up against: what else is listed nearby, which of those have cut price recently, and how long they've been posted. With that read I define the asking price, the angle, the likely buyer and where it gets advertised.</p>
+        <p class="svc-body">Before a property goes live, I look at what it's up against: what else is listed nearby, which of those have cut price recently, and how long they've been posted. With that comparison I propose the asking price, the angle, the likely buyer and where it gets advertised.</p>
       </div>
       <div class="svc-row">
         <span class="svc-num">02</span>
         <h3 class="svc-title">Buying and renting <em>with representation</em></h3>
-        <p class="svc-body">If you're buying or renting, I start with what you're looking for, where and by when. Then I go through the options you're considering, compare them against what else is on the market, make the calls and set up the viewings with the information you need to decide.</p>
+        <p class="svc-body">If you're buying or renting, I start with what you're looking for, where and by when. Then I go through the options you're considering, compare them against what else is on the market, contact the broker or owner who holds it and set up the viewings with the information you need to decide.</p>
       </div>
       <div class="svc-row">
         <span class="svc-num">03</span>
@@ -1637,14 +1731,14 @@ body > section:not(.hero):not(.pf){
       <!-- EXCLUSIVES = 1. With two or more, change ONLY this h2 to:
        <h2>Properties I <em>represent directly</em>.</h2> -->
       <h2>A property I <em>represent directly</em>.</h2>
-      <p class="lead">Dedicated marketing, current availability and a complete experience for exploring every space.</p>
+      <p class="lead">This is how I present a property: each unit located on the facade, its base rent with maintenance and waste collection listed separately, the infrastructure of each space and the possible combinations between adjacent units.</p>
     </div>
     <a class="prop-card" href="https://www.spotonerealty.com/peatonal68/en/" aria-label="Explore available commercial spaces at Plaza La Peatonal 68">
       <span class="prop-img"><img src="images/plaza-noche.jpg" alt="Plaza La Peatonal 68 at night, sign lit, on Calle 68 Este" loading="lazy" width="1600" height="1000"></span>
       <span class="prop-body">
         <h3>Plaza La Peatonal 68</h3>
-        <span class="prop-meta">Commercial spaces from 70 to 200 m² · San Francisco</span>
-        <span class="prop-txt">Review current availability, asking rents, photographs and combinable configurations.</span>
+        <span class="prop-meta">Commercial spaces from 70 to 120 m², with contiguous configurations up to 277 m² · San Francisco</span>
+        <span class="prop-txt">Current availability, base rent and charges per unit, photographs, a downloadable sheet and the three second-floor combinations.</span>
         <span class="prop-cta">See availability<i>&rarr;</i></span>
       </span>
     </a>
@@ -1655,21 +1749,21 @@ body > section:not(.hero):not(.pf){
 <section id="relocation" class="reloc-section r">
   <div class="container">
     <div class="reloc-intro">
-      <h2>Settling in Panama <em>with clarity</em>.</h2>
-      <p class="lead">For those arriving in Panama from abroad — with family, with work, with capital, or all three. Moving is not just finding a property. It is understanding how life works around it.</p>
-      <p class="lead" style="margin-top:14px">The work begins well before the first property visit.</p>
+      <h2>Moving to Panama.</h2>
+      <p class="lead">Where you live depends on your work, daily journeys and family needs. That is where we start your property search.</p>
+      <p class="lead" style="margin-top:14px">My work here is helping you choose the area and the home, compare options and arrange the viewings. Legal, immigration and school matters stay with the specialists who handle them.</p>
     </div>
-    <div class="reloc-blocks"><div class="reloc-block"><span class="reloc-n" aria-hidden="true">01</span><div class="reloc-t"><h5>Area reading</h5><p>How each neighborhood functions in practice — based on your lifestyle and priorities, not popularity or trends.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">02</span><div class="reloc-t"><h5>Orientation tours</h5><p>Guided area visits before committing to a residential decision. So the map has real context, not just listings.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">03</span><div class="reloc-t"><h5>Family and education</h5><p>International schools, daily routines, mobility and logistics. What matters when family is part of the equation.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">04</span><div class="reloc-t"><h5>Concierge and daily life</h5><p>For the settling and daily life aspects of living in Panama — schools, healthcare, domestic logistics — I refer to a specialized concierge service in Panama when the process calls for it.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">05</span><div class="reloc-t"><h5>A single point of contact</h5><p>One relationship throughout the entire process. No fragmentation, no repeated context.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">06</span><div class="reloc-t"><h5>Remote process available</h5><p>The process can begin before you arrive. Orientation, market reading and documented decisions from a distance.</p></div></div></div>
+    <div class="reloc-blocks"><div class="reloc-block"><span class="reloc-n" aria-hidden="true">01</span><div class="reloc-t"><h5>Area comparison</h5><p>We assess neighborhoods based on your regular journeys, nearby services and the type of home you want.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">02</span><div class="reloc-t"><h5>Family and routines</h5><p>I review how the daily distances work out from each area: schools, work and the journeys you will make every week.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">03</span><div class="reloc-t"><h5>A single point of contact</h5><p>I coordinate the search and viewings with you, including when other brokers are involved.</p></div></div><div class="reloc-block"><span class="reloc-n" aria-hidden="true">04</span><div class="reloc-t"><h5>Remote process available</h5><p>We can start your property search before you arrive in Panama and arrange viewings for your arrival.</p></div></div></div>
   </div>
 </section>
 
 <!-- ================ PROCESS ================ -->
 <section class="metodo r" id="metodo">
   <div class="container">
-    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">How I work</span></div>
-    <div class="section-head"><h2>Read first.<br><em>Execute second</em>.</h2><p class="lead">I begin by understanding the decision: what you want to achieve, what could shape the outcome and how much room actually exists. I then compare the situation with the market, define a strategy and guide its execution through closing.</p></div>
-    <div class="mpasos"><div class="mpaso"><div class="n">01</div><h3>Context</h3><p>Objectives, priorities, timing and real budget. Before searching, listing or negotiating, we define what the transaction needs to solve.</p></div><div class="mpaso"><div class="n">02</div><h3>Market reading</h3><p>I compare the situation with active inventory, recent adjustments and signals that may affect the decision. Not to predict, but to reduce uncertainty.</p></div><div class="mpaso"><div class="n">03</div><h3>Strategy</h3><p>I define the right combination of price, location, positioning, negotiation and timing. Every recommendation should be explainable.</p></div><div class="mpaso"><div class="n">04</div><h3>Execution</h3><p>I coordinate the search or marketing process, viewings, negotiation and follow-through to closing, through one point of contact.</p></div></div>
-    <p class="mcierre">The work is not about showing you more. It is about helping you decide better. If the evidence suggests waiting, adjusting or not moving forward, I will tell you that as well.</p>
+    <div class="eyebrow-row"><span class="eyebrow-line"></span><span class="eyebrow">Process</span></div>
+    <div class="section-head"><h2>How I work with you.</h2><p class="lead">I begin by understanding the decision: what you want to achieve, what could shape the outcome and how much room actually exists. I then compare the situation with the market, define a strategy and guide its execution through closing.</p></div>
+    <div class="mpasos"><div class="mpaso"><div class="n">01</div><h3>Context</h3><p>Objectives, priorities, timing and real budget. Before searching, listing or negotiating, we define what the transaction needs to solve.</p></div><div class="mpaso"><div class="n">02</div><h3>Market comparison</h3><p>I review similar listings, their asking prices and time on the market. When verified data on completed sales or rentals is available, I include it.</p></div><div class="mpaso"><div class="n">03</div><h3>Strategy</h3><p>I propose the combination of price, location, presentation, negotiation and timing that makes sense. Every recommendation should be explainable.</p></div><div class="mpaso"><div class="n">04</div><h3>Execution</h3><p>I coordinate the search or marketing process, viewings, negotiation and follow-through to closing.</p></div></div>
+    <div class="mcierre"><p>I explain what I recommend, why and what still needs to be confirmed before proceeding.</p></div>
   </div>
 </section>
 
@@ -1684,14 +1778,14 @@ body > section:not(.hero):not(.pf){
   <div class="container">
     <div class="about-grid">
       <div class="portrait">
-        <img src="images/dario-neutra.jpg" alt="Dario Jhangimal" width="998" height="1328" loading="lazy" decoding="async">
+        <img src="images/dario-neutra.jpg" alt="Dario Jhangimal, real estate broker" width="998" height="1328" loading="lazy" decoding="async">
       </div>
       <div class="about-content">
-        <h2>I read the situation <em>before I act</em>.</h2>
-        <p>I work real estate in Panama. What matters to me is not the close — it is reaching the correct read before anyone moves capital. That means understanding the timing, the people, the real price and what can be sustained.</p>
-        <p>The operation may be residential, commercial, land, beach, pre-construction or investment. The asset type changes; the reading remains the starting point.</p>
-        <p>SpotOne is the practice I wanted to build: deliberate, clear, without shortcuts. Not an agency.</p>
-        <p>Some operations require depth. Others require speed. The form may change; the read does not.</p>
+        <h2>Dario Jhangimal</h2>
+        <p>I’m a real estate broker in Panama. I help clients find and market properties, negotiate terms and work through the closing process.</p>
+        <p>I work with homes, commercial spaces, land and farms, beach properties, pre-construction projects and bank-owned properties. We review the price, terms and whether the property meets your needs.</p>
+        <p>At SpotOne Realty you work directly with me from start to finish. I explain the options, follow up throughout the process and flag issues to review before you commit.</p>
+        <p>If another broker holds the property you are interested in, I coordinate with them and arrange the viewing all the same. You do not need to sign an exclusive agreement to see it.</p>
         <p class="about-credential">Licensed broker PN-1240.</p>
         <div class="signature">Dario Jhangimal</div>
       </div>
@@ -1705,28 +1799,24 @@ body > section:not(.hero):not(.pf){
     <div class="faq-grid">
       <div class="faq-sticky">
         <h2>What I <em>usually</em> clarify.</h2>
-        <p class="lead">The questions that come up most often, answered with the same directness I bring to the work.</p>
+        <p class="lead">Answers to common questions about working with me.</p>
       </div>
       <div class="faq-list" data-faq>
         <details class="faq-item">
-          <summary>How does the first conversation work?</summary><div class="body"><p>No charge. The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, we both know whether moving forward makes sense and what the next step would be.</p></div></details>
+          <summary>How does the first conversation work?</summary><div class="body"><p>The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, we both know whether moving forward makes sense and what the next step would be.</p></div></details>
         <details class="faq-item">
           <summary>How do I work with you as a buyer?</summary>
-          <div class="body">First, a context conversation — no cost — to understand what you are actually looking for. From there, the agreement is clear: one point of contact, in both directions. If you spot a property on any portal, send it to me and I will find it, review it and organize it for you. The commission is paid by the seller at closing — for the buyer, my work has no direct cost.</div>
+          <div class="body">First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who holds each property and arrange the viewings with the information you need to decide.</div>
         </details>
         <details class="faq-item">
           <summary>Do you work with owners who want to sell or rent?</summary>
-          <div class="body">Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market, the ideal buyer profile and the right channel. I do not list for the sake of listing. Before a property moves, there is a read on price, timing and narrative. What goes out well positioned moves.</div>
+          <div class="body">Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market and who it suits. Before listing, I review the price, the timing and how the property is presented against what is already on offer.</div>
         </details>
         <details class="faq-item">
           <summary>How does a foreigner buy property in Panama?</summary><div class="body"><p>In most cases a foreigner can acquire property in Panama. The purchase structure, any restrictions that may apply and the documentation should be reviewed with a lawyer before signing or transferring funds. I walk you through the process and coordinate with your lawyer; this information is for guidance and does not replace legal review.</p></div></details>
         <details class="faq-item">
-          <summary>How do you charge?</summary>
-          <div class="body">Fees depend on the type of transaction and who I represent. Before we begin, I explain in writing how they work in your case and what cost, if any, applies to you.</div>
-        </details>
-        <details class="faq-item">
           <summary>Can we start before I move to Panama?</summary>
-          <div class="body">Yes. The process can begin remotely: area orientation, market reading and evaluating options over WhatsApp or video call. You do not need to be in the country to make decisions with real information.</div>
+          <div class="body">Yes. The process can begin remotely: we compare areas, review prices and evaluate options over WhatsApp or video call. You do not need to be in the country to make decisions with real information.</div>
         </details>
         <details class="faq-item">
           <summary>What if the best decision is not to move forward?</summary>
@@ -1738,9 +1828,9 @@ body > section:not(.hero):not(.pf){
 </section>
 
 <!-- ================ FOOTER ================ -->
-<section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Let's talk</p><h2 class="pf-h">Is there a property decision you need to settle?</h2><p class="pf-p">Tell me what you are weighing. I will say plainly what information is missing and whether it makes sense to move forward.</p></div><div class="pf-r"><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20evaluate%20a%20real%20estate%20decision%20in%20Panama."><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Chat on WhatsApp</span></a><a class="pf-b2" href="mailto:info@spotonerealty.com"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span>Write by email</span></a></div></div></div></section>
+<section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Let's talk</p><h2 class="pf-h">Is there a property decision you need to settle?</h2><p class="pf-p">Tell me what you need, in which area and by when. With those three details I can compare options before our first call.</p></div><div class="pf-r"><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website%20and%20would%20like%20to%20discuss%20a%20property%20with%20you"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Chat on WhatsApp</span></a><a class="pf-b2" href="mailto:info@spotonerealty.com"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span>Write by email</span></a></div></div></div></section>
 
-<footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/index-en.html" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Real estate advisory and relocation in Panama.</p><p class="sf-cred">Dario Jhangimal · Real Estate Broker&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Links</summary><h2 class="sf-h sf-h-nav">Links</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/index-en.html#metodo">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/en/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contact</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">Email</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-v-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html" aria-current="page" lang="en">EN</a></p></div><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panama · License PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
+<footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/index-en.html" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Real estate advisory and relocation in Panama.</p><p class="sf-cred">Dario Jhangimal · Real Estate Broker&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Links</summary><h2 class="sf-h sf-h-nav">Links</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/index-en.html#que-hago">What I do</a></li><li><a href="https://www.spotonerealty.com/index-en.html#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/en/">Perspective</a></li><li><a href="https://www.spotonerealty.com/index-en.html#metodo">How I work</a></li><li><a href="https://www.spotonerealty.com/index-en.html#dario">About Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/en/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contact</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/index-en.html" aria-current="page" lang="en">EN</a></p></div><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panama · License PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
 
 <script>
   // el cajon movil lo gobierna el componente canonico
