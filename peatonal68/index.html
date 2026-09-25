@@ -1453,6 +1453,27 @@ body > section:not(.hero):not(.pf){
   .facswitch{gap:10px;margin-bottom:12px}
   .facnav button{min-height:44px;padding:0 13px;font-size:13px}
 }
+/* ⟦NAV-ACTIVO-INICIO⟧
+   El enlace activo se pintaba con --on-navy (marfil), que es el color para la
+   cabecera transparente sobre el hero. Con la cabecera desplazada el fondo es
+   papel rgba(246,244,239,.95): marfil sobre papel da 1.03:1, ilegible. La regla
+   del estado desplazado pinta en tinta pero pierde por especificidad, (0,4,0)
+   frente a (0,4,1). Se restituye con una regla propia del estado desplazado.
+   Afecta a cualquier enlace con aria-current, no solo a "La plaza". */
+.site-header.scrolled .site-nav a.lnk[aria-current="true"],
+.hdr[data-s="1"] .nav a[aria-current="true"]{color:rgb(5,14,30)}
+.site-header.scrolled .site-nav a.lnk[aria-current="true"]::after{background:rgb(5,14,30)}
+/* ⟦NAV-ACTIVO-FIN⟧ */
+/* ⟦TRAMO-21-22-INICIO⟧
+   El plano rotulado documenta 21 y 22 como un solo recuadro. La fachada los
+   senala juntos y la eleccion se hace aqui, con metraje a la vista. */
+.sr-opc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;
+  padding-top:14px;border-top:1px solid var(--line)}
+.sr-opc-t{font-size:13px;color:var(--muted);margin-right:4px}
+.sr-opc .btn{font-size:13px;padding:8px 14px;min-height:40px}
+@media(max-width:600px){.sr-opc{flex-direction:column;align-items:stretch}
+  .sr-opc .btn{width:100%;justify-content:center}}
+/* ⟦TRAMO-21-22-FIN⟧ */
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}
 </style></noscript>
@@ -1516,7 +1537,7 @@ body > section:not(.hero):not(.pf){
 <section id="disponibilidad"><div class="wrap">
 <div class="ebrow"><span class="eb">Disponibilidad</span><span class="r"></span></div>
 <h2>Ubica y combina los locales disponibles</h2>
-<p class="lead">Explora la fachada para ver ubicación, metraje y combinaciones posibles.</p>
+<p class="lead">Explora la fachada para ubicar cada local, o compáralos por nivel.</p>
 <div class="filters" style="margin-top:36px" role="group" aria-label="Filtrar locales">
 <button class="chip" data-f="all" aria-pressed="true">Todos</button>
 <button class="chip" data-f="f1" aria-pressed="false">Primer piso</button>
@@ -1526,7 +1547,7 @@ body > section:not(.hero):not(.pf){
 <button class="chip" data-f="c" aria-pressed="false">Combinables</button>
 </div>
 
-<div class="facswitch"><span class="eb facnav-lbl">Vista</span><div class="facnav" role="tablist" aria-label="Vista de la fachada"><button role="tab" aria-selected="true" data-view="foto">Fachada</button><button role="tab" aria-selected="false" data-view="plano">Por nivel</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="img/fachada-master-2026-09-21.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Fachada: locales disponibles"><polygon class="hot zona" data-u="11" data-st="leased" points="0.3413,0.4583 0.4287,0.4583 0.4287,0.5417 0.3413,0.5417" role="button" tabindex="0" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="15" data-st="available" points="0.8286,0.457 0.9424,0.457 0.9424,0.5859 0.8286,0.5859" role="button" tabindex="0" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="21" data-st="available" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, segundo piso"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">Ver la fachada completa</button><p class="facnote">Ubicación visual de referencia. El metraje y distribución se confirman en la ficha de cada local.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Nivel"><button role="tab" aria-selected="true" data-piso="1">Primer piso</button><button role="tab" aria-selected="false" data-piso="2">Segundo piso</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">Primer piso</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, alquilado"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · OFICINA DE ADMINISTRACIÓN · OCUPADO"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">OFICINA DE ADMINISTRACIÓN · OCUPADO</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · ALQUILADO"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, disponible"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Disponible</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Segundo piso</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, disponible"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, disponible"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, disponible"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="facswitch"><span class="eb facnav-lbl">Vista</span><div class="facnav" role="tablist" aria-label="Vista de la fachada"><button role="tab" aria-selected="true" data-view="foto">Fachada</button><button role="tab" aria-selected="false" data-view="plano">Por nivel</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="img/fachada-master-2026-09-21.jpg" alt="Fachada de Plaza La Peatonal 68 con los locales disponibles señalados" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Fachada: locales disponibles"><polygon class="hot zona" data-u="11" data-st="leased" points="0.3413,0.4583 0.4287,0.4583 0.4287,0.5417 0.3413,0.5417" role="button" tabindex="0" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="15" data-st="available" points="0.8286,0.457 0.9424,0.457 0.9424,0.5859 0.8286,0.5859" role="button" tabindex="0" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, primer piso"></polygon><polygon class="hot zona" data-u="21" data-st="available" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, segundo piso"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, segundo piso"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">Ver la fachada completa</button><p class="facnote">La fachada señala la ubicación aproximada de cada local. El 21 y el 22 están comunicados hoy y se marcan como un solo tramo; si se alquilan por separado, se entrega la división correspondiente. El metraje y la distribución se confirman en la ficha de cada local.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Nivel"><button role="tab" aria-selected="true" data-piso="1">Primer piso</button><button role="tab" aria-selected="false" data-piso="2">Segundo piso</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">Primer piso</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Local 11, 70 metros cuadrados, alquilado"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · OFICINA DE ADMINISTRACIÓN · OCUPADO"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">OFICINA DE ADMINISTRACIÓN · OCUPADO</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · ALQUILADO"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">ALQUILADO</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Local 15, 120 metros cuadrados, disponible"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Disponible</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Segundo piso</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Local 21, 77 metros cuadrados, disponible"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Local 22, 100 metros cuadrados, disponible"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Local 23, 100 metros cuadrados, disponible"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Disponible</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
 <div class="infra-band"><h3 class="infra-h">Acceso e infraestructura</h3><ul><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg><span><b>60 estacionamientos</b><em>14 en planta baja · 46 en el sótano</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg><span><b>Elevador</b><em>A los niveles comerciales</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span><b>Escaleras</b><em>Circulación entre los tres niveles</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/><path d="M4 16h16"/></svg><span><b>Acceso vehicular</b><em>Por Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M4 19 15 7"/><path d="M15 7h5v12"/></svg><span><b>Acceso al estacionamiento del sótano</b><em>Por rampa</em></span></li></ul></div>
 </div>
 </div></section>
@@ -1665,10 +1686,10 @@ body > section:not(.hero):not(.pf){
 <h2>Una plaza activa, con usos complementarios</h2>
 <p class="lead">La planta baja concentra ocho restaurantes. En los niveles superiores funcionan negocios que reciben clientes por citas, clases y servicios. Para un nuevo inquilino eso significa entrar a una plaza que ya está operando, con estacionamiento disponible y distintas razones de visita a lo largo del día.</p>
 <div class="duo" style="margin-top:52px">
+<figure><img src="img/plaza-operando.jpg" alt="Planta baja de Plaza La Peatonal 68: terrazas de los restaurantes, entrada peatonal y estacionamiento de visitantes" loading="lazy" width="1920" height="1080">
+<figcaption><b>Ocho restaurantes en planta baja</b>Ocho propuestas gastronómicas distintas, con terrazas sobre la planta baja.</figcaption></figure>
 <figure><img src="img/estacionamientos.jpg" alt="Sótano bajo techo de Plaza La Peatonal 68 con el núcleo de ascensor y escaleras" loading="lazy" width="1920" height="1080">
 <figcaption><b>Sesenta estacionamientos</b>Catorce en planta baja y cuarenta y seis bajo techo en el sótano, con acceso directo por ascensor y escaleras.</figcaption></figure>
-<figure><img src="img/plaza-operando.jpg" alt="Planta baja de Plaza La Peatonal 68: terrazas de los restaurantes, entrada peatonal y estacionamiento de visitantes" loading="lazy" width="1920" height="1080">
-<figcaption><b>Ocho restaurantes en planta baja</b>Generan visitas de día y de noche, con ocho propuestas gastronómicas distintas.</figcaption></figure>
 </div>
 </div></section>
 
@@ -1703,7 +1724,7 @@ body > section:not(.hero):not(.pf){
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="2.5"/><path d="M15 28V13h6.2a4.4 4.4 0 0 1 0 8.8H15"/></svg><b>60 estacionamientos</b><p>14 en planta baja y 46 bajo techo en el sótano.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M20 4v32"/><path d="M14 18.5 11.8 15 9.6 18.5z" fill="var(--accent)" stroke="none"/><path d="M11.8 15v7.5"/><path d="M26 21.5 28.2 25l2.2-3.5z" fill="var(--accent)" stroke="none"/><path d="M28.2 25v-7.5"/></svg><b>Elevador</b><p>Acceso a los niveles comerciales mediante elevador.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 33h7v-6.5h7V20h7v-6.5h7"/><path d="M5 33V26.5h7"/></svg><b>Escaleras</b><p>Circulación interna entre los tres niveles.</p></div>
-<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h30"/><path d="M9 10v2.5M31 10v2.5"/><path d="M11.5 31v-4.6l2.6-5.8a2.1 2.1 0 0 1 1.9-1.3h9.8a2.1 2.1 0 0 1 1.9 1.3l2.6 5.8V31"/><path d="M11.5 26.6h18.8"/><circle cx="15.6" cy="31" r="2"/><circle cx="26.2" cy="31" r="2"/><path d="M4 37l4.6-4.2"/></svg><b>Estacionamiento cubierto</b><p>46 espacios bajo techo, con acceso por rampa desde Calle 68 Este.</p></div>
+<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h30"/><path d="M9 10v2.5M31 10v2.5"/><path d="M11.5 31v-4.6l2.6-5.8a2.1 2.1 0 0 1 1.9-1.3h9.8a2.1 2.1 0 0 1 1.9 1.3l2.6 5.8V31"/><path d="M11.5 26.6h18.8"/><circle cx="15.6" cy="31" r="2"/><circle cx="26.2" cy="31" r="2"/><path d="M4 37l4.6-4.2"/></svg><b>Acceso al sótano</b><p>Por la misma rampa de la entrada vehicular, sobre Calle 68 Este.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v30M31 5v30"/><path d="M9 35h22M9 5h22" stroke-dasharray="2.5 3.5"/><path d="M17.5 15.5 20.5 13v14"/><path d="M17.6 27h5.8"/></svg><b>Uso para el arrendatario</b><p>Un espacio puede asignarse a quien firma el contrato. Si no lo utiliza, queda disponible para clientes.</p></div>
 </div>
 </div></section>
@@ -1855,7 +1876,7 @@ FSVG.querySelectorAll('.zona').forEach(z=>{
   z.addEventListener('blur',sale);
   // un polígono con tabindex no dispara click con el teclado: hay que añadirlo
   z.addEventListener('keydown',e=>{
-    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(id); } });
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleFachada(id); } });
 });
 
 // ── un solo renderizador para fachada, lista y resumen ────────────────────
@@ -1914,12 +1935,20 @@ function paint(){
   const wa=WAB+(ids.length===1?('%2C%20Local%20'+ids[0])
               :('%2C%20Locales%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
   const consultar=ids.length===1?('Consultar el Local '+ids[0]):('Consultar los '+ar+' m&sup2;');
+  // tramo conjunto 21+22: se ofrecen las tres opciones con su metraje
+  let extra='';
+  if(ids.length===2 && ids.includes(21) && ids.includes(22)){
+    extra='<div class="sr-opc"><span class="sr-opc-t">Puedes consultar:</span>'+
+      [21,22].map(i=>'<a class="btn btn-o" href="'+WAB+'%2C%20Local%20'+i+'">Local '+i+
+        ' &middot; '+U[i].area+' m&sup2;</a>').join('')+
+      '<a class="btn btn-o" href="'+WAB+'%2C%20Locales%2021%2B22%20(177%20m2)">Los dos &middot; 177 m&sup2;</a></div>';
+  }
   if(R){
     R.dataset.on='1';
     R.innerHTML='<p class="sr-t">'+t+'</p><p class="sr-d">'+d+'</p>'+
       '<div class="sr-a"><a class="btn btn-d" href="'+wa+'">'+consultar+'</a>'+
       '<button type="button" class="btn btn-o" data-go="'+ids[0]+'">Ver ficha completa &rarr;</button>'+
-      '<button type="button" class="btn btn-t" data-clear="1">Quitar selecci&oacute;n</button></div>';
+      extra+'<button type="button" class="btn btn-t" data-clear="1">Quitar selecci&oacute;n</button></div>';
   }
   $('#sbt').textContent = ids.length===1?('Local '+ids[0]):(ar+' m² continuos');
   $('#sbs').textContent = ids.length===1
@@ -1939,7 +1968,21 @@ function toggle(id){
   else sel=[id];
   paint();
 }
-$$('.hot, .lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
+// Solo para la FACHADA. El plano rotulado documenta 21 y 22 como un unico
+// recuadro: no consta donde termina uno y empieza el otro, asi que la imagen
+// no puede senalarlos por separado y los abre juntos. En "Por nivel" y en las
+// fichas si se elige uno concreto, y alli toggle() sigue intacto: por eso
+// 22+23 se mantiene alcanzable.
+function toggleFachada(id){
+  const PAR=[21,22];
+  if(!PAR.includes(id)) return toggle(id);
+  if(U[21].status!=='available' && U[22].status!=='available') return;
+  if(PAR.every(x=>sel.includes(x))) sel=sel.filter(x=>!PAR.includes(x));
+  else sel = sel.includes(23) ? [21,22,23] : [21,22];
+  paint();
+}
+$$('.hot').forEach(b=>b.addEventListener('click',()=>toggleFachada(+b.dataset.u)));
+$$('.lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
 document.addEventListener('click',e=>{
   const g=e.target.closest('[data-go]'); if(g){goTo(+g.dataset.go); return;}
   const c=e.target.closest('[data-clear]'); if(c){sel=[]; paint();}

@@ -1453,6 +1453,27 @@ body > section:not(.hero):not(.pf){
   .facswitch{gap:10px;margin-bottom:12px}
   .facnav button{min-height:44px;padding:0 13px;font-size:13px}
 }
+/* ⟦NAV-ACTIVO-INICIO⟧
+   El enlace activo se pintaba con --on-navy (marfil), que es el color para la
+   cabecera transparente sobre el hero. Con la cabecera desplazada el fondo es
+   papel rgba(246,244,239,.95): marfil sobre papel da 1.03:1, ilegible. La regla
+   del estado desplazado pinta en tinta pero pierde por especificidad, (0,4,0)
+   frente a (0,4,1). Se restituye con una regla propia del estado desplazado.
+   Afecta a cualquier enlace con aria-current, no solo a "La plaza". */
+.site-header.scrolled .site-nav a.lnk[aria-current="true"],
+.hdr[data-s="1"] .nav a[aria-current="true"]{color:rgb(5,14,30)}
+.site-header.scrolled .site-nav a.lnk[aria-current="true"]::after{background:rgb(5,14,30)}
+/* ⟦NAV-ACTIVO-FIN⟧ */
+/* ⟦TRAMO-21-22-INICIO⟧
+   El plano rotulado documenta 21 y 22 como un solo recuadro. La fachada los
+   senala juntos y la eleccion se hace aqui, con metraje a la vista. */
+.sr-opc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;
+  padding-top:14px;border-top:1px solid var(--line)}
+.sr-opc-t{font-size:13px;color:var(--muted);margin-right:4px}
+.sr-opc .btn{font-size:13px;padding:8px 14px;min-height:40px}
+@media(max-width:600px){.sr-opc{flex-direction:column;align-items:stretch}
+  .sr-opc .btn{width:100%;justify-content:center}}
+/* ⟦TRAMO-21-22-FIN⟧ */
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}
 </style></noscript>
@@ -1516,7 +1537,7 @@ body > section:not(.hero):not(.pf){
 <section id="disponibilidad"><div class="wrap">
 <div class="ebrow"><span class="eb">Availability</span><span class="r"></span></div>
 <h2>Locate and combine the available units</h2>
-<p class="lead">Explore the facade to see location, floor area and possible combinations.</p>
+<p class="lead">Explore the facade to place each unit, or compare them floor by floor.</p>
 <div class="filters" style="margin-top:36px" role="group" aria-label="Filter units">
 <button class="chip" data-f="all" aria-pressed="true">All</button>
 <button class="chip" data-f="f1" aria-pressed="false">First floor</button>
@@ -1526,7 +1547,7 @@ body > section:not(.hero):not(.pf){
 <button class="chip" data-f="c" aria-pressed="false">Combinable</button>
 </div>
 
-<div class="facswitch"><span class="eb facnav-lbl">View</span><div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="foto">Facade</button><button role="tab" aria-selected="false" data-view="plano">By floor</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="../img/fachada-master-2026-09-21.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Facade: available units"><polygon class="hot zona" data-u="11" data-st="leased" points="0.3413,0.4583 0.4287,0.4583 0.4287,0.5417 0.3413,0.5417" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 11, 70 square meters, first floor"></polygon><polygon class="hot zona" data-u="15" data-st="available" points="0.8286,0.457 0.9424,0.457 0.9424,0.5859 0.8286,0.5859" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 15, 120 square meters, first floor"></polygon><polygon class="hot zona" data-u="21" data-st="available" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 21, 77 square meters, second floor"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">See the whole facade</button><p class="facnote">Visual reference only. Floor area and layout are confirmed on each unit's listing.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Level"><button role="tab" aria-selected="true" data-piso="1">First floor</button><button role="tab" aria-selected="false" data-piso="2">Second floor</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">First floor</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Unit 11, 70 square meters, rented"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · MANAGEMENT OFFICE · OCCUPIED"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">MANAGEMENT OFFICE · OCCUPIED</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · RENTED"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Unit 15, 120 square meters, available"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Available</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Second floor</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Unit 21, 77 square meters, available"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="facswitch"><span class="eb facnav-lbl">View</span><div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="foto">Facade</button><button role="tab" aria-selected="false" data-view="plano">By floor</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="../img/fachada-master-2026-09-21.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Facade: available units"><polygon class="hot zona" data-u="11" data-st="leased" points="0.3413,0.4583 0.4287,0.4583 0.4287,0.5417 0.3413,0.5417" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 11, 70 square meters, first floor"></polygon><polygon class="hot zona" data-u="15" data-st="available" points="0.8286,0.457 0.9424,0.457 0.9424,0.5859 0.8286,0.5859" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 15, 120 square meters, first floor"></polygon><polygon class="hot zona" data-u="21" data-st="available" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 21, 77 square meters, second floor"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">See the whole facade</button><p class="facnote">The facade shows the approximate location of each unit. Units 21 and 22 are currently connected and are marked as a single stretch; if they are leased separately, the dividing partition is reinstated. Floor area and layout are confirmed on each unit's listing.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl-tabs" role="tablist" aria-label="Level"><button role="tab" aria-selected="true" data-piso="1">First floor</button><button role="tab" aria-selected="false" data-piso="2">Second floor</button></div><div class="lvl" data-piso="1"><h4 class="lvl-h">First floor</h4><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-label="Unit 11, 70 square meters, rented"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · MANAGEMENT OFFICE · OCCUPIED"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">MANAGEMENT OFFICE · OCCUPIED</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · RENTED"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-label="Unit 15, 120 square meters, available"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">Available</span></button></div></div><div class="lvl" data-piso="2"><h4 class="lvl-h">Second floor</h4><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-label="Unit 21, 77 square meters, available"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
 <div class="infra-band"><h3 class="infra-h">Access and infrastructure</h3><ul><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V8h3.6a2.7 2.7 0 0 1 0 5.4H9"/></svg><span><b>60 parking spaces</b><em>14 at street level · 46 underground</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M8.5 10 7 8l-1.5 2"/><path d="M15.5 14 17 16l1.5-2"/></svg><span><b>Elevator</b><em>To the commercial floors</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span><b>Stairs</b><em>Connecting all three floors</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16v-3l2-5h12l2 5v3"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/><path d="M4 16h16"/></svg><span><b>Vehicle access</b><em>From Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M4 19 15 7"/><path d="M15 7h5v12"/></svg><span><b>Underground parking access</b><em>By ramp</em></span></li></ul></div>
 </div>
 </div></section>
@@ -1665,10 +1686,10 @@ body > section:not(.hero):not(.pf){
 <h2>A working plaza with complementary uses</h2>
 <p class="lead">The ground floor holds eight restaurants. Upstairs, the businesses see clients by appointment, for classes and for services. For a new tenant that means moving into a plaza that is already up and running, with parking available and different reasons to visit throughout the day.</p>
 <div class="duo" style="margin-top:52px">
+<figure><img src="../img/plaza-operando.jpg" alt="Ground floor of Plaza La Peatonal 68: restaurant terraces, pedestrian entrance and visitor parking" loading="lazy" width="1920" height="1080">
+<figcaption><b>Eight restaurants on the ground floor</b>Eight different food concepts, with terraces along the ground floor.</figcaption></figure>
 <figure><img src="../img/estacionamientos.jpg" alt="Underground parking at Plaza La Peatonal 68 with the elevator and stair core" loading="lazy" width="1920" height="1080">
 <figcaption><b>Sixty parking spaces</b>Fourteen at street level and forty-six underground, with direct elevator and stair access.</figcaption></figure>
-<figure><img src="../img/plaza-operando.jpg" alt="Ground floor of Plaza La Peatonal 68: restaurant terraces, pedestrian entrance and visitor parking" loading="lazy" width="1920" height="1080">
-<figcaption><b>Eight restaurants on the ground floor</b>They bring visitors day and night, with eight different food concepts.</figcaption></figure>
 </div>
 </div></section>
 
@@ -1703,7 +1724,7 @@ body > section:not(.hero):not(.pf){
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="2.5"/><path d="M15 28V13h6.2a4.4 4.4 0 0 1 0 8.8H15"/></svg><b>60 parking spaces</b><p>14 at street level and 46 underground.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M20 4v32"/><path d="M14 18.5 11.8 15 9.6 18.5z" fill="var(--accent)" stroke="none"/><path d="M11.8 15v7.5"/><path d="M26 21.5 28.2 25l2.2-3.5z" fill="var(--accent)" stroke="none"/><path d="M28.2 25v-7.5"/></svg><b>Elevator</b><p>Elevator access to the commercial levels.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 33h7v-6.5h7V20h7v-6.5h7"/><path d="M5 33V26.5h7"/></svg><b>Stairs</b><p>Internal stairs connecting the three levels.</p></div>
-<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h30"/><path d="M9 10v2.5M31 10v2.5"/><path d="M11.5 31v-4.6l2.6-5.8a2.1 2.1 0 0 1 1.9-1.3h9.8a2.1 2.1 0 0 1 1.9 1.3l2.6 5.8V31"/><path d="M11.5 26.6h18.8"/><circle cx="15.6" cy="31" r="2"/><circle cx="26.2" cy="31" r="2"/><path d="M4 37l4.6-4.2"/></svg><b>Underground parking</b><p>46 spaces, reached by ramp from Calle 68 Este.</p></div>
+<div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h30"/><path d="M9 10v2.5M31 10v2.5"/><path d="M11.5 31v-4.6l2.6-5.8a2.1 2.1 0 0 1 1.9-1.3h9.8a2.1 2.1 0 0 1 1.9 1.3l2.6 5.8V31"/><path d="M11.5 26.6h18.8"/><circle cx="15.6" cy="31" r="2"/><circle cx="26.2" cy="31" r="2"/><path d="M4 37l4.6-4.2"/></svg><b>Access to the basement</b><p>Down the same vehicle ramp, off Calle 68 Este.</p></div>
 <div><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="var(--accent)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v30M31 5v30"/><path d="M9 35h22M9 5h22" stroke-dasharray="2.5 3.5"/><path d="M17.5 15.5 20.5 13v14"/><path d="M17.6 27h5.8"/></svg><b>For the tenant's use</b><p>One space can be assigned to the party signing the lease. When it is not in use, it stays available to customers.</p></div>
 </div>
 </div></section>
@@ -1855,7 +1876,7 @@ FSVG.querySelectorAll('.zona').forEach(z=>{
   z.addEventListener('blur',sale);
   // un polígono con tabindex no dispara click con el teclado: hay que añadirlo
   z.addEventListener('keydown',e=>{
-    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(id); } });
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleFachada(id); } });
 });
 
 // ── un solo renderizador para fachada, lista y resumen ────────────────────
@@ -1914,12 +1935,20 @@ function paint(){
   const wa=WAB+(ids.length===1?('%2C%20Unit%20'+ids[0])
               :('%2C%20Units%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
   const consultar=ids.length===1?('Ask about Unit '+ids[0]):('Ask about the '+ar+' m&sup2;');
+  // combined 21+22 stretch: the three options are offered with their sizes
+  let extra='';
+  if(ids.length===2 && ids.includes(21) && ids.includes(22)){
+    extra='<div class="sr-opc"><span class="sr-opc-t">You can ask about:</span>'+
+      [21,22].map(i=>'<a class="btn btn-o" href="'+WAB+'%2C%20Unit%20'+i+'">Unit '+i+
+        ' &middot; '+U[i].area+' m&sup2;</a>').join('')+
+      '<a class="btn btn-o" href="'+WAB+'%2C%20Units%2021%2B22%20(177%20m2)">Both &middot; 177 m&sup2;</a></div>';
+  }
   if(R){
     R.dataset.on='1';
     R.innerHTML='<p class="sr-t">'+t+'</p><p class="sr-d">'+d+'</p>'+
       '<div class="sr-a"><a class="btn btn-d" href="'+wa+'">'+consultar+'</a>'+
       '<button type="button" class="btn btn-o" data-go="'+ids[0]+'">See the full listing &rarr;</button>'+
-      '<button type="button" class="btn btn-t" data-clear="1">Clear selection</button></div>';
+      extra+'<button type="button" class="btn btn-t" data-clear="1">Clear selection</button></div>';
   }
   $('#sbt').textContent = ids.length===1?('Unit '+ids[0]):(ar+' m² continuous');
   $('#sbs').textContent = ids.length===1
@@ -1939,7 +1968,21 @@ function toggle(id){
   else sel=[id];
   paint();
 }
-$$('.hot, .lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
+// Solo para la FACHADA. El plano rotulado documenta 21 y 22 como un unico
+// recuadro: no consta donde termina uno y empieza el otro, asi que la imagen
+// no puede senalarlos por separado y los abre juntos. En "Por nivel" y en las
+// fichas si se elige uno concreto, y alli toggle() sigue intacto: por eso
+// 22+23 se mantiene alcanzable.
+function toggleFachada(id){
+  const PAR=[21,22];
+  if(!PAR.includes(id)) return toggle(id);
+  if(U[21].status!=='available' && U[22].status!=='available') return;
+  if(PAR.every(x=>sel.includes(x))) sel=sel.filter(x=>!PAR.includes(x));
+  else sel = sel.includes(23) ? [21,22,23] : [21,22];
+  paint();
+}
+$$('.hot').forEach(b=>b.addEventListener('click',()=>toggleFachada(+b.dataset.u)));
+$$('.lvl-u').forEach(b=>b.addEventListener('click',()=>toggle(+b.dataset.u)));
 document.addEventListener('click',e=>{
   const g=e.target.closest('[data-go]'); if(g){goTo(+g.dataset.go); return;}
   const c=e.target.closest('[data-clear]'); if(c){sel=[]; paint();}
