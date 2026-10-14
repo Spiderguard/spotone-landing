@@ -1,9 +1,15 @@
 // Shared availability for both languages.
-window.PEATONAL_AVAILABILITY = {"11": {"id": 11, "floor": 1, "area": 70, "rent": null, "total": null, "status": "leased", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": 2400, "total": 2904.0, "status": "available", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": null, "total": null, "status": "occupied", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": 1386, "total": 1704.0, "status": "available", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2208.5, "status": "available", "gal": "l23"}};
-// Fecha de la ULTIMA verificacion real del inventario con la administracion.
+// total = canon + mantenimiento (US$2.50/m²) + aseo (US$15); sin ITBMS, igual que lo publicado.
+// 13-oct-2026: solo el 22 y el 23 estan disponibles. 11, 13, 15 y 21 alquilados; 16 administracion.
+window.PEATONAL_AVAILABILITY = {"11": {"id": 11, "floor": 1, "area": 70, "rent": null, "total": null, "status": "leased", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": null, "total": null, "status": "occupied", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": null, "total": null, "status": "leased", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l23"}};
+// Fecha en que Dario comunico la actualizacion de disponibilidad. NO es una
+// inspeccion ni una verificacion integral del inventario.
 // Se cambia a mano solo cuando se vuelve a verificar; no la toca ningun build.
-window.PEATONAL_VERIFIED = "2026-09-15";
-window.PEATONAL_COMBINATIONS = [[21,22],[22,23],[21,22,23]].filter(c => c.every(id => window.PEATONAL_AVAILABILITY[id].status === "available"));
+window.PEATONAL_VERIFIED = "2026-10-13";
+// 13-oct-2026: ninguna combinacion vigente. El 22 y el 23 son contiguos, pero la
+// contratacion conjunta NO esta confirmada con la administracion y no hay canon
+// combinado. Hasta que se confirme, no se ofrece: la lista queda vacia a proposito.
+window.PEATONAL_COMBINATIONS = [];
 // Keep rendered availability and structured offers aligned with the shared source.
 document.addEventListener('DOMContentLoaded', function () {
   const units = window.PEATONAL_AVAILABILITY;
