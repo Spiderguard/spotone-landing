@@ -1421,6 +1421,11 @@ body > section:not(.hero):not(.pf){
     color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;
     padding:10px 0 0;min-height:44px}
   body.facfoco .facfit{display:inline-block}
+  /* la barra de seleccion es sticky y tapaba este boton justo al ampliar:
+     con la fachada ampliada se queda por encima de ella y siempre se puede pulsar */
+  body.facfoco .facfit{position:sticky;z-index:31;width:100%;text-align:left;
+    bottom:calc(96px + env(safe-area-inset-bottom,0px));
+    background:var(--ivory);padding:10px 0 12px;margin-bottom:-2px}
   /* «Por nivel»: escaneo rápido, no dos pantallas para cuatro locales */
   .lvl-row{align-items:stretch}
   .lvl-u{min-height:0;padding:11px 12px 12px}
@@ -1496,12 +1501,25 @@ body > section:not(.hero):not(.pf){
 .ubic-h{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(24px,2.3vw,30px);letter-spacing:-.015em;line-height:1.2;margin:0 0 8px}
 .ubic-p{margin:0 0 22px;font-size:15.5px;color:var(--body);max-width:62ch}
 .facnote{color:var(--muted);font-size:13px;max-width:66ch}
-/* tramo 21-22: contorno discontinuo, nunca un frente atribuido */
-.faclayer .halo[data-aprox="1"]{stroke-dasharray:.012 .008}
-.faclayer .zona[data-tramo]{stroke:var(--ivory);stroke-opacity:.9;stroke-width:1.3;stroke-dasharray:6 5;vector-effect:non-scaling-stroke}
-.faclayer .zona[data-tramo][data-sel="1"],.faclayer .zona[data-tramo][data-hov="1"]{stroke:var(--brand-navy);stroke-opacity:1}
-.faclayer .zona[data-st="available"]:not([data-tramo]){stroke:var(--ivory);stroke-opacity:.9;stroke-width:1.3;vector-effect:non-scaling-stroke}
-.faclayer .zona[data-st="available"]:not([data-tramo])[data-sel="1"]{stroke:var(--brand-navy);stroke-opacity:1}
+/* geometria verificada 21-sep-2026: cada local con su propio frente */
+.faclayer .zona[data-st="available"]{stroke:var(--ivory);stroke-opacity:.9;stroke-width:1.3;vector-effect:non-scaling-stroke}
+.faclayer .zona[data-st="available"][data-sel="1"]{stroke:var(--brand-navy);stroke-opacity:1}
+/* el 21 esta alquilado: se identifica, no se ofrece ni responde */
+.faclayer .zona-alq{fill:rgba(90,95,105,.2);stroke:var(--ivory);stroke-opacity:.5;stroke-width:1;
+  vector-effect:non-scaling-stroke;pointer-events:none}
+.faclbl-fijo{position:absolute;z-index:4;pointer-events:none;margin:9px 0 0 9px;
+  font:600 11.5px/1 'Hanken Grotesk',-apple-system,sans-serif;letter-spacing:.11em;
+  color:#3B4350;background:rgba(244,241,234,.86);
+  border:1px solid rgba(var(--brand-navy-rgb),.12);border-radius:1px;
+  padding:4px 8px 3px;white-space:nowrap}
+.faclbl-fijo.faclbl-dis{color:#1C232C;background:rgba(244,241,234,.96);
+  border-color:rgba(var(--brand-navy-rgb),.2)}
+.faclbl-fijo[hidden]{display:none}
+@media(max-width:760px){.faclbl-fijo{font-size:10.5px;letter-spacing:.08em;padding:3px 6px 2px;margin:7px 0 0 7px}
+  /* con la fachada entera en pantalla los rotulos se tocarian: queda el numero.
+     Al tocar un local la vista amplia y vuelve la palabra. */
+  .faclbl-fijo .fl-alq{display:none}
+  body.facfoco .faclbl-fijo .fl-alq{display:inline}}
 .g-disp .price{margin-top:24px}
 /* por nivel: los dos pisos a la vista, sin pestañas */
 /* con dos opciones no se atenúa la otra: seguiría pareciendo no disponible */
@@ -1648,7 +1666,7 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 <div class="ubic" id="ubicar">
 <h3 class="ubic-h">Where they are in the plaza</h3>
 <p class="ubic-p">Tap a unit on the facade or in the floor view to see its summary and jump to its listing.</p>
-<div class="facswitch"><span class="eb facnav-lbl">View</span><div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="foto">Facade</button><button role="tab" aria-selected="false" data-view="plano">By floor</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="../img/fachada-master-2026-09-21.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Facade: available units"><polygon class="hot zona" data-u="22" data-tramo="21-22" data-lbl="22 · in this stretch" data-st="available" points="0.4863,0.2721 0.6997,0.2721 0.6997,0.375 0.4863,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor. Approximate location: it sits within this stretch of facade, which it shares with Unit 21. Opens the summary for Unit 22"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"></polygon></svg></div></div><button type="button" class="facfit" id="facfit">See the whole facade</button><p class="facnote">The facade shows approximate locations. The dashed outline locates Unit 22 within the stretch it shares with Unit 21, which is leased. It does not show Unit 22’s exact frontage or dividing line.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl" data-piso="2"><h3 class="lvl-h">Second floor</h3><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 21, 77 square meters, rented"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button></div></div><div class="lvl" data-piso="1"><h3 class="lvl-h">First floor</h3><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 11, 70 square meters, rented"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · MANAGEMENT OFFICE · OCCUPIED"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">MANAGEMENT OFFICE · OCCUPIED</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · RENTED"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 15, 120 square meters, rented"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="facswitch"><span class="eb facnav-lbl">View</span><div class="facnav" role="tablist" aria-label="Facade view"><button role="tab" aria-selected="true" data-view="foto">Facade</button><button role="tab" aria-selected="false" data-view="plano">By floor</button></div></div><div class="facview" data-view="foto"><div class="facsc"><div class="fac"><img src="../img/fachada-master-2026-09-21.jpg" alt="Facade of Plaza La Peatonal 68 with the available units marked" width="2048" height="768" decoding="async"><svg class="faclayer" viewBox="0 0 1 1" preserveAspectRatio="none" role="group" aria-label="Facade: available units"><polygon class="zona zona-alq" data-u="21" data-st="leased" points="0.4863,0.2721 0.5947,0.2721 0.5947,0.375 0.4863,0.375" aria-hidden="true"></polygon><polygon class="hot zona" data-u="22" data-st="available" points="0.5947,0.2721 0.6997,0.2721 0.6997,0.375 0.5947,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 22, 100 square meters, second floor. Opens the summary for Unit 22"></polygon><polygon class="hot zona" data-u="23" data-st="available" points="0.6997,0.2721 0.7876,0.2721 0.7876,0.375 0.6997,0.375" role="button" tabindex="0" aria-pressed="false" aria-label="Unit 23, 100 square meters, second floor"></polygon></svg><div class="faclbl-fijo" data-u="21" style="left:48.63%;top:27.21%" aria-hidden="true">21<span class="fl-alq"> · LEASED</span></div><div class="faclbl-fijo faclbl-dis" data-u="22" style="left:59.47%;top:27.21%" aria-hidden="true">22</div><div class="faclbl-fijo faclbl-dis" data-u="23" style="left:69.97%;top:27.21%" aria-hidden="true">23</div></div></div><button type="button" class="facfit" id="facfit">See the whole facade</button><p class="facnote">The facade shows each second-floor unit’s frontage. Unit 21, measuring 77 m², is leased and appears for reference only: it cannot be selected. Tap Unit 22 or Unit 23 to see its summary. Exact frontage and the division between units will be confirmed with management before signing the lease.</p></div><div class="facview" data-view="plano" hidden><div class="niveles"><div class="lvl" data-piso="2"><h3 class="lvl-h">Second floor</h3><div class="lvl-row"><button class="lvl-u" data-u="21" data-floor="2" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 21, 77 square meters, rented"><span class="lvl-n">21</span><span class="lvl-m">77 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="22" data-floor="2" aria-pressed="false" aria-label="Unit 22, 100 square meters, available"><span class="lvl-n">22</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button><button class="lvl-u" data-u="23" data-floor="2" aria-pressed="false" aria-label="Unit 23, 100 square meters, available"><span class="lvl-n">23</span><span class="lvl-m">100 m²</span><span class="lvl-s">Available</span></button></div></div><div class="lvl" data-piso="1"><h3 class="lvl-h">First floor</h3><div class="lvl-row"><button class="lvl-u" data-u="11" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 11, 70 square meters, rented"><span class="lvl-n">11</span><span class="lvl-m">70 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="16" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="16 · MANAGEMENT OFFICE · OCCUPIED"><span class="lvl-n">16</span><span class="lvl-m">200 m²</span><span class="lvl-s">MANAGEMENT OFFICE · OCCUPIED</span></button><button class="lvl-u" data-u="13" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="13 · RENTED"><span class="lvl-n">13</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button><button class="lvl-u" data-u="15" data-floor="1" aria-pressed="false" aria-disabled="true" data-alq="1" aria-label="Unit 15, 120 square meters, rented"><span class="lvl-n">15</span><span class="lvl-m">120 m²</span><span class="lvl-s">RENTED</span></button></div></div></div></div><div class="selres" id="selres" role="status" aria-live="polite" aria-atomic="true"></div>
 </div>
 <div class="infra-band"><h3 class="infra-h">Access and infrastructure</h3><ul><li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M9.5 16.5v-9h3.2a2.6 2.6 0 0 1 0 5.2H9.5"/></svg><span><b>60 parking spaces</b><em>14 at street level · 46 underground</em></span></li><li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="1.5"/><path d="m9 9.5 3-3 3 3"/><path d="m9 14.5 3 3 3-3"/></svg><span><b>Elevator</b><em>To the commercial floors</em></span></li><li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-4h4v-4h4V8h5"/><path d="M3 20h18"/></svg><span><b>Stairs</b><em>Connecting all three floors</em></span></li><li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16.5V12l2-5h10l2 5v4.5"/><path d="M4 12h16"/><circle cx="7.8" cy="16.5" r="1.7"/><circle cx="16.2" cy="16.5" r="1.7"/><path d="M9.5 16.5h5"/></svg><span><b>Vehicle access</b><em>From Calle 68 Este</em></span></li><li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"/><path d="M3 19 19 9"/><path d="m14 7 5 2-2 5"/></svg><span><b>Underground parking access</b><em>By ramp</em></span></li></ul></div>
 </div></section>
@@ -1728,7 +1746,6 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 <script>
 const U=window.PEATONAL_AVAILABILITY, COMBOS=window.PEATONAL_COMBINATIONS, GAL={"l11": [{"src": "../img/local-11a.jpg", "cap": "Main area"}, {"src": "../img/letrero.jpg", "cap": "Looking toward the back"}, {"src": "../img/foto-12.jpg", "cap": "Second area"}, {"src": "../img/foto-13.jpg", "cap": "Storefront onto the walkway"}], "l13": [{"src": "../img/local-13a.jpg", "cap": "Main area with glass partitions"}, {"src": "../img/foto-14.jpg", "cap": "Meeting room"}, {"src": "../img/foto-15.jpg", "cap": "Kitchen"}, {"src": "../img/foto-16.jpg", "cap": "Interior bathroom"}], "l21": [{"src": "../img/local-21-ventanal-a-la-calle.jpg", "cap": "Main area with picture window"}, {"src": "../img/local-21-planta-libre.jpg", "cap": "Open floor"}, {"src": "../img/local-21-nicho-y-acceso-al-bano.jpg", "cap": "Alcove and bathroom access"}, {"src": "../img/local-21-bano.jpg", "cap": "Bathroom"}], "l23": [{"src": "../img/local-23-vitrina-desde-el-pasillo.jpg", "cap": "Storefront from the second-floor corridor"}], "l15": [{"src": "../img/local-15a.jpg", "cap": "Picture window onto the street"}, {"src": "../img/local-15-volumen-hacia-el-ventanal.jpg", "cap": "The unit in full"}, {"src": "../img/foto-23.jpg", "cap": "Main area"}, {"src": "../img/foto-24.jpg", "cap": "Back of the unit"}, {"src": "../img/local-15-frente-hacia-la-calle.jpg", "cap": "Frontage onto the street"}], "l16": [{"src": "../img/local-16a.jpg", "cap": "Balcony with city view"}, {"src": "../img/foto-27.jpg", "cap": "Main area"}, {"src": "../img/foto-28.jpg", "cap": "Balcony"}, {"src": "../img/foto-29.jpg", "cap": "Kitchen"}, {"src": "../img/foto-30.jpg", "cap": "Second area"}], "l22": [{"src": "../img/local-22a.jpg", "cap": "Main area"}, {"src": "../img/foto-31.jpg", "cap": "Second angle"}]};
 const FL={1:"First floor",2:"Second floor"};
-const N2122='Unit 22 sits within the stretch of facade it shares with Unit 21, which is already rented; the image cannot show where one ends and the other begins. Photos, floor area and conditions are on its listing.';
 const A11={u:'Unit',m2:'square meters',comb:', can be combined with the current selection'};
 const EST={dis:'Available',comb:'Can be combined',sel:'Selected',alq:'RENTED',occupied:'MANAGEMENT OFFICE · OCCUPIED'};
 const ESTC={occ:'Occupied', alq:'Rented'};  // etiquetas cortas: solo para el esquema
@@ -1797,6 +1814,7 @@ function facLbl(id){const z=FSVG.querySelector('.zona[data-u="'+id+'"]');
   return (z&&z.dataset.lbl)||String(id);}
 function facEtiqueta(ids,texto){
   FAC.querySelectorAll('.faclbl').forEach(e=>e.remove());
+  FAC.querySelectorAll('.faclbl-fijo').forEach(e=>{e.hidden=ids.map(String).includes(e.dataset.u);});
   const vs=ids.flatMap(facPol);
   const el=document.createElement('div');
   el.className='faclbl'; el.textContent=texto;
@@ -1809,6 +1827,7 @@ let facHov=null;
 function facExtras(ids){
   FSVG.querySelectorAll('.halo,.combo').forEach(e=>e.remove());
   FAC.querySelectorAll('.faclbl').forEach(e=>e.remove());
+  FAC.querySelectorAll('.faclbl-fijo').forEach(e=>{e.hidden=false;});
   FAC.dataset.combo = ids.length>1 ? '1' : '0';
   const primero=FSVG.querySelector('.zona');
   if(ids.length>1){
@@ -1818,12 +1837,10 @@ function facExtras(ids){
     facEtiqueta(ids, ids.join(' + '));
   } else if(ids.length===1){
     const h=facSvgEl('polygon','halo',facPol(ids[0]));
-    if(FSVG.querySelector('.zona[data-u="'+ids[0]+'"][data-tramo]')) h.dataset.aprox='1';
     FSVG.insertBefore(h,primero);
     facEtiqueta(ids, facLbl(ids[0]));
   } else if(facHov!==null){
     const h=facSvgEl('polygon','halo',facPol(facHov),true);
-    if(FSVG.querySelector('.zona[data-u="'+facHov+'"][data-tramo]')) h.dataset.aprox='1';
     FSVG.insertBefore(h,primero);
     facEtiqueta([facHov], facLbl(facHov));
   }
@@ -1910,8 +1927,6 @@ function paint(){
       '. The rent for a combination is confirmed with the plaza management.';
   }
   // el 22 se señala por tramo: se dice con palabras y se orienta a su ficha
-  const tramo=ids.length===1 && FSVG.querySelector('.zona[data-u="'+ids[0]+'"][data-tramo]');
-  if(tramo) d+=' '+N2122;
   const wa=WAB+(ids.length===1?('%2C%20Unit%20'+ids[0])
               :('%2C%20Units%20'+ids.join('%2B')+'%20('+ar+'%20m2)'));
   const consultar=ids.length===1?('Ask about Unit '+ids[0]):('Ask about the '+ar+' m&sup2;');
