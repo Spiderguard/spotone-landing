@@ -100,6 +100,7 @@
       <div class="pillars" id="pillars" role="group" aria-label="Filtrar por categoría">
         <span class="chip on" data-p="Todo">Todo</span>
         <span class="chip" data-p="Mercado">Mercado</span>
+        <span class="chip" data-p="Alquiler">Alquiler</span>
         <span class="chip" data-p="Comprar &amp; vender">Comprar &amp; vender</span>
         <span class="chip" data-p="Edificios &amp; zonas">Edificios &amp; zonas</span>
         <span class="chip" data-p="IA &amp; herramientas">IA &amp; herramientas</span>
@@ -147,7 +148,10 @@
 
 <script>
   const ARTICLES = [
-    { pillar:"Decisiones", title:"Se dañó la lavadora. <em>La pregunta no es quién la usó.</em>", dek:"Cuando un equipo incluido en el alquiler deja de funcionar, la responsabilidad depende de la causa, del contrato y de lo que pueda demostrarse.", url:"/criterio/quien-paga-electrodomesticos-alquiler-panama/", kw:"quien paga los electrodomesticos en un alquiler se dano la lavadora nevera aire acondicionado apartamento alquilado reparaciones arrendador arrendatario contrato tipo b miviot inventario de entrega deposito desgaste normal panama" },
+    { pillar:"Alquiler", title:"¿Puede un inquilino terminar el contrato <em>después de un sismo?</em>", dek:"En un arrendamiento habitacional, discutir si el terremoto es una causa válida puede ser empezar por la pregunta equivocada.", url:"/criterio/terminar-alquiler-despues-de-un-sismo-panama/", kw:"terminar contrato de alquiler despues de un sismo terremoto panama arrendamiento habitacional contrato tipo b miviot clausula decima aviso 30 dias deposito desocupar inquilino propietario salida anticipada" },
+    { pillar:"Edificios &amp; zonas", title:"¿Bajo qué norma <em>se diseñó tu edificio?</em>", dek:"Un edificio de 1998 y uno aprobado bajo el REP‑2021 no parten del mismo marco. La fecha ayuda, pero no responde sola.", url:"/criterio/norma-estructural-edificio-panama/", kw:"norma estructural edificio panama rep 2021 reglamento diseno estructural sismorresistente instrumentacion sismica acelerografo ano de construccion planos permiso de ocupacion diligencia debida" },
+    { pillar:"Alquiler", title:"¿Qué incluye realmente <em>la «línea blanca»?</em>", dek:"Dos de cada tres avisos que usan el término declaran nevera, estufa, lavadora y secadora. Uno de cada cinco no especifica ningún equipo.", url:"/criterio/que-incluye-linea-blanca-panama/", kw:"que incluye la linea blanca en panama linea blanca completa apartamento alquiler electrodomesticos nevera estufa lavadora secadora microondas lavaplatos amoblado equipado inventario de entrega anuncio arrendamiento" },
+    { pillar:"Alquiler", title:"Se dañó la lavadora. <em>La pregunta no es quién la usó.</em>", dek:"Cuando un equipo incluido en el alquiler deja de funcionar, la responsabilidad depende de la causa, del contrato y de lo que pueda demostrarse.", url:"/criterio/quien-paga-electrodomesticos-alquiler-panama/", kw:"quien paga los electrodomesticos en un alquiler se dano la lavadora nevera aire acondicionado apartamento alquilado reparaciones arrendador arrendatario contrato tipo b miviot inventario de entrega deposito desgaste normal panama" },
     { pillar:"Decisiones", title:"Acordaron el precio. <em>El avalúo llegó por debajo.</em>", dek:"No necesariamente mata el negocio. Pero puede cambiar cuánto efectivo necesita el comprador — justo cuando ya hay una promesa firmada.", url:"/criterio/avaluo-debajo-precio-compra/", kw:"avaluo por debajo del precio de compra avaluo bancario panama avaluo menor al precio diferencia entre avaluo y precio financiamiento hipotecario promesa de compraventa efectivo cierre banco valuador referencias comparables" },
     { pillar:"Decisiones", title:"Aprender <em>no reemplaza</em> operar.", dek:"Un curso puede ayudarte a entender. La experiencia empieza cuando el riesgo ya es tuyo.", url:"/criterio/aprender-no-reemplaza-operar/", kw:"curso bienes raices aprender invertir formacion inmobiliaria mentoria gurus flips vivir de rentas experiencia operar criterio excel vacancia contexto mercado panama miami" },
     { pillar:"IA &amp; herramientas", title:"Proptech: digitalizar el trámite <em>no es digitalizar la decisión.</em>", dek:"Las plataformas proptech digitalizan el proceso de compra —buscar, comparar, papeleo—. Es buenísimo. Pero hay una parte que ninguna app hace por ti, y es la que de verdad decide.", url:"/criterio/proptech-no-digitaliza-la-decision/", kw:"proptech panama plataformas inmobiliarias marketplace inmobiliario tecnologia inmobiliaria comprar propiedad en linea app inmobiliaria digitalizacion inmobiliaria criterio corredor panama" },
@@ -193,7 +197,7 @@
     { pillar:"IA &amp; herramientas", title:"La IA me ahorra tiempo. <em>El criterio</em> todavía me toca a mí.", dek:"Lo que la inteligencia artificial sí cambia en bienes raíces — y lo que no puede tocar.", url:"/criterio/la-ia-no-te-va-a-reemplazar/", kw:"inteligencia artificial ia tecnologia corredor criterio herramientas automatizacion" }
   ];
   const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&");
-  const FEATURED_URL = "/criterio/quien-paga-electrodomesticos-alquiler-panama/";
+  const FEATURED_URL = "/criterio/terminar-alquiler-despues-de-un-sismo-panama/";
   let state = { q:"", pillar:"Todo" };
   const listEl = document.getElementById('list');
 
