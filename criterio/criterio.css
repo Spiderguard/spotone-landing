@@ -402,3 +402,41 @@ footer{background:var(--dark);padding:56px 0 32px}
 }
 .crit-body ul li::before{content:"—";position:absolute;left:0;color:var(--accent-sk)}
 .crit-body cite{font-style:italic}
+
+/* ── Tabla editorial ───────────────────────────────────────────────────────
+   Cronologías y comparativas dentro del cuerpo de una nota. Mínima y
+   reutilizable: hereda color y tipografía del sistema, sin fondos ni bordes
+   de caja. Acotada a .crit-body para no afectar ninguna otra superficie. */
+.crit-body .crit-table{
+  width:100%;border-collapse:collapse;margin:34px 0;
+  font-family:'Hanken Grotesk',sans-serif;
+}
+.crit-body .crit-table th,
+.crit-body .crit-table td{
+  text-align:left;vertical-align:top;
+  padding:14px 18px 14px 0;
+  border-bottom:1px solid #E2E2DE;
+  font-size:clamp(15px,1.6vw,17px);line-height:1.42;
+  font-weight:300;color:var(--body);
+}
+.crit-body .crit-table th{
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:500;color:#8A9097;
+  border-bottom:1px solid var(--ink);padding-bottom:10px;
+}
+.crit-body .crit-table td:first-child{
+  white-space:nowrap;padding-right:22px;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.crit-body .crit-table tr:last-child td{border-bottom:none}
+
+/* ── Enlaces dentro del cuerpo editorial ───────────────────────────────────
+   No dependen solo del color: subrayado permanente para que se reconozcan
+   como enlaces. Acotado a .crit-body; no afecta navegación, pie ni tarjetas. */
+.crit-body a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+}
+.crit-body a:hover{text-decoration-thickness:2px}
