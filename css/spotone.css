@@ -10,57 +10,72 @@
    ============================================================= */
 
 :root{
-  /* ---- color (tokens de marca; la web en producción manda) ---- */
+  /* ---- color (tabla núcleo del Brief de marca v1.0) ---- */
   --brand-navy:#050E1E;
   --navy:#050E1E;
   --ivory:#F4F1EA;
-  --ink:#1a1a18;
-  --body:#46463f;
+  --ink:#1A1A18;
+  --body:#1A1A18;
   --muted:#5A5F69;
-  --faint:#6b665d;
-  --line:#d8d2c6;        /* filete decorativo */
-  --line-ui:#7d776b;     /* contorno de control: 3,7:1 sobre marfil */
-  --line-soft:#e4dfd4;
-  --soft:#f6f4ef;
-  --warm:#efebe1;
-  --sky:#9fb6d4;
+  --faint:#5A5F69;
+  --line:rgba(26,26,24,.12);   /* filete de fila de datos (regla 13) */
+  --line-ui:#7d776b;
+  --line-soft:rgba(26,26,24,.12);
+  --soft:#F4F1EA;
+  --warm:#F4F1EA;
+  --sky:#9FB6D4;               /* acento: SOLO sobre navy */
   --on-navy:#F4F1EA;
-  --on-navy-muted:rgba(244,241,234,.66);
-  --on-navy-faint:rgba(244,241,234,.52);
-  --on-navy-line:rgba(244,241,234,.16);
+  --on-navy-muted:rgba(244,241,234,.86);
+  --on-navy-faint:rgba(244,241,234,.6);
+  --on-navy-line:rgba(244,241,234,.14);
 
-  /* ---- escala tipográfica compartida ----
-     H1 48–60 escritorio / 34–42 móvil · H2 30–38 / 26–30
-     Cuerpo 18 / 17 · UI 15 (16 en móvil) · notas 14 */
-  --fs-h1:clamp(34px,5.1vw,60px);
-  --fs-h2:clamp(27px,3.1vw,38px);
-  --fs-h3:clamp(20px,1.6vw,23px);
-  --fs-h4:17px;
-  --fs-lead:clamp(18px,1.35vw,19.5px);
-  --fs-body:18px;
+  /* ---- escala tipográfica: CINCO tamaños, regla 3 ----
+     Hero 64/72 · Sección 40/48 · Nombre 24/32 · Cuerpo 17/28 · Etiqueta 12/16
+     Móvil: 40 · 32 · 22 · 16 · 12 */
+  --fs-h1:64px;
+  --fs-h2:40px;
+  --fs-h3:24px;
+  --fs-h4:24px;
+  --fs-lead:17px;
+  --fs-body:17px;
   --fs-ui:15px;
-  --fs-note:14px;
-  --fs-micro:11.5px;
-  --lh-h1:1.04;
-  --lh-h2:1.1;
-  --lh-h3:1.26;
-  --lh-body:1.62;
-  --lh-lead:1.56;
-  --measure:min(64ch,32em);
-  --measure-tight:52ch;
+  --fs-note:13px;
+  --fs-label:12px;
+  --fs-micro:12px;
+  --lh-h1:72px;
+  --lh-h2:48px;
+  --lh-h3:32px;
+  --lh-body:28px;
+  --lh-lead:28px;
+  --measure:25em;               /* regla 4: 60 caracteres medidos en Hanken 17 px
+                                  (el lienzo dice 560 px, que miden ~75) */
+  --measure-tight:22em;
 
   /* ---- espaciado (base 4) ---- */
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
   --s6:32px; --s7:48px; --s8:64px; --s9:88px; --s10:120px;
-  --band:clamp(64px,7.4vw,108px);
-  --band-tight:clamp(48px,5.2vw,76px);
+  --band:128px;                /* regla 2: ritmo fijo, sin excepciones */
+  --band-tight:128px;
+  --gap-idx:16px;              /* índice -> titular */
+  --gap-lead:20px;             /* titular -> línea de apoyo */
+  --gap-body:56px;             /* apoyo -> contenido */
 
-  /* ---- caja y cabecera ---- */
-  --shell:1320px;
-  --shell-pad:clamp(20px,4vw,56px);
-  --hdr-h:74px;
-  --hdr-h-sm:60px;
-  --radius:2px;
+  /* ---- caja y cabecera (reglas 1 y 8) ---- */
+  --shell:1200px;
+  --shell-pad:24px;
+  --gutter:32px;
+  --hdr-h:72px;
+  --hdr-h-sm:64px;
+  --radius:0;                  /* regla 11: sin radios */
+}
+
+@media(max-width:860px){
+  :root{
+    --fs-h1:40px; --fs-h2:32px; --fs-h3:22px; --fs-body:16px; --fs-lead:16px;
+    --lh-h1:46px; --lh-h2:38px; --lh-h3:28px; --lh-body:26px; --lh-lead:26px;
+    --band:80px; --band-tight:80px;
+    --gap-idx:12px; --gap-lead:14px; --gap-body:32px;
+  }
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -565,3 +580,175 @@ em{font-style:italic;color:var(--navy)}
   .lang a,.mm-lang a{min-height:44px;display:inline-flex;align-items:center}
   .site-nav .cta{min-height:44px}
 }
+
+/* =============================================================
+   SISTEMA rev.15 — las 15 reglas globales del documento UX/UI
+   Este bloque va al final: manda sobre lo anterior.
+   Fuente: «Instrucciones al diseñador — sistema global» + lienzo.
+   ============================================================= */
+
+/* --- reglas 11 y 13: sin radios, sin sombras, sin filete entre secciones --- */
+*{border-radius:0 !important;box-shadow:none !important}
+.band + .band,.p-band + .p-band{border-top:0}
+
+/* --- regla 1: contenedor 1200, medianil 32 --- */
+.shell,.wrap{max-width:var(--shell);margin:0 auto;padding:0 var(--shell-pad);width:100%}
+.shell--reading{max-width:var(--shell)}
+
+/* --- regla 2: ritmo vertical fijo --- */
+.sec{padding:var(--band) 0 0}
+.sec:last-of-type{padding-bottom:var(--band)}
+.sec-head .idx{margin:0 0 var(--gap-idx)}
+.sec-head h2{margin:0 0 var(--gap-lead)}
+.sec-head .lead{margin:0}
+.sec-body{margin-top:var(--gap-body)}
+
+/* --- reglas 3 y 6: escala de cinco tamaños e índice «NN · Nombre» --- */
+.idx{
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:16px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.on-navy .idx,.band--navy .idx,.sec--navy .idx{color:var(--sky)}
+h1{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:300;letter-spacing:-.01em}
+h2{font-size:var(--fs-h2);line-height:var(--lh-h2);font-weight:300;letter-spacing:-.01em}
+h3{font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;letter-spacing:0}
+.lead{font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:300;color:var(--muted);max-width:var(--measure)}
+.sec--navy .lead,.band--navy .lead{color:var(--on-navy-muted)}
+
+/* --- regla 4: ninguna columna de lectura pasa de 60 caracteres --- */
+p{max-width:var(--measure)}
+p.full,.frow p,.card p,figcaption p,.foot p,
+.idx,.nota,.card-meta,.stat,.sign,.fine,.sf-sign,.sf-disc,.faclegend{max-width:none}
+
+/* --- regla 9: un solo estilo de botón --- */
+.btn{
+  height:48px;padding:0 28px;display:inline-flex;align-items:center;justify-content:center;
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:15px;line-height:20px;font-weight:500;letter-spacing:0;
+  border:1px solid transparent;text-decoration:none;cursor:pointer;
+}
+.btn--primary{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.btn--light{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
+.btn--onnavy{background:transparent;color:var(--ivory);border-color:var(--sky)}
+
+/* --- regla 7: las salidas de sección son enlaces de texto con flecha --- */
+.out{
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:15px;line-height:24px;font-weight:500;color:var(--ink);
+  text-decoration:none;display:inline-block;border-bottom:0;
+}
+.out:hover{color:var(--muted)}
+.sec--navy .out,.band--navy .out{color:var(--ivory)}
+
+/* --- regla 12: el contenedor de imagen lleva el tono medio de la foto --- */
+.ph{position:relative;overflow:hidden;background:#8C8275;display:block}
+.ph>picture{display:block;width:100%;height:100%}
+.ph>img,.ph>picture>img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease}
+.ph--32{aspect-ratio:3/2}
+.ph--169{aspect-ratio:16/9}
+.ph--43{aspect-ratio:4/3}
+a.ph:hover img,button.ph:hover img,.card:hover .ph img{transform:scale(1.02)}
+
+/* --- regla 10: tarjeta estándar: sin borde, sin sombra, sin radio --- */
+.card{display:flex;flex-direction:column;background:none;border:0}
+a.card:hover{border-color:transparent}
+.card .ph{margin-bottom:16px}
+.card-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.card-row h3{margin:0}
+.card-fig{
+  font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h3);line-height:var(--lh-h3);
+  font-weight:500;font-variant-numeric:tabular-nums;text-align:right;
+}
+.card-meta{font-size:15px;line-height:24px;font-weight:300;color:var(--muted);margin:6px 0 0;max-width:none}
+
+/* --- regla 13: filete de 1 px SOLO entre filas de datos --- */
+.frow{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:12px 0;border-top:1px solid var(--line);
+  font-size:16px;line-height:26px;font-weight:300;
+}
+.frow:last-child{border-bottom:1px solid var(--line)}
+.frow em{font-style:normal;color:var(--muted);text-align:right}
+.cifra{
+  font-family:'Newsreader',Georgia,serif;font-size:32px;line-height:40px;font-weight:500;
+  font-variant-numeric:tabular-nums;color:inherit;
+}
+.nota{font-size:var(--fs-note);line-height:20px;font-weight:300;color:var(--muted);max-width:none}
+.sec--navy .nota,.band--navy .nota{color:var(--on-navy-faint)}
+
+/* --- regla 3: cifras grandes con etiqueta debajo (cuatro datos del hero) --- */
+.stat{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);line-height:var(--lh-h2);
+  font-weight:300;font-variant-numeric:tabular-nums;margin:0;max-width:none}
+.stat small{
+  display:block;margin-top:8px;
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:16px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.sec--navy .stat,.band--navy .stat{color:var(--ivory)}
+.sec--navy .stat small,.band--navy .stat small{color:var(--sky)}
+
+/* --- retículas --- */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gutter)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gutter)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gutter)}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gutter)}
+/* 04 va a 6+6: a 4 de 12 el titular de ese modulo cae en dos lineas */
+.c4{grid-column:span 6}
+.c7{grid-column:7 / span 6}
+@media(max-width:860px){
+  .g2,.g3,.g12{grid-template-columns:1fr}
+  .c4,.c7{grid-column:auto}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+}
+
+/* --- regla 11: nada de chips, badges ni iconografía inmobiliaria --- */
+.cnt,.pend,.badge,.chip{display:none !important}
+
+/* --- regla 8: barra superior de 72 px --- */
+.site-header{height:var(--hdr-h)}
+.hdr-in{height:var(--hdr-h);max-width:var(--shell);padding:0 var(--shell-pad)}
+@media(max-width:860px){
+  .site-header{height:var(--hdr-h-sm)}
+  .hdr-in{height:var(--hdr-h-sm)}
+}
+
+/* --- se retira la barra fija inferior en escritorio --- */
+@media(min-width:861px){
+  .stickybar,.sticky-cta,.mobile-cta,.fixedbar{display:none !important}
+}
+
+/* --- regla 14: pie de cuatro columnas --- */
+.sf{background:var(--navy);color:rgba(244,241,234,.8);padding:var(--band) 0 32px}
+.sf .idx{color:var(--sky);margin:0 0 16px}
+.sf-cols nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.sf-cols a{font-size:15px;line-height:24px;font-weight:300;color:rgba(244,241,234,.8);text-decoration:none}
+.sf-cols a:hover{color:var(--ivory)}
+.sf-sign{margin-top:56px;font-size:15px;line-height:24px;font-weight:500;color:var(--ivory);max-width:none}
+.sf-disc{margin-top:12px;font-size:var(--fs-note);line-height:20px;color:var(--on-navy-faint);max-width:none}
+.sf-bottom{
+  margin-top:32px;padding-top:32px;border-top:1px solid var(--on-navy-line);
+  display:flex;justify-content:space-between;gap:16px;
+  font-size:var(--fs-note);line-height:20px;color:var(--on-navy-faint);
+}
+.sf-bottom a{color:var(--on-navy-faint);text-decoration:none}
+.sf-bottom a:hover{color:var(--ivory)}
+.sf-lang{display:flex;gap:6px;margin:0;text-transform:none;letter-spacing:0;font-size:var(--fs-note)}
+@media(max-width:860px){
+  .sf-cols{grid-template-columns:1fr 1fr;gap:40px 24px}
+  .sf-bottom{flex-direction:column;gap:10px}
+}
+
+/* --- barra sobre un hero navy pleno: sin degradado (regla 11) --- */
+.site-header--flat{background:none}
+.site-header--flat.scrolled{background:rgba(244,241,234,.96);border-bottom-color:var(--line)}
+.site-header--flat:not(.scrolled) .lnk,
+.site-header--flat:not(.scrolled) .brand,
+.site-header--flat:not(.scrolled) .lang a{color:var(--ivory)}
+.site-header--flat:not(.scrolled) .lang a.active{color:var(--sky)}
+.site-header--flat:not(.scrolled) .site-nav .cta{
+  height:44px;padding:0 22px;display:inline-flex;align-items:center;
+  border:1px solid var(--sky);color:var(--ivory);background:none;
+}
+.site-header--flat:not(.scrolled) .site-nav .cta:hover{background:rgba(159,182,212,.14)}
