@@ -1,9 +1,9 @@
 // Shared availability for both languages.
 // total = canon + mantenimiento (US$2.50/m²) + aseo (US$15); sin ITBMS, igual que lo publicado.
-// 29-oct-2026: disponibles el 4 (planta baja, 102 m2, canon 3060; mantenimiento y
-// aseo por confirmar, por eso total = null), el 22 y el 23. 11, 13, 15 y 21
-// alquilados; 16 administracion.
-window.PEATONAL_AVAILABILITY = {"4": {"id": 4, "floor": 0, "area": 102, "rent": 3060, "total": null, "status": "available", "gal": "l4"}, "11": {"id": 11, "floor": 1, "area": 70, "rent": null, "total": null, "status": "leased", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": null, "total": null, "status": "occupied", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": null, "total": null, "status": "leased", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l23"}};
+// 29-oct-2026: disponibles el 4 (planta baja, 102 m2, canon 3060 + mantenimiento
+// 255 con aseo incluido = 3315), el 22 y el 23. 11, 13, 15 y 21 alquilados;
+// 16 administracion.
+window.PEATONAL_AVAILABILITY = {"4": {"id": 4, "floor": 0, "area": 102, "rent": 3060, "total": 3315.0, "status": "available", "gal": "l4"}, "11": {"id": 11, "floor": 1, "area": 70, "rent": null, "total": null, "status": "leased", "gal": "l11"}, "13": {"id": 13, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l13"}, "15": {"id": 15, "floor": 1, "area": 120, "rent": null, "total": null, "status": "leased", "gal": "l15"}, "16": {"id": 16, "floor": 1, "area": 200, "rent": null, "total": null, "status": "occupied", "gal": "l16"}, "21": {"id": 21, "floor": 2, "area": 77, "rent": null, "total": null, "status": "leased", "gal": "l21"}, "22": {"id": 22, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l22"}, "23": {"id": 23, "floor": 2, "area": 100, "rent": 1800, "total": 2065.0, "status": "available", "gal": "l23"}};
 // Fecha en que Dario comunico la actualizacion de disponibilidad. NO es una
 // inspeccion ni una verificacion integral del inventario.
 // Se cambia a mano solo cuando se vuelve a verificar; no la toca ningun build.
