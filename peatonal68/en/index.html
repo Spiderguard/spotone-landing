@@ -100,6 +100,13 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .locate:hover{color:var(--ink)}
 
 /* 03 · la plaza */
+/* ronda 3 · los tres niveles son un dato, no un titular: 24 px del sistema.
+   En movil dejan la retícula y quedan en lista con filete entre ellos. */
+.nivs .stat{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+@media(max-width:860px){
+  .nivs{display:block}
+  .nivs .stat + .stat{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+}
 .plaza-fig figcaption{margin-top:12px;font-size:15px;line-height:24px;color:var(--muted)}
 .plaza-fig .ph{background:#8B8C8A}
 .plaza-fig.estac .ph{background:#7D7C73}
@@ -128,7 +135,8 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   border-bottom:1px solid rgba(244,241,234,.14)}
 /* el cierre y el pie son los dos navy: 96 px de aire con el filete en medio */
 body>footer.sf{padding-top:48px}
-.pclose h2{color:var(--ivory)}
+.pclose .idx{margin-bottom:var(--gap-idx)}
+.pclose h2{color:var(--ivory);margin:0 0 var(--gap-lead)}
 .pclose .lead{color:var(--on-navy-muted)}
 .pclose .btn{margin-top:48px}
 .pclose .sign{margin-top:56px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:20px;max-width:none}
@@ -262,7 +270,7 @@ body>footer.sf{padding-top:48px}
         <h3>Unit 4</h3>
         <span class="card-fig">102 m²</span>
       </div>
-      <p class="card-meta">Ground floor · 82 m² + 20 m² of terrace · Gas · 3 photographs</p>
+      <p class="card-meta">Ground floor · 82 + 20 m² of terrace · Gas · 3 photographs</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:15px">Monthly base rent</span>
         <span class="cifra">$3,060</span>
@@ -358,7 +366,7 @@ body>footer.sf{padding-top:48px}
           <img src="../img/planta-baja-restaurantes-y-acceso.jpg" width="1600" height="1200" alt="Ground floor of Plaza La Peatonal 68: the restaurant awnings over the sidewalk, the parking and the pedestrian entrance" loading="lazy">
         </picture>
       </div>
-      <figcaption>Ground floor · Unit 4 is the one with the terrace on the left</figcaption>
+      <figcaption>Ground floor, seen from Calle 68 Este · Unit 4 is the one with the terrace on the left</figcaption>
     </figure>
     <figure class="plaza-fig estac">
       <div class="ph ph--32">
@@ -370,7 +378,7 @@ body>footer.sf{padding-top:48px}
       <figcaption>Covered basement · 46 of the 60 spaces</figcaption>
     </figure>
   </div>
-  <div class="wrap g3" style="margin-top:var(--gap-body)">
+  <div class="wrap g3 nivs" style="margin-top:var(--gap-body)">
     <p class="stat">Ground floor<small>Eight restaurants</small></p>
     <p class="stat">First floor<small>Health, beauty and retail</small></p>
     <p class="stat">Second floor<small>Fitness and retail</small></p>
@@ -389,7 +397,8 @@ body>footer.sf{padding-top:48px}
     <div class="c7">
       <div class="frow"><span>Access to the second floor</span><em>Stairs and elevator</em></div>
       <div class="frow"><span>Bathroom</span><em>One per unit</em></div>
-      <div class="frow"><span>Parking</span><em>60 spaces · 14 at ground level, 46 in the basement</em></div>
+      <div class="frow"><span>Parking</span><em>60 spaces</em></div>
+      <div class="frow"><span>Distribution</span><em>14 at ground level, 46 in the basement</em></div>
       <div class="frow"><span>Vehicle access</span><em>From Calle 68 Este</em></div>
       <div class="frow"><span>Basement access</span><em>By the same entrance ramp</em></div>
       <div class="frow"><span>Gas</span><em>Yes, in Unit 4</em></div>
@@ -422,10 +431,10 @@ body>footer.sf{padding-top:48px}
   </div>
 </section>
 
-<!-- 06 · Get in touch -->
+<!-- 06 · Let's talk -->
 <section class="pclose" id="contacto">
   <div class="wrap">
-    <p class="idx">06 · Get in touch</p>
+    <p class="idx">06 · Let's talk</p>
     <h2>Let's find the unit that fits your operation.</h2>
     <p class="lead">Tell me the type of business and the facilities you need. I check whether 4, 22 or 23 fits your operation before we set up a visit.</p>
     <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Ask on WhatsApp</a>

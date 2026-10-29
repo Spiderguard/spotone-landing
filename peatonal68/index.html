@@ -100,6 +100,13 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .locate:hover{color:var(--ink)}
 
 /* 03 · la plaza */
+/* ronda 3 · los tres niveles son un dato, no un titular: 24 px del sistema.
+   En movil dejan la retícula y quedan en lista con filete entre ellos. */
+.nivs .stat{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+@media(max-width:860px){
+  .nivs{display:block}
+  .nivs .stat + .stat{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+}
 .plaza-fig figcaption{margin-top:12px;font-size:15px;line-height:24px;color:var(--muted)}
 .plaza-fig .ph{background:#8B8C8A}
 .plaza-fig.estac .ph{background:#7D7C73}
@@ -128,7 +135,8 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   border-bottom:1px solid rgba(244,241,234,.14)}
 /* el cierre y el pie son los dos navy: 96 px de aire con el filete en medio */
 body>footer.sf{padding-top:48px}
-.pclose h2{color:var(--ivory)}
+.pclose .idx{margin-bottom:var(--gap-idx)}
+.pclose h2{color:var(--ivory);margin:0 0 var(--gap-lead)}
 .pclose .lead{color:var(--on-navy-muted)}
 .pclose .btn{margin-top:48px}
 .pclose .sign{margin-top:56px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:20px;max-width:none}
@@ -262,7 +270,7 @@ body>footer.sf{padding-top:48px}
         <h3>Local 4</h3>
         <span class="card-fig">102 m²</span>
       </div>
-      <p class="card-meta">Planta baja · 82 m² + 20 m² de terraza · Gas · 3 fotografías</p>
+      <p class="card-meta">Planta baja · 82 + 20 m² de terraza · Gas · 3 fotografías</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:15px">Canon mensual</span>
         <span class="cifra">$3,060</span>
@@ -358,7 +366,7 @@ body>footer.sf{padding-top:48px}
           <img src="img/planta-baja-restaurantes-y-acceso.jpg" width="1600" height="1200" alt="Planta baja de Plaza La Peatonal 68: los toldos de los restaurantes sobre la acera, el estacionamiento y el paso peatonal de la entrada" loading="lazy">
         </picture>
       </div>
-      <figcaption>Planta baja · El Local 4 es el de la terraza a la izquierda</figcaption>
+      <figcaption>Planta baja, vista desde Calle 68 Este · El Local 4 es el de la terraza a la izquierda</figcaption>
     </figure>
     <figure class="plaza-fig estac">
       <div class="ph ph--32">
@@ -370,7 +378,7 @@ body>footer.sf{padding-top:48px}
       <figcaption>Sótano bajo techo · 46 de los 60 puestos</figcaption>
     </figure>
   </div>
-  <div class="wrap g3" style="margin-top:var(--gap-body)">
+  <div class="wrap g3 nivs" style="margin-top:var(--gap-body)">
     <p class="stat">Planta baja<small>Ocho restaurantes</small></p>
     <p class="stat">Primer piso<small>Salud, belleza y comercio</small></p>
     <p class="stat">Segundo piso<small>Actividad física y comercio</small></p>
@@ -389,7 +397,8 @@ body>footer.sf{padding-top:48px}
     <div class="c7">
       <div class="frow"><span>Acceso al segundo piso</span><em>Escaleras y elevador</em></div>
       <div class="frow"><span>Baño</span><em>Uno por local</em></div>
-      <div class="frow"><span>Estacionamiento</span><em>60 puestos · 14 en planta baja, 46 en el sótano</em></div>
+      <div class="frow"><span>Estacionamiento</span><em>60 puestos</em></div>
+      <div class="frow"><span>Distribución</span><em>14 en planta baja, 46 en el sótano</em></div>
       <div class="frow"><span>Acceso vehicular</span><em>Por Calle 68 Este</em></div>
       <div class="frow"><span>Acceso al sótano</span><em>Por la misma rampa de la entrada</em></div>
       <div class="frow"><span>Gas</span><em>Sí, en el Local 4</em></div>
@@ -422,10 +431,10 @@ body>footer.sf{padding-top:48px}
   </div>
 </section>
 
-<!-- 06 · Consultar -->
+<!-- 06 · Conversemos -->
 <section class="pclose" id="contacto">
   <div class="wrap">
-    <p class="idx">06 · Consultar</p>
+    <p class="idx">06 · Conversemos</p>
     <h2>Revisemos qué local encaja con tu operación.</h2>
     <p class="lead">Dime el giro y las instalaciones que necesitas. Reviso si el 4, el 22 o el 23 encaja con tu operación antes de coordinar una visita.</p>
     <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Consultar por WhatsApp</a>
