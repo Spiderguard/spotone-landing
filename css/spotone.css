@@ -760,8 +760,8 @@ a.card:hover{border-color:transparent}
     content:"";position:absolute;left:0;right:0;top:50%;
     height:44px;transform:translateY(-50%);
   }
-  .calc summary::after{content:" +";position:static;transform:none;height:auto}
+  .calc summary::after{content:"\00a0+";position:static;transform:none;height:auto}
   .calc summary{min-height:44px;display:flex;align-items:center}
-  .calc[open] summary::after{content:" −"}
+  .calc[open] summary::after{content:"\00a0−"}
   .faq summary{min-height:44px}
 }

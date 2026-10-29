@@ -37,11 +37,12 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 
 /* 00 · hero navy pleno, sin foto */
 .phero{background:var(--navy);color:var(--ivory);padding:104px 0 96px}
+.phero .idx{margin-bottom:var(--gap-idx)}   /* ronda 2: la etiqueta no se pega al titular */
 .phero h1{margin:0 0 24px}
 .phero .lead{color:var(--on-navy-muted);max-width:var(--measure);font-size:18px;line-height:28px}
 .phero .quad{margin-top:72px;padding-top:32px;border-top:1px solid var(--on-navy-line)}
 .phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:20px;max-width:none}
-.phero .btn{margin-top:48px}
+.phero .btn{margin-top:64px}
 
 /* 01 · fachada con los dos locales señalados */
 .fac{position:relative;background:#8E9599;overflow:hidden}
@@ -74,7 +75,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 /* 02 · fichas de local */
 .u .ph{background:#999C93}
 .u.u23 .ph{background:#8D9890}
-.u.u4 .ph{background:#7B624F}
+.u.u4 .ph{background:#7B634F}
 /* tres fichas: la linea de datos reserva dos renglones para que las tres
    cifras queden a la misma altura (24 px de interlinea) */
 @media(min-width:861px){.u .card-meta{min-height:48px}}
@@ -85,8 +86,8 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   font-size:13px;line-height:20px;font-weight:300;color:var(--muted);cursor:pointer;list-style:none;
 }
 .calc summary::-webkit-details-marker{display:none}
-.calc summary::after{content:" +"}
-.calc[open] summary::after{content:" −"}
+.calc summary::after{content:"\00a0+"}
+.calc[open] summary::after{content:"\00a0−"}
 .ledger{margin-top:12px}
 .ledger>div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:24px}
 .ledger dt{color:var(--muted);font-weight:300}
@@ -123,7 +124,10 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .faq .a ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:16px;line-height:26px}
 
 /* 06 · cierre navy */
-.pclose{background:var(--navy);color:var(--ivory);margin-top:var(--band);padding:112px 0 96px}
+.pclose{background:var(--navy);color:var(--ivory);margin-top:var(--band);padding:112px 0 48px;
+  border-bottom:1px solid rgba(244,241,234,.14)}
+/* el cierre y el pie son los dos navy: 96 px de aire con el filete en medio */
+body>footer.sf{padding-top:48px}
 .pclose h2{color:var(--ivory)}
 .pclose .lead{color:var(--on-navy-muted)}
 .pclose .btn{margin-top:48px}
@@ -152,6 +156,13 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;font-weight:500;
 }
 @media(max-width:860px){.wafloat{display:inline-flex}}
+
+/* ronda 2 · el hero en móvil: cuatro datos de un solo renglón y a la misma altura */
+@media(max-width:860px){
+  .phero .idx-mas{display:none}
+  .phero .stat{font-size:28px;line-height:36px;white-space:nowrap}
+  .phero .stat small{white-space:normal}
+}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -193,7 +204,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 <!-- 00 · Hero -->
 <section class="phero">
   <div class="wrap">
-    <p class="idx">San Francisco · Calle 68 Este · Commercial units for rent</p>
+    <p class="idx">San Francisco · Calle 68 Este<span class="idx-mas"> · Commercial units for rent</span></p>
     <h1>Plaza La Peatonal 68</h1>
     <p class="lead">Three units available: two of 100 m² on the second floor and one of 102 m² for a restaurant on the ground floor.</p>
     <div class="quad g4">
@@ -243,15 +254,15 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
     <article class="card u u4" id="local-4" data-u="4" data-floor="0" data-area="102">
       <button class="ushot ph ph--32" data-gal="l4" data-loc="4" aria-label="See the photographs of Unit 4">
         <picture>
-          <source srcset="../img/local-04-salon-interior.webp" type="image/webp">
-          <img src="../img/local-04-salon-interior.jpg" width="1448" height="965" alt="Unit 4: the restaurant dining room, with the wooden bar at the back, wooden tables and black porcelain flooring" loading="lazy">
+          <source srcset="../img/local-04-salon.webp" type="image/webp">
+          <img src="../img/local-04-salon.jpg" width="1448" height="965" alt="Unit 4: the restaurant dining room, with the wooden bar at the back, wooden tables and black porcelain flooring" loading="lazy">
         </picture>
       </button>
       <div class="card-row">
         <h3>Unit 4</h3>
         <span class="card-fig">102 m²</span>
       </div>
-      <p class="card-meta">Ground floor · 82 m² indoors + 20 m² terrace · Gas · 1 bathroom · 3 photographs</p>
+      <p class="card-meta">Ground floor · 82 m² + 20 m² of terrace · Gas · 3 photographs</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:15px">Monthly base rent</span>
         <span class="cifra">$3,060</span>
@@ -322,8 +333,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
           <div class="ltot"><dt>Monthly total before taxes</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">— Interior still to be photographed; visits available by appointment.</p>
-      <p class="nota" style="margin-top:8px">— Layout and handover condition are confirmed before signing.</p>
+      <p class="nota" style="margin-top:16px">— Interior still to be photographed; visits by appointment. Layout and handover condition are confirmed before signing.</p>
       <div class="uacts">
         <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20and%20I%27m%20interested%20in%20Unit%2023%20(100%20m2%2C%20second%20floor)">Ask about Unit 23 →</a>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
@@ -382,10 +392,10 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
       <div class="frow"><span>Parking</span><em>60 spaces · 14 at ground level, 46 in the basement</em></div>
       <div class="frow"><span>Vehicle access</span><em>From Calle 68 Este</em></div>
       <div class="frow"><span>Basement access</span><em>By the same entrance ramp</em></div>
-      <div class="frow"><span>Gas</span><em>Unit 4</em></div>
+      <div class="frow"><span>Gas</span><em>Yes, in Unit 4</em></div>
       <div class="frow"><span>Opening hours</span><em>No restriction on the ground floor; the basement closes at 11:30 p.m.</em></div>
       <div class="frow"><span>Music and bar</span><em>Permitted within the approved limits</em></div>
-      <div class="frow"><span>Air conditioning</span><em>Unit 4</em></div>
+      <div class="frow"><span>Air conditioning</span><em>Yes, in Unit 4</em></div>
       <div class="frow"><span>Loading and unloading</span><em>— To be confirmed</em></div>
     </div>
   </div>
@@ -428,9 +438,9 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">Services</a><a href="/services/#method">Method</a></nav>
+      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">Services</a><a href="/services/#method">Method</a><a href="/criterio/">Notes</a></nav>
       <nav aria-label="Propiedades"><p class="idx">Properties</p><a href="/properties/">Under representation</a><a href="/peatonal68/">Plaza La Peatonal 68</a></nav>
-      <nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a><a href="/criterio/">Notes</a></nav>
+      <nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav>
       <nav aria-label="Contact"><p class="idx">Contact</p><a href="https://wa.me/50766758127">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · PN-1240</p>
@@ -486,9 +496,9 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 /* Galería */
 (function(){
   var GAL={
-    l4:[{src:'../img/local-04-salon-interior.jpg',cap:"The restaurant's dining room as it is today · illustrative image"},
-        {src:'../img/local-04-terraza.jpg',cap:"Terrace in the plaza's restaurant area"},
-        {src:'../img/local-04-terraza-de-noche.jpg',cap:"The plaza's restaurant area at night"}],
+    l4:[{src:'../img/local-04-salon.jpg',cap:"The restaurant's dining room as it is today"},
+        {src:'../img/local-04-terraza.jpg',cap:'Exclusive-use terrace'},
+        {src:'../img/local-04-noche.jpg',cap:'The terrace at night'}],
     l22:[{src:'../img/local-22a.jpg',cap:'Open floor plan with wood flooring and a marble band'},
          {src:'../img/foto-31.jpg',cap:'Second angle of the main area'}],
     l23:[{src:'../img/local-23-vitrina-desde-el-pasillo.jpg',cap:'Storefront from the second-floor corridor'}]
