@@ -22,6 +22,7 @@
 <link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero.jpg">
 
+  <link rel="stylesheet" href="/css/spotone.css?v=1">
   <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
@@ -64,15 +65,7 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .eb{font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .ebrow{display:flex;align-items:center;gap:18px;margin-bottom:40px}.ebrow .r{flex:1;height:1px;background:var(--line)}
 .lead{font-size:clamp(18px,1.5vw,21px);color:var(--body);max-width:64ch;margin:24px 0 0}
-.brand{display:inline-flex;align-items:center;gap:11px;color:#fff}.lock{height:26px;width:auto;display:block}
-@media(max-width:640px){.lock{height:22px}}
 
-.nav{display:flex;gap:26px;align-items:center}
-.nav a{font-size:15.5px;font-weight:400;color:rgba(255,255,255,.70);padding-bottom:4px;border-bottom:2px solid transparent;transition:.18s}
-.nav a:hover{color:#fff}.nav a[aria-current="true"]{color:#fff;border-bottom-color:var(--ivory)}
-.nav a.cta{color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:2px;padding:9px 18px}
-.nav a.cta:hover{background:rgba(255,255,255,.10);border-color:#fff}
-@media(max-width:900px){.nav{display:none}}
 /* hero */
 .hero{position:relative;min-height:min(84vh,760px);display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -97,7 +90,7 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .repline em{font-style:normal;color:rgba(255,255,255,.55);display:block;margin-top:5px;font-size:13px}
 /* filtros */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
-.chip{font-size:15px;font-weight:400;height:46px;padding:0 22px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--body);cursor:pointer;font-family:inherit;transition:.18s}
+.chip{font-size:15px;font-weight:400;height:46px;padding:0 22px;border:1px solid var(--line-ui);border-radius:2px;background:transparent;color:var(--body);cursor:pointer;font-family:inherit;transition:.18s}
 .chip:hover{border-color:var(--muted)}.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
 .chip:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 /* fachada */
@@ -197,7 +190,7 @@ h3{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(25px,2.4vw,30p
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 40px}
 @media(min-width:1100px){.grid.g3{grid-template-columns:repeat(3,1fr);gap:40px 32px}}
 @media(max-width:900px){.grid{grid-template-columns:1fr;gap:38px}}
-.u{display:flex;flex-direction:column;scroll-margin-top:100px}
+.u{display:flex;flex-direction:column;scroll-margin-top:calc(var(--hdr-h) + 24px)}
 .u.hide{display:none}
 .u.flash .ub{box-shadow:-16px 0 0 -13px var(--accent)}
 .shot{position:relative;display:block;width:100%;padding:0;border:0;aspect-ratio:4/3;overflow:hidden;background:var(--warm);border-radius:2px;cursor:zoom-in;font:inherit}
@@ -247,7 +240,7 @@ details.calc .st dt,details.calc .st dd{color:var(--body);font-weight:400}
 @media(max-width:900px){.duo{grid-template-columns:1fr;gap:40px}}
 .duo img{border-radius:2px;margin-bottom:24px;width:100%;aspect-ratio:16/10;object-fit:cover}
 .duo p{color:var(--body);margin:0 0 14px;max-width:52ch}
-.band{background:var(--warm)}
+.p-band{background:var(--warm)}
 .dirsum{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:38px;padding-top:32px;border-top:1px solid var(--line)}
 @media(max-width:760px){.dirsum{grid-template-columns:1fr;gap:22px}}
 .dirsum b{display:block;font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
@@ -381,7 +374,6 @@ section{padding:clamp(72px,8vw,128px) 0}
 .lang span{opacity:.34}
 @media(max-width:900px){.lang{margin-left:12px}}
 
-/* --- logo del header: +25% sobre los 26px medidos --- */
 .lock{display:block}
 /* --- pie de ficha alineado entre tarjetas --- */
 .grid{align-items:stretch}
@@ -425,7 +417,7 @@ details.calc{margin-top:16px}
  padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px;font-variant-numeric:tabular-nums}
 .prow dt{color:var(--muted);margin:0}
 .prow dd{margin:0;color:var(--body);text-align:right}
-.prow .r-sub dt,.prow .r-sub dd{color:var(--body-2)}
+.prow .r-sub dt,.prow .r-sub dd{color:var(--body)}
 .prow .r-tot{border-bottom:none;border-top:1px solid var(--line);padding-top:12px;margin-top:1px}
 .prow .r-tot dt{color:var(--ink);font-weight:500}
 .prow .r-tot dd{color:var(--ink);font-weight:600;font-size:18px}
@@ -493,13 +485,9 @@ details.calc{margin-top:16px}
 .fbrand p{margin-top:12px}
 @media(max-width:760px){.foot{padding:38px 0 22px}}
 
-/* ===== HEADER B (prototipo) ===== */
-:root{--hdr-h:72px;--hdr-h-s:67px}
-.site-header.scrolled .menu-toggle{color:#050E1E}
-@media(max-width:760px){:root{--hdr-h:64px;--hdr-h-s:60px}}
 
 /* ===== EXPLORADOR (prototipo) ===== */
-.facnav{display:flex;gap:0;margin-bottom:14px;border:1px solid var(--line);
+.facnav{display:flex;gap:0;margin-bottom:14px;border:1px solid var(--line-ui);
   border-radius:2px;overflow:hidden;width:max-content}
 .facnav button{appearance:none;border:0;background:transparent;font:inherit;font-size:14px;
   padding:0 18px;min-height:44px;cursor:pointer;color:var(--muted);letter-spacing:.01em}
@@ -523,7 +511,7 @@ details.calc{margin-top:16px}
 }
 
 /* ===== ÚLTIMA PASADA ===== */
-section[id],[id^="local-"]{scroll-margin-top:calc(var(--hdr-h-s) + 24px)}
+section[id],[id^="local-"]{scroll-margin-top:calc(var(--hdr-h) + 24px)}
 /* leyenda de uniones */
 .ubt{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin-bottom:2px}
@@ -980,357 +968,7 @@ details.calc summary:focus-visible{outline:3px solid var(--brand-navy);outline-o
 .facnota2{font-size:14.5px;line-height:1.6;color:var(--body);margin:22px 0 0;max-width:74ch}
 section{padding:60px 0}
 /* ⟦P4-FIN⟧ */
-/* ⟦CIERRE-V3-INICIO⟧ */
-/* ═══════════════════════════════════════════════════════════════════════════
-   CIERRE v3 — prefooter en marfil + footer institucional en navy
-   Un solo sistema: mismo contenedor (--max/--gut), mismos tokens, mismo
-   lockup y mismos breakpoints que el header. Sin sombras, sin radios, sin
-   color fuera de la paleta oficial.
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* ── 1. prefooter ───────────────────────────────────────────────────────── */
-.pf{background:var(--soft);padding:68px 0;border-top:1px solid var(--line)}
-.pf-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
-  column-gap:32px;align-items:start}
-.pf-l{grid-column:1 / span 7}
-.pf-r{grid-column:9 / span 4}
-.pf-eb{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;font-weight:500;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted);margin:0 0 18px}
-.pf-h{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,4vw,54px);
-  line-height:1.06;letter-spacing:-.022em;color:var(--ink);margin:0;text-wrap:balance}
-.pf-p{font-size:17px;line-height:1.6;color:var(--body);margin:20px 0 0;max-width:56ch}
-.pf-r{padding-top:30px}
-.pf-cred{font-size:14.5px;line-height:1.6;color:var(--body);margin:0 0 24px}
-.pf-cred b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:21px;
-  letter-spacing:-.012em;color:var(--ink);margin-bottom:6px}
-.pf-acts{display:flex;flex-direction:column;align-items:stretch;gap:13px;width:100%}
-.pf-b1,.pf-b2{display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;min-height:54px;padding:0 24px;font-size:15.5px;font-weight:500;
-  letter-spacing:-.004em;line-height:1.2;border-radius:2px;text-align:center;
-  transition:background .16s ease,border-color .16s ease,color .16s ease}
-.pf-b1 svg,.pf-b2 svg{flex:none;width:18px;height:18px}
-.pf-b1{background:var(--brand-navy);color:var(--on-navy);border:1.5px solid var(--brand-navy)}
-.pf-b1:hover{background:#0C1930;border-color:#0C1930}
-.pf-b1 svg{flex:none;color:var(--on-navy)}
-.pf-b2{background:transparent;color:var(--brand-navy);border:1.5px solid var(--brand-navy)}
-.pf-b2:hover{background:var(--warm)}
-.pf-b1:focus-visible,.pf-b2:focus-visible{outline:3px solid var(--brand-navy);outline-offset:3px}
-@media(max-width:900px){
-  .pf{padding:48px 0}
-  .pf-grid{grid-template-columns:1fr;gap:22px}
-  .pf-l,.pf-r{grid-column:1 / -1}
-  .pf-p{margin-top:16px}
-  .pf-r{padding-top:0}
-  .pf-cred{margin-bottom:20px}
-  .pf-acts{gap:14px}
-}
-
-/* ── 2. footer institucional ────────────────────────────────────────────── */
-footer.sf{background:var(--brand-navy);color:var(--on-navy-muted);border-radius:0;
-  padding:56px 0 30px;margin:0}
-footer.sf .sf-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
-  column-gap:32px;row-gap:0;align-items:start}
-.sf a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid transparent}
-.sf a:hover,.sf a:focus-visible{border-bottom-color:var(--on-navy-muted)}
-.sf a:focus-visible{outline:3px solid var(--on-navy);outline-offset:3px;border-bottom-color:transparent}
-
-.sf-id{grid-column:1 / span 4}
-.sf-lock{display:inline-block;border:0;line-height:0;margin-bottom:26px}
-.sf-lock:hover{border:0}
-.sf-lock svg{width:170px;height:auto;display:block}
-.sf-desc{font-size:14.5px;line-height:1.55;color:rgba(244,241,234,.82);margin:0;max-width:32ch;text-wrap:balance}
-.sf-cred{font-size:14.5px;line-height:1.55;color:rgba(244,241,234,.55);margin:18px 0 0;max-width:none;text-wrap:balance}
-
-.sf-nav{grid-column:5 / span 4}
-.sf-nav>summary{display:none}
-.sf-h-nav{display:block}
-.sf-navcols{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.sf-navcols li{margin:0}
-.sf-navcols a,.sf-c1 a,.sf-c2 a{font-size:14.5px;line-height:1.4;display:inline-block;min-height:24px}
-
-.sf-con{grid-column:9 / span 4}
-.sf-h{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;font-weight:500;
-  letter-spacing:.16em;text-transform:uppercase;color:rgba(244,241,234,.5);margin:0 0 10px}
-.sf-c1,.sf-c2{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.sf-c2{margin-top:9px}
-.sf-c1 li,.sf-c2 li{margin:0}
-
-.sf-lang{display:flex;align-items:center;gap:9px;font-size:14.5px;margin:18px 0 0;
-  padding-top:14px;border-top:1px solid var(--on-navy-line)}
-.sf-lang a{color:rgba(244,241,234,.55);min-width:24px;text-align:center}
-.sf-lang a[aria-current="page"]{color:var(--on-navy);font-weight:500}
-.sf-lang span{color:rgba(244,241,234,.3)}
-.sf-disc{grid-column:1 / -1;font-size:12.5px;line-height:1.6;
-  color:rgba(244,241,234,.55);margin:44px 0 0;max-width:none;font-size:12px;line-height:1.55}
-.sf-rule{grid-column:1 / -1;height:1px;background:var(--on-navy-line);margin-top:28px}
-.sf-bottom{grid-column:1 / -1;display:flex;align-items:baseline;justify-content:space-between;
-  gap:24px;flex-wrap:wrap;margin-top:16px}
-.sf-copy{font-size:12px;line-height:1.55;color:rgba(244,241,234,.55);margin:0;min-width:0;flex:1 1 auto}
-
-
-.sf-dom{font-size:12px;color:rgba(244,241,234,.55);white-space:nowrap;flex:0 0 auto}
-
-/* ── 3. móvil: orden editorial, nada flotando ───────────────────────────── */
-@media(max-width:900px){
-  footer.sf{padding:44px 0 26px}
-  footer.sf .sf-wrap{display:flex;flex-direction:column;align-items:stretch}
-  /* orden obligatorio en movil; en escritorio manda grid-column */
-  .sf-id{order:1}.sf-con{order:2}.sf-nav{order:3}
-  .sf-disc{order:4}.sf-rule{order:5}.sf-bottom{order:6}
-
-  .sf-desc,.sf-cred{max-width:none}
-  .sf-c1,.sf-c2{grid-template-columns:1fr 1fr;gap:0 24px}
-  .sf-c1{margin-top:20px}.sf-c2{margin-top:0}
-  .sf-c1 li a,.sf-c2 li a{min-height:44px;display:inline-flex;align-items:center}
-  .sf-con .sf-h{display:none}
-  .sf-nav{display:block;margin-top:18px;border-top:1px solid var(--on-navy-line);
-    border-bottom:1px solid var(--on-navy-line)}
-  .sf-h-nav{display:none}
-  .sf-nav>summary{display:flex;align-items:center;justify-content:space-between;
-    min-height:48px;font-size:14.5px;color:var(--on-navy);cursor:pointer;list-style:none}
-  .sf-nav>summary::-webkit-details-marker{display:none}
-  .sf-nav>summary::after{content:"+";font-size:19px;line-height:1;color:var(--on-navy-muted)}
-  .sf-nav[open]>summary::after{content:"–"}
-  .sf-navcols{grid-template-columns:1fr 1fr;grid-auto-flow:row;grid-template-rows:none;
-    gap:0 24px;padding-bottom:4px}
-  .sf-navcols a{min-height:44px;display:inline-flex;align-items:center}
-  .sf-lang{margin-top:12px}
-  .sf-disc{margin-top:22px}
-  .sf-rule{margin-top:22px}
-  .sf-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:18px}
-
-
-}
-/* ── 4. aislamiento: el pie v3 no hereda reglas de pies anteriores ─────── */
-footer.sf a{min-width:0;min-height:0}
-footer.sf p{margin:0}
-.sf-lock{min-height:0}
-@media(max-width:900px){
-  footer.sf{padding:40px 0 26px}
-  footer.sf a{min-height:0;min-width:0}
-  .sf-c1 li a,.sf-c2 li a,.sf-navcols a{min-height:44px;display:inline-flex;align-items:center}
-  .sf-lang a{min-width:44px;min-height:44px}
-  .sf-desc,.sf-cred{font-size:14px;line-height:1.5}
-  .sf-cred{margin-top:6px}
-  .sf-disc{line-height:1.45;margin-top:12px}
-  .sf-rule{margin-top:14px}
-  .sf-bottom{margin-top:10px;gap:4px}
-  .sf-lang{margin-top:8px}
-  .sf-nav{margin-top:12px}
-  .sf-c1{margin-top:12px}
-}
-
-/* ── 5. objetivos de puntero dentro del pie ─────────────────────────────
-   44 px en anchos tactiles; 24 px (minimo AA de WCAG 2.2) con puntero.
-   Se escriben con footer.sf delante para ganar al reset de la seccion 4. */
-footer.sf .sf-lock{display:inline-flex;align-items:center;min-height:24px}
-/* un solo tamano de firma; ninguna pagina lo sobrescribe */
-footer.sf .sf-lock svg{width:170px;height:auto}
-@media(max-width:1024px) and (min-width:768px){footer.sf .sf-lock svg{width:160px}}
-@media(max-width:767px){footer.sf .sf-lock svg{width:155px}}
-@media(min-width:901px){
-  footer.sf .sf-navcols a,footer.sf .sf-c1 a,footer.sf .sf-c2 a{
-    display:inline-block;min-height:24px;line-height:24px}
-  footer.sf .sf-lang a{display:inline-block;min-width:24px;min-height:24px;
-    line-height:24px;text-align:center}
-  footer.sf .sf-dom{display:inline-block;min-height:24px;line-height:24px}
-}
-@media(max-width:900px){
-  footer.sf .sf-lock{min-height:44px}
-  footer.sf .sf-navcols a,footer.sf .sf-c1 a,footer.sf .sf-c2 a{
-    display:inline-flex;align-items:center;min-height:44px}
-  footer.sf .sf-lang a{display:inline-flex;align-items:center;justify-content:center;
-    min-width:44px;min-height:44px}
-  footer.sf .sf-nav{width:100%;align-self:stretch}
-  footer.sf .sf-nav>summary{min-height:48px;width:100%}
-  footer.sf .sf-c1 a,footer.sf .sf-c2 a{min-width:44px;justify-content:flex-start}
-  footer.sf .sf-dom{display:inline-flex;align-items:center;min-height:44px}
-}
-/* ── 6. componente canonico: nada se hereda de la pagina ────────────────
-   El pie media distinto en Home y Peatonal porque heredaba el interlineado
-   del body (1.66 vs 1.60) y el del encabezado. Aqui todo queda declarado. */
-footer.sf{line-height:1.5;font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif}
-footer.sf .sf-h{line-height:1.4}
-footer.sf .sf-navcols li,footer.sf .sf-c1 li,footer.sf .sf-c2 li{line-height:24px}
-footer.sf .sf-desc{line-height:1.55}
-footer.sf .sf-cred{line-height:1.55}
-footer.sf .sf-lang{line-height:24px}
-footer.sf .sf-copy,footer.sf .sf-dom{line-height:1.55}
-footer.sf .sf-disc{margin-top:44px;line-height:1.55}
-@media(max-width:900px){
-  footer.sf .sf-navcols li,footer.sf .sf-c1 li,footer.sf .sf-c2 li{line-height:1.5}
-  footer.sf .sf-disc{margin-top:14px;line-height:1.45}
-}
-
-/* ── 7. el contenedor vive dentro del componente ────────────────────────
-   Ni .container ni .wrap: el cierre usa los mismos tokens --max/--gut que el
-   header, identicos en las cuatro paginas y en todos los breakpoints. Asi el
-   HTML del componente es literalmente el mismo en todas. */
-footer.sf .sf-wrap,.pf .pf-grid{max-width:var(--max);margin-left:auto;margin-right:auto;
-  padding-left:var(--gut);padding-right:var(--gut)}
-
-
-/* ⟦CIERRE-V3-FIN⟧ *//* ⟦HEADER-CANON-INICIO⟧ */
-.container { max-width: var(--max); margin: 0px auto; padding: 0 var(--gut); }
-.site-header { height: 76px; padding: 0 var(--gut); background: linear-gradient(rgba(8, 11, 18, 0.42) 0%, rgba(8, 11, 18, 0) 100%); backdrop-filter: none; border-bottom: 1px solid transparent; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0px; left: 0px; right: 0px; z-index: 60; transition: background 0.4s, border-color 0.4s; }
-.site-header.scrolled { backdrop-filter: blur(14px); border-bottom-color: var(--line); background: rgba(246, 244, 239, 0.94) !important; }
-.brand-logo { position: relative; }
-.brand-logo .logo-negro, .brand-logo .logo-blanco { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transition: opacity 0.4s; }
-.brand-logo .logo-blanco { opacity: 0; }
-.site-header:not(.scrolled) .brand-logo .logo-negro { opacity: 0; }
-.site-header:not(.scrolled) .brand-logo .logo-blanco { opacity: 1; }
-.site-header:not(.scrolled) .brand-text, .site-header:not(.scrolled) .site-nav .lnk { color: rgba(255, 255, 255, 0.88); }
-.site-header:not(.scrolled) .site-nav a.cta { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.3); }
-.site-header:not(.scrolled) .lang-switch a { color: rgba(255, 255, 255, 0.55); }
-.site-header:not(.scrolled) .lang-switch a.active { color: rgba(255, 255, 255, 0.92); }
-.site-header:not(.scrolled) .lang-switch span { color: rgba(255, 255, 255, 0.28); }
-.site-header:not(.scrolled) .menu-toggle { color: rgba(255, 255, 255, 0.88); }
-.brand { display: flex; align-items: center; gap: 12px; line-height: 1; }
-.brand-logo { width: 36px; height: 36px; display: block; }
-.brand-text { font-family: "Hanken Grotesk", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -0.006em; color: var(--ink); }
-.site-nav { display: flex; align-items: center; gap: 34px; }
-.site-nav a { font-family: "Hanken Grotesk", sans-serif; font-size: 14px; font-weight: 400; color: var(--body-2); letter-spacing: 0.002em; padding: 6px 0px; }
-.site-nav a.lnk { position: relative; }
-.site-nav a.lnk::after { content: ""; position: absolute; left: 0px; bottom: -5px; height: 1px; width: 0px; background: currentcolor; transition: width 0.4s cubic-bezier(0.16, 0.7, 0.2, 1); }
-.site-nav a.lnk:hover { color: var(--ink); }
-.site-nav a.lnk:hover::after { width: 100%; }
-.site-nav a.cta { background: var(--accent); color: rgb(255, 255, 255); border-radius: 2px; padding: 9px 18px; font-size: 13px; font-weight: 500; letter-spacing: 0.015em; transition: background 0.2s; }
-.site-nav a.cta:hover { background: var(--dark); }
-.lang-switch { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.lang-switch a { font-size: 12px; color: var(--muted); padding: 4px 0px; }
-.lang-switch a.active { color: var(--accent); }
-.lang-switch span { color: var(--line); }
-.menu-toggle { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--ink); }
-.menu-toggle svg { width: 22px; height: 22px; }
-@media (max-width: 880px){
-  .site-header { padding: 0px 42px; }
-  .site-nav .lnk { display: none; }
-  .site-nav .lang-switch { display: none; }
-  .menu-toggle { display: inline-flex; }
-}
-@media (max-width: 760px){
-  .site-header { height: 64px; padding: 0px 20px; }
-  .site-nav { gap: 12px; }
-  .site-nav a.cta { padding: 8px 13px; font-size: 12.5px; }
-  .brand-logo { width: 32px; height: 32px; }
-  .brand-text { font-size: 18px; }
-}
-@media (max-width: 620px){
-  .site-nav a.cta { display: none; }
-}
-.mm { position: fixed; inset: 0px; z-index: 90; background: var(--soft); transform: translateY(-101%); transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1); display: flex; flex-direction: column; padding: 20px var(--gut); overflow-y: auto; }
-.mm.on { transform: translateY(0px); }
-.mm .top { display: flex; justify-content: space-between; align-items: center; height: 56px; border-bottom: 1px solid var(--line); }
-.mm .close { font-size: 28px; color: var(--ink); width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
-.mm nav { margin-top: 46px; display: flex; flex-direction: column; gap: 0px; }
-.mm nav a { font-family: "Hanken Grotesk", sans-serif; font-size: 28px; font-weight: 300; color: var(--ink); letter-spacing: -0.018em; padding: 16px 0px; border-bottom: 1px solid var(--line); line-height: 1.1; }
-.mm nav a em { font-style: italic; color: var(--accent); }
-.mm .foot { margin-top: auto; padding: 30px 0 calc(20px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13.5px; }
-.mm .foot a { color: var(--ink); }
-body.menu-open { overflow: hidden; }
-.mm .mobile-lang { display: flex; gap: 10px; margin-top: 26px; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
-.mm .mobile-lang a { color: var(--muted); }
-.mm .mobile-lang a.active { color: var(--accent); }
-@media (max-width: 760px){
-  .mm { padding: 14px 20px; }
-  .mm nav a { font-size: 25px; padding: 14px 0px; }
-}
-.site-header { height: var(--hdr-h); padding: 0 var(--gut); background: linear-gradient(180deg,rgba(var(--brand-navy-rgb),.55) 0%,rgba(var(--brand-navy-rgb),0) 100%); border-bottom: 1px solid transparent; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0px; left: 0px; right: 0px; z-index: 60; transition: background 0.2s, border-color 0.2s; }
-.site-header.scrolled { backdrop-filter: blur(12px); border-bottom-color: var(--on-navy-line); background: rgba(var(--brand-navy-rgb),.96) !important; }
-.site-header .lock { display: block; width: var(--hdr-logo-w); height: var(--hdr-logo-h); }
-.site-header .site-nav .lnk, .site-header:not(.scrolled) .site-nav .lnk { color: var(--on-navy-muted); font-size: var(--text-nav); }
-.site-header .site-nav .lnk:hover { color: var(--on-navy); }
-.site-header .site-nav .lnk::after { background: var(--on-navy); }
-.site-header .site-nav a.lnk[aria-current="true"] { color: var(--on-navy); }
-.site-header .site-nav a.lnk[aria-current="true"]::after { width: 100%; }
-.site-header .site-nav a.cta, .site-header:not(.scrolled) .site-nav a.cta { background: transparent; border: 1px solid var(--on-navy-line); color: var(--on-navy); min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap; font-size: var(--text-small); }
-.site-header .site-nav a.cta:hover { background: rgba(244, 241, 234, 0.1); border-color: var(--on-navy); }
-.site-header .lang-switch a, .site-header:not(.scrolled) .lang-switch a { color: var(--on-navy-muted); }
-.site-header .lang-switch a.active, .site-header:not(.scrolled) .lang-switch a.active { color: var(--on-navy); }
-.site-header .lang-switch span, .site-header:not(.scrolled) .lang-switch span { color: rgba(244, 241, 234, 0.3); }
-.site-header .menu-toggle, .site-header:not(.scrolled) .menu-toggle { color: var(--on-navy); }
-@media (max-width: 760px){
-  .site-header { height: var(--hdr-h-sm); }
-  .site-header .lock { width: 150px; height: 36px; }
-}
-.site-header { padding: 0px; }
-.hdr-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; height: 100%; }
-.site-header.scrolled { height: 74px; }
-.hdr, .site-header { height: var(--hdr-h); }
-.hdr[data-s="1"], .site-header.scrolled { height: var(--hdr-h-s); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(5, 14, 30, 0.1); transition: height 0.2s, background 0.2s, border-color 0.2s; background: rgba(246, 244, 239, 0.95) !important; }
-.hdr[data-s="1"]::before { opacity: 0; }
-.hdr[data-s="1"] .nav a, .site-header.scrolled .site-nav .lnk { color: rgb(58, 58, 54); }
-.hdr[data-s="1"] .nav a:hover, .hdr[data-s="1"] .nav a[aria-current="true"], .site-header.scrolled .site-nav .lnk:hover { color: rgb(5, 14, 30); }
-.hdr[data-s="1"] .nav a[aria-current="true"] { border-bottom-color: rgb(5, 14, 30); }
-.hdr[data-s="1"] .nav a.cta, .site-header.scrolled .site-nav a.cta { border-color: rgb(5, 14, 30) !important; color: rgb(5, 14, 30) !important; background: transparent !important; }
-.hdr[data-s="1"] .nav a.cta:hover { background: rgba(5, 14, 30, 0.06) !important; }
-.hdr[data-s="1"] .lang a, .site-header.scrolled .lang-switch a { color: rgb(90, 95, 105); }
-.hdr[data-s="1"] .lang a[aria-current="true"], .site-header.scrolled .lang-switch a.active { color: rgb(5, 14, 30); }
-.hdr[data-s="1"] .lock [fill="#F4F1EA"], .site-header.scrolled .lock [fill="#F4F1EA"] { fill: rgb(5, 14, 30); }
-.hdr[data-s="1"] .lock [stroke="#F4F1EA"], .site-header.scrolled .lock [stroke="#F4F1EA"] { stroke: rgb(5, 14, 30); }
-.site-header.scrolled .menu-toggle { color: rgb(5, 14, 30); }
-footer .container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 0px 40px; }
-@media (max-width: 880px){
-  footer .container { grid-template-columns: 1fr 1fr; gap: 0px 28px; }
-}
-@media (max-width: 520px){
-  footer .container { grid-template-columns: 1fr; }
-}
-footer .container { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 0px 56px; }
-footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.2fr; gap: 0px 48px; align-items: start; }
-@media (max-width: 880px){
-  footer .container { grid-template-columns: 1fr 1fr; gap: 36px 32px; }
-}
-@media (max-width: 560px){
-  footer .container { grid-template-columns: 1fr; gap: 0px; }
-}
-footer .container { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; gap: 0px 48px; align-items: start; }
-@media (max-width: 880px){
-  footer .container { grid-template-columns: 1fr 1fr; gap: 0px 32px; }
-}
-.lang-switch a { min-width: 24px; min-height: 24px; display: inline-flex; align-items: center; justify-content: center; padding: 0px 5px; }
-@media (min-width: 901px){
-  .site-nav .lnk { min-height: 26px; padding-block: 4px; }
-}
-@media (max-width: 900px){
-  .site-header .brand, .mm .brand { min-height: 44px; display: inline-flex; align-items: center; }
-  .menu-toggle, .mm .close { min-width: 44px; min-height: 44px; }
-  .mm nav a, .mobile-lang a, .mm .foot a { min-height: 44px; display: inline-flex; align-items: center; }
-}
-@media (min-width: 901px){
-  .site-nav .lnk { min-height: 44px; display: inline-flex; align-items: center; padding-block: 0px; }
-  .site-nav a.cta { min-height: 44px; display: inline-flex; align-items: center; }
-  .lang-switch a { min-width: 44px; min-height: 44px; }
-}
-@media (max-width: 900px){
-  .mobile-lang a { min-width: 44px; }
-}
-@media (min-width: 901px){
-  .site-nav .lnk, .nav a { min-width: 44px; justify-content: center; }
-}
-.mm nav a, .mm .mobile-lang a, .mm .foot a { min-height: 44px; display: inline-flex; align-items: center; }
-.mm .mobile-lang a { min-width: 44px; justify-content: center; }
-.mm .close, .menu-toggle { min-width: 44px; min-height: 44px; }
-.site-header, .hdr { z-index: 60; transition: height 0.2s, background 0.2s, backdrop-filter 0.2s; border-bottom: 1px solid transparent; }
-.site-header.scrolled, .hdr[data-s="1"] { border-bottom: 1px solid rgba(5, 14, 30, 0.1); }
-.site-header, .mm { font-family: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.66; letter-spacing: -0.004em; }
-.site-header a, .mm a { text-decoration: none; }
-.site-header .brand { line-height: 0; }
-.site-header .menu-toggle { background: none; border: 0px; padding: 0px; cursor: pointer; font: inherit; }
-/* el header no hereda del documento: todo declarado */
-.site-header,.mm{font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
-  line-height:1.66;letter-spacing:-.004em}
-.site-header a,.mm a{text-decoration:none}
-.site-header .brand{line-height:0}
-/* el lockup es una sola area pulsable de 44 px minimo; el tamano visual del
-   SVG no cambia y ninguna capa decorativa intercepta el clic */
-.site-header .brand,.mm .brand{position:relative;z-index:2;min-height:44px;
-  display:inline-flex;align-items:center}
-.site-header::before,.site-header::after{pointer-events:none}
-.mm .brand{min-width:44px}
-.site-header .menu-toggle{background:none;border:0;padding:0;cursor:pointer;font:inherit}
-
-/* ⟦HEADER-CANON-FIN⟧ *//* ⟦RITMO-INICIO⟧ */
+/* ⟦RITMO-INICIO⟧ */
 /* ═══════════════════════════════════════════════════════════════════════════
    RITMO VERTICAL — UN SOLO SISTEMA
    El home tenia --sec:168px y encima una capa de parches por seccion
@@ -1372,37 +1010,9 @@ body > section:not(.hero):not(.pf){
 .occ-grid .uh h3{font-size:24px}
 @media(max-width:760px){.occ-grid{grid-template-columns:1fr;gap:28px}}
 /* ⟦OCUPADOS-FIN⟧ */
-/* ⟦CTA-HEADER-INICIO⟧
-   Sobre el hero el boton se apoyaba en un filete al 45 %: medido lado a lado
-   contra la foto daba 2,33-3,61. Con --on-navy-muted (68 %), que ya es token
-   del sistema, sube a 3,34-6,17 y los cuatro lados pasan 3:1 sin tocar el
-   fondo del header. Al rotulo se le pone la MISMA sombra que ya llevan el h1
-   y el lead sobre esta foto, y solo mientras el header es transparente.
-   Hover, pulsacion y foco usan los valores ya aprobados. Caja, padding,
-   tipografia y posicion sin cambios: sigue siendo el secundario del marfil. */
-.site-header:not(.scrolled) .site-nav a.cta,
-.site-header:not(.scrolled) .nav a.cta{
-  border-color:var(--on-navy-muted);
-  text-shadow:0 1px 14px rgba(0,0,0,.45)}
-.site-header:not(.scrolled) .site-nav a.cta:hover,
-.site-header:not(.scrolled) .site-nav a.cta:active,
-.site-header:not(.scrolled) .nav a.cta:hover,
-.site-header:not(.scrolled) .nav a.cta:active{
-  border-color:var(--on-navy);background:rgba(244,241,234,.10)}
-.site-nav a.cta:focus-visible,.nav a.cta:focus-visible{
-  outline:2px solid var(--accent-sk,var(--sky,#9fb6d4));outline-offset:3px}
-/* ⟦CTA-HEADER-FIN⟧ */
 
-/* ⟦MENU-CERRADO-INICIO⟧
-   El panel se ocultaba solo con transform: fuera de pantalla pero visible para
-   el teclado y para el lector. Medido: 13-15 enlaces enfocables con Tab y
-   presentes en el arbol de accesibilidad con el menu cerrado, tambien en
-   escritorio. Mismas tres declaraciones que ya tenia la home en espanol.
-   No cambia nada visible: el panel abierto sigue igual. */
-.mm{visibility:hidden}
-.mm.on{visibility:visible}
-@media(min-width:881px){.mm{display:none}}
-/* ⟦MENU-CERRADO-FIN⟧ */
+
+
 
 /* ── pasada de integración 21-sep-2026: jerarquía alrededor de la fachada ──
    La nota baja a caption; se retiran la leyenda gráfica, el párrafo permanente
@@ -1461,17 +1071,7 @@ body > section:not(.hero):not(.pf){
   .facswitch{gap:10px;margin-bottom:12px}
   .facnav button{min-height:44px;padding:0 13px;font-size:13px}
 }
-/* ⟦NAV-ACTIVO-INICIO⟧
-   El enlace activo se pintaba con --on-navy (marfil), que es el color para la
-   cabecera transparente sobre el hero. Con la cabecera desplazada el fondo es
-   papel rgba(246,244,239,.95): marfil sobre papel da 1.03:1, ilegible. La regla
-   del estado desplazado pinta en tinta pero pierde por especificidad, (0,4,0)
-   frente a (0,4,1). Se restituye con una regla propia del estado desplazado.
-   Afecta a cualquier enlace con aria-current, no solo a "La plaza". */
-.site-header.scrolled .site-nav a.lnk[aria-current="true"],
-.hdr[data-s="1"] .nav a[aria-current="true"]{color:rgb(5,14,30)}
-.site-header.scrolled .site-nav a.lnk[aria-current="true"]::after{background:rgb(5,14,30)}
-/* ⟦NAV-ACTIVO-FIN⟧ */
+
 /* ⟦TRAMO-21-22-INICIO⟧
    El plano rotulado documenta 21 y 22 como un solo recuadro. La fachada los
    senala juntos y la eleccion se hace aqui, con metraje a la vista. */
@@ -1500,7 +1100,7 @@ body > section:not(.hero):not(.pf){
 .ubic{margin-top:88px;padding-top:40px;border-top:1px solid var(--line)}
 .ubic-h{font-family:'Newsreader',serif;font-weight:300;font-size:clamp(24px,2.3vw,30px);letter-spacing:-.015em;line-height:1.2;margin:0 0 8px}
 .ubic-p{margin:0 0 22px;font-size:15.5px;color:var(--body);max-width:62ch}
-.facnote{color:var(--muted);font-size:13px;max-width:66ch}
+.facnote{color:var(--muted);font-size:var(--fs-note);line-height:1.55;max-width:min(66ch,32em)}
 /* geometria verificada 21-sep-2026: cada local con su propio frente */
 .faclayer .zona[data-st="available"]{stroke:var(--ivory);stroke-opacity:.9;stroke-width:1.3;vector-effect:non-scaling-stroke}
 .faclayer .zona[data-st="available"][data-sel="1"]{stroke:var(--brand-navy);stroke-opacity:1}
@@ -1548,51 +1148,81 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 .sf-h{color:rgba(244,241,234,.66)}
 .sf-lang a{color:rgba(244,241,234,.72)}
 /* ⟦P68-13OCT-FIN⟧ */
+
+/* ====== Peatonal 68 · reconciliación con el sistema compartido ======
+   La página conserva su estructura y su lógica; lo que cambia es la escala
+   tipográfica, el ritmo de las bandas y los botones, ahora comunes al sitio. */
+.wrap{max-width:var(--shell);padding:0 var(--shell-pad)}
+section{padding:var(--band) 0}
+h1{font-size:var(--fs-h1);line-height:var(--lh-h1);letter-spacing:-.024em;margin:0 0 var(--s5)}
+h2{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);line-height:var(--lh-h2);letter-spacing:-.02em}
+h3{font-family:'Hanken Grotesk',sans-serif;font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:400;letter-spacing:-.012em}
+.lead{font-size:var(--fs-lead);line-height:var(--lh-lead);max-width:var(--measure);margin:var(--s5) 0 0}
+.eb{font-size:var(--fs-micro);font-weight:600;letter-spacing:.14em}
+.ebrow{margin-bottom:var(--s6)}
+.btn{font-size:var(--fs-ui);padding:15px 24px;min-height:48px}
+.hero{min-height:clamp(540px,80vh,760px)}
+.hero .wrap{padding-top:calc(var(--hdr-h) + 72px);padding-bottom:clamp(40px,4vw,56px)}
+.hero h1{color:#fff;text-wrap:balance}
+.hlead{font-size:clamp(17px,1.5vw,20.5px);margin:var(--s6) 0 var(--s7)}
+.acts{gap:var(--s4);margin-bottom:var(--s8)}
+.fig b{font-size:clamp(26px,2.6vw,36px)}
+.fig span{font-size:var(--fs-micro);letter-spacing:.13em}
+
+/* Sub-navegación de la página, bajo el hero. No es fija: no tapa nada. */
+.pagenav{border-bottom:1px solid var(--line);background:var(--soft)}
+.pagenav .wrap{display:flex;align-items:center;gap:var(--s5);
+  overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.pagenav .lbl{font-size:var(--fs-micro);font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap;flex:none}
+.pagenav a{font-size:var(--fs-ui);color:var(--body);white-space:nowrap;
+  padding:17px 0;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .18s,border-color .18s}
+.pagenav a:hover{color:var(--ink);border-bottom-color:var(--line)}
+@media(max-width:760px){.pagenav .lbl{display:none}.pagenav .wrap{gap:var(--s5)}}
+
+/* Grupos del cajón móvil */
+.mm-group{font-size:var(--fs-micro);font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:var(--s6) 0 var(--s3)}
+.mm-sections{display:flex;flex-direction:column}
+.mm nav + .mm-group{margin-top:var(--s6)}
+
+/* El cierre comercial y el pie son los del sistema: su ancho manda sobre .wrap */
+.band--navy .shell,.sf-in{max-width:var(--shell)}
+
 </style>
 <noscript><style>.r{opacity:1!important;transform:none!important}.faq-item,.faq details{opacity:1!important}
 </style></noscript>
-<header class="site-header"><div class="container hdr-in">
-  <a href="https://www.spotonerealty.com/" class="brand" aria-label="Ir al inicio de SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a>
-  <nav class="site-nav">
-    <a href="#disponibilidad" class="lnk">Disponibilidad</a><a href="#plaza" class="lnk">La plaza</a><a href="#ubicacion" class="lnk">Ubicación</a><a href="#faq" class="lnk">FAQ</a>
-    <a href="#contacto" class="cta">Consultar</a>
-    <div class="lang-switch" aria-label="Idioma">
-      <a href="https://www.spotonerealty.com/peatonal68/" class="active" aria-current="page" lang="es">ES</a>
-      <span aria-hidden="true">/</span>
-      <a href="https://www.spotonerealty.com/peatonal68/en/" lang="en">EN</a>
-    </div>
-    <button class="menu-toggle" id="menuOpen" aria-label="Menú" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
-  </nav>
-</div></header>
-
-<div class="mm" id="mobileMenu">
-  <div class="top">
-    <a href="https://www.spotonerealty.com/" class="brand" aria-label="Ir al inicio de SpotOne Realty">
-      <img src="https://www.spotonerealty.com/images/logo-mark-negro.png" alt="" class="brand-logo" width="1080" height="1080">
-      <span class="brand-text">SpotOne Realty</span>
-    </a>
-    <button class="close" id="menuClose" aria-label="Cerrar">&times;</button>
-  </div>
-  <nav>
-    <a href="#disponibilidad">Disponibilidad</a>
-    <a href="#plaza">La plaza</a>
-    <a href="#ubicacion">Ubicación</a>
-    <a href="#faq">Preguntas</a>
-    <a href="#contacto">Consultar</a>
-    <a href="https://www.spotonerealty.com/">SpotOne Realty</a>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header site-header--over">
+  <div class="hdr-in">
+    <a class="brand" href="/" aria-label="SpotOne Realty — Inicio"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="lnk" href="/servicios/">Servicios</a><a class="lnk" href="/propiedades/">Propiedades</a><a class="lnk" href="/relocation/">Relocation</a><a class="lnk" href="/criterio/">Criterio</a><a class="lnk" href="/dario/">Dario</a>
+      <a class="cta" href="#contacto">Conversemos</a>
+      <div class="lang"><a href="/peatonal68/" class="active" aria-current="true" lang="es">ES</a><span aria-hidden="true">/</span><a href="/peatonal68/en/" lang="en">EN</a></div>
+      <button class="menu-toggle" id="menuOpen" aria-label="Abrir el menú" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
     </nav>
-  <div class="mobile-lang" aria-label="Idioma">
-    <a href="https://www.spotonerealty.com/peatonal68/" class="active" aria-current="page" lang="es">Español</a>
-    <span aria-hidden="true">/</span>
-    <a href="https://www.spotonerealty.com/peatonal68/en/" lang="en">English</a>
   </div>
-  <div class="foot">
+</header>
+
+<div class="mm" id="mobileMenu" hidden>
+  <div class="mm-top">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Cerrar el menú">&times;</button>
+  </div>
+  <p class="mm-group">En esta página</p><nav class="mm-sections" aria-label="Secciones de esta página"><a href="#disponibilidad">Disponibilidad</a><a href="#plaza">La plaza</a><a href="#ubicacion">Ubicación</a><a href="#faq">Preguntas</a></nav><p class="mm-group">SpotOne Realty</p>
+  <nav aria-label="Menú"><a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/propiedades/">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/">Criterio</a><a href="/dario/">Dario</a><a href="/peatonal68/" class="here" aria-current="page">Plaza La Peatonal 68</a>
+    <a href="#contacto">Conversemos</a>
+  </nav>
+  <div class="mm-lang"><a href="/peatonal68/" class="active" lang="es">Español</a><span aria-hidden="true">/</span><a href="/peatonal68/en/" lang="en">English</a></div>
+  <div class="mm-foot">
     <a href="tel:+50766758127">+507 6675-8127</a>
     <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
-    <a href="https://instagram.com/spotonerealty">@spotonerealty</a>
+    <a href="https://instagram.com/spotonerealty" rel="noopener">@spotonerealty</a>
   </div>
 </div>
 
+<main id="main">
 <section class="hero" style="padding:0"><img src="img/hero.jpg" alt="Plaza La Peatonal 68 de noche, sobre Calle 68 Este, San Francisco" width="1332" height="1065">
 <div class="wrap">
 <div class="ebrow"><span class="eb">San Francisco · Calle 68 Este</span><span class="r" style="background:rgba(255,255,255,.25)"></span><span class="eb">Locales comerciales en alquiler</span></div>
@@ -1608,6 +1238,8 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 <p class="hcharges">Mantenimiento, aseo e impuestos aparte.</p>
 <p class="repline">Representación exclusiva · Dario Jhangimal · PN-1240 · SpotOne Realty</p>
 </div></section>
+<nav class="pagenav" aria-label="En esta página"><div class="wrap"><span class="lbl">En esta página</span><a href="#disponibilidad">Disponibilidad</a><a href="#plaza">La plaza</a><a href="#ubicacion">Ubicación</a><a href="#faq">Preguntas</a></div></nav>
+
 
 <section id="disponibilidad"><div class="wrap">
 <div class="ebrow"><span class="eb">Disponibilidad</span><span class="r"></span></div>
@@ -1684,7 +1316,7 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 </div>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section class="p-band"><div class="wrap">
 <div class="ebrow"><span class="eb">Quiénes están adentro</span><span class="r"></span></div>
 <h2>La plaza ya está operando</h2>
 <p class="lead">La mezcla incluye ocho restaurantes en planta baja y, en los niveles superiores, servicios de salud, belleza, actividad física y comercios especializados, además de la administración. El 15 y el 21 ya están alquilados y sus negocios todavía no figuran en este directorio.</p>
@@ -1704,7 +1336,7 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 <div style="margin-top:30px"><a class="btn btn-o" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Cuéntame qué negocio vas a operar</a></div>
 </div></section>
 
-<section id="ubicacion" class="band"><div class="wrap">
+<section id="ubicacion" class="p-band"><div class="wrap">
 <div class="ebrow"><span class="eb">Infraestructura y acceso</span><span class="r"></span></div>
 <h2>Calle 68 Este, San Francisco</h2>
 <div class="locgrid">
@@ -1725,9 +1357,57 @@ footer.sf .sf-copy,footer.sf .sf-dom{font-size:13px;color:rgba(244,241,234,.72)}
 <div class="faq" data-faq><details><summary>¿El canon incluye el mantenimiento?</summary><div class="a"><p>No. El canon de cada local es de $1,800.00 al mes ($18.00 por m²). Aparte se pagan mantenimiento ($250.00) y aseo ($15.00): $2,065.00 al mes antes de impuestos. Cada ficha lo muestra en <i>Ver desglose mensual</i>.</p></div></details><details><summary>¿Cuánto necesito para firmar?</summary><div class="a"><p>Para firmar se requiere el pago del <b>primer mes y un mes de depósito de garantía</b>.</p></div></details><details><summary>¿Qué gastos no están incluidos?</summary><div class="a"><p>No están incluidos electricidad, internet, permisos, adecuaciones, seguros, consumos propios del negocio ni otros servicios que el inquilino contrate directamente.</p></div></details><details><summary>¿En qué condición se entrega el local?</summary><div class="a"><p>El Local 22 se muestra como una planta abierta con un baño. La separación respecto al Local 21 y la condición de entrega de ambos locales se confirmarán con la administración antes de contratar.</p><p>Antes de firmar se deja por escrito qué permanece, qué se retira y en qué condición se entrega.</p></div></details><details><summary>¿Qué giros pueden operar en la plaza?</summary><div class="a"><p>Cada propuesta se evalúa según su compatibilidad con la mezcla comercial, la infraestructura disponible y las aprobaciones requeridas.</p><p>Si me indicas qué actividad vas a desarrollar, verifico cuáles locales pueden funcionar antes de coordinar una visita.</p></div></details><details><summary>¿Todos los locales tienen agua, desagüe, gas y extracción?</summary><div class="a"><p>No. La infraestructura varía por local.</p><p>Si tu negocio requiere agua, desagüe, gas, extracción o una potencia eléctrica específica, debe verificarse antes de presentar una propuesta.</p></div></details><details><summary>¿Puedo alquilar más de un local?</summary><div class="a"><p>El 22 y el 23 son contiguos en el segundo piso y suman 200 m². La contratación conjunta todavía no está confirmada con la administración y no hay un canon combinado definido. Si te interesa tomar los dos, dímelo y lo consulto antes de ofrecerlo.</p></div></details><details><summary>¿Cuáles son las medidas de frente y fondo?</summary><div class="a"><p>Varían por local. Indícame el número y te envío el plano y las dimensiones disponibles.</p></div></details><details><summary>¿Cómo funcionan los estacionamientos?</summary><div class="a"><p>La plaza dispone de 60 estacionamientos: catorce en planta baja y cuarenta y seis bajo techo en el sótano, dos de ellos habilitados para personas con discapacidad.</p><p>Cada contrato contempla un espacio para uso del arrendatario. Cuando no se utiliza, permanece disponible para los clientes de la plaza.</p></div></details><details><summary>¿Cómo coordino una visita?</summary><div class="a"><p>Indícame el local de interés, el tipo de negocio y cualquier requerimiento técnico indispensable.</p><p>Primero confirmo que el espacio y la infraestructura tengan sentido para tu operación; después coordinamos la visita.</p></div></details></div>
 </div></section>
 
-<section class="pf" id="contacto"><div class="pf-grid"><div class="pf-l"><p class="pf-eb">Conversemos</p><h2 class="pf-h">Revisemos qué local encaja con tu operación.</h2><p class="pf-p">Dime el giro y las instalaciones que necesitas. Reviso si el 22 o el 23 encaja con tu operación antes de coordinar una visita.</p></div><div class="pf-r"><p class="pf-cred"><b>Dario Jhangimal</b>Corredor de bienes raíces · PN-1240<br>Representante exclusivo de Plaza La Peatonal 68</p><div class="pf-acts"><a class="pf-b1" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5 4.9 16A8.2 8.2 0 1 1 8 19.1l-4.5 1.4Z"/><path d="M9 9.4c.2 1 .7 2 1.5 2.8.8.8 1.8 1.4 2.8 1.6l1-1.2 2 .9-.2 1.3c-1.9.5-4-.4-5.6-2-1.6-1.6-2.4-3.7-2-5.6l1.3-.2.9 2Z"/></svg><span>Conversar por WhatsApp</span></a></div></div></div></section>
+</main>
 
-<footer class="sf"><div class="sf-wrap"><div class="sf-id"><a class="sf-lock" href="https://www.spotonerealty.com/" aria-label="SpotOne Realty"><svg class="lock" width="190" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="96.81 0 1351.64 328.09"><g transform="translate(40.00,40.00) scale(0.248092)"><rect x="238" y="238" width="524" height="524" fill="none" stroke="#F4F1EA" stroke-width="18"/><circle cx="597" cy="587" r="32" fill="#F4F1EA"/></g><g transform="translate(318.09,214.05) scale(0.143472,-0.143472)" fill="#F4F1EA"><path transform="translate(0.00,0.00)" d="M294 -12Q187 -12 118.5 44.0Q50 100 35 193L134 217Q145 149 189.0 114.0Q233 79 297 79Q334 79 362.5 92.5Q391 106 408.0 131.5Q425 157 425 189Q425 223 406.5 245.0Q388 267 354.5 284.5Q321 302 274 320Q213 343 169.5 370.0Q126 397 102.5 434.5Q79 472 79 525Q79 579 105.5 620.5Q132 662 180.0 686.0Q228 710 291 710Q358 710 410.5 679.5Q463 649 494 588L413 538Q391 578 359.5 599.0Q328 620 288 620Q257 620 232.5 608.0Q208 596 194.5 575.5Q181 555 181 527Q181 498 197.5 477.0Q214 456 246.5 439.5Q279 423 328 405Q390 381 434.0 353.5Q478 326 502.0 288.0Q526 250 526 195Q526 135 496.5 88.5Q467 42 415.0 15.0Q363 -12 294 -12Z"/><path transform="translate(568.00,0.00)" d="M68 -204V493H166V351L138 360Q151 409 176.5 440.0Q202 471 238.0 486.5Q274 502 318 502Q384 502 433.5 468.5Q483 435 510.0 377.0Q537 319 537 246Q537 168 508.0 110.5Q479 53 429.0 22.0Q379 -9 318 -9Q274 -9 237.5 8.0Q201 25 176.0 55.5Q151 86 141 128L166 142V-204ZM297 81Q340 81 371.5 101.5Q403 122 421.0 159.5Q439 197 439 246Q439 295 421.0 332.5Q403 370 371.5 391.0Q340 412 297 412Q255 412 223.5 391.0Q192 370 174.5 332.5Q157 295 157 246Q157 197 174.5 159.5Q192 122 223.5 101.5Q255 81 297 81Z"/><path transform="translate(1151.00,0.00)" d="M288 -9Q218 -9 163.0 24.0Q108 57 76.5 115.0Q45 173 45 247Q45 321 76.0 378.5Q107 436 162.5 469.0Q218 502 288 502Q359 502 413.0 469.0Q467 436 498.5 378.5Q530 321 530 247Q530 173 498.5 115.5Q467 58 412.5 24.5Q358 -9 288 -9ZM288 78Q332 78 364.5 99.0Q397 120 414.5 158.0Q432 196 432 247Q432 299 414.5 337.0Q397 375 364.5 395.5Q332 416 288 416Q243 416 210.5 395.0Q178 374 160.5 336.5Q143 299 143 247Q143 196 160.5 158.0Q178 120 210.5 99.0Q243 78 288 78Z"/><path transform="translate(1717.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(2070.00,0.00)" d="M372 -13Q275 -13 201.5 32.0Q128 77 87.0 158.5Q46 240 46 348Q46 457 87.0 538.5Q128 620 201.5 665.0Q275 710 372 710Q471 710 545.0 665.0Q619 620 660.0 538.5Q701 457 701 348Q701 240 659.5 158.5Q618 77 544.0 32.0Q470 -13 372 -13ZM372 84Q442 84 492.0 116.5Q542 149 570.0 208.5Q598 268 598 348Q598 429 570.0 488.5Q542 548 492.0 580.5Q442 613 372 613Q304 613 253.5 581.0Q203 549 175.5 489.5Q148 430 148 348Q148 267 175.5 207.5Q203 148 253.5 116.0Q304 84 372 84Z"/><path transform="translate(2768.00,0.00)" d="M68 0V493H167V386L147 380Q160 421 184.5 447.5Q209 474 242.5 488.0Q276 502 315 502Q397 502 443.5 454.5Q490 407 490 316V0H392V280Q392 351 366.5 384.0Q341 417 288 417Q248 417 221.5 399.0Q195 381 181.0 342.0Q167 303 167 243V0Z"/><path transform="translate(3321.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(4121.00,0.00)" d="M75 0V697H290Q372 697 423.5 673.0Q475 649 499.5 604.5Q524 560 524 499Q524 409 472.5 358.0Q421 307 324 299Q307 298 285.0 298.0Q263 298 244 298H177V0ZM461 0 282 310 386 323 578 0ZM177 388H280Q322 388 353.5 398.5Q385 409 404.0 433.0Q423 457 423 498Q423 539 404.0 562.5Q385 586 353.0 596.0Q321 606 280 606H177Z"/><path transform="translate(4703.00,0.00)" d="M280 -9Q220 -9 176.0 11.0Q132 31 103.0 66.5Q74 102 59.5 147.5Q45 193 45 243Q45 293 59.0 339.5Q73 386 101.0 422.5Q129 459 171.5 480.5Q214 502 272 502Q330 502 372.0 482.5Q414 463 441.0 428.5Q468 394 481.5 351.0Q495 308 495 260Q495 255 494.5 241.5Q494 228 492 216H143Q146 150 183.5 114.5Q221 79 283 79Q325 79 358.0 92.5Q391 106 419 135L479 73Q450 44 419.5 26.0Q389 8 355.5 -0.5Q322 -9 280 -9ZM398 265Q400 273 400.5 281.0Q401 289 401 297Q401 320 393.0 342.0Q385 364 369.0 381.5Q353 399 329.5 409.5Q306 420 275 420Q234 420 205.0 401.5Q176 383 160.5 353.0Q145 323 142 288H430Z"/><path transform="translate(5243.00,0.00)" d="M390 0 382 91V310Q382 362 352.0 390.0Q322 418 265 418Q225 418 188.5 402.0Q152 386 119 350L58 413Q102 459 155.5 480.5Q209 502 272 502Q371 502 425.5 451.5Q480 401 480 310V0ZM231 -9Q176 -9 134.0 11.0Q92 31 69.0 66.5Q46 102 46 149Q46 190 63.0 219.5Q80 249 107 265Q132 281 164.5 287.5Q197 294 234 294H391V220H248Q228 220 206.5 216.5Q185 213 170 202Q158 193 151.0 179.5Q144 166 144 148Q144 113 171.0 92.0Q198 71 243 71Q281 71 312.5 88.5Q344 106 363.0 136.5Q382 167 382 206L417 160Q408 108 382.0 69.5Q356 31 317.5 11.0Q279 -9 231 -9Z"/><path transform="translate(5785.00,0.00)" d="M173 -9Q126 -9 96.0 20.0Q66 49 66 112V697H163V131Q163 105 174.5 93.5Q186 82 205 82Q213 82 223.5 83.5Q234 85 245 89V6Q227 -2 207.5 -5.5Q188 -9 173 -9Z"/><path transform="translate(6046.00,0.00)" d="M240 -9Q204 -9 173.5 5.0Q143 19 125.5 50.5Q108 82 108 132V619L207 674V158Q207 117 219.5 94.5Q232 72 266 72Q276 72 289.5 74.5Q303 77 319 81V5Q299 -2 279.0 -5.5Q259 -9 240 -9ZM10 417V493H319V417Z"/><path transform="translate(6399.00,0.00)" d="M114 -203 210 29 20 493H128L262 127L398 493H504L221 -203Z"/></g></svg></a><p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p><p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces&nbsp;· PN-1240</p></div><details class="sf-nav"><summary>Enlaces</summary><h2 class="sf-h sf-h-nav">Enlaces</h2><ul class="sf-navcols"><li><a href="https://www.spotonerealty.com/#que-hago">Qué hago</a></li><li><a href="https://www.spotonerealty.com/#relocation">Relocation</a></li><li><a href="https://www.spotonerealty.com/criterio/">Criterio</a></li><li><a href="https://www.spotonerealty.com/#metodo">Cómo trabajo</a></li><li><a href="https://www.spotonerealty.com/#dario">Sobre Dario</a></li><li><a href="https://www.spotonerealty.com/peatonal68/">Plaza La Peatonal 68</a></li></ul></details><div class="sf-con"><h2 class="sf-h">Contacto</h2><ul class="sf-c1"><li><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">WhatsApp</a></li><li><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li></ul><ul class="sf-c2"><li><a href="https://instagram.com/spotonerealty" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul><p class="sf-lang"><a href="https://www.spotonerealty.com/peatonal68/" aria-current="page" lang="es">ES</a><span aria-hidden="true">·</span><a href="https://www.spotonerealty.com/peatonal68/en/" lang="en">EN</a></p></div><p class="sf-disc">Plaza La Peatonal 68 es comercializada bajo representación exclusiva de Dario Jhangimal, corredor de bienes raíces PN-1240. Los cánones publicados no incluyen impuestos. Cada ficha muestra mantenimiento y aseo, y el desglose mensual presenta el total mensual antes de impuestos. Disponibilidad, precios y condiciones están sujetos a confirmación.</p><div class="sf-rule"></div><div class="sf-bottom"><p class="sf-copy">© 2026 SpotOne Realty · Panamá · Licencia PN-1240</p><a class="sf-dom" href="https://www.spotonerealty.com/">spotonerealty.com</a></div></div></footer>
+<section class="band band--warm band--contact" id="contacto">
+  <div class="shell">
+    <div class="pf">
+      <div>
+        <span class="eyebrow">Conversemos</span>
+        <h2>Revisemos qué local encaja con tu operación.</h2>
+        <p class="lead" style="margin-top:var(--s5)">Dime el giro y las instalaciones que necesitas. Reviso si el 22 o el 23 encaja con tu operación antes de coordinar una visita.</p>
+      </div>
+      <div class="pf-r">
+        <p class="note" style="margin-bottom:var(--s5)">Dario Jhangimal · Corredor de bienes raíces · PN-1240 · Representante exclusivo de Plaza La Peatonal 68</p>
+        <div class="pf-acts">
+          <a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.86-.87 2.1 0 1.23.9 2.43 1.02 2.59.12.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg><span>Conversar por WhatsApp</span></a>
+          <a class="btn btn--ghost" href="mailto:info@spotonerealty.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.9" y="4.9" width="18.2" height="14.2" stroke="currentColor" stroke-width="1.8"/><path d="m3.6 6.1 8.4 6.2 8.4-6.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Escribir por correo</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="sf">
+  <div class="sf-in">
+    <div class="sf-grid">
+      <div class="sf-brand">
+        <a class="mark" href="/" aria-label="SpotOne Realty"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span>SpotOne Realty</span></a>
+        <p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p>
+        <p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces&nbsp;· PN-1240</p>
+      </div>
+      <div>
+        <h2 class="sf-h">Navegación</h2>
+        <ul><li><a href="/">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/propiedades/">Propiedades</a></li><li><a href="/relocation/">Relocation</a></li><li><a href="/criterio/">Criterio</a></li><li><a href="/dario/">Dario</a></li><li><a href="/peatonal68/">Plaza La Peatonal 68</a></li></ul>
+      </div>
+      <div>
+        <h2 class="sf-h">Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li>
+          <li><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <p class="sf-lang"><a href="/" lang="es">ES</a><span aria-hidden="true">·</span><a href="/index-en.html" lang="en">EN</a></p>
+      </div>
+    </div>
+    <p class="sf-disc">Plaza La Peatonal 68 es comercializada bajo representación exclusiva de Dario Jhangimal, corredor de bienes raíces PN-1240. Los cánones publicados no incluyen impuestos. Cada ficha muestra mantenimiento y aseo, y el desglose mensual presenta el total mensual antes de impuestos. Disponibilidad, precios y condiciones están sujetos a confirmación.</p>
+    <div class="sf-bottom">
+      <span>© 2026 SpotOne Realty · Panamá · Licencia PN-1240</span>
+      <a href="https://www.spotonerealty.com/">spotonerealty.com</a>
+    </div>
+  </div>
+</footer>
 
 <div class="selbar" id="sb"><div class="wrap"><div class="txt"><b id="sbt"></b> <span class="s" id="sbs"></span></div>
 <div style="display:flex;gap:10px;flex-shrink:0"><a class="btn btn-p" id="sbc" href="#">Consultar</a><button class="btn btn-s" id="sbx">Limpiar</button></div></div></div>
@@ -2016,31 +1696,17 @@ paint();
 
 
 <script>
-// el bloque de enlaces del pie es acordeon en movil y retícula en escritorio
-(function(){var d=document.querySelector('.sf-nav'); if(!d) return;
- var m=matchMedia('(min-width:901px)');
- var s=function(){ d.open = m.matches ? true : false; };
- s(); m.addEventListener('change',s);})();
-</script>
-<script>
-// Header canonico: estado al hacer scroll y cajon movil. Identico en las cuatro.
 (function(){
-  var h=document.querySelector('.site-header');
-  var marca=function(){ h.classList.toggle('scrolled', scrollY>48); };
-  marca(); addEventListener('scroll', marca, {passive:true});
-  var mm=document.getElementById('mobileMenu'),
-      abrir=document.getElementById('menuOpen'),
-      cerrar=document.getElementById('menuClose');
-  if(!mm||!abrir||!cerrar) return;
-  var open=function(){ mm.classList.add('on'); document.body.classList.add('menu-open');
-    abrir.setAttribute('aria-expanded','true'); cerrar.focus(); };
-  var close=function(){ mm.classList.remove('on'); document.body.classList.remove('menu-open');
-    abrir.setAttribute('aria-expanded','false'); abrir.focus(); };
-  abrir.addEventListener('click', open);
-  cerrar.addEventListener('click', close);
-  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
-  document.addEventListener('keydown', function(e){
-    if(e.key==='Escape' && mm.classList.contains('on')) close(); });
+  // Cabecera sobre la foto y cajón del móvil. Mismo comportamiento en todo el sitio.
+  var h=document.querySelector('.site-header--over');
+  if(h){var on=function(){h.classList.toggle('scrolled',window.scrollY>24)};on();addEventListener('scroll',on,{passive:true})}
+  var mm=document.getElementById('mobileMenu'),ob=document.getElementById('menuOpen'),cb=document.getElementById('menuClose');
+  if(!mm||!ob||!cb)return;
+  function open(){mm.hidden=false;requestAnimationFrame(function(){mm.classList.add('on')});document.body.classList.add('menu-open');ob.setAttribute('aria-expanded','true');cb.focus()}
+  function close(){mm.classList.remove('on');document.body.classList.remove('menu-open');ob.setAttribute('aria-expanded','false');ob.focus();setTimeout(function(){if(!mm.classList.contains('on'))mm.hidden=true},400)}
+  ob.addEventListener('click',open);cb.addEventListener('click',close);
+  mm.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('on'))close()});
 })();
 </script>
 <script>

@@ -7,10 +7,14 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
+  /* El acento apuntaba a --brand-navy, que esta hoja nunca definió: queda aquí. */
+  --brand-navy:#050E1E;
+  /* La caja de la cabecera y el pie compartidos, al ancho de esta sección. */
+  --shell:  1100px;
   --ink:    #1a1a18;
   --body:   #46463f;
   --body-2: #3a3a36;
-  --muted:  #a7a299;
+  --muted:  #5A5F69;   /* era #a7a299: 2,31:1 sobre papel */
   --line:   #d8d2c6;
   --soft:   #f6f4ef;
   --warm:   #efebe1;
@@ -38,79 +42,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;font-weight:600;
 }
-em{color:var(--accent-sk);font-style:italic;font-weight:300}
-
-/* ================ HEADER ================ */
-.site-header{
-  height:76px;padding:0 var(--gut);
-  background:rgba(246,244,239,.94);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:60;
-}
-.brand{display:flex;align-items:center;gap:12px;line-height:1}
-.brand-logo{width:36px;height:36px;display:block}
-.brand-text{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:20px;font-weight:500;letter-spacing:-.006em;color:var(--ink);
-}
-.site-nav{display:flex;align-items:center;gap:34px}
-.site-nav a{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:14px;font-weight:400;color:var(--body-2);
-  letter-spacing:.002em;padding:6px 0;position:relative;
-}
-.site-nav a.lnk{position:relative}
-.site-nav a.lnk::after{
-  content:"";position:absolute;left:0;bottom:-5px;
-  height:1px;width:0;background:currentColor;
-  transition:width .4s cubic-bezier(.16,.7,.2,1);
-}
-.site-nav a.lnk:hover{color:var(--ink)}
-.site-nav a.lnk:hover::after{width:100%}
-.site-nav a.here{color:var(--ink)}
-.site-nav a.here::after{width:100%}
-.site-nav a.cta{
-  background:var(--accent);color:#fff;border-radius:2px;
-  padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:.015em;
-  transition:background .2s;
-}
-.site-nav a.cta:hover{background:var(--dark)}
-.lang-switch{
-  display:flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
-}
-.lang-switch a{font-size:12px;color:var(--muted);padding:4px 0}
-.lang-switch a.active{color:var(--accent)}
-.lang-switch span{color:var(--line)}
-.menu-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;color:var(--ink)}
-.menu-toggle svg{width:22px;height:22px}
-
-@media(max-width:880px){.site-header{padding:0 42px}.site-nav .lnk{display:none}.site-nav .lang-switch{display:none}.menu-toggle{display:inline-flex}}
-@media(max-width:760px){.site-header{height:64px;padding:0 20px}.site-nav{gap:12px}.site-nav a.cta{padding:8px 13px;font-size:12.5px}.brand-logo{width:32px;height:32px}.brand-text{font-size:18px}}
-@media(max-width:620px){.site-nav a.cta{display:none}}
-
-/* mobile drawer */
-.mm{
-  position:fixed;inset:0;z-index:90;background:var(--soft);
-  transform:translateY(-101%);transition:transform .4s cubic-bezier(.65,0,.35,1);
-  display:flex;flex-direction:column;padding:20px var(--gut);overflow-y:auto;
-}
-.mm.on{transform:translateY(0)}
-.mm .top{display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid var(--line)}
-.mm .close{font-size:28px;color:var(--ink);width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;line-height:1}
-.mm nav{margin-top:46px;display:flex;flex-direction:column;gap:0}
-.mm nav a{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:28px;font-weight:300;color:var(--ink);letter-spacing:-.018em;
-  padding:16px 0;border-bottom:1px solid var(--line);line-height:1.1;
-}
-.mm nav a em{font-style:italic;color:var(--accent-sk)}
-.mm .foot{margin-top:auto;padding:30px 0;display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:13.5px}
-.mm .foot a{color:var(--ink)}
-body.menu-open{overflow:hidden}
-@media(max-width:760px){.mm{padding:14px 20px}.mm nav a{font-size:25px;padding:14px 0}}
+em{color:var(--accent);font-style:italic;font-weight:300}
 
 /* ================ ARTICLE ================ */
 .crit-wrap{max-width:720px;margin:0 auto;padding:0 var(--gut)}
@@ -131,7 +63,7 @@ body.menu-open{overflow:hidden}
   font-size:clamp(28px,3vw,44px);font-weight:300;letter-spacing:-.02em;line-height:1.08;
   margin:18px 0 20px;color:var(--ink);
 }
-.crit-title em{font-style:italic;color:var(--accent-sk);font-weight:300}
+.crit-title em{font-style:italic;color:var(--accent);font-weight:300}
 .crit-dek{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:19px;line-height:1.55;color:var(--body);font-weight:300;
@@ -220,7 +152,7 @@ body.menu-open{overflow:hidden}
 }
 .crit-search-block{
   display:flex;align-items:center;gap:12px;
-  border-bottom:1px solid #c3bdb0;padding:8px 0;
+  border-bottom:1px solid var(--line-ui);padding:8px 0;
 }
 .crit-search-block svg{flex-shrink:0}
 .crit-search{
@@ -237,7 +169,7 @@ body.menu-open{overflow:hidden}
   font-family:'Hanken Grotesk',sans-serif;
   font-size:14.5px;font-weight:500;letter-spacing:.01em;
   color:var(--body-2);background:transparent;
-  border:1px solid var(--line);border-radius:999px;
+  border:1px solid var(--line-ui);border-radius:999px;
   padding:10px 22px;cursor:pointer;user-select:none;
   transition:all .25s ease;white-space:nowrap;
 }
@@ -275,7 +207,7 @@ body.menu-open{overflow:hidden}
 .feat-body{max-width:760px}
 .feat-cat{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--accent-sk);
+  font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--muted);
   text-transform:uppercase;margin-bottom:16px;
 }
 .feat-title{
@@ -283,7 +215,7 @@ body.menu-open{overflow:hidden}
   font-size:clamp(28px,3.2vw,42px);line-height:1.08;letter-spacing:-.015em;
   font-weight:400;margin:0 0 18px;color:var(--ink);
 }
-.feat-title em{font-style:italic;color:var(--accent-sk);font-weight:400}
+.feat-title em{font-style:italic;color:var(--accent);font-weight:400}
 .feat-excerpt{font-size:19px;line-height:1.6;color:var(--body);margin:0 0 24px}
 .feat-link{font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:500;color:var(--accent)}
 
@@ -307,7 +239,7 @@ body.menu-open{overflow:hidden}
 .crit-card:hover .arrow{transform:translateX(6px)}
 .crit-card-cat{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--accent-sk);
+  font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--muted);
   text-transform:uppercase;margin-bottom:14px;
 }
 .crit-card-title{
@@ -315,7 +247,7 @@ body.menu-open{overflow:hidden}
   font-size:27px;line-height:1.12;letter-spacing:-.01em;font-weight:400;
   margin:0 0 14px;color:var(--ink);
 }
-.crit-card-title em{font-style:italic;color:var(--accent-sk);font-weight:400}
+.crit-card-title em{font-style:italic;color:var(--accent);font-weight:400}
 .crit-card-dek{font-size:18px;line-height:1.6;color:var(--body);margin:0 0 22px}
 .crit-card-link{
   font-family:'Hanken Grotesk',sans-serif;
@@ -342,43 +274,8 @@ body.menu-open{overflow:hidden}
   .crit-card:hover::before{transform:scaleY(0)}
 }
 
-/* ================ FOOTER ================ */
-footer{background:var(--dark);padding:56px 0 32px}
-.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:48px;margin-bottom:44px}
-.foot-grid h6{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:10.5px;color:rgba(246,244,239,.4);
-  text-transform:uppercase;letter-spacing:.10em;font-weight:600;margin-bottom:16px;
-}
-.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-grid a{font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:rgba(246,244,239,.65);transition:color .15s}
-.foot-grid a:hover{color:var(--soft)}
-.foot-brand .mark{
-  display:flex;align-items:center;gap:12px;
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:21px;font-weight:500;letter-spacing:-.01em;color:var(--soft);line-height:1;
-}
-.foot-brand .mark img{width:36px;height:36px;display:block}
-.foot-cred{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;color:rgba(246,244,239,.32);margin-top:10px;letter-spacing:.04em}
-.foot-brand p{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:14px;color:rgba(246,244,239,.55);margin-top:16px;max-width:32ch;line-height:1.66;
-}
-.foot-bottom{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:22px;border-top:1px solid rgba(246,244,239,.12);
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:12.5px;color:rgba(246,244,239,.35);flex-wrap:wrap;gap:12px;
-}
-
-@supports(padding:env(safe-area-inset-bottom)){
-  footer{padding-bottom:calc(32px + env(safe-area-inset-bottom))}
-}
-
 @media(max-width:1080px){:root{--gut:42px}}
-@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media(max-width:760px){:root{--gut:20px}.crit-body p{font-size:17.5px}}
-@media(max-width:520px){.foot-grid{grid-template-columns:1fr;gap:28px}}
 
 /* ── Notas de consulta (serie En la práctica) ──────────────────────────────
    Notas largas que se leen por partes: llegan desde búsqueda y se recorren.
@@ -400,7 +297,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   position:relative;padding-left:26px;margin:0 0 12px;
   font-size:inherit;line-height:inherit;color:inherit;
 }
-.crit-body ul li::before{content:"—";position:absolute;left:0;color:var(--accent-sk)}
+.crit-body ul li::before{content:"—";position:absolute;left:0;color:var(--muted)}
 .crit-body cite{font-style:italic}
 
 /* ── Tabla editorial ───────────────────────────────────────────────────────
@@ -440,3 +337,14 @@ footer{background:var(--dark);padding:56px 0 32px}
   text-decoration-thickness:1px;
 }
 .crit-body a:hover{text-decoration-thickness:2px}
+
+/* Área táctil en móvil: buscador y vuelta al índice. */
+@media(max-width:760px){
+  .crit-search-block input,.crit-search-block{min-height:44px}
+  .crit-back{min-height:44px;display:inline-flex;align-items:center}
+  .chip{min-height:44px}
+}
+
+/* El buscador no mostraba foco con teclado. */
+.crit-search-block:focus-within{box-shadow:0 0 0 2px var(--accent)}
+.crit-search-block input:focus-visible{outline:none}

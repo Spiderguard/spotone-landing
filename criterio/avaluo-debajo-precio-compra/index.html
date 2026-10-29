@@ -27,7 +27,8 @@
 <link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/criterio/criterio.css?v=14">
+<link rel="stylesheet" href="/css/spotone.css?v=1">
+<link rel="stylesheet" href="/criterio/criterio.css?v=15">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,48 +53,37 @@
 </head>
 <body>
 
+<a class="skip" href="#main">Saltar al contenido</a>
+<a class="skip" href="#main">Saltar al contenido</a>
 <header class="site-header">
-  <a href="/" class="brand" aria-label="SpotOne Realty">
-    <img src="/images/logo-mark-negro.png" alt="" class="brand-logo">
-    <span class="brand-text">SpotOne Realty</span>
-  </a>
-  <nav class="site-nav">
-    <a href="/" class="lnk">Inicio</a>
-    <a href="/#que-hago" class="lnk">Qué hago</a>
-    <a href="/criterio/" class="lnk here">Criterio</a>
-    <a href="/#dario" class="lnk">Dario</a>
-    <a href="/#contacto" class="lnk">Contacto</a>
-    <a href="/#contacto" class="cta">Conversemos</a>
-    <div class="lang-switch" aria-label="Idioma">
-      <a href="#" class="active" lang="es">ES</a>
-      <span aria-hidden="true">/</span>
-      <a href="/criterio/appraisal-below-purchase-price/" lang="en">EN</a>
-    </div>
-    <button class="menu-toggle" id="menuOpen" aria-label="Menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-  </nav>
+  <div class="hdr-in">
+    <a class="brand" href="/" aria-label="SpotOne Realty — Inicio"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="lnk" href="/servicios/">Servicios</a><a class="lnk" href="/propiedades/">Propiedades</a><a class="lnk" href="/relocation/">Relocation</a><a class="lnk here" href="/criterio/" aria-current="page">Criterio</a><a class="lnk" href="/dario/">Dario</a>
+      <a class="cta" href="/#contacto">Conversemos</a>
+      <div class="lang"><a href="/criterio/avaluo-debajo-precio-compra/" class="active" aria-current="true" lang="es">ES</a><span aria-hidden="true">/</span><a href="/criterio/appraisal-below-purchase-price/" lang="en">EN</a></div>
+      <button class="menu-toggle" id="menuOpen" aria-label="Abrir el menú" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
 </header>
 
-<div class="mm" id="mobileMenu">
-  <div class="top">
-    <span class="brand"><img src="/images/logo-mark-negro.png" alt="" class="brand-logo"><span class="brand-text">SpotOne Realty</span></span>
-    <button class="close" id="menuClose" aria-label="Cerrar">×</button>
+<div class="mm" id="mobileMenu" hidden>
+  <div class="mm-top">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Cerrar el menú">&times;</button>
   </div>
-  <nav>
-    <a href="/">Inicio</a>
-    <a href="/#que-hago">Qué hago</a>
-    <a href="/criterio/">Criterio</a>
-    <a href="/#dario">Dario</a>
-    <a href="/#contacto">Contacto</a>
+  <nav aria-label="Menú"><a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/propiedades/">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/" class="here" aria-current="page">Criterio</a><a href="/dario/">Dario</a><a href="/peatonal68/">Plaza La Peatonal 68</a>
+    <a href="/#contacto">Conversemos</a>
   </nav>
-  <div class="foot">
+  <div class="mm-lang"><a href="/criterio/avaluo-debajo-precio-compra/" class="active" lang="es">Español</a><span aria-hidden="true">/</span><a href="/criterio/appraisal-below-purchase-price/" lang="en">English</a></div>
+  <div class="mm-foot">
     <a href="tel:+50766758127">+507 6675-8127</a>
     <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
+    <a href="https://instagram.com/spotonerealty" rel="noopener">@spotonerealty</a>
   </div>
 </div>
 
-<main>
+<main id="main">
   <article class="crit-article">
     <div class="crit-wrap">
       <a href="/criterio/" class="crit-back">← Criterio</a>
@@ -125,7 +115,7 @@
       </div>
 
       <nav class="crit-related" aria-label="Sigue leyendo" style="margin-top:46px;padding-top:8px;border-top:1px solid #E2E2DE">
-        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A9097;font-weight:500;margin:22px 0 6px">Sigue leyendo</div>
+        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#5A5F69;font-weight:500;margin:22px 0 6px">Sigue leyendo</div>
         <a href="/criterio/el-avaluo-no-es-el-precio/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">¿El avalúo es el precio? Por qué son tres números distintos. →</a>
         <a href="/criterio/precio-sin-metodo-es-rumor/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">Un precio sin método es un rumor. →</a>
         <a href="/criterio/una-propiedad-vale-lo-que-paguen/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">Una propiedad vale lo que alguien pague por ella. →</a>
@@ -146,40 +136,47 @@
   </article>
 </main>
 
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="mark"><img src="/images/logo-mark-blanco.png" alt="">SpotOne Realty</div>
-        <p>Asesoría inmobiliaria y relocation en Panamá.</p>
+<footer class="sf">
+  <div class="sf-in">
+    <div class="sf-grid">
+      <div class="sf-brand">
+        <a class="mark" href="/" aria-label="SpotOne Realty"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span>SpotOne Realty</span></a>
+        <p class="sf-desc">Asesoría inmobiliaria y relocation en Panamá.</p>
+        <p class="sf-cred">Dario Jhangimal · Corredor de Bienes Raíces&nbsp;· PN-1240</p>
       </div>
       <div>
-        <h6>Práctica</h6>
-        <ul>
-          <li><a href="/#que-hago">Qué hago</a></li>
-          <li><a href="/criterio/">Criterio</a></li>
-          <li><a href="/#dario">Sobre Dario</a></li>
-          <li><a href="/#contacto">Contacto</a></li>
-        </ul>
+        <h2 class="sf-h">Navegación</h2>
+        <ul><li><a href="/">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/propiedades/">Propiedades</a></li><li><a href="/relocation/">Relocation</a></li><li><a href="/criterio/">Criterio</a></li><li><a href="/dario/">Dario</a></li><li><a href="/peatonal68/">Plaza La Peatonal 68</a></li></ul>
       </div>
       <div>
-        <h6>Idioma</h6>
+        <h2 class="sf-h">Contacto</h2>
         <ul>
-          <li><a href="#" style="color:var(--soft);font-weight:500">Español</a></li>
-          <li><a href="/criterio/appraisal-below-purchase-price/">English</a></li>
+          <li><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina%20y%20quisiera%20hablar%20contigo%20sobre%20una%20propiedad" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a></li>
+          <li><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></li>
         </ul>
+        <p class="sf-lang"><a href="/" lang="es">ES</a><span aria-hidden="true">·</span><a href="/index-en.html" lang="en">EN</a></p>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 SpotOne Realty · Panamá · Dario Jhangimal PN-1240</span>
+    
+    <div class="sf-bottom">
+      <span>© 2026 SpotOne Realty · Panamá · Licencia PN-1240</span>
+      <a href="https://www.spotonerealty.com/">spotonerealty.com</a>
     </div>
   </div>
 </footer>
 
 <script>
-  const mm=document.getElementById('mobileMenu');
-  document.getElementById('menuOpen').onclick=()=>{mm.classList.add('on');document.body.classList.add('menu-open')};
-  document.getElementById('menuClose').onclick=()=>{mm.classList.remove('on');document.body.classList.remove('menu-open')};
+(function(){
+  var mm=document.getElementById('mobileMenu'),ob=document.getElementById('menuOpen'),cb=document.getElementById('menuClose');
+  if(!mm||!ob||!cb)return;
+  function open(){mm.hidden=false;requestAnimationFrame(function(){mm.classList.add('on')});document.body.classList.add('menu-open');ob.setAttribute('aria-expanded','true');cb.focus()}
+  function close(){mm.classList.remove('on');document.body.classList.remove('menu-open');ob.setAttribute('aria-expanded','false');ob.focus();setTimeout(function(){if(!mm.classList.contains('on'))mm.hidden=true},400)}
+  ob.addEventListener('click',open);cb.addEventListener('click',close);
+  mm.addEventListener('click',function(e){if(e.target.tagName==='A')close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('on'))close()});
+})();
 </script>
 </body>
 </html>
