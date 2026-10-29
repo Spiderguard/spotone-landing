@@ -609,12 +609,12 @@ em{font-style:italic;color:var(--navy)}
   font-size:var(--fs-label);line-height:16px;font-weight:500;
   letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
 }
-.on-navy .idx,.band--navy .idx,.sec--navy .idx{color:var(--sky)}
+.on-navy .idx,.band--navy .idx,.sec--navy .idx,.phero .idx,.pclose .idx{color:var(--sky)}
 h1{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:300;letter-spacing:-.01em}
 h2{font-size:var(--fs-h2);line-height:var(--lh-h2);font-weight:300;letter-spacing:-.01em}
 h3{font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;letter-spacing:0}
 .lead{font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:300;color:var(--muted);max-width:var(--measure)}
-.sec--navy .lead,.band--navy .lead{color:var(--on-navy-muted)}
+.sec--navy .lead,.band--navy .lead,.phero .lead,.pclose .lead{color:var(--on-navy-muted)}
 
 /* --- regla 4: ninguna columna de lectura pasa de 60 caracteres --- */
 p{max-width:var(--measure)}
@@ -675,7 +675,7 @@ a.card:hover{border-color:transparent}
   font-variant-numeric:tabular-nums;color:inherit;
 }
 .nota{font-size:var(--fs-note);line-height:20px;font-weight:300;color:var(--muted);max-width:none}
-.sec--navy .nota,.band--navy .nota{color:var(--on-navy-faint)}
+.sec--navy .nota,.band--navy .nota,.phero .nota,.pclose .nota{color:var(--on-navy-faint)}
 
 /* --- regla 3: cifras grandes con etiqueta debajo (cuatro datos del hero) --- */
 .stat{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);line-height:var(--lh-h2);
@@ -686,8 +686,8 @@ a.card:hover{border-color:transparent}
   font-size:var(--fs-label);line-height:16px;font-weight:500;
   letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
 }
-.sec--navy .stat,.band--navy .stat{color:var(--ivory)}
-.sec--navy .stat small,.band--navy .stat small{color:var(--sky)}
+.sec--navy .stat,.band--navy .stat,.phero .stat,.pclose .stat{color:var(--ivory)}
+.sec--navy .stat small,.band--navy .stat small,.phero .stat small{color:var(--sky)}
 
 /* --- retículas --- */
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gutter)}
@@ -752,3 +752,16 @@ a.card:hover{border-color:transparent}
   border:1px solid var(--sky);color:var(--ivory);background:none;
 }
 .site-header--flat:not(.scrolled) .site-nav .cta:hover{background:rgba(159,182,212,.14)}
+
+/* --- area tactil de 44 px en movil, sin desplazar el texto --- */
+@media(max-width:860px){
+  .out,.locate,.dir a,.sf-cols a,.calc summary{position:relative;display:inline-block}
+  .out::after,.locate::after,.dir a::after,.sf-cols a::after,.calc summary::after{
+    content:"";position:absolute;left:-8px;right:-8px;top:50%;
+    height:44px;transform:translateY(-50%);
+  }
+  .calc summary::after{content:" +";position:static;transform:none;height:auto}
+  .calc summary{min-height:44px;display:flex;align-items:center}
+  .calc[open] summary::after{content:" −"}
+  .faq summary{min-height:44px}
+}
