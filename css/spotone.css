@@ -47,7 +47,7 @@
   --lh-h3:32px;
   --lh-body:28px;
   --lh-lead:28px;
-  --measure:25em;               /* regla 4: 60 caracteres medidos en Hanken 17 px
+  --measure:24.5em;             /* regla 4: 60 caracteres medidos en Hanken 17 px
                                   (el lienzo dice 560 px, que miden ~75) */
   --measure-tight:22em;
 
@@ -757,7 +757,7 @@ a.card:hover{border-color:transparent}
 @media(max-width:860px){
   .out,.locate,.dir a,.sf-cols a,.calc summary{position:relative;display:inline-block}
   .out::after,.locate::after,.dir a::after,.sf-cols a::after,.calc summary::after{
-    content:"";position:absolute;left:-8px;right:-8px;top:50%;
+    content:"";position:absolute;left:0;right:0;top:50%;
     height:44px;transform:translateY(-50%);
   }
   .calc summary::after{content:" +";position:static;transform:none;height:auto}
