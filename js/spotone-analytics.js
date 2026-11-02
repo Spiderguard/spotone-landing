@@ -20,7 +20,11 @@
   var MEASUREMENT_ID = "G-J68CEBVH69";
   // ────────────────────────────────────────────────────────────────────────
 
-  var CONFIGURED =
+  // Solo se mide en el dominio publicado. La vista previa local y las pruebas
+  // automáticas no deben sumar visitas ni clics de WhatsApp a GA4.
+  var PRODUCTION = /(^|\.)spotonerealty\.com$/i.test(location.hostname);
+
+  var CONFIGURED = PRODUCTION &&
     /^G-[A-Z0-9]{6,}$/.test(MEASUREMENT_ID) && MEASUREMENT_ID !== "G-XXXXXXXXXX";
 
   // dataLayer + gtag disponibles siempre (no rompe aunque GA no esté activo).
