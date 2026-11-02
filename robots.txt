@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Banco de pruebas del sistema: no es una pagina publica.
+Disallow: /sistema/
 
 Sitemap: https://www.spotonerealty.com/sitemap.xml
