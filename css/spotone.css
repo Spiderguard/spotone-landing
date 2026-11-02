@@ -639,6 +639,9 @@ p.full,.frow p,.card p,figcaption p,.foot p,
   text-decoration:none;display:inline-block;border-bottom:0;
 }
 .out:hover{color:var(--muted)}
+button.out{all:unset;cursor:pointer;font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:15px;line-height:24px;font-weight:500;color:var(--ink)}
+button.out:hover{color:var(--muted)}
 .sec--navy .out,.band--navy .out{color:var(--ivory)}
 
 /* --- regla 12: el contenedor de imagen lleva el tono medio de la foto --- */
@@ -661,6 +664,10 @@ a.card:hover{border-color:transparent}
   font-weight:500;font-variant-numeric:tabular-nums;text-align:right;
 }
 .card-meta{font-size:15px;line-height:24px;font-weight:300;color:var(--muted);margin:6px 0 0;max-width:none}
+/* «Desde» no es la cifra: va en Hanken pequeño para que el nombre de la
+   propiedad quepa en un renglón (el lienzo hace lo mismo con «/mes») */
+.card-fig small{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:13px;line-height:16px;font-weight:300;color:var(--muted)}
 
 /* --- regla 13: filete de 1 px SOLO entre filas de datos --- */
 .frow{
