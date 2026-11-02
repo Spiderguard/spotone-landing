@@ -765,3 +765,166 @@ a.card:hover{border-color:transparent}
   .calc[open] summary::after{content:"\00a0−"}
   .faq summary{min-height:44px}
 }
+
+/* =============================================================
+   SITIO rev.15 — los módulos que comparten inicio y subpáginas
+   Se AÑADE sin redefinir nada del bloque anterior: /peatonal68/
+   y /sistema/ quedan exactamente como se publicaron el 2-nov.
+   Fuente: «Instrucciones al diseñador — página de inicio» del
+   documento rev.15 y el mock-up del lienzo (Main.dc.html).
+   ============================================================= */
+
+/* --- hero con fotografía y overlay navy (regla 12: el contenedor
+       lleva el tono medio de la foto, nunca una caja vacía) --- */
+.hero{
+  position:relative;overflow:hidden;background:#3A4556;color:var(--ivory);
+  min-height:760px;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.hero>.ph{position:absolute;inset:0;background:#3A4556}
+.hero>.ph>picture>img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(5,14,30,.55)}
+.hero>.wrap{position:relative;z-index:1;padding-top:var(--band);padding-bottom:112px}
+.hero h1{margin:0 0 24px;max-width:760px}
+.hero .lead{color:var(--on-navy-muted);font-size:18px;line-height:28px}
+.hero .btn{margin-top:40px}
+/* sobre navy la itálica es voz, no acento de color: hereda el ivory del
+   titular. Sin esto toma el navy que usa el resto del sitio sobre marfil. */
+.hero h1 em,.hero h2 em,.band-ph h2 em,.close h2 em{color:inherit}
+
+/* hero sin fotografía: navy pleno (misma geometría) o ivory */
+.hero--navy{background:var(--navy);min-height:0}
+.hero--navy::after{display:none}
+.hero--ivory{background:var(--ivory);color:var(--ink);min-height:0}
+.hero--ivory::after{display:none}
+.hero--ivory h1{color:var(--ink)}
+.hero--ivory .lead{color:var(--muted)}
+.hero--ivory .idx{color:var(--muted)}
+/* sin foto detrás no hace falta el tope de 760 px del lienzo, que estaba
+   para apartar el titular de la imagen; así «Cuatro formas de trabajar
+   contigo.» cabe en un renglón a 64 px */
+.hero--ivory h1{max-width:none}
+@media(max-width:860px){
+  .hero{min-height:0}
+  .hero>.wrap{padding-top:var(--band);padding-bottom:72px}
+  .hero .lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+  /* el salto del titular es forzado: a 40 px el primer renglón se partía
+     y salían tres. 33 px deja los dos que pide el documento. */
+  .hero h1{font-size:33px;line-height:40px}
+}
+
+/* --- banda de ancho completo 16:9 con fotografía y texto encima --- */
+.band-ph{position:relative;overflow:hidden;background:#4A5A4E;color:var(--ivory);
+  min-height:620px;display:flex;align-items:flex-end}
+.band-ph>.ph{position:absolute;inset:0;background:#4A5A4E}
+.band-ph>.ph>picture>img{width:100%;height:100%;object-fit:cover;display:block}
+.band-ph::after{content:"";position:absolute;inset:0;background:rgba(5,14,30,.55)}
+.band-ph>.wrap{position:relative;z-index:1;padding-bottom:88px;padding-top:88px}
+.band-ph h2{color:var(--ivory);margin:0 0 var(--gap-lead)}
+.band-ph .idx{color:var(--sky);margin:0 0 var(--gap-idx)}
+.band-ph .lead{color:var(--on-navy-muted)}
+.band-ph .out{color:var(--ivory);margin-top:40px}
+@media(max-width:860px){
+  /* el documento pide 4:5 vertical en móvil */
+  .band-ph{min-height:0;aspect-ratio:4/5;align-items:flex-end}
+  .band-ph>.wrap{padding-bottom:56px}
+}
+
+/* --- cierre navy + pie: 96 px de aire con el filete en medio --- */
+.close{background:var(--navy);color:var(--ivory);margin-top:var(--band);
+  padding:112px 0 48px;border-bottom:1px solid var(--on-navy-line)}
+.close .idx{margin:0 0 var(--gap-idx);color:var(--sky)}
+.close h2{color:var(--ivory);margin:0 0 var(--gap-lead);max-width:760px}
+.close .lead{color:var(--on-navy-muted)}
+.close .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
+.close .out,.hero--navy .out{color:var(--ivory)}
+@media(max-width:860px){.close{padding:80px 0 40px}}
+
+/* --- módulo numerado de dos columnas con filete entre filas --- */
+.mods{margin:0}
+.mods>div{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);
+  gap:var(--gutter);padding:40px 0;border-top:1px solid var(--line)}
+.mods>div:last-child{border-bottom:1px solid var(--line)}
+.mods .num{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);
+  line-height:var(--lh-h2);font-weight:300;color:var(--muted);margin:0 0 8px}
+.mods h3{margin:0}
+.mods p{margin:0;color:var(--muted);font-size:var(--fs-body);line-height:var(--lh-body)}
+@media(max-width:860px){
+  .mods>div{grid-template-columns:1fr;gap:12px;padding:28px 0}
+}
+
+/* --- cuatro pasos / cuatro columnas numeradas --- */
+.pasos .num{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);
+  line-height:var(--lh-h2);font-weight:300;color:var(--muted);margin:0 0 16px}
+.pasos h3{margin:0 0 8px}
+.pasos p{margin:0;color:var(--muted);font-size:15px;line-height:24px}
+@media(max-width:860px){
+  .pasos{display:block}
+  .pasos>div + div{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+  .pasos .num{font-size:var(--fs-h3);line-height:var(--lh-h3);margin-bottom:8px}
+}
+
+/* --- nota de Criterio: tarjeta de texto, sin foto --- */
+.nota-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;
+  padding-top:24px;border-top:1px solid var(--line)}
+.nota-card .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+.nota-card h3{margin:0;color:var(--ink)}
+.nota-card p{margin:0;color:var(--muted);font-size:15px;line-height:24px}
+.nota-card .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-note);line-height:20px;color:var(--muted);
+  font-variant-numeric:tabular-nums;margin-top:auto;padding-top:12px}
+.nota-card:hover h3{color:var(--muted)}
+
+/* --- nota destacada de la portada: ancho completo, sin foto --- */
+.feat{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);
+  gap:var(--gutter);text-decoration:none;
+  padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feat .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feat h2{margin:0 0 16px;color:var(--ink)}
+.feat .lead{margin:0}
+.feat .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-note);line-height:20px;color:var(--muted);
+  font-variant-numeric:tabular-nums;margin:16px 0 0}
+.feat:hover h2{color:var(--muted)}
+@media(max-width:860px){.feat{grid-template-columns:1fr;gap:16px;padding:28px 0}}
+
+/* --- filtros: texto subrayado, sin chips (regla 11) --- */
+.filtros{display:flex;flex-wrap:wrap;gap:24px;margin:0;padding:0;list-style:none}
+.filtros button{
+  all:unset;cursor:pointer;
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:15px;line-height:24px;font-weight:500;color:var(--muted);
+  border-bottom:1px solid transparent;
+}
+.filtros button:hover{color:var(--ink)}
+.filtros button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+@media(max-width:860px){
+  .filtros{gap:16px 20px}
+  .filtros button{position:relative;display:inline-block}
+  .filtros button::after{content:"";position:absolute;left:0;right:0;top:50%;
+    height:44px;transform:translateY(-50%)}
+}
+
+/* --- Sobre un hero ivory la barra NO lleva site-header--over: esa variante
+       está hecha para un hero oscuro (pinta un degradado, que rompe la regla
+       11, y el texto en blanco, que sobre marfil da 1,11:1). Se usa la barra
+       por defecto, que ya es marfil con texto Ink y se queda pegada arriba. --- */
+
+/* --- la FAQ del sitio: columna izquierda más ancha que en Peatonal para que
+       «Frequently asked questions.» quepa en un renglón a 1440 --- */
+.faq-sitio{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+@media(max-width:860px){.faq-sitio{grid-template-columns:minmax(0,1fr)}}
+
+/* --- el cierre como página propia: el titular es de sección, no de hero
+       (el lienzo lo pone a 40 px) --- */
+.hero--cierre h1{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+
+/* --- retrato 3:4 --- */
+.ph--34{aspect-ratio:3/4}
+
+/* --- párrafos de la página de Dario: medida de lectura del sistema --- */
+.reading p{color:var(--body);font-size:var(--fs-body);line-height:var(--lh-body)}
+.reading p + p{margin-top:24px}

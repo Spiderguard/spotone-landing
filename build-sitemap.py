@@ -31,6 +31,14 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 INCLUDE_GLOBS = [
     "index.html",
     "index-en.html",
+    "que-hago/index.html",
+    "services/index.html",
+    "relocation/index.html",
+    "relocation/en/index.html",
+    "dario/index.html",
+    "dario/en/index.html",
+    "contacto/index.html",
+    "contact/index.html",
     "criterio/index.html",
     "criterio/en/index.html",
     "criterio/*/index.html",
@@ -46,6 +54,14 @@ PRIORITY = {
     f"{BASE}/criterio/en/": "0.8",
     f"{BASE}/peatonal68/": "0.9",
     f"{BASE}/peatonal68/en/": "0.8",
+    f"{BASE}/que-hago/": "0.9",
+    f"{BASE}/services/": "0.8",
+    f"{BASE}/relocation/": "0.9",
+    f"{BASE}/relocation/en/": "0.8",
+    f"{BASE}/dario/": "0.8",
+    f"{BASE}/dario/en/": "0.7",
+    f"{BASE}/contacto/": "0.7",
+    f"{BASE}/contact/": "0.6",
 }
 DEFAULT_PRIORITY = "0.8"
 
