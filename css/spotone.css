@@ -935,3 +935,11 @@ a.card:hover{border-color:transparent}
 /* --- párrafos de la página de Dario: medida de lectura del sistema --- */
 .reading p{color:var(--body);font-size:var(--fs-body);line-height:var(--lh-body)}
 .reading p + p{margin-top:24px}
+
+/* --- regla 1 de Kingz: «mismo lugar, misma distancia al titular, en todas las
+   secciones». Medido el 5-nov: donde el índice no vive en .sec-head (el retrato
+   del inicio y de /dario/, y la columna fija de la FAQ) la distancia al titular
+   era 0 en vez de 16/12 px, y dentro de .reading el índice salía a 17 px
+   porque `.reading p` gana en especificidad a `.idx`. --- */
+.retrato .idx,.faq-sticky .idx{margin:0 0 var(--gap-idx)}
+.reading .idx{font-size:var(--fs-label);line-height:16px}
