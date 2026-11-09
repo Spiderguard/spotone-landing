@@ -798,7 +798,7 @@ a.card:hover{border-color:transparent}
    termina a 280; a 390, 238 y 262. El titular queda al 55 % de siempre. */
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(0deg,
-    rgba(5,14,30,.65) 0,rgba(5,14,30,.65) 258px,
+    rgba(5,14,30,.72) 0,rgba(5,14,30,.72) 258px,
     rgba(5,14,30,.55) 282px,rgba(5,14,30,.55) 100%)}
 .hero>.wrap{position:relative;z-index:1;padding-top:var(--band);padding-bottom:112px}
 .hero h1{margin:0 0 24px;max-width:760px}
@@ -1101,3 +1101,12 @@ p,li,dd,dt{font-weight:300}
 /* El hero tenía la línea de apoyo en 18/28 escritos a mano, fuera de los
    tokens: al cambiar la escala no se movía. Ahora la toma del sistema. */
 .hero .lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+/* Punto 2: el contenido del módulo 04 de Peatonal ocupa las doce columnas,
+   porque su cabecera salió a ancho completo. */
+.c12{grid-column:1 / span 12}
+@media(max-width:860px){.c12{grid-column:auto}}
+/* Punto 3: el título de ítem de las grillas de cuatro baja a 24/30 para que
+   «Inteligencia de mercado» y «Diagnóstico de situación» quepan en un
+   renglón. Va en el sistema porque la grilla vive en tres páginas. */
+.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:24px;line-height:30px}
+@media(max-width:860px){.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:22px;line-height:28px}}
