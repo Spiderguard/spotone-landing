@@ -1187,3 +1187,10 @@ body.inicio .retrato .ph{grid-column:1 / span 3}
 /* FAQ en Newsreader 20, como fija la seccion 3. Venia en Hanken 17.5. */
 .faq-item summary{font-family:'Newsreader',Georgia,serif;font-size:20px;
   line-height:30px;letter-spacing:0}
+
+/* La cifra de «Canon mensual» de la ficha de local, a 28 px.
+   La seccion 3 la fija en «cifra Newsreader 28 tabular» y venia a 32/40, que
+   ademas chocaba con el criterio 12: por encima de 28 px el display va a peso
+   400, y esta cifra es de las que el documento quiere en 500. A 28 las dos
+   reglas se cumplen sin excepciones. */
+.cifra{font-size:var(--fs-h3);line-height:var(--lh-h3)}
