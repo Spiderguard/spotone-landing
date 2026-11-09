@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="/images/hero-main-desktop.webp" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" href="/images/hero-main-mobile.webp" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=9">
+<link rel="stylesheet" href="/css/spotone.css?v=10">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -124,18 +124,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </header>
 
 <!-- 01 · Principio -->
-<section class="sec principio" id="principio">
+<section class="sec principio">
   <div class="wrap">
-    <p class="idx">01 · Principle</p>
+    <p class="idx" id="principio">01 · Principle</p>
     <h2>The market is read. <em>Not guessed.</em></h2>
     <p class="lead">Publishing is not the same as taking it to market. Before proposing a price I review the alternatives available to buyers.</p>
   </div>
 </section>
 
 <!-- 02 · Propiedades -->
-<section class="sec" id="propiedades">
+<section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">02 · Properties</p>
+    <p class="idx" id="propiedades">02 · Properties</p>
     <h2>What I represent now.</h2>
     <p class="lead">One property at a time, with availability kept current and every figure sourced.</p>
   </div>
@@ -159,9 +159,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 03 · Qué hago -->
-<section class="sec" id="que-hago">
+<section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">03 · What I do</p>
+    <p class="idx" id="que-hago">03 · What I do</p>
     <h2>Four ways to work together.</h2>
     <p class="lead">Owners, buyers, tenants and investors, always with the figure before the adjective.</p>
   </div>
@@ -177,10 +177,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 04 · Relocation -->
-<section class="sec" id="relocation">
+<section class="sec">
   <div class="band-ph band-ph--sinfoto">
     <div class="wrap">
-      <p class="idx">04 · Relocation</p>
+      <p class="idx" id="relocation">04 · Relocation</p>
       <h2>Moving to Panama.</h2>
       <p class="lead">We start with your work, your daily journeys and your family; the area follows from that.</p>
       <a class="out" href="/relocation/en/">See the process →</a>
@@ -189,14 +189,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 05 · Dario -->
-<section class="sec" id="dario">
+<section class="sec">
   <div class="wrap g12 retrato">
     <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="998" height="1328" alt="Portrait of Dario Jhangimal, real estate broker in Panama" loading="lazy" decoding="async">
     </picture></span>
     <div class="c7">
-      <p class="idx">05 · Dario</p>
+      <p class="idx" id="dario">05 · Dario</p>
       <h2>Dario Jhangimal</h2>
       <p class="label">Real Estate Broker · PN-1240</p>
       <p class="lead">You work directly with me from start to finish. We review the price, the terms and whether the property meets your needs. If another broker holds it, I coordinate with them and arrange the viewing all the same.</p>
@@ -206,9 +206,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 06 · Criterio -->
-<section class="sec" id="criterio">
+<section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">06 · Notes</p>
+    <p class="idx" id="criterio">06 · Notes</p>
     <h2>Reading the Panama market.</h2>
     <p class="lead">Market, decisions and signals for buying, selling, renting or investing.</p>
   </div>
@@ -223,9 +223,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 07 · Lo que suelo aclarar -->
-<section class="sec" id="faq">
+<section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">07 · What I usually clarify</p>
+    <p class="idx" id="faq">07 · What I usually clarify</p>
     <h2>Frequently asked questions.</h2>
     <p class="lead">About how I work and what you can expect.</p>
   </div>
@@ -238,9 +238,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 08 · Conversemos -->
-<section class="close" id="contacto">
+<section class="close">
   <div class="wrap">
-    <p class="idx">08 · Let’s talk</p>
+    <p class="idx" id="contacto">08 · Let’s talk</p>
     <h2>Is there a property decision you need to settle?</h2>
     <p class="lead">Tell me what you need, in which area and by when. With those three details I can compare options before our first call.</p>
     <div class="actions">
@@ -264,6 +264,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </footer>
 <script>
+// Se vuelve a anclar cuando las fuentes estan listas. Al llegar con #ancla
+// desde otra pagina el navegador salta ANTES del intercambio de tipografia, y
+// el titular del modulo 01 pasa de dos renglones con la fuente de respaldo a
+// uno con Newsreader: 60 px menos por encima del destino, que es justo lo que
+// desplazaba el aterrizaje. Sin hash no hace nada.
+(function(){
+  if(!location.hash || !document.fonts || !document.fonts.ready) return;
+  var id = decodeURIComponent(location.hash.slice(1));
+  document.fonts.ready.then(function(){
+    var e = document.getElementById(id);
+    if(!e) return;
+    var m = parseFloat(getComputedStyle(e).scrollMarginTop) || 0;
+    var y = e.getBoundingClientRect().top + window.scrollY - m;
+    if(Math.abs(y - window.scrollY) > 2) window.scrollTo(0, y);
+  });
+})();
 // La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
 (function(){
   var h=document.querySelector('.site-header');

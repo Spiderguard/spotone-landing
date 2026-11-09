@@ -26,7 +26,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="/images/destacada-peatonal-16-9.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=9">
+<link rel="stylesheet" href="/css/spotone.css?v=10">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -120,9 +120,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </section>
 
-<section class="sec" id="notas">
+<section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">02 · Archivo</p>
+    <p class="idx" id="notas">02 · Archivo</p>
     <h2>Todas las notas.</h2>
   </div>
   <div class="wrap sec-body">
@@ -133,9 +133,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </section>
 
-<section class="close" id="contacto">
+<section class="close">
   <div class="wrap">
-    <p class="idx">03 · Conversemos</p>
+    <p class="idx" id="contacto">03 · Conversemos</p>
     <h2>¿Una pregunta que no está aquí?</h2>
     <p class="lead">Escríbela. Si el dato existe, lo busco y te lo mando; si no existe, también te lo digo.</p>
     <div class="actions">
@@ -186,6 +186,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 })();
 </script>
 <script>
+// Se vuelve a anclar cuando las fuentes estan listas. Al llegar con #ancla
+// desde otra pagina el navegador salta ANTES del intercambio de tipografia, y
+// el titular del modulo 01 pasa de dos renglones con la fuente de respaldo a
+// uno con Newsreader: 60 px menos por encima del destino, que es justo lo que
+// desplazaba el aterrizaje. Sin hash no hace nada.
+(function(){
+  if(!location.hash || !document.fonts || !document.fonts.ready) return;
+  var id = decodeURIComponent(location.hash.slice(1));
+  document.fonts.ready.then(function(){
+    var e = document.getElementById(id);
+    if(!e) return;
+    var m = parseFloat(getComputedStyle(e).scrollMarginTop) || 0;
+    var y = e.getBoundingClientRect().top + window.scrollY - m;
+    if(Math.abs(y - window.scrollY) > 2) window.scrollTo(0, y);
+  });
+})();
 // La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
 (function(){
   var h=document.querySelector('.site-header');

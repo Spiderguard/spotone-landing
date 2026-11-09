@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=9">
+<link rel="stylesheet" href="/css/spotone.css?v=10">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -157,6 +157,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   for(var i=0;i<a.length && i<3;i++){ a[i].textContent = t[i]; a[i].href = u[i]; }
 })();
 </script><script>
+// Se vuelve a anclar cuando las fuentes estan listas. Al llegar con #ancla
+// desde otra pagina el navegador salta ANTES del intercambio de tipografia, y
+// el titular del modulo 01 pasa de dos renglones con la fuente de respaldo a
+// uno con Newsreader: 60 px menos por encima del destino, que es justo lo que
+// desplazaba el aterrizaje. Sin hash no hace nada.
+(function(){
+  if(!location.hash || !document.fonts || !document.fonts.ready) return;
+  var id = decodeURIComponent(location.hash.slice(1));
+  document.fonts.ready.then(function(){
+    var e = document.getElementById(id);
+    if(!e) return;
+    var m = parseFloat(getComputedStyle(e).scrollMarginTop) || 0;
+    var y = e.getBoundingClientRect().top + window.scrollY - m;
+    if(Math.abs(y - window.scrollY) > 2) window.scrollTo(0, y);
+  });
+})();
 // La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
 (function(){
   var h=document.querySelector('.site-header');

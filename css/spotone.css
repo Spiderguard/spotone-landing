@@ -1121,3 +1121,9 @@ p,li,dd,dt{font-weight:300}
 @media(max-width:860px){
   .close h2,.pclose h2,body.peatonal .sec-head h2,.feat h2{font-size:32px;line-height:36px}
 }
+/* El ancla cae en el índice, no en el borde de la sección. El id vive ahora
+   en el propio «NN · Nombre», que es lo único que mide igual en todos los
+   módulos: entre el borde de la sección y el índice hay 128 px de banda, 216
+   en Relocation y 120 en el cierre. */
+p[id],span[id]{scroll-margin-top:calc(var(--hdr-h) + 24px)}
+@media(max-width:860px){p[id],span[id]{scroll-margin-top:calc(var(--hdr-h-sm) + 16px)}}
