@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=4">
+<link rel="stylesheet" href="/css/spotone.css?v=5">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -36,6 +36,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   color:var(--muted);margin:0 0 var(--gap-body);max-width:none}
 .mas{display:flex;justify-content:center;margin-top:56px}
 .notas{row-gap:48px}
+/* la nota destacada: sin filete arriba y a 32 px del indice, no a 72. El
+   margen del indice colapsa con el de este contenedor (el .wrap no abre
+   bloque propio), asi que los 32 px se piden aqui enteros. */
+.feat-wrap{margin-top:32px}
+.feat{border-top:0;padding-top:0}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -81,7 +86,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap sec-head">
     <p class="idx">01 · Lectura destacada</p>
   </div>
-  <div class="wrap" style="margin-top:var(--gap-idx)">
+  <div class="wrap feat-wrap">
     <a class="feat" href="/criterio/terminar-alquiler-despues-de-un-sismo-panama/">
       <div>
         <p class="cat">Alquiler</p>
@@ -98,7 +103,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <section class="sec" id="notas">
   <div class="wrap sec-head">
     <p class="idx">02 · Todas las notas</p>
-    <h2>Filtrar por tema</h2>
+    <h2>Todas las notas.</h2>
   </div>
   <div class="wrap sec-body">
     <div class="filtros" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-p="*">Todo</button><button type="button" aria-pressed="false" data-p="Alquiler">Alquiler</button><button type="button" aria-pressed="false" data-p="Comprar & vender">Comprar &amp; vender</button><button type="button" aria-pressed="false" data-p="Decisiones">Decisiones</button><button type="button" aria-pressed="false" data-p="Edificios & zonas">Edificios &amp; zonas</button><button type="button" aria-pressed="false" data-p="IA & herramientas">IA &amp; herramientas</button><button type="button" aria-pressed="false" data-p="Mercado">Mercado</button></div>

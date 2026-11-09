@@ -23,24 +23,62 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=4">
+<link rel="stylesheet" href="/css/spotone.css?v=5">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 .hero--ivory>.wrap{padding-bottom:0}
-.hero--ivory .sec-body{margin-top:var(--gap-body);padding-bottom:var(--band)}
+/* el aire bajo el hero lo pone el ritmo de la seccion siguiente (128 px):
+   si el hero ademas lo ponia, salian 256 px entre el servicio 04 y
+   «Como trabajo contigo» (medido el 8-nov: 250). */
+.hero--ivory .sec-body{margin-top:var(--gap-body)}
 .hero--navy>.wrap{padding-top:112px;padding-bottom:96px}
 .hero--navy h1{color:var(--ivory)}
 .hero--navy .lead{color:var(--on-navy-muted)}
 .hero--navy .idx{color:var(--sky)}
-.hero--navy .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
+.hero--navy .actions,.hero--zona .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
 .label{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);
   line-height:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin:0 0 24px;max-width:none}
+/* en /dario/ la etiqueta vive dentro de .reading, y `.reading p` le gana a
+   `.label` en especificidad: sin esto sale a 17 px en vez de los 12 del
+   sistema (lo mismo que ya pasaba con el indice). */
+.reading .label{font-size:var(--fs-label);line-height:16px;color:var(--muted)}
 .retrato .ph{background:#8A8F96}
-.hero--ivory .lead + .lead{margin-top:20px}
+/* dos parrafos de apoyo: 20 px de aire. Vale para el hero marfil y para el
+   de Relocation, que lleva fotografia. */
+.hero .lead + .lead{margin-top:20px}
+/* hero con fotografia de zona: el indice sobre la foto va en Sky, como en
+   toda banda oscura. El overlay y la altura los pone .hero del sistema. */
+.hero--zona .idx{color:var(--sky)}
+
+/* --- la pagina de contacto: hero a 60 % de alto y los cuatro datos en dos
+       columnas a la derecha (instruccion del 8-nov) --- */
+/* esta pagina ES el modulo de cierre: cierra como la banda navy de las
+   demas (48 px al pie y el filete de 1 px que la separa del pie del sitio). */
+.hero--cierre{min-height:60vh;justify-content:center;
+  border-bottom:1px solid var(--on-navy-line)}
+.hero--cierre>.wrap{padding-top:120px;padding-bottom:48px}
+.co-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--gutter);align-items:start;margin-top:var(--gap-body)}
+.datos{row-gap:32px}
+.dato{padding-top:16px;border-top:1px solid var(--on-navy-line)}
+.dato .label{margin:0 0 8px;color:var(--sky)}
+.dato a{color:var(--ivory);font-size:var(--fs-lead);line-height:var(--lh-lead);
+  font-weight:300;text-decoration:none;display:inline-block}
+.dato a:hover{color:var(--sky)}
+@media(max-width:860px){
+  .co-grid{grid-template-columns:minmax(0,1fr);row-gap:56px}
+  .hero--cierre{min-height:0}
+  .hero--cierre>.wrap{padding-top:var(--band);padding-bottom:56px}
+  /* el renglon mide 26 px de alto: el area de toque se lleva a 44 con un
+     pseudo-elemento, como ya hacen los filtros de Criterio. */
+  .dato a{position:relative}
+  .dato a::after{content:"";position:absolute;left:0;right:0;top:50%;
+    height:44px;transform:translateY(-50%)}
+}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -74,7 +112,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </div>
 
 <main id="main">
-<header class="hero hero--navy">
+<header class="hero hero--zona">
+  <span class="ph"><picture>
+    <source srcset="/peatonal68/img/planta-baja-restaurantes-y-acceso.webp" type="image/webp">
+    <img src="/peatonal68/img/planta-baja-restaurantes-y-acceso.jpg" width="1600" height="1200" alt="Ground floor of Plaza La Peatonal 68: the restaurant awnings over the sidewalk, the parking and the pedestrian entrance" fetchpriority="high" decoding="async">
+  </picture></span>
   <div class="wrap sec-head">
     <p class="idx">Relocation</p>
     <h1>Moving to Panama.</h1>

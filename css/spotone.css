@@ -789,7 +789,17 @@ a.card:hover{border-color:transparent}
 }
 .hero>.ph{position:absolute;inset:0;background:#3A4556}
 .hero>.ph>picture>img{width:100%;height:100%;object-fit:cover;display:block}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(5,14,30,.55)}
+/* el overlay sube de 55 % a 65 % en el tercio inferior, donde cae la linea
+   de apoyo: sobre la silla y el skyline no se leia. El degradado se mide en
+   px DESDE ABAJO, no en porcentaje, porque el bloque de texto esta anclado
+   al pie del hero y el alto cambia con el ancho: asi el cambio cae siempre
+   en los 24 px que separan el titular de la linea de apoyo. Medido el 8-nov:
+   a 1440 la linea de apoyo empieza a 256 px del borde inferior y el titular
+   termina a 280; a 390, 238 y 262. El titular queda al 55 % de siempre. */
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,
+    rgba(5,14,30,.65) 0,rgba(5,14,30,.65) 258px,
+    rgba(5,14,30,.55) 282px,rgba(5,14,30,.55) 100%)}
 .hero>.wrap{position:relative;z-index:1;padding-top:var(--band);padding-bottom:112px}
 .hero h1{margin:0 0 24px;max-width:760px}
 .hero .lead{color:var(--on-navy-muted);font-size:18px;line-height:28px}
