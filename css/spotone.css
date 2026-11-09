@@ -798,7 +798,7 @@ a.card:hover{border-color:transparent}
    termina a 280; a 390, 238 y 262. El titular queda al 55 % de siempre. */
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(0deg,
-    rgba(5,14,30,.65) 0,rgba(5,14,30,.65) 258px,
+    rgba(5,14,30,.72) 0,rgba(5,14,30,.72) 258px,
     rgba(5,14,30,.55) 282px,rgba(5,14,30,.55) 100%)}
 .hero>.wrap{position:relative;z-index:1;padding-top:var(--band);padding-bottom:112px}
 .hero h1{margin:0 0 24px;max-width:760px}
@@ -953,3 +953,171 @@ a.card:hover{border-color:transparent}
    porque `.reading p` gana en especificidad a `.idx`. --- */
 .retrato .idx,.faq-sticky .idx{margin:0 0 var(--gap-idx)}
 .reading .idx{font-size:var(--fs-label);line-height:16px}
+
+/* === Auditoría de nivel · 9-nov-2026 ============================= estados,
+   tipografía y la señal de categoría de Criterio. Bloque añadido al final:
+   gana por orden de cascada sobre todo lo anterior. --- */
+
+/* Estados · el enlace de texto no cambia de color: aparece un filete de 1 px.
+   Las piezas que son bloque (botón, tarjeta, foto, salto) quedan fuera: ahí el
+   hover lo da la pieza. */
+a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.btn:hover,.skip:hover,a.ph:hover,a.card:hover,a.feature:hover,.nota-card:hover,
+.feat:hover,.site-nav .cta:hover,.lang a:hover{text-decoration:none}
+
+/* …y sin cambio de color: se repite el color de reposo */
+.lang a:hover{color:var(--muted)}
+.sf a:hover{color:var(--on-navy-muted)}
+.sf-cols a:hover{color:rgba(244,241,234,.8)}
+.sf-bottom a:hover{color:var(--on-navy-faint)}
+.crumb a:hover{color:var(--muted)}
+
+/* Tarjeta · la foto escala 2 %, nada más */
+a.card:hover .card-img img,a.feature:hover .feature-img img,
+a.card:hover .ph img,a.feature:hover .ph img{transform:scale(1.02)}
+a.card:hover,a.feature:hover{border-color:transparent}
+/* La tarjeta de nota no tiene foto que escalar: el filete de 1 px va en su
+   titular, que es el enlace, y el color no se mueve. */
+.nota-card:hover h3{color:var(--ink);text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:4px}
+
+/* Cifras en versalitas tabulares dondequiera que haya cifras */
+.cifra,.stat,.card-fig,.card-meta,.num,.date,.cuenta,.dato,.tip,.precio,
+time,table{font-variant-numeric:tabular-nums}
+
+/* Titulares equilibrados */
+h1,h2,h3{text-wrap:balance}
+
+/* Señal de categoría · la única señal de color del sitio, y es funcional.
+   Banda de 4 px sobre el filete superior de la tarjeta sin foto. El slug es el
+   mismo en ES y en EN: la misma categoría, el mismo tono en los dos idiomas.
+   Medido el 9-nov contra el marfil de la página: Navy 17,11:1 y Muted 5,68:1
+   pasan el 3:1 que necesita un elemento gráfico para distinguirse; Ink al 40 %
+   (2,46), #9FB6D4 (1,84) e Ivory oscuro (1,10) no. Dario cerró el punto:
+   **solo Navy y Muted**, y las otras cuatro categorías sin banda. Una señal
+   que no se distingue no se pone, y la paleta no se amplía. */
+.nota-card{position:relative}
+.nota-card::before{content:"";position:absolute;left:0;top:-4px;
+  width:100%;height:4px;background:var(--cat,transparent)}
+.nota-card[data-cat="decisiones"]{--cat:var(--navy)}
+.nota-card[data-cat="mercado"]{--cat:var(--muted)}
+
+/* === Impresión de /peatonal68/ (auditoría del 9-nov) ================ sin
+   barra, sin botones, sin pie navy; una ficha por página carta; la URL y el
+   WhatsApp en texto al final. Alcance deliberado: solo esa página, que es la
+   que se imprime para una visita. --- */
+.solo-impresion{display:none}
+@media print{
+  @page{size:letter;margin:16mm}
+  body.peatonal{background:#fff;color:#1A1A18}
+  body.peatonal .site-header,body.peatonal .mm,body.peatonal .mm-backdrop,
+  body.peatonal .wafloat,body.peatonal .skip,body.peatonal .btn,
+  body.peatonal .uacts,body.peatonal .out,body.peatonal .pclose,
+  body.peatonal .sf,body.peatonal .lb{display:none!important}
+  body.peatonal .solo-impresion{display:block;margin-top:12mm;padding-top:4mm;
+    border-top:1px solid #1A1A18;font-family:'Hanken Grotesk',sans-serif;
+    font-size:10pt;line-height:14pt}
+  body.peatonal .phero{min-height:0;padding:0 0 8mm}
+  body.peatonal .sec{padding:6mm 0;break-inside:auto}
+  /* una ficha por página carta */
+  body.peatonal .card.u{break-inside:avoid;page-break-inside:avoid;
+    break-after:page;page-break-after:always}
+  body.peatonal #local-23{break-after:auto;page-break-after:auto}
+  body.peatonal .wrap{max-width:none;padding:0}
+  body.peatonal details[open] summary ~ *{display:revert}
+  body.peatonal details summary{list-style:none}
+  body.peatonal img{max-width:100%;height:auto}
+}
+.feat:hover .ph img{transform:scale(1.02)}
+
+/* Foco visible sobre fondo oscuro. `.on-dark` no la lleva ningún elemento del
+   sitio, así que la regla que dependía de esa clase nunca se aplicó: sobre
+   navy el anillo salía navy, es decir invisible. Se nombran las secciones
+   oscuras reales. */
+.hero:not(.hero--ivory) :focus-visible,.close :focus-visible,
+.band-ph :focus-visible,.pclose :focus-visible,.sf :focus-visible,
+.co-grid :focus-visible,.phero :focus-visible{outline-color:var(--sky)}
+
+/* === Ronda de sistema · 9-nov-2026 ================================ escala y
+   jerarquía. La tipografía pesaba menos que la imagen y la alineación vertical
+   cambiaba de módulo en módulo. Se corrige en el sistema, no por página.
+   Bloque añadido al final: gana por orden de cascada. --- */
+
+:root{
+  /* 1 · escala nueva. Siguen siendo CINCO tamaños, como manda la regla 3. */
+  --fs-h1:80px;   --lh-h1:84px;    /* hero */
+  --fs-h2:56px;   --lh-h2:60px;    /* titular de sección */
+  --fs-h3:28px;   --lh-h3:36px;    /* nombre, cifra, subtítulo */
+  --fs-h4:28px;
+  --fs-body:18px; --lh-body:30px;  /* cuerpo */
+  --fs-lead:22px; --lh-lead:34px;  /* línea de apoyo */
+  /* 2 · ancho de lectura */
+  --measure:30em;
+  --measure-tight:26em;
+}
+@media(max-width:860px){
+  :root{
+    --fs-h1:48px;   --lh-h1:52px;
+    --fs-h2:36px;   --lh-h2:40px;
+    --fs-h3:24px;   --lh-h3:30px;
+    --fs-body:17px; --lh-body:28px;
+    --fs-lead:19px; --lh-lead:30px;
+  }
+}
+
+/* Newsreader 500 en los titulares. El 300 queda SOLO para la itálica de voz,
+   que es lo único que el peso delgado sigue haciendo bien. */
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500}
+h1 em,h2 em,h3 em{font-weight:300;font-style:italic}
+/* el cuerpo es Hanken 300 */
+p,li,dd,dt{font-weight:300}
+
+/* etiqueta e índice: 12/16 Hanken 500, espaciado .14 em */
+.idx,.label,.cat,.card-kicker{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase}
+
+/* 4 · alineación vertical: SIEMPRE arriba. El índice, el borde superior de la
+   imagen y el borde superior del bloque de texto comparten línea. */
+.g12,.g2,.g3,.g4,.retrato,.split,.co-grid,.feat,.numbered--split .num-row,
+.card-row,.mods>div,.pasos>div{align-items:start}
+
+/* 5 · eje del contenido secundario: columna 7 de 12 en todo el sitio, salvo
+   las listas de cuatro columnas. */
+.c4{grid-column:1 / span 4}
+.c7{grid-column:7 / span 6}
+@media(max-width:860px){.c4,.c7{grid-column:auto}}
+
+/* 3 y 6 · la imagen no manda sobre el texto: el retrato pasa a 4:5 en cuatro
+   columnas, que es la mitad del alto que tenía a 3:4 en seis. */
+.retrato .ph{aspect-ratio:4/5}
+
+/* 7 · peso visual del hero: el botón a 52 px de alto */
+.btn{min-height:52px;padding-top:0;padding-bottom:0}
+.ph--45{aspect-ratio:4/5}
+/* El tope de 760 px de los titulares venía del cuerpo de 64. A 80 px partía el
+   hero en tres renglones. Lo rompe el <br> del copy, no un ancho heredado. */
+.hero h1,.close h2,.hero--cierre h1{max-width:none}
+/* El hero tenía la línea de apoyo en 18/28 escritos a mano, fuera de los
+   tokens: al cambiar la escala no se movía. Ahora la toma del sistema. */
+.hero .lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+/* Punto 2: el contenido del módulo 04 de Peatonal ocupa las doce columnas,
+   porque su cabecera salió a ancho completo. */
+.c12{grid-column:1 / span 12}
+@media(max-width:860px){.c12{grid-column:auto}}
+/* Punto 3: el título de ítem de las grillas de cuatro baja a 24/30 para que
+   «Inteligencia de mercado» y «Diagnóstico de situación» quepan en un
+   renglón. Va en el sistema porque la grilla vive en tres páginas. */
+.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:24px;line-height:30px}
+@media(max-width:860px){.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:22px;line-height:28px}}
+/* Cierre de escala · 9-nov. «Cuatro formas de trabajar contigo.» son cinco
+   palabras que a 80 px piden 1.320 px y el contenedor da 1.152. Ese hero va a
+   72, sin partir el copy. */
+.hero--72 h1{font-size:72px;line-height:78px}
+@media(max-width:860px){.hero--72 h1{font-size:var(--fs-h1);line-height:var(--lh-h1)}}
+/* A 36 px en móvil, seis titulares de sección pasaban de dos renglones: el
+   cierre en los dos idiomas, los tres de Peatonal y el título de la nota
+   destacada. Bajan a 32, y solo en móvil, que es lo que Dario autorizó. */
+@media(max-width:860px){
+  .close h2,.pclose h2,body.peatonal .sec-head h2,.feat h2{font-size:32px;line-height:36px}
+}

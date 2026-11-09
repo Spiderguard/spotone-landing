@@ -15,15 +15,19 @@
 <meta property="og:title" content="Selección inmobiliaria con criterio | SpotOne Realty · Panamá">
 <meta property="og:description" content="Asesoría inmobiliaria y relocation en Panamá. Te ayudo a comprar, vender o alquilar con el mercado revisado antes de decidir.">
 <meta property="og:url" content="https://www.spotonerealty.com/">
-<meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
+<meta property="og:image" content="https://www.spotonerealty.com/images/og/inicio-es.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/logo-favicon-negro.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=5">
+<link rel="preload" as="image" href="/images/hero-main-desktop.webp" type="image/webp" media="(min-width:861px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero-main-mobile.webp" type="image/webp" media="(max-width:860px)" fetchpriority="high">
+<link rel="stylesheet" href="/css/spotone.css?v=9">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -34,9 +38,39 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .principio .idx{margin:0 0 var(--gap-idx)}
 .principio h2{max-width:760px;margin:0 auto var(--gap-lead)}
 .principio .lead{margin:0 auto}
-/* 02 · las dos tarjetas sin propiedad todavía: ivory más oscuro (lienzo) */
-.card-vacia{background:#EAE6DC;aspect-ratio:3/2;display:block;margin-bottom:16px}
-.card--espera h3{color:var(--muted)}
+/* 02 · una sola propiedad, con contenido real. Las dos tarjetas vacías salen:
+   ningún contenedor sin contenido real (Dario, 9-nov). Foto a siete columnas,
+   texto desde la ocho, alineado arriba. */
+.prop{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:var(--gutter);align-items:start}
+.prop-foto{grid-column:1 / span 7;display:block;background:#7B8384}
+.prop-txt{grid-column:8 / span 5}
+.prop-txt .label{margin:0 0 var(--gap-idx)}
+.prop-txt h3{margin:0 0 var(--gap-lead);color:var(--ink)}
+.prop-lead{margin:0 0 40px;color:var(--muted);font-size:var(--fs-body);
+  line-height:var(--lh-body);max-width:none}
+/* columnas al contenido, no en tercios: «Desde $1,800» a 28 px pide 170 px y
+   un tercio de la columna da 132, asi que partia en dos y dejaba «Canon
+   mensual» mas abajo que las otras dos etiquetas. */
+.prop-datos{display:grid;grid-template-columns:repeat(3,auto);
+  justify-content:space-between;gap:var(--gutter);margin:0 0 40px}
+.prop-datos .cifra{white-space:nowrap}
+.prop-datos>div{border-top:1px solid var(--line);padding-top:16px}
+.prop-datos .cifra{display:block;font-family:'Newsreader',Georgia,serif;
+  font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.prop-datos .et{display:block;font-size:var(--fs-label);line-height:16px;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin-top:8px}
+@media(max-width:860px){
+  .prop{grid-template-columns:minmax(0,1fr);row-gap:32px}
+  .prop-foto,.prop-txt{grid-column:auto}
+  /* los tres datos no caben en fila en 342 px: «Desde $1,800» a 28 px pide
+     170 y la columna da 92. Se apilan, cada uno con su filete. */
+  .prop-datos{grid-template-columns:minmax(0,1fr);gap:0}
+  .prop-datos>div{padding:16px 0}
+}
+
 /* 04 · la banda de Relocation todavía no tiene fotografía de zona */
 .band-ph--sinfoto{background:var(--navy);aspect-ratio:auto;min-height:420px}
 .band-ph--sinfoto::after{display:none}
@@ -105,28 +139,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>Lo que represento ahora.</h2>
     <p class="lead">Una propiedad a la vez, con disponibilidad al día y cada dato con su fuente.</p>
   </div>
-  <div class="wrap sec-body">
-    <div class="cards g3">
-      <a class="card" href="/peatonal68/">
-        <span class="ph ph--32"><picture>
-          <source srcset="/images/fachada-peatonal-32.webp" type="image/webp">
-          <img src="/images/fachada-peatonal-32.jpg" width="1200" height="800" alt="Fachada de Plaza La Peatonal 68 de día, en Calle 68 Este, San Francisco" loading="lazy" decoding="async">
-        </picture></span>
-        <div class="card-row"><h3>Plaza La Peatonal 68</h3><span class="card-fig"><small>Desde</small> $1,800</span></div>
-        <p class="card-meta">San Francisco · Tres locales · 100–102 m²</p>
-      </a>
-      <div class="card card--espera">
-        <span class="card-vacia" aria-hidden="true"></span>
-        <div class="card-row"><h3>Próxima representación</h3></div>
-        <p class="card-meta">Solo publico propiedades que acepto representar directamente.</p>
+  <div class="wrap sec-body prop">
+    <a class="prop-foto ph ph--32" href="/peatonal68/"><picture>
+      <source srcset="/images/fachada-peatonal-32.webp" type="image/webp">
+      <img src="/images/fachada-peatonal-32.jpg" width="1152" height="768" alt="Fachada de Plaza La Peatonal 68 de día, en Calle 68 Este, San Francisco" loading="lazy" decoding="async">
+    </picture></a>
+    <div class="prop-txt">
+      <p class="label">Representación exclusiva · San Francisco</p>
+      <h3>Plaza La Peatonal 68</h3>
+      <p class="prop-lead">Tres locales comerciales en alquiler, de 100 a 102 m²</p>
+      <div class="prop-datos">
+        <div><span class="cifra">3</span><span class="et">Locales</span></div>
+        <div><span class="cifra">Desde $1,800</span><span class="et">Canon mensual</span></div>
+        <div><span class="cifra">60</span><span class="et">Estacionamientos</span></div>
       </div>
-      <div class="card card--espera">
-        <span class="card-vacia" aria-hidden="true"></span>
-        <div class="card-row"><h3>¿Tienes una propiedad?</h3></div>
-        <p class="card-meta">Antes de publicarla reviso cómo compite en su zona.</p>
-      </div>
+      <p class="plain"><a class="out" href="/peatonal68/">Ver disponibilidad →</a></p>
     </div>
-    <p class="plain"><a class="out" href="/peatonal68/">Ver La Peatonal 68 →</a></p>
   </div>
 </section>
 
@@ -139,10 +167,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="pasos g4">
-      <div><p class="num">01</p><h3>Captación</h3><p>Cómo compite tu propiedad antes de fijar el precio de salida.</p></div>
-      <div><p class="num">02</p><h3>Representación</h3><p>Compra o alquiler con alguien de tu lado en cada visita.</p></div>
-      <div><p class="num">03</p><h3>Inteligencia de mercado</h3><p>Qué número se sostiene y qué parte sigue siendo estimación.</p></div>
-      <div><p class="num">04</p><h3>Diagnóstico</h3><p>Vender, arrendar, comprar o esperar: ordenamos la situación primero.</p></div>
+      <div><h3>Captación</h3><p>Cómo compite tu propiedad antes de fijar el precio de salida.</p></div>
+      <div><h3>Representación</h3><p>Compra o alquiler con alguien de tu lado en cada visita.</p></div>
+      <div><h3>Inteligencia de mercado</h3><p>Qué número se sostiene y qué parte sigue siendo estimación.</p></div>
+      <div><h3>Diagnóstico</h3><p>Vender, arrendar, comprar o esperar: ordenamos la situación primero.</p></div>
     </div>
     <p class="plain"><a class="out" href="/que-hago/">Cómo trabajo →</a></p>
   </div>
@@ -162,8 +190,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <!-- 05 · Dario -->
 <section class="sec" id="dario">
-  <div class="wrap g12 retrato" style="align-items:center">
-    <span class="ph ph--34 c4"><picture>
+  <div class="wrap g12 retrato">
+    <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="998" height="1328" alt="Retrato de Dario Jhangimal, corredor de bienes raíces en Panamá" loading="lazy" decoding="async">
     </picture></span>
@@ -186,9 +214,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
-      <a class="nota-card" href="/criterio/terminar-alquiler-despues-de-un-sismo-panama/"><span class="cat">Alquiler</span><h3>¿Puede un inquilino terminar el contrato <em>después de un sismo?</em></h3><p>En un arrendamiento habitacional, discutir si el terremoto es una causa válida puede ser empezar por la pregunta equivocada.</p><span class="date">16 de octubre de 2026</span></a>
-      <a class="nota-card" href="/criterio/norma-estructural-edificio-panama/"><span class="cat">Edificios &amp; zonas</span><h3>¿Bajo qué norma <em>se diseñó tu edificio?</em></h3><p>Un edificio de 1998 y uno aprobado bajo el REP‑2021 no parten del mismo marco. La fecha ayuda, pero no responde sola.</p><span class="date">16 de octubre de 2026</span></a>
-      <a class="nota-card" href="/criterio/que-incluye-linea-blanca-panama/"><span class="cat">Alquiler</span><h3>¿Qué incluye realmente <em>la «línea blanca»?</em></h3><p>Dos de cada tres avisos que usan el término declaran nevera, estufa, lavadora y secadora. Uno de cada cinco no especifica ningún equipo.</p><span class="date">16 de octubre de 2026</span></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/terminar-alquiler-despues-de-un-sismo-panama/"><span class="cat">Alquiler</span><h3>¿Puede un inquilino terminar el contrato <em>después de un sismo?</em></h3><p>En un arrendamiento habitacional, discutir si el terremoto es una causa válida puede ser empezar por la pregunta equivocada.</p><span class="date">16 de octubre de 2026</span></a>
+      <a class="nota-card" data-cat="edificios" href="/criterio/norma-estructural-edificio-panama/"><span class="cat">Edificios &amp; zonas</span><h3>¿Bajo qué norma <em>se diseñó tu edificio?</em></h3><p>Un edificio de 1998 y uno aprobado bajo el REP‑2021 no parten del mismo marco. La fecha ayuda, pero no responde sola.</p><span class="date">16 de octubre de 2026</span></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/que-incluye-linea-blanca-panama/"><span class="cat">Alquiler</span><h3>¿Qué incluye realmente <em>la «línea blanca»?</em></h3><p>Dos de cada tres avisos que usan el término declaran nevera, estufa, lavadora y secadora. Uno de cada cinco no especifica ningún equipo.</p><span class="date">16 de octubre de 2026</span></a>
     </div>
     <p class="plain"><a class="out" href="/criterio/">Ver todo Criterio →</a></p>
   </div>
@@ -196,18 +224,16 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <!-- 07 · Lo que suelo aclarar -->
 <section class="sec" id="faq">
-  <div class="wrap faq-grid faq-sitio">
-    <div class="faq-sticky">
-      <p class="idx">07 · Lo que suelo aclarar</p>
-      <h2>Preguntas frecuentes.</h2>
-      <p class="lead">Sobre cómo trabajo y qué puedes esperar.</p>
-    </div>
-    <div>
+  <div class="wrap sec-head">
+    <p class="idx">07 · Lo que suelo aclarar</p>
+    <h2>Preguntas frecuentes.</h2>
+    <p class="lead">Sobre cómo trabajo y qué puedes esperar.</p>
+  </div>
+  <div class="wrap sec-body">
       <details class="faq-item" open><summary>¿Cómo funciona la primera conversación?</summary><div class="body"><p>Sirve para entender qué estás evaluando, qué necesitas y para cuándo. Puede empezar por WhatsApp, correo o una llamada breve. Al final ambos sabemos si tiene sentido avanzar y cuál sería el siguiente paso.</p></div></details>
       <details class="faq-item"><summary>¿Cómo funciona trabajar conmigo si soy comprador?</summary><div class="body"><p>Primero una conversación de contexto para entender qué buscas y para cuándo. Después reviso las opciones que encuentres, las comparo con lo que hay en oferta, coordino con el corredor que tenga cada propiedad y organizo las visitas con la información necesaria para decidir.</p></div></details>
       <details class="faq-item"><summary>¿Trabajas con propietarios que quieren vender o arrendar?</summary><div class="body"><p>Sí. El proceso para un propietario empieza igual que para un comprador: entender el inmueble, el mercado y a quién le puede servir. Antes de publicar reviso el precio, el momento y cómo se presenta la propiedad frente a lo que ya está en oferta.</p></div></details>
       <details class="faq-item"><summary>¿Qué pasa si la mejor decisión es no avanzar?</summary><div class="body"><p>Te lo digo. A veces la mejor asesoría es no moverse todavía, ajustar el precio, cambiar de zona o esperar otro momento. Eso también es parte del trabajo.</p></div></details>
-    </div>
   </div>
 </section>
 

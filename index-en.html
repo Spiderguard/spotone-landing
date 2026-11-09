@@ -15,15 +15,19 @@
 <meta property="og:title" content="Real estate selection with discernment | SpotOne Realty · Panama">
 <meta property="og:description" content="Real estate advisory and relocation in Panama. I help you buy, sell or rent with the market reviewed before you decide.">
 <meta property="og:url" content="https://www.spotonerealty.com/index-en.html">
-<meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
+<meta property="og:image" content="https://www.spotonerealty.com/images/og/inicio-en.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/logo-favicon-negro.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=5">
+<link rel="preload" as="image" href="/images/hero-main-desktop.webp" type="image/webp" media="(min-width:861px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero-main-mobile.webp" type="image/webp" media="(max-width:860px)" fetchpriority="high">
+<link rel="stylesheet" href="/css/spotone.css?v=9">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -34,9 +38,39 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .principio .idx{margin:0 0 var(--gap-idx)}
 .principio h2{max-width:760px;margin:0 auto var(--gap-lead)}
 .principio .lead{margin:0 auto}
-/* 02 · las dos tarjetas sin propiedad todavía: ivory más oscuro (lienzo) */
-.card-vacia{background:#EAE6DC;aspect-ratio:3/2;display:block;margin-bottom:16px}
-.card--espera h3{color:var(--muted)}
+/* 02 · una sola propiedad, con contenido real. Las dos tarjetas vacías salen:
+   ningún contenedor sin contenido real (Dario, 9-nov). Foto a siete columnas,
+   texto desde la ocho, alineado arriba. */
+.prop{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:var(--gutter);align-items:start}
+.prop-foto{grid-column:1 / span 7;display:block;background:#7B8384}
+.prop-txt{grid-column:8 / span 5}
+.prop-txt .label{margin:0 0 var(--gap-idx)}
+.prop-txt h3{margin:0 0 var(--gap-lead);color:var(--ink)}
+.prop-lead{margin:0 0 40px;color:var(--muted);font-size:var(--fs-body);
+  line-height:var(--lh-body);max-width:none}
+/* columnas al contenido, no en tercios: «Desde $1,800» a 28 px pide 170 px y
+   un tercio de la columna da 132, asi que partia en dos y dejaba «Canon
+   mensual» mas abajo que las otras dos etiquetas. */
+.prop-datos{display:grid;grid-template-columns:repeat(3,auto);
+  justify-content:space-between;gap:var(--gutter);margin:0 0 40px}
+.prop-datos .cifra{white-space:nowrap}
+.prop-datos>div{border-top:1px solid var(--line);padding-top:16px}
+.prop-datos .cifra{display:block;font-family:'Newsreader',Georgia,serif;
+  font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.prop-datos .et{display:block;font-size:var(--fs-label);line-height:16px;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin-top:8px}
+@media(max-width:860px){
+  .prop{grid-template-columns:minmax(0,1fr);row-gap:32px}
+  .prop-foto,.prop-txt{grid-column:auto}
+  /* los tres datos no caben en fila en 342 px: «Desde $1,800» a 28 px pide
+     170 y la columna da 92. Se apilan, cada uno con su filete. */
+  .prop-datos{grid-template-columns:minmax(0,1fr);gap:0}
+  .prop-datos>div{padding:16px 0}
+}
+
 /* 04 · la banda de Relocation todavía no tiene fotografía de zona */
 .band-ph--sinfoto{background:var(--navy);aspect-ratio:auto;min-height:420px}
 .band-ph--sinfoto::after{display:none}
@@ -85,7 +119,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap">
     <h1>Real estate selection<br><em>with discernment</em>.</h1>
     <p class="lead">I help you buy, sell or rent in Panama, with the market reviewed before you decide.</p>
-    <a class="btn btn--light" href="#contacto">Let's talk</a>
+    <a class="btn btn--light" href="#contacto">Let’s talk</a>
   </div>
 </header>
 
@@ -105,28 +139,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>What I represent now.</h2>
     <p class="lead">One property at a time, with availability kept current and every figure sourced.</p>
   </div>
-  <div class="wrap sec-body">
-    <div class="cards g3">
-      <a class="card" href="/peatonal68/en/">
-        <span class="ph ph--32"><picture>
-          <source srcset="/images/fachada-peatonal-32.webp" type="image/webp">
-          <img src="/images/fachada-peatonal-32.jpg" width="1200" height="800" alt="Facade of Plaza La Peatonal 68 in daylight, Calle 68 Este, San Francisco" loading="lazy" decoding="async">
-        </picture></span>
-        <div class="card-row"><h3>Plaza La Peatonal 68</h3><span class="card-fig"><small>From</small> $1,800</span></div>
-        <p class="card-meta">San Francisco · Three units · 100–102 m²</p>
-      </a>
-      <div class="card card--espera">
-        <span class="card-vacia" aria-hidden="true"></span>
-        <div class="card-row"><h3>Next representation</h3></div>
-        <p class="card-meta">I only publish properties I agree to represent directly.</p>
+  <div class="wrap sec-body prop">
+    <a class="prop-foto ph ph--32" href="/peatonal68/en/"><picture>
+      <source srcset="/images/fachada-peatonal-32.webp" type="image/webp">
+      <img src="/images/fachada-peatonal-32.jpg" width="1152" height="768" alt="Facade of Plaza La Peatonal 68 in daylight, Calle 68 Este, San Francisco" loading="lazy" decoding="async">
+    </picture></a>
+    <div class="prop-txt">
+      <p class="label">Exclusive representation · San Francisco</p>
+      <h3>Plaza La Peatonal 68</h3>
+      <p class="prop-lead">Three commercial units for rent, 100 to 102 m²</p>
+      <div class="prop-datos">
+        <div><span class="cifra">3</span><span class="et">Units</span></div>
+        <div><span class="cifra">From $1,800</span><span class="et">Monthly rent</span></div>
+        <div><span class="cifra">60</span><span class="et">Parking spaces</span></div>
       </div>
-      <div class="card card--espera">
-        <span class="card-vacia" aria-hidden="true"></span>
-        <div class="card-row"><h3>Do you own a property?</h3></div>
-        <p class="card-meta">Before it goes live I look at what it is up against in its area.</p>
-      </div>
+      <p class="plain"><a class="out" href="/peatonal68/en/">See availability →</a></p>
     </div>
-    <p class="plain"><a class="out" href="/peatonal68/en/">See La Peatonal 68 →</a></p>
   </div>
 </section>
 
@@ -139,10 +167,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="pasos g4">
-      <div><p class="num">01</p><h3>Taking a property to market</h3><p>What your property is up against before the asking price is set.</p></div>
-      <div><p class="num">02</p><h3>Representation</h3><p>Buying or renting with someone on your side at every viewing.</p></div>
-      <div><p class="num">03</p><h3>Market intelligence</h3><p>Which number stands up, and which part is still an estimate.</p></div>
-      <div><p class="num">04</p><h3>Situation assessment</h3><p>Sell, rent, buy or wait: we lay out where you stand first.</p></div>
+      <div><h3>Taking a property to market</h3><p>What your property is up against before the asking price is set.</p></div>
+      <div><h3>Representation</h3><p>Buying or renting with someone on your side at every viewing.</p></div>
+      <div><h3>Market intelligence</h3><p>Which number stands up, and which part is still an estimate.</p></div>
+      <div><h3>Situation assessment</h3><p>Sell, rent, buy or wait: we lay out where you stand first.</p></div>
     </div>
     <p class="plain"><a class="out" href="/services/">How I work →</a></p>
   </div>
@@ -162,8 +190,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <!-- 05 · Dario -->
 <section class="sec" id="dario">
-  <div class="wrap g12 retrato" style="align-items:center">
-    <span class="ph ph--34 c4"><picture>
+  <div class="wrap g12 retrato">
+    <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="998" height="1328" alt="Portrait of Dario Jhangimal, real estate broker in Panama" loading="lazy" decoding="async">
     </picture></span>
@@ -186,9 +214,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
-      <a class="nota-card" href="/criterio/higher-rates-for-longer-panama/"><span class="cat">Market</span><h3>Higher rates for longer: <em>in Panama, that changes who has the negotiating advantage.</em></h3><p>Expensive credit does not stop every transaction. It changes who can move, who has to wait and where the real negotiating room appears.</p><span class="date">October 16, 2026</span></a>
-      <a class="nota-card" href="/criterio/end-lease-after-earthquake-panama/"><span class="cat">Renting</span><h3>Can a tenant end the lease <em>after an earthquake?</em></h3><p>In a residential lease, arguing over whether the earthquake is a valid cause may begin with the wrong question.</p><span class="date">October 16, 2026</span></a>
-      <a class="nota-card" href="/criterio/building-code-seismic-panama/"><span class="cat">Buildings &amp; Neighborhoods</span><h3>Which structural code <em>was your building designed under?</em></h3><p>A building from 1998 and one approved under REP‑2021 did not begin with the same framework. The date helps, but it cannot answer the question alone.</p><span class="date">October 16, 2026</span></a>
+      <a class="nota-card" data-cat="mercado" href="/criterio/higher-rates-for-longer-panama/"><span class="cat">Market</span><h3>Higher rates for longer: <em>in Panama, that changes who has the negotiating advantage.</em></h3><p>Expensive credit does not stop every transaction. It changes who can move, who has to wait and where the real negotiating room appears.</p><span class="date">October 16, 2026</span></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/end-lease-after-earthquake-panama/"><span class="cat">Renting</span><h3>Can a tenant end the lease <em>after an earthquake?</em></h3><p>In a residential lease, arguing over whether the earthquake is a valid cause may begin with the wrong question.</p><span class="date">October 16, 2026</span></a>
+      <a class="nota-card" data-cat="edificios" href="/criterio/building-code-seismic-panama/"><span class="cat">Buildings &amp; Neighborhoods</span><h3>Which structural code <em>was your building designed under?</em></h3><p>A building from 1998 and one approved under REP‑2021 did not begin with the same framework. The date helps, but it cannot answer the question alone.</p><span class="date">October 16, 2026</span></a>
     </div>
     <p class="plain"><a class="out" href="/criterio/en/">See all notes →</a></p>
   </div>
@@ -196,25 +224,23 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <!-- 07 · Lo que suelo aclarar -->
 <section class="sec" id="faq">
-  <div class="wrap faq-grid faq-sitio">
-    <div class="faq-sticky">
-      <p class="idx">07 · What I usually clarify</p>
-      <h2>Frequently asked questions.</h2>
-      <p class="lead">About how I work and what you can expect.</p>
-    </div>
-    <div>
+  <div class="wrap sec-head">
+    <p class="idx">07 · What I usually clarify</p>
+    <h2>Frequently asked questions.</h2>
+    <p class="lead">About how I work and what you can expect.</p>
+  </div>
+  <div class="wrap sec-body">
       <details class="faq-item" open><summary>How does the first conversation work?</summary><div class="body"><p>The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, we both know whether moving forward makes sense and what the next step would be.</p></div></details>
       <details class="faq-item"><summary>How do I work with you as a buyer?</summary><div class="body"><p>First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who holds each property and arrange the viewings with the information you need to decide.</p></div></details>
       <details class="faq-item"><summary>Do you work with owners who want to sell or rent?</summary><div class="body"><p>Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market and who it suits. Before listing, I review the price, the timing and how the property is presented against what is already on offer.</p></div></details>
       <details class="faq-item"><summary>What if the best decision is not to move forward?</summary><div class="body"><p>I will tell you. Sometimes the best advice is to wait, adjust the price, change the area or hold for a better moment. That is part of the work too.</p></div></details>
-    </div>
   </div>
 </section>
 
 <!-- 08 · Conversemos -->
 <section class="close" id="contacto">
   <div class="wrap">
-    <p class="idx">08 · Let's talk</p>
+    <p class="idx">08 · Let’s talk</p>
     <h2>Is there a property decision you need to settle?</h2>
     <p class="lead">Tell me what you need, in which area and by when. With those three details I can compare options before our first call.</p>
     <div class="actions">

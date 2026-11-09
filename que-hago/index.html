@@ -15,15 +15,17 @@
 <meta property="og:title" content="Qué hago · Cuatro formas de trabajar contigo | SpotOne Realty">
 <meta property="og:description" content="Captación y posicionamiento, representación en compra y alquiler, inteligencia de mercado y diagnóstico de situación, en Panamá.">
 <meta property="og:url" content="https://www.spotonerealty.com/que-hago/">
-<meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
+<meta property="og:image" content="https://www.spotonerealty.com/images/og/quehago-es.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/logo-favicon-negro.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=5">
+<link rel="stylesheet" href="/css/spotone.css?v=9">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -53,6 +55,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 /* hero con fotografia de zona: el indice sobre la foto va en Sky, como en
    toda banda oscura. El overlay y la altura los pone .hero del sistema. */
 .hero--zona .idx{color:var(--sky)}
+/* Relocation: navy pleno, sin foto, a la misma altura que el hero de Contacto.
+   La foto de zona que pide el documento sigue sin existir y la provisional de
+   La Peatonal se retiro el 9-nov: decia «La Peatonal otra vez», no «mudarte a
+   Panama». */
+.hero--60{min-height:60vh;justify-content:center}
+.hero--60>.wrap{padding-top:120px;padding-bottom:96px}
+@media(max-width:860px){.hero--60{min-height:0}
+  .hero--60>.wrap{padding-top:var(--band);padding-bottom:56px}}
 
 /* --- la pagina de contacto: hero a 60 % de alto y los cuatro datos en dos
        columnas a la derecha (instruccion del 8-nov) --- */
@@ -112,7 +122,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </div>
 
 <main id="main">
-<header class="hero hero--ivory">
+<header class="hero hero--ivory hero--72">
   <div class="wrap sec-head">
     <p class="idx">Qué hago</p>
     <h1>Cuatro formas de trabajar contigo.</h1>
@@ -120,10 +130,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="mods">
-      <div><div><p class="num">01</p><h3>Captación y posicionamiento</h3></div><div><p>Antes de publicar una propiedad, reviso cómo compite: oferta activa en su zona, ajustes recientes y tiempo publicado. Con esa comparación propongo el precio de salida, el enfoque, el perfil de comprador y los canales.</p></div></div>
-      <div><div><p class="num">02</p><h3>Compra y alquiler con representación</h3></div><div><p>Si buscas comprar o alquilar, primero entiendo qué necesitas, dónde y para cuándo. Después reviso las opciones que encuentres, las comparo con el mercado, contacto al corredor o al propietario que la tenga y organizo las visitas con la información necesaria para decidir.</p></div></div>
-      <div><div><p class="num">03</p><h3>Inteligencia de mercado</h3></div><div><p>El precio publicado no siempre es defendible. Reviso las alternativas con las que compite una propiedad y sus ajustes recientes. Cuando recomiendo un número, explico qué información lo sostiene y dónde todavía existe incertidumbre.</p></div></div>
-      <div><div><p class="num">04</p><h3>Diagnóstico de situación</h3></div><div><p>Si todavía no sabes si conviene vender, arrendar, comprar o esperar, ordeno primero la situación. Reviso zona, precio, momento y margen real para identificar qué se sostiene, qué necesita ajuste y cuál sería el siguiente paso.</p></div></div>
+      <div><div><h3>Captación y posicionamiento</h3></div><div><p>Antes de publicar una propiedad, reviso cómo compite: oferta activa en su zona, ajustes recientes y tiempo publicado. Con esa comparación propongo el precio de salida, el enfoque, el perfil de comprador y los canales.</p></div></div>
+      <div><div><h3>Compra y alquiler con representación</h3></div><div><p>Si buscas comprar o alquilar, primero entiendo qué necesitas, dónde y para cuándo. Después reviso las opciones que encuentres, las comparo con el mercado, contacto al corredor o al propietario que la tenga y organizo las visitas con la información necesaria para decidir.</p></div></div>
+      <div><div><h3>Inteligencia de mercado</h3></div><div><p>El precio publicado no siempre es defendible. Reviso las alternativas con las que compite una propiedad y sus ajustes recientes. Cuando recomiendo un número, explico qué información lo sostiene y dónde todavía existe incertidumbre.</p></div></div>
+      <div><div><h3>Diagnóstico de situación</h3></div><div><p>Si todavía no sabes si conviene vender, arrendar, comprar o esperar, ordeno primero la situación. Reviso zona, precio, momento y margen real para identificar qué se sostiene, qué necesita ajuste y cuál sería el siguiente paso.</p></div></div>
     </div>
   </div>
 </header>
@@ -136,10 +146,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
     <div class="pasos g4">
-      <div><p class="num">01</p><h3>Contexto</h3><p>Objetivos, prioridades, momento y presupuesto real. Antes de buscar, publicar o negociar, ordenamos qué debe resolver la operación.</p></div>
-      <div><p class="num">02</p><h3>Comparación</h3><p>Reviso propiedades similares anunciadas, sus precios y cuánto tiempo llevan en oferta. Cuando hay datos verificables de operaciones cerradas, también los incorporo.</p></div>
-      <div><p class="num">03</p><h3>Estrategia</h3><p>Propongo qué combinación de precio, zona, presentación, negociación y tiempos tiene sentido. Cada recomendación debe poder explicarse.</p></div>
-      <div><p class="num">04</p><h3>Ejecución</h3><p>Coordino la búsqueda o comercialización, las visitas, la negociación y el seguimiento hasta el cierre.</p></div>
+      <div><h3>Contexto</h3><p>Objetivos, prioridades, momento y presupuesto real. Antes de buscar, publicar o negociar, ordenamos qué debe resolver la operación.</p></div>
+      <div><h3>Comparación</h3><p>Reviso propiedades similares anunciadas, sus precios y cuánto tiempo llevan en oferta. Cuando hay datos verificables de operaciones cerradas, también los incorporo.</p></div>
+      <div><h3>Estrategia</h3><p>Propongo qué combinación de precio, zona, presentación, negociación y tiempos tiene sentido. Cada recomendación debe poder explicarse.</p></div>
+      <div><h3>Ejecución</h3><p>Coordino la búsqueda o comercialización, las visitas, la negociación y el seguimiento hasta el cierre.</p></div>
     </div>
   </div>
 </section>
@@ -147,8 +157,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <section class="close" id="contacto">
   <div class="wrap">
     <p class="idx">02 · Conversemos</p>
-    <h2>¿Tienes una decisión inmobiliaria por resolver?</h2>
-    <p class="lead">Cuéntame qué necesitas, en qué zona y para cuándo. Con esos tres datos puedo comparar opciones antes de la primera llamada.</p>
+    <h2>¿Qué decisión tienes entre manos?</h2>
+    <p class="lead">Comprar, vender, alquilar o esperar. Dime cuál es y en qué zona, y reviso el mercado antes de recomendarte nada.</p>
     <div class="actions">
       <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina%20y%20quisiera%20hablar%20contigo" rel="noopener">Conversar por WhatsApp</a>
       <a class="out" href="mailto:info@spotonerealty.com">Escribir por correo →</a>

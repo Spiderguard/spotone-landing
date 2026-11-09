@@ -15,15 +15,17 @@
 <meta property="og:title" content="Conversemos | SpotOne Realty · Panamá">
 <meta property="og:description" content="Cuéntame qué necesitas, en qué zona y para cuándo. Con esos tres datos comparo opciones antes de la primera llamada.">
 <meta property="og:url" content="https://www.spotonerealty.com/contacto/">
-<meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
+<meta property="og:image" content="https://www.spotonerealty.com/images/og/contacto-es.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/logo-favicon-negro.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="stylesheet" href="/css/spotone.css?v=5">
+<link rel="stylesheet" href="/css/spotone.css?v=9">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -53,6 +55,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 /* hero con fotografia de zona: el indice sobre la foto va en Sky, como en
    toda banda oscura. El overlay y la altura los pone .hero del sistema. */
 .hero--zona .idx{color:var(--sky)}
+/* Relocation: navy pleno, sin foto, a la misma altura que el hero de Contacto.
+   La foto de zona que pide el documento sigue sin existir y la provisional de
+   La Peatonal se retiro el 9-nov: decia «La Peatonal otra vez», no «mudarte a
+   Panama». */
+.hero--60{min-height:60vh;justify-content:center}
+.hero--60>.wrap{padding-top:120px;padding-bottom:96px}
+@media(max-width:860px){.hero--60{min-height:0}
+  .hero--60>.wrap{padding-top:var(--band);padding-bottom:56px}}
 
 /* --- la pagina de contacto: hero a 60 % de alto y los cuatro datos en dos
        columnas a la derecha (instruccion del 8-nov) --- */
