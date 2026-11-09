@@ -440,3 +440,11 @@ footer{background:var(--dark);padding:56px 0 32px}
   text-decoration-thickness:1px;
 }
 .crit-body a:hover{text-decoration-thickness:2px}
+
+/* Fecha de publicación bajo el titular de la nota. Clase nueva: las notas que
+   no la llevan no cambian en nada. */
+.crit-date{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9097;
+  font-weight:600;font-variant-numeric:tabular-nums;margin:18px 0 0;
+}

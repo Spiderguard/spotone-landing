@@ -2,13 +2,175 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpotOne Realty</title>
-<meta http-equiv="refresh" content="0; url=../../index-en.html#dario">
-<link rel="canonical" href="https://www.spotonerealty.com/index-en.html#dario">
-<script>location.replace("../../index-en.html#dario");</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dario Jhangimal · Real Estate Broker PN-1240 | SpotOne Realty</title>
+<meta name="description" content="Real estate broker in Panama. You work directly with me from start to finish, with every figure and its source.">
+<link rel="canonical" href="https://www.spotonerealty.com/dario/en/">
+<link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/dario/">
+<link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/dario/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/dario/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website"><meta property="og:locale" content="en">
+<meta property="og:site_name" content="SpotOne Realty">
+<meta property="og:title" content="Dario Jhangimal · Real Estate Broker PN-1240 | SpotOne Realty">
+<meta property="og:description" content="Real estate broker in Panama. You work directly with me from start to finish, with every figure and its source.">
+<meta property="og:url" content="https://www.spotonerealty.com/dario/en/">
+<meta property="og:image" content="https://www.spotonerealty.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/images/logo-favicon-negro.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
+<link rel="stylesheet" href="/css/spotone.css?v=5">
+<style>
+@font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
+h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
+
+.hero--ivory>.wrap{padding-bottom:0}
+/* el aire bajo el hero lo pone el ritmo de la seccion siguiente (128 px):
+   si el hero ademas lo ponia, salian 256 px entre el servicio 04 y
+   «Como trabajo contigo» (medido el 8-nov: 250). */
+.hero--ivory .sec-body{margin-top:var(--gap-body)}
+.hero--navy>.wrap{padding-top:112px;padding-bottom:96px}
+.hero--navy h1{color:var(--ivory)}
+.hero--navy .lead{color:var(--on-navy-muted)}
+.hero--navy .idx{color:var(--sky)}
+.hero--navy .actions,.hero--zona .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
+.label{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);
+  line-height:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 24px;max-width:none}
+/* en /dario/ la etiqueta vive dentro de .reading, y `.reading p` le gana a
+   `.label` en especificidad: sin esto sale a 17 px en vez de los 12 del
+   sistema (lo mismo que ya pasaba con el indice). */
+.reading .label{font-size:var(--fs-label);line-height:16px;color:var(--muted)}
+.retrato .ph{background:#8A8F96}
+/* dos parrafos de apoyo: 20 px de aire. Vale para el hero marfil y para el
+   de Relocation, que lleva fotografia. */
+.hero .lead + .lead{margin-top:20px}
+/* hero con fotografia de zona: el indice sobre la foto va en Sky, como en
+   toda banda oscura. El overlay y la altura los pone .hero del sistema. */
+.hero--zona .idx{color:var(--sky)}
+
+/* --- la pagina de contacto: hero a 60 % de alto y los cuatro datos en dos
+       columnas a la derecha (instruccion del 8-nov) --- */
+/* esta pagina ES el modulo de cierre: cierra como la banda navy de las
+   demas (48 px al pie y el filete de 1 px que la separa del pie del sitio). */
+.hero--cierre{min-height:60vh;justify-content:center;
+  border-bottom:1px solid var(--on-navy-line)}
+.hero--cierre>.wrap{padding-top:120px;padding-bottom:48px}
+.co-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--gutter);align-items:start;margin-top:var(--gap-body)}
+.datos{row-gap:32px}
+.dato{padding-top:16px;border-top:1px solid var(--on-navy-line)}
+.dato .label{margin:0 0 8px;color:var(--sky)}
+.dato a{color:var(--ivory);font-size:var(--fs-lead);line-height:var(--lh-lead);
+  font-weight:300;text-decoration:none;display:inline-block}
+.dato a:hover{color:var(--sky)}
+@media(max-width:860px){
+  .co-grid{grid-template-columns:minmax(0,1fr);row-gap:56px}
+  .hero--cierre{min-height:0}
+  .hero--cierre>.wrap{padding-top:var(--band);padding-bottom:56px}
+  /* el renglon mide 26 px de alto: el area de toque se lleva a 44 con un
+     pseudo-elemento, como ya hacen los filtros de Criterio. */
+  .dato a{position:relative}
+  .dato a::after{content:"";position:absolute;left:0;right:0;top:50%;
+    height:44px;transform:translateY(-50%)}
+}
+</style>
+<script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body>
-<p><a href="../../index-en.html#dario">Continue to Dario.</a></p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="hdr-in">
+    <a class="brand" href="/index-en.html" aria-label="SpotOne Realty — Home"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="lnk" href="/services/">What I do</a><a class="lnk" href="/index-en.html#propiedades">Properties</a><a class="lnk" href="/relocation/en/">Relocation</a><a class="lnk" href="/criterio/en/">Notes</a><a class="lnk here" href="/dario/en/" aria-current="page">Dario</a>
+      <a class="cta" href="#contacto">Let's talk</a>
+      <div class="lang"><a href="/dario/" class="" lang="es">ES</a><span aria-hidden="true">/</span><a href="/dario/en/" class="active" aria-current="true" lang="en">EN</a></div>
+      <button class="menu-toggle" id="menuOpen" aria-label="Open the menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+<div class="mm" id="mobileMenu" hidden>
+  <div class="mm-top">
+    <a class="brand" href="/index-en.html"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Close the menu">&times;</button>
+  </div>
+  <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#contacto">Let's talk</a></nav>
+  <p class="mm-group">SpotOne Realty</p>
+  <nav aria-label="Menu"><a href="/index-en.html">Home</a><a href="/services/">What I do</a><a href="/index-en.html#propiedades">Properties</a><a href="/relocation/en/">Relocation</a><a href="/criterio/en/">Notes</a><a href="/dario/en/" class="here" aria-current="page">Dario</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="#contacto">Let's talk</a></nav>
+  <div class="mm-lang"><a href="/dario/" class="" lang="es">Español</a><span aria-hidden="true">/</span><a href="/dario/en/" class="active" aria-current="true" lang="en">English</a></div>
+  <div class="mm-foot">
+    <a href="tel:+50766758127">+507 6675-8127</a>
+    <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
+    <a href="https://instagram.com/spotonerealty" rel="noopener">@spotonerealty</a>
+  </div>
+</div>
+
+<main id="main">
+<header class="hero hero--ivory">
+  <div class="wrap g12 retrato" style="align-items:start">
+    <span class="ph ph--34 c4"><picture>
+      <source srcset="/images/dario-neutra.webp" type="image/webp">
+      <img src="/images/dario-neutra.jpg" width="998" height="1328" alt="Portrait of Dario Jhangimal, real estate broker in Panama" fetchpriority="high" decoding="async">
+    </picture></span>
+    <div class="c7 reading">
+      <p class="idx">Dario</p>
+      <h1>Dario Jhangimal</h1>
+      <p class="label">Real Estate Broker · PN-1240</p>
+      <p>I’m a real estate broker in Panama. I help clients find and market properties, negotiate terms and work through the closing process.</p>
+      <p>I work with homes, commercial spaces, land and farms, beach properties, pre-construction projects and bank-owned properties. We review the price, terms and whether the property meets your needs.</p>
+      <p>At SpotOne Realty you work directly with me from start to finish. I explain the options, follow up throughout the process and flag issues to review before you commit.</p>
+      <p>If another broker holds the property you are interested in, I coordinate with them and arrange the viewing all the same. You do not need to sign an exclusive agreement to see it.</p>
+    </div>
+  </div>
+</header>
+
+<section class="close" id="contacto">
+  <div class="wrap">
+    <p class="idx">01 · Let's talk</p>
+    <h2>Is there a property decision you need to settle?</h2>
+    <p class="lead">Tell me what you need, in which area and by when. With those three details I can compare options before our first call.</p>
+    <div class="actions">
+      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20your%20site%20and%20would%20like%20to%20talk" rel="noopener">Chat on WhatsApp</a>
+      <a class="out" href="mailto:info@spotonerealty.com">Write by email →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="sf">
+  <div class="wrap">
+    <div class="sf-cols g4">
+      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">The four ways</a><a href="/services/#metodo">How I work</a><a href="/criterio/en/">Notes</a></nav><nav aria-label="Properties"><p class="idx">Properties</p><a href="/peatonal68/en/">Plaza La Peatonal 68</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav><nav aria-label="Contact"><p class="idx">Contact</p><a href="/contact/">Let's talk</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20your%20site%20and%20would%20like%20to%20talk" rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+    </div>
+    <p class="sf-sign">Dario Jhangimal · Real Estate Broker · PN-1240</p>
+    <div class="sf-bottom">
+      <span>© 2026 SpotOne Realty · Panama · License PN-1240</span>
+      <span class="sf-lang"><a href="/dario/" lang="es">ES</a> · <a href="/dario/en/" lang="en">EN</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
+(function(){
+  var h=document.querySelector('.site-header');
+  function s(){ if(h) h.classList.toggle('scrolled', window.scrollY>24); }
+  s(); addEventListener('scroll', s, {passive:true});
+  var m=document.getElementById('mobileMenu'),
+      o=document.getElementById('menuOpen'),
+      c=document.getElementById('menuClose');
+  function abrir(v){ if(!m) return; m.hidden=!v; if(o) o.setAttribute('aria-expanded', v?'true':'false');
+    document.documentElement.style.overflow = v?'hidden':''; }
+  if(o) o.addEventListener('click', function(){ abrir(true); });
+  if(c) c.addEventListener('click', function(){ abrir(false); });
+  if(m) m.addEventListener('click', function(e){ if(e.target.tagName==='A') abrir(false); });
+  addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
+})();
+</script>
 </body>
 </html>
