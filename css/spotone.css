@@ -953,3 +953,87 @@ a.card:hover{border-color:transparent}
    porque `.reading p` gana en especificidad a `.idx`. --- */
 .retrato .idx,.faq-sticky .idx{margin:0 0 var(--gap-idx)}
 .reading .idx{font-size:var(--fs-label);line-height:16px}
+
+/* === Auditoría de nivel · 9-nov-2026 ============================= estados,
+   tipografía y la señal de categoría de Criterio. Bloque añadido al final:
+   gana por orden de cascada sobre todo lo anterior. --- */
+
+/* Estados · el enlace de texto no cambia de color: aparece un filete de 1 px.
+   Las piezas que son bloque (botón, tarjeta, foto, salto) quedan fuera: ahí el
+   hover lo da la pieza. */
+a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.btn:hover,.skip:hover,a.ph:hover,a.card:hover,a.feature:hover,.nota-card:hover,
+.feat:hover,.site-nav .cta:hover,.lang a:hover{text-decoration:none}
+
+/* …y sin cambio de color: se repite el color de reposo */
+.lang a:hover{color:var(--muted)}
+.sf a:hover{color:var(--on-navy-muted)}
+.sf-cols a:hover{color:rgba(244,241,234,.8)}
+.sf-bottom a:hover{color:var(--on-navy-faint)}
+.crumb a:hover{color:var(--muted)}
+
+/* Tarjeta · la foto escala 2 %, nada más */
+a.card:hover .card-img img,a.feature:hover .feature-img img,
+a.card:hover .ph img,a.feature:hover .ph img{transform:scale(1.02)}
+a.card:hover,a.feature:hover{border-color:transparent}
+/* La tarjeta de nota no tiene foto que escalar: el filete de 1 px va en su
+   titular, que es el enlace, y el color no se mueve. */
+.nota-card:hover h3{color:var(--ink);text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:4px}
+
+/* Cifras en versalitas tabulares dondequiera que haya cifras */
+.cifra,.stat,.card-fig,.card-meta,.num,.date,.cuenta,.dato,.tip,.precio,
+time,table{font-variant-numeric:tabular-nums}
+
+/* Titulares equilibrados */
+h1,h2,h3{text-wrap:balance}
+
+/* Señal de categoría · la única señal de color del sitio, y es funcional.
+   Banda de 4 px sobre el filete superior de la tarjeta sin foto. El slug es el
+   mismo en ES y en EN: la misma categoría, el mismo tono en los dos idiomas.
+   Seis categorías y cinco tonos en la paleta: «IA & herramientas» espera el
+   suyo y por eso sale sin banda, no con un tono inventado. */
+.nota-card{position:relative}
+.nota-card::before{content:"";position:absolute;left:0;top:-4px;
+  width:100%;height:4px;background:var(--cat,transparent)}
+.nota-card[data-cat="decisiones"]{--cat:var(--navy)}
+.nota-card[data-cat="comprar"]{--cat:var(--sky)}
+.nota-card[data-cat="mercado"]{--cat:var(--muted)}
+.nota-card[data-cat="edificios"]{--cat:rgba(26,26,24,.4)}
+.nota-card[data-cat="alquiler"]{--cat:#EAE6DC}
+
+/* === Impresión de /peatonal68/ (auditoría del 9-nov) ================ sin
+   barra, sin botones, sin pie navy; una ficha por página carta; la URL y el
+   WhatsApp en texto al final. Alcance deliberado: solo esa página, que es la
+   que se imprime para una visita. --- */
+.solo-impresion{display:none}
+@media print{
+  @page{size:letter;margin:16mm}
+  body.peatonal{background:#fff;color:#1A1A18}
+  body.peatonal .site-header,body.peatonal .mm,body.peatonal .mm-backdrop,
+  body.peatonal .wafloat,body.peatonal .skip,body.peatonal .btn,
+  body.peatonal .uacts,body.peatonal .out,body.peatonal .pclose,
+  body.peatonal .sf,body.peatonal .lb{display:none!important}
+  body.peatonal .solo-impresion{display:block;margin-top:12mm;padding-top:4mm;
+    border-top:1px solid #1A1A18;font-family:'Hanken Grotesk',sans-serif;
+    font-size:10pt;line-height:14pt}
+  body.peatonal .phero{min-height:0;padding:0 0 8mm}
+  body.peatonal .sec{padding:6mm 0;break-inside:auto}
+  /* una ficha por página carta */
+  body.peatonal .card.u{break-inside:avoid;page-break-inside:avoid;
+    break-after:page;page-break-after:always}
+  body.peatonal #local-23{break-after:auto;page-break-after:auto}
+  body.peatonal .wrap{max-width:none;padding:0}
+  body.peatonal details[open] summary ~ *{display:revert}
+  body.peatonal details summary{list-style:none}
+  body.peatonal img{max-width:100%;height:auto}
+}
+.feat:hover .ph img{transform:scale(1.02)}
+
+/* Foco visible sobre fondo oscuro. `.on-dark` no la lleva ningún elemento del
+   sitio, así que la regla que dependía de esa clase nunca se aplicó: sobre
+   navy el anillo salía navy, es decir invisible. Se nombran las secciones
+   oscuras reales. */
+.hero:not(.hero--ivory) :focus-visible,.close :focus-visible,
+.band-ph :focus-visible,.pclose :focus-visible,.sf :focus-visible,
+.co-grid :focus-visible,.phero :focus-visible{outline-color:var(--sky)}
