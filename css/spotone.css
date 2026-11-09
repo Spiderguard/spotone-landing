@@ -1110,3 +1110,14 @@ p,li,dd,dt{font-weight:300}
    renglón. Va en el sistema porque la grilla vive en tres páginas. */
 .g4 h3,.pasos h3,.mods h3,.cards h3{font-size:24px;line-height:30px}
 @media(max-width:860px){.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:22px;line-height:28px}}
+/* Cierre de escala · 9-nov. «Cuatro formas de trabajar contigo.» son cinco
+   palabras que a 80 px piden 1.320 px y el contenedor da 1.152. Ese hero va a
+   72, sin partir el copy. */
+.hero--72 h1{font-size:72px;line-height:78px}
+@media(max-width:860px){.hero--72 h1{font-size:var(--fs-h1);line-height:var(--lh-h1)}}
+/* A 36 px en móvil, seis titulares de sección pasaban de dos renglones: el
+   cierre en los dos idiomas, los tres de Peatonal y el título de la nota
+   destacada. Bajan a 32, y solo en móvil, que es lo que Dario autorizó. */
+@media(max-width:860px){
+  .close h2,.pclose h2,body.peatonal .sec-head h2,.feat h2{font-size:32px;line-height:36px}
+}
