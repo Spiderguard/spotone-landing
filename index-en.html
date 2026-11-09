@@ -23,11 +23,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
-<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="preload" as="image" href="/images/hero-main-desktop.webp" type="image/webp" media="(min-width:861px)" fetchpriority="high">
-<link rel="preload" as="image" href="/images/hero-main-mobile.webp" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=10">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
+<link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
+<link rel="stylesheet" href="/css/spotone.css?v=11">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -47,28 +47,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-txt{grid-column:8 / span 5}
 .prop-txt .label{margin:0 0 var(--gap-idx)}
 .prop-txt h3{margin:0 0 var(--gap-lead);color:var(--ink)}
-.prop-lead{margin:0 0 40px;color:var(--muted);font-size:var(--fs-body);
-  line-height:var(--lh-body);max-width:none}
-/* columnas al contenido, no en tercios: «Desde $1,800» a 28 px pide 170 px y
-   un tercio de la columna da 132, asi que partia en dos y dejaba «Canon
-   mensual» mas abajo que las otras dos etiquetas. */
-.prop-datos{display:grid;grid-template-columns:repeat(3,auto);
-  justify-content:space-between;gap:var(--gutter);margin:0 0 40px}
-.prop-datos .cifra{white-space:nowrap}
-.prop-datos>div{border-top:1px solid var(--line);padding-top:16px}
-.prop-datos .cifra{display:block;font-family:'Newsreader',Georgia,serif;
-  font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;color:var(--ink);
-  font-variant-numeric:tabular-nums}
-.prop-datos .et{display:block;font-size:var(--fs-label);line-height:16px;
-  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  margin-top:8px}
 @media(max-width:860px){
   .prop{grid-template-columns:minmax(0,1fr);row-gap:32px}
   .prop-foto,.prop-txt{grid-column:auto}
   /* los tres datos no caben en fila en 342 px: «Desde $1,800» a 28 px pide
      170 y la columna da 92. Se apilan, cada uno con su filete. */
-  .prop-datos{grid-template-columns:minmax(0,1fr);gap:0}
-  .prop-datos>div{padding:16px 0}
 }
 
 /* 04 · la banda de Relocation todavía no tiene fotografía de zona */
@@ -78,7 +61,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
-<body>
+<body class="inicio">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header site-header--over site-header--flat">
   <div class="hdr-in">
@@ -111,9 +94,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 00 · Hero -->
 <header class="hero">
   <span class="ph"><picture>
-    <source media="(max-width:860px)" srcset="/images/hero-main-mobile.webp" type="image/webp">
+    <source media="(max-width:860px)" srcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" sizes="100vw" type="image/webp">
     <source media="(max-width:860px)" srcset="/images/hero-main-mobile.jpg">
-    <source srcset="/images/hero-main-desktop.webp" type="image/webp">
+    <source srcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" sizes="100vw" type="image/webp">
     <img src="/images/hero-main-desktop.jpg" width="2200" height="1468" alt="Interior of an apartment in Panama City with the skyline behind, daylight" fetchpriority="high" decoding="async">
   </picture></span>
   <div class="wrap">
@@ -141,18 +124,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body prop">
     <a class="prop-foto ph ph--32" href="/peatonal68/en/"><picture>
-      <source srcset="/images/fachada-peatonal-32.webp" type="image/webp">
+      <source srcset="/images/fachada-peatonal-32-800.webp 800w, /images/fachada-peatonal-32.webp 1152w" sizes="(max-width:860px) 100vw, 659px" type="image/webp">
       <img src="/images/fachada-peatonal-32.jpg" width="1152" height="768" alt="Facade of Plaza La Peatonal 68 in daylight, Calle 68 Este, San Francisco" loading="lazy" decoding="async">
     </picture></a>
     <div class="prop-txt">
       <p class="label">Exclusive representation · San Francisco</p>
       <h3>Plaza La Peatonal 68</h3>
-      <p class="prop-lead">Three commercial units for rent, 100 to 102 m²</p>
-      <div class="prop-datos">
-        <div><span class="cifra">3</span><span class="et">Units</span></div>
-        <div><span class="cifra">From $1,800</span><span class="et">Monthly rent</span></div>
-        <div><span class="cifra">60</span><span class="et">Parking spaces</span></div>
-      </div>
+      <p class="dlinea">3 units · 100–102 m² · from $1,800/mo · 60 parking spaces</p>
       <p class="plain"><a class="out" href="/peatonal68/en/">See availability →</a></p>
     </div>
   </div>

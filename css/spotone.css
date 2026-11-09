@@ -1127,3 +1127,63 @@ p,li,dd,dt{font-weight:300}
    en Relocation y 120 en el cierre. */
 p[id],span[id]{scroll-margin-top:calc(var(--hdr-h) + 24px)}
 @media(max-width:860px){p[id],span[id]{scroll-margin-top:calc(var(--hdr-h-sm) + 16px)}}
+
+/* =============================================================
+   v1 · Especificación final (9-nov-2026, doc v1.0)
+   Fuente de verdad: «Especificación final — spotonerealty.com v1.0».
+   Este bloque ajusta el sistema a lo que ese documento fija y que la
+   ronda de escala habia dejado distinto. Gana por orden de cascada.
+   ============================================================= */
+
+/* Peso del display. La tabla de la seccion 2 pide Newsreader 400 en
+   titular de hero y de seccion; la lista de aceptacion lo cierra:
+   «Display Newsreader 400; 500 solo <= 28 px». Los nombres y titulos de
+   item (28 y 24) se quedan en 500, que es donde el 500 si corresponde. */
+h1,h2{font-weight:400}
+h3,h4,.nombre,.cifra,.crit-h,.prop-txt .nombre{font-weight:500}
+
+/* Retrato 3:4. La seccion 2 fija 3:2 en tarjeta, 16:9 en banda y 3:4 en
+   retrato; la ronda anterior lo habia dejado en 4:5. */
+.retrato .ph{aspect-ratio:3/4}
+
+/* Ritmo dentro de la seccion: 16 del indice al titular, 20 del titular al
+   apoyo, 56 del apoyo al contenido. */
+.sec-head{margin:0 0 56px}
+@media(max-width:860px){.sec-head{margin:0 0 40px}}
+
+/* Linea de datos. Sustituye a toda fila de cifras grandes: un solo
+   renglon Hanken 18 Muted con puntos medios. Principio 3 de la seccion 1
+   y fila «Linea de datos» de la seccion 3. */
+.dlinea{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:400;
+  font-size:18px;line-height:30px;color:var(--muted);margin:0 0 32px;
+  font-variant-numeric:tabular-nums}
+.on-navy .dlinea,.phero .dlinea,.band--navy .dlinea{color:var(--on-navy-muted)}
+@media(max-width:860px){.dlinea{font-size:17px;line-height:28px;margin:0 0 24px}}
+
+/* Filtros de Criterio como texto subrayado, no como pastillas. Siguen
+   siendo <button> por accesibilidad; cambia la apariencia, que es lo que
+   fija la seccion 4. */
+.filtros{display:flex;flex-wrap:wrap;gap:24px;margin:0 0 56px}
+.filtros button{appearance:none;background:none;border:0;padding:0;
+  min-height:44px;font-family:'Hanken Grotesk',system-ui,sans-serif;
+  font-weight:500;font-size:15px;color:var(--muted);cursor:pointer;
+  text-decoration:underline;text-underline-offset:4px;
+  text-decoration-thickness:1px;text-decoration-color:rgba(26,26,24,.3)}
+.filtros button[aria-pressed="true"]{color:var(--ink);
+  text-decoration-color:var(--ink)}
+.filtros button:hover{color:var(--ink)}
+
+/* Retrato del modulo 05 del inicio: tres columnas, no cuatro.
+   La seccion 4 pide «retrato 3:4 en columnas 1–4» y en la misma fila «la foto
+   no supera el alto del texto en mas del 25 %». A 1440 las dos no caben:
+   cuatro columnas son 379 px de ancho, que a 3:4 dan 484 px de alto contra
+   300 px de texto, un 61 %. El techo del 25 % son 375 px, que a 3:4 salen de
+   282 px de ancho, es decir tres columnas (medido el 9-nov).
+   El principio 2 de la seccion 1 es el arbitro declarado: manda el texto, asi
+   que cede el ancho y la proporcion 3:4 se conserva. En /dario/ el texto mide
+   462 px y las cuatro columnas si entran (484, un 5 %): esa pagina no cambia. */
+body.inicio .retrato .ph{grid-column:1 / span 3}
+
+/* FAQ en Newsreader 20, como fija la seccion 3. Venia en Hanken 17.5. */
+.faq-item summary{font-family:'Newsreader',Georgia,serif;font-size:20px;
+  line-height:30px;letter-spacing:0}
