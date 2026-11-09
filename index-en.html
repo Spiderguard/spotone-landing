@@ -49,8 +49,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-txt h3{margin:0 0 var(--gap-lead);color:var(--ink)}
 .prop-lead{margin:0 0 40px;color:var(--muted);font-size:var(--fs-body);
   line-height:var(--lh-body);max-width:none}
-.prop-datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:var(--gutter);margin:0 0 40px}
+/* columnas al contenido, no en tercios: «Desde $1,800» a 28 px pide 170 px y
+   un tercio de la columna da 132, asi que partia en dos y dejaba «Canon
+   mensual» mas abajo que las otras dos etiquetas. */
+.prop-datos{display:grid;grid-template-columns:repeat(3,auto);
+  justify-content:space-between;gap:var(--gutter);margin:0 0 40px}
+.prop-datos .cifra{white-space:nowrap}
 .prop-datos>div{border-top:1px solid var(--line);padding-top:16px}
 .prop-datos .cifra{display:block;font-family:'Newsreader',Georgia,serif;
   font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;color:var(--ink);
