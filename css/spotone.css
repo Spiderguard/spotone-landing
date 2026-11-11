@@ -883,13 +883,13 @@ a.card:hover{border-color:transparent}
 /* --- nota de Criterio: tarjeta de texto, sin foto --- */
 .nota-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;
   padding-top:24px;border-top:1px solid var(--line)}
-.nota-card .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.12em;
+.nota-card .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;line-height:var(--lh-label);
+  font-size:var(--fs-label);line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;
   text-transform:uppercase;color:var(--muted)}
 .nota-card h3{margin:0;color:var(--ink)}
-.nota-card p{margin:0;color:var(--muted);font-size:15px;line-height:24px}
-.nota-card .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-note);line-height:20px;color:var(--muted);
+.nota-card p{margin:0;color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)}
+.nota-card .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;line-height:var(--lh-label);
+  font-size:var(--fs-label);line-height:var(--lh-label);color:var(--muted);
   font-variant-numeric:tabular-nums;margin-top:auto;padding-top:12px}
 .nota-card:hover h3{color:var(--muted)}
 
@@ -897,13 +897,13 @@ a.card:hover{border-color:transparent}
 .feat{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);
   gap:var(--gutter);text-decoration:none;
   padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.feat .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.12em;
+.feat .cat{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;line-height:var(--lh-label);
+  font-size:var(--fs-label);line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;
   text-transform:uppercase;color:var(--muted);margin:0 0 12px}
 .feat h2{margin:0 0 16px;color:var(--ink)}
 .feat .lead{margin:0}
-.feat .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-note);line-height:20px;color:var(--muted);
+.feat .date{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;line-height:var(--lh-label);
+  font-size:var(--fs-label);line-height:var(--lh-label);color:var(--muted);
   font-variant-numeric:tabular-nums;margin:16px 0 0}
 .feat:hover h2{color:var(--muted)}
 @media(max-width:860px){.feat{grid-template-columns:1fr;gap:16px;padding:28px 0}}
@@ -1186,7 +1186,7 @@ h3,h4,.nombre,.cifra,.crit-h,.prop-txt .nombre{font-weight:500}
    El principio 2 de la seccion 1 es el arbitro declarado: manda el texto, asi
    que cede el ancho y la proporcion 3:4 se conserva. En /dario/ el texto mide
    462 px y las cuatro columnas si entran (484, un 5 %): esa pagina no cambia. */
-body.inicio .retrato .ph{grid-column:1 / span 3}
+/* (sustituida por §6 de v1.1: el retrato va a 4:5 en cuatro columnas) */
 
 /* FAQ en Newsreader 20, como fija la seccion 3. Venia en Hanken 17.5. */
 .faq-item summary{font-family:'Newsreader',Georgia,serif;font-size:20px;
@@ -1253,13 +1253,7 @@ h1 em,h2 em,h3 em{font-weight:300;font-style:italic}
    (264 px) para no pasar del 25 % sobre el texto; el texto seguía anclado a la
    columna 7, y entre los dos quedaban 328 px de nada. Ahora el texto arranca
    64 px después del borde de la foto, que es lo que Dario fijó el 11-nov. */
-body.inicio .retrato{grid-template-columns:264px minmax(0,1fr);column-gap:64px}
-body.inicio .retrato>.ph{grid-column:1}
-body.inicio .retrato>.c7{grid-column:2}
-@media(max-width:860px){
-  body.inicio .retrato{grid-template-columns:1fr;column-gap:0}
-  body.inicio .retrato>.ph,body.inicio .retrato>.c7{grid-column:auto}
-}
+/* (sustituido por §6 de v1.1: cuatro columnas y el texto a una de distancia) */
 
 /* 4 · la fila de cifras del héroe de La Peatonal 68 se queda: es el resumen de
    disponibilidad de una ficha de alquiler y Dario la mandó conservar el
@@ -1280,3 +1274,132 @@ body.inicio .retrato>.c7{grid-column:2}
 /* El `b` del navegador resuelve a 400 contra un cuerpo de 300, y 400 no existe
    en el sistema. El único grueso de Hanken es el 500. */
 b,strong{font-weight:500}
+
+/* ======================================================================
+   v1.1 · 11-nov-2026 · el mock-up aprobado
+   Manda v1.0 con las tres enmiendas. Este bloque fija la escala de §4 en
+   píxeles —sin fraccionarios, sin clamp— y los pesos de §1.
+   Nueve pares tamaño/interlínea a 1440, seis a 390.
+   ====================================================================== */
+
+:root{
+  --fs-h1:80px;    --lh-h1:84px;    /* héroe · Newsreader 300 */
+  --fs-h2:56px;    --lh-h2:60px;    /* titular de sección · Newsreader 300 */
+  --fs-h3:28px;    --lh-h3:36px;    /* nombre, cifra · Newsreader 500 */
+  --fs-h4:28px;
+  --fs-item:24px;  --lh-item:30px;  /* ítem de la rejilla de cuatro · 500 */
+  --fs-lead:22px;  --lh-lead:34px;  /* apoyo · Hanken 300 */
+  --fs-faq:20px;   --lh-faq:28px;   /* pregunta de FAQ · Newsreader 300 */
+  --fs-body:18px;  --lh-body:30px;  /* cuerpo · Hanken 300 */
+  --fs-bar:18px;   --lh-bar:24px;   /* barra, menú, numeral de pin */
+  --fs-label:15px; --lh-label:24px; /* etiqueta y metadato · Hanken 500 */
+  --fs-note:15px;  --fs-micro:15px; --fs-ui:15px;
+  --band:128px; --band-tight:128px;
+}
+@media(max-width:860px){
+  :root{
+    --fs-h1:48px;    --lh-h1:52px;
+    --fs-h2:36px;    --lh-h2:40px;
+    --fs-h3:24px;    --lh-h3:30px;
+    --fs-item:24px;  --lh-item:30px;
+    --fs-lead:20px;  --lh-lead:30px;
+    --fs-faq:20px;   --lh-faq:30px;
+    --fs-body:17px;  --lh-body:28px;
+    --fs-bar:15px;   --lh-bar:24px;
+    --band:88px; --band-tight:88px;   /* §6: 88 en móvil, no 80 */
+  }
+}
+
+/* --- §1 · pesos. Newsreader 300 en display y pregunta de FAQ; 500 en
+       nombre, cifra, ítem y etiqueta de Hanken. --- */
+h1,h2{font-weight:300}
+h1 em,h2 em,h3 em{font-weight:300;font-style:italic}
+h3,h4,.nombre,.cifra,.stat,.card-fig,.crit-h,.prop-txt .nombre,
+.card-title,.feature-body h2,.feature-body h3,.fact-v{font-weight:500}
+
+/* --- §4 · los nueve pares. Cada familia de texto a un par y solo uno. --- */
+h1{font-size:var(--fs-h1);line-height:var(--lh-h1)}
+h2{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+.close h2,.pclose h2,body.peatonal .sec-head h2,.feat h2,.hero--cierre h1{
+  font-size:var(--fs-h2);line-height:var(--lh-h2)}
+h3,.cifra,.stat,.card-fig{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+.g4 h3,.pasos h3,.mods h3,.cards h3,.card-title,.nota-card h3,
+.feature-body h2,.feature-body h3,.fact-v,.feature-facts .fact-v{
+  font-size:var(--fs-item);line-height:var(--lh-item)}
+.lead,.page-head .lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+.faq-item summary,.faq summary{font-family:'Newsreader',Georgia,serif;
+  font-size:var(--fs-faq);line-height:var(--lh-faq);font-weight:300;
+  letter-spacing:0}
+p,li,dd,dt,.frow,.card-txt,.reading p,.num-row p,.faq-item .body,.plain li,
+.dlinea,.dato{font-size:var(--fs-body);line-height:var(--lh-body)}
+
+/* barra, menú y numeral de pin */
+.site-nav .lnk,.site-nav .cta,.brand-text,.lang,.lang a,.pin{
+  font-size:var(--fs-bar);line-height:var(--lh-bar)}
+.mm nav a{font-size:var(--fs-item);line-height:var(--lh-item)}
+
+/* etiqueta y metadato: 15/24 en todo el sitio, mayúsculas con ls .12em
+   donde el documento las pide en mayúscula */
+.idx,.label,.cat,.card-kicker,.stat small,.date,.card-meta,.nota,.fine,.cuenta,
+.sign,.sf-sign,.sf-h,.sf-cred,.sf-disc,.sf-lang,.sf-bottom,.sf a,.sf-desc,
+.mm-lang,.faclegend,.tip,.locate,.feature-meta,.fact-l,.split-note,.dir,
+.plaza-fig figcaption,.ledger>div,.calc summary,.out,.btn,.skip,.filtros button,
+.lb-cap,.lb-x,.lb-p,.lb-n,.lb-t,.crumb,.sf-disc{
+  font-size:var(--fs-label);line-height:var(--lh-label)}
+.idx,.label,.cat,.card-kicker,.stat small,.mm-lang,.lang,.sf-h,.sf-lang{
+  letter-spacing:.12em}
+
+/* --- §6 · medida de lectura: 30 em en todo bloque de prosa --- */
+p,li,.frow,.card-txt,.sf-disc,.dato,.dlinea{max-width:var(--measure)}
+.sf-disc{max-width:var(--measure)}
+/* El contenedor NO entra aquí: meter .wrap en esta lista le quitó el
+   max-width de 1200 px y dejó el sitio entero a sangre. (Fallo mío del
+   11-nov por la tarde, visto al medir la geometría del retrato.) */
+.idx,.label,.stat,.sf-bottom,.faclegend,.ledger>div,.card-row,.quad{
+  max-width:none}
+.sec-head h2,.sec-head .lead{max-width:var(--measure)}
+
+/* --- §6 · objetivo táctil de 44 px en todo lo accionable --- */
+a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
+.filtros button{min-height:44px;display:inline-flex;align-items:center}
+@media(min-width:761px){
+  .site-nav .lnk{min-height:44px;display:inline-flex;align-items:center}
+}
+.menu-toggle{min-width:44px;min-height:44px}
+.pin{min-width:44px;min-height:44px;width:44px;height:44px}
+@media(max-width:860px){.pin{width:44px;height:44px;min-width:44px;min-height:44px}}
+
+/* --- §8 · fuera el flotante de WhatsApp --- */
+.wafloat{display:none !important}
+
+/* --- §7 · el héroe de Peatonal cierra con un enlace, no con un botón --- */
+.phero .out{margin-top:64px}
+.out--navy,.phero .out,.pclose .out{color:var(--ivory)}
+.out--navy:hover,.phero .out:hover{color:var(--sky)}
+
+/* --- §6 · retrato 4:5 sobre cuatro columnas, con el texto a una columna de
+       distancia. Sustituye al recorte a tres columnas del 11-nov: Dario pidió
+       mover el texto, no recortar la foto. --- */
+.retrato .ph,.ph--45,.ph--34{aspect-ratio:4/5}
+.retrato{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter)}
+.retrato>.ph{grid-column:1 / span 4}
+.retrato>.c7,.retrato>div:last-child{grid-column:6 / span 7}
+@media(max-width:860px){
+  .retrato{grid-template-columns:1fr}
+  .retrato>.ph,.retrato>.c7,.retrato>div:last-child{grid-column:auto}
+}
+
+/* --- §6 · el objetivo táctil de 44 px alcanza también al pie y a la marca --- */
+.sf a,.sf-bottom a,.brand,.nota-card .out,.card a,.crumb a,
+.ldata a,.frow a,.dir a,.dato a{
+  min-height:44px;display:inline-flex;align-items:center}
+.sf nav{display:flex;flex-direction:column}
+
+/* --- §6 · 30 em también en la firma y en las notas al pie, que corrían a 97
+       y 91 caracteres por renglón --- */
+.sign,.sf-sign,.nota,.fine,.sf-disc,.pclose .sign,.phero .fine{
+  max-width:var(--measure)}
+
+/* El «/» del conmutador de idioma iba a rgba(255,255,255,.3): 1.27 de
+   contraste, el peor glifo del sitio. Toma el color de la barra. */
+.lang span{color:inherit}

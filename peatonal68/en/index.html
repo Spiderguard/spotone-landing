@@ -26,7 +26,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="../img/fachada-master-2026-09-21.webp" type="image/webp">
 
-<link rel="stylesheet" href="/css/spotone.css?v=14">
+<link rel="stylesheet" href="/css/spotone.css?v=15">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -42,7 +42,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .phero{background:var(--navy);color:var(--ivory);padding:104px 0 96px}
 .phero .idx{margin-bottom:var(--gap-idx)}   /* ronda 2: la etiqueta no se pega al titular */
 .phero h1{margin:0 0 24px}
-.phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:24px;max-width:none}
+.phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-label);line-height:var(--lh-label);max-width:var(--measure)}
 .phero .btn{margin-top:64px}
 
 /* 01 · fachada con los dos locales señalados */
@@ -53,7 +53,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   position:absolute;width:40px;height:40px;transform:translate(-50%,-50%);
   border:1px solid var(--ivory);border-radius:50% !important;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:500;line-height:1;
+  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-bar);font-weight:500;line-height:var(--lh-bar);
   color:var(--ivory);background:rgba(5,14,30,.62);text-decoration:none;
 }
 .pin::after{content:"";position:absolute;inset:-4px}
@@ -61,14 +61,14 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .pin .tip{
   position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);
   background:var(--navy);color:var(--ivory);padding:8px 12px;white-space:nowrap;
-  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;line-height:22px;font-weight:300;
+  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-label);line-height:var(--lh-label);font-weight:300;
   opacity:0;pointer-events:none;transition:opacity .2s ease;
 }
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1}
 .faclegend{display:flex;justify-content:space-between;gap:24px;margin-top:12px}
 .faclegend b{font-weight:500;color:var(--ink)}
 @media(max-width:860px){
-  .pin{width:36px;height:36px;font-size:20px}
+  .pin{width:44px;height:44px;font-size:var(--fs-bar)}
   .pin .tip{display:none}
   .faclegend{flex-direction:column;gap:6px}
 }
@@ -121,7 +121,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{
   padding:20px 0;cursor:pointer;list-style:none;
-  font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:30px;font-weight:500;color:var(--ink);
+  font-family:'Newsreader',Georgia,serif;font-size:var(--fs-faq);line-height:var(--lh-faq);font-weight:300;color:var(--ink);
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";float:right;color:var(--muted);font-weight:500}
@@ -140,7 +140,7 @@ body>footer.sf{padding-top:48px}
 .pclose h2{color:var(--ivory);margin:0 0 var(--gap-lead)}
 .pclose .lead{color:var(--on-navy-muted)}
 .pclose .btn{margin-top:48px}
-.pclose .sign{margin-top:56px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:20px;max-width:none}
+.pclose .sign{margin-top:56px;color:var(--on-navy-faint);font-size:var(--fs-label);line-height:var(--lh-label);max-width:var(--measure)}
 
 /* galería */
 .lb{position:fixed;inset:0;background:rgba(5,14,30,.94);z-index:90;display:none;
@@ -157,14 +157,6 @@ body>footer.sf{padding-top:48px}
 .lb-n{right:12px;top:50%;transform:translateY(-50%)}
 .lb-t{position:absolute;top:22px;left:24px;color:var(--ivory);font-size:15px;font-weight:500}
 
-/* WhatsApp flotante: solo móvil (regla 9 + «se retira la barra fija de escritorio») */
-.wafloat{
-  position:fixed;right:16px;bottom:16px;z-index:60;
-  height:48px;padding:0 20px;display:none;align-items:center;
-  background:var(--navy);color:var(--ivory);
-  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;font-weight:500;
-}
-@media(max-width:860px){.wafloat{display:inline-flex}}
 
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
@@ -207,13 +199,13 @@ body>footer.sf{padding-top:48px}
     <p class="idx">San Francisco · Calle 68 Este</p>
     <h1>Plaza La Peatonal 68</h1>
     <div class="quad g4">
-      <p class="stat">3<small>Units available</small></p>
+      <p class="stat">3<small>Available now</small></p>
       <p class="stat">100–102 m²<small>Per unit</small></p>
       <p class="stat">From $1,800<small>Monthly base rent</small></p>
       <p class="stat">60<small>Parking spaces</small></p>
     </div>
-    <p class="fine">Maintenance, waste collection and taxes extra · Availability as of 29 October 2026</p>
-    <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Ask on WhatsApp</a>
+    <p class="fine">Maintenance, waste collection and taxes extra · Available for viewing by appointment.</p>
+    <a class="out out--navy" href="#disponibilidad">See the three units →</a>
   </div>
 </section>
 
@@ -263,7 +255,7 @@ body>footer.sf{padding-top:48px}
       </div>
       <p class="card-meta">Ground floor · 82 + 20 m² of terrace · Gas · 3 photos</p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:15px">Monthly base rent</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly base rent</span>
         <span class="cifra">$3,060</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance $255 · Waste collection included · Taxes extra</p>
@@ -276,7 +268,7 @@ body>footer.sf{padding-top:48px}
       </details>
       <p class="nota" style="margin-top:16px">— Immediate handover. A restaurant operates here today; furniture and equipment are not included and are negotiated with the current tenant.</p>
       <div class="uacts">
-        <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20and%20I%27m%20interested%20in%20Unit%204%20(102%20m2%2C%20ground%20floor%2C%20restaurant)">Ask about Unit 4 →</a>
+        <button class="out" data-gal="l4" data-loc="4">See Unit 4 →</button>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
       </div>
     </article>
@@ -291,7 +283,7 @@ body>footer.sf{padding-top:48px}
       </div>
       <p class="card-meta">Second floor · Open plan · 1 bathroom · 3 photographs</p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:15px">Monthly base rent</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly base rent</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance $250 · Waste collection $15 · Taxes extra</p>
@@ -305,7 +297,7 @@ body>footer.sf{padding-top:48px}
       </details>
       <p class="nota" style="margin-top:16px">— The separation from Unit 21 and the handover condition are confirmed with management.</p>
       <div class="uacts">
-        <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20and%20I%27m%20interested%20in%20Unit%2022%20(100%20m2%2C%20second%20floor)">Ask about Unit 22 →</a>
+        <button class="out" data-gal="l22" data-loc="22">See Unit 22 →</button>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
       </div>
     </article>
@@ -320,7 +312,7 @@ body>footer.sf{padding-top:48px}
       </div>
       <p class="card-meta">Second floor · Storefront on the corridor · 1 internal bathroom · 4 photographs</p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:15px">Monthly base rent</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly base rent</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance $250 · Waste collection $15 · Taxes extra</p>
@@ -334,7 +326,7 @@ body>footer.sf{padding-top:48px}
       </details>
       <p class="nota" style="margin-top:16px">— Layout and handover condition are confirmed before signing.</p>
       <div class="uacts">
-        <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page%20and%20I%27m%20interested%20in%20Unit%2023%20(100%20m2%2C%20second%20floor)">Ask about Unit 23 →</a>
+        <button class="out" data-gal="l23" data-loc="23">See Unit 23 →</button>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
       </div>
     </article>
@@ -427,7 +419,7 @@ body>footer.sf{padding-top:48px}
     <p class="idx">06 · Let’s talk</p>
     <h2>Let’s find the unit that fits your operation.</h2>
     <p class="lead">Tell me the type of business and the facilities you need. I check whether 4, 22 or 23 fits your operation before we set up a visit.</p>
-    <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Ask on WhatsApp</a>
+    <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Let’s talk</a>
     <p class="sign">Exclusive representation · Dario Jhangimal · Real Estate Broker · PN-1240 · SpotOne Realty</p>
   </div>
 </section>
@@ -448,7 +440,6 @@ body>footer.sf{padding-top:48px}
   </div>
 </footer>
 
-<a class="wafloat" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Ask on WhatsApp</a>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo gallery">
   <span class="lb-t" id="lbT"></span>
@@ -537,7 +528,7 @@ body>footer.sf{padding-top:48px}
 })();
 </script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/","jobTitle":"Real Estate Broker (PN-1240)","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"]},{"@type":"Place","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/en/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9","makesOffer":[{"@type":"Offer","name":"Unit 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-4","description":"102 m², ground floor, restaurant use","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Unit 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-22","description":"100 m², second floor","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Unit 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-23","description":"100 m², second floor","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}}],"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"60 parking spaces","value":true},{"@type":"LocationFeatureSpecification","name":"Covered parking","value":true},{"@type":"LocationFeatureSpecification","name":"Elevator","value":true},{"@type":"LocationFeatureSpecification","name":"Stairs","value":true},{"@type":"LocationFeatureSpecification","name":"Eight ground-floor restaurants","value":true}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/","jobTitle":"Real Estate Broker (PN-1240)","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Professional licence","identifier":"PN-1240","name":"Real Estate Broker","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"]},{"@type":"Place","@id":"https://www.spotonerealty.com/peatonal68/en/#plaza","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/en/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9","makesOffer":[{"@type":"Offer","name":"Unit 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-4","description":"102 m², ground floor, restaurant use","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Unit 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-22","description":"100 m², second floor","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Unit 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-23","description":"100 m², second floor","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}}],"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"60 parking spaces","value":true},{"@type":"LocationFeatureSpecification","name":"Covered parking","value":true},{"@type":"LocationFeatureSpecification","name":"Elevator","value":true},{"@type":"LocationFeatureSpecification","name":"Stairs","value":true},{"@type":"LocationFeatureSpecification","name":"Eight ground-floor restaurants","value":true}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the base rent include maintenance?","acceptedAnswer":{"@type":"Answer","text":"No. Units 22 and 23 are $1,800 a month ($18 per m²); maintenance ($250) and waste collection ($15) are paid on top: $2,065 a month before taxes. Unit 4 is $3,060 a month ($30 per m²) plus maintenance ($255, with waste collection included): $3,315 a month before taxes. Each listing shows it under See monthly breakdown ."}},{"@type":"Question","name":"How much is due when I sign the lease?","acceptedAnswer":{"@type":"Answer","text":"Signing requires payment of the first month plus one month as a security deposit ."}},{"@type":"Question","name":"What is not included?","acceptedAnswer":{"@type":"Answer","text":"Not included: electricity, internet, permits, build-out, insurance, the business’s own utilities and any other service the tenant contracts directly."}},{"@type":"Question","name":"What condition is the unit delivered in?","acceptedAnswer":{"@type":"Answer","text":"Unit 22 is shown as an open-plan space with one bathroom. The separation from Unit 21 and the handover condition for both units will be confirmed with management before signing the lease. Before signing, we put in writing what stays, what is removed and the condition in which the unit is delivered."}},{"@type":"Question","name":"What kinds of business can operate here?","acceptedAnswer":{"@type":"Answer","text":"Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require. These are some concepts that could complement the current mix: Skincare and facial aesthetics Spa and massage Aesthetic medicine or dermatology Wellness and athletic recovery Specialized health services Other appointment-based concepts Tell me what you intend to operate and I will check which units can work before we set up a visit. Unit 4, on the ground floor, is fitted out for a restaurant and allows a bar, alcohol sales and karaoke."}},{"@type":"Question","name":"Do all the units have water, drainage, gas and extraction?","acceptedAnswer":{"@type":"Answer","text":"No. Infrastructure varies by unit. If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before a proposal is put forward."}},{"@type":"Question","name":"Can I lease more than one unit?","acceptedAnswer":{"@type":"Answer","text":"Units 22 and 23 are adjacent on the second floor and add up to 200 m². Leasing them together is not yet confirmed with management and there is no combined rent set. If you are interested in both, tell me and I will check before offering it."}},{"@type":"Question","name":"What are the frontage and depth dimensions?","acceptedAnswer":{"@type":"Answer","text":"They vary by unit. Send me the unit number and I will send you the floor plan and the dimensions on file."}},{"@type":"Question","name":"How does the parking work?","acceptedAnswer":{"@type":"Answer","text":"The plaza has 60 parking spaces: fourteen at street level and forty-six underground, two of them accessible. Each lease includes one space for the tenant’s use. When it is not in use, it stays available to the plaza’s customers."}},{"@type":"Question","name":"How do I arrange a visit?","acceptedAnswer":{"@type":"Answer","text":"Send me the unit you are interested in, the type of business and any technical requirement you cannot do without. First I confirm the space and the infrastructure make sense for your operation; then we set up the visit."}},{"@type":"Question","name":"What happens with the furniture in Unit 4's current restaurant?","acceptedAnswer":{"@type":"Answer","text":"It is not included in the rent. The current tenant is selling it and it is negotiated directly with them; I can set up that conversation."}}]},{"@type":"RealEstateListing","@id":"https://www.spotonerealty.com/peatonal68/en/#listing","url":"https://www.spotonerealty.com/peatonal68/en/","name":"Plaza La Peatonal 68","description":"Three commercial units for rent in San Francisco, Panama City: two of 100 m² on the second floor and one of 102 m² on the ground floor.","datePosted":"2026-11-11","about":{"@id":"https://www.spotonerealty.com/peatonal68/en/#plaza"},"provider":{"@id":"https://www.spotonerealty.com/#spotone"}}]}</script>
 
 <p class="solo-impresion">www.spotonerealty.com/peatonal68/en/ · WhatsApp +507 6675-8127</p>
 </body>
