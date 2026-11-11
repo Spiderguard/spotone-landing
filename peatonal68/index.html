@@ -26,7 +26,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="img/fachada-master-2026-09-21.webp" type="image/webp">
 
-<link rel="stylesheet" href="/css/spotone.css?v=13">
+<link rel="stylesheet" href="/css/spotone.css?v=14">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -42,9 +42,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .phero{background:var(--navy);color:var(--ivory);padding:104px 0 96px}
 .phero .idx{margin-bottom:var(--gap-idx)}   /* ronda 2: la etiqueta no se pega al titular */
 .phero h1{margin:0 0 24px}
-.phero .lead{color:var(--on-navy-muted);max-width:var(--measure);font-size:var(--fs-lead);line-height:var(--lh-lead)}
-.phero .quad{margin-top:72px;padding-top:32px;border-top:1px solid var(--on-navy-line)}
-.phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:20px;max-width:none}
+.phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-note);line-height:24px;max-width:none}
 .phero .btn{margin-top:64px}
 
 /* 01 · fachada con los dos locales señalados */
@@ -55,7 +53,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   position:absolute;width:40px;height:40px;transform:translate(-50%,-50%);
   border:1px solid var(--ivory);border-radius:50% !important;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Newsreader',Georgia,serif;font-size:16px;font-weight:500;line-height:1;
+  font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:500;line-height:1;
   color:var(--ivory);background:rgba(5,14,30,.62);text-decoration:none;
 }
 .pin::after{content:"";position:absolute;inset:-4px}
@@ -63,14 +61,14 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .pin .tip{
   position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);
   background:var(--navy);color:var(--ivory);padding:8px 12px;white-space:nowrap;
-  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:13px;line-height:18px;font-weight:300;
+  font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;line-height:22px;font-weight:300;
   opacity:0;pointer-events:none;transition:opacity .2s ease;
 }
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1}
 .faclegend{display:flex;justify-content:space-between;gap:24px;margin-top:12px}
 .faclegend b{font-weight:500;color:var(--ink)}
 @media(max-width:860px){
-  .pin{width:36px;height:36px;font-size:14px}
+  .pin{width:36px;height:36px;font-size:20px}
   .pin .tip{display:none}
   .faclegend{flex-direction:column;gap:6px}
 }
@@ -86,7 +84,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .ushot{display:block;width:100%;border:0;padding:0;background:none;cursor:pointer}
 .calc{margin-top:16px}
 .calc summary{
-  font-size:13px;line-height:20px;font-weight:300;color:var(--muted);cursor:pointer;list-style:none;
+  font-size:15px;line-height:24px;font-weight:300;color:var(--muted);cursor:pointer;list-style:none;
 }
 .calc summary::-webkit-details-marker{display:none}
 .calc summary::after{content:"\00a0+"}
@@ -99,7 +97,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .ledger .ltot dt{color:var(--ink)}
 .u{height:100%}
 .uacts{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:auto;padding-top:32px}
-.locate{all:unset;cursor:pointer;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:13px;line-height:20px;color:var(--muted)}
+.locate{all:unset;cursor:pointer;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;line-height:24px;color:var(--muted)}
 .locate:hover{color:var(--ink)}
 
 /* 03 · la plaza */
@@ -123,15 +121,15 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{
   padding:20px 0;cursor:pointer;list-style:none;
-  font-size:17px;line-height:26px;font-weight:300;color:var(--ink);
+  font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:30px;font-weight:500;color:var(--ink);
 }
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";float:right;color:var(--muted);font-weight:300}
+.faq summary::after{content:"+";float:right;color:var(--muted);font-weight:500}
 .faq details[open] summary::after{content:"−"}
 .faq .a{padding:0 0 20px}
-.faq .a p{color:var(--muted);font-size:16px;line-height:26px}
+.faq .a p{color:var(--muted);font-size:var(--fs-body);line-height:var(--lh-body)}
 .faq .a p + p{margin-top:12px}
-.faq .a ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:16px;line-height:26px}
+.faq .a ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:var(--fs-body);line-height:var(--lh-body)}
 
 /* 06 · cierre navy */
 .pclose{background:var(--navy);color:var(--ivory);margin-top:var(--band);padding:112px 0 48px;
@@ -150,7 +148,7 @@ body>footer.sf{padding-top:48px}
 .lb.on{display:flex}
 .lb img{max-width:min(1100px,92vw);max-height:78vh;width:auto;object-fit:contain}
 .lb-cap{position:absolute;left:0;right:0;bottom:28px;text-align:center;color:var(--ivory);
-  font-size:14px;line-height:22px;font-weight:300}
+  font-size:15px;line-height:24px;font-weight:300}
 .lb-cap span{color:var(--on-navy-faint);font-variant-numeric:tabular-nums}
 .lb-x,.lb-p,.lb-n{position:absolute;background:none;border:0;color:var(--ivory);cursor:pointer;
   font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;min-width:44px;min-height:44px}
@@ -208,8 +206,12 @@ body>footer.sf{padding-top:48px}
   <div class="wrap">
     <p class="idx">San Francisco · Calle 68 Este</p>
     <h1>Plaza La Peatonal 68</h1>
-    <p class="lead">Tres locales disponibles: dos de 100 m² en el segundo piso y uno de 102 m² para restaurante en planta baja.</p>
-    <p class="dlinea">3 locales · 100–102 m² · desde $1,800/mes · 60 estacionamientos</p>
+    <div class="quad g4">
+      <p class="stat">3<small>Locales disponibles</small></p>
+      <p class="stat">100–102 m²<small>Por local</small></p>
+      <p class="stat">Desde $1,800<small>Canon mensual</small></p>
+      <p class="stat">60<small>Estacionamientos</small></p>
+    </div>
     <p class="fine">Mantenimiento, aseo e impuestos aparte · Disponibilidad al 29 de octubre de 2026</p>
     <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Consultar por WhatsApp</a>
   </div>

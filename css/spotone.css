@@ -39,9 +39,9 @@
   --fs-lead:17px;
   --fs-body:17px;
   --fs-ui:15px;
-  --fs-note:13px;
-  --fs-label:12px;
-  --fs-micro:12px;
+  --fs-note:15px;
+  --fs-label:15px;
+  --fs-micro:15px;
   --lh-h1:72px;
   --lh-h2:48px;
   --lh-h3:32px;
@@ -229,12 +229,12 @@ p + p{margin-top:var(--s4)}
 .brand-mark{width:30px;height:30px}
 .brand-mark .b-neg,.brand-mark .b-pos{transition:opacity .35s ease}
 .brand-text{
-  font-size:18.5px;font-weight:500;letter-spacing:-.012em;color:var(--ink);
+  font-size:18px;font-weight:500;letter-spacing:-.012em;color:var(--ink);
   white-space:nowrap;
 }
 .site-nav{display:flex;align-items:center;gap:var(--s6)}
 .site-nav .lnk{
-  position:relative;font-size:var(--fs-ui);font-weight:400;color:var(--body);
+  position:relative;font-size:var(--fs-ui);font-weight:500;color:var(--body);
   padding:6px 0;white-space:nowrap;
 }
 .site-nav .lnk::after{
@@ -246,13 +246,13 @@ p + p{margin-top:var(--s4)}
 .site-nav .lnk.here{color:var(--ink)}
 .site-nav .cta{
   background:var(--navy);color:var(--ivory);border-radius:var(--radius);
-  padding:10px 18px;font-size:14.5px;font-weight:500;letter-spacing:.012em;
+  padding:10px 18px;font-size:15px;font-weight:500;letter-spacing:.012em;
   transition:background .18s ease;min-height:40px;display:inline-flex;align-items:center;
 }
 .site-nav .cta:hover{background:#0b1a33}
 .lang{
   display:flex;align-items:center;gap:7px;
-  font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
 }
 .lang a{color:var(--muted);padding:4px 0}
 .lang a:hover{color:var(--ink)}
@@ -290,12 +290,12 @@ p + p{margin-top:var(--s4)}
   .site-header{height:var(--hdr-h-sm)}
   .brand-text{font-size:17px}
   .brand-mark{width:28px;height:28px}
-  .site-nav .cta{padding:9px 15px;font-size:14px}
+  .site-nav .cta{padding:9px 15px;font-size:15px}
 }
 /* El contacto no desaparece en el móvil: el botón se estrecha, no se oculta. */
 @media(max-width:420px){
   .site-nav{gap:var(--s3)}
-  .site-nav .cta{padding:9px 12px;font-size:13.5px}
+  .site-nav .cta{padding:9px 12px;font-size:15px}
 }
 @media(max-width:340px){
   .site-nav .cta{display:none}
@@ -319,7 +319,7 @@ p + p{margin-top:var(--s4)}
   color:var(--ink);padding:15px 0;border-bottom:1px solid var(--line);
 }
 .mm nav a.here{color:var(--navy)}
-.mm-lang{display:flex;gap:10px;margin-top:var(--s6);font-size:12px;font-weight:500;letter-spacing:.13em;text-transform:uppercase}
+.mm-lang{display:flex;gap:10px;margin-top:var(--s6);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
 .mm-lang a{color:var(--muted)}
 .mm-lang a.active{color:var(--navy)}
 .mm-foot{
@@ -365,12 +365,12 @@ a.card:hover .card-img img{transform:scale(1.03)}
 .num{font-size:var(--fs-micro);font-weight:600;letter-spacing:.12em;color:var(--muted);padding-top:5px}
 .num-row :is(h2,h3){font-family:'Hanken Grotesk',sans-serif;font-size:var(--fs-h3);
   line-height:var(--lh-h3);font-weight:400;letter-spacing:-.012em;margin-bottom:var(--s3)}
-.num-row p{font-size:16.5px;line-height:1.6;color:var(--body);max-width:var(--measure)}
+.num-row p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--body);max-width:var(--measure)}
 
 /* Lista de datos (cifras y condiciones) */
 .facts{display:grid;gap:var(--s5);grid-template-columns:repeat(4,minmax(0,1fr))}
 .fact{display:flex;flex-direction:column;gap:5px}
-.fact-v{font-family:'Newsreader',Georgia,serif;font-size:clamp(26px,2.6vw,33px);line-height:1;font-weight:300;letter-spacing:-.02em}
+.fact-v{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:500;letter-spacing:-.02em}
 .fact-l{font-size:var(--fs-note);color:var(--muted);line-height:1.4}
 .band--navy .fact-l{color:var(--on-navy-faint)}
 
@@ -388,25 +388,25 @@ a.card:hover .card-img img{transform:scale(1.03)}
 .sf-brand .mark{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:500;letter-spacing:-.012em;color:var(--ivory);line-height:1}
 .sf-brand .mark img{width:30px;height:30px}
 .sf-desc{margin-top:var(--s4);font-size:15px;line-height:1.6;color:var(--on-navy-muted);max-width:34ch}
-.sf-cred{margin-top:var(--s3);font-size:12.5px;letter-spacing:.03em;color:var(--on-navy-faint)}
+.sf-cred{margin-top:var(--s3);font-size:15px;letter-spacing:.03em;color:var(--on-navy-faint)}
 .sf h2,.sf-h{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
   color:var(--on-navy-faint);margin-bottom:var(--s4);
 }
 .sf ul{list-style:none;display:flex;flex-direction:column;gap:11px}
 .sf a{font-size:15px;color:var(--on-navy-muted);transition:color .15s ease}
 .sf a:hover{color:var(--ivory)}
-.sf-lang{margin-top:var(--s5);display:flex;gap:9px;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+.sf-lang{margin-top:var(--s5);display:flex;gap:9px;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
 .sf-lang span{color:var(--on-navy-line)}
 .sf-disc{
-  padding-top:var(--s5);font-size:12.5px;line-height:1.6;
+  padding-top:var(--s5);font-size:15px;line-height:24px;
   color:var(--on-navy-faint);max-width:92ch;
 }
 .sf-bottom{
   margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--on-navy-line);
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--s3);
-  font-size:12.5px;color:var(--on-navy-faint);
+  font-size:15px;color:var(--on-navy-faint);
 }
 @supports(padding:env(safe-area-inset-bottom)){
   .sf{padding-bottom:calc(var(--s6) + env(safe-area-inset-bottom))}
@@ -436,7 +436,7 @@ a.card:hover .card-img img{transform:scale(1.03)}
   .band-head .alink{justify-self:start}
 }
 @media(max-width:640px){
-  :root{--fs-body:17px;--fs-ui:16px}
+  :root{--fs-body:18px;--fs-ui:15px}
   .cards--2,.cards--3,.cards--4{grid-template-columns:minmax(0,1fr)}
   .num-row{grid-template-columns:minmax(0,1fr);gap:var(--s3);padding:var(--s5) 0}
   .num{padding-top:0}
@@ -448,7 +448,7 @@ a.card:hover .card-img img{transform:scale(1.03)}
 .page-head{padding:calc(var(--band) * .85) 0 var(--s7)}
 .page-head + .band{padding-top:var(--s6)}
 .page-head h1{max-width:18ch}
-.page-head .lead{margin-top:var(--s6);font-size:clamp(18.5px,1.5vw,21px)}
+.page-head .lead{margin-top:var(--s6);font-size:var(--fs-lead);line-height:var(--lh-lead)}
 .page-head .lead + .lead{margin-top:var(--s4)}
 .crumb{
   display:flex;align-items:center;gap:var(--s2);
@@ -487,14 +487,14 @@ a.feature:hover{border-color:var(--navy)}
   padding:7px 12px;
 }
 .feature-body{padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:var(--s5)}
-.feature-body :is(h2,h3){font-family:'Newsreader',Georgia,serif;font-size:clamp(24px,2.3vw,30px);font-weight:300;letter-spacing:-.02em;line-height:1.12}
+.feature-body :is(h2,h3){font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h3);font-weight:500;letter-spacing:-.02em;line-height:var(--lh-h3)}
 .feature-meta{font-size:var(--fs-note);color:var(--muted);letter-spacing:.01em}
 .feature-facts{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:var(--s4);padding:var(--s5) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
 }
-.feature-facts .fact-v{font-size:clamp(21px,1.9vw,25px)}
-.feature-facts .fact-l{font-size:13px}
+.feature-facts .fact-v{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+.feature-facts .fact-l{font-size:var(--fs-note)}
 .feature-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
 @media(max-width:860px){
   .feature{grid-template-columns:minmax(0,1fr)}
@@ -529,7 +529,7 @@ a.feature:hover{border-color:var(--navy)}
 .faq-item:last-child{border-bottom:1px solid var(--line)}
 .faq-item summary{
   list-style:none;cursor:pointer;padding:var(--s5) var(--s7) var(--s5) 0;position:relative;
-  font-size:17.5px;font-weight:400;color:var(--ink);letter-spacing:-.008em;line-height:1.4;
+  font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-.008em;line-height:30px;
 }
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{
@@ -539,7 +539,7 @@ a.feature:hover{border-color:var(--navy)}
 }
 .faq-item[open] summary::after{transform:translateY(-30%) rotate(225deg)}
 .faq-item summary:hover{color:var(--navy)}
-.faq-item .body{padding:0 var(--s7) var(--s6) 0;color:var(--body);font-size:16.5px;line-height:1.62;max-width:var(--measure)}
+.faq-item .body{padding:0 var(--s7) var(--s6) 0;color:var(--body);font-size:var(--fs-body);line-height:var(--lh-body);max-width:var(--measure)}
 @media(max-width:860px){
   .faq-grid{grid-template-columns:minmax(0,1fr)}
   .faq-sticky{position:static}
@@ -547,7 +547,7 @@ a.feature:hover{border-color:var(--navy)}
 
 /* ================= LISTA SIMPLE ================= */
 .plain{list-style:none;display:grid;gap:var(--s3)}
-.plain li{position:relative;padding-left:var(--s5);font-size:16.5px;line-height:1.55;color:var(--body)}
+.plain li{position:relative;padding-left:var(--s5);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--body)}
 .plain li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--muted)}
 
 /* Acento cursivo de marca, común a titulares y texto. */
@@ -606,8 +606,8 @@ em{font-style:italic;color:var(--navy)}
 /* --- reglas 3 y 6: escala de cinco tamaños e índice «NN · Nombre» --- */
 .idx{
   font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-label);line-height:16px;font-weight:500;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  font-size:var(--fs-label);line-height:20px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
 }
 .on-navy .idx,.band--navy .idx,.sec--navy .idx,.phero .idx,.pclose .idx{color:var(--sky)}
 h1{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:300;letter-spacing:-.01em}
@@ -667,7 +667,7 @@ a.card:hover{border-color:transparent}
 /* «Desde» no es la cifra: va en Hanken pequeño para que el nombre de la
    propiedad quepa en un renglón (el lienzo hace lo mismo con «/mes») */
 .card-fig small{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:13px;line-height:16px;font-weight:300;color:var(--muted)}
+  font-size:var(--fs-note);line-height:20px;font-weight:300;color:var(--muted)}
 
 /* --- regla 13: filete de 1 px SOLO entre filas de datos --- */
 .frow{
@@ -685,13 +685,13 @@ a.card:hover{border-color:transparent}
 .sec--navy .nota,.band--navy .nota,.phero .nota,.pclose .nota{color:var(--on-navy-faint)}
 
 /* --- regla 3: cifras grandes con etiqueta debajo (cuatro datos del hero) --- */
-.stat{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h2);line-height:var(--lh-h2);
-  font-weight:300;font-variant-numeric:tabular-nums;margin:0;max-width:none}
+.stat{font-family:'Newsreader',Georgia,serif;font-size:var(--fs-h3);line-height:var(--lh-h3);
+  font-weight:500;font-variant-numeric:tabular-nums;margin:0;max-width:none;white-space:nowrap}
 .stat small{
   display:block;margin-top:8px;
   font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-label);line-height:16px;font-weight:500;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  font-size:var(--fs-label);line-height:20px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:normal;
 }
 .sec--navy .stat,.band--navy .stat,.phero .stat,.pclose .stat{color:var(--ivory)}
 .sec--navy .stat small,.band--navy .stat small,.phero .stat small{color:var(--sky)}
@@ -826,7 +826,7 @@ a.card:hover{border-color:transparent}
   .hero .lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
   /* el salto del titular es forzado: a 40 px el primer renglón se partía
      y salían tres. 33 px deja los dos que pide el documento. */
-  .hero h1{font-size:33px;line-height:40px}
+  .hero h1{font-size:var(--fs-h1);line-height:var(--lh-h1)}
 }
 
 /* --- banda de ancho completo 16:9 con fotografía y texto encima --- */
@@ -1074,7 +1074,7 @@ p,li,dd,dt{font-weight:300}
 
 /* etiqueta e índice: 12/16 Hanken 500, espaciado .14 em */
 .idx,.label,.cat,.card-kicker{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:var(--fs-label);line-height:16px;font-weight:500;letter-spacing:.14em;
+  font-size:var(--fs-label);line-height:20px;font-weight:500;letter-spacing:.14em;
   text-transform:uppercase}
 
 /* 4 · alineación vertical: SIEMPRE arriba. El índice, el borde superior de la
@@ -1109,7 +1109,7 @@ p,li,dd,dt{font-weight:300}
    «Inteligencia de mercado» y «Diagnóstico de situación» quepan en un
    renglón. Va en el sistema porque la grilla vive en tres páginas. */
 .g4 h3,.pasos h3,.mods h3,.cards h3{font-size:24px;line-height:30px}
-@media(max-width:860px){.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:22px;line-height:28px}}
+@media(max-width:860px){.g4 h3,.pasos h3,.mods h3,.cards h3{font-size:24px;line-height:30px}}
 /* Cierre de escala · 9-nov. «Cuatro formas de trabajar contigo.» son cinco
    palabras que a 80 px piden 1.320 px y el contenedor da 1.152. Ese hero va a
    72, sin partir el copy. */
@@ -1139,7 +1139,7 @@ p[id],span[id]{scroll-margin-top:calc(var(--hdr-h) + 24px)}
    titular de hero y de seccion; la lista de aceptacion lo cierra:
    «Display Newsreader 400; 500 solo <= 28 px». Los nombres y titulos de
    item (28 y 24) se quedan en 500, que es donde el 500 si corresponde. */
-h1,h2{font-weight:400}
+h1,h2{font-weight:500}
 h3,h4,.nombre,.cifra,.crit-h,.prop-txt .nombre{font-weight:500}
 
 /* Retrato 3:4. La seccion 2 fija 3:2 en tarjeta, 16:9 en banda y 3:4 en
@@ -1158,7 +1158,7 @@ h3,h4,.nombre,.cifra,.crit-h,.prop-txt .nombre{font-weight:500}
 /* Linea de datos. Sustituye a toda fila de cifras grandes: un solo
    renglon Hanken 18 Muted con puntos medios. Principio 3 de la seccion 1
    y fila «Linea de datos» de la seccion 3. */
-.dlinea{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:400;
+.dlinea{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:300;
   font-size:18px;line-height:30px;color:var(--muted);margin:0 0 32px;
   font-variant-numeric:tabular-nums}
 .on-navy .dlinea,.phero .dlinea,.band--navy .dlinea{color:var(--on-navy-muted)}
@@ -1231,3 +1231,52 @@ body.inicio .retrato .ph{grid-column:1 / span 3}
    11-nov. La geometría que él dictó —foto en 1–7, texto desde la 8— no se
    toca. */
 .ph--83{aspect-ratio:8/3}
+
+/* === Enmiendas de Dario · 11-nov-2026 (segunda tanda) ==================
+   Tres enmiendas a v1.0 y la rectificación del héroe de La Peatonal 68.
+   Bloque al final: gana por orden de cascada.
+
+   1 · PESO. Newsreader 300 y 500 únicamente. El «400» de §2 fue un error de
+       redacción del documento; el manual de marca fija 300/500. El 300 queda
+       solo para la itálica de voz dentro de un titular.
+   2 · CUERPO MÍNIMO 15 px. Etiquetas de 12 a 15, cargos de ficha de 13 a 15.
+       Ningún texto por debajo de 15 px en ninguna página.
+   3 · El hueco del retrato se cierra moviendo el texto, no recortando la foto.
+   --- */
+
+/* 1 · el display no usa 400 en ninguna parte */
+h1,h2,h3,h4,.stat,.cifra,.card-fig,.nombre,.crit-h,.prop-txt .nombre,
+.faq-item summary,.fact-v,.feature-body h2,.feature-body h3{font-weight:500}
+h1 em,h2 em,h3 em{font-weight:300;font-style:italic}
+
+/* 3 · retrato del módulo 05 del inicio. La foto se quedó en tres columnas
+   (264 px) para no pasar del 25 % sobre el texto; el texto seguía anclado a la
+   columna 7, y entre los dos quedaban 328 px de nada. Ahora el texto arranca
+   64 px después del borde de la foto, que es lo que Dario fijó el 11-nov. */
+body.inicio .retrato{grid-template-columns:264px minmax(0,1fr);column-gap:64px}
+body.inicio .retrato>.ph{grid-column:1}
+body.inicio .retrato>.c7{grid-column:2}
+@media(max-width:860px){
+  body.inicio .retrato{grid-template-columns:1fr;column-gap:0}
+  body.inicio .retrato>.ph,body.inicio .retrato>.c7{grid-column:auto}
+}
+
+/* 4 · la fila de cifras del héroe de La Peatonal 68 se queda: es el resumen de
+   disponibilidad de una ficha de alquiler y Dario la mandó conservar el
+   11-nov, por encima del principio 3 de §1. Lo que se arregla es la ejecución:
+   cuatro columnas de ancho igual, filete de ancho igual, y los numerales sin
+   partirse (el `white-space:nowrap` de .stat). En móvil deja la retícula y
+   queda en una columna con filete entre ítems, como manda §3 para la lista de
+   cuatro. */
+.phero .quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:var(--gutter);margin-top:72px;padding-top:32px;
+  border-top:1px solid var(--on-navy-line)}
+@media(max-width:860px){
+  .phero .quad{display:block}
+  .phero .quad .stat + .stat{margin-top:16px;padding-top:16px;
+    border-top:1px solid var(--on-navy-line)}
+}
+
+/* El `b` del navegador resuelve a 400 contra un cuerpo de 300, y 400 no existe
+   en el sistema. El único grueso de Hanken es el 500. */
+b,strong{font-weight:500}
