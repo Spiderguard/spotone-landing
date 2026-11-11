@@ -1148,8 +1148,12 @@ h3,h4,.nombre,.cifra,.crit-h,.prop-txt .nombre{font-weight:500}
 
 /* Ritmo dentro de la seccion: 16 del indice al titular, 20 del titular al
    apoyo, 56 del apoyo al contenido. */
-.sec-head{margin:0 0 56px}
-@media(max-width:860px){.sec-head{margin:0 0 40px}}
+/* `margin:0 0 56px` borraba el `margin:0 auto` de .wrap y dejaba la cabecera
+   de sección pegada al borde izquierdo de la ventana: a 1440 empezaba en 0 y
+   el contenido en 120. Es el margen inferior lo que hacía falta, no el
+   horizontal. (Fallo del bloque del 9-nov, medido el 11.) */
+.sec-head{margin:0 auto 56px}
+@media(max-width:860px){.sec-head{margin:0 auto 40px}}
 
 /* Linea de datos. Sustituye a toda fila de cifras grandes: un solo
    renglon Hanken 18 Muted con puntos medios. Principio 3 de la seccion 1
@@ -1194,3 +1198,36 @@ body.inicio .retrato .ph{grid-column:1 / span 3}
    400, y esta cifra es de las que el documento quiere en 500. A 28 las dos
    reglas se cumplen sin excepciones. */
 .cifra{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+
+/* === Addenda de Dario · 11-nov-2026 ================================= «un
+   dato se dice en una línea de texto» y «el texto manda sobre la imagen».
+   Bloque añadido al final: gana por orden de cascada. --- */
+
+/* La frase de datos del módulo 02 va en CUERPO 18/30, no en la línea Muted con
+   puntos medios: Dario la dictó así. La línea con puntos medios se queda donde
+   el documento la pone, en el hero de Peatonal y en la plaza. */
+.prop-txt .dato{margin:0 0 32px;font-size:var(--fs-body);line-height:var(--lh-body);
+  font-weight:300;color:var(--body);max-width:var(--measure)}
+@media(max-width:860px){.prop-txt .dato{margin:0 0 24px}}
+
+/* Lista de dos columnas (§3): título en las columnas 1–5, texto en la 7–12.
+   Estaba en .8fr/1.6fr, que a 1200 px da 389 y 779 en vez de 481 y 584. Y el
+   título es «Newsreader 28», no 24: el 24 es el de la grilla de cuatro, y la
+   regla que los juntaba arrastró a esta lista. */
+.mods>div{grid-template-columns:repeat(12,minmax(0,1fr))}
+.mods>div>:first-child{grid-column:1 / span 5}
+.mods>div>:last-child{grid-column:7 / span 6}
+.mods h3{font-size:var(--fs-h3);line-height:var(--lh-h3)}
+@media(max-width:860px){
+  .mods>div{grid-template-columns:1fr}
+  .mods>div>:first-child,.mods>div>:last-child{grid-column:auto}
+  .mods h3{font-size:24px;line-height:30px}
+}
+
+/* La fachada del módulo 02 pasa a 8:3, que es la proporción del propio MASTER
+   (2048×768). Medido a 1440: el texto del módulo mide 204 px, así que el techo
+   del 25 % son 255. A 3:2 en siete columnas la foto daba 439 (+115 %); a 8:3
+   da 247 (+21 %). Se recorta la foto, no se estira el texto: regla 2 de Dario,
+   11-nov. La geometría que él dictó —foto en 1–7, texto desde la 8— no se
+   toca. */
+.ph--83{aspect-ratio:8/3}
