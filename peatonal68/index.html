@@ -26,7 +26,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="img/fachada-master-2026-09-21.webp" type="image/webp">
 
-<link rel="stylesheet" href="/css/spotone.css?v=17">
+<link rel="stylesheet" href="/css/spotone.css?v=18">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -46,28 +46,20 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .phero .btn{margin-top:64px}
 
 /* 01 · fachada con los tres locales señalados.
-   §3 de v1.1 (12-nov): «La fachada va a 3:2 sobre nueve columnas, con su
-   leyenda en las tres restantes.» El MASTER es 2048×768 (8:3), así que para
-   dar 3:2 hay que recortarle los costados. Con object-position al 55 % la
-   ventana visible es la franja 24–80 % del original: los tres marcadores
-   quedan dentro con 85 px de margen a la izquierda y 68 a la derecha, y sus
-   porcentajes se recalcularon sobre el recorte (31.1→12.5, 64.72→72.3,
-   74.37→89.5). Con el 50 % —el recorte de fachada-peatonal-32.jpg— el
-   marcador del 23 queda a 34 px del borde. */
-.facrow{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
-  column-gap:var(--gutter);align-items:start}
-.facrow>.fac{grid-column:1 / span 9}
-.facrow>.faclegend{grid-column:10 / span 3;margin-top:0;
-  flex-direction:column;gap:12px}
-.fac{position:relative;background:#8E9599;overflow:hidden;aspect-ratio:3/2}
+   Punto 9 de la adenda del 12-nov: «La fachada conserva su proporción de
+   panorámica, 12:5, a ancho de contenedor. Es la ÚNICA excepción a las dos
+   proporciones del sistema, y queda registrada: forzarla a 3:2 o a 16:9 la
+   recorta porque el edificio es largo y bajo. La leyenda baja a su propia
+   línea debajo.»
+   El MASTER es 2048×768, o sea 8:3 = 12:4.5. A 12:5 el alto se llena exacto
+   y se recorta el 10 % del ancho —5 % por lado con object-position al 50 %—,
+   así que los porcentajes horizontales de los marcadores se recalcularon
+   sobre ese recorte: 31.1→29, 64.72→66.36, 74.37→77.08. Los verticales no se
+   mueven, porque en vertical no hay recorte. */
+.fac{position:relative;background:#8E9599;overflow:hidden;aspect-ratio:12/5}
 .fac>picture{display:block;height:100%}
 .fac>picture>img,.fac>img{width:100%;height:100%;object-fit:cover;
-  object-position:55% 50%;display:block}
-@media(max-width:860px){
-  .facrow{grid-template-columns:1fr}
-  .facrow>.fac,.facrow>.faclegend{grid-column:auto}
-  .facrow>.faclegend{margin-top:12px}
-}
+  object-position:50% 50%;display:block}
 .pin{
   position:absolute;width:40px;height:40px;transform:translate(-50%,-50%);
   border:1px solid var(--ivory);border-radius:50% !important;
@@ -84,12 +76,10 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   opacity:0;pointer-events:none;transition:opacity .2s ease;
 }
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1}
-.faclegend{display:flex;justify-content:space-between;gap:24px;margin-top:12px}
-.faclegend b{font-weight:500;color:var(--ink)}
+.faclegend{margin-top:12px}
 @media(max-width:860px){
   .pin{width:44px;height:44px;font-size:var(--fs-bar)}
   .pin .tip{display:none}
-  .faclegend{flex-direction:column;gap:6px}
 }
 
 /* 02 · fichas de local */
@@ -235,20 +225,17 @@ body>footer.sf{padding-top:48px}
     <h2>Los tres locales, sobre la fachada.</h2>
     <p class="lead">Los demás locales están alquilados o destinados a administración.</p>
   </div>
-  <div class="wrap sec-body facrow">
+  <div class="wrap sec-body">
     <div class="fac">
       <picture>
         <source srcset="img/fachada-master-2026-09-21.webp" type="image/webp">
         <img src="img/fachada-master-2026-09-21.jpg" width="2048" height="768" alt="Fachada de Plaza La Peatonal 68 de día, con el Local 4 señalado en la planta baja y los locales 22 y 23 en el segundo piso" decoding="async">
       </picture>
-      <a class="pin" href="#local-4" style="left:12.5%;top:65%" aria-label="Local 4, 102 metros cuadrados, $3,060 al mes. Ir a su ficha">4<span class="tip">Local 4 · 102 m² · $3,060/mes</span></a>
-      <a class="pin" href="#local-22" style="left:72.3%;top:32.36%" aria-label="Local 22, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">22<span class="tip">Local 22 · 100 m² · $1,800/mes</span></a>
-      <a class="pin" href="#local-23" style="left:89.5%;top:32.36%" aria-label="Local 23, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">23<span class="tip">Local 23 · 100 m² · $1,800/mes</span></a>
+      <a class="pin" href="#local-4" style="left:29%;top:65%" aria-label="Local 4, 102 metros cuadrados, $3,060 al mes. Ir a su ficha">4<span class="tip">Local 4 · 102 m² · $3,060/mes</span></a>
+      <a class="pin" href="#local-22" style="left:66.36%;top:32.36%" aria-label="Local 22, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">22<span class="tip">Local 22 · 100 m² · $1,800/mes</span></a>
+      <a class="pin" href="#local-23" style="left:77.08%;top:32.36%" aria-label="Local 23, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">23<span class="tip">Local 23 · 100 m² · $1,800/mes</span></a>
     </div>
-    <p class="nota faclegend">
-      <span><b>Disponibles</b> 4, 22, 23 &nbsp;·&nbsp; <b>Alquilados</b> 11, 13, 15, 21 &nbsp;·&nbsp; <b>Administración</b> 16</span>
-      <span>La ubicación en la fachada es aproximada; la división exacta se confirma con la administración.</span>
-    </p>
+    <p class="nota faclegend">Disponibles 4, 22 y 23. Ubicación aproximada sobre la fachada.</p>
   </div>
 </section>
 
@@ -261,7 +248,7 @@ body>footer.sf{padding-top:48px}
   </div>
   <div class="wrap sec-body g3">
 
-    <article class="card u u4" id="local-4" data-u="4" data-floor="0" data-area="102">
+    <article class="card ficha u u4" id="local-4" data-u="4" data-floor="0" data-area="102">
       <button class="ushot ph ph--32" data-gal="l4" data-loc="4" aria-label="Ver las fotografías del Local 4">
         <picture>
           <source srcset="img/local-04-salon-hacia-la-terraza.webp" type="image/webp">
@@ -292,7 +279,7 @@ body>footer.sf{padding-top:48px}
       </div>
     </article>
 
-    <article class="card u" id="local-22" data-u="22" data-floor="2" data-area="100">
+    <article class="card ficha u" id="local-22" data-u="22" data-floor="2" data-area="100">
       <button class="ushot ph ph--32" data-gal="l22" data-loc="22" aria-label="Ver las fotografías del Local 22">
         <img src="img/local-22-espacio.jpg" width="1600" height="1067" alt="Local 22: el espacio completo desde la entrada, con el ventanal al fondo" loading="lazy">
       </button>
@@ -321,7 +308,7 @@ body>footer.sf{padding-top:48px}
       </div>
     </article>
 
-    <article class="card u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
+    <article class="card ficha u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
       <button class="ushot ph ph--32" data-gal="l23" data-loc="23" aria-label="Ver las fotografías del Local 23">
         <img src="img/local-23-espacio.jpg" width="1600" height="1067" alt="Local 23: el espacio principal, entregado y vacío, con la ventana al fondo" loading="lazy">
       </button>

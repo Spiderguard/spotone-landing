@@ -1479,24 +1479,59 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 }
 
 /* ======================================================================
-   ADENDA al bloque v1.1 · 12-nov-2026 · «cambios posteriores, todos ya en
-   el mock-up aprobado». Bloque al final: gana por orden de cascada.
+   ADENDA v1.1 · SEGUNDA Y ÚLTIMA · 12-nov-2026. «Reemplaza la adenda
+   anterior por completo. Todo esto ya está en el mock-up aprobado.»
+   Bloque al final del archivo: gana por orden de cascada.
    --- */
 
-/* --- 2 · la pregunta de FAQ sube a 28/36 (24/30 en móvil) --- */
-:root{--fs-faq:28px; --lh-faq:36px;
-      --fs-canon:36px; --lh-canon:44px}
+/* --- 1 · un solo tratamiento para «número grande» en toda la página:
+       Newsreader 500 a 44/52. Lo usan el resumen del héroe de /peatonal68/
+       y el canon de cada ficha de local. El héroe venía a 28/36 y el canon
+       a 36/44 (primera adenda) y no se leían. --- */
+:root{--fs-canon:44px; --lh-canon:52px}
+.cifra{font-size:var(--fs-canon);line-height:var(--lh-canon);font-weight:500}
+.phero .stat{font-size:var(--fs-canon);line-height:var(--lh-canon)}
+
+/* --- 2 · la pregunta de FAQ: Newsreader 300 a 28/36 · 24/30 en móvil --- */
+:root{--fs-faq:28px; --lh-faq:36px}
 @media(max-width:860px){
   :root{--fs-faq:24px; --lh-faq:30px}
 }
 
-/* --- 3 · el canon de cada ficha de local, Newsreader 500 a 36/44. Es el
-       único dato que decide en una página de alquiler. El resumen del héroe
-       se queda en 28/36. --- */
-.cifra{font-size:var(--fs-canon);line-height:var(--lh-canon);font-weight:500}
+/* --- 4 · .ficha · la tarjeta de local lleva filete de 1 px en los CUATRO
+       lados y 28 px de padding interno. La foto va a sangre dentro del
+       borde: se le devuelve el padding con márgenes negativos. Sin sombra y
+       sin color de fondo. Es la excepción declarada a la regla 10 —«tarjeta
+       estándar: sin borde, sin sombra, sin radio»—: aquí el borde es lo
+       único que hace que el bloque se lea como ficha. --- */
+.ficha{border:1px solid var(--line);padding:28px}
+.ficha>.ph,.ficha>.ushot{margin:-28px -28px 24px;width:auto}
+@media(max-width:860px){
+  .ficha{padding:24px}
+  .ficha>.ph,.ficha>.ushot{margin:-24px -24px 20px}
+}
 
-/* --- 4 · el resumen del héroe: un filete por columna y la jerarquía por el
-       valor, no por el tamaño. --- */
+/* --- 5 y 6 · los cuatro servicios: dos columnas y dos filas, cinco
+       columnas de grilla cada uno, row-gap 72, filete de 1 px arriba y
+       24 px de padding. En cuatro columnas de tres «Inteligencia de
+       mercado» se partía y desalineaba la fila. El nombre se queda en el
+       28/36 que fijó §3 de v1.1. --- */
+.servs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:var(--gutter);row-gap:72px}
+.servs>.serv:nth-child(odd){grid-column:1 / span 5}
+.servs>.serv:nth-child(even){grid-column:8 / span 5}
+.serv{border-top:1px solid var(--line);padding-top:24px}
+.serv h3{font-size:var(--fs-item);line-height:var(--lh-item);margin:0 0 16px}
+.serv p{margin:0;color:var(--muted);font-size:var(--fs-body);
+  line-height:var(--lh-body);max-width:var(--measure)}
+@media(max-width:860px){
+  .servs{grid-template-columns:1fr;row-gap:40px}
+  .servs>.serv:nth-child(odd),.servs>.serv:nth-child(even){grid-column:auto}
+}
+
+/* --- 12 · el resumen del héroe: un filete por columna, no uno corrido, y la
+       jerarquía por el valor: el canon en marfil pleno, los otros tres al
+       86 %. El tamaño ya no distingue —los cuatro van a 44/52—. --- */
 .phero .quad{border-top:0;padding-top:0}
 .phero .quad .stat{border-top:1px solid var(--on-navy-line);padding-top:32px}
 .phero .stat{color:var(--on-navy-muted)}
@@ -1505,14 +1540,14 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
   .phero .quad .stat + .stat{margin-top:16px;padding-top:32px}
 }
 
-/* --- 5 · el pie con dos niveles de gris: enlaces al 86 %, línea legal al
+/* --- 14 · el pie con dos niveles de gris: enlaces al 86 %, línea legal al
        60 %. Los encabezados de columna siguen en acento. --- */
 .sf-cols a{color:var(--on-navy-muted)}
 .sf a{color:var(--on-navy-muted)}
 .sf-disc,.sf-bottom,.sf-bottom a{color:var(--on-navy-faint)}
 .sf{color:var(--on-navy-muted)}
 
-/* --- 6 · la plaza, tres columnas en vez de tres pisos en un renglón --- */
+/* --- 11 · la plaza, tres columnas: una por piso --- */
 .niveles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:var(--gutter)}
 .niveles .label{margin:0 0 8px}
@@ -1521,7 +1556,7 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
   .niveles{grid-template-columns:1fr;gap:28px}
 }
 
-/* --- 7 · acceso e infraestructura: cuatro grupos rotulados en dos columnas
+/* --- 10 · acceso e infraestructura: cuatro grupos rotulados en dos columnas
        de cinco. Sin iconos: el manual prohíbe iconografía y lo que fallaba
        era la estructura. --- */
 .grupos{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
