@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=15">
+<link rel="stylesheet" href="/css/spotone.css?v=16">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -44,7 +44,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
    texto desde la ocho, alineado arriba. */
 .prop{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
   gap:var(--gutter);align-items:start}
-.prop-foto{grid-column:1 / span 7;display:block;background:#7B8384}
+/* §3 de v1.1 (12-nov): la foto de modulo va a 3:2. A siete columnas, 3:2 da
+   439 px contra 232 de texto (+89 %) y el 25 % solo admite una excepcion, el
+   retrato de Dario. A cuatro columnas da 242 contra 232 (+4 %): la foto cede
+   ancho, el texto no se alarga. */
+.prop-foto{grid-column:1 / span 4;display:block;background:#7B8384}
 .prop-txt{grid-column:8 / span 5}
 .prop-txt .label{margin:0 0 var(--gap-idx)}
 .prop-txt h3{margin:0 0 var(--gap-lead);color:var(--ink)}
@@ -80,7 +84,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <a class="brand" href="/index-en.html"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
     <button class="mm-close" id="menuClose" aria-label="Close the menu">&times;</button>
   </div>
-  <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#propiedades">Properties</a><a href="#faq">Frequently asked questions</a><a href="#contacto">Let’s talk</a></nav>
+  <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#propiedades">Properties</a><a href="#faq">What I usually clarify</a><a href="#contacto">Let’s talk</a></nav>
   <p class="mm-group">SpotOne Realty</p>
   <nav aria-label="Menu"><a href="/index-en.html" class="here" aria-current="page">Home</a><a href="/services/">What I do</a><a href="/index-en.html#propiedades">Properties</a><a href="/relocation/en/">Relocation</a><a href="/criterio/en/">Notes</a><a href="/dario/en/">Dario</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="#contacto">Let's talk</a></nav>
   <div class="mm-lang"><a href="/" class="" lang="es">Español</a><span aria-hidden="true">/</span><a href="/index-en.html" class="active" aria-current="true" lang="en">English</a></div>
@@ -103,13 +107,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap">
     <h1>Real estate selection<br><em>with discernment</em>.</h1>
     <p class="lead">I help you buy, sell or rent in Panama, with the market reviewed before you decide.</p>
+    <p class="plain solo-movil"><a class="btn btn--light" href="#contacto">Let’s talk</a></p>
   </div>
 </header>
 
 <!-- 01 · Principio -->
 <section class="sec principio">
   <div class="wrap">
-    <p class="idx" id="principio">01 · Principle</p>
+    <p class="idx" id="principio">Principle</p>
     <h2>The market is read. <em>Not guessed.</em></h2>
     <p class="lead">Publishing is not the same as taking it to market. Before proposing a price I review the alternatives available to buyers.</p>
   </div>
@@ -118,14 +123,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 02 · Propiedades -->
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="propiedades">02 · Properties</p>
+    <p class="idx" id="propiedades">Properties</p>
     <h2>What I represent now.</h2>
     <p class="lead">Availability kept current, rent and charges per unit, and what is still to be confirmed.</p>
   </div>
   <div class="wrap sec-body prop">
-    <a class="prop-foto ph ph--83" href="/peatonal68/en/"><picture>
-      <source srcset="/images/fachada-peatonal-83-660.webp 660w, /images/fachada-peatonal-83-1320.webp 1320w" sizes="(max-width:860px) 100vw, 659px" type="image/webp">
-      <img src="/images/fachada-peatonal-83.jpg" width="1024" height="384" alt="Facade of Plaza La Peatonal 68 in daylight, Calle 68 Este, San Francisco" loading="lazy" decoding="async" fetchpriority="low">
+    <a class="prop-foto ph ph--32" href="/peatonal68/en/"><picture>
+      <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 363px" type="image/webp">
+      <img src="/images/plaza-noche-32.jpg" width="1500" height="1000" alt="Plaza La Peatonal 68 at night, with the sign lit and the street-level restaurants in operation" loading="lazy" decoding="async" fetchpriority="low">
     </picture></a>
     <div class="prop-txt">
       <p class="label">Exclusive representation · San Francisco</p>
@@ -139,7 +144,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 03 · Qué hago -->
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="que-hago">03 · What I do</p>
+    <p class="idx" id="que-hago">What I do</p>
     <h2>Four ways to work together.</h2>
     <p class="lead">Owners, buyers, tenants and investors, always with the figure before the adjective.</p>
   </div>
@@ -158,7 +163,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <section class="sec">
   <div class="band-ph band-ph--sinfoto">
     <div class="wrap">
-      <p class="idx" id="relocation">04 · Relocation</p>
+      <p class="idx" id="relocation">Relocation</p>
       <h2>Moving to Panama.</h2>
       <p class="lead">I start with your work, your daily journeys and your family; the area follows from that.</p>
       <a class="out" href="/relocation/en/">See the process →</a>
@@ -174,10 +179,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <img src="/images/dario-neutra.jpg" width="998" height="1328" alt="Portrait of Dario Jhangimal, real estate broker in Panama" loading="lazy" decoding="async">
     </picture></span>
     <div class="c7">
-      <p class="idx" id="dario">05 · Dario</p>
+      <p class="idx" id="dario">Dario</p>
       <h2>Dario Jhangimal</h2>
       <p class="label">Real Estate Broker · PN-1240</p>
-      <p class="lead">You work directly with me from start to finish. We review the price, the terms and whether the property meets your needs.</p>
+      <p class="lead">We review the price, the terms and whether the property meets your needs.</p>
       <p class="lead">If another broker holds it, I coordinate with them and arrange the viewing all the same. And if the best decision is not to move forward, I tell you.</p>
       <p class="plain"><a class="out" href="/dario/en/">About Dario →</a></p>
     </div>
@@ -187,7 +192,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 06 · Criterio -->
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="criterio">06 · Notes</p>
+    <p class="idx" id="criterio">Notes</p>
     <h2>Reading the Panama market.</h2>
     <p class="lead">Market, decisions and signals for buying, selling, renting or investing.</p>
   </div>
@@ -204,22 +209,20 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 07 · Lo que suelo aclarar -->
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="faq">07 · What I usually clarify</p>
-    <h2>Frequently asked questions.</h2>
+    <h2 id="faq">What I usually clarify.</h2>
     <p class="lead">About how I work and what you can expect.</p>
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>How does the first conversation work?</summary><div class="body"><p>The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, you know whether moving forward makes sense and what the next step would be.</p></div></details>
       <details class="faq-item"><summary>How do I work with you as a buyer?</summary><div class="body"><p>First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who holds each property and arrange the viewings with the information you need to decide.</p></div></details>
       <details class="faq-item"><summary>Do you work with owners who want to sell or rent?</summary><div class="body"><p>Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market and who it suits. Before listing, I review the price, the timing and how the property is presented against what is already on offer.</p></div></details>
-      <details class="faq-item"><summary>What if the best decision is not to move forward?</summary><div class="body"><p>I will tell you. Sometimes the best advice is to wait, adjust the price, change the area or hold for a better moment. That is part of the work too.</p></div></details>
   </div>
 </section>
 
 <!-- 08 · Conversemos -->
 <section class="close">
   <div class="wrap">
-    <p class="idx" id="contacto">08 · Let’s talk</p>
+    <p class="idx" id="contacto">Let’s talk</p>
     <h2>Is there a property decision you need to settle?</h2>
     <p class="lead">Tell me what you need, in which area and by when. With those three details I can compare options before our first call.</p>
     <div class="actions">
@@ -237,7 +240,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     </div>
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · PN-1240</p>
     <div class="sf-bottom">
-      <span>© 2026 SpotOne Realty · Panama · License PN-1240</span>
+      <span>© 2026 SpotOne Realty · Panama</span>
       <span class="sf-lang"><a href="/" lang="es">ES</a> · <a href="/index-en.html" lang="en">EN</a></span>
     </div>
   </div>
@@ -275,6 +278,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","areaServed":{"@type":"Country","name":"Panamá"},"founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Corredor de Bienes Raíces (PN-1240)","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the first conversation work?","acceptedAnswer":{"@type":"Answer","text":"The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, you know whether moving forward makes sense and what the next step would be."}},{"@type":"Question","name":"How do I work with you as a buyer?","acceptedAnswer":{"@type":"Answer","text":"First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who holds each property and arrange the viewings with the information you need to decide."}},{"@type":"Question","name":"Do you work with owners who want to sell or rent?","acceptedAnswer":{"@type":"Answer","text":"Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market and who it suits. Before listing, I review the price, the timing and how the property is presented against what is already on offer."}},{"@type":"Question","name":"What if the best decision is not to move forward?","acceptedAnswer":{"@type":"Answer","text":"I will tell you. Sometimes the best advice is to wait, adjust the price, change the area or hold for a better moment. That is part of the work too."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","areaServed":{"@type":"Country","name":"Panamá"},"founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Corredor de Bienes Raíces (PN-1240)","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the first conversation work?","acceptedAnswer":{"@type":"Answer","text":"The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, you know whether moving forward makes sense and what the next step would be."}},{"@type":"Question","name":"How do I work with you as a buyer?","acceptedAnswer":{"@type":"Answer","text":"First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who holds each property and arrange the viewings with the information you need to decide."}},{"@type":"Question","name":"Do you work with owners who want to sell or rent?","acceptedAnswer":{"@type":"Answer","text":"Yes. The process for an owner starts the same way as for a buyer: understanding the property, the market and who it suits. Before listing, I review the price, the timing and how the property is presented against what is already on offer."}}]}]}</script>
 </body>
 </html>

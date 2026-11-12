@@ -1403,3 +1403,77 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 /* El «/» del conmutador de idioma iba a rgba(255,255,255,.3): 1.27 de
    contraste, el peor glifo del sitio. Toma el color de la barra. */
 .lang span{color:inherit}
+
+/* ======================================================================
+   v1.1 · 12-nov-2026 · segunda redacción de «EJECUTAR EL MOCK-UP APROBADO»
+   Bloque al final: gana por orden de cascada.
+   §1 numeración fuera · §2 seis pares · §3 composición.
+   --- */
+
+/* --- §2 · SEIS pares, no nueve. Del escritorio salen 24/30, 20/28 y 18/24:
+       el ítem sube al par del nombre (28/36), la pregunta de FAQ baja al par
+       del cuerpo (18/30) y la barra toma también el par del cuerpo. El móvil
+       ya daba exactamente los seis que pide el documento. --- */
+:root{
+  --fs-item:28px; --lh-item:36px;
+  --fs-faq:18px;  --lh-faq:30px;
+  --fs-bar:18px;  --lh-bar:30px;
+}
+@media(max-width:860px){
+  :root{
+    --fs-item:24px; --lh-item:30px;
+    --fs-faq:20px;  --lh-faq:30px;
+    --fs-bar:15px;  --lh-bar:24px;
+  }
+}
+
+/* --- §3 · dos proporciones de foto y nada más: 3:2 en módulo y ficha,
+       4:5 en retrato. `.ph--83` era la tercera. --- */
+.ph--83{aspect-ratio:3/2}
+
+/* --- §3 · los cuatro servicios en dos columnas y dos filas, cinco columnas
+       cada uno, con 72 px entre filas. Venían en cuatro filas de una. --- */
+.mods{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:var(--gutter);row-gap:72px}
+.mods>div,.mods>div:last-child{display:block;padding:0;
+  border-top:0;border-bottom:0}
+.mods>div:nth-child(odd){grid-column:1 / span 5}
+.mods>div:nth-child(even){grid-column:8 / span 5}
+.mods>div>:first-child,.mods>div>:last-child{grid-column:auto}
+.mods h3{font-size:var(--fs-item);line-height:var(--lh-item);margin:0 0 16px}
+@media(max-width:860px){
+  .mods{grid-template-columns:1fr;row-gap:40px}
+  .mods>div:nth-child(odd),.mods>div:nth-child(even){grid-column:auto}
+  .mods h3{font-size:var(--fs-item);line-height:var(--lh-item)}
+}
+
+/* --- §8 · «barra y cierre en escritorio, héroe y cierre en móvil». La
+       invitación del héroe existe solo por debajo de 860 px y la de la barra
+       se apaga ahí: la cuenta sigue siendo dos a los dos anchos. --- */
+.solo-movil{display:none}
+@media(max-width:860px){
+  .solo-movil{display:block;margin-top:40px}
+  /* Las variantes --flat y --over redeclaran el display del botón con cuatro
+     clases de especificidad (líneas 269 y 757); hay que igualarlas para
+     apagarlo, no basta con `.site-header .cta`. */
+  .site-header--flat:not(.scrolled) .site-nav .cta,
+  .site-header--over:not(.scrolled) .site-nav .cta,
+  .site-header.scrolled .site-nav .cta,
+  .site-header .site-nav .cta{display:none}
+}
+
+/* --- objetivo «elementos position:fixed 0» de la lista ANTES DE PUBLICAR.
+       La cabecera del sitio ya era `sticky` en doce rutas; en las ocho con
+       héroe sobre foto la variante `--over` la ponía `fixed` para flotar
+       encima de la imagen. Dos consecuencias: ningún elemento debía ser fijo
+       y las rutas no daban el mismo valor entre sí.
+       Pasa a `sticky` también ahí, y el héroe se sube la altura de la
+       cabecera para que el solape se vea exactamente igual que antes: misma
+       composición, cero elementos fijos, las quince rutas iguales. --- */
+.site-header--over{position:sticky}
+.site-header--over ~ main > .hero:first-child,
+.site-header--over ~ main > .phero:first-child{margin-top:calc(-1 * var(--hdr-h))}
+@media(max-width:860px){
+  .site-header--over ~ main > .hero:first-child,
+  .site-header--over ~ main > .phero:first-child{margin-top:calc(-1 * var(--hdr-h-sm))}
+}

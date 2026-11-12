@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="image" href="/images/destacada-peatonal-16-9.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=15">
+<link rel="stylesheet" href="/css/spotone.css?v=16">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -38,7 +38,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .hero--ivory>.wrap{padding-bottom:0}
 .crit-dot{color:var(--muted)}
 .cuenta{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);
-  line-height:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin:0 0 var(--gap-body);max-width:none}
 .mas{display:flex;justify-content:center;margin-top:56px}
 .notas{row-gap:48px}
@@ -98,12 +98,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <p class="idx">Notes</p>
     <h1>Notes<span class="crit-dot">.</span></h1>
     <p class="lead">Reading the Panama real estate market: decisions and signals for buying, selling, renting or investing.</p>
+    <p class="plain solo-movil"><a class="btn" href="#contacto">Let’s talk</a></p>
   </div>
 </header>
 
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx">01 · Featured note</p>
+    <p class="idx">Featured note</p>
   </div>
   <div class="wrap feat-wrap">
     <a class="feat" href="/criterio/end-lease-after-earthquake-panama/">
@@ -125,7 +126,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="notas">02 · Archive</p>
+    <p class="idx" id="notas">Archive</p>
     <h2>All notes.</h2>
   </div>
   <div class="wrap sec-body">
@@ -138,7 +139,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <section class="close">
   <div class="wrap">
-    <p class="idx" id="contacto">03 · Let’s talk</p>
+    <p class="idx" id="contacto">Let’s talk</p>
     <h2>Is your question not here?</h2>
     <p class="lead">Write it. If the data exists, I find it and send it. If it does not, I say so.</p>
     <div class="actions">
@@ -156,7 +157,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     </div>
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · PN-1240</p>
     <div class="sf-bottom">
-      <span>© 2026 SpotOne Realty · Panama · License PN-1240</span>
+      <span>© 2026 SpotOne Realty · Panama</span>
       <span class="sf-lang"><a href="/criterio/" lang="es">ES</a> · <a href="/criterio/en/" lang="en">EN</a></span>
     </div>
   </div>

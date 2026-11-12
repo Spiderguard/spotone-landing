@@ -26,7 +26,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 <link rel="preload" as="image" href="../img/fachada-master-2026-09-21.webp" type="image/webp">
 
-<link rel="stylesheet" href="/css/spotone.css?v=15">
+<link rel="stylesheet" href="/css/spotone.css?v=16">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -45,10 +45,29 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .phero .fine{margin-top:32px;color:var(--on-navy-faint);font-size:var(--fs-label);line-height:var(--lh-label);max-width:var(--measure)}
 .phero .btn{margin-top:64px}
 
-/* 01 · fachada con los dos locales señalados */
-.fac{position:relative;background:#8E9599;overflow:hidden}
-.fac>picture{display:block}
-.fac>picture>img,.fac>img{width:100%;height:auto;display:block}
+/* 01 · fachada con los tres locales señalados.
+   §3 de v1.1 (12-nov): «La fachada va a 3:2 sobre nueve columnas, con su
+   leyenda en las tres restantes.» El MASTER es 2048×768 (8:3), así que para
+   dar 3:2 hay que recortarle los costados. Con object-position al 55 % la
+   ventana visible es la franja 24–80 % del original: los tres marcadores
+   quedan dentro con 85 px de margen a la izquierda y 68 a la derecha, y sus
+   porcentajes se recalcularon sobre el recorte (31.1→12.5, 64.72→72.3,
+   74.37→89.5). Con el 50 % —el recorte de fachada-peatonal-32.jpg— el
+   marcador del 23 queda a 34 px del borde. */
+.facrow{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:var(--gutter);align-items:start}
+.facrow>.fac{grid-column:1 / span 9}
+.facrow>.faclegend{grid-column:10 / span 3;margin-top:0;
+  flex-direction:column;gap:12px}
+.fac{position:relative;background:#8E9599;overflow:hidden;aspect-ratio:3/2}
+.fac>picture{display:block;height:100%}
+.fac>picture>img,.fac>img{width:100%;height:100%;object-fit:cover;
+  object-position:55% 50%;display:block}
+@media(max-width:860px){
+  .facrow{grid-template-columns:1fr}
+  .facrow>.fac,.facrow>.faclegend{grid-column:auto}
+  .facrow>.faclegend{margin-top:12px}
+}
 .pin{
   position:absolute;width:40px;height:40px;transform:translate(-50%,-50%);
   border:1px solid var(--ivory);border-radius:50% !important;
@@ -200,8 +219,8 @@ body>footer.sf{padding-top:48px}
     <h1>Plaza La Peatonal 68</h1>
     <div class="quad g4">
       <p class="stat">3<small>Available now</small></p>
-      <p class="stat">100–102 m²<small>Per unit</small></p>
-      <p class="stat">From $1,800<small>Monthly base rent</small></p>
+      <p class="stat">100–102<small>m² per unit</small></p>
+      <p class="stat">$1,800<small>Monthly base rent from</small></p>
       <p class="stat">60<small>Parking spaces</small></p>
     </div>
     <p class="fine">Maintenance, waste collection and taxes extra · Available for viewing by appointment.</p>
@@ -212,19 +231,19 @@ body>footer.sf{padding-top:48px}
 <!-- 01 · Where they are -->
 <section class="sec" id="fachada">
   <div class="wrap sec-head">
-    <p class="idx">01 · Where they are</p>
+    <p class="idx">Where they are</p>
     <h2>The three units, on the facade.</h2>
-    <p class="lead">Tap a number to go to its card. The other units are leased or used by management.</p>
+    <p class="lead">The other units are leased or used by management.</p>
   </div>
-  <div class="wrap sec-body">
+  <div class="wrap sec-body facrow">
     <div class="fac">
       <picture>
         <source srcset="../img/fachada-master-2026-09-21.webp" type="image/webp">
         <img src="../img/fachada-master-2026-09-21.jpg" width="2048" height="768" alt="Daytime facade of Plaza La Peatonal 68, with Unit 4 marked on the ground floor and units 22 and 23 on the second floor" decoding="async">
       </picture>
-      <a class="pin" href="#local-4" style="left:31.1%;top:65%" aria-label="Unit 4, 102 square metres, $3,060 a month. Go to its card">4<span class="tip">Unit 4 · 102 m² · $3,060/month</span></a>
-      <a class="pin" href="#local-22" style="left:64.72%;top:32.36%" aria-label="Unit 22, 100 square metres, $1,800 a month. Go to its card">22<span class="tip">Unit 22 · 100 m² · $1,800/month</span></a>
-      <a class="pin" href="#local-23" style="left:74.37%;top:32.36%" aria-label="Unit 23, 100 square metres, $1,800 a month. Go to its card">23<span class="tip">Unit 23 · 100 m² · $1,800/month</span></a>
+      <a class="pin" href="#local-4" style="left:12.5%;top:65%" aria-label="Unit 4, 102 square metres, $3,060 a month. Go to its card">4<span class="tip">Unit 4 · 102 m² · $3,060/month</span></a>
+      <a class="pin" href="#local-22" style="left:72.3%;top:32.36%" aria-label="Unit 22, 100 square metres, $1,800 a month. Go to its card">22<span class="tip">Unit 22 · 100 m² · $1,800/month</span></a>
+      <a class="pin" href="#local-23" style="left:89.5%;top:32.36%" aria-label="Unit 23, 100 square metres, $1,800 a month. Go to its card">23<span class="tip">Unit 23 · 100 m² · $1,800/month</span></a>
     </div>
     <p class="nota faclegend">
       <span><b>Available</b> 4, 22, 23 &nbsp;·&nbsp; <b>Leased</b> 11, 13, 15, 21 &nbsp;·&nbsp; <b>Management</b> 16</span>
@@ -236,7 +255,7 @@ body>footer.sf{padding-top:48px}
 <!-- 02 · Available units -->
 <section class="sec" id="disponibilidad">
   <div class="wrap sec-head">
-    <p class="idx">02 · Available units</p>
+    <p class="idx">Available units</p>
     <h2>Two upstairs, one at street level.</h2>
     <p class="lead">The second-floor units share floor area and rent; the ground-floor one is fitted out for a restaurant.</p>
   </div>
@@ -337,8 +356,8 @@ body>footer.sf{padding-top:48px}
 <!-- 03 · The plaza -->
 <section class="sec" id="plaza">
   <div class="wrap sec-head">
-    <p class="idx">03 · The plaza</p>
-    <h2>A working plaza with complementary uses.</h2>
+    <p class="idx">The plaza</p>
+    <h2>Eight restaurants at street level.</h2>
     <p class="lead">The ground floor holds eight restaurants. Upstairs, the businesses see clients by appointment, for classes and for services. For a new tenant that means moving into a plaza that is already up and running, with parking available and different reasons to visit throughout the day.</p>
   </div>
   <div class="wrap sec-body g2">
@@ -370,7 +389,7 @@ body>footer.sf{padding-top:48px}
 <section class="sec" id="ubicacion">
   <div class="wrap sec-head">
 
-      <p class="idx">04 · Access and infrastructure</p>
+      <p class="idx">Access and infrastructure</p>
       <h2>Access and infrastructure.</h2>
       <p class="lead">What management has confirmed to date.</p>
       <p class="dir">Calle 68 Este, San Francisco, Panama City · <a href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">View on Google Maps →</a></p>
@@ -395,7 +414,7 @@ body>footer.sf{padding-top:48px}
 <!-- 05 · Questions -->
 <section class="sec" id="faq">
   <div class="wrap sec-head">
-    <p class="idx">05 · Questions</p>
+    <p class="idx">Questions</p>
     <h2>What I usually clarify.</h2>
   </div>
   <div class="wrap sec-body faq" data-faq>
@@ -416,7 +435,7 @@ body>footer.sf{padding-top:48px}
 <!-- 06 · Let’s talk -->
 <section class="pclose" id="contacto">
   <div class="wrap">
-    <p class="idx">06 · Let’s talk</p>
+    <p class="idx">Let’s talk</p>
     <h2>Let’s find the unit that fits your operation.</h2>
     <p class="lead">Tell me the type of business and the facilities you need. I check whether 4, 22 or 23 fits your operation before we set up a visit.</p>
     <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20the%20La%20Peatonal%2068%20page">Let’s talk</a>
@@ -434,7 +453,7 @@ body>footer.sf{padding-top:48px}
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · PN-1240</p>
     <p class="sf-disc">Base rents exclude taxes. Availability and terms subject to confirmation.</p>
     <div class="sf-bottom">
-      <span>© 2026 SpotOne Realty · Panama · License PN-1240</span>
+      <span>© 2026 SpotOne Realty · Panama</span>
       <span class="sf-lang"><a href="/peatonal68/" lang="es">ES</a> · <a href="/peatonal68/en/" lang="en">EN</a></span>
     </div>
   </div>

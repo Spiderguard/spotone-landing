@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
-<link rel="stylesheet" href="/css/spotone.css?v=15">
+<link rel="stylesheet" href="/css/spotone.css?v=16">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -41,12 +41,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .hero--navy .idx{color:var(--sky)}
 .hero--navy .actions,.hero--zona .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
 .label{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);
-  line-height:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin:0 0 24px;max-width:none}
 /* en /dario/ la etiqueta vive dentro de .reading, y `.reading p` le gana a
    `.label` en especificidad: sin esto sale a 17 px en vez de los 12 del
    sistema (lo mismo que ya pasaba con el indice). */
-.reading .label{font-size:var(--fs-label);line-height:16px;color:var(--muted)}
+.reading .label{font-size:var(--fs-label);line-height:var(--lh-label);color:var(--muted)}
 .retrato .ph{background:#8A8F96}
 /* dos parrafos de apoyo: 20 px de aire. Vale para el hero marfil y para el
    de Relocation, que lleva fotografia. */
@@ -130,6 +130,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <a class="out" href="/#propiedades">Propiedades →</a>
       <a class="out" href="/criterio/">Criterio →</a>
     </p>
+    <p class="plain solo-movil"><a class="btn" href="/contacto/">Conversemos</a></p>
   </div>
 </header>
 </main>
@@ -141,7 +142,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     </div>
     <p class="sf-sign">Dario Jhangimal · Corredor de Bienes Raíces · PN-1240</p>
     <div class="sf-bottom">
-      <span>© 2026 SpotOne Realty · Panamá · Licencia PN-1240</span>
+      <span>© 2026 SpotOne Realty · Panamá</span>
       <span class="sf-lang"><a href="/" lang="es">ES</a> · <a href="/index-en.html" lang="en">EN</a></span>
     </div>
   </div>

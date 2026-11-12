@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
-<link rel="stylesheet" href="/css/spotone.css?v=15">
+<link rel="stylesheet" href="/css/spotone.css?v=16">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -45,12 +45,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .hero--navy .idx{color:var(--sky)}
 .hero--navy .actions,.hero--zona .actions{display:flex;align-items:center;gap:32px;margin-top:48px;flex-wrap:wrap}
 .label{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);
-  line-height:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;text-transform:uppercase;
   color:var(--muted);margin:0 0 24px;max-width:none}
 /* en /dario/ la etiqueta vive dentro de .reading, y `.reading p` le gana a
    `.label` en especificidad: sin esto sale a 17 px en vez de los 12 del
    sistema (lo mismo que ya pasaba con el indice). */
-.reading .label{font-size:var(--fs-label);line-height:16px;color:var(--muted)}
+.reading .label{font-size:var(--fs-label);line-height:var(--lh-label);color:var(--muted)}
 .retrato .ph{background:#8A8F96}
 /* dos parrafos de apoyo: 20 px de aire. Vale para el hero marfil y para el
    de Relocation, que lleva fotografia. */
@@ -113,7 +113,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <a class="brand" href="/"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
     <button class="mm-close" id="menuClose" aria-label="Cerrar el menú">&times;</button>
   </div>
-  <p class="mm-group">En esta página</p><nav class="mm-sections" aria-label="En esta página"><a href="#proceso">El proceso</a><a href="#faq">Preguntas frecuentes</a><a href="#contacto">Conversemos</a></nav>
+  <p class="mm-group">En esta página</p><nav class="mm-sections" aria-label="En esta página"><a href="#proceso">El proceso</a><a href="#faq">Preguntas</a><a href="#contacto">Conversemos</a></nav>
   <p class="mm-group">SpotOne Realty</p>
   <nav aria-label="Menú"><a href="/">Inicio</a><a href="/que-hago/">Qué hago</a><a href="/#propiedades">Propiedades</a><a href="/relocation/" class="here" aria-current="page">Relocation</a><a href="/criterio/">Criterio</a><a href="/dario/">Dario</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="#contacto">Conversemos</a></nav>
   <div class="mm-lang"><a href="/relocation/" class="active" aria-current="true" lang="es">Español</a><span aria-hidden="true">/</span><a href="/relocation/en/" class="" lang="en">English</a></div>
@@ -131,12 +131,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h1>Mudarte a Panamá.</h1>
     <p class="lead">Dónde vivir depende de tu trabajo, tus recorridos diarios y las necesidades de tu familia. Empezamos por eso para orientar la búsqueda.</p>
     <p class="lead">Mi trabajo aquí es ayudarte a elegir zona y vivienda, comparar opciones y coordinar las visitas. Los trámites legales, migratorios y escolares los lleva cada especialista.</p>
+    <p class="plain solo-movil"><a class="btn btn--light" href="#contacto">Conversemos</a></p>
   </div>
 </header>
 
 <section class="sec" id="proceso">
   <div class="wrap sec-head">
-    <p class="idx">01 · El proceso</p>
+    <p class="idx">El proceso</p>
   </div>
   <div class="wrap sec-body">
     <div class="mods">
@@ -150,8 +151,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <section class="sec">
   <div class="wrap sec-head">
-    <p class="idx" id="faq">02 · Preguntas</p>
-    <h2>Preguntas frecuentes.</h2>
+    <h2 id="faq">Preguntas.</h2>
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>¿Cómo compra un extranjero propiedad en Panamá?</summary><div class="body"><p>En la mayoría de los casos un extranjero puede adquirir propiedad en Panamá. La estructura de compra, las restricciones que puedan aplicar y la documentación deben revisarse con un abogado antes de firmar o transferir fondos. Te acompaño en el proceso y coordino con tu abogado; esta información es orientativa y no sustituye la revisión legal.</p></div></details>
@@ -161,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
 <section class="close">
   <div class="wrap">
-    <p class="idx" id="contacto">03 · Conversemos</p>
+    <p class="idx" id="contacto">Conversemos</p>
     <h2>¿Cuándo llegas a Panamá?</h2>
     <p class="lead">Con la fecha y el tamaño de la familia armo el calendario: zona, visitas, contrato y mudanza, en ese orden.</p>
     <div class="actions">
@@ -179,7 +179,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     </div>
     <p class="sf-sign">Dario Jhangimal · Corredor de Bienes Raíces · PN-1240</p>
     <div class="sf-bottom">
-      <span>© 2026 SpotOne Realty · Panamá · Licencia PN-1240</span>
+      <span>© 2026 SpotOne Realty · Panamá</span>
       <span class="sf-lang"><a href="/relocation/" lang="es">ES</a> · <a href="/relocation/en/" lang="en">EN</a></span>
     </div>
   </div>
