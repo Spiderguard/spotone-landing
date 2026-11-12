@@ -1579,6 +1579,49 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
        bandera a la derecha, los valores de dos renglones se leían como dos
        textos sueltos en vez de como un dato. La fila de canon dentro de la
        ficha de local no entra aquí: esa sí mantiene los extremos. --- */
-.grupo .frow{display:grid;grid-template-columns:42% 1fr;gap:0;align-items:start}
-.grupo .frow>span:first-child{padding-right:16px}
+.grupo .frow{display:grid;grid-template-columns:42% 1fr;column-gap:24px;
+  row-gap:0;align-items:start}
 .grupo .frow em{text-align:left}
+/* a 390 px el rótulo más largo se parte haga lo que haga —185 px no caben en
+   342 de ancho total—, así que la pista del rótulo cede sitio al dato: 38 %
+   y 16 de aire dejan el dato en 196 px, los mismos que tenía antes de que el
+   aire saliera del padding. */
+@media(max-width:860px){
+  .grupo .frow{grid-template-columns:38% 1fr;column-gap:16px}
+}
+
+/* ======================================================================
+   Pasada de diseño · 12-nov-2026 · «toma tú las decisiones y ejecuta si
+   consideras que mejora la página». Tres correcciones. Ninguna añade un
+   elemento, ninguna toca una palabra y ninguna mueve un valor del canon.
+   --- */
+
+/* --- 1 · la jerarquía de la tabla estaba invertida. Rótulo y dato van al
+       mismo tamaño y al mismo peso —18/300— y lo único que los distinguía
+       era el color: el RÓTULO en tinta y el DATO en muted. El ojo caía en
+       la palabra que el lector ya sabía («Estacionamiento») y no en la que
+       vino a buscar («60 puestos»). Se intercambian los dos tonos. Los dos
+       ya pasaban el 4.5, así que el contraste no se mueve.
+       La ficha de local y el desglose mensual NO entran: ahí el dato ya
+       era el oscuro y la jerarquía estaba bien. --- */
+.grupo .frow>span:first-child{color:var(--muted)}
+.grupo .frow em{color:var(--ink)}
+
+/* --- 2 · el rótulo más largo se partía en dos renglones por 7 px. La
+       columna del 42 % da 194 px y «Acceso al segundo piso» mide 185, pero
+       el aire entre columnas estaba puesto como `padding-right` DENTRO de
+       la pista: le quitaba 16 y lo dejaba en 178. El aire pasa a ser
+       `column-gap`, que vive entre las pistas y no se come el rótulo. El
+       42 % se queda donde lo pusiste. --- */
+
+/* --- 3 · la línea de dirección cabía de sobra en un renglón —69
+       caracteres, tope 75— y la medida de 30 em la partía en dos a los
+       450 px, dejando el punto medio solo al final del primero. No es
+       texto de lectura sino un dato de una línea, como `.nota` o `.stat`,
+       que ya están exentos: se le quita el tope. En móvil sí parte, y
+       entonces el separador se esconde y el enlace baja a su línea. --- */
+.dir{max-width:none}
+@media(max-width:860px){
+  .dir .sep{display:none}
+  .dir a{display:block;margin-top:6px}
+}
