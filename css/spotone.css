@@ -1568,3 +1568,17 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
   .grupos{grid-template-columns:1fr;row-gap:40px}
   .grupo:nth-child(odd),.grupo:nth-child(even){grid-column:auto}
 }
+
+/* ======================================================================
+   ADENDA FINAL v1.1 · 12-nov-2026 · «reemplaza todas las anteriores».
+   Solo lo que cambia respecto del bloque de arriba.
+   --- */
+
+/* --- 4 · cada fila de la tabla de infraestructura es una rejilla de dos
+       columnas, 42 % y el resto, LAS DOS ALINEADAS A LA IZQUIERDA. En
+       bandera a la derecha, los valores de dos renglones se leían como dos
+       textos sueltos en vez de como un dato. La fila de canon dentro de la
+       ficha de local no entra aquí: esa sí mantiene los extremos. --- */
+.grupo .frow{display:grid;grid-template-columns:42% 1fr;gap:0;align-items:start}
+.grupo .frow>span:first-child{padding-right:16px}
+.grupo .frow em{text-align:left}

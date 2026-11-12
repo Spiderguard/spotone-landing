@@ -8,9 +8,10 @@ window.PEATONAL_AVAILABILITY = {"4": {"id": 4, "floor": 0, "area": 102, "rent": 
 // inspeccion ni una verificacion integral del inventario.
 // Se cambia a mano solo cuando se vuelve a verificar; no la toca ningun build.
 window.PEATONAL_VERIFIED = "2026-10-29";
-// 13-oct-2026: ninguna combinacion vigente. El 22 y el 23 son contiguos, pero la
-// contratacion conjunta NO esta confirmada con la administracion y no hay canon
-// combinado. Hasta que se confirme, no se ofrece: la lista queda vacia a proposito.
+// 12-nov-2026, dato de Dario: el 22 y el 23 SI se pueden unir para formar un
+// local de 200 m2, y asi se dice en el heroe, en las dos fichas y en la FAQ.
+// La lista sigue vacia porque no hay un canon combinado que publicar; cuando lo
+// haya, entra aqui y la ficha combinada sale de esta misma fuente.
 window.PEATONAL_COMBINATIONS = [];
 // Keep rendered availability and structured offers aligned with the shared source.
 document.addEventListener('DOMContentLoaded', function () {
