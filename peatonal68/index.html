@@ -120,8 +120,18 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .plaza-fig.estac .ph{background:#7D7C73}
 
 /* 04 · acceso: lista de dos columnas, sin iconos */
-.dir{margin-top:32px;font-size:15px;line-height:24px;color:var(--muted)}
-.dir a{color:var(--ink);font-weight:500}
+/* El enlace del mapa no se veia, y no era contraste: medido, es el texto MAS
+   oscuro de esa linea —tinta plena, peso 500— sobre una linea muted. Lo que
+   faltaba era decir que es un enlace. En un sistema sin color de enlace, lo
+   unico que queda es el subrayado, y es el mismo filete de 1 px a 4 px de la
+   linea de base que el sistema ya usa al pasar por encima del titular de una
+   tarjeta. Ademas la linea entera sube de 15/24 al cuerpo: la direccion es un
+   dato, no una nota al pie, y estaba en el tamano mas pequeno del sistema
+   justo debajo de un apoyo de 22. Los dos pares ya existen en la pagina. */
+.dir{margin-top:32px;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--muted)}
+.dir a{color:var(--ink);font-weight:500;text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:4px}
+.dir a:hover{text-decoration-thickness:2px}
 
 /* 05 · preguntas */
 .faq details{border-top:1px solid var(--line)}
