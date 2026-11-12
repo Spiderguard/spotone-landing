@@ -28,17 +28,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=16">
+<link rel="stylesheet" href="/css/spotone.css?v=17">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 
-/* 01 · una sola frase, centrada, 760 px (lienzo) */
-.principio{text-align:center}
+
+/* Adenda del 12-nov: el manifiesto deja de estar centrado y arranca en x=144
+   como los demas. Ningun modulo centrado en el sitio. */
 .principio .idx{margin:0 0 var(--gap-idx)}
-.principio h2{max-width:760px;margin:0 auto var(--gap-lead)}
-.principio .lead{margin:0 auto}
+.principio h2{max-width:var(--measure);margin:0 0 var(--gap-lead)}
+.principio .lead{margin:0}
 /* 02 · una sola propiedad, con contenido real. Las dos tarjetas vacías salen:
    ningún contenedor sin contenido real (Dario, 9-nov). Foto a siete columnas,
    texto desde la ocho, alineado arriba. */
