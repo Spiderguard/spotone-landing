@@ -44,6 +44,10 @@ INCLUDE_GLOBS = [
     "criterio/*/index.html",
     "peatonal68/index.html",
     "peatonal68/en/index.html",
+    "zonas/index.html",
+    "zonas/*/index.html",
+    "en/areas/index.html",
+    "en/areas/*/index.html",
 ]
 
 # Prioridad por URL exacta; el resto (articulos) usa DEFAULT_PRIORITY.

@@ -19,6 +19,7 @@
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/criterio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/"/>
@@ -67,6 +68,7 @@
     <loc>https://www.spotonerealty.com/criterio/ai-wont-replace-you/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/la-ia-no-te-va-a-reemplazar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/ai-wont-replace-you/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/la-ia-no-te-va-a-reemplazar/"/>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
@@ -306,6 +308,7 @@
     <loc>https://www.spotonerealty.com/criterio/la-ia-no-te-va-a-reemplazar/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/la-ia-no-te-va-a-reemplazar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/ai-wont-replace-you/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/la-ia-no-te-va-a-reemplazar/"/>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
@@ -728,6 +731,94 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/en/areas/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/avenida-balboa/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/avenida-balboa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/avenida-balboa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/avenida-balboa/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/bella-vista/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/bella-vista/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/bella-vista/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/bella-vista/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/coco-del-mar/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/coco-del-mar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/coco-del-mar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/coco-del-mar/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/costa-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/costa-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/costa-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/costa-del-este/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/el-cangrejo/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/el-cangrejo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/el-cangrejo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/el-cangrejo/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/obarrio/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/obarrio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/obarrio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/obarrio/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/punta-pacifica/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/punta-pacifica/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/punta-pacifica/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/punta-pacifica/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/punta-paitilla/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/punta-paitilla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/punta-paitilla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/punta-paitilla/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/san-francisco/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/san-francisco/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/san-francisco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/san-francisco/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/areas/santa-maria/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/santa-maria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/peatonal68/</loc>
     <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/peatonal68/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/peatonal68/en/"/>
@@ -772,6 +863,94 @@
     <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/que-hago/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/services/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/que-hago/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/avenida-balboa/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/avenida-balboa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/avenida-balboa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/avenida-balboa/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/bella-vista/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/bella-vista/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/bella-vista/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/bella-vista/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/coco-del-mar/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/coco-del-mar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/coco-del-mar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/coco-del-mar/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/costa-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/costa-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/costa-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/costa-del-este/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/el-cangrejo/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/el-cangrejo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/el-cangrejo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/el-cangrejo/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/obarrio/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/obarrio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/obarrio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/obarrio/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/punta-pacifica/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/punta-pacifica/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/punta-pacifica/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/punta-pacifica/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/punta-paitilla/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/punta-paitilla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/punta-paitilla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/punta-paitilla/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/san-francisco/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/san-francisco/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/san-francisco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/san-francisco/"/>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/zonas/santa-maria/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/santa-maria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
