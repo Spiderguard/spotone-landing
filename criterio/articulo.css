@@ -1,0 +1,90 @@
+/* ============================================================
+   Criterio · nota individual (R6, 13-nov-2026)
+   Va DESPUÉS de /css/spotone.css: cabecera, menú y pie son los canónicos.
+   Esta hoja solo da forma al cuerpo de la nota, con los tokens del sistema
+   (sin colores, tamaños ni radios propios). Pares que usa: h1 (--fs-h1),
+   lead (--fs-lead), cuerpo (--fs-body), subtítulo (--fs-h3) y etiqueta 15/24.
+   ============================================================ */
+
+.crit-article{padding:calc(var(--hdr-h) + var(--s9)) 0 var(--band)}
+.crit-wrap{max-width:calc(720px + 2 * var(--shell-pad));margin:0 auto;padding:0 var(--shell-pad)}
+
+/* etiquetas: 15/24, mayúsculas, Muted */
+.crit-back,.crit-tag,.crit-body .crit-label,.crit-body .qh,.crit-rel-l,
+.crit-body .crit-table th{
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--fs-label);line-height:24px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.crit-back{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.crit-back:hover{color:var(--navy)}
+.crit-tag{display:block;margin-top:var(--s6)}
+
+.crit-title{font-family:'Newsreader',Georgia,serif;font-weight:300;
+  font-size:var(--fs-h1);line-height:var(--lh-h1);letter-spacing:-.02em;
+  color:var(--ink);margin:var(--gap-idx) 0 var(--gap-lead);max-width:none}
+.crit-wa{margin:var(--s5) 0 0}
+.crit-wa .btn{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.crit-title em,.crit-body em{color:inherit;font-style:italic;font-weight:300}
+.crit-dek{font-size:var(--fs-lead);line-height:var(--lh-lead);color:var(--muted);font-weight:300;margin:0}
+.crit-meta{font-size:var(--fs-label);line-height:24px;color:var(--muted);margin-top:var(--s5)}
+
+.crit-body{margin-top:var(--s8)}
+.crit-body p,.crit-body li,.crit-body td{
+  font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink);font-weight:300}
+.crit-body p{margin:0 0 var(--s5);max-width:var(--measure)}
+.crit-body li,.crit-dek,.bridge,.disclaimer,.crit-pull,.crit-body .em{max-width:var(--measure)}
+.crit-body strong,.crit-body b{font-weight:500;color:var(--ink)}
+.crit-body h2{font-family:'Newsreader',Georgia,serif;font-weight:500;
+  font-size:var(--fs-h3);line-height:var(--lh-h3);letter-spacing:-.01em;
+  color:var(--ink);margin:var(--s8) 0 var(--s4)}
+.crit-body .crit-label,.crit-body .qh{margin:var(--s8) 0 var(--s2)}
+.crit-body .pt{margin-bottom:var(--s4)}
+
+/* cita destacada y cierre: Newsreader 300 al par del subtítulo */
+.crit-pull,.crit-body .em,.crit-close{font-family:'Newsreader',Georgia,serif;font-weight:300;font-style:italic;
+  font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--navy);
+  border-left:1px solid var(--navy);padding-left:var(--s5);margin:var(--s8) 0;max-width:none}
+.crit-close{border-left:0;padding-left:0;margin:var(--s2) 0 0}
+
+.crit-body ul{list-style:none;margin:var(--s5) 0;padding:0}
+.crit-body ul li{position:relative;padding-left:var(--s5);margin:0 0 var(--s3)}
+.crit-body ul li::before{content:"—";position:absolute;left:0;color:var(--muted)}
+.crit-body cite{font-style:italic}
+
+/* enlaces del cuerpo: subrayado permanente; el área táctil crece sin mover la línea */
+.crit-body a,.bridge a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;
+  text-decoration-thickness:1px;padding:12px 0;margin:-12px 0}
+.crit-body a:hover,.bridge a:hover{text-decoration-thickness:2px}
+
+/* tabla editorial */
+.crit-body .crit-table{width:100%;border-collapse:collapse;margin:var(--s6) 0}
+.crit-body .crit-table th,.crit-body .crit-table td{text-align:left;vertical-align:top;
+  padding:var(--s3) var(--s4) var(--s3) 0;border-bottom:1px solid var(--line)}
+.crit-body .crit-table th{border-bottom:1px solid var(--ink)}
+.crit-body .crit-table td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.crit-body .crit-table tr:last-child td{border-bottom:0}
+
+/* firma, puente y nota legal */
+.signature{margin-top:var(--s8);padding-top:var(--s5);border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:var(--s4);
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:var(--fs-body);font-weight:300;color:var(--ink)}
+.signature .av{width:56px;height:56px;overflow:hidden;flex:none;background:var(--warm)}
+.signature .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.signature .name{font-family:'Newsreader',Georgia,serif;font-weight:500;
+  font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.signature .role{font-size:var(--fs-label);line-height:24px;color:var(--muted)}
+.bridge{margin:var(--s5) 0 0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.disclaimer{margin:var(--s6) 0 0;padding-top:var(--s4);border-top:1px solid var(--line);
+  font-size:var(--fs-label);line-height:24px;color:var(--muted)}
+
+/* sigue leyendo */
+.crit-related{margin-top:var(--s7);border-top:1px solid var(--line)}
+.crit-rel-l{margin:var(--s5) 0 var(--s2)}
+.crit-related a{display:flex;align-items:center;min-height:44px;padding:var(--s2) 0;
+  border-top:1px solid var(--line);font-size:var(--fs-body);line-height:var(--lh-body);
+  color:var(--navy);text-decoration:none}
+.crit-related a:hover{text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:860px){
+  .crit-article{padding-top:calc(var(--hdr-h-sm) + var(--s7))}
+}

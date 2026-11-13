@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=21">
+<link rel="stylesheet" href="/css/spotone.css?v=22">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -114,7 +114,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 }
 
 /* v1.2 · escala de esta página: h2 a 48/52 en escritorio para que el h1 y la tesis manden (mismo par) */
-@media (min-width:861px){:root{--fs-h2:48px;--lh-h2:52px}}
+
 
 /* v1.2 · R3 detalle fino (advisor) */
 .nw{white-space:nowrap}
@@ -124,6 +124,17 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 @media(min-width:861px){.hero{min-height:100svh}}
 @media(max-width:860px){.hero .idx{letter-spacing:.08em}}
 @media(max-width:380px){.hero .idx.quien{letter-spacing:.02em}.hero .idx.quien span{white-space:normal}}
+
+/* ── v1.3 · Relocation con los cuatro frentes reales; Criterio que se entiende ── */
+.band-ph--sinfoto{min-height:0}
+.reloc-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:start}
+.reloc-head{grid-column:1/span 5}
+.pasos{grid-column:7/span 6;list-style:none;margin:0;padding:0}
+.pasos li{padding:20px 0;border-top:1px solid var(--on-navy-line)}
+.pasos li:last-child{border-bottom:1px solid var(--on-navy-line)}
+.pasos h3{font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-body);line-height:var(--lh-body);font-weight:500;color:var(--ivory);margin:0 0 4px;letter-spacing:0}
+.pasos p{margin:0;font-size:var(--fs-label);line-height:var(--lh-label);color:var(--on-navy-muted)}
+@media(max-width:860px){.reloc-in{grid-template-columns:1fr}.reloc-head,.pasos{grid-column:auto}.pasos{margin-top:40px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -182,7 +193,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 02 · Propiedades -->
-<section class="sec t-ivory propiedades">
+<section class="sec t-warm propiedades">
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Propiedades</p>
     <h2>Lo que represento ahora.</h2>
@@ -227,17 +238,25 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 04 · Relocation -->
 <section class="sec reloc">
   <div class="band-ph band-ph--sinfoto">
-    <div class="wrap">
+    <div class="wrap reloc-in">
+      <div class="reloc-head">
       <p class="idx" id="relocation">Relocation</p>
       <h2>Mudarte a Panamá.</h2>
       <p class="lead">Empiezo por tu trabajo, tus recorridos y tu familia; la zona sale de ahí.</p>
       <a class="out" href="/relocation/">Ver el proceso →</a>
+      </div>
+      <ul class="pasos" aria-label="El proceso de relocation">
+        <li><h3>Comparación de zonas</h3><p>Revisamos las zonas según tus recorridos habituales, los servicios cercanos y el tipo de vivienda que buscas.</p></li>
+        <li><h3>Familia y rutinas</h3><p>Reviso cómo quedan las distancias diarias desde cada zona: colegios, trabajo y los recorridos que harás cada semana.</p></li>
+        <li><h3>Un solo punto de contacto</h3><p>Coordino contigo la búsqueda y las visitas, también cuando participan otros corredores.</p></li>
+        <li><h3>Proceso remoto disponible</h3><p>Podemos comenzar la búsqueda antes de que llegues a Panamá y preparar las visitas para tu llegada.</p></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- 05 · Dario -->
-<section class="sec t-warm">
+<section class="sec t-soft">
   <div class="wrap g12 retrato">
     <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
@@ -256,25 +275,26 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <!-- 06 · Criterio -->
-<section class="sec t-ivory">
+<section class="sec t-warm">
   <div class="wrap sec-head">
     <p class="idx" id="criterio">Criterio</p>
-    <h2>Lectura inmobiliaria para Panamá.</h2>
-    <p class="lead">Artículos para comprar, vender, alquilar o invertir en Panamá.</p>
+    <h2>Respuestas para comprar, vender, alquilar o invertir en Panamá.</h2>
+    <p class="lead">Criterio son mis notas sobre precios, contratos, edificios y zonas de Panamá. Cada nota responde una pregunta concreta.</p>
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
-      <a class="nota-card" data-cat="alquiler" href="/criterio/terminar-alquiler-despues-de-un-sismo-panama/"><span class="cat">Alquiler</span><h3>¿Puede un inquilino terminar el contrato <em>después de un sismo?</em></h3><p>En un arrendamiento habitacional, discutir si el terremoto es una causa válida puede ser empezar por la pregunta equivocada.</p><span class="date">16 de octubre de 2026</span></a>
-      <a class="nota-card" data-cat="edificios" href="/criterio/norma-estructural-edificio-panama/"><span class="cat">Edificios &amp; zonas</span><h3>¿Bajo qué norma <em>se diseñó tu edificio?</em></h3><p>Un edificio de 1998 y uno aprobado bajo el REP‑2021 no parten del mismo marco. La fecha ayuda, pero no responde sola.</p><span class="date">16 de octubre de 2026</span></a>
-      <a class="nota-card" data-cat="alquiler" href="/criterio/que-incluye-linea-blanca-panama/"><span class="cat">Alquiler</span><h3>¿Qué incluye realmente <em>la «línea blanca»?</em></h3><p>Dos de cada tres avisos que usan el término declaran nevera, estufa, lavadora y secadora. Uno de cada cinco no especifica ningún equipo.</p><span class="date">16 de octubre de 2026</span></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/terminar-alquiler-despues-de-un-sismo-panama/"><span class="cat">Alquiler</span><h3>¿Puede un inquilino terminar el contrato <em>después de un sismo?</em></h3><p>En un arrendamiento habitacional, discutir si el terremoto es una causa válida puede ser empezar por la pregunta equivocada.</p></a>
+      <a class="nota-card" data-cat="edificios" href="/criterio/norma-estructural-edificio-panama/"><span class="cat">Edificios &amp; zonas</span><h3>¿Bajo qué norma <em>se diseñó tu edificio?</em></h3><p>Un edificio de 1998 y uno aprobado bajo el REP‑2021 no parten del mismo marco. La fecha ayuda, pero no responde sola.</p></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/que-incluye-linea-blanca-panama/"><span class="cat">Alquiler</span><h3>¿Qué incluye realmente <em>la «línea blanca»?</em></h3><p>Dos de cada tres avisos que usan el término declaran nevera, estufa, lavadora y secadora. Uno de cada cinco no especifica ningún equipo.</p></a>
     </div>
-    <p class="plain"><a class="out" href="/criterio/">Ver todo Criterio →</a></p>
+    <p class="plain"><a class="out" href="/criterio/">Ver todas las notas →</a></p>
   </div>
 </section>
 
 <!-- 07 · Lo que suelo aclarar -->
 <section class="sec t-soft">
   <div class="wrap sec-head">
+    <p class="idx">Preguntas</p>
     <h2 id="faq">Lo que suelo aclarar.</h2>
     <p class="lead">Sobre cómo trabajo y qué puedes esperar.</p>
   </div>

@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="image" href="/images/destacada-peatonal-16-9.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=21">
+<link rel="stylesheet" href="/css/spotone.css?v=22">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -116,7 +116,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <div>
         <p class="cat">Renting</p>
-        <p class="date">October 16, 2026</p>
         <h2 data-titulo="nota">Can a tenant end the lease <em>after an earthquake?</em></h2>
         <p class="lead">In a residential lease, arguing over whether the earthquake is a valid cause may begin with the wrong question.</p>
       </div>
@@ -175,7 +174,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     var f=filtradas(), v=f.slice(0,vistas);
     grid.innerHTML = v.length ? v.map(function(a){
       return '<a class="nota-card" data-cat="'+a.g+'" href="'+a.u+'"><span class="cat">'+a.c+'</span><h3>'+a.t+
-             '</h3><p>'+a.d+'</p><span class="date">'+a.f+'</span></a>';
+             '</h3><p>'+a.d+'</p></a>';
     }).join('') : '<p class="lead">'+VACIO+'</p>';
     cuenta.textContent = PLANTILLA.replace('%d', f.length);
     mas.parentNode.style.display = v.length < f.length ? '' : 'none';

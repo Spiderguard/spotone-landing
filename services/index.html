@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
-<link rel="stylesheet" href="/css/spotone.css?v=21">
+<link rel="stylesheet" href="/css/spotone.css?v=22">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -92,6 +92,19 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .dato a::after{content:"";position:absolute;left:0;right:0;top:50%;
     height:44px;transform:translateY(-50%)}
 }
+
+/* --- R5 (12-nov): divisiones claras. Franja soft para las cuatro formas,
+   warm para el método; filete y numeral 01–04 en cada pieza; pasos en tinta. --- */
+#servicios .mods{counter-reset:m}
+#servicios .mods>div{counter-increment:m;border-top:1px solid var(--line);padding-top:var(--s5)}
+#metodo .pasos{counter-reset:p}
+#metodo .pasos>div{counter-increment:p;border-top:1px solid var(--navy);padding-top:var(--s5)}
+#servicios .mods>div h3::before,#metodo .pasos>div h3::before{display:block;margin-bottom:var(--s2);
+  font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:var(--fs-h3);line-height:var(--lh-h3);
+  color:var(--muted);font-variant-numeric:lining-nums}
+#servicios .mods>div h3::before{content:counter(m,decimal-leading-zero)}
+#metodo .pasos>div h3::before{content:counter(p,decimal-leading-zero)}
+#metodo .pasos p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -134,7 +147,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </header>
 
-<section class="sec" id="servicios">
+<section class="sec t-soft" id="servicios">
   <div class="wrap sec-head">
     <p class="idx">The four ways</p>
   </div>
@@ -148,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </section>
 
-<section class="sec" id="metodo">
+<section class="sec t-warm" id="metodo">
   <div class="wrap sec-head">
     <p class="idx">How I work</p>
     <h2>How I work with you.</h2>

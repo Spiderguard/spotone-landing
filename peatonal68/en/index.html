@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 
-<link rel="stylesheet" href="/css/spotone.css?v=21">
+<link rel="stylesheet" href="/css/spotone.css?v=22">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -63,7 +63,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   object-position:50% 50%;display:block}
 .pin{
   position:absolute;width:40px;height:40px;transform:translate(-50%,-50%);
-  border:1px solid var(--ivory);border-radius:50% !important;
+  border:1px solid var(--ivory);
   display:flex;align-items:center;justify-content:center;
   font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-bar);font-weight:500;line-height:var(--lh-bar);
   color:var(--ivory);background:rgba(5,14,30,.62);text-decoration:none;
@@ -77,7 +77,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
   opacity:0;pointer-events:none;transition:opacity .2s ease;
 }
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1}
-.faclegend{margin-top:12px}
+.faclegend{margin-top:12px;color:var(--body)}
 
 /* 02 · fichas de local */
 .u .ph{background:#999C93}
@@ -223,7 +223,7 @@ body>footer.sf{padding-top:48px}
 @media (max-width:860px){.grupos--foto .ph{aspect-ratio:16/9}}
 
 /* v1.2 · escala de esta página: h2 a 48/52 en escritorio para que el h1 y la tesis manden (mismo par) */
-@media (min-width:861px){:root{--fs-h2:48px;--lh-h2:52px}}
+
 
 /* v1.2 · R3 detalle fino (advisor) */
 .nw{white-space:nowrap}
@@ -235,6 +235,49 @@ body.peatonal .phero+.sec,#fachada.sec{padding-top:var(--band)}
 body.peatonal .faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px}
 @media(min-width:861px){.plaza-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gutter)}.plaza-pair .plaza-fig .ph{aspect-ratio:3/2}}
 @media(max-width:860px){.phero .quad{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.phero .quad .stat small{letter-spacing:.02em;text-transform:none}}
+
+/* ── v1.3 · mapa en fachada (OSM propio; Google solo al activar) y filas legibles ── */
+.mapa{margin:0 0 64px}
+.mapa-ph{position:relative;aspect-ratio:2/1;overflow:hidden;background:var(--ivory)}
+.mapa-ph img,.mapa-ph iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;display:block}
+.mapa figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:16px;color:var(--muted)}
+.grupos--foto .frow{display:grid;grid-template-columns:minmax(0,10em) minmax(0,1fr);gap:16px;align-items:baseline}
+.grupos--foto .frow span{font-weight:500;color:var(--ink)}
+.grupos--foto .frow em{text-align:left;font-style:normal}
+@media(max-width:860px){.mapa-ph{aspect-ratio:3/2}.mapa figcaption{flex-direction:column;gap:4px}}
+@media(max-width:480px){.grupos--foto .frow{grid-template-columns:1fr;gap:2px}}
+
+/* --- R5/R6 (12-nov): locales | plaza | acceso. Datos en la grilla de 3 de las
+   fichas (.tri); corte por pisos en filas de 12 columnas con filete fino. --- */
+.fac-full{margin-bottom:var(--s8)}
+.confirma{margin-top:var(--s8);padding-top:var(--s6);border-top:1px solid var(--line)}
+.confirma>.label,.comun>.label{margin:0;text-transform:none;letter-spacing:0;font-weight:500;font-size:var(--fs-body);line-height:var(--lh-body)}
+.confirma>.nota{margin:var(--s2) 0 0;max-width:var(--measure)}
+.tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gutter);margin:var(--s5) 0 0}
+.tri>div{border-top:1px solid var(--line);padding-top:var(--s4)}
+.tri dt{font-size:var(--fs-label);line-height:24px;color:var(--muted)}
+.tri dd{margin:4px 0 0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink);max-width:none}
+.corte{margin-top:var(--gap-body)}
+.corte-pisos{border-bottom:1px solid var(--line)}
+.piso{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);
+  align-items:baseline;padding:var(--s5) 0;border-top:1px solid var(--line)}
+.piso-n{grid-column:1;font-family:'Newsreader',Georgia,serif;font-weight:300;
+  font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--navy);font-variant-numeric:lining-nums}
+.piso-l{grid-column:2/span 3;margin:0;font-size:var(--fs-label);line-height:24px;font-weight:500;
+  letter-spacing:0;text-transform:none;color:var(--ink)}
+.piso-g{grid-column:5/span 4;margin:0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink);max-width:none}
+.piso-d{grid-column:9/span 4;margin:0;font-size:var(--fs-ui);line-height:24px}
+.piso-d a{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0;color:var(--navy);
+  text-decoration:underline;text-underline-offset:3px}
+.comun{margin-top:var(--s8)}
+@media(max-width:860px){
+  .tri{grid-template-columns:1fr;row-gap:var(--s4)}
+  .piso{grid-template-columns:48px minmax(0,1fr);column-gap:var(--s4);row-gap:4px}
+  .piso-n{grid-row:1/span 3}
+  .piso-l,.piso-g,.piso-d{grid-column:2}
+  .piso-d:empty{display:none}
+  .piso-d a{margin:0}
+}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -257,7 +300,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     <a class="brand" href="/index-en.html"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
     <button class="mm-close" id="menuClose" aria-label="Close the menu">&times;</button>
   </div>
-  <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#fachada">Where they are</a><a href="#disponibilidad">Available units</a><a href="#plaza">The plaza</a><a href="#ubicacion">Access</a><a href="#faq">Questions</a></nav>
+  <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#disponibilidad">Available units</a><a href="#plaza">The plaza</a><a href="#ubicacion">Access</a><a href="#faq">Questions</a></nav>
   <p class="mm-group">SpotOne Realty</p>
   <nav aria-label="Menu"><a href="/index-en.html">Home</a><a href="/services/">What I do</a><a href="/index-en.html#propiedades">Properties</a><a href="/relocation/en/">Relocation</a><a href="/criterio/en/">Notes</a><a href="/dario/en/">Dario</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="#contacto">Let’s talk</a></nav>
   <div class="mm-lang"><a href="/peatonal68/" class="" lang="es">Español</a><span aria-hidden="true">/</span><a href="/peatonal68/en/" class="active" aria-current="true" lang="en">English</a></div>
@@ -287,39 +330,28 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   </div>
 </section>
 
-<!-- 01 · Where they are -->
-<section class="sec t-ivory" id="fachada">
-  <div class="wrap fach2">
-  <div class="sec-head">
-    <p class="idx">Where they are</p>
-    <h2>The three units, on the facade.</h2>
-    <p class="lead">The other units are leased or used by management.</p>
+<!-- 02 · Available units -->
+<section class="sec t-warm" id="disponibilidad">
+  <div class="wrap sec-head">
+    <p class="idx">Available units</p>
+    <h2>Two upstairs, one at street level.</h2>
+    <p class="lead">The two Level 2 units share floor area and rent; the street-level unit is fitted out for a restaurant.</p>
   </div>
-  <div class="sec-body">
-    <div class="fac">
+  <div class="wrap sec-body fac-full">
+    <div class="fac fac--full" id="fachada">
       <picture>
         <source media="(max-width:860px)" srcset="../img/fachada-movil-2026-11-12.webp" type="image/webp">
         <source media="(max-width:860px)" srcset="../img/fachada-movil-2026-11-12.jpg" type="image/jpeg">
-        <source srcset="/images/fachada-peatonal-83-660.webp 660w, /images/fachada-peatonal-83-1320.webp 1320w, ../img/fachada-master-2026-09-21.webp 2048w" sizes="(max-width:860px) 100vw, (max-width:1200px) 58vw, 680px" type="image/webp">
+        <source srcset="/images/fachada-peatonal-83-660.webp 660w, /images/fachada-peatonal-83-1320.webp 1320w, ../img/fachada-master-2026-09-21.webp 2048w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
         <img src="../img/fachada-master-2026-09-21.jpg" width="2048" height="768" alt="Daytime facade of Plaza La Peatonal 68, with Unit 4 marked on the street level and units 22 and 23 on Level 2" decoding="async">
       </picture>
       <a class="pin" href="#local-4" style="left:31.1%;top:65%" aria-label="Unit 4, 102 square metres, $3,060 a month. Go to its card">4<span class="tip">Unit 4 · 102&nbsp;m² · $3,060/month</span></a>
       <a class="pin" href="#local-22" style="left:64.7%;top:32.36%" aria-label="Unit 22, 100 square metres, $1,800 a month. Go to its card">22<span class="tip">Unit 22 · 100&nbsp;m² · $1,800/month</span></a>
       <a class="pin" href="#local-23" style="left:74.4%;top:32.36%" aria-label="Unit 23, 100 square metres, $1,800 a month. Go to its card">23<span class="tip">Unit 23 · 100&nbsp;m² · $1,800/month</span></a>
     </div>
-    <p class="nota faclegend">Available 4, 22 and 23. Approximate location on the facade.</p>
+    <p class="nota faclegend">Available 4, 22 and 23. Approximate location on the facade. The other units are leased or used by management.</p>
   </div>
-  </div>
-</section>
-
-<!-- 02 · Available units -->
-<section class="sec t-soft" id="disponibilidad">
-  <div class="wrap sec-head">
-    <p class="idx">Available units</p>
-    <h2>Two upstairs, one at street level.</h2>
-    <p class="lead">The two Level 2 units share floor area and rent; the street-level unit is fitted out for a restaurant.</p>
-  </div>
-  <div class="wrap sec-body g3">
+  <div class="wrap g3 fichas-g">
 
     <article class="card ficha u u4" id="local-4" data-u="4" data-floor="0" data-area="102">
       <button class="ushot ph ph--32" data-gal="l4" data-loc="4" aria-label="See the photos of Unit 4">
@@ -332,7 +364,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Unit 4</h3>
         <span class="card-fig">102&nbsp;m²</span>
       </div>
-      <p class="card-meta">Street level · 82 + 20&nbsp;m² of terrace · Gas · <span class="nw">8 photos</span></p>
+      <p class="card-meta">Street level · 82 + 20&nbsp;m² of terrace · Gas, extraction and air conditioning installed · <span class="nw">8 photos</span></p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly rent</span>
         <span class="cifra">$3,060</span>
@@ -374,7 +406,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Monthly total before taxes</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Can be combined with Unit 23 for 200&nbsp;m². The separation from Unit 21 and the handover condition are confirmed with management.</p>
+      <p class="nota" style="margin-top:16px">Can be combined with Unit 23 for 200&nbsp;m². The separation from Unit 21 and the handover condition are set out in writing before you sign. Gas and A/C: reviewed with you on site, for your business.</p>
       <div class="uacts">
         <button class="out" data-gal="l22" data-loc="22">See Unit 22 →</button>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
@@ -403,7 +435,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Monthly total before taxes</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Can be combined with Unit 22 for 200&nbsp;m². Layout and handover condition are confirmed before signing.</p>
+      <p class="nota" style="margin-top:16px">Can be combined with Unit 22 for 200&nbsp;m². Layout and handover condition are confirmed before signing. Gas and A/C: reviewed with you on site, for your business.</p>
       <div class="uacts">
         <button class="out" data-gal="l23" data-loc="23">See Unit 23 →</button>
         <a class="locate" href="#fachada">Locate on the facade ↑</a>
@@ -411,10 +443,15 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     </article>
 
   </div>
+  <div class="wrap confirma">
+    <h3 class="label">Confirmed for each unit</h3>
+    <p class="nota">I represent the plaza exclusively. Anything that depends on your type of business, we review together on site, before you sign.</p>
+    <dl class="tri"><div><dt>Water, drainage and extraction</dt><dd>Vary by unit; I show you on the viewing.</dd></div><div><dt>Frontage and depth</dt><dd>Floor plan and measurements for each unit: I send them.</dd></div><div><dt>Loading and unloading</dt><dd>Hours and access: set out in writing before you sign.</dd></div></dl>
+  </div>
 </section>
 
 <!-- 03 · The plaza -->
-<section class="sec t-ivory" id="plaza">
+<section class="sec t-soft" id="plaza">
   <div class="wrap sec-head">
     <p class="idx">The plaza</p>
     <h2>Eight restaurants at street level.</h2>
@@ -440,21 +477,29 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
       <figcaption>By day, from Calle 68 Este · Street level, Level 1 and Level 2</figcaption>
     </figure>
   </div>
-  <div class="wrap niveles" style="margin-top:var(--gap-body)">
-      <div><p class="label">Street level</p><p class="dato">Eight restaurants</p></div>
-      <div><p class="label">Level 1</p><p class="dato">Health, beauty and retail</p></div>
-      <div><p class="label">Level 2</p><p class="dato">Fitness and retail</p></div>
+  <div class="wrap corte">
+    <div class="corte-pisos" role="list" aria-label="The plaza by level">
+      <div class="piso" role="listitem"><span class="piso-n">2</span><p class="piso-l">Level 2</p><p class="piso-g">Fitness and retail</p><p class="piso-d"><a href="#local-22">Units 22 and 23 available</a></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">1</span><p class="piso-l">Level 1</p><p class="piso-g">Health, beauty and retail</p><p class="piso-d"></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">SL</span><p class="piso-l">Street level</p><p class="piso-g">Eight restaurants</p><p class="piso-d"><a href="#local-4">Unit 4 available</a></p></div>
+    </div>
+    <div class="comun">
+      <h3 class="label">Shared by all three units</h3>
+      <dl class="tri"><div><dt>Opening hours</dt><dd>No restriction on the street level.</dd></div><div><dt>Music and bar</dt><dd>Permitted within the approved limits.</dd></div></dl>
+    </div>
   </div>
 </section>
 
-<!-- 04 · Access and infrastructure -->
+<!-- 04 · Access and parking -->
 <section class="sec t-warm" id="ubicacion">
   <div class="wrap sec-head">
-      <p class="idx">Access and infrastructure</p>
-      <h2>How to get there and what each unit has.</h2>
-      <p class="lead">What is confirmed, and what is checked unit by unit.</p>
-      <p class="dir">Calle 68 Este, San Francisco, Panama City<span class="sep" aria-hidden="true"> · </span><a href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p class="idx">Access and parking</p>
+      <h2>How to get there and where to park.</h2>
   </div>
+  <div class="wrap"><figure class="mapa">
+    <div class="mapa-ph mapa-ph--vivo"><iframe src="https://www.google.com/maps?q=8.9943381,-79.5112507&amp;z=16&amp;hl=en&amp;output=embed" title="Google map showing the location of Plaza La Peatonal 68" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <figcaption><span>Calle 68 Este, San Francisco, Panama City</span><a class="out" href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">Open in Google Maps →</a></figcaption>
+  </figure></div>
   <div class="wrap grupos grupos--foto">
     <div class="grupo">
       <div class="ph ph--32"><picture>
@@ -468,18 +513,6 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     </div>
     <div class="grupo">
       <div class="ph ph--32"><picture>
-          <source srcset="../img/local-04-cocina.webp" type="image/webp">
-          <img src="../img/local-04-cocina.jpg" width="1448" height="1086" alt="Unit 4 kitchen with extraction hood and gas line" loading="lazy" decoding="async">
-      </picture></div>
-      <h3 class="label">Facilities</h3>
-      <div class="frow"><span>Bathroom</span><em>One per unit</em></div>
-      <div class="frow"><span>Unit 4</span><em>Gas, extraction and air conditioning installed</em></div>
-      <div class="frow"><span>Units 22 and 23</span><em>Gas and air: checked for your operation</em></div>
-      <div class="frow"><span>Water, drainage and extraction</span><em>Vary by unit; checked before your proposal</em></div>
-      <div class="frow"><span>Frontage and depth</span><em>Floor plan and measurements per unit, on request</em></div>
-    </div>
-    <div class="grupo">
-      <div class="ph ph--32"><picture>
           <source srcset="../img/estacionamientos.webp" type="image/webp">
           <img src="../img/estacionamientos.jpg" width="1920" height="1080" alt="Covered parking in the basement of Plaza La Peatonal 68, with the stairs and elevator" loading="lazy" decoding="async">
       </picture></div>
@@ -488,16 +521,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
       <div class="frow"><span>Distribution</span><em>14 at street level, 46 in the basement</em></div>
       <div class="frow"><span>Accessible</span><em>2 for people with disabilities</em></div>
       <div class="frow"><span>Per lease</span><em>One space for the tenant</em></div>
-    </div>
-    <div class="grupo">
-      <div class="ph ph--32"><picture>
-          <source srcset="../img/local-04-noche.webp" type="image/webp">
-          <img src="../img/local-04-noche.jpg" width="1600" height="1067" alt="Unit 4 terrace at night, with customers at the tables" loading="lazy" decoding="async">
-      </picture></div>
-      <h3 class="label">Operation</h3>
-      <div class="frow"><span>Opening hours</span><em>No restriction on the street level; the basement closes at 11:30 p.m.</em></div>
-      <div class="frow"><span>Music and bar</span><em>Permitted within the approved limits</em></div>
-      <div class="frow"><span>Loading and unloading</span><em>Confirmed with management before signing</em></div>
+      <div class="frow"><span>Basement hours</span><em>Closes at 11:30 p.m.</em></div>
     </div>
   </div>
 </section>
@@ -512,7 +536,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     <details><summary>Does the base rent include maintenance?</summary><div class="a"><p>No. Units 22 and 23 are $1,800 a month ($18 per m²); maintenance ($250) and trash collection ($15) are paid on top: $2,065 a month before taxes.</p><p>Unit 4 is $3,060 a month ($30 per m²) plus maintenance ($255, with trash collection included): $3,315 a month before taxes.</p><p>Each listing shows it under <i>See monthly breakdown</i>.</p></div></details>
     <details><summary>How much is due when I sign the lease?</summary><div class="a"><p>Signing requires payment of the <b>first month plus one month as a security deposit</b>.</p></div></details>
     <details><summary>What is not included?</summary><div class="a"><p>Not included: electricity, internet, permits, build-out, insurance, the business’s own utilities and any other service the tenant contracts directly.</p></div></details>
-    <details><summary>What condition is the unit delivered in?</summary><div class="a"><p>Unit 22 is shown as an open-plan space with one bathroom. The separation from Unit 21 and the handover condition for both units will be confirmed with management before signing the lease.</p><p>Before signing, we put in writing what stays, what is removed and the condition in which the unit is delivered.</p></div></details>
+    <details><summary>What condition is the unit delivered in?</summary><div class="a"><p>Unit 22 is shown as an open-plan space with one bathroom. The separation from Unit 21 and the handover condition for both units are set out in writing before you sign.</p><p>Before signing, we put in writing what stays, what is removed and the condition in which the unit is delivered.</p></div></details>
     <details><summary>What kinds of business can operate here?</summary><div class="a"><p>Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require.</p><p>These are some concepts that could complement the current mix:</p><ul><li>Skincare and facial aesthetics</li><li>Spa and massage</li><li>Aesthetic medicine or dermatology</li><li>Wellness and athletic recovery</li><li>Specialized health services</li><li>Other appointment-based concepts</li></ul><p>Tell me what you intend to operate and I will check which units can work before we set up a visit.</p><p>Unit 4, on the street level, is fitted out for a restaurant and allows a bar, alcohol sales and karaoke.</p></div></details>
     <details><summary>Do all the units have water, drainage, gas and extraction?</summary><div class="a"><p>No. Infrastructure varies by unit.</p><p>If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before a proposal is put forward.</p></div></details>
     <details><summary>Can two units be combined?</summary><div class="a"><p>Yes. Units 22 and 23 are adjacent on Level 2 and can be combined into a single 200&nbsp;m² unit. If you are interested in both, tell me and I will arrange it.</p></div></details>
@@ -643,8 +667,8 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 })();
 </script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Real Estate Broker (PN-1240)","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Professional license","identifier":"PN-1240","name":"Real Estate Broker","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg"},{"@type":"Place","@id":"https://www.spotonerealty.com/peatonal68/#plaza","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/en/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Parking spaces","value":60},{"@type":"LocationFeatureSpecification","name":"Covered parking","value":true},{"@type":"LocationFeatureSpecification","name":"Elevator","value":true},{"@type":"LocationFeatureSpecification","name":"Stairs","value":true},{"@type":"LocationFeatureSpecification","name":"Eight street-level restaurants","value":true}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the base rent include maintenance?","acceptedAnswer":{"@type":"Answer","text":"No. Units 22 and 23 are $1,800 a month ($18 per m²); maintenance ($250) and trash collection ($15) are paid on top: $2,065 a month before taxes. Unit 4 is $3,060 a month ($30 per m²) plus maintenance ($255, with trash collection included): $3,315 a month before taxes. Each listing shows it under See monthly breakdown."}},{"@type":"Question","name":"How much is due when I sign the lease?","acceptedAnswer":{"@type":"Answer","text":"Signing requires payment of the first month plus one month as a security deposit."}},{"@type":"Question","name":"What is not included?","acceptedAnswer":{"@type":"Answer","text":"Not included: electricity, internet, permits, build-out, insurance, the business’s own utilities and any other service the tenant contracts directly."}},{"@type":"Question","name":"What condition is the unit delivered in?","acceptedAnswer":{"@type":"Answer","text":"Unit 22 is shown as an open-plan space with one bathroom. The separation from Unit 21 and the handover condition for both units will be confirmed with management before signing the lease. Before signing, we put in writing what stays, what is removed and the condition in which the unit is delivered."}},{"@type":"Question","name":"What kinds of business can operate here?","acceptedAnswer":{"@type":"Answer","text":"Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require. These are some concepts that could complement the current mix: Skincare and facial aesthetics Spa and massage Aesthetic medicine or dermatology Wellness and athletic recovery Specialized health services Other appointment-based concepts Tell me what you intend to operate and I will check which units can work before we set up a visit. Unit 4, on the street level, is fitted out for a restaurant and allows a bar, alcohol sales and karaoke."}},{"@type":"Question","name":"Do all the units have water, drainage, gas and extraction?","acceptedAnswer":{"@type":"Answer","text":"No. Infrastructure varies by unit. If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before a proposal is put forward."}},{"@type":"Question","name":"Can two units be combined?","acceptedAnswer":{"@type":"Answer","text":"Yes. Units 22 and 23 are adjacent on Level 2 and can be combined into a single 200 m² unit. If you are interested in both, tell me and I will arrange it."}},{"@type":"Question","name":"What are the frontage and depth dimensions?","acceptedAnswer":{"@type":"Answer","text":"They vary by unit. Send me the unit number and I will send you the floor plan and the dimensions on file."}},{"@type":"Question","name":"How does the parking work?","acceptedAnswer":{"@type":"Answer","text":"The plaza has 60 parking spaces: fourteen at street level and forty-six underground, two of them accessible. Each lease includes one space for the tenant’s use. When it is not in use, it stays available to the plaza’s customers."}},{"@type":"Question","name":"How do I arrange a visit?","acceptedAnswer":{"@type":"Answer","text":"Send me the unit you are interested in, the type of business and any technical requirement you cannot do without. First I confirm the space and the infrastructure make sense for your operation; then we set up the visit."}},{"@type":"Question","name":"What happens with the furniture in Unit 4's current restaurant?","acceptedAnswer":{"@type":"Answer","text":"It is not included in the rent. The current tenant is selling it and it is negotiated directly with them; I can set up that conversation."}}]},{"@type":"RealEstateListing","@id":"https://www.spotonerealty.com/peatonal68/en/#listing","url":"https://www.spotonerealty.com/peatonal68/en/","name":"Plaza La Peatonal 68","description":"Three commercial units for rent in San Francisco, Panama City: two of 100 m² on Level 2 and one of 102 m² on the street level.","datePosted":"2026-11-11","about":{"@id":"https://www.spotonerealty.com/peatonal68/#plaza"},"provider":{"@id":"https://www.spotonerealty.com/#spotone"},"offers":[{"@type":"Offer","name":"Unit 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-4","description":"102 m², street level, restaurant use","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 4","floorSize":{"@type":"QuantitativeValue","value":102,"unitCode":"MTK"}}},{"@type":"Offer","name":"Unit 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-22","description":"100 m², Level 2","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 22","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}},{"@type":"Offer","name":"Unit 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-23","description":"100 m², Level 2","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 23","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Real Estate Broker (PN-1240)","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Professional license","identifier":"PN-1240","name":"Real Estate Broker","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg"},{"@type":"Place","@id":"https://www.spotonerealty.com/peatonal68/#plaza","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://www.google.com/maps?q=8.9943381,-79.5112507","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Parking spaces","value":60},{"@type":"LocationFeatureSpecification","name":"Covered parking","value":true},{"@type":"LocationFeatureSpecification","name":"Elevator","value":true},{"@type":"LocationFeatureSpecification","name":"Stairs","value":true},{"@type":"LocationFeatureSpecification","name":"Eight street-level restaurants","value":true}],"geo":{"@type":"GeoCoordinates","latitude":8.9943381,"longitude":-79.5112507}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the base rent include maintenance?","acceptedAnswer":{"@type":"Answer","text":"No. Units 22 and 23 are $1,800 a month ($18 per m²); maintenance ($250) and trash collection ($15) are paid on top: $2,065 a month before taxes. Unit 4 is $3,060 a month ($30 per m²) plus maintenance ($255, with trash collection included): $3,315 a month before taxes. Each listing shows it under See monthly breakdown."}},{"@type":"Question","name":"How much is due when I sign the lease?","acceptedAnswer":{"@type":"Answer","text":"Signing requires payment of the first month plus one month as a security deposit."}},{"@type":"Question","name":"What is not included?","acceptedAnswer":{"@type":"Answer","text":"Not included: electricity, internet, permits, build-out, insurance, the business’s own utilities and any other service the tenant contracts directly."}},{"@type":"Question","name":"What condition is the unit delivered in?","acceptedAnswer":{"@type":"Answer","text":"Unit 22 is shown as an open-plan space with one bathroom. The separation from Unit 21 and the handover condition for both units are set out in writing before you sign. Before signing, we put in writing what stays, what is removed and the condition in which the unit is delivered."}},{"@type":"Question","name":"What kinds of business can operate here?","acceptedAnswer":{"@type":"Answer","text":"Every proposal is reviewed against the tenant mix, the available infrastructure and the approvals it would require. These are some concepts that could complement the current mix: Skincare and facial aesthetics Spa and massage Aesthetic medicine or dermatology Wellness and athletic recovery Specialized health services Other appointment-based concepts Tell me what you intend to operate and I will check which units can work before we set up a visit. Unit 4, on the street level, is fitted out for a restaurant and allows a bar, alcohol sales and karaoke."}},{"@type":"Question","name":"Do all the units have water, drainage, gas and extraction?","acceptedAnswer":{"@type":"Answer","text":"No. Infrastructure varies by unit. If your business needs water, drainage, gas, extraction or a specific electrical load, that has to be verified before a proposal is put forward."}},{"@type":"Question","name":"Can two units be combined?","acceptedAnswer":{"@type":"Answer","text":"Yes. Units 22 and 23 are adjacent on Level 2 and can be combined into a single 200 m² unit. If you are interested in both, tell me and I will arrange it."}},{"@type":"Question","name":"What are the frontage and depth dimensions?","acceptedAnswer":{"@type":"Answer","text":"They vary by unit. Send me the unit number and I will send you the floor plan and the dimensions on file."}},{"@type":"Question","name":"How does the parking work?","acceptedAnswer":{"@type":"Answer","text":"The plaza has 60 parking spaces: fourteen at street level and forty-six underground, two of them accessible. Each lease includes one space for the tenant’s use. When it is not in use, it stays available to the plaza’s customers."}},{"@type":"Question","name":"How do I arrange a visit?","acceptedAnswer":{"@type":"Answer","text":"Send me the unit you are interested in, the type of business and any technical requirement you cannot do without. First I confirm the space and the infrastructure make sense for your operation; then we set up the visit."}},{"@type":"Question","name":"What happens with the furniture in Unit 4's current restaurant?","acceptedAnswer":{"@type":"Answer","text":"It is not included in the rent. The current tenant is selling it and it is negotiated directly with them; I can set up that conversation."}}]},{"@type":"RealEstateListing","@id":"https://www.spotonerealty.com/peatonal68/en/#listing","url":"https://www.spotonerealty.com/peatonal68/en/","name":"Plaza La Peatonal 68","description":"Three commercial units for rent in San Francisco, Panama City: two of 100 m² on Level 2 and one of 102 m² on the street level.","datePosted":"2026-11-11","about":{"@id":"https://www.spotonerealty.com/peatonal68/#plaza"},"provider":{"@id":"https://www.spotonerealty.com/#spotone"},"offers":[{"@type":"Offer","name":"Unit 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-4","description":"102 m², street level, restaurant use","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 4","floorSize":{"@type":"QuantitativeValue","value":102,"unitCode":"MTK"}}},{"@type":"Offer","name":"Unit 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-22","description":"100 m², Level 2","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 22","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}},{"@type":"Offer","name":"Unit 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/en/#local-23","description":"100 m², Level 2","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Unit 23","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}}]}]}</script>
 
 <p class="solo-impresion">www.spotonerealty.com/peatonal68/en/ · WhatsApp <span class="nw">+507 6675-8127</span></p>
-</body>
+<script>document.querySelectorAll('</body>
 </html>

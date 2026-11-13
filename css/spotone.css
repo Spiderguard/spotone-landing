@@ -88,7 +88,7 @@ section[id],article[id],div[id],h2[id],h3[id],main[id]{scroll-margin-top:calc(va
 }
 body{
   font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
-  background:var(--ivory);
+  background:var(--soft);
   color:var(--ink);
   font-size:var(--fs-body);
   line-height:var(--lh-body);
@@ -811,7 +811,7 @@ a.card:hover{border-color:transparent}
 /* hero sin fotografía: navy pleno (misma geometría) o ivory */
 .hero--navy{background:var(--navy);min-height:0}
 .hero--navy::after{display:none}
-.hero--ivory{background:var(--ivory);color:var(--ink);min-height:0}
+.hero--ivory{background:var(--soft);color:var(--ink);min-height:0}
 .hero--ivory::after{display:none}
 .hero--ivory h1{color:var(--ink)}
 .hero--ivory .lead{color:var(--muted)}
@@ -906,6 +906,7 @@ a.card:hover{border-color:transparent}
   font-size:var(--fs-label);line-height:var(--lh-label);color:var(--muted);
   font-variant-numeric:tabular-nums;margin:16px 0 0}
 .feat:hover h2{color:var(--muted)}
+@media(min-width:861px){.feat .feat-ph{aspect-ratio:2/1}}  /* R6: sin fecha, el texto es más corto; la foto no lo supera en más de 25 % */
 @media(max-width:860px){.feat{grid-template-columns:1fr;gap:16px;padding:28px 0}}
 
 /* --- filtros: texto subrayado, sin chips (regla 11) --- */
@@ -1284,7 +1285,7 @@ b,strong{font-weight:500}
 
 :root{
   --fs-h1:80px;    --lh-h1:84px;    /* héroe · Newsreader 300 */
-  --fs-h2:56px;    --lh-h2:60px;    /* titular de sección · Newsreader 300 */
+  --fs-h2:48px;    --lh-h2:52px;    /* titular de sección · Newsreader 300 (R6: 56/60 → 48/52, canon) */
   --fs-h3:28px;    --lh-h3:36px;    /* nombre, cifra · Newsreader 500 */
   --fs-h4:28px;
   --fs-item:24px;  --lh-item:30px;  /* ítem de la rejilla de cuatro · 500 */
@@ -1630,5 +1631,9 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
    Tres tonos que nunca se repiten seguidos + navy. Una banda con fondo lleva
    padding arriba y abajo; la sección sin tono conserva el ritmo de siempre. */
 .t-ivory,.t-soft,.t-warm{padding:var(--band) 0}
-.t-ivory{background:var(--ivory)} .t-soft{background:var(--soft)} .t-warm{background:var(--warm)}
+.t-ivory{background:var(--soft)} .t-soft{background:var(--soft)} .t-warm{background:var(--warm)}
+/* R7: el marfil deja de ser fondo de franja (casi igual a soft y a warm). Soft es la base,
+   warm marca la sección de datos de cada página y navy el cierre. Donde dos franjas
+   claras del mismo tono se siguen, un filete de 1 px marca la división. */
+:is(.t-ivory,.t-soft)+:is(.t-ivory,.t-soft){border-top:1px solid var(--line)}
 :is(.t-ivory,.t-soft,.t-warm)+.close,:is(.t-ivory,.t-soft,.t-warm)+.pclose{margin-top:0}

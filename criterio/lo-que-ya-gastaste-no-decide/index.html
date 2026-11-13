@@ -29,7 +29,9 @@
 <link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/criterio/criterio.css?v=11">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
+<link rel="stylesheet" href="/css/spotone.css?v=22">
+<link rel="stylesheet" href="/criterio/articulo.css?v=1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,56 +54,43 @@
 </script>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
-<body>
-
+<body class="criterio articulo">
+<a class="skip" href="#main">Saltar al contenido</a>
 <header class="site-header">
-  <a href="/" class="brand" aria-label="SpotOne Realty">
-    <img src="/images/logo-mark-negro.png" alt="" class="brand-logo">
-    <span class="brand-text">SpotOne Realty</span>
-  </a>
-  <nav class="site-nav">
-    <a href="/" class="lnk">Inicio</a>
-    <a href="/#que-hago" class="lnk">Qué hago</a>
-    <a href="/criterio/" class="lnk here">Criterio</a>
-    <a href="/#dario" class="lnk">Dario</a>
-    <a href="/#contacto" class="lnk">Contacto</a>
-    <a href="/#contacto" class="cta">Conversemos</a>
-    <div class="lang-switch" aria-label="Idioma">
-      <a href="#" class="active" lang="es">ES</a>
-      <span aria-hidden="true">/</span>
-      <a href="/criterio/what-you-already-spent/" lang="en">EN</a>
-    </div>
-    <button class="menu-toggle" id="menuOpen" aria-label="Menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-  </nav>
-</header>
-
-<div class="mm" id="mobileMenu">
-  <div class="top">
-    <span class="brand"><img src="/images/logo-mark-negro.png" alt="" class="brand-logo"><span class="brand-text">SpotOne Realty</span></span>
-    <button class="close" id="menuClose" aria-label="Cerrar">×</button>
+  <div class="hdr-in">
+    <a class="brand" href="/" aria-label="SpotOne Realty — Inicio"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="lnk" href="/que-hago/">Qué hago</a><a class="lnk" href="/#propiedades">Propiedades</a><a class="lnk" href="/relocation/">Relocation</a><a class="lnk here" href="/criterio/" aria-current="page">Criterio</a><a class="lnk" href="/dario/">Dario</a>
+      <a class="cta" href="/contacto/">Conversemos</a>
+      <div class="lang"><a href="/criterio/lo-que-ya-gastaste-no-decide/" class="active" aria-current="true" lang="es">ES</a><span aria-hidden="true">/</span><a href="/criterio/what-you-already-spent/" class="" lang="en">EN</a></div>
+      <button class="menu-toggle" id="menuOpen" aria-label="Abrir el menú" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </nav>
   </div>
-  <nav>
-    <a href="/">Inicio</a>
-    <a href="/#que-hago">Qué hago</a>
-    <a href="/criterio/">Criterio</a>
-    <a href="/#dario">Dario</a>
-    <a href="/#contacto">Contacto</a>
-  </nav>
-  <div class="foot">
+</header>
+<div class="mm" id="mobileMenu" hidden>
+  <div class="mm-top">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Cerrar el menú">&times;</button>
+  </div>
+  <p class="mm-group">SpotOne Realty</p>
+  <nav aria-label="Menú"><a href="/">Inicio</a><a href="/que-hago/">Qué hago</a><a href="/#propiedades">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/" class="here" aria-current="page">Criterio</a><a href="/dario/">Dario</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/contacto/">Conversemos</a></nav>
+  <div class="mm-lang"><a href="/criterio/lo-que-ya-gastaste-no-decide/" class="active" aria-current="true" lang="es">Español</a><span aria-hidden="true">/</span><a href="/criterio/what-you-already-spent/" class="" lang="en">English</a></div>
+  <div class="mm-foot">
     <a href="tel:+50766758127">+507 6675-8127</a>
     <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
+    <a href="https://instagram.com/spotonerealty" rel="noopener">@spotonerealty</a>
   </div>
 </div>
 
-<main>
+
+<main id="main">
   <article class="crit-article">
     <div class="crit-wrap">
       <a href="/criterio/" class="crit-back">← Criterio</a>
       <span class="crit-tag">Decisiones</span>
       <h1 class="crit-title">Lo que ya gastaste no debería <em>tomar la decisión</em>.</h1>
       <p class="crit-dek">El dinero que ya pusiste se siente como parte de la jugada. Pero ya está gastado, vendas, te quedes o te mudes. El problema empieza cuando ese gasto decide por ti.</p>
+      <p class="plain solo-movil crit-wa"><a class="btn" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20le%C3%AD%20tu%20nota%20%C2%ABLo%20que%20ya%20gastaste%20no%20deber%C3%ADa%20tomar%20la%20decisi%C3%B3n.%C2%BB%20y%20quisiera%20hablar%20contigo" rel="noopener">Escríbeme por WhatsApp</a></p>
 
       <div class="crit-body">
         <p>Le metiste plata a remodelar y ahora no quieres soltar el lugar, aunque ya no te sirva.</p>
@@ -136,11 +125,11 @@
         <p class="em">La única plata —y el único tiempo— que todavía puedes decidir es la de mañana.</p>
       </div>
 
-      <nav class="crit-related" aria-label="Sigue leyendo" style="margin-top:46px;padding-top:8px;border-top:1px solid #E2E2DE">
-        <div style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A9097;font-weight:500;margin:22px 0 6px">Sigue leyendo</div>
-        <a href="/criterio/vivir-no-es-invertir/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">Comprar para vivir no es comprar para invertir. →</a>
-        <a href="/criterio/una-propiedad-vale-lo-que-paguen/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">Una propiedad vale lo que alguien pague. →</a>
-        <a href="/criterio/precio-sin-metodo-es-rumor/" style="display:block;font-size:16px;color:#1E396B;text-decoration:none;padding:9px 0;line-height:1.4;border-top:1px solid #EDEDEA">Un precio sin método es un rumor. →</a>
+      <nav class="crit-related" aria-label="Sigue leyendo">
+        <p class="crit-rel-l">Sigue leyendo</p>
+        <a href="/criterio/vivir-no-es-invertir/">Comprar para vivir no es comprar para invertir. →</a>
+        <a href="/criterio/una-propiedad-vale-lo-que-paguen/">Una propiedad vale lo que alguien pague. →</a>
+        <a href="/criterio/precio-sin-metodo-es-rumor/">Un precio sin método es un rumor. →</a>
       </nav>
 
       <div class="signature">
@@ -158,40 +147,50 @@
   </article>
 </main>
 
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="mark"><img src="/images/logo-mark-blanco.png" alt="">SpotOne Realty</div>
-        <p>Asesoría inmobiliaria y relocation en Panamá.</p>
-      </div>
-      <div>
-        <h6>Práctica</h6>
-        <ul>
-          <li><a href="/#que-hago">Qué hago</a></li>
-          <li><a href="/criterio/">Criterio</a></li>
-          <li><a href="/#dario">Sobre Dario</a></li>
-          <li><a href="/#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h6>Idioma</h6>
-        <ul>
-          <li><a href="#" style="color:var(--soft);font-weight:500">Español</a></li>
-          <li><a href="/criterio/what-you-already-spent/">English</a></li>
-        </ul>
-      </div>
+<footer class="sf">
+  <div class="wrap">
+    <div class="sf-cols g4">
+      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/peatonal68/">Plaza La Peatonal 68</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina%20y%20quisiera%20hablar%20contigo" rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 SpotOne Realty · Panamá · Dario Jhangimal PN-1240</span>
+    <p class="sf-sign">Dario Jhangimal · Corredor de Bienes Raíces · PN-1240</p>
+    <div class="sf-bottom">
+      <span>© 2026 SpotOne Realty · Panamá</span>
+      <span class="sf-lang"><a href="/criterio/lo-que-ya-gastaste-no-decide/" lang="es">ES</a> · <a href="/criterio/what-you-already-spent/" lang="en">EN</a></span>
     </div>
   </div>
 </footer>
-
 <script>
-  const mm=document.getElementById('mobileMenu');
-  document.getElementById('menuOpen').onclick=()=>{mm.classList.add('on');document.body.classList.add('menu-open')};
-  document.getElementById('menuClose').onclick=()=>{mm.classList.remove('on');document.body.classList.remove('menu-open')};
+// Se vuelve a anclar cuando las fuentes estan listas. Al llegar con #ancla
+// desde otra pagina el navegador salta ANTES del intercambio de tipografia, y
+// el titular del modulo 01 pasa de dos renglones con la fuente de respaldo a
+// uno con Newsreader: 60 px menos por encima del destino, que es justo lo que
+// desplazaba el aterrizaje. Sin hash no hace nada.
+(function(){
+  if(!location.hash || !document.fonts || !document.fonts.ready) return;
+  var id = decodeURIComponent(location.hash.slice(1));
+  document.fonts.ready.then(function(){
+    var e = document.getElementById(id);
+    if(!e) return;
+    var m = parseFloat(getComputedStyle(e).scrollMarginTop) || 0;
+    var y = e.getBoundingClientRect().top + window.scrollY - m;
+    if(Math.abs(y - window.scrollY) > 2) window.scrollTo(0, y);
+  });
+})();
+// La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
+(function(){
+  var h=document.querySelector('.site-header');
+  function s(){ if(h) h.classList.toggle('scrolled', window.scrollY>24); }
+  s(); addEventListener('scroll', s, {passive:true});
+  var m=document.getElementById('mobileMenu'),
+      o=document.getElementById('menuOpen'),
+      c=document.getElementById('menuClose');
+  function abrir(v){ if(!m) return; m.hidden=!v; if(o) o.setAttribute('aria-expanded', v?'true':'false');
+    document.documentElement.style.overflow = v?'hidden':''; }
+  if(o) o.addEventListener('click', function(){ abrir(true); });
+  if(c) c.addEventListener('click', function(){ abrir(false); });
+  if(m) m.addEventListener('click', function(e){ if(e.target.tagName==='A') abrir(false); });
+  addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
+})();
 </script>
 </body>
 </html>
