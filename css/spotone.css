@@ -21,8 +21,8 @@
   --line:rgba(26,26,24,.12);   /* filete de fila de datos (regla 13) */
   --line-ui:#7d776b;
   --line-soft:rgba(26,26,24,.12);
-  --soft:#F4F1EA;
-  --warm:#F4F1EA;
+  --soft:#FAF8F3;              /* v1.2: tono claro (antes aplanado a #F4F1EA) */
+  --warm:#EAE5DA;              /* v1.2: tono cálido (antes aplanado a #F4F1EA) */
   --sky:#9FB6D4;               /* acento: SOLO sobre navy */
   --on-navy:#F4F1EA;
   --on-navy-muted:rgba(244,241,234,.86);
@@ -88,7 +88,7 @@ section[id],article[id],div[id],h2[id],h3[id],main[id]{scroll-margin-top:calc(va
 }
 body{
   font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
-  background:var(--soft);
+  background:var(--ivory);
   color:var(--ink);
   font-size:var(--fs-body);
   line-height:var(--lh-body);
@@ -1625,3 +1625,10 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
   .dir .sep{display:none}
   .dir a{display:block;margin-top:6px}
 }
+
+/* ── v1.2 · sistema de bandas (council 12-nov-2026) ──────────────────────────
+   Tres tonos que nunca se repiten seguidos + navy. Una banda con fondo lleva
+   padding arriba y abajo; la sección sin tono conserva el ritmo de siempre. */
+.t-ivory,.t-soft,.t-warm{padding:var(--band) 0}
+.t-ivory{background:var(--ivory)} .t-soft{background:var(--soft)} .t-warm{background:var(--warm)}
+:is(.t-ivory,.t-soft,.t-warm)+.close,:is(.t-ivory,.t-soft,.t-warm)+.pclose{margin-top:0}

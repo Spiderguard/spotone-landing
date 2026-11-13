@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Locales comerciales en alquiler en San Francisco, Ciudad de Panamá | Plaza La Peatonal 68</title>
+<title>Locales comerciales en alquiler en San Francisco, Panamá | Plaza La Peatonal 68</title>
 <meta name="description" content="Tres locales en alquiler en Plaza La Peatonal 68, San Francisco, Panamá: dos de 100 m² en el segundo piso y uno de 102 m² para restaurante en planta baja. Desde $1,800 al mes, cargos aparte.">
 <link rel="canonical" href="https://www.spotonerealty.com/peatonal68/">
 <link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/peatonal68/">
@@ -11,22 +11,23 @@
 <link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/peatonal68/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_PA">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="SpotOne Realty">
 <meta property="og:title" content="Locales comerciales en alquiler · Plaza La Peatonal 68">
 <meta property="og:description" content="Locales 22 y 23: 100 m² cada uno en el segundo piso, desde $1,800 al mes. Local 4: 102 m² para restaurante en planta baja, $3,060 al mes. San Francisco, con 60 estacionamientos.">
 <meta property="og:url" content="https://www.spotonerealty.com/peatonal68/">
-<meta property="og:image" content="https://www.spotonerealty.com/images/og/peatonal68-es.png">
+<meta property="og:image" content="https://www.spotonerealty.com/peatonal68/img/og-peatonal68-2026-11-12.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fachada de Plaza La Peatonal 68 en Calle 68 Este, San Francisco, Ciudad de Panamá">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.spotonerealty.com/images/og/peatonal68-es.png">
+<meta name="twitter:image" content="https://www.spotonerealty.com/peatonal68/img/og-peatonal68-2026-11-12.jpg">
 <meta name="twitter:title" content="Locales comerciales en alquiler · Plaza La Peatonal 68">
 <meta name="twitter:description" content="Locales 22 y 23: 100 m² cada uno en el segundo piso, desde $1,800 al mes. Local 4: 102 m² para restaurante en planta baja, $3,060 al mes. San Francisco, con 60 estacionamientos.">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
-<link rel="preload" as="image" href="img/fachada-master-2026-09-21.webp" type="image/webp">
 
-<link rel="stylesheet" href="/css/spotone.css?v=20">
+<link rel="stylesheet" href="/css/spotone.css?v=21">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -52,9 +53,11 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
    31.1 / 64.7 / 74.4 % horizontal.»
    Es la tercera excepción declarada del sistema: la panorámica no entra en
    las dos proporciones (3:2 y 4:5) porque el edificio es largo y bajo.
-   EN MÓVIL NO HAY MARCADORES: a 390 px los centros del 22 y el 23 quedan a
-   37 px con un objetivo táctil de 44 y se solapaban. La foto se ve entera y
-   los tres locales están en las fichas de abajo. */
+   MÓVIL (v1.2, 12-nov): recorte propio del 20 al 85 % del ancho
+   (img/fachada-movil-2026-11-12, 1330x768 = 665:384, recorte cero),
+   con los centros del 22 y el 23 a 51 px:
+   los objetivos de 44 ya no se solapan (antes, a 37 px, sí, y por eso se
+   ocultaban). Posiciones móviles en el bloque v1.2 al final de este <style>. */
 .fac{position:relative;background:#8E9599;overflow:hidden;aspect-ratio:8/3}
 .fac>picture{display:block;height:100%}
 .fac>picture>img,.fac>img{width:100%;height:100%;object-fit:cover;
@@ -76,9 +79,6 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 }
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1}
 .faclegend{margin-top:12px}
-@media(max-width:860px){
-  .pin{display:none}
-}
 
 /* 02 · fichas de local */
 .u .ph{background:#999C93}
@@ -118,6 +118,7 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .plaza-fig figcaption{margin-top:12px;font-size:15px;line-height:24px;color:var(--muted)}
 .plaza-fig .ph{background:#8B8C8A}
 .plaza-fig.estac .ph{background:#7D7C73}
+  .plaza-fig.noche .ph{background:#2A2E33}
 
 /* 04 · acceso: lista de dos columnas, sin iconos */
 /* El enlace del mapa no se veia, y no era contraste: medido, es el texto MAS
@@ -175,6 +176,67 @@ body>footer.sf{padding-top:48px}
 .lb-t{position:absolute;top:22px;left:24px;color:var(--ivory);font-size:15px;font-weight:500}
 
 
+
+/* ── v1.2 · 12-nov-2026 · héroe compacto + fachada como índice (council y diseñador; ver
+   Revision web 2026-10-29/propuesta-v1.2-peatonal-2026-11-12) ── */
+.phero{padding:104px 0 48px}
+.phero .idx{margin-bottom:16px}
+.phero h1{margin:0 0 32px}
+.phero .quad .stat{padding-top:24px}
+.phero .fine{margin-top:24px}
+.phero .out{margin-top:28px}
+.phero .quad small{text-wrap:balance;hyphens:none}
+@media (min-width:1100px){
+  #fachada.sec{padding-top:56px}
+  #fachada .fach2{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:start}
+  #fachada .fach2>.sec-head{grid-column:1/6;margin-bottom:0}
+  #fachada .fach2>.sec-body{grid-column:6/13;margin-top:0}
+}
+@media (max-width:860px){
+  .phero h1{margin:0 0 24px}
+  .phero .quad{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:20px;align-items:start}
+  .phero .quad .stat,.phero .quad .stat + .stat{margin-top:0;padding-top:16px;border-top:1px solid var(--on-navy-line)}
+  .phero .stat{font-size:var(--fs-h2);line-height:var(--lh-h2)}
+  .phero .stat small{display:block;min-height:calc(2 * var(--lh-label))}
+  .phero .out{margin-top:20px}
+  .phero p.plain.solo-movil{margin:0 0 28px}
+  .phero .solo-movil .btn{margin-top:0}
+  #fachada.sec{padding-top:48px}
+  .fac{aspect-ratio:665/384}
+  .fac img{width:100%;height:100%;object-fit:cover}
+  .fac .pin{display:flex;width:44px;height:44px}
+  .fac .pin .tip{display:none}
+  .fac .pin[href="#local-4"]{left:17.1%!important}
+  .fac .pin[href="#local-22"]{left:68.8%!important}
+  .fac .pin[href="#local-23"]{left:83.7%!important}
+}
+/* etiqueta del héroe sin «·» colgante en móvil */
+.phero .idx span{white-space:nowrap}
+@media(max-width:860px){.phero .idx .sep{display:none}.phero .idx span{display:block}}
+
+/* ── v1.2 · Peatonal: bandas, Acceso con foto por bloque (council 12-nov) ── */
+.grupos--foto .grupo .ph{margin-bottom:24px}
+.grupos--foto .grupo>h3.label{margin:0 0 8px}
+.grupos--foto{row-gap:64px}
+@media (min-width:861px){
+  .grupos--foto .grupo:nth-child(odd){grid-column:1/span 6}
+  .grupos--foto .grupo:nth-child(even){grid-column:7/span 6}
+}
+@media (max-width:860px){.grupos--foto .ph{aspect-ratio:16/9}}
+
+/* v1.2 · escala de esta página: h2 a 48/52 en escritorio para que el h1 y la tesis manden (mismo par) */
+@media (min-width:861px){:root{--fs-h2:48px;--lh-h2:52px}}
+
+/* v1.2 · R3 detalle fino (advisor) */
+.nw{white-space:nowrap}
+.sf-bottom{align-items:flex-start}
+.sf-lang{align-items:center}
+@media(max-width:860px){.faq-item .body{padding-right:0}}
+body.peatonal .phero+.sec,#fachada.sec{padding-top:var(--band)}
+.grupos--foto .grupo .frow{max-width:none}
+body.peatonal .faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px}
+@media(min-width:861px){.plaza-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gutter)}.plaza-pair .plaza-fig .ph{aspect-ratio:3/2}}
+@media(max-width:860px){.phero .quad{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.phero .quad .stat small{letter-spacing:.02em;text-transform:none}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -213,47 +275,51 @@ body>footer.sf{padding-top:48px}
 <!-- 00 · Hero -->
 <section class="phero">
   <div class="wrap">
-    <p class="idx">San Francisco · Calle 68 Este</p>
+    <p class="idx"><span>Locales comerciales en alquiler</span> <span class="sep" aria-hidden="true">·</span> <span>San Francisco</span></p>
     <h1>Plaza La Peatonal 68</h1>
-    <p class="plain solo-movil"><a class="btn btn--light" href="#contacto">Conversemos</a></p>
+    <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20La%20Peatonal%2068.%20Me%20interesa%20el%20local%3A%20__.%20Mi%20giro%20es%3A%20__.">Escríbeme por WhatsApp</a></p>
     <div class="quad g4">
-      <p class="stat">3<small>Disponibles ahora</small></p>
-      <p class="stat">100–102<small>Metros por local</small></p>
-      <p class="stat stat--canon">$1,800<small>Canon mensual desde</small></p>
-      <p class="stat">60<small>Estacionamientos</small></p>
+      <p class="stat">3 <small>Disponibles ahora</small></p>
+      <p class="stat">100–102 <small>Metros por local</small></p>
+      <p class="stat stat--canon">$1,800 <small>Alquiler mensual desde</small></p>
+      <p class="stat">60 <small>Estacionamientos</small></p>
     </div>
-    <p class="fine">Los dos locales de 100 m² se pueden unir para 200 m². Mantenimiento, aseo e impuestos aparte.</p>
+    <p class="fine">Los dos locales de 100&nbsp;m² se pueden unir para 200&nbsp;m². Mantenimiento e impuestos aparte; el aseo, según el local.</p>
     <a class="out out--navy" href="#disponibilidad">Ver los tres locales →</a>
   </div>
 </section>
 
 <!-- 01 · Dónde están -->
-<section class="sec" id="fachada">
-  <div class="wrap sec-head">
+<section class="sec t-ivory" id="fachada">
+  <div class="wrap fach2">
+  <div class="sec-head">
     <p class="idx">Dónde están</p>
     <h2>Los tres locales, sobre la fachada.</h2>
-    <p class="lead">Los demás locales están alquilados o destinados a administración.</p>
+    <p class="lead">Los demás locales están alquilados o los usa la administración.</p>
   </div>
-  <div class="wrap sec-body">
+  <div class="sec-body">
     <div class="fac">
       <picture>
-        <source srcset="img/fachada-master-2026-09-21.webp" type="image/webp">
+        <source media="(max-width:860px)" srcset="img/fachada-movil-2026-11-12.webp" type="image/webp">
+        <source media="(max-width:860px)" srcset="img/fachada-movil-2026-11-12.jpg" type="image/jpeg">
+        <source srcset="/images/fachada-peatonal-83-660.webp 660w, /images/fachada-peatonal-83-1320.webp 1320w, img/fachada-master-2026-09-21.webp 2048w" sizes="(max-width:860px) 100vw, (max-width:1200px) 58vw, 680px" type="image/webp">
         <img src="img/fachada-master-2026-09-21.jpg" width="2048" height="768" alt="Fachada de Plaza La Peatonal 68 de día, con el Local 4 señalado en la planta baja y los locales 22 y 23 en el segundo piso" decoding="async">
       </picture>
-      <a class="pin" href="#local-4" style="left:31.1%;top:65%" aria-label="Local 4, 102 metros cuadrados, $3,060 al mes. Ir a su ficha">4<span class="tip">Local 4 · 102 m² · $3,060/mes</span></a>
-      <a class="pin" href="#local-22" style="left:64.7%;top:32.36%" aria-label="Local 22, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">22<span class="tip">Local 22 · 100 m² · $1,800/mes</span></a>
-      <a class="pin" href="#local-23" style="left:74.4%;top:32.36%" aria-label="Local 23, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">23<span class="tip">Local 23 · 100 m² · $1,800/mes</span></a>
+      <a class="pin" href="#local-4" style="left:31.1%;top:65%" aria-label="Local 4, 102 metros cuadrados, $3,060 al mes. Ir a su ficha">4<span class="tip">Local 4 · 102&nbsp;m² · $3,060/mes</span></a>
+      <a class="pin" href="#local-22" style="left:64.7%;top:32.36%" aria-label="Local 22, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">22<span class="tip">Local 22 · 100&nbsp;m² · $1,800/mes</span></a>
+      <a class="pin" href="#local-23" style="left:74.4%;top:32.36%" aria-label="Local 23, 100 metros cuadrados, $1,800 al mes. Ir a su ficha">23<span class="tip">Local 23 · 100&nbsp;m² · $1,800/mes</span></a>
     </div>
     <p class="nota faclegend">Disponibles 4, 22 y 23. Ubicación aproximada sobre la fachada.</p>
+  </div>
   </div>
 </section>
 
 <!-- 02 · Locales disponibles -->
-<section class="sec" id="disponibilidad">
+<section class="sec t-soft" id="disponibilidad">
   <div class="wrap sec-head">
     <p class="idx">Locales disponibles</p>
     <h2>Dos en el segundo piso, uno en planta baja.</h2>
-    <p class="lead">Los del segundo piso comparten metraje y canon; el de planta baja está equipado para restaurante.</p>
+    <p class="lead">Los del segundo piso comparten tamaño y alquiler; el de planta baja está equipado para restaurante.</p>
   </div>
   <div class="wrap sec-body g3">
 
@@ -266,22 +332,22 @@ body>footer.sf{padding-top:48px}
       </button>
       <div class="card-row">
         <h3>Local 4</h3>
-        <span class="card-fig">102 m²</span>
+        <span class="card-fig">102&nbsp;m²</span>
       </div>
-      <p class="card-meta">Planta baja · 82 + 20 m² de terraza · Gas · 8 fotografías</p>
+      <p class="card-meta">Planta baja · 82 + 20&nbsp;m² de terraza · Gas · <span class="nw">8 fotografías</span></p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Canon mensual</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$3,060</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $255 · Aseo incluido · Impuestos aparte</p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
-          <div><dt>Canon mensual</dt><dd>$3,060</dd></div>
+          <div><dt>Alquiler mensual</dt><dd>$3,060</dd></div>
           <div><dt>Mantenimiento</dt><dd>$255</dd></div>
           <div class="ltot"><dt>Total mensual antes de impuestos</dt><dd>$3,315</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">— Entrega inmediata. Hoy opera un restaurante; mobiliario y equipos no incluidos, se negocian con el inquilino actual.</p>
+      <p class="nota" style="margin-top:16px">Entrega inmediata. Hoy opera un restaurante; mobiliario y equipos no incluidos, se negocian con el inquilino actual.</p>
       <div class="uacts">
         <button class="out" data-gal="l4" data-loc="4">Ver el Local 4 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
@@ -294,23 +360,23 @@ body>footer.sf{padding-top:48px}
       </button>
       <div class="card-row">
         <h3>Local 22</h3>
-        <span class="card-fig">100 m²</span>
+        <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Segundo piso · Planta abierta · 1 baño · 3 fotografías</p>
+      <p class="card-meta">Segundo piso · Planta abierta · 1 baño · <span class="nw">3 fotografías</span></p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Canon mensual</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $250 · Aseo $15 · Impuestos aparte</p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
-          <div><dt>Canon mensual</dt><dd>$1,800</dd></div>
+          <div><dt>Alquiler mensual</dt><dd>$1,800</dd></div>
           <div><dt>Mantenimiento</dt><dd>$250</dd></div>
           <div><dt>Aseo</dt><dd>$15</dd></div>
           <div class="ltot"><dt>Total mensual antes de impuestos</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">— Se puede unir con el 23 para 200 m². La separación respecto al Local 21 y la condición de entrega se confirman con la administración.</p>
+      <p class="nota" style="margin-top:16px">Se puede unir con el 23 para 200&nbsp;m². La separación respecto al Local 21 y la condición de entrega se confirman con la administración.</p>
       <div class="uacts">
         <button class="out" data-gal="l22" data-loc="22">Ver el Local 22 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
@@ -323,23 +389,23 @@ body>footer.sf{padding-top:48px}
       </button>
       <div class="card-row">
         <h3>Local 23</h3>
-        <span class="card-fig">100 m²</span>
+        <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Segundo piso · Vitrina al pasillo · 1 baño interno · 4 fotografías</p>
+      <p class="card-meta">Segundo piso · Vitrina al pasillo · 1 baño interno · <span class="nw">4 fotografías</span></p>
       <div class="frow" style="margin-top:24px">
-        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Canon mensual</span>
+        <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $250 · Aseo $15 · Impuestos aparte</p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
-          <div><dt>Canon mensual</dt><dd>$1,800</dd></div>
+          <div><dt>Alquiler mensual</dt><dd>$1,800</dd></div>
           <div><dt>Mantenimiento</dt><dd>$250</dd></div>
           <div><dt>Aseo</dt><dd>$15</dd></div>
           <div class="ltot"><dt>Total mensual antes de impuestos</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">— Se puede unir con el 22 para 200 m². Distribución y condición de entrega se confirman antes de contratar.</p>
+      <p class="nota" style="margin-top:16px">Se puede unir con el 22 para 200&nbsp;m². Distribución y condición de entrega se confirman antes de contratar.</p>
       <div class="uacts">
         <button class="out" data-gal="l23" data-loc="23">Ver el Local 23 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
@@ -350,30 +416,30 @@ body>footer.sf{padding-top:48px}
 </section>
 
 <!-- 03 · La plaza -->
-<section class="sec" id="plaza">
+<section class="sec t-ivory" id="plaza">
   <div class="wrap sec-head">
     <p class="idx">La plaza</p>
     <h2>Ocho restaurantes en planta baja.</h2>
     <p class="lead">La planta baja concentra ocho restaurantes. En los niveles superiores funcionan negocios que reciben clientes por citas, clases y servicios. Para un nuevo inquilino eso significa entrar a una plaza que ya está operando, con estacionamiento disponible y distintas razones de visita a lo largo del día.</p>
   </div>
-  <div class="wrap sec-body g2">
+  <div class="wrap sec-body plaza-pair">
+    <figure class="plaza-fig noche">
+      <div class="ph ph--32">
+        <picture>
+          <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
+          <img src="/images/plaza-noche-32.jpg" width="1320" height="880" alt="Plaza La Peatonal 68 de noche, con el rótulo encendido y los restaurantes de planta baja en operación" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <figcaption>Planta baja de noche, con los restaurantes abiertos</figcaption>
+    </figure>
     <figure class="plaza-fig">
       <div class="ph ph--32">
         <picture>
-          <source srcset="img/planta-baja-restaurantes-y-acceso.webp" type="image/webp">
-          <img src="img/planta-baja-restaurantes-y-acceso.jpg" width="1600" height="1200" alt="Planta baja de Plaza La Peatonal 68: los toldos de los restaurantes sobre la acera, el estacionamiento y el paso peatonal de la entrada" loading="lazy">
+          <source srcset="img/plaza-operando.webp" type="image/webp">
+          <img src="img/plaza-operando.jpg" width="1920" height="1080" alt="Plaza La Peatonal 68 de día desde Calle 68 Este: los dos niveles de locales sobre la planta baja de restaurantes y el estacionamiento" loading="lazy" decoding="async">
         </picture>
       </div>
-      <figcaption>Planta baja, vista desde Calle 68 Este · El Local 4 es el de la terraza a la izquierda</figcaption>
-    </figure>
-    <figure class="plaza-fig estac">
-      <div class="ph ph--32">
-        <picture>
-          <source srcset="img/estacionamientos.webp" type="image/webp">
-          <img src="img/estacionamientos.jpg" width="1920" height="1080" alt="Estacionamiento techado de Plaza La Peatonal 68 en el sótano" loading="lazy">
-        </picture>
-      </div>
-      <figcaption>Sótano bajo techo · 46 de los 60 puestos</figcaption>
+      <figcaption>De día, desde Calle 68 Este · Planta baja, primer y segundo piso</figcaption>
     </figure>
   </div>
   <div class="wrap niveles" style="margin-top:var(--gap-body)">
@@ -384,59 +450,78 @@ body>footer.sf{padding-top:48px}
 </section>
 
 <!-- 04 · Acceso e infraestructura -->
-<section class="sec" id="ubicacion">
+<section class="sec t-warm" id="ubicacion">
   <div class="wrap sec-head">
-
       <p class="idx">Acceso e infraestructura</p>
-      <h2>Acceso e infraestructura.</h2>
-      <p class="lead">Lo que la administración ha confirmado a la fecha.</p>
+      <h2>Cómo se llega y qué tiene cada local.</h2>
+      <p class="lead">Lo que está confirmado y lo que se verifica en cada local.</p>
       <p class="dir">Calle 68 Este, San Francisco, Ciudad de Panamá<span class="sep" aria-hidden="true"> · </span><a href="https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9" target="_blank" rel="noopener">Ver en Google Maps →</a></p>
   </div>
-  <div class="wrap grupos">
+  <div class="wrap grupos grupos--foto">
     <div class="grupo">
-      <p class="label">Acceso</p>
-      <div class="frow"><span>Acceso al segundo piso</span><em>Escaleras y elevador</em></div>
-      <div class="frow"><span>Acceso vehicular</span><em>Por Calle 68 Este</em></div>
-      <div class="frow"><span>Acceso al sótano</span><em>Por la misma rampa de la entrada</em></div>
+      <div class="ph ph--32"><picture>
+          <source srcset="img/planta-baja-restaurantes-y-acceso.webp" type="image/webp">
+          <img src="img/planta-baja-restaurantes-y-acceso.jpg" width="1600" height="1200" alt="Planta baja de Plaza La Peatonal 68 desde Calle 68 Este: los toldos de los restaurantes, el estacionamiento y el paso peatonal de la entrada" loading="lazy" decoding="async">
+      </picture></div>
+      <h3 class="label">Acceso</h3>
+      <div class="frow"><span>Segundo piso</span><em>Escaleras y elevador</em></div>
+      <div class="frow"><span>Vehículos</span><em>Por Calle 68 Este</em></div>
+      <div class="frow"><span>Sótano</span><em>Por la misma rampa de la entrada</em></div>
     </div>
     <div class="grupo">
-      <p class="label">Instalaciones</p>
+      <div class="ph ph--32"><picture>
+          <source srcset="img/local-04-cocina.webp" type="image/webp">
+          <img src="img/local-04-cocina.jpg" width="1448" height="1086" alt="Cocina del Local 4 con campana de extracción y línea de gas" loading="lazy" decoding="async">
+      </picture></div>
+      <h3 class="label">Instalaciones</h3>
       <div class="frow"><span>Baño</span><em>Uno por local</em></div>
-      <div class="frow"><span>Gas</span><em>Sí, en el Local 4</em></div>
-      <div class="frow"><span>Aire acondicionado</span><em>Sí, en el Local 4</em></div>
+      <div class="frow"><span>Local 4</span><em>Gas, extracción y aire acondicionado instalados</em></div>
+      <div class="frow"><span>Locales 22 y 23</span><em>Gas y aire: se verifican según tu operación</em></div>
+      <div class="frow"><span>Agua, desagüe y extracción</span><em>Varían por local; se verifican antes de tu propuesta</em></div>
+      <div class="frow"><span>Frente y fondo</span><em>Plano y medidas por local, a pedido</em></div>
     </div>
     <div class="grupo">
-      <p class="label">Estacionamiento</p>
-      <div class="frow"><span>Estacionamiento</span><em>60 puestos</em></div>
+      <div class="ph ph--32"><picture>
+          <source srcset="img/estacionamientos.webp" type="image/webp">
+          <img src="img/estacionamientos.jpg" width="1920" height="1080" alt="Estacionamiento techado en el sótano de Plaza La Peatonal 68, con la escalera y el elevador" loading="lazy" decoding="async">
+      </picture></div>
+      <h3 class="label">Estacionamiento</h3>
+      <div class="frow"><span>Total</span><em>60 puestos</em></div>
       <div class="frow"><span>Distribución</span><em>14 en planta baja, 46 en el sótano</em></div>
+      <div class="frow"><span>Accesibles</span><em>2 para personas con discapacidad</em></div>
+      <div class="frow"><span>Por contrato</span><em>Un puesto para el inquilino</em></div>
     </div>
     <div class="grupo">
-      <p class="label">Operación</p>
-      <div class="frow"><span>Horario</span><em>Sin restricción en planta baja; sótano cierra 11:30 p.m.</em></div>
+      <div class="ph ph--32"><picture>
+          <source srcset="img/local-04-noche.webp" type="image/webp">
+          <img src="img/local-04-noche.jpg" width="1600" height="1067" alt="Terraza del Local 4 de noche, con clientes en las mesas" loading="lazy" decoding="async">
+      </picture></div>
+      <h3 class="label">Operación</h3>
+      <div class="frow"><span>Horario</span><em>Sin restricción en planta baja; el sótano cierra a las 11:30 p.m.</em></div>
       <div class="frow"><span>Música y bar</span><em>Permitidos dentro del límite aprobado</em></div>
-      <div class="frow"><span>Carga y descarga</span><em>— Por confirmar</em></div>
+      <div class="frow"><span>Carga y descarga</span><em>Se confirma con la administración antes de firmar</em></div>
     </div>
   </div>
 </section>
 
 <!-- 05 · Preguntas -->
-<section class="sec" id="faq">
+<section class="sec t-soft" id="faq">
   <div class="wrap sec-head">
     <p class="idx">Preguntas</p>
-    <h2>Lo que suelo aclarar.</h2>
+    <h2>Preguntas sobre los locales.</h2>
   </div>
   <div class="wrap sec-body faq" data-faq>
-    <details><summary>¿El canon incluye el mantenimiento?</summary><div class="a"><p>No. Los locales 22 y 23 cuestan $1,800 al mes ($18 por m²); aparte se pagan mantenimiento ($250) y aseo ($15): $2,065 al mes antes de impuestos.</p><p>El Local 4 cuesta $3,060 al mes ($30 por m²) más mantenimiento ($255, con el aseo incluido): $3,315 al mes antes de impuestos.</p><p>Cada ficha lo muestra en <i>Ver desglose mensual</i>.</p></div></details>
+    <details><summary>¿El alquiler incluye el mantenimiento?</summary><div class="a"><p>No. Los locales 22 y 23 cuestan $1,800 al mes ($18 por m²); aparte se pagan mantenimiento ($250) y aseo ($15): $2,065 al mes antes de impuestos.</p><p>El Local 4 cuesta $3,060 al mes ($30 por m²) más mantenimiento ($255, con el aseo incluido): $3,315 al mes antes de impuestos.</p><p>Cada ficha lo muestra en <i>Ver desglose mensual</i>.</p></div></details>
     <details><summary>¿Cuánto necesito para firmar?</summary><div class="a"><p>Para firmar se requiere el pago del <b>primer mes y un mes de depósito de garantía</b>.</p></div></details>
     <details><summary>¿Qué gastos no están incluidos?</summary><div class="a"><p>No están incluidos electricidad, internet, permisos, adecuaciones, seguros, consumos propios del negocio ni otros servicios que el inquilino contrate directamente.</p></div></details>
     <details><summary>¿En qué condición se entrega el local?</summary><div class="a"><p>El Local 22 se muestra como una planta abierta con un baño. La separación respecto al Local 21 y la condición de entrega de ambos locales se confirmarán con la administración antes de contratar.</p><p>Antes de firmar se deja por escrito qué permanece, qué se retira y en qué condición se entrega.</p></div></details>
     <details><summary>¿Qué giros pueden operar en la plaza?</summary><div class="a"><p>Cada propuesta se evalúa según su compatibilidad con la mezcla comercial, la infraestructura disponible y las aprobaciones requeridas.</p><p>Estos son algunos conceptos que podrían complementar la mezcla actual:</p><ul><li>Estética y cuidado facial</li><li>Spa y masajes</li><li>Medicina estética o dermatología</li><li>Wellness y recuperación deportiva</li><li>Servicios especializados de salud</li><li>Otros conceptos de atención por cita</li></ul><p>Si me indicas qué actividad vas a desarrollar, verifico cuáles locales pueden funcionar antes de coordinar una visita.</p><p>El Local 4, en planta baja, está equipado para restaurante y admite bar, venta de alcohol y karaoke.</p></div></details>
     <details><summary>¿Todos los locales tienen agua, desagüe, gas y extracción?</summary><div class="a"><p>No. La infraestructura varía por local.</p><p>Si tu negocio requiere agua, desagüe, gas, extracción o una potencia eléctrica específica, debe verificarse antes de presentar una propuesta.</p></div></details>
-    <details><summary>¿Se pueden unir dos locales?</summary><div class="a"><p>Sí. El 22 y el 23 son contiguos en el segundo piso y se pueden unir para formar un local de 200 m². Si te interesa tomar los dos, dímelo y lo coordino.</p></div></details>
+    <details><summary>¿Se pueden unir dos locales?</summary><div class="a"><p>Sí. El 22 y el 23 son contiguos en el segundo piso y se pueden unir para formar un local de 200&nbsp;m². Si te interesa tomar los dos, dímelo y lo coordino.</p></div></details>
     <details><summary>¿Cuáles son las medidas de frente y fondo?</summary><div class="a"><p>Varían por local. Indícame el número y te envío el plano y las dimensiones disponibles.</p></div></details>
-    <details><summary>¿Cómo funcionan los estacionamientos?</summary><div class="a"><p>La plaza dispone de 60 estacionamientos: catorce en planta baja y cuarenta y seis bajo techo en el sótano, dos de ellos habilitados para personas con discapacidad.</p><p>Cada contrato contempla un espacio para uso del arrendatario. Cuando no se utiliza, permanece disponible para los clientes de la plaza.</p></div></details>
+    <details><summary>¿Cómo funcionan los estacionamientos?</summary><div class="a"><p>La plaza dispone de 60 estacionamientos: catorce en planta baja y cuarenta y seis bajo techo en el sótano, dos de ellos habilitados para personas con discapacidad.</p><p>Cada contrato contempla un espacio para uso del inquilino. Cuando no se utiliza, permanece disponible para los clientes de la plaza.</p></div></details>
     <details><summary>¿Cómo coordino una visita?</summary><div class="a"><p>Indícame el local de interés, el tipo de negocio y cualquier requerimiento técnico indispensable.</p><p>Primero confirmo que el espacio y la infraestructura tengan sentido para tu operación; después coordino la visita.</p></div></details>
-    <details><summary>¿Qué pasa con el mobiliario del restaurante actual del Local 4?</summary><div class="a"><p>No está incluido en el canon. El inquilino actual lo vende y se negocia directamente con él; puedo coordinar esa conversación.</p></div></details>
+    <details><summary>¿Qué pasa con el mobiliario del restaurante actual del Local 4?</summary><div class="a"><p>No está incluido en el alquiler. El inquilino actual lo vende y se negocia directamente con él; puedo coordinar esa conversación.</p></div></details>
   </div>
 </section>
 
@@ -446,8 +531,8 @@ body>footer.sf{padding-top:48px}
     <p class="idx">Conversemos</p>
     <h2>Revisemos qué local encaja con tu operación.</h2>
     <p class="lead">Dime el giro y las instalaciones que necesitas, y reviso cuál de los locales disponibles encaja con tu operación.</p>
-    <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20la%20p%C3%A1gina%20de%20La%20Peatonal%2068">Conversemos</a>
-    <p class="sign">Representación exclusiva · Dario Jhangimal · Corredor de Bienes Raíces · PN-1240 · SpotOne Realty</p>
+    <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20La%20Peatonal%2068.%20Me%20interesa%20el%20local%3A%20__.%20Mi%20giro%20es%3A%20__.">Escríbeme por WhatsApp</a>
+    <p class="sign">Representación exclusiva · Dario Jhangimal · Corredor de Bienes Raíces · <span class="nw">PN-1240</span> · SpotOne Realty</p>
   </div>
 </section>
 
@@ -456,9 +541,9 @@ body>footer.sf{padding-top:48px}
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/peatonal68/">Plaza La Peatonal 68</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina%20y%20quisiera%20hablar%20contigo" rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/peatonal68/">Plaza La Peatonal 68</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20La%20Peatonal%2068.%20Me%20interesa%20el%20local%3A%20__.%20Mi%20giro%20es%3A%20__." rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
-    <p class="sf-sign">Dario Jhangimal · Corredor de Bienes Raíces · PN-1240</p>
+    <p class="sf-sign">Dario Jhangimal · Corredor de Bienes Raíces · <span class="nw">PN-1240</span></p>
     <p class="sf-disc">Cánones sin impuestos. Disponibilidad y condiciones sujetas a confirmación.</p>
     <div class="sf-bottom">
       <span>© 2026 SpotOne Realty · Panamá</span>
@@ -560,8 +645,8 @@ body>footer.sf{padding-top:48px}
 })();
 </script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/","jobTitle":"Corredor de Bienes Raíces (PN-1240)","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"]},{"@type":"Place","@id":"https://www.spotonerealty.com/peatonal68/#plaza","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9","makesOffer":[{"@type":"Offer","name":"Local 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-4","description":"102 m², planta baja, uso restaurante","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Local 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-22","description":"100 m², segundo piso","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"Offer","name":"Local 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitText":"MONTH"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-23","description":"100 m², segundo piso","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"}}],"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"60 estacionamientos","value":true},{"@type":"LocationFeatureSpecification","name":"Estacionamiento cubierto","value":true},{"@type":"LocationFeatureSpecification","name":"Elevador","value":true},{"@type":"LocationFeatureSpecification","name":"Escaleras","value":true},{"@type":"LocationFeatureSpecification","name":"Ocho restaurantes en planta baja","value":true}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿El canon incluye el mantenimiento?","acceptedAnswer":{"@type":"Answer","text":"No. Los locales 22 y 23 cuestan $1,800 al mes ($18 por m²); aparte se pagan mantenimiento ($250) y aseo ($15): $2,065 al mes antes de impuestos. El Local 4 cuesta $3,060 al mes ($30 por m²) más mantenimiento ($255, con el aseo incluido): $3,315 al mes antes de impuestos. Cada ficha lo muestra en Ver desglose mensual ."}},{"@type":"Question","name":"¿Cuánto necesito para firmar?","acceptedAnswer":{"@type":"Answer","text":"Para firmar se requiere el pago del primer mes y un mes de depósito de garantía ."}},{"@type":"Question","name":"¿Qué gastos no están incluidos?","acceptedAnswer":{"@type":"Answer","text":"No están incluidos electricidad, internet, permisos, adecuaciones, seguros, consumos propios del negocio ni otros servicios que el inquilino contrate directamente."}},{"@type":"Question","name":"¿En qué condición se entrega el local?","acceptedAnswer":{"@type":"Answer","text":"El Local 22 se muestra como una planta abierta con un baño. La separación respecto al Local 21 y la condición de entrega de ambos locales se confirmarán con la administración antes de contratar. Antes de firmar se deja por escrito qué permanece, qué se retira y en qué condición se entrega."}},{"@type":"Question","name":"¿Qué giros pueden operar en la plaza?","acceptedAnswer":{"@type":"Answer","text":"Cada propuesta se evalúa según su compatibilidad con la mezcla comercial, la infraestructura disponible y las aprobaciones requeridas. Estos son algunos conceptos que podrían complementar la mezcla actual: Estética y cuidado facial Spa y masajes Medicina estética o dermatología Wellness y recuperación deportiva Servicios especializados de salud Otros conceptos de atención por cita Si me indicas qué actividad vas a desarrollar, verifico cuáles locales pueden funcionar antes de coordinar una visita. El Local 4, en planta baja, está equipado para restaurante y admite bar, venta de alcohol y karaoke."}},{"@type":"Question","name":"¿Todos los locales tienen agua, desagüe, gas y extracción?","acceptedAnswer":{"@type":"Answer","text":"No. La infraestructura varía por local. Si tu negocio requiere agua, desagüe, gas, extracción o una potencia eléctrica específica, debe verificarse antes de presentar una propuesta."}},{"@type":"Question","name":"¿Se pueden unir dos locales?","acceptedAnswer":{"@type":"Answer","text":"Sí. El 22 y el 23 son contiguos en el segundo piso y se pueden unir para formar un local de 200 m². Si te interesa tomar los dos, dímelo y lo coordino."}},{"@type":"Question","name":"¿Cuáles son las medidas de frente y fondo?","acceptedAnswer":{"@type":"Answer","text":"Varían por local. Indícame el número y te envío el plano y las dimensiones disponibles."}},{"@type":"Question","name":"¿Cómo funcionan los estacionamientos?","acceptedAnswer":{"@type":"Answer","text":"La plaza dispone de 60 estacionamientos: catorce en planta baja y cuarenta y seis bajo techo en el sótano, dos de ellos habilitados para personas con discapacidad. Cada contrato contempla un espacio para uso del arrendatario. Cuando no se utiliza, permanece disponible para los clientes de la plaza."}},{"@type":"Question","name":"¿Cómo coordino una visita?","acceptedAnswer":{"@type":"Answer","text":"Indícame el local de interés, el tipo de negocio y cualquier requerimiento técnico indispensable. Primero confirmo que el espacio y la infraestructura tengan sentido para tu operación; después coordino la visita."}},{"@type":"Question","name":"¿Qué pasa con el mobiliario del restaurante actual del Local 4?","acceptedAnswer":{"@type":"Answer","text":"No está incluido en el canon. El inquilino actual lo vende y se negocia directamente con él; puedo coordinar esa conversación."}}]},{"@type":"RealEstateListing","@id":"https://www.spotonerealty.com/peatonal68/#listing","url":"https://www.spotonerealty.com/peatonal68/","name":"Plaza La Peatonal 68","description":"Tres locales comerciales en alquiler en San Francisco, Ciudad de Panamá: dos de 100 m² en el segundo piso y uno de 102 m² en planta baja.","datePosted":"2026-11-11","about":{"@id":"https://www.spotonerealty.com/peatonal68/#plaza"},"provider":{"@id":"https://www.spotonerealty.com/#spotone"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","founder":{"@id":"https://www.spotonerealty.com/#dario"},"sameAs":["https://instagram.com/spotonerealty"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Corredor de Bienes Raíces (PN-1240)","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"worksFor":{"@id":"https://www.spotonerealty.com/#spotone"},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg"},{"@type":"Place","@id":"https://www.spotonerealty.com/peatonal68/#plaza","name":"Plaza La Peatonal 68","address":{"@type":"PostalAddress","streetAddress":"Calle 68 Este","addressLocality":"San Francisco","addressRegion":"Ciudad de Panamá","addressCountry":"PA"},"url":"https://www.spotonerealty.com/peatonal68/","image":"https://www.spotonerealty.com/peatonal68/img/fachada-master-2026-09-21.jpg","hasMap":"https://maps.app.goo.gl/ebq8WnisrLjxcxqJ9","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Estacionamientos","value":60},{"@type":"LocationFeatureSpecification","name":"Estacionamiento cubierto","value":true},{"@type":"LocationFeatureSpecification","name":"Elevador","value":true},{"@type":"LocationFeatureSpecification","name":"Escaleras","value":true},{"@type":"LocationFeatureSpecification","name":"Ocho restaurantes en planta baja","value":true}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿El alquiler incluye el mantenimiento?","acceptedAnswer":{"@type":"Answer","text":"No. Los locales 22 y 23 cuestan $1,800 al mes ($18 por m²); aparte se pagan mantenimiento ($250) y aseo ($15): $2,065 al mes antes de impuestos. El Local 4 cuesta $3,060 al mes ($30 por m²) más mantenimiento ($255, con el aseo incluido): $3,315 al mes antes de impuestos. Cada ficha lo muestra en Ver desglose mensual."}},{"@type":"Question","name":"¿Cuánto necesito para firmar?","acceptedAnswer":{"@type":"Answer","text":"Para firmar se requiere el pago del primer mes y un mes de depósito de garantía."}},{"@type":"Question","name":"¿Qué gastos no están incluidos?","acceptedAnswer":{"@type":"Answer","text":"No están incluidos electricidad, internet, permisos, adecuaciones, seguros, consumos propios del negocio ni otros servicios que el inquilino contrate directamente."}},{"@type":"Question","name":"¿En qué condición se entrega el local?","acceptedAnswer":{"@type":"Answer","text":"El Local 22 se muestra como una planta abierta con un baño. La separación respecto al Local 21 y la condición de entrega de ambos locales se confirmarán con la administración antes de contratar. Antes de firmar se deja por escrito qué permanece, qué se retira y en qué condición se entrega."}},{"@type":"Question","name":"¿Qué giros pueden operar en la plaza?","acceptedAnswer":{"@type":"Answer","text":"Cada propuesta se evalúa según su compatibilidad con la mezcla comercial, la infraestructura disponible y las aprobaciones requeridas. Estos son algunos conceptos que podrían complementar la mezcla actual: Estética y cuidado facial, Spa y masajes, Medicina estética o dermatología, Wellness y recuperación deportiva, Servicios especializados de salud, Otros conceptos de atención por cita. Si me indicas qué actividad vas a desarrollar, verifico cuáles locales pueden funcionar antes de coordinar una visita. El Local 4, en planta baja, está equipado para restaurante y admite bar, venta de alcohol y karaoke."}},{"@type":"Question","name":"¿Todos los locales tienen agua, desagüe, gas y extracción?","acceptedAnswer":{"@type":"Answer","text":"No. La infraestructura varía por local. Si tu negocio requiere agua, desagüe, gas, extracción o una potencia eléctrica específica, debe verificarse antes de presentar una propuesta."}},{"@type":"Question","name":"¿Se pueden unir dos locales?","acceptedAnswer":{"@type":"Answer","text":"Sí. El 22 y el 23 son contiguos en el segundo piso y se pueden unir para formar un local de 200 m². Si te interesa tomar los dos, dímelo y lo coordino."}},{"@type":"Question","name":"¿Cuáles son las medidas de frente y fondo?","acceptedAnswer":{"@type":"Answer","text":"Varían por local. Indícame el número y te envío el plano y las dimensiones disponibles."}},{"@type":"Question","name":"¿Cómo funcionan los estacionamientos?","acceptedAnswer":{"@type":"Answer","text":"La plaza dispone de 60 estacionamientos: catorce en planta baja y cuarenta y seis bajo techo en el sótano, dos de ellos habilitados para personas con discapacidad. Cada contrato contempla un espacio para uso del inquilino. Cuando no se utiliza, permanece disponible para los clientes de la plaza."}},{"@type":"Question","name":"¿Cómo coordino una visita?","acceptedAnswer":{"@type":"Answer","text":"Indícame el local de interés, el tipo de negocio y cualquier requerimiento técnico indispensable. Primero confirmo que el espacio y la infraestructura tengan sentido para tu operación; después coordino la visita."}},{"@type":"Question","name":"¿Qué pasa con el mobiliario del restaurante actual del Local 4?","acceptedAnswer":{"@type":"Answer","text":"No está incluido en el alquiler. El inquilino actual lo vende y se negocia directamente con él; puedo coordinar esa conversación."}}]},{"@type":"RealEstateListing","@id":"https://www.spotonerealty.com/peatonal68/#listing","url":"https://www.spotonerealty.com/peatonal68/","name":"Plaza La Peatonal 68","description":"Tres locales comerciales en alquiler en San Francisco, Ciudad de Panamá: dos de 100 m² en el segundo piso y uno de 102 m² en planta baja.","datePosted":"2026-11-11","about":{"@id":"https://www.spotonerealty.com/peatonal68/#plaza"},"provider":{"@id":"https://www.spotonerealty.com/#spotone"},"offers":[{"@type":"Offer","name":"Local 4","price":3060,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":3060,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-4","description":"102 m², planta baja, uso restaurante","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Local 4","floorSize":{"@type":"QuantitativeValue","value":102,"unitCode":"MTK"}}},{"@type":"Offer","name":"Local 22","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-22","description":"100 m², segundo piso","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Local 22","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}},{"@type":"Offer","name":"Local 23","price":1800,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":1800,"priceCurrency":"USD","unitCode":"MON"},"availability":"https://schema.org/InStock","url":"https://www.spotonerealty.com/peatonal68/#local-23","description":"100 m², segundo piso","offeredBy":{"@id":"https://www.spotonerealty.com/#spotone"},"businessFunction":"http://purl.org/goodrelations/v1#LeaseOut","itemOffered":{"@type":"Place","name":"Local 23","floorSize":{"@type":"QuantitativeValue","value":100,"unitCode":"MTK"}}}]}]}</script>
 
-<p class="solo-impresion">www.spotonerealty.com/peatonal68/ · WhatsApp +507 6675-8127</p>
+<p class="solo-impresion">www.spotonerealty.com/peatonal68/ · WhatsApp <span class="nw">+507 6675-8127</span></p>
 </body>
 </html>
