@@ -1637,3 +1637,7 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
    claras del mismo tono se siguen, un filete de 1 px marca la división. */
 :is(.t-ivory,.t-soft)+:is(.t-ivory,.t-soft){border-top:1px solid var(--line)}
 :is(.t-ivory,.t-soft,.t-warm)+.close,:is(.t-ivory,.t-soft,.t-warm)+.pclose{margin-top:0}
+
+/* R11 (16-nov-2026): subtitulos de Peatonal con el par del lead (v13: sin pares nuevos, pesos 300/500) y H1 de Contacto */
+.h-sub{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 12px;max-width:none}
+.hero--cierre h1{font-size:var(--fs-h1);line-height:var(--lh-h1);max-width:12em}
