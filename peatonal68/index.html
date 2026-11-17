@@ -89,6 +89,10 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 @media(min-width:861px){.u .card-meta{min-height:48px}}
 .u .ph button{all:unset;display:block;cursor:pointer;width:100%}
 .ushot{display:block;width:100%;border:0;padding:0;background:none;cursor:pointer}
+.ushot{position:relative}
+.ushot-n{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;background:rgba(244,241,234,.95);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:var(--fs-label);line-height:var(--lh-label);font-weight:500;box-shadow:0 2px 12px rgba(5,14,30,.25)}
+.ushot-n svg{width:14px;height:14px}
+
 .calc{margin-top:16px}
 .calc summary{
   font-size:15px;line-height:24px;font-weight:300;color:var(--muted);cursor:pointer;list-style:none;
@@ -367,11 +371,12 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   <div class="wrap g3 fichas-g">
 
     <article class="card ficha u u4" id="local-4" data-u="4" data-floor="0" data-area="102">
-      <button class="ushot ph ph--32" data-gal="l4" data-loc="4" aria-label="Ver las fotografías del Local 4">
+      <button class="ushot ph ph--32" data-gal="l4" data-loc="4" aria-label="Ver las 8 fotos del Local 4">
         <picture>
           <source srcset="img/local-04-salon-hacia-la-terraza.webp" type="image/webp">
           <img src="img/local-04-salon-hacia-la-terraza.jpg" width="1448" height="965" alt="Local 4: salón con mesas y sillas de madera, techo de lámina con vigas negras y la vitrina hacia la terraza al fondo" loading="lazy">
         </picture>
+        <span class="ushot-n" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>8 fotos</span>
       </button>
       <div class="card-row">
         <h3>Local 4</h3>
@@ -398,8 +403,9 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     </article>
 
     <article class="card ficha u" id="local-22" data-u="22" data-floor="2" data-area="100">
-      <button class="ushot ph ph--32" data-gal="l22" data-loc="22" aria-label="Ver las fotografías del Local 22">
+      <button class="ushot ph ph--32" data-gal="l22" data-loc="22" aria-label="Ver las 3 fotos del Local 22">
         <img src="img/local-22-espacio.jpg" width="1600" height="1067" alt="Local 22: el espacio completo desde la entrada, con el ventanal al fondo" loading="lazy">
+        <span class="ushot-n" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>3 fotos</span>
       </button>
       <div class="card-row">
         <h3>Local 22</h3>
@@ -427,8 +433,9 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     </article>
 
     <article class="card ficha u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
-      <button class="ushot ph ph--32" data-gal="l23" data-loc="23" aria-label="Ver las fotografías del Local 23">
+      <button class="ushot ph ph--32" data-gal="l23" data-loc="23" aria-label="Ver las 4 fotos del Local 23">
         <img src="img/local-23-espacio.jpg" width="1600" height="1067" alt="Local 23: el espacio principal, entregado y vacío, con la ventana al fondo" loading="lazy">
+        <span class="ushot-n" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>4 fotos</span>
       </button>
       <div class="card-row">
         <h3>Local 23</h3>
