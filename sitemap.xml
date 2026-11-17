@@ -52,8 +52,19 @@
   </url>
   <url>
     <loc>https://www.spotonerealty.com/coronado-las-fincas/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/coronado-las-fincas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/coronado-las-fincas/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/coronado-las-fincas/"/>
     <lastmod>2026-11-17</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/coronado-las-fincas/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/coronado-las-fincas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/coronado-las-fincas/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/coronado-las-fincas/"/>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.spotonerealty.com/criterio/a-price-without-method-is-a-rumor/</loc>
