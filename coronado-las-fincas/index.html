@@ -86,8 +86,15 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .fotos-pill:hover{background:var(--ivory)}
 .fotos-pill:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .fotos-pill svg{width:16px;height:16px}
-.vermas .out{border:1px solid var(--ink);color:var(--ink);padding:14px 22px;font-weight:500;text-decoration:none}
-.vermas .out:hover{background:var(--ink);color:var(--ivory)}
+.mos3 .ph:last-child{position:relative}
+.mas-fotos{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:rgba(5,14,30,.58);color:var(--ivory);border:0;cursor:pointer;font:inherit;text-align:center}
+.mas-fotos b{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:44px;line-height:1}
+.mas-fotos span{font-size:15px;font-weight:500;letter-spacing:.02em}
+.mas-fotos:hover{background:rgba(5,14,30,.7)}
+.mas-fotos:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.vermas .out{background:var(--navy);color:var(--ivory)!important;border:0;padding:16px 26px;font-weight:500;font-size:16px;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.vermas .out:hover{background:#1B2A45}
+.vermas .out svg{width:16px;height:16px}
 .vermas button.out:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media(max-width:860px){
   .mos{grid-template-columns:1fr}
@@ -223,9 +230,9 @@ body>footer.sf{padding-top:48px}
     <div class="g3 mos3">
       <div class="ph ph--32" style="background:#8A7A68"><button class="shot" data-i="10" aria-label="Ver la recámara principal"><picture><source srcset="img/11-recamara-principal-828.webp 828w, img/11-recamara-principal.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/11-recamara-principal.jpg" width="1280" height="960" alt="Recámara con ventanal en arco" loading="lazy" decoding="async"></picture></button></div>
       <div class="ph ph--32" style="background:#6A7A61"><button class="shot" data-i="16" aria-label="Ver la piscina, el jacuzzi y la pérgola, en remodelación en 2025"><picture><source srcset="img/17-piscina-pergola-y-jardin-828.webp 828w, img/17-piscina-pergola-y-jardin.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/17-piscina-pergola-y-jardin.jpg" width="1280" height="960" alt="Piscina, jacuzzi y pérgola en remodelación, en el jardín" loading="lazy" decoding="async"></picture></button></div>
-      <div class="ph ph--32" style="background:#625D2E"><button class="shot" data-i="17" aria-label="Ver la casa de cuidador"><picture><source srcset="img/19-casa-de-cuidador-828.webp 828w, img/19-casa-de-cuidador.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/19-casa-de-cuidador.jpg" width="1280" height="960" alt="Casa de cuidador, de una recámara y un baño" loading="lazy" decoding="async"></picture></button></div>
+      <div class="ph ph--32" style="background:#625D2E"><button class="shot" data-i="17" aria-label="Ver la casa de cuidador"><picture><source srcset="img/19-casa-de-cuidador-828.webp 828w, img/19-casa-de-cuidador.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/19-casa-de-cuidador.jpg" width="1280" height="960" alt="Casa de cuidador, de una recámara y un baño" loading="lazy" decoding="async"></picture></button><button class="mas-fotos" data-i="0" aria-label="Ver las 19 fotografías"><b>+13</b><span>fotos más</span></button></div>
     </div>
-    <p class="vermas nota"><button class="out" data-i="0">Ver las 19 fotografías →</button><span>Fotografías de abril de 2025. Se vende en el estado en que está.</span></p>
+    <p class="vermas nota"><button class="out" data-i="0"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>Ver las 19 fotografías →</button><span>Fotografías de abril de 2025. Se vende en el estado en que está.</span></p>
   </div>
 </section>
 
