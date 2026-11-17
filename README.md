@@ -1,62 +1,32 @@
-# SpotOne Realty — Landing
+# spotonerealty.com
 
-Sitio editorial para SpotOne Realty, publicado vía GitHub Pages.
+Sitio de Dario Jhangimal (corredor de bienes raíces, licencia PN-1240). HTML estático en GitHub Pages: rama `main` del repositorio `Spiderguard/spotone-landing`, dominio en `CNAME`.
 
-## Edición y deploy
+**La documentación completa (decisiones, pruebas, generadores y consejos) está fuera del repo:**
+`~/Documents/SpotOne/Revision web 2026-10-29/00-LEER-PRIMERO.md`
 
-```bash
-cd ~/Documents/SpotOne/web
-# edita index.html
-./deploy.sh "mensaje del cambio"
-```
+## Publicar
+1. Solo con orden de Dario.
+2. Trabaja en `~/Developer/spotone-landing`. La copia `_RESPALDO-web-icloud-*` de Documents ya no se usa.
+3. Antes de publicar: `git fetch` + `git merge origin/main`. Hay más de una sesión trabajando el sitio.
+4. Publica con `./deploy.sh "qué cambia"`. El script solo publica desde `main`, trae origin/main, regenera y verifica el sitemap, y no sube `.claude/` ni respaldos.
+5. Verifica en vivo con `?nc=1` al final de la URL. GitHub Pages tarda 1 o 2 minutos.
 
-## Estructura
+## Archivos que se generan (no se editan a mano)
+| Salida | Generador |
+|---|---|
+| `sitemap.xml` | `python3 build-sitemap.py` (`--check` para verificar) |
+| `peatonal68/descargas/` (ficha PDF + ZIP para corredores) | `python3 ficha-peatonal.py`. Correr el mismo día que se alquile un local, después de marcarlo en `js/peatonal-availability.js` |
+| `/zonas/` y `/en/areas/` | `Revision web 2026-10-29/r9-marca-seo/zonas-gen.py <salida> zonas-datos.json`. Generar en una carpeta temporal y comparar con el sitio antes de copiar |
+| notas de `/criterio/` | `Revision web 2026-10-29/pruebas/generador/` |
 
-```
-spotone-landing/
-├── index.html
-├── index-en.html
-├── CNAME
-├── favicon-32.png
-├── favicon-180.png
-├── robots.txt
-├── sitemap.xml
-├── en/
-├── contacto/
-├── contact/
-├── que-hago/
-├── what-i-do/
-├── images/
-│   ├── logo.svg
-│   ├── hero-main-desktop.jpg
-│   ├── hero-main-mobile.jpg
-│   └── dario-brand-vertical.jpg
-├── deploy.sh
-├── .nojekyll
-└── README.md
-```
+## Reglas que no se discuten
+Mandan `~/Documents/SpotOne/Brand Manual/HECHOS-DARIO-Y-POSICIONAMIENTO.md` y `VOZ_Y_TONO.md`:
+- solo hechos verificables;
+- la comisión nunca se publica;
+- nada que prometa dinero, tiempos de respuesta ni visitas;
+- primera persona y tuteo, sin emojis;
+- nunca IA en caras;
+- casos de clientes solo con permiso.
 
-## Dominio
-
-GitHub Pages publica el sitio desde `main` y usa `www.spotonerealty.com` como dominio canonico.
-
-DNS esperado:
-
-- `www` CNAME -> `spiderguard.github.io`
-- `spotonerealty.com` con A records de GitHub Pages
-
-El sitio no depende de Netlify. Las carpetas `en/`, `contacto/`, `contact/`, `que-hago/` y `what-i-do/` reemplazan los redirects de Netlify con rutas estaticas utiles.
-
-## Brand notes
-
-- Tipografía: Instrument Sans
-- Paleta: blanco editorial + tinta carbón + azul SpotOne
-- Voz: analítica, sobria, sin empujar
-
-## Imagen de marca
-
-Imagen oficial de Dario (sesión real 2026): saco navy lavado, camisa blanca de cuello abierto, gafas Moscot oliva translúcidas, barba corta. Retrato auténtico, sin sobreedición de la cara.
-
-- Vertical oficial para web: `images/dario-brand-vertical.jpg` (`1086 × 1448`)
-
-No usar las versiones anteriores: ni la de camisa celeste/retratos sentados, ni la sesión de estudio HD 2025 (fondo gris seamless, gafas negras, sobreeditada). El repo web solo debe incluir assets que la página usa en producción; los archivos maestros viven en el manual de marca.
+Firma en español: «Corredor de bienes raíces · PN-1240». En inglés: «Real Estate Broker · License PN-1240».
