@@ -160,20 +160,29 @@ body>footer.sf{padding-top:48px}
 .pclose .btn{margin-top:48px}
 .pclose .sign{margin-top:56px;color:var(--on-navy-faint);font-size:var(--fs-label);line-height:var(--lh-label);max-width:var(--measure)}
 
-/* galería */
-.lb{position:fixed;inset:0;background:rgba(5,14,30,.94);z-index:90;display:none;
-  align-items:center;justify-content:center;padding:24px}
+/* galería (r12: fondo pleno, flechas visibles, deslizar y tocar la foto en el celular) */
+.lb{position:fixed;inset:0;background:var(--navy);z-index:90;display:none;
+  align-items:center;justify-content:center;padding:72px 0 104px;touch-action:pan-y pinch-zoom}
 .lb.on{display:flex}
-.lb img{max-width:min(1100px,92vw);max-height:78vh;width:auto;object-fit:contain}
-.lb-cap{position:absolute;left:0;right:0;bottom:28px;text-align:center;color:var(--ivory);
-  font-size:15px;line-height:24px;font-weight:300}
+.lb img{max-width:min(1100px,100vw);max-height:100%;width:auto;object-fit:contain;
+  cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-user-drag:none}
+@media (min-width:861px){.lb img{max-width:min(1100px,84vw)}}
+.lb-cap{position:absolute;left:24px;right:24px;bottom:28px;text-align:center;color:var(--ivory);
+  font-size:15px;line-height:24px;font-weight:300;max-width:none;margin:0}
 .lb-cap span{color:var(--on-navy-faint);font-variant-numeric:tabular-nums}
+.lb-cap em{color:inherit}
 .lb-x,.lb-p,.lb-n{position:absolute;background:none;border:0;color:var(--ivory);cursor:pointer;
   font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;min-width:44px;min-height:44px}
-.lb-x{top:18px;right:18px}
-.lb-p{left:12px;top:50%;transform:translateY(-50%)}
-.lb-n{right:12px;top:50%;transform:translateY(-50%)}
-.lb-t{position:absolute;top:22px;left:24px;color:var(--ivory);font-size:15px;font-weight:500}
+.lb-x{top:14px;right:16px}
+.lb-p,.lb-n{top:50%;transform:translateY(-50%);width:48px;height:48px;padding:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:rgba(5,14,30,.55);
+  border:1px solid rgba(244,241,234,.45)}
+.lb-p{left:12px}
+.lb-n{right:12px}
+.lb-p svg,.lb-n svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5}
+.lb-p:focus-visible,.lb-n:focus-visible,.lb-x:focus-visible{outline:2px solid var(--ivory);outline-offset:2px}
+@media (min-width:861px){.lb-p{left:32px}.lb-n{right:32px}}
+.lb-t{position:absolute;top:24px;left:24px;color:var(--ivory);font-size:15px;font-weight:500}
 
 
 
@@ -255,6 +264,8 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 .confirma{margin-top:var(--s8);padding-top:var(--s6);border-top:1px solid var(--line)}
 .confirma>.label,.comun>.label{margin:0;text-transform:none;letter-spacing:0;font-weight:500;font-size:var(--fs-body);line-height:var(--lh-body)}
 .confirma>.nota{margin:var(--s2) 0 0;max-width:var(--measure)}
+.corredores{margin-top:var(--s6)}
+.corr-acts{display:flex;flex-wrap:wrap;gap:12px;margin:var(--s4) 0 0;max-width:none}
 .tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gutter);margin:var(--s5) 0 0}
 .tri>div{border-top:1px solid var(--line);padding-top:var(--s4)}
 .tri dt{font-size:var(--fs-label);line-height:24px;color:var(--muted)}
@@ -450,6 +461,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     <p class="nota">Represento la plaza con exclusividad. Lo que depende de tu giro lo revisamos juntos en el local, antes de firmar.</p>
     <dl class="tri"><div><dt>Agua, desagüe y extracción</dt><dd>Varían por local; te los muestro en la visita.</dd></div><div><dt>Frente y fondo</dt><dd>Plano y medidas de cada local: te los envío.</dd></div><div><dt>Carga y descarga</dt><dd>Horario y acceso: te los dejo por escrito antes de firmar.</dd></div></dl>
   </div>
+  <div class="wrap confirma corredores" id="corredores">
+    <p class="label">¿Eres corredor?</p>
+    <p class="nota">Descarga la ficha con fotos y condiciones de los locales disponibles para enviársela a tu cliente. Si le interesa, escríbeme y coordinamos la visita.</p>
+    <p class="corr-acts"><a class="btn btn--primary" href="/peatonal68/descargas/ficha-plaza-la-peatonal-68.pdf" download>Descargar ficha PDF</a><a class="btn btn--ghost" href="/peatonal68/descargas/fotos-y-ficha-plaza-la-peatonal-68.zip" download>Fotos y ficha (ZIP, 12&nbsp;MB)</a></p>
+  </div>
 </section>
 
 <!-- 03 · La plaza -->
@@ -581,9 +597,9 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería de fotografías">
   <span class="lb-t" id="lbT"></span>
   <button class="lb-x" id="lbX" aria-label="Cerrar la galería">Cerrar</button>
-  <button class="lb-p" id="lbP" aria-label="Anterior">‹</button>
+  <button class="lb-p" id="lbP" aria-label="Anterior"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6"/></svg></button>
   <img id="lbI" alt="">
-  <button class="lb-n" id="lbN" aria-label="Siguiente">›</button>
+  <button class="lb-n" id="lbN" aria-label="Siguiente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4l6 6-6 6"/></svg></button>
   <p class="lb-cap"><span id="lbC"></span> <em id="lbD" style="font-style:normal"></em></p>
 </div>
 
@@ -643,10 +659,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
     if(!cur.length)return;
     ix=(i+cur.length)%cur.length;
     im.src=cur[ix].src;im.alt=cur[ix].cap;
+    [ix+1,ix-1].forEach(function(j){var k=(j+cur.length)%cur.length;if(cur.length>1){new Image().src=cur[k].src;}});
     cp.textContent=(ix+1)+' / '+cur.length;
     de.textContent=cur[ix].cap;
-    document.getElementById('lbP').style.display=cur.length>1?'':'none';
-    document.getElementById('lbN').style.display=cur.length>1?'':'none';
+    document.getElementById('lbP').style.display=cur.length>1?'flex':'none';
+    document.getElementById('lbN').style.display=cur.length>1?'flex':'none';
   }
   function close(){lb.classList.remove('on');document.body.style.overflow='';if(opener)opener.focus();}
   document.querySelectorAll('[data-gal]').forEach(function(b){
@@ -661,6 +678,22 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   document.getElementById('lbP').addEventListener('click',function(){show(ix-1);});
   document.getElementById('lbN').addEventListener('click',function(){show(ix+1);});
   lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  /* Celular: tocar la mitad derecha de la foto avanza, la izquierda retrocede; deslizar también. */
+  im.addEventListener('click',function(e){
+    if(cur.length<2)return;
+    var r=im.getBoundingClientRect();
+    show(e.clientX<r.left+r.width/2?ix-1:ix+1);
+  });
+  var tx=null,ty=null;
+  lb.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1){tx=null;return;}
+    tx=e.touches[0].clientX;ty=e.touches[0].clientY;
+  },{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(tx===null||cur.length<2)return;
+    var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty;tx=null;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5){e.preventDefault();show(dx<0?ix+1:ix-1);}
+  });
   document.addEventListener('keydown',function(e){
     if(!lb.classList.contains('on'))return;
     if(e.key==='Escape')close();
