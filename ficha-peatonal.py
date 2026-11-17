@@ -150,7 +150,7 @@ def construir_html(libres, fecha):
   <tbody>{filas}</tbody></table>
   <ul class="claves">
     {union}
-    <li>Un estacionamiento por contrato. La plaza tiene 60: 14 en planta baja y 46 bajo techo en el sótano.</li>
+    <li>Un estacionamiento por contrato. La plaza tiene 60, gratuitos para visitantes: 14 en planta baja y 46 bajo techo en el sótano.</li>
     <li>Para firmar: primer mes y un mes de depósito de garantía.</li>
     <li>Represento la plaza con exclusividad. Si tienes un cliente para alguno de estos locales, escríbeme y coordinamos la visita.</li>
   </ul>
@@ -186,7 +186,7 @@ def construir_html(libres, fecha):
   <div class="dos">
     <ul class="claves">
       <li>En los niveles superiores funcionan negocios que reciben clientes por citas, clases y servicios.</li>
-      <li>60 estacionamientos: 14 en planta baja y 46 bajo techo en el sótano, dos para personas con discapacidad. Un estacionamiento por contrato; las condiciones de uso las fija la administración.</li>
+      <li>60 estacionamientos, gratuitos para visitantes: 14 en planta baja y 46 bajo techo en el sótano, dos para personas con discapacidad. Un estacionamiento por contrato; las condiciones de uso las fija la administración.</li>
       <li>Elevador y escaleras.</li>
       <li>Calle 68 Este, San Francisco. <a href='https://www.google.com/maps?q=8.9943381,-79.5112507'>Ver en el mapa</a>.</li>
     </ul>
