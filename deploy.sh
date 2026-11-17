@@ -32,7 +32,7 @@ echo "→ Generando sitemap.xml…"
 python3 build-sitemap.py >/dev/null
 python3 build-sitemap.py --check
 
-git add -A -- . ':(exclude).claude' ':(exclude)*.bak*' ':(exclude).DS_Store'
+git add -A   # .claude/, *.bak* y .DS_Store ya están en .gitignore
 if git diff --cached --quiet; then
   echo "✓ Sin cambios para publicar."
   exit 0
