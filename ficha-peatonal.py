@@ -137,7 +137,7 @@ def construir_html(libres, fecha):
                 "<p>Corredor de bienes raíces · Licencia PN-1240 · SpotOne Realty</p>"
                 "<p>WhatsApp <a href='https://wa.me/50766758127'>+507 6675-8127</a> · info@spotonerealty.com</p>"
                 "<p><a href='https://www.spotonerealty.com/peatonal68/'>www.spotonerealty.com/peatonal68/</a></p></div>")
-    pie = (f"<p class='pie'>Cánones sin impuestos. Información referencial; manda el contrato con la administración. "
+    pie = (f"<p class='pie'>Cánones sin ITBMS. Información referencial; manda el contrato con la administración. "
            f"Ficha del {fecha}: confirma la disponibilidad antes de presentarla.</p>")
 
     paginas = [f"""
@@ -146,7 +146,7 @@ def construir_html(libres, fecha):
   <h1>Plaza La Peatonal 68</h1>
   <img class="fachada" src="{img(FACHADA)}" alt="">
   <p class="leyenda">La plaza desde Calle 68 Este: el Local 4 está en planta baja; el 22 y el 23, en el segundo piso.</p>
-  <table><thead><tr><th>Local</th><th>Nivel</th><th>Área</th><th class="n">Alquiler mensual</th><th class="n">Total mensual antes de impuestos</th></tr></thead>
+  <table><thead><tr><th>Local</th><th>Nivel</th><th>Área</th><th class="n">Alquiler mensual</th><th class="n">Total mensual antes de ITBMS</th></tr></thead>
   <tbody>{filas}</tbody></table>
   <ul class="claves">
     {union}
@@ -171,7 +171,7 @@ def construir_html(libres, fecha):
   <div class="dos">
     <ul class="claves">{''.join(f'<li>{e(p)}</li>' for p in u['puntos'])}</ul>
     <dl class="ledger"><div><dt>Alquiler mensual</dt><dd>{money(u['alquiler'])}</dd></div>{otros}
-      <div class="tot"><dt>Total mensual antes de impuestos</dt><dd>{money(u['total'])}</dd></div></dl>
+      <div class="tot"><dt>Total mensual antes de ITBMS</dt><dd>{money(u['total'])}</dd></div></dl>
   </div>
   <div class="fotos {grid}">{fotos}</div>
   {pie}
