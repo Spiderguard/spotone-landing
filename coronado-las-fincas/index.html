@@ -81,12 +81,20 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .shot:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .vermas{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:24px;color:var(--muted)}
 .vermas{max-width:none}.vermas .out{flex:none;white-space:nowrap}.vermas span{max-width:var(--measure)}
+.mos .big{position:relative}
+.fotos-pill{position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:8px;background:rgba(244,241,234,.95);color:var(--ink);border:0;border-radius:999px;padding:11px 16px;font:inherit;font-size:15px;font-weight:500;line-height:1;cursor:pointer;box-shadow:0 2px 12px rgba(5,14,30,.25)}
+.fotos-pill:hover{background:var(--ivory)}
+.fotos-pill:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.fotos-pill svg{width:16px;height:16px}
+.vermas .out{border:1px solid var(--ink);color:var(--ink);padding:14px 22px;font-weight:500;text-decoration:none}
+.vermas .out:hover{background:var(--ink);color:var(--ivory)}
 .vermas button.out:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media(max-width:860px){
   .mos{grid-template-columns:1fr}
   .mos .big{grid-row:auto}
   .mos .sm .ph{position:relative;aspect-ratio:3/2}
-  .vermas{flex-direction:column;gap:4px}
+  .vermas{flex-direction:column;gap:12px}
+  .vermas .out{width:100%;text-align:center;box-sizing:border-box}
 }
 
 /* 02 · ficha: tres columnas de filas de datos (regla 13) */
@@ -208,12 +216,12 @@ body>footer.sf{padding-top:48px}
   </div>
   <div class="wrap sec-body">
     <div class="mos">
-      <div class="big ph" style="background:#7A8176"><button class="shot" data-i="1" aria-label="Ver la piscina con jacuzzi y la casa"><picture><source srcset="img/02-piscina-jacuzzi-y-casa.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 62vw, 750px" type="image/webp"><img src="img/02-piscina-jacuzzi-y-casa.jpg" width="1280" height="993" alt="Piscina con jacuzzi frente a la casa" loading="lazy" decoding="async"></picture></button></div>
+      <div class="big ph" style="background:#7A8176"><button class="fotos-pill" data-i="0"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>Ver las 19 fotos</button><button class="shot" data-i="1" aria-label="Ver la piscina con jacuzzi y la casa"><picture><source srcset="img/02-piscina-jacuzzi-y-casa.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 62vw, 750px" type="image/webp"><img src="img/02-piscina-jacuzzi-y-casa.jpg" width="1280" height="993" alt="Piscina con jacuzzi frente a la casa" loading="lazy" decoding="async"></picture></button></div>
       <div class="sm"><div class="ph" style="background:#9D8167"><button class="shot" data-i="6" aria-label="Ver la sala de doble altura"><picture><source srcset="img/07-sala-doble-altura-828.webp 828w, img/07-sala-doble-altura.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/07-sala-doble-altura.jpg" width="1280" height="960" alt="Sala de doble altura con vigas de madera" loading="lazy" decoding="async"></picture></button></div></div>
       <div class="sm"><div class="ph" style="background:#857151"><button class="shot" data-i="13" aria-label="Ver la terraza techada con hamacas"><picture><source srcset="img/14-terraza-con-hamacas-828.webp 828w, img/14-terraza-con-hamacas.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/14-terraza-con-hamacas.jpg" width="1280" height="960" alt="Terraza techada con hamacas" loading="lazy" decoding="async"></picture></button></div></div>
     </div>
     <div class="g3 mos3">
-      <div class="ph ph--32" style="background:#6F7B5C"><button class="shot" data-i="3" aria-label="Ver el camino de entrada entre árboles"><picture><source srcset="img/04-camino-de-entrada-y-jardin-828.webp 828w, img/04-camino-de-entrada-y-jardin.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/04-camino-de-entrada-y-jardin.jpg" width="1280" height="960" alt="Camino de entrada entre árboles hacia la casa" loading="lazy" decoding="async"></picture></button></div>
+      <div class="ph ph--32" style="background:#8A7A68"><button class="shot" data-i="10" aria-label="Ver la recámara principal"><picture><source srcset="img/11-recamara-principal-828.webp 828w, img/11-recamara-principal.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/11-recamara-principal.jpg" width="1280" height="960" alt="Recámara con ventanal en arco" loading="lazy" decoding="async"></picture></button></div>
       <div class="ph ph--32" style="background:#6A7A61"><button class="shot" data-i="16" aria-label="Ver la piscina, el jacuzzi y la pérgola, en remodelación en 2025"><picture><source srcset="img/17-piscina-pergola-y-jardin-828.webp 828w, img/17-piscina-pergola-y-jardin.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/17-piscina-pergola-y-jardin.jpg" width="1280" height="960" alt="Piscina, jacuzzi y pérgola en remodelación, en el jardín" loading="lazy" decoding="async"></picture></button></div>
       <div class="ph ph--32" style="background:#625D2E"><button class="shot" data-i="17" aria-label="Ver la casa de cuidador"><picture><source srcset="img/19-casa-de-cuidador-828.webp 828w, img/19-casa-de-cuidador.webp 1280w" sizes="(max-width:860px) calc(100vw - 48px), (max-width:1280px) 31vw, 375px" type="image/webp"><img src="img/19-casa-de-cuidador.jpg" width="1280" height="960" alt="Casa de cuidador, de una recámara y un baño" loading="lazy" decoding="async"></picture></button></div>
     </div>
