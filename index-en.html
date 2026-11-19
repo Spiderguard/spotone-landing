@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=23">
+<link rel="stylesheet" href="/css/spotone.css?v=25">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -77,24 +77,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .hero .idx.quien span{display:block}
   .hero .idx.quien{margin-bottom:20px}
 }
+
 /* ── v1.2 · home: cada sección con la forma de su función (council 12-nov) ── */
 .tesis{font-family:'Newsreader',Georgia,serif;font-weight:300;letter-spacing:-.01em;font-size:var(--fs-h1);line-height:var(--lh-h1);margin:0}
 .tesis em{font-style:italic}
 .principio .idx{margin-bottom:var(--gap-idx)}
-.cine{position:relative;display:block;overflow:hidden;background:var(--navy);color:var(--ivory);text-decoration:none}
-.cine picture{display:block;position:relative;aspect-ratio:21/9}
-.cine img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
-.cine::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(5,14,30,.88) 0,rgba(5,14,30,.6) 45%,rgba(5,14,30,0) 78%),linear-gradient(180deg,rgba(5,14,30,0) 40%,rgba(5,14,30,.7) 100%)}
-.cine-pie{position:absolute;left:48px;right:48px;bottom:44px;z-index:1;display:grid;gap:10px;max-width:640px}
-.cine-pie .label{color:var(--ivory)}
-.cine-t{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:var(--fs-h2);line-height:var(--lh-h2)}
-.cine-pie .dato{color:var(--ivory)}
-.cine-pie .out{color:var(--ivory);margin-top:8px}
-.cine:hover .out{color:var(--sky)}
-.cine+.cine{margin-top:24px}
 .dos-col>.sec-head{margin-bottom:var(--gap-body)}
-.dos-col .sec-body>.plain{margin-top:48px}
+/* v1.4 · R17 · Propiedades: grilla de piezas iguales */
+.propiedades .g3{align-items:stretch;row-gap:var(--gap-body)}
+.propiedades .card{color:var(--ink);text-decoration:none}
+.propiedades .card .ph{margin:0 0 var(--s5)}
+.propiedades .card .label{margin:0 0 var(--s2);color:var(--muted)}
+.propiedades .card h3{margin:0 0 var(--s3);color:var(--ink)}
+.propiedades .card .dato{display:block;margin:0;color:var(--muted)}
+.propiedades .card .out{margin-top:auto;padding-top:var(--s4);padding-bottom:4px;align-self:flex-start;color:var(--ink)}
+.propiedades a.card:hover .out,.propiedades a.card:focus-visible .out{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+#compradores .sec-head .plain{margin-top:40px}
 @media (min-width:1100px){
   .dos-col{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:start}
   .dos-col>.sec-head{grid-column:1/5;margin-bottom:0}
@@ -107,10 +105,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .t-warm .retrato>.ph img{transform:scale(1.02)}
 .t-warm .retrato>.c7,.t-warm .retrato>div:last-child{grid-column:7 / span 6}
 @media (max-width:860px){
-  .cine picture{aspect-ratio:4/3}
-  .cine::after{display:none}
-  .cine-pie{position:static;padding:24px;background:var(--navy)}
-  .cine-t{text-wrap:balance}
+  .propiedades .g3{row-gap:var(--s7)}
   .t-warm .retrato>.ph,.t-warm .retrato>.c7,.t-warm .retrato>div:last-child{grid-column:auto}
 }
 
@@ -137,6 +132,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .pasos p{margin:0;font-size:var(--fs-label);line-height:var(--lh-label);color:var(--on-navy-muted)}
 @media(max-width:860px){.reloc-in{grid-template-columns:1fr}.reloc-head,.pasos{grid-column:auto}.pasos{margin-top:40px}}
 </style>
+<style>
+.hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
+.hero .puertas .out{color:var(--ivory)}.hero .puertas .out:hover{color:var(--sky)}
+#duenos .reloc-head h2 em{font-weight:300}
+.serv h3 a{color:inherit;text-decoration:none;display:inline-block;padding:8px 0;margin:-8px 0}.serv h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
+</style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
 <body class="inicio">
@@ -159,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <p class="mm-group">On this page</p><nav class="mm-sections" aria-label="On this page"><a href="#propiedades">Properties</a><a href="#faq">What I usually clarify</a><a href="#contacto">Let’s talk</a></nav>
   <p class="mm-group">SpotOne Realty</p>
-  <nav aria-label="Menu"><a href="/index-en.html" class="here" aria-current="page">Home</a><a href="/services/">What I do</a><a href="/index-en.html#propiedades">Properties</a><a href="/relocation/en/">Relocation</a><a href="/criterio/en/">Notes</a><a href="/dario/en/">Dario</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a><a href="#contacto">Let’s talk</a></nav>
+  <nav aria-label="Menu"><a href="/index-en.html" class="here" aria-current="page">Home</a><a href="/services/">What I do</a><a href="/index-en.html#propiedades">Properties</a><a href="/relocation/en/">Relocation</a><a href="/criterio/en/">Notes</a><a href="/dario/en/">Dario</a><a href="/the-colonial-santa-maria/en/">Apartment at The Colonial</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a><a href="#contacto">Let’s talk</a></nav>
   <div class="mm-lang"><a href="/" class="" lang="es">Español</a><span aria-hidden="true">/</span><a href="/index-en.html" class="active" aria-current="true" lang="en">English</a></div>
   <div class="mm-foot">
     <a href="tel:+50766758127">+507 6675-8127</a>
@@ -180,122 +182,117 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap">
     <p class="idx quien"><span>Dario Jhangimal</span> <span class="sep" aria-hidden="true">·</span> <span>Real estate broker in Panama</span> <span class="sep" aria-hidden="true">·</span> <span>License PN-1240</span></p>
     <h1>Real estate,<br><em>with judgment</em>.</h1>
-    <p class="lead">Before we set a price, I look at what your property is competing with. If you are buying or renting, I coordinate with whoever has the listing, even if it’s another broker.</p>
+    <p class="lead">I sell, rent and buy property in Panama City, reading the market before any decision.</p>
+    <p class="puertas"><a class="out" href="#owners">I have a property →</a><a class="out" href="#buyers">I want to buy or rent →</a></p>
     <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">Message me on WhatsApp</a></p>
   </div>
 </header>
 
-<!-- 01 · Principio -->
-<section class="sec t-soft principio">
-  <div class="wrap">
-    <p class="idx" id="principio">Principle</p>
-    <p class="tesis">You read the market. <em>You don’t guess it.</em></p>
-  </div>
-</section>
-
-<!-- 02 · Propiedades -->
+<!-- 01 · Properties -->
 <section class="sec t-warm propiedades">
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Properties</p>
     <h2>What I represent now.</h2>
-    <p class="lead">Current availability, with the price and charges for each one.</p>
+    <p class="lead">Current availability and price for each. Fees are listed on each property’s page.</p>
   </div>
-  <div class="wrap sec-body">
-    <a class="cine" href="/peatonal68/en/">
-      <picture>
-        <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
-        <img src="/images/plaza-noche.jpg" width="1600" height="1000" alt="Plaza La Peatonal 68 at night, with the sign lit and the street-level restaurants in operation" loading="lazy" decoding="async">
-      </picture>
-      <span class="cine-pie">
-        <span class="label">Exclusive representation · San Francisco, Panama City</span>
-        <span class="cine-t">Plaza La Peatonal 68</span>
-        <span class="dato">Three commercial units for rent, 100 to 102&nbsp;m², from $1,800 a month. One parking space per lease.</span>
-        <span class="out">See availability →</span>
-      </span>
+  <div class="wrap sec-body g3">
+    <a class="card" href="/the-colonial-santa-maria/en/">
+      <span class="ph ph--32" style="background:#999F9F"><picture>
+        <source srcset="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo-828.webp 828w, /the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.webp 1448w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg" width="1448" height="1086" alt="High-floor balcony overlooking the racetrack and the city, at PH The Colonial, Santa María" loading="lazy" decoding="async" style="object-position:50% 60%">
+      </picture></span>
+      <span class="label">For sale · Santa María</span>
+      <h3>Apartment at PH The Colonial</h3>
+      <span class="dato">Brand new: 190&nbsp;m² on a high floor, 3 en-suite bedrooms and 3 parking spaces. US$579,800.</span>
+      <span class="out">See the apartment →</span>
     </a>
-    <a class="cine" href="/coronado-las-fincas/en/">
-      <picture>
-        <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
-        <img src="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra.jpg" width="1280" height="964" alt="Tile-and-stone house with its stone path, in Las Fincas, Coronado" loading="lazy" decoding="async" style="object-position:50% 55%">
-      </picture>
-      <span class="cine-pie">
-        <span class="label">For sale · Las Fincas, Coronado</span>
-        <span class="cine-t">Almost 2.5 acres, with a country house</span>
-        <span class="dato">9,870&nbsp;m² of flat land, a one-story house with 4 bedrooms and a pool. US$400,000.</span>
-        <span class="out">See the house →</span>
-      </span>
+    <a class="card" href="/peatonal68/en/">
+      <span class="ph ph--32" style="background:#454039"><picture>
+        <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/images/plaza-noche.jpg" width="1600" height="1000" alt="Plaza La Peatonal 68 at night, with its sign lit and the ground-floor restaurants open" loading="lazy" decoding="async">
+      </picture></span>
+      <span class="label">Exclusive · San Francisco</span>
+      <h3>Units at Plaza La Peatonal 68</h3>
+      <span class="dato">Three commercial units for rent, 100 to 102&nbsp;m², from US$1,800 a month. One parking space per lease.</span>
+      <span class="out">See availability →</span>
     </a>
-  </div>
-  <div class="wrap sec-body">
-    <p class="lead">Have a property to sell or rent out? I can represent it. <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20property%20to%20sell%20or%20rent%20out." rel="noopener">Message me →</a></p>
+    <a class="card" href="/coronado-las-fincas/en/">
+      <span class="ph ph--32" style="background:#758571"><picture>
+        <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra.jpg" width="1280" height="964" alt="Tile-roofed stone house with its entrance path, in Las Fincas, Coronado" loading="lazy" decoding="async" style="object-position:50% 55%">
+      </picture></span>
+      <span class="label">For sale · Las Fincas, Coronado</span>
+      <h3>Country house on almost 2.5 acres</h3>
+      <span class="dato">9,870&nbsp;m² of flat land, a one-story house with 4 bedrooms and a pool. US$400,000.</span>
+      <span class="out">See the house →</span>
+    </a>
   </div>
 </section>
 
-<!-- 03 · Qué hago -->
-<section class="sec t-soft">
-  <div class="wrap dos-col">
-  <div class="sec-head">
-    <p class="idx" id="que-hago">What I do</p>
-    <h2>Four ways to work together.</h2>
-    <p class="lead">For owners, buyers, tenants and investors.</p>
-  </div>
-  <div class="sec-body">
-    <div class="servs">
-      <div class="serv"><h3>Selling or renting out your property</h3><p>What your property is up against before the asking price is set.</p></div>
-      <div class="serv"><h3>Buying or renting</h3><p>With someone on your side from start to finish, even if another broker has the listing.</p></div>
-      <div class="serv"><h3>Knowing what price the evidence supports</h3><p>How much of the price is backed up, and how much is an estimate. It is a commercial recommendation, not an appraisal.</p></div>
-      <div class="serv"><h3>Deciding what to do</h3><p>Sell, rent, buy or wait: first, I lay out where you stand.</p></div>
-    </div>
-    <p class="plain"><a class="out" href="/services/">How I work →</a></p>
-  </div>
-  </div>
-</section>
-
-<!-- 04 · Relocation -->
-<section class="sec reloc">
+<!-- 02 · Owners -->
+<section class="sec reloc" id="owners">
   <div class="band-ph band-ph--sinfoto">
     <div class="wrap reloc-in">
       <div class="reloc-head">
-      <p class="idx" id="relocation">Relocation</p>
-      <h2>Moving to Panama.</h2>
-      <p class="lead">I start with your work, your commute and your family; the area follows from there.</p>
-      <a class="out" href="/relocation/en/">See the process →</a>
+      <p class="idx">If you own a property</p>
+      <h2>Read the market. <em>Don’t guess it.</em></h2>
+      <p class="lead">I know what competes with your property today and who is looking for one like it, because I follow the Panama City market every day.</p>
+      <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20property%20in%20__%20to%20__%20(sell%20or%20rent%20out)%20and%20I%27d%20like%20you%20to%20market%20it%20(web)." rel="noopener" data-ev="wa-duenos">Tell me about your property on WhatsApp →</a>
       </div>
-      <ul class="pasos" aria-label="The relocation process">
-        <li><h3>Area comparison</h3><p>We assess neighborhoods based on your regular journeys, nearby services and the type of home you want.</p></li>
-        <li><h3>Family and routines</h3><p>I review how the daily distances work out from each area: schools, work and the journeys you will make every week.</p></li>
-        <li><h3>A single point of contact</h3><p>I coordinate the search and viewings with you, including when other brokers are involved.</p></li>
-        <li><h3>Remote process available</h3><p>We can start your property search before you arrive in Panama and coordinate viewings for your arrival.</p></li>
+      <ul class="pasos" aria-label="What I do with your property">
+        <li><h3>What it competes with</h3><p>Similar listings in your area and your building today, and their asking prices.</p></li>
+        <li><h3>A price backed by evidence</h3><p>An asking price that holds up against real comparables, not opinion.</p></li>
+        <li><h3>Who I offer it to</h3><p>People who have already asked me for something similar, and the brokers who represent them.</p></li>
+        <li><h3>How it goes to market</h3><p>Photos, channels and terms, agreed in writing before publishing.</p></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- 05 · Dario -->
-<section class="sec t-soft">
+<!-- 03 · Buyers -->
+<section class="sec t-soft" id="buyers">
+  <div class="wrap dos-col">
+  <div class="sec-head">
+    <p class="idx">If you want to buy or rent</p>
+    <h2>Any property, with someone on your side.</h2>
+    <p class="lead">I coordinate with whoever has the listing, even another broker.</p>
+    <p class="plain"><a class="out" href="/services/">How I work →</a></p>
+  </div>
+  <div class="sec-body">
+    <div class="servs">
+      <div class="serv"><h3>See any property</h3><p>Whoever has the listing, I’m with you from first viewing to closing.</p></div>
+      <div class="serv"><h3>Knowing what price the evidence supports</h3><p>How much of the price is backed up and how much is an estimate: a commercial recommendation, not an appraisal.</p></div>
+      <div class="serv"><h3>Buy now or wait</h3><p>Whether to move now or wait: first, I lay out where you stand.</p></div>
+      <div class="serv"><h3><a href="/relocation/en/">Moving to Panama →</a></h3><p>I start with your work, your commute and your family; the area follows.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- 04 · Who I am -->
+<section class="sec t-warm">
   <div class="wrap g12 retrato">
     <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="992" height="1324" alt="Portrait of Dario Jhangimal, real estate broker in Panama" loading="lazy" decoding="async">
     </picture></span>
     <div class="c7">
-      <p class="idx" id="dario">Dario</p>
+      <p class="idx" id="dario">Who I am</p>
       <h2>Dario Jhangimal</h2>
       <p class="label">Real estate broker · License <span class="nw">PN-1240</span></p>
-      <p class="lead">I’m an industrial engineer, and I’ve been a broker in Panama since 2006. I work on sales, purchases and rentals of property, and my specialty is Panama City.</p>
-      <p class="lead">We go over the price, the terms and whether the property fits what you need, together.</p>
+      <p class="lead">I’m an industrial engineer, and I’ve been a broker in Panama since 2006. I handle sales, purchases and rentals, and my specialty is Panama City.</p>
       <p class="lead">I work with other brokers, so your property reaches more buyers. And if the best decision is not to go ahead, I’ll tell you.</p>
       <p class="plain"><a class="out" href="/dario/en/">About Dario →</a></p>
     </div>
   </div>
 </section>
 
-<!-- 06 · Criterio -->
-<section class="sec t-warm">
+<!-- 05 · Notes -->
+<section class="sec t-soft">
   <div class="wrap sec-head">
-    <p class="idx" id="criterio">Notes</p>
-    <h2>Answers on buying, selling, renting or investing in Panama.</h2>
-    <p class="lead">Criterio is where I publish my notes on prices, leases, buildings and neighborhoods in Panama. Each note answers one specific question.</p>
+    <p class="idx" id="criterio">Criterio · my notes</p>
+    <h2>Notes for deciding in Panama.</h2>
+    <p class="lead">Notes on prices, leases, buildings and neighborhoods. Each answers one specific question.</p>
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
@@ -307,25 +304,25 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </section>
 
-<!-- 07 · Lo que suelo aclarar -->
-<section class="sec t-soft">
+<!-- 06 · Questions -->
+<section class="sec t-warm">
   <div class="wrap sec-head">
     <p class="idx">Questions</p>
     <h2 id="faq">What I usually clarify.</h2>
     <p class="lead">Tell me your situation and I’ll tell you what I would do.</p>
   </div>
   <div class="wrap sec-body">
-      <details class="faq-item" open><summary>How does the first conversation work?</summary><div class="body"><p>The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, you know whether moving forward makes sense and what the next step would be.</p></div></details>
-      <details class="faq-item"><summary>How do I work with you as a buyer?</summary><div class="body"><p>First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who has each listing so you can see it, and give you the information you need to decide.</p></div></details>
+      <details class="faq-item" open><summary>How does the first conversation work?</summary><div class="body"><p>It’s to understand what you’re weighing, what you need and by when. It can start on WhatsApp, by email or with a short call. By the end, you know whether to move forward and what comes next.</p></div></details>
+      <details class="faq-item"><summary>If I’m an owner, do you ask for exclusivity?</summary><div class="body"><p>It’s not the first thing I ask for. First I show you what your property is competing with and where its price stands. If exclusivity suits you, we discuss it then. Even with exclusivity, I work with other brokers.</p></div></details>
   </div>
 </section>
 
-<!-- 08 · Conversemos -->
+<!-- 07 · Let’s talk -->
 <section class="close">
   <div class="wrap">
     <p class="idx" id="contacto">Let’s talk</p>
     <h2>Buying, selling or renting?</h2>
-    <p class="lead">Tell me what you need, in which area and by when. With those three things, I can compare options before we first talk.</p>
+    <p class="lead">Tell me what you need, where and by when. With those three things, I can compare options before our first call.</p>
     <div class="actions">
       <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">Message me on WhatsApp</a>
       <a class="out" href="mailto:info@spotonerealty.com">Email me →</a>
@@ -334,10 +331,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 </main>
 
+
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">The four ways</a><a href="/services/#metodo">How I work</a><a href="/criterio/en/">Notes</a></nav><nav aria-label="Properties"><p class="idx">Properties</p><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav><nav aria-label="Contact"><p class="idx">Contact</p><a href="/contact/">Let’s talk</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">The four ways</a><a href="/services/#metodo">How I work</a><a href="/criterio/en/">Notes</a></nav><nav aria-label="Properties"><p class="idx">Properties</p><a href="/the-colonial-santa-maria/en/">Apartment at The Colonial</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20property%20in%20__%20to%20__%20(sell%20or%20rent%20out)%20and%20I%27d%20like%20you%20to%20market%20it%20(web-footer)." rel="noopener">I have a property to sell or rent out</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav><nav aria-label="Contact"><p class="idx">Contact</p><a href="/contact/">Let’s talk</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · License <span class="nw">PN-1240</span></p>
     <div class="sf-bottom">
@@ -379,6 +377,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","areaServed":[{"@type":"City","name":"Panama City"},{"@type":"Place","name":"Costa del Este"},{"@type":"Place","name":"Costa Sur"},{"@type":"Place","name":"San Francisco"},{"@type":"Place","name":"Punta Pacífica"},{"@type":"Place","name":"Punta Paitilla"},{"@type":"Place","name":"Avenida Balboa"},{"@type":"Place","name":"Bella Vista"},{"@type":"Place","name":"Obarrio"},{"@type":"Place","name":"El Cangrejo"},{"@type":"Place","name":"Coco del Mar"},{"@type":"Place","name":"Santa María"},{"@type":"Country","name":"Panama"}],"sameAs":["https://instagram.com/spotonerealty","https://www.linkedin.com/in/dario-jhangimal-14449751/"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Real estate broker","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","knowsAbout":["Real estate in Panama","Property sales and rentals","Bank-owned properties","Industrial engineering"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Professional license","identifier":"PN-1240","validFrom":"2006","name":"Real Estate Broker","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the first conversation work?","acceptedAnswer":{"@type":"Answer","text":"The first conversation is for understanding what you are evaluating, what you need and by when. It can begin by WhatsApp, email or a brief call. By the end, you know whether moving forward makes sense and what the next step would be."}},{"@type":"Question","name":"How do I work with you as a buyer?","acceptedAnswer":{"@type":"Answer","text":"First, a context conversation to understand what you are looking for and by when. Then I review the options you find, compare them with what else is on offer, coordinate with the broker who has each listing so you can see it, and give you the information you need to decide."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","areaServed":[{"@type":"City","name":"Panama City"},{"@type":"Place","name":"Costa del Este"},{"@type":"Place","name":"Costa Sur"},{"@type":"Place","name":"San Francisco"},{"@type":"Place","name":"Punta Pacífica"},{"@type":"Place","name":"Punta Paitilla"},{"@type":"Place","name":"Avenida Balboa"},{"@type":"Place","name":"Bella Vista"},{"@type":"Place","name":"Obarrio"},{"@type":"Place","name":"El Cangrejo"},{"@type":"Place","name":"Coco del Mar"},{"@type":"Place","name":"Santa María"},{"@type":"Country","name":"Panama"}],"sameAs":["https://instagram.com/spotonerealty","https://www.linkedin.com/in/dario-jhangimal-14449751/"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Real estate broker","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","knowsAbout":["Real estate in Panama","Property sales and rentals","Bank-owned properties","Industrial engineering"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Broker license (Panama)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Professional license","identifier":"PN-1240","validFrom":"2006","name":"Real Estate Broker","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the first conversation work?","acceptedAnswer":{"@type":"Answer","text":"It’s to understand what you’re weighing, what you need and by when. It can start on WhatsApp, by email or with a short call. By the end, you know whether to move forward and what comes next."}},{"@type":"Question","name":"If I’m an owner, do you ask for exclusivity?","acceptedAnswer":{"@type":"Answer","text":"It’s not the first thing I ask for. First I show you what your property is competing with and where its price stands. If exclusivity suits you, we discuss it then. Even with exclusivity, I work with other brokers."}}]}]}</script>
 </body>
 </html>

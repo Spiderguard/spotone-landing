@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-desktop-1440.webp 1440w, /images/hero-main-desktop.webp 2200w" imagesizes="100vw" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <link rel="preload" as="image" imagesrcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" imagesizes="100vw" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="stylesheet" href="/css/spotone.css?v=23">
+<link rel="stylesheet" href="/css/spotone.css?v=25">
 <style>
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
@@ -82,20 +82,17 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .tesis{font-family:'Newsreader',Georgia,serif;font-weight:300;letter-spacing:-.01em;font-size:var(--fs-h1);line-height:var(--lh-h1);margin:0}
 .tesis em{font-style:italic}
 .principio .idx{margin-bottom:var(--gap-idx)}
-.cine{position:relative;display:block;overflow:hidden;background:var(--navy);color:var(--ivory);text-decoration:none}
-.cine picture{display:block;position:relative;aspect-ratio:21/9}
-.cine img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
-.cine::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(5,14,30,.88) 0,rgba(5,14,30,.6) 45%,rgba(5,14,30,0) 78%),linear-gradient(180deg,rgba(5,14,30,0) 40%,rgba(5,14,30,.7) 100%)}
-.cine-pie{position:absolute;left:48px;right:48px;bottom:44px;z-index:1;display:grid;gap:10px;max-width:640px}
-.cine-pie .label{color:var(--ivory)}
-.cine-t{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:var(--fs-h2);line-height:var(--lh-h2)}
-.cine-pie .dato{color:var(--ivory)}
-.cine-pie .out{color:var(--ivory);margin-top:8px}
-.cine:hover .out{color:var(--sky)}
-.cine+.cine{margin-top:24px}
 .dos-col>.sec-head{margin-bottom:var(--gap-body)}
-.dos-col .sec-body>.plain{margin-top:48px}
+/* v1.4 · R17 · Propiedades: grilla de piezas iguales */
+.propiedades .g3{align-items:stretch;row-gap:var(--gap-body)}
+.propiedades .card{color:var(--ink);text-decoration:none}
+.propiedades .card .ph{margin:0 0 var(--s5)}
+.propiedades .card .label{margin:0 0 var(--s2);color:var(--muted)}
+.propiedades .card h3{margin:0 0 var(--s3);color:var(--ink)}
+.propiedades .card .dato{display:block;margin:0;color:var(--muted)}
+.propiedades .card .out{margin-top:auto;padding-top:var(--s4);padding-bottom:4px;align-self:flex-start;color:var(--ink)}
+.propiedades a.card:hover .out,.propiedades a.card:focus-visible .out{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+#compradores .sec-head .plain{margin-top:40px}
 @media (min-width:1100px){
   .dos-col{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:start}
   .dos-col>.sec-head{grid-column:1/5;margin-bottom:0}
@@ -108,10 +105,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .t-warm .retrato>.ph img{transform:scale(1.02)}
 .t-warm .retrato>.c7,.t-warm .retrato>div:last-child{grid-column:7 / span 6}
 @media (max-width:860px){
-  .cine picture{aspect-ratio:4/3}
-  .cine::after{display:none}
-  .cine-pie{position:static;padding:24px;background:var(--navy)}
-  .cine-t{text-wrap:balance}
+  .propiedades .g3{row-gap:var(--s7)}
   .t-warm .retrato>.ph,.t-warm .retrato>.c7,.t-warm .retrato>div:last-child{grid-column:auto}
 }
 
@@ -139,6 +133,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 @media(max-width:860px){.reloc-in{grid-template-columns:1fr}.reloc-head,.pasos{grid-column:auto}.pasos{margin-top:40px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
+<style>
+.hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
+.hero .puertas .out{color:var(--ivory)}.hero .puertas .out:hover{color:var(--sky)}
+#duenos .reloc-head h2 em{font-weight:300}
+.serv h3 a{color:inherit;text-decoration:none;display:inline-block;padding:8px 0;margin:-8px 0}.serv h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
+</style>
 </head>
 <body class="inicio">
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -160,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <p class="mm-group">En esta página</p><nav class="mm-sections" aria-label="En esta página"><a href="#propiedades">Propiedades</a><a href="#faq">Lo que suelo aclarar</a><a href="#contacto">Conversemos</a></nav>
   <p class="mm-group">SpotOne Realty</p>
-  <nav aria-label="Menú"><a href="/" class="here" aria-current="page">Inicio</a><a href="/que-hago/">Qué hago</a><a href="/#propiedades">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/">Criterio</a><a href="/dario/">Dario</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="#contacto">Conversemos</a></nav>
+  <nav aria-label="Menú"><a href="/" class="here" aria-current="page">Inicio</a><a href="/que-hago/">Qué hago</a><a href="/#propiedades">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/">Criterio</a><a href="/dario/">Dario</a><a href="/the-colonial-santa-maria/">Apartamento en The Colonial</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="#contacto">Conversemos</a></nav>
   <div class="mm-lang"><a href="/" class="active" aria-current="true" lang="es">Español</a><span aria-hidden="true">/</span><a href="/index-en.html" class="" lang="en">English</a></div>
   <div class="mm-foot">
     <a href="tel:+50766758127">+507 6675-8127</a>
@@ -170,7 +171,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </div>
 
 <main id="main">
-<!-- 00 · Hero -->
+<!-- 00 · Hero: quién y las dos puertas -->
 <header class="hero">
   <span class="ph"><picture>
     <source media="(max-width:860px)" srcset="/images/hero-main-mobile-780.webp 780w, /images/hero-main-mobile.webp 1080w" sizes="100vw" type="image/webp">
@@ -181,122 +182,117 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap">
     <p class="idx quien"><span>Dario Jhangimal</span> <span class="sep" aria-hidden="true">·</span> <span>Corredor de bienes raíces en Panamá</span> <span class="sep" aria-hidden="true">·</span> <span>Licencia PN-1240</span></p>
     <h1>Selección inmobiliaria<br><em>con criterio</em>.</h1>
-    <p class="lead">Antes de ponerle precio, reviso con qué compite tu propiedad. Si buscas comprar o alquilar, coordino con quien tenga la propiedad, aunque sea otro corredor.</p>
+    <p class="lead">Vendo, alquilo y compro propiedades en Ciudad de Panamá, con el mercado leído antes de decidir.</p>
+    <p class="puertas"><a class="out" href="#duenos">Tengo una propiedad →</a><a class="out" href="#compradores">Busco comprar o alquilar →</a></p>
     <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">Escríbeme por WhatsApp</a></p>
   </div>
 </header>
 
-<!-- 01 · Principio -->
-<section class="sec t-soft principio">
-  <div class="wrap">
-    <p class="idx" id="principio">Principio</p>
-    <p class="tesis">El mercado se lee. <em>No se adivina.</em></p>
-  </div>
-</section>
-
-<!-- 02 · Propiedades -->
+<!-- 01 · Propiedades -->
 <section class="sec t-warm propiedades">
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Propiedades</p>
     <h2>Lo que represento ahora.</h2>
-    <p class="lead">Disponibilidad al día, con el precio y los gastos de cada una.</p>
+    <p class="lead">Disponibilidad al día y precio de cada una. Los gastos, en su página.</p>
   </div>
-  <div class="wrap sec-body">
-    <a class="cine" href="/peatonal68/">
-      <picture>
-        <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
+  <div class="wrap sec-body g3">
+    <a class="card" href="/the-colonial-santa-maria/">
+      <span class="ph ph--32" style="background:#999F9F"><picture>
+        <source srcset="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo-828.webp 828w, /the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.webp 1448w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg" width="1448" height="1086" alt="Balcón de piso alto con vista al hipódromo y la ciudad, en PH The Colonial, Santa María" loading="lazy" decoding="async" style="object-position:50% 60%">
+      </picture></span>
+      <span class="label">En venta · Santa María</span>
+      <h3>Apartamento en PH The Colonial</h3>
+      <span class="dato">Para estrenar: 190&nbsp;m² en piso alto, 3 recámaras con baño y 3 estacionamientos. US$579,800.</span>
+      <span class="out">Ver el apartamento →</span>
+    </a>
+    <a class="card" href="/peatonal68/">
+      <span class="ph ph--32" style="background:#454039"><picture>
+        <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
         <img src="/images/plaza-noche.jpg" width="1600" height="1000" alt="Plaza La Peatonal 68 de noche, con el rótulo encendido y los restaurantes de planta baja en operación" loading="lazy" decoding="async">
-      </picture>
-      <span class="cine-pie">
-        <span class="label">Con exclusividad · San Francisco</span>
-        <span class="cine-t">Plaza La Peatonal 68</span>
-        <span class="dato">Tres locales comerciales en alquiler, de 100 a 102&nbsp;m², desde $1,800 al mes. Un estacionamiento por contrato.</span>
-        <span class="out">Ver disponibilidad →</span>
-      </span>
+      </picture></span>
+      <span class="label">Con exclusividad · San Francisco</span>
+      <h3>Locales en Plaza La Peatonal 68</h3>
+      <span class="dato">Tres locales comerciales en alquiler, de 100 a 102&nbsp;m², desde US$1,800 al mes. Un estacionamiento por contrato.</span>
+      <span class="out">Ver disponibilidad →</span>
     </a>
-    <a class="cine" href="/coronado-las-fincas/">
-      <picture>
-        <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 1152px" type="image/webp">
+    <a class="card" href="/coronado-las-fincas/">
+      <span class="ph ph--32" style="background:#758571"><picture>
+        <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
         <img src="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra.jpg" width="1280" height="964" alt="Casa de teja y piedra con su camino de entrada, en Las Fincas, Coronado" loading="lazy" decoding="async" style="object-position:50% 55%">
-      </picture>
-      <span class="cine-pie">
-        <span class="label">En venta · Las Fincas, Coronado</span>
-        <span class="cine-t">Casi una hectárea, con casa de campo</span>
-        <span class="dato">9,870&nbsp;m² de terreno plano, casa de una planta con 4 recámaras y piscina. US$400,000.</span>
-        <span class="out">Ver la casa →</span>
-      </span>
+      </picture></span>
+      <span class="label">En venta · Las Fincas, Coronado</span>
+      <h3>Casa de campo en casi una hectárea</h3>
+      <span class="dato">9,870&nbsp;m² de terreno plano, casa de una planta con 4 recámaras y piscina. US$400,000.</span>
+      <span class="out">Ver la casa →</span>
     </a>
   </div>
-  <div class="wrap sec-body">
-    <p class="lead">¿Tienes una propiedad para vender o alquilar? Te la represento. <a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20para%20vender%20o%20alquilar." rel="noopener">Escríbeme →</a></p>
-  </div>
 </section>
 
-<!-- 03 · Qué hago -->
-<section class="sec t-soft">
-  <div class="wrap dos-col">
-  <div class="sec-head">
-    <p class="idx" id="que-hago">Qué hago</p>
-    <h2>Cuatro formas de trabajar contigo.</h2>
-    <p class="lead">Para propietarios, compradores, inquilinos e inversionistas.</p>
-  </div>
-  <div class="sec-body">
-    <div class="servs">
-      <div class="serv"><h3>Vender o alquilar tu propiedad</h3><p>Cómo compite tu propiedad antes de fijar el precio de salida.</p></div>
-      <div class="serv"><h3>Comprar o alquilar</h3><p>Con alguien de tu lado de principio a fin, aunque la propiedad la tenga otro corredor.</p></div>
-      <div class="serv"><h3>Saber qué precio tiene respaldo</h3><p>Qué parte del precio tiene respaldo y qué parte es estimación. Es una recomendación comercial, no un avalúo.</p></div>
-      <div class="serv"><h3>Decidir qué hacer</h3><p>Vender, arrendar, comprar o esperar: ordeno la situación primero.</p></div>
-    </div>
-    <p class="plain"><a class="out" href="/que-hago/">Cómo trabajo →</a></p>
-  </div>
-  </div>
-</section>
-
-<!-- 04 · Relocation -->
-<section class="sec reloc">
+<!-- 02 · Si tienes una propiedad (la ventaja: el dato propio) -->
+<section class="sec reloc" id="duenos">
   <div class="band-ph band-ph--sinfoto">
     <div class="wrap reloc-in">
       <div class="reloc-head">
-      <p class="idx" id="relocation">Relocation</p>
-      <h2>Mudarte a Panamá.</h2>
-      <p class="lead">Empiezo por tu trabajo, tus recorridos y tu familia; la zona sale de ahí.</p>
-      <a class="out" href="/relocation/">Ver el proceso →</a>
+      <p class="idx">Si tienes una propiedad</p>
+      <h2>El mercado se lee. <em>No se adivina.</em></h2>
+      <p class="lead">Sé qué compite hoy con tu propiedad y quién está buscando algo así, porque sigo el mercado de Ciudad de Panamá todos los días.</p>
+      <a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20en%20__%20para%20__%20(vender%20o%20alquilar)%20y%20quiero%20que%20me%20la%20muevas%20(web)." rel="noopener" data-ev="wa-duenos">Cuéntame de tu propiedad por WhatsApp →</a>
       </div>
-      <ul class="pasos" aria-label="El proceso de relocation">
-        <li><h3>Comparación de zonas</h3><p>Revisamos las zonas según tus recorridos habituales, los servicios cercanos y el tipo de vivienda que buscas.</p></li>
-        <li><h3>Familia y rutinas</h3><p>Reviso cómo quedan las distancias diarias desde cada zona: colegios, trabajo y los recorridos que harás cada semana.</p></li>
-        <li><h3>Un solo punto de contacto</h3><p>Coordino contigo la búsqueda y las visitas, también cuando participan otros corredores.</p></li>
-        <li><h3>Proceso remoto disponible</h3><p>Podemos comenzar la búsqueda antes de que llegues a Panamá y coordinar las visitas para tu llegada.</p></li>
+      <ul class="pasos" aria-label="Qué hago con tu propiedad">
+        <li><h3>Con qué compite</h3><p>Lo que hoy se ofrece parecido en tu zona y en tu edificio, y a qué precio se pide.</p></li>
+        <li><h3>Un precio con evidencia</h3><p>Un precio de salida que se sostiene con comparables reales, no con opinión.</p></li>
+        <li><h3>A quién se la ofrezco</h3><p>A quienes ya me pidieron algo parecido, y a los corredores que los representan.</p></li>
+        <li><h3>Cómo sale al mercado</h3><p>Fotos, canales y condiciones, acordados por escrito antes de publicar.</p></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- 05 · Dario -->
-<section class="sec t-soft">
+<!-- 03 · Si buscas comprar o alquilar -->
+<section class="sec t-soft" id="compradores">
+  <div class="wrap dos-col">
+  <div class="sec-head">
+    <p class="idx">Si buscas comprar o alquilar</p>
+    <h2>Cualquier propiedad, con alguien de tu lado.</h2>
+    <p class="lead">Coordino con quien tenga la propiedad, aunque sea otro corredor.</p>
+    <p class="plain"><a class="out" href="/que-hago/">Cómo trabajo →</a></p>
+  </div>
+  <div class="sec-body">
+    <div class="servs">
+      <div class="serv"><h3>Ver cualquier propiedad</h3><p>La tenga quien la tenga, te acompaño de la primera visita al cierre.</p></div>
+      <div class="serv"><h3>Saber qué precio tiene respaldo</h3><p>Qué parte del precio tiene respaldo y qué parte es estimación. Es una recomendación comercial, no un avalúo.</p></div>
+      <div class="serv"><h3>Comprar o esperar</h3><p>Si conviene avanzar ahora o esperar, ordeno la situación primero.</p></div>
+      <div class="serv"><h3><a href="/relocation/">Mudarte a Panamá →</a></h3><p>Empiezo por tu trabajo, tus recorridos y tu familia; la zona sale de ahí.</p></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- 04 · Quién soy -->
+<section class="sec t-warm">
   <div class="wrap g12 retrato">
     <span class="ph ph--45 c4"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="992" height="1324" alt="Retrato de Dario Jhangimal, corredor de bienes raíces en Panamá" loading="lazy" decoding="async">
     </picture></span>
     <div class="c7">
-      <p class="idx" id="dario">Dario</p>
+      <p class="idx" id="dario">Quién soy</p>
       <h2>Dario Jhangimal</h2>
       <p class="label">Corredor de bienes raíces · <span class="nw">PN-1240</span></p>
       <p class="lead">Soy ingeniero industrial y ejerzo en Panamá desde 2006. Trabajo la venta, la compra y el alquiler de propiedades, y mi especialidad es Ciudad de Panamá.</p>
-      <p class="lead">Reviso contigo el precio, las condiciones y si la opción responde a lo que necesitas.</p>
       <p class="lead">Me apoyo en otros corredores: así tu propiedad llega a más compradores. Y si la mejor decisión es no avanzar, te lo digo.</p>
       <p class="plain"><a class="out" href="/dario/">Conocer a Dario →</a></p>
     </div>
   </div>
 </section>
 
-<!-- 06 · Criterio -->
-<section class="sec t-warm">
+<!-- 05 · Criterio -->
+<section class="sec t-soft">
   <div class="wrap sec-head">
-    <p class="idx" id="criterio">Criterio</p>
-    <h2>Respuestas para comprar, vender, alquilar o invertir en Panamá.</h2>
-    <p class="lead">Criterio son mis notas sobre precios, contratos, edificios y zonas de Panamá. Cada nota responde una pregunta concreta.</p>
+    <p class="idx" id="criterio">Criterio · mis notas</p>
+    <h2>Notas para decidir en Panamá.</h2>
+    <p class="lead">Notas sobre precios, contratos, edificios y zonas de Panamá. Cada una responde una pregunta concreta.</p>
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
@@ -308,8 +304,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
 </section>
 
-<!-- 07 · Lo que suelo aclarar -->
-<section class="sec t-soft">
+<!-- 06 · Preguntas -->
+<section class="sec t-warm">
   <div class="wrap sec-head">
     <p class="idx">Preguntas</p>
     <h2 id="faq">Lo que suelo aclarar.</h2>
@@ -317,11 +313,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>¿Cómo funciona la primera conversación?</summary><div class="body"><p>Sirve para entender qué estás evaluando, qué necesitas y para cuándo. Puede empezar por WhatsApp, correo o una llamada breve. Al final sabes si tiene sentido avanzar y cuál sería el siguiente paso.</p></div></details>
-      <details class="faq-item"><summary>¿Cómo funciona trabajar conmigo si soy comprador?</summary><div class="body"><p>Primero una conversación de contexto para entender qué buscas y para cuándo. Después reviso las opciones que encuentres, las comparo con lo que hay en oferta, coordino con el corredor que tenga cada propiedad para que puedas verla, y te paso la información necesaria para decidir.</p></div></details>
+      <details class="faq-item"><summary>Si soy dueño, ¿me pides exclusividad?</summary><div class="body"><p>No es lo primero que te pido. Primero te muestro con qué compite tu propiedad y a qué precio se mueve. Si la exclusividad te conviene, la conversamos con esos datos. Aun con exclusividad, trabajo con los demás corredores.</p></div></details>
   </div>
 </section>
 
-<!-- 08 · Conversemos -->
+<!-- 07 · Conversemos -->
 <section class="close">
   <div class="wrap">
     <p class="idx" id="contacto">Conversemos</p>
@@ -338,7 +334,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">WhatsApp +507 6675-8127</a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/the-colonial-santa-maria/">Apartamento en The Colonial</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20en%20__%20para%20__%20(vender%20o%20alquilar)%20y%20quiero%20que%20me%20la%20muevas%20(web-pie)." rel="noopener">Tengo una propiedad para vender o alquilar</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="sf-sign">Dario Jhangimal · Corredor de bienes raíces · <span class="nw">PN-1240</span></p>
     <div class="sf-bottom">
@@ -380,6 +376,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","areaServed":[{"@type":"City","name":"Ciudad de Panamá"},{"@type":"Place","name":"Costa del Este"},{"@type":"Place","name":"Costa Sur"},{"@type":"Place","name":"San Francisco"},{"@type":"Place","name":"Punta Pacífica"},{"@type":"Place","name":"Punta Paitilla"},{"@type":"Place","name":"Avenida Balboa"},{"@type":"Place","name":"Bella Vista"},{"@type":"Place","name":"Obarrio"},{"@type":"Place","name":"El Cangrejo"},{"@type":"Place","name":"Coco del Mar"},{"@type":"Place","name":"Santa María"},{"@type":"Country","name":"Panamá"}],"sameAs":["https://instagram.com/spotonerealty","https://www.linkedin.com/in/dario-jhangimal-14449751/"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Corredor de bienes raíces","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","knowsAbout":["Bienes raíces en Panamá","Venta y alquiler de propiedades","Propiedades reposeídas de bancos","Ingeniería industrial"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","validFrom":"2006","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona la primera conversación?","acceptedAnswer":{"@type":"Answer","text":"Sirve para entender qué estás evaluando, qué necesitas y para cuándo. Puede empezar por WhatsApp, correo o una llamada breve. Al final sabes si tiene sentido avanzar y cuál sería el siguiente paso."}},{"@type":"Question","name":"¿Cómo funciona trabajar conmigo si soy comprador?","acceptedAnswer":{"@type":"Answer","text":"Primero una conversación de contexto para entender qué buscas y para cuándo. Después reviso las opciones que encuentres, las comparo con lo que hay en oferta, coordino con el corredor que tenga cada propiedad para que puedas verla, y te paso la información necesaria para decidir."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://www.spotonerealty.com/#spotone","name":"SpotOne Realty","url":"https://www.spotonerealty.com/","telephone":"+507 6675-8127","email":"info@spotonerealty.com","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","areaServed":[{"@type":"City","name":"Ciudad de Panamá"},{"@type":"Place","name":"Costa del Este"},{"@type":"Place","name":"Costa Sur"},{"@type":"Place","name":"San Francisco"},{"@type":"Place","name":"Punta Pacífica"},{"@type":"Place","name":"Punta Paitilla"},{"@type":"Place","name":"Avenida Balboa"},{"@type":"Place","name":"Bella Vista"},{"@type":"Place","name":"Obarrio"},{"@type":"Place","name":"El Cangrejo"},{"@type":"Place","name":"Coco del Mar"},{"@type":"Place","name":"Santa María"},{"@type":"Country","name":"Panamá"}],"sameAs":["https://instagram.com/spotonerealty","https://www.linkedin.com/in/dario-jhangimal-14449751/"]},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","url":"https://www.spotonerealty.com/dario/","jobTitle":"Corredor de bienes raíces","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","knowsAbout":["Bienes raíces en Panamá","Venta y alquiler de propiedades","Propiedades reposeídas de bancos","Ingeniería industrial"],"image":"https://www.spotonerealty.com/images/dario-neutra.jpg","identifier":{"@type":"PropertyValue","name":"Licencia de corredor (Panamá)","value":"PN-1240"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia profesional","identifier":"PN-1240","validFrom":"2006","name":"Corredor de Bienes Raíces","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona la primera conversación?","acceptedAnswer":{"@type":"Answer","text":"Sirve para entender qué estás evaluando, qué necesitas y para cuándo. Puede empezar por WhatsApp, correo o una llamada breve. Al final sabes si tiene sentido avanzar y cuál sería el siguiente paso."}},{"@type":"Question","name":"Si soy dueño, ¿me pides exclusividad?","acceptedAnswer":{"@type":"Answer","text":"No es lo primero que te pido. Primero te muestro con qué compite tu propiedad y a qué precio se mueve. Si la exclusividad te conviene, la conversamos con esos datos. Aun con exclusividad, trabajo con los demás corredores."}}]}]}</script>
 </body>
 </html>

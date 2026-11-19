@@ -281,7 +281,7 @@ p + p{margin-top:var(--s4)}
 }
 .menu-toggle svg{width:22px;height:22px}
 
-@media(max-width:1000px){
+@media(max-width:1040px){
   .site-nav{gap:var(--s5)}
   .site-nav .lnk,.site-nav .lang{display:none}
   .menu-toggle{display:inline-flex}
@@ -1363,7 +1363,8 @@ p,li,.frow,.card-txt,.sf-disc,.dato,.dlinea{max-width:var(--measure)}
 /* --- §6 · objetivo táctil de 44 px en todo lo accionable --- */
 a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 .filtros button{min-height:44px;display:inline-flex;align-items:center}
-@media(min-width:761px){
+/* R17 · 19-nov-2026: desde 1041 px, para no volver a mostrar los enlaces que el menú ☰ esconde entre 761 y 1040 (la barra desbordaba a 900) */
+@media(min-width:1041px){
   .site-nav .lnk{min-height:44px;display:inline-flex;align-items:center}
 }
 .menu-toggle{min-width:44px;min-height:44px}
@@ -1641,3 +1642,6 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 /* R11 (16-nov-2026): subtitulos de Peatonal con el par del lead (v13: sin pares nuevos, pesos 300/500) y H1 de Contacto */
 .h-sub{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 12px;max-width:none}
 .hero--cierre h1{font-size:var(--fs-h1);line-height:var(--lh-h1);max-width:12em}
+
+/* R17 · pie: el punto entre ES y EN centrado con los enlaces de 44 px */
+.sf-lang{align-items:center}
