@@ -110,6 +110,9 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .uacts{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:auto;padding-top:32px}
 .locate{all:unset;cursor:pointer;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:15px;line-height:24px;color:var(--muted)}
 .locate:hover{color:var(--ink)}
+.uwa{margin:16px 0 0}
+.uwa .btn{width:100%;justify-content:center}
+.lb-wa{position:absolute;left:50%;transform:translateX(-50%);bottom:72px;z-index:2;white-space:nowrap}
 
 /* 03 · la plaza */
 /* ronda 3 · los tres niveles son un dato, no un titular: 24 px del sistema.
@@ -400,6 +403,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <button class="out" data-gal="l4" data-loc="4">Ver el Local 4 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%204%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F" rel="noopener">Escríbeme por el Local 4</a></p>
     </article>
 
     <article class="card ficha u" id="local-22" data-u="22" data-floor="2" data-area="100">
@@ -430,6 +434,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <button class="out" data-gal="l22" data-loc="22">Ver el Local 22 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2022%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F" rel="noopener">Escríbeme por el Local 22</a></p>
     </article>
 
     <article class="card ficha u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
@@ -460,6 +465,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <button class="out" data-gal="l23" data-loc="23">Ver el Local 23 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2023%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F" rel="noopener">Escríbeme por el Local 23</a></p>
     </article>
 
   </div>
@@ -607,6 +613,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   <button class="lb-p" id="lbP" aria-label="Anterior"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6"/></svg></button>
   <img id="lbI" alt="">
   <button class="lb-n" id="lbN" aria-label="Siguiente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4l6 6-6 6"/></svg></button>
+  <a class="btn btn--light lb-wa" id="lbW" href="https://wa.me/50766758127?text=" rel="noopener">Escríbeme por este local</a>
   <p class="lb-cap"><span id="lbC"></span> <em id="lbD" style="font-style:normal"></em></p>
 </div>
 
@@ -676,6 +683,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   document.querySelectorAll('[data-gal]').forEach(function(b){
     b.addEventListener('click',function(){
       cur=GAL[b.dataset.gal]||[];opener=b;
+      document.getElementById('lbW').href='https://wa.me/50766758127?text='+encodeURIComponent('Hola Dario, me interesa el Local '+b.dataset.loc+' de La Peatonal 68. ¿Podemos hablar?');
       ti.textContent='Local '+b.dataset.loc;
       show(0);lb.classList.add('on');document.body.style.overflow='hidden';
       document.getElementById('lbX').focus();
