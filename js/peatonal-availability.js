@@ -7,7 +7,10 @@ window.PEATONAL_AVAILABILITY = {"4": {"id": 4, "floor": 0, "area": 102, "rent": 
 // Fecha en que Dario comunico la actualizacion de disponibilidad. NO es una
 // inspeccion ni una verificacion integral del inventario.
 // Se cambia a mano solo cuando se vuelve a verificar; no la toca ningun build.
-window.PEATONAL_VERIFIED = "2026-10-29";
+// 20-nov-2026, dato de Dario: 4, 22 y 23 disponibles desde ya; el resto alquilado.
+// El Local 4 ya se desocupo; se entrega con lo instalado y el mobiliario es del
+// inquilino anterior, que lo vende aparte.
+window.PEATONAL_VERIFIED = "2026-11-20";
 // 12-nov-2026, dato de Dario: el 22 y el 23 SI se pueden unir para formar un
 // local de 200 m2, y asi se dice en el heroe, en las dos fichas y en la FAQ.
 // La lista sigue vacia porque no hay un canon combinado que publicar; cuando lo

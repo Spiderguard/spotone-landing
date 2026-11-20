@@ -30,7 +30,7 @@ UNITS = {
             "82 m² interiores y 20 m² de terraza de uso exclusivo.",
             "Gas, extracción y aire acondicionado instalados.",
             "Equipado para restaurante; admite bar, venta de alcohol y karaoke.",
-            "Entrega inmediata. Hoy opera un restaurante: mobiliario y equipos no están incluidos y se negocian con el inquilino actual.",
+            "Ya desocupado: entrega inmediata con lo instalado (gas, extracción y aire acondicionado). El mobiliario y los equipos de las fotos son del inquilino anterior, que los vende aparte.",
         ],
         "fotos": [
             ("local-04-salon-hacia-la-terraza.jpg", "El salón hacia la vitrina y la terraza"),

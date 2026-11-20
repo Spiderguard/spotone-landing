@@ -8,3 +8,6 @@ images/hero-main-retouched.png
 .idea/
 .claude/
 *.bak*
+
+# Sistema de diseño local (Hallmark/agentes), no se publica
+DESIGN.md
