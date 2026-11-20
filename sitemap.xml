@@ -318,6 +318,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/criterio/earthquake-house-demand-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/sismo-demanda-casas-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/earthquake-house-demand-panama/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/sismo-demanda-casas-panama/"/>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/edificio-viejo-vale-la-pena/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/edificio-viejo-vale-la-pena/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/buying-in-an-older-building-panama/"/>
@@ -730,7 +738,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/requisitos-prestamo-hipotecario-panama/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/mortgage-requirements-panama/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/requisitos-prestamo-hipotecario-panama/"/>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -752,7 +760,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/vender-apartamento-mas-rapido-panama/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/sell-apartment-faster-panama/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/vender-apartamento-mas-rapido-panama/"/>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -760,6 +768,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/negociacion-compra-apartamento-se-enfria/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/seller-not-responding-to-offer-panama/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/negociacion-compra-apartamento-se-enfria/"/>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/criterio/sismo-demanda-casas-panama/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/sismo-demanda-casas-panama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/earthquake-house-demand-panama/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/sismo-demanda-casas-panama/"/>
     <lastmod>2026-11-20</lastmod>
     <priority>0.8</priority>
   </url>
@@ -896,7 +912,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/vender-apartamento-mas-rapido-panama/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/sell-apartment-faster-panama/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/criterio/vender-apartamento-mas-rapido-panama/"/>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
