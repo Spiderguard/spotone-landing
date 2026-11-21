@@ -1,15 +1,243 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PA">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpotOne Realty</title>
-<meta http-equiv="refresh" content="0; url=/#propiedades">
-<meta name="robots" content="noindex,follow">
-<link rel="canonical" href="https://www.spotonerealty.com/">
-<script>location.replace("/#propiedades");</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propiedades en venta y alquiler en Panamá | SpotOne Realty</title>
+<meta name="description" content="Apartamento en venta en Santa María, casa de campo en Las Fincas, Coronado, y locales comerciales en alquiler en San Francisco. Dario Jhangimal, corredor PN-1240.">
+<link rel="canonical" href="https://www.spotonerealty.com/propiedades/">
+<link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/propiedades/">
+<link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/properties/">
+<link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/propiedades/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_PA">
+<meta property="og:site_name" content="SpotOne Realty">
+<meta property="og:title" content="Propiedades en venta y alquiler en Panamá | SpotOne Realty">
+<meta property="og:description" content="Apartamento en venta en Santa María, casa de campo en Las Fincas, Coronado, y locales comerciales en alquiler en San Francisco. Dario Jhangimal, corredor PN-1240.">
+<meta property="og:url" content="https://www.spotonerealty.com/propiedades/">
+<meta property="og:image" content="https://www.spotonerealty.com/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.spotonerealty.com/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=Hanken+Grotesk:wght@300;500&display=swap">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin fetchpriority="low">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
+<link rel="stylesheet" href="/css/spotone.css?v=25">
+<style>
+@font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
+h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,serif}
+.hero--ivory>.wrap{padding-bottom:0}
+/* N20-36 · índice de propiedades: misma pieza que el inicio (R17 v1.4) más la
+   gramática Coronado: valor en el titular, precio grande y una limitación dicha. */
+.propiedades .g3{align-items:stretch;row-gap:var(--gap-body)}
+.propiedades .card{color:var(--ink);text-decoration:none}
+.propiedades .card .ph{margin:0 0 var(--s5)}
+.propiedades .card .label{display:block;margin:0 0 var(--s2);color:var(--muted)}
+.propiedades .card h3{margin:0 0 var(--s2);color:var(--ink)}
+.propiedades .card .precio{display:block;margin:0 0 var(--s3);font-weight:500;font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--ink);font-variant-numeric:lining-nums}
+.propiedades .card .dato{display:block;margin:0;color:var(--muted)}
+.propiedades .card .limite{display:block;margin:var(--s2) 0 0;color:var(--ink)}
+.propiedades .card .out{margin-top:auto;padding-top:var(--s4);padding-bottom:4px;align-self:flex-start;color:var(--ink)}
+.propiedades a.card:hover .out,.propiedades a.card:focus-visible .out{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.label{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:var(--fs-label);line-height:var(--lh-label);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);max-width:none}
+.perfiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--gutter)}
+.perfiles a{display:block;padding:var(--s4) 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:300}
+.perfiles a::after{content:" →"}
+.perfiles a:hover{color:var(--muted)}
+.empresas{margin-top:var(--gap-body)}
+@media(max-width:860px){
+  .propiedades .g3{row-gap:var(--s7)}
+  .perfiles{grid-template-columns:minmax(0,1fr)}
+  .perfiles a{min-height:44px}
+}
+</style>
+<script defer src="/js/spotone-analytics.js"></script>
 </head>
-<body>
-<p><a href="../index.html#propiedades">Continuar a propiedades.</a></p>
+<body class="propiedades-idx">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="hdr-in">
+    <a class="brand" href="/" aria-label="SpotOne Realty — Inicio"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="lnk" href="/que-hago/">Qué hago</a><a class="lnk" href="/propiedades/">Propiedades</a><a class="lnk" href="/relocation/">Relocation</a><a class="lnk" href="/criterio/">Criterio</a><a class="lnk" href="/dario/">Dario</a>
+      <a class="cta" href="#contacto">Conversemos</a>
+      <div class="lang"><a href="/propiedades/" class="active" aria-current="true" lang="es">ES</a><span aria-hidden="true">/</span><a href="/properties/" class="" lang="en">EN</a></div>
+      <button class="menu-toggle" id="menuOpen" aria-label="Abrir el menú" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+<div class="mm" id="mobileMenu" hidden>
+  <div class="mm-top">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="118 118 276 276" aria-hidden="true" focusable="false"><rect x="124.16" y="124.16" width="263.68" height="263.68" fill="none" stroke="currentColor" stroke-width="10"/><circle cx="306.13" cy="300.83" r="17" fill="currentColor"/></svg><span class="brand-text">SpotOne Realty</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Cerrar el menú">&times;</button>
+  </div>
+  <p class="mm-group">En esta página</p><nav class="mm-sections" aria-label="En esta página"><a href="#venta">Venta</a><a href="#alquiler-comercial">Alquiler comercial</a><a href="#que-buscas">Qué buscas</a><a href="#contacto">Conversemos</a></nav>
+  <p class="mm-group">SpotOne Realty</p>
+  <nav aria-label="Menú"><a href="/">Inicio</a><a href="/que-hago/">Qué hago</a><a href="/propiedades/">Propiedades</a><a href="/relocation/">Relocation</a><a href="/criterio/">Criterio</a><a href="/dario/">Dario</a><a href="#contacto">Conversemos</a></nav>
+  <div class="mm-lang"><a href="/propiedades/" class="active" aria-current="true" lang="es">Español</a><span aria-hidden="true">/</span><a href="/properties/" class="" lang="en">English</a></div>
+  <div class="mm-foot">
+    <a href="tel:+50766758127">+507 6675-8127</a>
+    <a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a>
+    <a href="https://instagram.com/spotonerealty" rel="noopener">@spotonerealty</a>
+  </div>
+</div>
+
+<main id="main">
+<header class="hero hero--ivory">
+  <div class="wrap sec-head">
+    <p class="idx">Propiedades</p>
+    <h1>Lo que represento ahora.</h1>
+  </div>
+</header>
+
+<section class="sec t-warm propiedades" id="venta">
+  <div class="wrap sec-head">
+    <h2>Venta</h2>
+  </div>
+  <div class="wrap sec-body g3">
+    <a class="card" href="/the-colonial-santa-maria/" data-verificado="2026-11-20">
+      <span class="ph ph--32" style="background:#999F9F"><picture>
+        <source srcset="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo-828.webp 828w, /the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.webp 1448w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg" width="1448" height="1086" alt="Balcón de piso alto con vista al hipódromo y la ciudad, en PH The Colonial, Santa María" loading="lazy" decoding="async" style="object-position:50% 60%">
+      </picture></span>
+      <span class="label">En venta · PH The Colonial, Santa María</span>
+      <h3>Piso alto con vista al hipódromo</h3>
+      <span class="precio">US$579,800</span>
+      <span class="dato">Para estrenar: 190&nbsp;m², 3 recámaras con baño y 3 estacionamientos.</span>
+      <span class="limite">Se entrega sin amoblar.</span>
+      <span class="out">Ver el apartamento →</span>
+    </a>
+    <a class="card" href="/coronado-las-fincas/" data-verificado="2026-11-17">
+      <span class="ph ph--32" style="background:#758571"><picture>
+        <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra.jpg" width="1280" height="964" alt="Casa de teja y piedra con su camino de entrada, en Las Fincas, Coronado" loading="lazy" decoding="async" style="object-position:50% 55%">
+      </picture></span>
+      <span class="label">En venta · Las Fincas, Coronado · Interior y playa</span>
+      <h3>Casa de campo en casi una hectárea</h3>
+      <span class="precio">US$400,000</span>
+      <span class="dato">9,870&nbsp;m² de terreno plano, casa de una planta con 4 recámaras y piscina.</span>
+      <span class="limite">No está frente al mar.</span>
+      <span class="out">Ver la casa →</span>
+    </a>
+  </div>
+</section>
+<section class="sec t-soft propiedades" id="alquiler-comercial">
+  <div class="wrap sec-head">
+    <h2>Alquiler comercial</h2>
+  </div>
+  <div class="wrap sec-body g3">
+    <a class="card" href="/peatonal68/" data-verificado="2026-11-20">
+      <span class="ph ph--32" style="background:#454039"><picture>
+        <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/images/plaza-noche.jpg" width="1600" height="1000" alt="Plaza La Peatonal 68 de noche, con el rótulo encendido y los restaurantes de planta baja en operación" loading="lazy" decoding="async">
+      </picture></span>
+      <span class="label">En alquiler · San Francisco</span>
+      <h3>Locales en Plaza La Peatonal 68</h3>
+      <span class="precio">Desde US$1,800 al mes</span>
+      <span class="dato">Tres locales de 100 a 102&nbsp;m²: dos en el segundo piso y uno en planta baja. Un estacionamiento por contrato.</span>
+      <span class="limite">Mantenimiento e ITBMS aparte.</span>
+      <span class="out">Ver disponibilidad →</span>
+    </a>
+  </div>
+</section>
+
+<section class="sec t-warm" id="otra">
+  <div class="wrap sec-head">
+    <p class="idx">Otra propiedad</p>
+    <h2>¿Viste una propiedad en otro lado?</h2>
+    <p class="lead">Mándame el enlace y te digo qué haría.</p>
+  </div>
+  <div class="wrap sec-body">
+    <p class="plain"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20esta%20propiedad%20y%20quiero%20verla%20con%20alguien%20de%20mi%20lado%20%28web-prop-enlace%29%3A%20" rel="noopener">Mándame el enlace</a></p>
+  </div>
+</section>
+
+<section class="sec t-soft" id="que-buscas">
+  <div class="wrap sec-head">
+    <p class="idx">Qué buscas</p>
+    <h2>¿Qué buscas?</h2>
+  </div>
+  <div class="wrap sec-body">
+    <nav class="perfiles" aria-label="¿Qué buscas?"><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20comprar%20en%20la%20ciudad.%20Te%20cuento%20zona%20y%20presupuesto%20%28web-prop-compra%29." rel="noopener">Compro apartamento o casa</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20alquiler.%20Te%20digo%20fecha%20de%20entrada%20y%20presupuesto%20%28web-prop-alquiler%29." rel="noopener">Busco alquiler</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20alquilar%20mi%20propiedad%20%28web-prop-arrendar%29." rel="noopener">Quiero alquilar mi propiedad</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20mi%20propiedad%20%28web-prop-vender%29." rel="noopener">Quiero vender</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20un%20local%20u%20oficina%20para%20mi%20negocio%20%28web-prop-comercial%29." rel="noopener">Local u oficina para mi negocio</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20un%20terreno%20%28web-prop-terreno%29." rel="noopener">Tengo un terreno</a></nav>
+    <p class="plain empresas"><a class="out" href="/que-hago/#comercial">Bancos, promotoras y empresas →</a></p>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="idx" id="contacto">Conversemos</p>
+    <h2>¿Qué decisión tienes entre manos?</h2>
+    <p class="lead">Comprar, vender, alquilar o esperar. Dime cuál es y en qué zona, y reviso el mercado antes de recomendarte nada.</p>
+    <div class="actions">
+      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tus%20propiedades%20y%20quisiera%20hablar%20contigo%20%28web-prop%29." rel="noopener">Conversemos</a>
+      <a class="out" href="mailto:info@spotonerealty.com">Escribir por correo →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="sf">
+  <div class="wrap">
+    <div class="sf-cols g4">
+      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/the-colonial-santa-maria/">Apartamento en The Colonial</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20en%20__%20para%20__%20(vender%20o%20alquilar)%20y%20quiero%20que%20me%20la%20muevas%20(web-pie)." rel="noopener">Tengo una propiedad para vender o alquilar</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina%20y%20quisiera%20hablar%20contigo" rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+    </div>
+    <p class="sf-sign">Dario Jhangimal · Corredor de bienes raíces · PN-1240</p>
+    <div class="sf-bottom">
+      <span>© 2026 SpotOne Realty · Panamá</span>
+      <span class="sf-lang"><a href="/propiedades/" lang="es">ES</a> · <a href="/properties/" lang="en">EN</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Se vuelve a anclar cuando las fuentes estan listas. Al llegar con #ancla
+// desde otra pagina el navegador salta ANTES del intercambio de tipografia, y
+// el titular del modulo 01 pasa de dos renglones con la fuente de respaldo a
+// uno con Newsreader: 60 px menos por encima del destino, que es justo lo que
+// desplazaba el aterrizaje. Sin hash no hace nada.
+(function(){
+  if(!location.hash || !document.fonts || !document.fonts.ready) return;
+  var id = decodeURIComponent(location.hash.slice(1));
+  document.fonts.ready.then(function(){
+    var e = document.getElementById(id);
+    if(!e) return;
+    var m = parseFloat(getComputedStyle(e).scrollMarginTop) || 0;
+    var y = e.getBoundingClientRect().top + window.scrollY - m;
+    if(Math.abs(y - window.scrollY) > 2) window.scrollTo(0, y);
+  });
+})();
+// La barra pasa a marfil al desplazarse; el menú de móvil abre y cierra.
+(function(){
+  var h=document.querySelector('.site-header');
+  function s(){ if(h) h.classList.toggle('scrolled', window.scrollY>24); }
+  s(); addEventListener('scroll', s, {passive:true});
+  var m=document.getElementById('mobileMenu'),
+      o=document.getElementById('menuOpen'),
+      c=document.getElementById('menuClose');
+  function abrir(v){ if(!m) return; m.hidden=!v; if(o) o.setAttribute('aria-expanded', v?'true':'false');
+    document.documentElement.style.overflow = v?'hidden':''; }
+  if(o) o.addEventListener('click', function(){ abrir(true); });
+  if(c) c.addEventListener('click', function(){ abrir(false); });
+  if(m) m.addEventListener('click', function(e){ if(e.target.tagName==='A') abrir(false); });
+  addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
+})();
+</script>
+<script>
+(function(){
+  var hoy=Date.now(), MAX=21*864e5;
+  document.querySelectorAll('[data-verificado]').forEach(function(c){
+    var t=Date.parse(c.getAttribute('data-verificado')+'T00:00:00-05:00');
+    if(!isNaN(t) && hoy-t>MAX){ c.hidden=true; c.style.display='none'; }
+  });
+  document.querySelectorAll('section.propiedades').forEach(function(s){
+    if(!s.querySelector('[data-verificado]:not([hidden])')){ s.hidden=true; s.style.display='none'; }
+  });
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/propiedades/#page", "url": "https://www.spotonerealty.com/propiedades/", "name": "Propiedades en venta y alquiler en Panamá | SpotOne Realty", "description": "Apartamento en venta en Santa María, casa de campo en Las Fincas, Coronado, y locales comerciales en alquiler en San Francisco. Dario Jhangimal, corredor PN-1240.", "inLanguage": "es-PA", "dateModified": "2026-11-20", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/propiedades/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/propiedades/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/propiedades/#lista", "dateModified": "2026-11-20", "numberOfItems": 3, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/", "name": "Piso alto con vista al hipódromo", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/", "name": "Casa de campo en casi una hectárea", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/#listing"}}, {"@type": "ListItem", "position": 3, "url": "https://www.spotonerealty.com/peatonal68/", "name": "Locales en Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/#listing"}}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/propiedades/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.spotonerealty.com/"}, {"@type": "ListItem", "position": 2, "name": "Propiedades", "item": "https://www.spotonerealty.com/propiedades/"}]}]}</script>
 </body>
 </html>
