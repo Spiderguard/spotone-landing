@@ -131,6 +131,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .pasos h3{font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-body);line-height:var(--lh-body);font-weight:500;color:var(--ivory);margin:0 0 4px;letter-spacing:0}
 .pasos p{margin:0;font-size:var(--fs-label);line-height:var(--lh-label);color:var(--on-navy-muted)}
 @media(max-width:860px){.reloc-in{grid-template-columns:1fr}.reloc-head,.pasos{grid-column:auto}.pasos{margin-top:40px}}
+.perfiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--gutter);margin-top:var(--gap-body)}
+.perfiles a{display:block;padding:var(--s4) 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:300}
+.perfiles a::after{content:" →"}
+.perfiles a:hover{color:var(--muted)}
+@media(max-width:860px){.perfiles{grid-template-columns:minmax(0,1fr)}.perfiles a{min-height:44px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 <style>
@@ -184,7 +189,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h1>Selección inmobiliaria<br><em>con criterio</em>.</h1>
     <p class="lead">Sigo el mercado de Ciudad de Panamá todos los días. Antes de que decidas, te digo qué compite y a qué precio se pide.</p>
     <p class="puertas"><a class="out" href="#duenos">Tengo una propiedad →</a><a class="out" href="#compradores">Busco comprar o alquilar →</a></p>
-    <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">Escríbeme por WhatsApp</a></p>
+    <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Te%20cuento%20qu%C3%A9%20busco%20%28web%29." rel="noopener">Escríbeme por WhatsApp</a></p>
   </div>
 </header>
 
@@ -193,7 +198,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Propiedades</p>
     <h2>Lo que represento ahora.</h2>
-    <p class="lead">Disponibilidad al día y precio de cada una. Los gastos, en su página.</p>
+    <p class="lead">Precio y condiciones de cada una. Los gastos, en su página.</p>
     <p class="plain"><a class="out" href="/propiedades/">Ver por categoría →</a></p>
   </div>
   <div class="wrap sec-body g3">
@@ -238,7 +243,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <p class="idx">Si tienes una propiedad</p>
       <h2>El mercado se lee. <em>No se adivina.</em></h2>
       <p class="lead">El mercado se lee. No se adivina. Antes de publicar, reviso con qué compite hoy tu propiedad.</p>
-      <a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20en%20__%20para%20__%20(vender%20o%20alquilar)%20y%20quiero%20que%20me%20la%20muevas%20(web)." rel="noopener" data-ev="wa-duenos">Cuéntame de tu propiedad por WhatsApp →</a>
+      <a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20o%20alquilar%20mi%20propiedad%20%28web%29." rel="noopener" data-ev="wa-duenos">Cuéntame de tu propiedad por WhatsApp →</a>
       </div>
       <ul class="pasos" aria-label="Qué hago con tu propiedad">
         <li><h3>Con qué compite</h3><p>Lo que hoy se ofrece parecido en tu zona y en tu edificio, y a qué precio se pide.</p></li>
@@ -258,6 +263,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>Cualquier propiedad, con alguien de tu lado.</h2>
     <p class="lead">Coordino con quien tenga la propiedad, aunque sea otro corredor.</p>
     <p class="plain"><a class="out" href="/que-hago/">Cómo trabajo →</a></p>
+    <p class="plain"><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20esta%20propiedad%20y%20quiero%20verla%20con%20alguien%20de%20mi%20lado%20%28web-enlace%29%3A%20" rel="noopener">¿Viste una propiedad en otro lado? Mándame el enlace →</a></p>
   </div>
   <div class="sec-body">
     <div class="servs">
@@ -266,6 +272,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <div class="serv"><h3>Comprar o esperar</h3><p>Si conviene avanzar ahora o esperar, ordeno la situación primero.</p></div>
       <div class="serv"><h3><a href="/relocation/">Mudarte a Panamá →</a></h3><p>Empiezo por tu trabajo, tus recorridos y tu familia; la zona sale de ahí.</p></div>
     </div>
+
+    <nav class="perfiles" aria-label="¿Qué buscas?"><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20comprar%20en%20la%20ciudad.%20Te%20cuento%20zona%20y%20presupuesto%20%28web-compra%29." rel="noopener">Compro apartamento o casa</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20alquiler.%20Te%20digo%20fecha%20de%20entrada%20y%20presupuesto%20%28web-alquiler%29." rel="noopener">Busco alquiler</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20alquilar%20mi%20propiedad%20%28web-arrendar%29." rel="noopener">Quiero alquilar mi propiedad</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20mi%20propiedad%20%28web-vender%29." rel="noopener">Quiero vender</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20busco%20un%20local%20u%20oficina%20para%20mi%20negocio%20%28web-comercial%29." rel="noopener">Local u oficina para mi negocio</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20un%20terreno%20%28web-terreno%29." rel="noopener">Tengo un terreno</a></nav>
+    <p class="plain"><a class="out" href="/propiedades/">Ver propiedades por categoría →</a></p>
   </div>
   </div>
 </section>
@@ -325,7 +334,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>¿Vas a comprar, vender o alquilar?</h2>
     <p class="lead">Cuéntame qué necesitas, en qué zona y para cuándo. Con esos tres datos puedo comparar opciones antes de la primera llamada.</p>
     <div class="actions">
-      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">Escríbeme por WhatsApp</a>
+      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Te%20cuento%20qu%C3%A9%20busco%20%28web%29." rel="noopener">Escríbeme por WhatsApp</a>
       <a class="out" href="mailto:info@spotonerealty.com">Escribir por correo →</a>
     </div>
   </div>
@@ -335,7 +344,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/the-colonial-santa-maria/">Apartamento en The Colonial</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20una%20propiedad%20en%20__%20para%20__%20(vender%20o%20alquilar)%20y%20quiero%20que%20me%20la%20muevas%20(web-pie)." rel="noopener">Tengo una propiedad para vender o alquilar</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Quiero%3A%20__%20(comprar%2C%20vender%20o%20alquilar).%20Zona%3A%20__.%20Para%20cu%C3%A1ndo%3A%20__." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+      <nav aria-label="Qué hago"><p class="idx">Qué hago</p><a href="/que-hago/">Las cuatro formas</a><a href="/que-hago/#metodo">Cómo trabajo</a><a href="/criterio/">Criterio</a></nav><nav aria-label="Propiedades"><p class="idx">Propiedades</p><a href="/the-colonial-santa-maria/">Apartamento en The Colonial</a><a href="/peatonal68/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/">Casa en Coronado</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20o%20alquilar%20mi%20propiedad%20%28web-pie%29." rel="noopener">Tengo una propiedad para vender o alquilar</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/">Mudarte a Panamá</a></nav><nav aria-label="Contacto"><p class="idx">Contacto</p><a href="/contacto/">Conversemos</a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Te%20cuento%20qu%C3%A9%20busco%20%28web%29." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="sf-sign">Dario Jhangimal · Corredor de bienes raíces · <span class="nw">PN-1240</span></p>
     <div class="sf-bottom">

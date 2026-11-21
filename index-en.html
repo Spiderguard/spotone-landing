@@ -131,6 +131,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .pasos h3{font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-body);line-height:var(--lh-body);font-weight:500;color:var(--ivory);margin:0 0 4px;letter-spacing:0}
 .pasos p{margin:0;font-size:var(--fs-label);line-height:var(--lh-label);color:var(--on-navy-muted)}
 @media(max-width:860px){.reloc-in{grid-template-columns:1fr}.reloc-head,.pasos{grid-column:auto}.pasos{margin-top:40px}}
+.perfiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--gutter);margin-top:var(--gap-body)}
+.perfiles a{display:block;padding:var(--s4) 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:var(--fs-lead);line-height:var(--lh-lead);font-weight:300}
+.perfiles a::after{content:" →"}
+.perfiles a:hover{color:var(--muted)}
+@media(max-width:860px){.perfiles{grid-template-columns:minmax(0,1fr)}.perfiles a{min-height:44px}}
 </style>
 <style>
 .hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
@@ -184,7 +189,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h1>Real estate,<br><em>with judgment</em>.</h1>
     <p class="lead">I follow the Panama City market every day. Before you decide, I'll tell you what competes and what it's asking.</p>
     <p class="puertas"><a class="out" href="#owners">I have a property →</a><a class="out" href="#buyers">I want to buy or rent →</a></p>
-    <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">Message me on WhatsApp</a></p>
+    <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener">Message me on WhatsApp</a></p>
   </div>
 </header>
 
@@ -193,7 +198,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Properties</p>
     <h2>What I represent now.</h2>
-    <p class="lead">Current availability and price for each. Fees are listed on each property’s page.</p>
+    <p class="lead">Price and terms for each. Monthly costs are on each property’s page.</p>
     <p class="plain"><a class="out" href="/properties/">See by category →</a></p>
   </div>
   <div class="wrap sec-body g3">
@@ -238,7 +243,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <p class="idx">If you own a property</p>
       <h2>Read the market. <em>Don’t guess it.</em></h2>
       <p class="lead">The market is read, not guessed. Before listing, I check what your property competes with today.</p>
-      <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20property%20in%20__%20to%20__%20(sell%20or%20rent%20out)%20and%20I%27d%20like%20you%20to%20market%20it%20(web)." rel="noopener" data-ev="wa-duenos">Tell me about your property on WhatsApp →</a>
+      <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20or%20rent%20out%20my%20property%20%28web%29." rel="noopener" data-ev="wa-duenos">Tell me about your property on WhatsApp →</a>
       </div>
       <ul class="pasos" aria-label="What I do with your property">
         <li><h3>What it competes with</h3><p>Similar listings in your area and your building today, and their asking prices.</p></li>
@@ -258,6 +263,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>Any property, with someone on your side.</h2>
     <p class="lead">I coordinate with whoever has the listing, even another broker.</p>
     <p class="plain"><a class="out" href="/services/">How I work →</a></p>
+    <p class="plain"><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20this%20property%20and%20want%20to%20see%20it%20with%20someone%20on%20my%20side%20%28web-link%29%3A%20" rel="noopener">Saw a property somewhere else? Send me the link →</a></p>
   </div>
   <div class="sec-body">
     <div class="servs">
@@ -266,6 +272,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <div class="serv"><h3>Buy now or wait</h3><p>Whether to move now or wait: first, I lay out where you stand.</p></div>
       <div class="serv"><h3><a href="/relocation/en/">Moving to Panama →</a></h3><p>I start with your work, your commute and your family; the area follows.</p></div>
     </div>
+
+    <nav class="perfiles" aria-label="What are you looking for?"><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20to%20buy%20in%20the%20city.%20I%27ll%20tell%20you%20the%20area%20and%20budget%20%28web-buy%29." rel="noopener">I want to buy an apartment or house</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20for%20a%20rental.%20I%27ll%20tell%20you%20my%20move-in%20date%20and%20budget%20%28web-rent%29." rel="noopener">I'm looking for a rental</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20rent%20out%20my%20property%20%28web-rent-out%29." rel="noopener">I want to rent out my property</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20my%20property%20%28web-sell%29." rel="noopener">I want to sell</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20for%20a%20commercial%20unit%20or%20office%20for%20my%20business%20%28web-commercial%29." rel="noopener">A unit or office for my business</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20plot%20of%20land%20%28web-land%29." rel="noopener">I have a plot of land</a></nav>
+    <p class="plain"><a class="out" href="/properties/">See properties by category →</a></p>
   </div>
   </div>
 </section>
@@ -325,7 +334,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h2>Buying, selling or renting?</h2>
     <p class="lead">Tell me what you need, where and by when. With those three things, I can compare options before our first call.</p>
     <div class="actions">
-      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">Message me on WhatsApp</a>
+      <a class="btn btn--light" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener">Message me on WhatsApp</a>
       <a class="out" href="mailto:info@spotonerealty.com">Email me →</a>
     </div>
   </div>
@@ -336,7 +345,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <footer class="sf">
   <div class="wrap">
     <div class="sf-cols g4">
-      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">The four ways</a><a href="/services/#metodo">How I work</a><a href="/criterio/en/">Notes</a></nav><nav aria-label="Properties"><p class="idx">Properties</p><a href="/the-colonial-santa-maria/en/">Apartment at The Colonial</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20property%20in%20__%20to%20__%20(sell%20or%20rent%20out)%20and%20I%27d%20like%20you%20to%20market%20it%20(web-footer)." rel="noopener">I have a property to sell or rent out</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav><nav aria-label="Contact"><p class="idx">Contact</p><a href="/contact/">Let’s talk</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20I%27d%20like%20to%3A%20__%20(buy%2C%20sell%20or%20rent).%20Area%3A%20__.%20Timeline%3A%20__." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
+      <nav aria-label="What I do"><p class="idx">What I do</p><a href="/services/">The four ways</a><a href="/services/#metodo">How I work</a><a href="/criterio/en/">Notes</a></nav><nav aria-label="Properties"><p class="idx">Properties</p><a href="/the-colonial-santa-maria/en/">Apartment at The Colonial</a><a href="/peatonal68/en/">Plaza La Peatonal 68</a><a href="/coronado-las-fincas/en/">House in Coronado</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20or%20rent%20out%20my%20property%20%28web-footer%29." rel="noopener">I have a property to sell or rent out</a></nav><nav aria-label="Relocation"><p class="idx">Relocation</p><a href="/relocation/en/">Moving to Panama</a></nav><nav aria-label="Contact"><p class="idx">Contact</p><a href="/contact/">Let’s talk</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener">WhatsApp <span class="nw">+507 6675-8127</span></a><a href="mailto:info@spotonerealty.com">info@spotonerealty.com</a><a href="https://instagram.com/spotonerealty" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/dario-jhangimal-14449751/" rel="noopener">LinkedIn</a></nav>
     </div>
     <p class="sf-sign">Dario Jhangimal · Real Estate Broker · License <span class="nw">PN-1240</span></p>
     <div class="sf-bottom">
