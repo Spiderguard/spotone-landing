@@ -123,12 +123,25 @@
     var seen = {};
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (en) {
-        var id = en.target.id;
-        if (en.isIntersecting && !seen[id]) { seen[id] = 1; track("reach_section", { section: id, page_path: location.pathname }); }
+        var id = en.target.id || en.target.getAttribute("data-sec");
+        if (en.isIntersecting && id && !seen[id]) { seen[id] = 1; track("reach_section", { section: id, page_path: location.pathname }); }
       });
     }, { threshold: 0.4 });
     ["disponibilidad", "ubicacion", "contacto"].forEach(function (id) {
       var el = document.getElementById(id); if (el) { io.observe(el); }
     });
+    // 20-nov-2026: medir hasta dónde se lee cada página (decisión de Dario: medir
+    // la home antes de recortarla). Cada <section> de <main> manda un reach_section
+    // una vez, con su orden y un nombre legible (id, o etiqueta/título de la sección).
+    var secs = document.querySelectorAll("main > section, main > header, body > section");
+    for (var i = 0; i < secs.length; i++) {
+      var s = secs[i];
+      if (!s.id) {
+        var h = s.querySelector(".idx, h2, h1");
+        var name = h ? h.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9áéíóúñü-]/g, "").slice(0, 40) : "";
+        s.setAttribute("data-sec", (i + 1) + "-" + (name || "seccion"));
+      }
+      io.observe(s);
+    }
   }
 })();

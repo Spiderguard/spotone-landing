@@ -202,8 +202,7 @@ p + p{margin-top:var(--s4)}
 .site-header{
   position:sticky;top:0;z-index:60;
   height:var(--hdr-h);
-  background:rgba(246,244,239,.94);
-  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  background:#F6F4EF;
   border-bottom:1px solid var(--line);
   display:flex;align-items:center;
   transition:background .35s ease,border-color .35s ease;
@@ -221,8 +220,7 @@ p + p{margin-top:var(--s4)}
   border-bottom-color:transparent;
 }
 .site-header--over.scrolled{
-  background:rgba(246,244,239,.94);
-  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  background:#F6F4EF;
   border-bottom-color:var(--line);
 }
 .brand{display:flex;align-items:center;gap:10px;line-height:1;flex:none}
@@ -1645,3 +1643,11 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 
 /* R17 · pie: el punto entre ES y EN centrado con los enlaces de 44 px */
 .sf-lang{align-items:center}
+
+/* ================= ETIQUETAS EN MINÚSCULA (decisión de Dario, 20-nov-2026) =================
+   Eyebrows, índices, categorías, etiquetas y selector de idioma: sentence case, sin
+   espaciado. Resuelve la inconsistencia (c) del Manual: una sola regla en toda la marca.
+   Va al final y con !important a propósito: gana sobre articulo.css y los <style> de página. */
+.eyebrow,.idx,.idx span,.label,.cat,.card-kicker,.feature-tag,.sf h2,.sf-h,
+.lang,.mm-lang,.sf-lang,.stat small,.crit-back,.crit-tag,.crit-rel-l,.crit-label,
+.cuenta,.qh,th{text-transform:none!important;letter-spacing:0!important}
