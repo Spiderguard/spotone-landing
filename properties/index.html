@@ -227,18 +227,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script>
-(function(){
-  var hoy=Date.now(), MAX=21*864e5;
-  document.querySelectorAll('[data-verificado]').forEach(function(c){
-    var t=Date.parse(c.getAttribute('data-verificado')+'T00:00:00-05:00');
-    if(!isNaN(t) && hoy-t>MAX){ c.hidden=true; c.style.display='none'; }
-  });
-  document.querySelectorAll('section.propiedades').forEach(function(s){
-    if(!s.querySelector('[data-verificado]:not([hidden])')){ s.hidden=true; s.style.display='none'; }
-  });
-})();
-</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/properties/#page", "url": "https://www.spotonerealty.com/properties/", "name": "Properties for sale and rent in Panama | SpotOne Realty", "description": "An apartment for sale in Santa María, a country house in Las Fincas, Coronado, and commercial units for rent in San Francisco. Dario Jhangimal, licensed broker PN-1240.", "inLanguage": "en", "dateModified": "2026-11-20", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/properties/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/properties/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/properties/#lista", "dateModified": "2026-11-20", "numberOfItems": 3, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/en/", "name": "High floor overlooking the racetrack", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/en/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/en/", "name": "Country house on almost 2.5 acres", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/en/#listing"}}, {"@type": "ListItem", "position": 3, "url": "https://www.spotonerealty.com/peatonal68/en/", "name": "Units at Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/en/#listing"}}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/properties/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.spotonerealty.com/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Properties", "item": "https://www.spotonerealty.com/properties/"}]}]}</script>
 </body>
 </html>

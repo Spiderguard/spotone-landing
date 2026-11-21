@@ -227,18 +227,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script>
-(function(){
-  var hoy=Date.now(), MAX=21*864e5;
-  document.querySelectorAll('[data-verificado]').forEach(function(c){
-    var t=Date.parse(c.getAttribute('data-verificado')+'T00:00:00-05:00');
-    if(!isNaN(t) && hoy-t>MAX){ c.hidden=true; c.style.display='none'; }
-  });
-  document.querySelectorAll('section.propiedades').forEach(function(s){
-    if(!s.querySelector('[data-verificado]:not([hidden])')){ s.hidden=true; s.style.display='none'; }
-  });
-})();
-</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/propiedades/#page", "url": "https://www.spotonerealty.com/propiedades/", "name": "Propiedades en venta y alquiler en Panamá | SpotOne Realty", "description": "Apartamento en venta en Santa María, casa de campo en Las Fincas, Coronado, y locales comerciales en alquiler en San Francisco. Dario Jhangimal, corredor PN-1240.", "inLanguage": "es-PA", "dateModified": "2026-11-20", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/propiedades/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/propiedades/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/propiedades/#lista", "dateModified": "2026-11-20", "numberOfItems": 3, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/", "name": "Piso alto con vista al hipódromo", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/", "name": "Casa de campo en casi una hectárea", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/#listing"}}, {"@type": "ListItem", "position": 3, "url": "https://www.spotonerealty.com/peatonal68/", "name": "Locales en Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/#listing"}}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/propiedades/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.spotonerealty.com/"}, {"@type": "ListItem", "position": 2, "name": "Propiedades", "item": "https://www.spotonerealty.com/propiedades/"}]}]}</script>
 </body>
 </html>
