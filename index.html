@@ -144,6 +144,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 #duenos .reloc-head h2 em{font-weight:300}
 .serv h3 a{color:inherit;text-decoration:none;display:inline-block;padding:8px 0;margin:-8px 0}.serv h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
+/* v1.5 · 21-nov · jerarquía en móvil (stress test 390 px): una firma, un titular, un botón */
+.hero .lead{font-weight:400;color:var(--ivory)}
+#duenos .reloc-head .lead{font-size:17px;line-height:27px}
+#duenos .pasos h3{font-family:'Newsreader',Georgia,serif;font-size:23px;line-height:28px;font-weight:400;margin:0 0 6px}
+@media(max-width:860px){
+  .hero::after{background:linear-gradient(0deg,rgba(5,14,30,.80) 0,rgba(5,14,30,.66) 100%)}
+  .hero .wrap{display:flex;flex-direction:column}
+  .hero .idx.quien{font-size:12px;line-height:18px;letter-spacing:.1em;opacity:.78;margin-bottom:18px}
+  .hero .idx.quien span,.hero .idx.quien .sep{display:inline}
+  .hero .idx.quien span:nth-child(3),.hero .idx.quien span:nth-child(4){display:none}
+  .hero h1{order:1}
+  .hero .lead{order:2}
+  .hero .solo-movil{order:3;margin-top:28px}
+  .hero .puertas{order:4;margin-top:20px;gap:12px}
+  .hero .puertas .out{font-size:14px;opacity:.85}
+}
 </style>
 </head>
 <body class="inicio">
@@ -186,8 +202,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </picture></span>
   <div class="wrap">
     <p class="idx quien"><span>Dario Jhangimal</span> <span class="sep" aria-hidden="true">·</span> <span>Corredor de bienes raíces en Panamá</span> <span class="sep" aria-hidden="true">·</span> <span>Licencia PN-1240</span></p>
-    <h1>Selección inmobiliaria<br><em>con criterio</em>.</h1>
-    <p class="lead">Sigo el mercado de Ciudad de Panamá todos los días. Antes de que decidas, te digo qué compite y a qué precio se pide.</p>
+    <h1>El mercado de Ciudad de Panamá,<br><em>leído todos los días</em>.</h1>
+    <p class="lead">Antes de que decidas, te digo qué compite y a qué precio se pide.</p>
     <p class="puertas"><a class="out" href="#duenos">Tengo una propiedad →</a><a class="out" href="#compradores">Busco comprar o alquilar →</a></p>
     <p class="plain solo-movil"><a class="btn btn--light" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Te%20cuento%20qu%C3%A9%20busco%20%28web%29." rel="noopener">Escríbeme por WhatsApp</a></p>
   </div>

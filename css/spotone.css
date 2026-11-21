@@ -743,7 +743,7 @@ a.card:hover{border-color:transparent}
 
 /* --- barra sobre un hero navy pleno: sin degradado (regla 11) --- */
 .site-header--flat{background:none}
-.site-header--flat.scrolled{background:rgba(244,241,234,.96);border-bottom-color:var(--line)}
+.site-header--flat.scrolled{background:#F4F1EA;border-bottom-color:var(--line)}
 .site-header--flat:not(.scrolled) .lnk,
 .site-header--flat:not(.scrolled) .brand,
 .site-header--flat:not(.scrolled) .lang a{color:var(--ivory)}
