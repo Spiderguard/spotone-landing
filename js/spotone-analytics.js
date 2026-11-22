@@ -83,8 +83,11 @@
       // v1.2: qué invitación convierte (héroe, cierre, menú, pie, ficha)
       cta_position: a.closest(".phero,.hero") ? "hero" : a.closest(".close,.pclose") ? "cierre" :
         a.closest("footer,.sf") ? "pie" : a.closest("#mobileMenu,.mm") ? "menu" :
-        a.closest(".site-header") ? "barra" : a.closest(".u,.card") ? "ficha" : "otro"
+        a.closest(".site-header") ? "barra" : a.closest(".lb") ? "galeria" : a.closest(".u,.card") ? "ficha" : "otro"
     };
+    // v1.3 (21-nov): local de origen de la consulta, leído de la etiqueta del texto prellenado (web-p68-l4 → "4")
+    var loc = href.match(/web-p68-l(\d+)/);
+    if (loc) base.local_id = "l" + loc[1];   // mismo formato que view_local (data-gal="l4")
 
     if (/wa\.me|api\.whatsapp\.com|\/\/whatsapp\.com/i.test(href)) {
       base.method = "whatsapp";
