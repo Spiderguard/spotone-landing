@@ -50,6 +50,17 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
 .perfiles a::after{content:" →"}
 .perfiles a:hover{color:var(--muted)}
 .empresas{margin-top:var(--gap-body)}
+.propiedades .card[hidden],section.propiedades[hidden],.filtros-sec[hidden],.filtros-vacio[hidden]{display:none!important}
+.filtros-sec{padding:var(--s6) 0 0}
+/* Filtros como texto subrayado (regla 11): la apariencia la da .filtros del sistema. */
+.pfiltros{display:flex;flex-wrap:wrap;gap:var(--s4) 56px;align-items:flex-start}
+.pfiltros fieldset{border:0;margin:0;padding:0;min-width:0;min-inline-size:0;max-width:100%}
+.pfiltros legend{padding:0;margin:0 0 4px}
+.pfiltros .filtros{margin:0;gap:4px 24px}
+.filtros-n{margin:var(--s4) 0 0;color:var(--muted)}
+.filtros-vacio{padding:var(--s6) 0 0}
+.filtros-vacio p{margin:0 0 var(--s4);max-width:var(--measure)}
+@media(max-width:860px){.pfiltros{flex-direction:column;gap:var(--s3)}.pfiltros fieldset{width:100%}.pfiltros .filtros{gap:0 20px}}
 @media(max-width:860px){
   .propiedades .g3{row-gap:var(--s7)}
   .perfiles{grid-template-columns:minmax(0,1fr)}
@@ -96,12 +107,20 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   </div>
 </header>
 
+<section class="filtros-sec" id="filtros-sec" hidden>
+  <div class="wrap">
+    <div class="pfiltros" id="filtros" role="group" aria-label="Filtrar propiedades"><fieldset><legend class="label">Operación</legend><div class="filtros ops"><button type="button" data-k="op" data-v="" aria-pressed="false">Todo</button><button type="button" data-k="op" data-v="venta" aria-pressed="false">Venta</button><button type="button" data-k="op" data-v="alquiler" aria-pressed="false">Alquiler</button></div></fieldset><fieldset><legend class="label">Tipo</legend><div class="filtros ops"><button type="button" data-k="tipo" data-v="" aria-pressed="false">Todos</button><button type="button" data-k="tipo" data-v="apartamento" aria-pressed="false">Apartamento</button><button type="button" data-k="tipo" data-v="casa" aria-pressed="false">Casa</button><button type="button" data-k="tipo" data-v="edificio" aria-pressed="false">Edificio</button><button type="button" data-k="tipo" data-v="local" aria-pressed="false">Local</button></div></fieldset><fieldset><legend class="label">Zona</legend><div class="filtros ops"><button type="button" data-k="zona" data-v="" aria-pressed="false">Todas</button><button type="button" data-k="zona" data-v="santa-maria" aria-pressed="false">Santa María</button><button type="button" data-k="zona" data-v="coco-del-mar" aria-pressed="false">Coco del Mar</button><button type="button" data-k="zona" data-v="san-francisco" aria-pressed="false">San Francisco</button><button type="button" data-k="zona" data-v="bella-vista" aria-pressed="false">Bella Vista</button><button type="button" data-k="zona" data-v="otras" aria-pressed="false">Otras zonas</button></div></fieldset></div>
+    <p class="filtros-n label" id="filtros-n" aria-live="polite" data-uno="propiedad" data-varios="propiedades"></p>
+    <div class="filtros-vacio" id="filtros-vacio" hidden><p class="lead">Nada con esos filtros aquí. Dime qué buscas y lo cruzo con todo el mercado de la ciudad.</p><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20no%20encontr%C3%A9%20en%20tu%20web%20lo%20que%20busco.%20Te%20cuento%20%28web-prop-filtro%29%3A%20" rel="noopener">Escríbeme qué buscas</a></div>
+  </div>
+</section>
+
 <section class="sec t-warm propiedades" id="venta">
   <div class="wrap sec-head">
     <h2>Venta</h2>
   </div>
   <div class="wrap sec-body g3">
-    <a class="card" href="/the-colonial-santa-maria/" id="colonial" data-verificado="2026-11-20">
+    <a class="card" href="/the-colonial-santa-maria/" id="colonial" data-op="venta" data-tipo="apartamento" data-zona="santa-maria" data-verificado="2026-11-20">
       <span class="ph ph--32" style="background:#999F9F"><picture>
         <source srcset="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo-828.webp 828w, /the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.webp 1448w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
         <img src="/the-colonial-santa-maria/img/01-unidad-balcon-vista-hipodromo.jpg" width="1448" height="1086" alt="Balcón de piso alto con vista al hipódromo y la ciudad, en PH The Colonial, Santa María" loading="lazy" decoding="async" style="object-position:50% 60%">
@@ -113,7 +132,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
       <span class="limite">Se entrega sin amoblar.</span>
       <span class="out">Ver el apartamento →</span>
     </a>
-    <a class="card" href="/coronado-las-fincas/" id="coronado" data-verificado="2026-11-17">
+    <a class="card" href="/coronado-las-fincas/" id="coronado" data-op="venta" data-tipo="casa" data-zona="otras" data-verificado="2026-11-17">
       <span class="ph ph--32" style="background:#758571"><picture>
         <source srcset="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra-828.webp 828w, /coronado-las-fincas/img/01-fachada-con-camino-de-piedra.webp 1280w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
         <img src="/coronado-las-fincas/img/01-fachada-con-camino-de-piedra.jpg" width="1280" height="964" alt="Casa de teja y piedra con su camino de entrada, en Las Fincas, Coronado" loading="lazy" decoding="async" style="object-position:50% 55%">
@@ -125,6 +144,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
       <span class="limite">No está frente al mar.</span>
       <span class="out">Ver la casa →</span>
     </a>
+    <a class="card" href="/edificio-el-carmen/" id="carmen" data-op="venta" data-tipo="edificio" data-zona="bella-vista" data-verificado="2026-11-21">
+      <span class="ph ph--32" style="background:#8A8F8A"><picture>
+        <source srcset="/edificio-el-carmen/img/01-fachada-calle-828.webp 828w, /edificio-el-carmen/img/01-fachada-calle.webp 1448w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/edificio-el-carmen/img/01-fachada-calle.jpg" width="1448" height="966" alt="Fachada del edificio de cuatro niveles sobre la Avenida Ramón Arias, El Carmen" loading="lazy" decoding="async" style="object-position:50% 55%">
+      </picture></span>
+      <span class="label">En venta · El Carmen, Bella Vista</span>
+      <h3>Edificio de uso mixto en El Carmen</h3>
+      <span class="precio">US$1,300,000</span>
+      <span class="dato">914&nbsp;m² de terreno y 1,809&nbsp;m² en 4 niveles: dos locales y seis unidades.</span>
+      <span class="limite">Necesita remodelación integral.</span>
+      <span class="out">Ver el edificio →</span>
+    </a>
   </div>
 </section>
 <section class="sec t-soft propiedades" id="venta-banco">
@@ -132,7 +163,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
     <h2>Venta por banco</h2>
   </div>
   <div class="wrap sec-body g3">
-    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20la%20casa%20en%20venta%20en%20Altos%20de%20Panam%C3%A1%2C%20San%20Miguelito%20%28web-prop-banco%29." rel="noopener" id="b28" data-verificado="2026-11-20">
+    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20la%20casa%20en%20venta%20en%20Altos%20de%20Panam%C3%A1%2C%20San%20Miguelito%20%28web-prop-banco%29." rel="noopener" id="b28" data-op="venta" data-tipo="casa" data-zona="otras" data-verificado="2026-11-20">
       <span class="ph ph--32" style="background:#999F9F"><picture><source srcset="/images/propiedades/casa-altos-de-panama-660.webp 660w, /images/propiedades/casa-altos-de-panama-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp"><img src="/images/propiedades/casa-altos-de-panama.jpg" width="1320" height="880" alt="Fachada de la casa en dos plantas, en Altos de Panamá" loading="lazy" decoding="async"></picture></span>
       <span class="label">Venta por banco · Altos de Panamá, San Miguelito</span>
       <h3>Casa en dos plantas, con doble altura</h3>
@@ -148,7 +179,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
     <h2>Alquiler residencial</h2>
   </div>
   <div class="wrap sec-body g3">
-    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20en%20alquiler%20en%20PH%20St.%20Angelo%2C%20Coco%20del%20Mar%20%28web-prop-alquiler%29." rel="noopener" id="stangelo" data-verificado="2026-11-19">
+    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20en%20alquiler%20en%20PH%20St.%20Angelo%2C%20Coco%20del%20Mar%20%28web-prop-alquiler%29." rel="noopener" id="stangelo" data-op="alquiler" data-tipo="apartamento" data-zona="coco-del-mar" data-verificado="2026-11-19">
       <span class="ph ph--32" style="background:#999F9F"><picture><source srcset="/images/propiedades/st-angelo-coco-del-mar-660.webp 660w, /images/propiedades/st-angelo-coco-del-mar-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp"><img src="/images/propiedades/st-angelo-coco-del-mar.jpg" width="1320" height="880" alt="Sala y comedor con ventanales, en PH St. Angelo, Coco del Mar" loading="lazy" decoding="async"></picture></span>
       <span class="label">En alquiler · PH St. Angelo</span>
       <h3>Apartamento de 3 recámaras en Coco del Mar</h3>
@@ -157,7 +188,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
       <span class="limite">Contrato mínimo de un año.</span>
       <span class="out">Escríbeme por este apartamento →</span>
     </a>
-    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20amoblado%20en%20alquiler%20en%20PH%20Coco%20Place%2C%20Coco%20del%20Mar%20%28web-prop-alquiler%29." rel="noopener" id="cocoplace" data-verificado="2026-11-19">
+    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20amoblado%20en%20alquiler%20en%20PH%20Coco%20Place%2C%20Coco%20del%20Mar%20%28web-prop-alquiler%29." rel="noopener" id="cocoplace" data-op="alquiler" data-tipo="apartamento" data-zona="coco-del-mar" data-verificado="2026-11-19">
       <span class="ph ph--32" style="background:#999F9F"><picture><source srcset="/images/propiedades/coco-place-coco-del-mar-660.webp 660w, /images/propiedades/coco-place-coco-del-mar-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp"><img src="/images/propiedades/coco-place-coco-del-mar.jpg" width="1320" height="880" alt="Apartamento amoblado en PH Coco Place, Coco del Mar" loading="lazy" decoding="async"></picture></span>
       <span class="label">En alquiler · PH Coco Place</span>
       <h3>Apartamento amoblado en Coco del Mar</h3>
@@ -166,7 +197,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
       <span class="limite">Un estacionamiento.</span>
       <span class="out">Escríbeme por este apartamento →</span>
     </a>
-    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20en%20alquiler%20en%20PH%20Vista%20Park%2C%20San%20Francisco%20%28web-prop-alquiler%29." rel="noopener" id="vistapark" data-verificado="2026-11-12">
+    <a class="card" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20apartamento%20en%20alquiler%20en%20PH%20Vista%20Park%2C%20San%20Francisco%20%28web-prop-alquiler%29." rel="noopener" id="vistapark" data-op="alquiler" data-tipo="apartamento" data-zona="san-francisco" data-verificado="2026-11-12">
       <span class="ph ph--32" style="background:#999F9F"><picture><source srcset="/images/propiedades/vista-park-san-francisco-660.webp 660w, /images/propiedades/vista-park-san-francisco-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp"><img src="/images/propiedades/vista-park-san-francisco.jpg" width="1320" height="880" alt="Balcón con vista a la ciudad, en PH Vista Park, San Francisco" loading="lazy" decoding="async"></picture></span>
       <span class="label">En alquiler · PH Vista Park</span>
       <h3>Apartamento con balcón en San Francisco</h3>
@@ -182,7 +213,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
     <h2>Alquiler comercial</h2>
   </div>
   <div class="wrap sec-body g3">
-    <a class="card" href="/peatonal68/" id="peatonal" data-verificado="2026-11-20">
+    <a class="card" href="/peatonal68/" id="peatonal" data-op="alquiler" data-tipo="local" data-zona="san-francisco" data-verificado="2026-11-20">
       <span class="ph ph--32" style="background:#454039"><picture>
         <source srcset="/images/plaza-noche-32-660.webp 660w, /images/plaza-noche-32-1320.webp 1320w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
         <img src="/images/plaza-noche.jpg" width="1600" height="1000" alt="Plaza La Peatonal 68 de noche, con el rótulo encendido y los restaurantes de planta baja en operación" loading="lazy" decoding="async">
@@ -193,6 +224,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
       <span class="dato">Tres locales de 100 a 102&nbsp;m²: dos en el segundo piso y uno en planta baja. Un estacionamiento por contrato.</span>
       <span class="limite">Mantenimiento e ITBMS aparte.</span>
       <span class="out">Ver disponibilidad →</span>
+    </a>
+    <a class="card" href="/casco-viejo-plaza-herrera/" id="casco" data-op="alquiler" data-tipo="edificio" data-zona="otras" data-verificado="2026-11-21">
+      <span class="ph ph--32" style="background:#3A2E25"><picture>
+        <source srcset="/casco-viejo-plaza-herrera/img/01-bar-principal-828.webp 828w, /casco-viejo-plaza-herrera/img/01-bar-principal.webp 1086w" sizes="(max-width:860px) 100vw, 380px" type="image/webp">
+        <img src="/casco-viejo-plaza-herrera/img/01-bar-principal.jpg" width="1086" height="1448" alt="Bar principal con barra de madera, en el edificio frente a Plaza Herrera, Casco Viejo" loading="lazy" decoding="async" style="object-position:50% 45%">
+      </picture></span>
+      <span class="label">En alquiler · Casco Viejo</span>
+      <h3>Edificio frente a Plaza Herrera, con rooftop y bar</h3>
+      <span class="precio">US$8,000 al mes</span>
+      <span class="dato">352&nbsp;m² en tres niveles y rooftop, con barras y mobiliario existentes.</span>
+      <span class="limite">ITBMS aparte. Permisos según tu concepto.</span>
+      <span class="out">Ver el edificio →</span>
     </a>
   </div>
 </section>
@@ -277,6 +320,41 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/propiedades/#page", "url": "https://www.spotonerealty.com/propiedades/", "name": "Propiedades en venta y alquiler en Panamá | SpotOne Realty", "description": "Apartamentos y casas en venta y alquiler en Ciudad de Panamá (Santa María, Coco del Mar, San Francisco), casa de campo en Coronado y locales comerciales. Corredor PN-1240.", "inLanguage": "es-PA", "dateModified": "2026-11-20", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/propiedades/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/propiedades/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/propiedades/#lista", "dateModified": "2026-11-20", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/", "name": "Piso alto con vista al hipódromo", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/", "name": "Casa de campo en casi una hectárea", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/#listing"}}, {"@type": "ListItem", "position": 3, "name": "Casa en dos plantas, con doble altura", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#b28", "url": "https://www.spotonerealty.com/propiedades/#b28", "name": "Casa en dos plantas, con doble altura", "dateModified": "2026-11-20", "offers": {"@type": "Offer", "price": 608800, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 4, "name": "Apartamento de 3 recámaras en Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#stangelo", "url": "https://www.spotonerealty.com/propiedades/#stangelo", "name": "Apartamento de 3 recámaras en Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 2200, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 5, "name": "Apartamento amoblado en Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#cocoplace", "url": "https://www.spotonerealty.com/propiedades/#cocoplace", "name": "Apartamento amoblado en Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 1850, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 6, "name": "Apartamento con balcón en San Francisco", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#vistapark", "url": "https://www.spotonerealty.com/propiedades/#vistapark", "name": "Apartamento con balcón en San Francisco", "dateModified": "2026-11-12", "offers": {"@type": "Offer", "price": 1150, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 7, "url": "https://www.spotonerealty.com/peatonal68/", "name": "Locales en Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/#listing"}}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/propiedades/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.spotonerealty.com/"}, {"@type": "ListItem", "position": 2, "name": "Propiedades", "item": "https://www.spotonerealty.com/propiedades/"}]}]}</script>
+<script>
+// Filtros de /propiedades/: operación, tipo y zona. Sin caja de texto.
+// Sin JS la barra queda oculta y se ve todo. El estado vive en la URL (?op=&tipo=&zona=).
+(function(){
+  var bar=document.getElementById('filtros'); if(!bar) return;
+  var sec=document.getElementById('filtros-sec'); if(sec) sec.hidden=false;
+  var cards=[].slice.call(document.querySelectorAll('.propiedades .card[data-op]'));
+  var n=document.getElementById('filtros-n'), vac=document.getElementById('filtros-vacio');
+  var st={op:'',tipo:'',zona:''};
+  try{var q=new URLSearchParams(location.search);Object.keys(st).forEach(function(k){st[k]=q.get(k)||'';});}catch(e){}
+  function pinta(){
+    var c=0;
+    cards.forEach(function(a){
+      var ok=(!st.op||a.dataset.op===st.op)&&(!st.tipo||a.dataset.tipo===st.tipo)&&(!st.zona||a.dataset.zona===st.zona);
+      a.hidden=!ok; if(ok) c++;
+    });
+    [].forEach.call(document.querySelectorAll('section.propiedades'),function(s){
+      s.hidden=!s.querySelector('.card[data-op]:not([hidden])');
+    });
+    [].forEach.call(bar.querySelectorAll('button'),function(b){
+      b.setAttribute('aria-pressed', st[b.dataset.k]===b.dataset.v?'true':'false');
+    });
+    n.textContent=c+' '+(c===1?n.dataset.uno:n.dataset.varios);
+    vac.hidden=c>0;
+    try{var u=new URLSearchParams();Object.keys(st).forEach(function(k){if(st[k])u.set(k,st[k]);});
+      var s=u.toString();history.replaceState(null,'',location.pathname+(s?'?'+s:'')+location.hash);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    st[b.dataset.k]=b.dataset.v; pinta();
+    if(window.gtag) try{gtag('event','filtro_propiedades',{filtro:b.dataset.k,valor:b.dataset.v||'todo'});}catch(e){}
+  });
+  pinta();
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/propiedades/#page", "url": "https://www.spotonerealty.com/propiedades/", "name": "Propiedades en venta y alquiler en Panamá | SpotOne Realty", "description": "Apartamentos y casas en venta y alquiler en Ciudad de Panamá (Santa María, Coco del Mar, San Francisco), casa de campo en Coronado y locales comerciales. Corredor PN-1240.", "inLanguage": "es-PA", "dateModified": "2026-11-21", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/propiedades/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/propiedades/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/propiedades/#lista", "dateModified": "2026-11-21", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/", "name": "Piso alto con vista al hipódromo", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/", "name": "Casa de campo en casi una hectárea", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/#listing"}}, {"@type": "ListItem", "url": "https://www.spotonerealty.com/edificio-el-carmen/", "name": "Edificio de uso mixto en El Carmen", "item": {"@id": "https://www.spotonerealty.com/edificio-el-carmen/#listing"}, "position": 3}, {"@type": "ListItem", "position": 4, "name": "Casa en dos plantas, con doble altura", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#b28", "url": "https://www.spotonerealty.com/propiedades/#b28", "name": "Casa en dos plantas, con doble altura", "dateModified": "2026-11-20", "offers": {"@type": "Offer", "price": 608800, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 5, "name": "Apartamento de 3 recámaras en Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#stangelo", "url": "https://www.spotonerealty.com/propiedades/#stangelo", "name": "Apartamento de 3 recámaras en Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 2200, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 6, "name": "Apartamento amoblado en Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#cocoplace", "url": "https://www.spotonerealty.com/propiedades/#cocoplace", "name": "Apartamento amoblado en Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 1850, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 7, "name": "Apartamento con balcón en San Francisco", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/propiedades/#vistapark", "url": "https://www.spotonerealty.com/propiedades/#vistapark", "name": "Apartamento con balcón en San Francisco", "dateModified": "2026-11-12", "offers": {"@type": "Offer", "price": 1150, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 8, "url": "https://www.spotonerealty.com/peatonal68/", "name": "Locales en Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/#listing"}}, {"@type": "ListItem", "url": "https://www.spotonerealty.com/casco-viejo-plaza-herrera/", "name": "Edificio frente a Plaza Herrera, con rooftop y bar", "item": {"@id": "https://www.spotonerealty.com/casco-viejo-plaza-herrera/#listing"}, "position": 9}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/propiedades/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.spotonerealty.com/"}, {"@type": "ListItem", "position": 2, "name": "Propiedades", "item": "https://www.spotonerealty.com/propiedades/"}]}]}</script>
 </body>
 </html>
