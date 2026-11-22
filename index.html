@@ -144,6 +144,16 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 #duenos .reloc-head h2 em{font-weight:300}
 .serv h3 a{color:inherit;text-decoration:none;display:inline-block;padding:8px 0;margin:-8px 0}.serv h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
+/* 22-nov · retrato de Dario: más chico, proporción real 3:4, sin recorte, centrado con el texto */
+.t-warm .retrato{align-items:center}
+.t-warm .retrato>.ph{aspect-ratio:3/4;max-width:340px;width:100%;padding:0!important;height:auto}
+@media(min-width:861px){.t-warm .retrato>.ph{grid-column:2 / span 4;justify-self:end}}
+.t-warm .retrato>.ph img{transform:none;position:static;width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:860px){.t-warm .retrato>.ph{grid-column:1 / -1;max-width:240px;justify-self:start;margin-bottom:8px}.t-warm .retrato>div:last-child{grid-column:1 / -1}}
+/* 22-nov · bajo la selección: publico poco porque casi nadie da exclusividad */
+.prop-mas{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.prop-mas p{margin:0;max-width:40em;color:var(--muted)}
+@media(max-width:860px){.prop-mas{margin-top:40px}}
 /* v4 · 22-nov · las dos rutas como botones (Darío: «como el último, donde sí son las opciones»); WhatsApp como enlace */
 .hero .rutas{order:3;display:grid;grid-template-columns:repeat(2,max-content);gap:12px;margin-top:32px}
 .hero .rutas a{min-height:54px}
@@ -271,6 +281,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <span class="out">Ver la casa →</span>
     </a>
   </div>
+  <div class="wrap prop-mas"><p>Aquí publico solo lo que represento y tengo confirmado. Si buscas otra cosa, te la busco en el mercado y verifico que siga disponible antes de mostrártela.</p><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20no%20vi%20en%20tu%20web%20lo%20que%20busco.%20Busco%3A%20__%20%28web-busqueda%29." rel="noopener" data-ev="wa-busqueda">Cuéntame qué buscas →</a></div>
 </section>
 
 <!-- 02 · Si tienes una propiedad (la ventaja: el dato propio) -->
