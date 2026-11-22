@@ -95,6 +95,10 @@
     } else if (/^mailto:/i.test(href)) {
       base.method = "email";
       track("contact_email", base);
+    } else if (a.hasAttribute("data-ev")) {
+      // 22-nov: rutas internas con nombre (p. ej. ruta-duenos, ruta-compradores del héroe)
+      base.cta_id = a.getAttribute("data-ev");
+      track("cta_click", base);
     }
   }, true);
 
