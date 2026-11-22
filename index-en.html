@@ -145,7 +145,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 @media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
 /* v4 · 22-nov · las dos rutas como botones (Darío: «como el último, donde sí son las opciones»); WhatsApp como enlace */
 .hero .rutas{order:3;display:grid;grid-template-columns:repeat(2,max-content);gap:12px;margin-top:32px}
-.hero .rutas a{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:16px 20px;min-width:260px;box-sizing:border-box;border:1px solid rgba(244,241,234,.6);color:var(--ivory);text-decoration:none;font-size:16px;line-height:24px;font-weight:500}
+.hero .rutas a{min-height:54px}
+.hero .rutas a{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 20px;min-width:260px;box-sizing:border-box;border:1px solid rgba(244,241,234,.85);background:rgba(5,14,30,.45);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);color:var(--ivory);text-decoration:none;font-size:16px;line-height:24px;font-weight:500}
 .hero .rutas a:first-child{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
 .hero .rutas a:hover{border-color:var(--ivory);background:rgba(244,241,234,.12)}
 .hero .rutas a:first-child:hover{background:#fff}
@@ -172,8 +173,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .hero .solo-movil{order:3;margin-top:28px}
   .hero .puertas{order:4;margin-top:20px;gap:12px}
   .hero .puertas .out{font-size:14px;opacity:.85}
-  .hero h1{font-size:38px;line-height:42px;letter-spacing:-.01em}
+  .hero h1{font-size:40px;line-height:42px;letter-spacing:-.01em;margin-bottom:24px}
+  .hero .lead{font-size:17px;line-height:24px;margin:0}
+  .hero .rutas{margin-top:28px;gap:12px}
+  .hero .wa-l{margin-top:24px}
+  .hero .wrap{padding-bottom:40px}
+  .hero .idx.quien{margin-bottom:16px}
 }
+@media(max-width:340px){.hero h1{font-size:36px;line-height:38px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -220,7 +227,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h1>The Panama City market,<br><em>read every day</em>.</h1>
     <p class="lead">Before you decide, I'll show you what it's up against and what it's being offered at.</p>
     <div class="rutas"><a href="#owners" data-ev="ruta-duenos">I have a property <span aria-hidden="true">→</span></a><a href="#buyers" data-ev="ruta-compradores">I want to buy or rent <span aria-hidden="true">→</span></a></div>
-    <p class="wa-l"><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener" data-ev="wa-hero">Talk to me directly on WhatsApp</a><small>And if the best move is not to go ahead, I'll tell you.</small></p>
+    <p class="wa-l"><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener" data-ev="wa-hero">Talk to me directly on WhatsApp</a></p>
   </div>
 </header>
 
