@@ -92,3 +92,5 @@
 @media(max-width:860px){
   .crit-article{padding-top:calc(var(--hdr-h-sm) + var(--s7))}
 }
+/* 23-nov · auditoría F1: a 320 px la tabla de la nota de norma estructural se salía de la pantalla. En pantallas chicas la primera columna puede partir línea y, si aún no cabe, la tabla se desplaza sola sin mover la página. */
+@media(max-width:480px){.crit-body .crit-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.crit-body .crit-table td:first-child{white-space:normal}}
