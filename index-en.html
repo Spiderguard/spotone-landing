@@ -136,6 +136,22 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .perfiles a::after{content:" →"}
 .perfiles a:hover{color:var(--muted)}
 @media(max-width:860px){.perfiles{grid-template-columns:minmax(0,1fr)}.perfiles a{min-height:44px}}
+
+/* 23-nov · Compradores en dos columnas: izquierda qué ofrezco + acción; derecha cómo trabajo (3 pasos). Enlaces de navegación al pie, separados. */
+#compradores .pasos-c-tit,#buyers .pasos-c-tit{margin:0 0 8px}
+.pasos-c{list-style:none;margin:0;padding:0}
+.pasos-c li{display:grid;grid-template-columns:48px 1fr;gap:0 16px;padding:24px 0;border-top:1px solid var(--line)}
+.pasos-c li:last-child{border-bottom:1px solid var(--line)}
+.pasos-c .n{font-family:'Hanken Grotesk',Arial,sans-serif;font-size:var(--fs-label);line-height:28px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pasos-c h3{font-family:'Newsreader',Georgia,serif;font-size:23px;line-height:28px;font-weight:400;margin:0 0 6px;color:var(--ink)}
+.pasos-c p{margin:0;color:var(--muted);max-width:52ch}
+.compra-pie{margin-top:56px}
+.compra-pie .compra-nav{margin:0;display:flex;flex-wrap:wrap;gap:8px 32px;padding-top:24px;border-top:1px solid var(--line)}
+@media(min-width:861px){#compradores .dos-col>.sec-head,#buyers .dos-col>.sec-head{grid-column:1/6}#compradores .dos-col>.sec-body,#buyers .dos-col>.sec-body{grid-column:7/13}}
+@media(max-width:860px){.pasos-c-tit{margin-top:48px!important}.compra-pie{margin-top:40px}}
+/* Criterio: «Leer nota» al pie de cada tarjeta; «Ver todas las notas» separado debajo del conjunto */
+.notas .nota-card{display:flex;flex-direction:column}.notas .nota-card .leer{margin-top:auto;padding-top:16px;align-self:flex-start}
+.notas.g3{align-items:stretch}.notas-todas{margin:48px 0 0;padding-top:24px;border-top:1px solid var(--line);max-width:none}
 </style>
 <style>
 .hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
@@ -350,17 +366,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <p class="idx">If you want to buy or rent</p>
     <h2>Any property, with someone on your side.</h2>
     <p class="lead">I help you buy or rent in Panama. I compare options and check price, availability and terms before setting up a viewing.</p>
-    <div class="compra-cta"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20to%20buy%20or%20rent.%20Area%3A%20__%2C%20budget%3A%20__%2C%20timing%3A%20__%20%28web-busco%29." rel="noopener" data-ev="compra-cta">Tell me what you’re looking for</a><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20this%20property%20and%20want%20to%20see%20it%20with%20someone%20on%20my%20side%20%28web-link%29%3A%20" rel="noopener">Saw a property somewhere else? Send me the link →</a></div>
+    <div class="compra-cta"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20to%20buy%20or%20rent.%20Area%3A%20__%2C%20budget%3A%20__%2C%20timing%3A%20__%20%28web-busco%29." rel="noopener" data-ev="compra-cta">Tell me what you’re looking for</a><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20this%20property%20and%20want%20to%20see%20it%20with%20someone%20on%20my%20side%20%28web-link%29%3A%20" rel="noopener" data-ev="compra-enlace">Already found a property? Send me the link →</a></div>
   </div>
   <div class="sec-body">
-    <div class="servs">
-      <div class="serv"><h3>See any property</h3><p>Whoever has the listing, I’m with you from first viewing to closing.</p></div>
-      <div class="serv"><h3>Knowing what price the evidence supports</h3><p>How much of the price is backed up and how much is an estimate: a commercial recommendation, not an appraisal.</p></div>
-      <div class="serv"><h3>Buy now or wait</h3><p>Whether to move now or wait: first, I lay out where you stand.</p></div>
-    </div>
-    <p class="compra-nav"><a class="out" href="/properties/">See properties by category →</a><a class="out" href="/relocation/en/">Moving to Panama →</a></p>
+    <p class="idx pasos-c-tit">How I handle your search</p>
+    <ol class="pasos-c" aria-label="How I handle your search">
+        <li><span class="n">01</span><div><h3>I also look beyond my own listings</h3><p>If another broker represents the property, I coordinate with them.</p></div></li>
+        <li><span class="n">02</span><div><h3>I review the alternatives</h3><p>I compare asking prices, features and terms. It’s a commercial recommendation, not an appraisal.</p></div></li>
+        <li><span class="n">03</span><div><h3>I coordinate the next steps</h3><p>Availability, viewings, negotiation and paperwork, through to closing.</p></div></li>
+    </ol>
   </div>
   </div>
+  <div class="wrap compra-pie"><p class="compra-nav"><a class="out" href="/properties/">See properties by category →</a><a class="out" href="/relocation/en/">Moving to Panama →</a></p></div>
 </section>
 
 <!-- 04 · Who I am -->
@@ -394,7 +411,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <a class="nota-card" data-cat="alquiler" href="/criterio/end-lease-after-earthquake-panama/"><span class="cat">Renting</span><h3>Can a tenant end the lease <em>after an earthquake?</em></h3><p>In a residential lease, arguing over whether the earthquake counts as grounds may mean starting with the wrong question.</p><span class="out leer">Read the note →</span></a>
       <a class="nota-card" data-cat="edificios" href="/criterio/building-code-seismic-panama/"><span class="cat">Buildings &amp; Neighborhoods</span><h3>Which structural code <em>was your building designed under?</em></h3><p>A building from 1998 and one approved under REP‑2021 did not begin with the same framework. The date helps, but it cannot answer the question alone.</p><span class="out leer">Read the note →</span></a>
     </div>
-    <p class="plain"><a class="out" href="/criterio/en/">See all notes →</a></p>
+    <p class="notas-todas"><a class="out" href="/criterio/en/">See all notes →</a></p>
   </div>
 </section>
 
@@ -403,7 +420,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap sec-head">
     <p class="idx">Before you move ahead</p>
     <h2 id="faq">Frequently asked questions.</h2>
-    <p class="lead">Tell me your situation and I’ll tell you what I would do.</p>
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>How does the first conversation work?</summary><div class="body"><p>It’s to understand what you’re weighing, what you need and by when. It can start on WhatsApp, by email or with a short call. By the end, you know whether to move forward and what comes next.</p></div></details>
