@@ -629,10 +629,14 @@ p.full,.frow p,.card p,figcaption p,.foot p,
 /* --- regla 7: las salidas de sección son enlaces de texto con flecha --- */
 .out{
   font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
-  font-size:15px;line-height:24px;font-weight:500;color:var(--ink);
-  text-decoration:none;display:inline-block;border-bottom:0;
+  font-size:16px;line-height:24px;font-weight:500;color:var(--ink);
+  display:inline-block;border-bottom:0;padding:10px 0;margin:-10px 0;
+  /* 22-nov: el enlace de texto tiene que verse tocable (subrayado discreto, no botón) */
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;
+  text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);
 }
-.out:hover{color:var(--muted)}
+.out:hover{color:var(--muted);text-decoration-color:currentColor}
+.out:focus-visible{outline:2px solid var(--sky);outline-offset:4px;border-radius:2px}
 button.out{all:unset;cursor:pointer;font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
   font-size:15px;line-height:24px;font-weight:500;color:var(--ink)}
 button.out:hover{color:var(--muted)}
