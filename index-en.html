@@ -153,6 +153,13 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-mas{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .prop-mas p{margin:0;max-width:40em;color:var(--muted)}
 @media(max-width:860px){.prop-mas{margin-top:40px}}
+/* 23-nov · Compradores: una acción principal, tres ventajas y la navegación al final; acciones de dueños en su sección */
+.compra-cta{margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.compra-cta .btn{min-height:54px;display:inline-flex;align-items:center}
+.compra-nav{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 32px}
+.duenos-opc{margin-top:24px;display:flex;flex-wrap:wrap;gap:4px 28px}
+.duenos-opc .out{margin:-10px 0}
+.nota-card .leer{display:inline-block;margin-top:16px}
 /* 23-nov · CAUSA: spotone.css pone .hero{min-height:0} en móvil y la home no lo reponía. La portada ocupa una pantalla completa
    (el héroe ya sube bajo la barra con margin-top negativo, así que 100svh no suma la barra dos veces). Fijo: no revertir. */
 @media(max-width:860px){
@@ -313,6 +320,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <h2>Read the market. <em>Don’t guess it.</em></h2>
       <p class="lead">Before listing, I check what your property competes with today.</p>
       <a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20or%20rent%20out%20my%20property%20%28web%29." rel="noopener" data-ev="wa-duenos">Tell me about your property on WhatsApp →</a>
+      <p class="duenos-opc" aria-label="For owners"><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20rent%20out%20my%20property%20%28web-rent-out%29." rel="noopener">I want to rent out my property →</a><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20my%20property%20%28web-sell%29." rel="noopener">I want to sell →</a><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20plot%20of%20land%20%28web-land%29." rel="noopener">I have a plot of land →</a></p>
       </div>
       <ul class="pasos" aria-label="What I do with your property">
         <li><h3>What it competes with</h3><p>Similar listings in your area and your building today, and their asking prices.</p></li>
@@ -331,19 +339,15 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <p class="idx">If you want to buy or rent</p>
     <h2>Any property, with someone on your side.</h2>
     <p class="lead">I help you buy or rent in Panama. I compare options and check price, availability and terms before setting up a viewing.</p>
-    <p class="plain"><a class="out" href="/services/">How I work →</a></p>
-    <p class="plain"><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20this%20property%20and%20want%20to%20see%20it%20with%20someone%20on%20my%20side%20%28web-link%29%3A%20" rel="noopener">Saw a property somewhere else? Send me the link →</a></p>
+    <div class="compra-cta"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20to%20buy%20or%20rent.%20Area%3A%20__%2C%20budget%3A%20__%2C%20timing%3A%20__%20%28web-busco%29." rel="noopener" data-ev="compra-cta">Tell me what you’re looking for</a><a class="out" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20this%20property%20and%20want%20to%20see%20it%20with%20someone%20on%20my%20side%20%28web-link%29%3A%20" rel="noopener">Saw a property somewhere else? Send me the link →</a></div>
   </div>
   <div class="sec-body">
     <div class="servs">
       <div class="serv"><h3>See any property</h3><p>Whoever has the listing, I’m with you from first viewing to closing.</p></div>
       <div class="serv"><h3>Knowing what price the evidence supports</h3><p>How much of the price is backed up and how much is an estimate: a commercial recommendation, not an appraisal.</p></div>
       <div class="serv"><h3>Buy now or wait</h3><p>Whether to move now or wait: first, I lay out where you stand.</p></div>
-      <div class="serv"><h3><a href="/relocation/en/">Moving to Panama →</a></h3><p>I start with your work, your commute and your family; the area follows.</p></div>
     </div>
-
-    <nav class="perfiles" aria-label="What are you looking for?"><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20to%20buy%20in%20the%20city.%20I%27ll%20tell%20you%20the%20area%20and%20budget%20%28web-buy%29." rel="noopener">I want to buy an apartment or house</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20for%20a%20rental.%20I%27ll%20tell%20you%20my%20move-in%20date%20and%20budget%20%28web-rent%29." rel="noopener">I'm looking for a rental</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20rent%20out%20my%20property%20%28web-rent-out%29." rel="noopener">I want to rent out my property</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20want%20to%20sell%20my%20property%20%28web-sell%29." rel="noopener">I want to sell</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20looking%20for%20a%20commercial%20unit%20or%20office%20for%20my%20business%20%28web-commercial%29." rel="noopener">A unit or office for my business</a><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20have%20a%20plot%20of%20land%20%28web-land%29." rel="noopener">I have a plot of land</a></nav>
-    <p class="plain"><a class="out" href="/properties/">See properties by category →</a></p>
+    <p class="compra-nav"><a class="out" href="/properties/">See properties by category →</a><a class="out" href="/relocation/en/">Moving to Panama →</a></p>
   </div>
   </div>
 </section>
@@ -369,15 +373,15 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 05 · Notes -->
 <section class="sec t-soft">
   <div class="wrap sec-head">
-    <p class="idx" id="criterio">Criterio · my notes</p>
+    <p class="idx" id="criterio">Criterio</p>
     <h2>Notes for deciding in Panama.</h2>
     <p class="lead">Notes on prices, leases, buildings and neighborhoods. Each answers one specific question.</p>
   </div>
   <div class="wrap sec-body">
     <div class="notas g3">
-      <a class="nota-card" data-cat="mercado" href="/criterio/higher-rates-for-longer-panama/"><span class="cat">Market</span><h3>Higher rates for longer: <em>in Panama, that changes who has the negotiating advantage.</em></h3><p>Expensive credit does not stop every transaction. It changes who can move, who has to wait and where the real negotiating room appears.</p></a>
-      <a class="nota-card" data-cat="alquiler" href="/criterio/end-lease-after-earthquake-panama/"><span class="cat">Renting</span><h3>Can a tenant end the lease <em>after an earthquake?</em></h3><p>In a residential lease, arguing over whether the earthquake counts as grounds may mean starting with the wrong question.</p></a>
-      <a class="nota-card" data-cat="edificios" href="/criterio/building-code-seismic-panama/"><span class="cat">Buildings &amp; Neighborhoods</span><h3>Which structural code <em>was your building designed under?</em></h3><p>A building from 1998 and one approved under REP‑2021 did not begin with the same framework. The date helps, but it cannot answer the question alone.</p></a>
+      <a class="nota-card" data-cat="mercado" href="/criterio/higher-rates-for-longer-panama/"><span class="cat">Market</span><h3>Higher rates for longer: <em>in Panama, that changes who has the negotiating advantage.</em></h3><p>Expensive credit does not stop every transaction. It changes who can move, who has to wait and where the real negotiating room appears.</p><span class="out leer">Read the note →</span></a>
+      <a class="nota-card" data-cat="alquiler" href="/criterio/end-lease-after-earthquake-panama/"><span class="cat">Renting</span><h3>Can a tenant end the lease <em>after an earthquake?</em></h3><p>In a residential lease, arguing over whether the earthquake counts as grounds may mean starting with the wrong question.</p><span class="out leer">Read the note →</span></a>
+      <a class="nota-card" data-cat="edificios" href="/criterio/building-code-seismic-panama/"><span class="cat">Buildings &amp; Neighborhoods</span><h3>Which structural code <em>was your building designed under?</em></h3><p>A building from 1998 and one approved under REP‑2021 did not begin with the same framework. The date helps, but it cannot answer the question alone.</p><span class="out leer">Read the note →</span></a>
     </div>
     <p class="plain"><a class="out" href="/criterio/en/">See all notes →</a></p>
   </div>
@@ -386,8 +390,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <!-- 06 · Questions -->
 <section class="sec t-warm">
   <div class="wrap sec-head">
-    <p class="idx">Questions</p>
-    <h2 id="faq">What I usually clarify.</h2>
+    <p class="idx">Before you move ahead</p>
+    <h2 id="faq">Frequently asked questions.</h2>
     <p class="lead">Tell me your situation and I’ll tell you what I would do.</p>
   </div>
   <div class="wrap sec-body">
