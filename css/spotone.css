@@ -1715,3 +1715,9 @@ p>.btn:only-child{margin-top:8px}
 .mm .mm-lang a.mm-lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid rgba(26,26,24,.30);color:var(--ink);font-size:16px;font-weight:500;letter-spacing:0!important;text-decoration:none;transition:background .18s ease,color .18s ease,border-color .18s ease}
 .mm .mm-lang a.mm-lang-btn:hover,.mm .mm-lang a.mm-lang-btn:focus-visible{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
 .mm .mm-globo{width:18px;height:18px;flex:none}
+/* 23-nov · pie móvil: el número de WhatsApp se partía en «6675-/8127» junto a la palabra WhatsApp. El número nunca se corta; si no cabe, baja completo a la línea siguiente. */
+.sf-cols a{flex-wrap:wrap;column-gap:6px}
+.sf-cols a .nw{white-space:nowrap;flex:none}
+.nw{white-space:nowrap}
+/* 23-nov · que el último dato de la tarjeta nunca toque «Ver detalles» (Coronado, tres líneas). */
+a.card > *:has(+ .card-cta){margin-bottom:16px}
