@@ -153,6 +153,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-mas{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .prop-mas p{margin:0;max-width:40em;color:var(--muted)}
 @media(max-width:860px){.prop-mas{margin-top:40px}}
+/* 23-nov · sin frase de apoyo: titular → acciones a ~32 px */
+.hero h1 + .rutas{margin-top:8px}
+@media(min-width:861px){.hero h1 + .rutas{margin-top:24px}}
 /* v4 · 22-nov · las dos rutas como botones (Darío: «como el último, donde sí son las opciones»); WhatsApp como enlace */
 .hero .rutas{order:3;display:grid;grid-template-columns:repeat(2,max-content);gap:12px;margin-top:32px}
 .hero .rutas a{min-height:54px}
@@ -235,7 +238,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="wrap">
     <p class="idx quien"><span>Dario Jhangimal</span> <span class="sep" aria-hidden="true">·</span> <span>Real estate broker in Panama</span> <span class="sep" aria-hidden="true">·</span> <span>License PN-1240</span></p>
     <h1>The Panama City market,<br><em>read every day</em>.</h1>
-    <p class="lead">Before you decide, I'll show you what it's up against and what it's being offered at.</p>
     <div class="rutas"><a href="#owners" data-ev="ruta-duenos">I have a property <span aria-hidden="true">→</span></a><a href="#buyers" data-ev="ruta-compradores">I want to buy or rent <span aria-hidden="true">→</span></a></div>
     <p class="wa-l"><a href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20found%20your%20website.%20Here%27s%20what%20I%27m%20looking%20for%20%28web%29." rel="noopener" data-ev="wa-hero">Talk to me directly on WhatsApp</a></p>
   </div>
@@ -339,7 +341,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       <p class="idx" id="dario">Who I am</p>
       <h2>Dario Jhangimal</h2>
       <p class="label">Real estate broker · License <span class="nw">PN-1240</span></p>
-      <p class="lead">I’m an industrial engineer, and since 2006 I’ve worked on buying, selling and renting property in Panama. I compare options, review prices and terms, and coordinate the next steps of every deal.</p>
+      <p class="lead">Since 2006 I’ve worked on buying, selling and renting property in Panama. I compare options, review prices and terms, and coordinate the next steps of every deal.</p>
       <p class="lead">When something important is missing, I’ll tell you before I recommend anything.</p>
       <p class="plain"><a class="out" href="/dario/en/">About Dario →</a></p>
     </div>
