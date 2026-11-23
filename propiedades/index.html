@@ -107,6 +107,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   .pfiltros .f-op .filtros button{flex:1 1 0;padding:0 8px}
   .pfiltros details.mas>summary{position:static;margin-top:12px;width:100%;justify-content:space-between;box-sizing:border-box}
 }
+/* 23-nov · investigación de filtros (Baymard): conteo por opción y filtros activos visibles fuera del panel */
+.filtros button .cnt{margin-left:6px;font-weight:400;opacity:.6;font-variant-numeric:tabular-nums}
+.filtros button[aria-pressed="true"] .cnt{opacity:.75}
+.filtros-n .activos{color:var(--ink)}
+.filtros-n .quitar{all:unset;cursor:pointer;margin-left:12px;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.filtros-n .quitar:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -390,6 +396,20 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
   }
   var _p=pinta; pinta=function(){_p(); ajusta();};
   if(st.tipo||st.zona){var d=bar.querySelector('details.mas'); if(d) d.open=true;}
+  // 23-nov · conteo de resultados en cada opción y resumen de filtros activos con «Quitar filtros»
+  function etiqueta(b){ if(!b.dataset.t) b.dataset.t=b.textContent.trim(); return b.dataset.t; }
+  function conteos(){
+    [].forEach.call(bar.querySelectorAll('button[data-k]:not(.limpiar)'),function(b){
+      var t=etiqueta(b), k=b.dataset.k, v=b.dataset.v;
+      var c=cards.filter(function(a){return (k==='op'||!st.op||a.dataset.op===st.op)&&(k==='tipo'||!st.tipo||a.dataset.tipo===st.tipo)&&(k==='zona'||!st.zona||a.dataset.zona===st.zona)&&(!v||a.dataset[k]===v);}).length;
+      b.innerHTML=''; b.appendChild(document.createTextNode(t)); var sp=document.createElement('span'); sp.className='cnt'; sp.textContent=c; b.appendChild(sp);
+    });
+    var act=[]; ['op','tipo','zona'].forEach(function(k){ if(st[k]){ var b=bar.querySelector('button[data-k="'+k+'"][data-v="'+st[k]+'"]'); if(b) act.push(etiqueta(b)); } });
+    if(act.length){ var e=document.createElement('span'); e.className='activos'; e.textContent=' · '+act.join(' · '); n.appendChild(e);
+      var q=document.createElement('button'); q.type='button'; q.className='quitar'; q.textContent='Quitar filtros';
+      q.addEventListener('click',function(){st.op='';st.tipo='';st.zona='';pinta();}); n.appendChild(q); }
+  }
+  var _p2=pinta; pinta=function(){_p2(); conteos();};
   bar.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
     if(b.dataset.k==='reset'){st.tipo='';st.zona='';} else st[b.dataset.k]=b.dataset.v; pinta();
