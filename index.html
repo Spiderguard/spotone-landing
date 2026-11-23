@@ -161,6 +161,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .compra-enlace .ce-btn .wa-ico{width:18px;height:18px;flex:none}
 .compra-enlace{position:relative}.compra-enlace::before{content:"";position:absolute;top:0;left:var(--shell-pad,24px);right:var(--shell-pad,24px);border-top:1px solid var(--line)}
 @media(max-width:860px){.compra-enlace{margin-top:40px}.compra-enlace .ce-btn{width:100%}}
+.prop-acc{margin:32px 0 0}.prop-acc .btn{min-height:46px;display:inline-flex;align-items:center;gap:8px;padding:0 24px;border:1px solid rgba(26,26,24,.30);color:var(--ink);text-decoration:none}.prop-acc .btn:hover,.prop-acc .btn:focus-visible{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+.propiedades .card .precio{display:block;margin:0 0 12px;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--ink);font-variant-numeric:lining-nums}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 <style>
@@ -254,6 +256,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .hero .idx.quien{margin-bottom:16px}
 }
 @media(max-width:340px){.hero h1{font-size:36px;line-height:38px}}
+.propiedades .card .precio{display:block;margin:0 0 12px;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--ink);font-variant-numeric:lining-nums}
 </style>
 </head>
 <body class="inicio">
@@ -308,9 +311,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <section class="sec t-warm propiedades">
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Propiedades</p>
-    <h2>Lo que represento ahora.</h2>
-    <p class="lead">Precio y condiciones de cada una. Los gastos, en su página.</p>
-    <p class="plain"><a class="out" href="/propiedades/">Ver por categoría →</a></p>
+    <h2>Propiedades en venta y alquiler.</h2>
+    <p class="lead">Una selección de propiedades residenciales y comerciales que represento en Panamá. Si buscas algo que no aparece aquí, también puedo revisar otras opciones.</p>
+    <p class="prop-acc"><a class="btn btn--ghost" href="/propiedades/" data-ev="home-explorar">Explorar propiedades <span aria-hidden="true">→</span></a></p>
   </div>
   <div class="wrap sec-body g3">
     <a class="card" href="/the-colonial-santa-maria/">
@@ -320,6 +323,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">En venta · Santa María</span>
       <h3>PH The Colonial | Para estrenar, piso alto + vista abierta</h3>
+      <span class="precio">US$579,800</span>
       <span class="dato">190&nbsp;m² · 3&nbsp;recámaras · 3.5&nbsp;baños · 3&nbsp;estacionamientos · piso alto</span>
       <span class="card-cta">Ver detalles <span aria-hidden="true">→</span></span>
     </a>
@@ -330,7 +334,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">Con exclusividad · San Francisco</span>
       <h3>Locales en Plaza La Peatonal 68</h3>
-      <span class="dato">Tres locales comerciales en alquiler, de 100&nbsp;a 102&nbsp;m², desde US$1,800&nbsp;al mes. Un estacionamiento por contrato.</span>
+      <span class="precio">Desde US$1,800 al mes</span>
+      <span class="dato">3 locales comerciales de 100&nbsp;a 102&nbsp;m² · 1&nbsp;estacionamiento por contrato</span>
       <span class="card-cta">Ver detalles <span aria-hidden="true">→</span></span>
     </a>
     <a class="card" href="/coronado-las-fincas/">
@@ -340,6 +345,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">En venta · Las Fincas, Coronado</span>
       <h3>Casi una hectárea en Las Fincas, Coronado, con casa y piscina</h3>
+      <span class="precio">US$400,000</span>
       <span class="dato">460&nbsp;m² de construcción en terreno de 9,870&nbsp;m² · 4&nbsp;recámaras · 4&nbsp;baños · 2&nbsp;estacionamientos · piscina</span>
       <span class="card-cta">Ver detalles <span aria-hidden="true">→</span></span>
     </a>

@@ -161,6 +161,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .compra-enlace .ce-btn .wa-ico{width:18px;height:18px;flex:none}
 .compra-enlace{position:relative}.compra-enlace::before{content:"";position:absolute;top:0;left:var(--shell-pad,24px);right:var(--shell-pad,24px);border-top:1px solid var(--line)}
 @media(max-width:860px){.compra-enlace{margin-top:40px}.compra-enlace .ce-btn{width:100%}}
+.prop-acc{margin:32px 0 0}.prop-acc .btn{min-height:46px;display:inline-flex;align-items:center;gap:8px;padding:0 24px;border:1px solid rgba(26,26,24,.30);color:var(--ink);text-decoration:none}.prop-acc .btn:hover,.prop-acc .btn:focus-visible{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+.propiedades .card .precio{display:block;margin:0 0 12px;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--ink);font-variant-numeric:lining-nums}
 </style>
 <style>
 .hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
@@ -253,6 +255,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .hero .idx.quien{margin-bottom:16px}
 }
 @media(max-width:340px){.hero h1{font-size:36px;line-height:38px}}
+.propiedades .card .precio{display:block;margin:0 0 12px;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:var(--fs-h3);line-height:var(--lh-h3);color:var(--ink);font-variant-numeric:lining-nums}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -308,9 +311,9 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <section class="sec t-warm propiedades">
   <div class="wrap sec-head">
     <p class="idx" id="propiedades">Properties</p>
-    <h2>What I represent now.</h2>
-    <p class="lead">Price and terms for each. Monthly costs are on each property’s page.</p>
-    <p class="plain"><a class="out" href="/properties/">See by category →</a></p>
+    <h2>Properties for sale and rent.</h2>
+    <p class="lead">A selection of residential and commercial properties I represent in Panama. If you’re looking for something that isn’t here, I can also look at other options.</p>
+    <p class="prop-acc"><a class="btn btn--ghost" href="/properties/" data-ev="home-explorar">Explore properties <span aria-hidden="true">→</span></a></p>
   </div>
   <div class="wrap sec-body g3">
     <a class="card" href="/the-colonial-santa-maria/en/">
@@ -320,6 +323,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">For sale · Santa María</span>
       <h3>PH The Colonial | Brand new, high floor + open view</h3>
+      <span class="precio">US$579,800</span>
       <span class="dato">190&nbsp;m² · 3&nbsp;bedrooms · 3.5&nbsp;bathrooms · 3&nbsp;parking spaces · high floor</span>
       <span class="card-cta">See details <span aria-hidden="true">→</span></span>
     </a>
@@ -330,7 +334,8 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">Exclusive · San Francisco</span>
       <h3>Units at Plaza La Peatonal 68</h3>
-      <span class="dato">Three commercial units for rent, 100&nbsp;to 102&nbsp;m², from US$1,800&nbsp;a month. One parking space per lease.</span>
+      <span class="precio">From US$1,800 a month</span>
+      <span class="dato">3 commercial units of 100&nbsp;to 102&nbsp;m² · 1&nbsp;parking space per lease</span>
       <span class="card-cta">See details <span aria-hidden="true">→</span></span>
     </a>
     <a class="card" href="/coronado-las-fincas/en/">
@@ -340,6 +345,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
       </picture></span>
       <span class="label">For sale · Las Fincas, Coronado</span>
       <h3>Almost one hectare in Las Fincas, Coronado, with house and pool</h3>
+      <span class="precio">US$400,000</span>
       <span class="dato">460&nbsp;m² built on a 9,870&nbsp;m² lot · 4&nbsp;bedrooms · 4&nbsp;bathrooms · 2&nbsp;parking spaces · pool</span>
       <span class="card-cta">See details <span aria-hidden="true">→</span></span>
     </a>
