@@ -1701,3 +1701,12 @@ p>.btn:only-child{margin-top:8px}
 .mm .mm-wa{width:100%;justify-content:center;color:var(--ivory)}
 .mm .mm-wa .wa-ico{width:18px;height:18px;flex:none}
 .mm .mm-tel{align-self:center;min-height:44px;display:inline-flex;align-items:center;color:var(--muted);font-size:var(--fs-note)}
+/* 23-nov (2) · el idioma sube: quien no lee español lo encuentra antes que todo. Filas algo más compactas para llegar al contacto con menos desplazamiento. */
+.mm .mm-top{order:0}
+.mm .mm-lang{order:1;justify-content:flex-end;gap:4px;margin-top:4px;padding:0;border-bottom:0;font-size:14px;letter-spacing:.04em!important}
+.mm .mm-lang a{min-width:44px;justify-content:center}
+.mm .mm-lang-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mm nav{order:2;margin-top:var(--s3)}
+.mm .mm-foot{order:3}
+@media(max-width:760px){.mm nav a{padding:10px 0}}
+.mm .mm-lang a:last-child{justify-content:flex-end}
