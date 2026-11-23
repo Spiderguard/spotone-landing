@@ -1666,3 +1666,14 @@ body.casa .hero .stat small{font-size:14px;line-height:22px;margin-top:6px;color
 .filtros button[aria-pressed="true"]{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
 .filtros button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 .filtros button::after{content:none}
+
+/* 23-nov · Acción de tarjetas de propiedad (un solo componente, dos variantes):
+   ficha → «Ver detalles →»; WhatsApp → «Consultar por WhatsApp» con ícono. Botón secundario rectangular,
+   a todo el ancho de la tarjeta, alineado abajo para que la grilla quede pareja. La tarjeta entera sigue siendo el enlace. */
+a.card{display:flex;flex-direction:column}
+a.card .card-cta{margin-top:auto;align-self:stretch;display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;box-sizing:border-box;
+  padding:0 16px;border:1px solid rgba(26,26,24,.30);font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:500;color:var(--ink);background:transparent;transition:background .2s,color .2s,border-color .2s}
+a.card .dato,a.card .limite{margin-bottom:20px}
+a.card:hover .card-cta,a.card:focus-visible .card-cta{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+a.card .card-cta .wa-ico{width:18px;height:18px;flex:none}
+a.card:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
