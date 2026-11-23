@@ -1721,3 +1721,6 @@ p>.btn:only-child{margin-top:8px}
 .nw{white-space:nowrap}
 /* 23-nov · que el último dato de la tarjeta nunca toque «Ver detalles» (Coronado, tres líneas). */
 a.card > *:has(+ .card-cta){margin-bottom:16px}
+/* 23-nov · Criterio: la barra de color por categoría (navy = Decisiones, gris = Mercado) no se explicaba en ninguna parte. Fuera: todas las tarjetas con el mismo separador neutro. Foco visible en toda la tarjeta. */
+.nota-card::before{display:none}
+.nota-card:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
