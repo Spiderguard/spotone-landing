@@ -60,6 +60,10 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .feat .cat{margin:0 0 8px}
 .feat .date{margin:0 0 var(--gap-lead)}
 @media(max-width:860px){.feat{grid-template-columns:minmax(0,1fr);row-gap:24px}}
+/* 23-nov · menos vacío entre la introducción y «Lectura destacada» (~50 %), y el rótulo pegado a la nota */
+header.hero--ivory + .sec{padding-top:40px}
+header.hero--ivory + .sec .sec-head{margin-bottom:24px}
+@media(max-width:860px){header.hero--ivory + .sec{padding-top:24px}header.hero--ivory + .sec .sec-head{margin-bottom:16px}}
 </style>
 <script type="application/ld+json">
 {
