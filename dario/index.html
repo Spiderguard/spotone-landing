@@ -92,6 +92,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .dato a::after{content:"";position:absolute;left:0;right:0;top:50%;
     height:44px;transform:translateY(-50%)}
 }
+/* 23-nov · /dario/: un solo CTA bajo la foto, texto en bloques breves, zonas como navegación secundaria */
+.retrato>.foto-col{grid-column:1 / span 5;align-self:start}
+.retrato>.foto-col .ph{display:block;aspect-ratio:4/5;overflow:hidden}
+.retrato>.foto-col .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.foto-cta{margin:20px 0 0}
+.foto-cta .btn{min-height:54px;display:inline-flex;align-items:center}
+.dario-nav{margin-top:32px}
+@media(max-width:860px){.retrato>.foto-col{grid-column:1 / -1}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -130,23 +138,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <p class="idx">Dario</p>
     <h1>Dario Jhangimal</h1>
     <p class="label">Corredor de bienes raíces · PN-1240</p>
-    <p class="plain solo-movil"><a class="btn btn--primary" href="#contacto">Conversemos</a></p>
   </div>
   <div class="wrap g12 retrato">
-    <span class="ph ph--45 c4"><picture>
+    <div class="foto-col"><span class="ph"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="992" height="1324" alt="Retrato de Dario Jhangimal, corredor de bienes raíces en Panamá" fetchpriority="high" decoding="async">
     </picture></span>
+      <p class="foto-cta"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20vi%20tu%20p%C3%A1gina.%20Te%20cuento%20qu%C3%A9%20tengo%20o%20qu%C3%A9%20busco%20%28web-dario%29." rel="noopener" data-ev="wa-dario">Escríbeme por WhatsApp</a></p></div>
     <div class="c7 reading">
-      <p>Soy ingeniero industrial y corredor de bienes raíces. Ejerzo desde 2006.</p>
-      <p>Trabajo la venta, la compra y el alquiler de propiedades en Panamá.</p>
-      <p>Mi especialidad es Ciudad de Panamá: Costa del Este, Costa Sur, San Francisco, Punta Pacífica y otras zonas de la ciudad. Ahí sigo qué se ofrece, a qué precio se pide y desde cuándo.</p>
-      <p><a class="out" href="/zonas/">Ver las zonas →</a></p>
-      <p>Fuera de esas zonas, y en locales, terrenos, fincas, playa, preventa o propiedades reposeídas de bancos, estudio cada caso con el mismo método.</p>
-      <p>Me apoyo en otros corredores: así tu propiedad llega a más compradores. Y si la que buscas la tiene otro corredor, coordino con él para que la veas.</p>
-      <p>Tu contacto soy yo, de principio a fin. Y si la mejor decisión es no avanzar, te lo digo.</p>
-      <p>Fuera del trabajo entreno jiu-jitsu brasileño y soy amante de la música.</p>
-      <p>Escríbeme por WhatsApp: qué tienes o qué buscas, en qué zona y para cuándo.</p>
+      <p>Soy ingeniero industrial de formación y ejerzo como corredor de bienes raíces en Panamá desde 2006.</p>
+      <p>He ido construyendo SpotOne Realty con una forma de trabajar basada en el trato directo, la comparación de alternativas y la revisión de precios y condiciones antes de recomendar una operación.</p>
+      <p>Trabajo en la compra, venta y alquiler de propiedades en Panamá, tanto residenciales como comerciales. También coordino con otros corredores cuando una propiedad que busca mi cliente no está en mi cartera.</p>
+      <p class="dario-nav"><a class="out" href="/zonas/">Ver las zonas →</a></p>
     </div>
   </div>
 </header>
@@ -158,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>¿Tienes licencia?</summary><div class="body"><p>Sí. Soy corredor de bienes raíces con licencia PN-1240, otorgada por la Junta Técnica de Bienes Raíces de Panamá.</p></div></details>
-      <details class="faq-item"><summary>¿Eres corredor o promotor?</summary><div class="body"><p>Trabajo en alianza con otros corredores, promotoras y administradoras. Si tienes un cliente para algo que llevo, o una propiedad que le sirva a un cliente mío, escríbeme. Tu cliente sigue siendo tuyo y la comisión la dejamos acordada por escrito antes de avanzar.</p></div></details>
+      <details class="faq-item"><summary>¿Trabajas con otros corredores, promotoras y administradoras?</summary><div class="body"><p>Sí. Si tienes un cliente interesado en una propiedad que represento, o una propiedad que pueda servirle a uno de mis clientes, conversemos. Tu cliente sigue siendo tuyo y la comisión la acordamos por escrito.</p></div></details>
   </div>
 </section>
 
@@ -220,6 +223,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","url":"https://www.spotonerealty.com/dario/","inLanguage":"es-PA","mainEntity":{"@id":"https://www.spotonerealty.com/#dario"}},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","jobTitle":"Corredor de bienes raíces","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","knowsAbout":["Bienes raíces en Panamá","Venta y alquiler de propiedades","Propiedades reposeídas de bancos","Ingeniería industrial"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia de corredor de bienes raíces","identifier":"PN-1240","validFrom":"2006","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"url":"https://www.spotonerealty.com/dario/","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Tienes licencia?","acceptedAnswer":{"@type":"Answer","text":"Sí. Soy corredor de bienes raíces con licencia PN-1240, otorgada por la Junta Técnica de Bienes Raíces de Panamá."}},{"@type":"Question","name":"¿Eres corredor o promotor?","acceptedAnswer":{"@type":"Answer","text":"Trabajo en alianza con otros corredores, promotoras y administradoras. Si tienes un cliente para algo que llevo, o una propiedad que le sirva a un cliente mío, escríbeme. Tu cliente sigue siendo tuyo y la comisión la dejamos acordada por escrito antes de avanzar."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","url":"https://www.spotonerealty.com/dario/","inLanguage":"es-PA","mainEntity":{"@id":"https://www.spotonerealty.com/#dario"}},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","jobTitle":"Corredor de bienes raíces","description":"Dario Jhangimal es corredor de bienes raíces en Panamá desde 2006, con licencia PN-1240, y trabaja la venta, la compra y el alquiler de propiedades, con especialidad en Ciudad de Panamá.","knowsAbout":["Bienes raíces en Panamá","Venta y alquiler de propiedades","Propiedades reposeídas de bancos","Ingeniería industrial"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Licencia de corredor de bienes raíces","identifier":"PN-1240","validFrom":"2006","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"url":"https://www.spotonerealty.com/dario/","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Tienes licencia?","acceptedAnswer":{"@type":"Answer","text":"Sí. Soy corredor de bienes raíces con licencia PN-1240, otorgada por la Junta Técnica de Bienes Raíces de Panamá."}},{"@type":"Question","name":"¿Trabajas con otros corredores, promotoras y administradoras?","acceptedAnswer":{"@type":"Answer","text":"Sí. Si tienes un cliente interesado en una propiedad que represento, o una propiedad que pueda servirle a uno de mis clientes, conversemos. Tu cliente sigue siendo tuyo y la comisión la acordamos por escrito."}}]}]}</script>
 </body>
 </html>

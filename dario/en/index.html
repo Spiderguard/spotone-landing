@@ -92,6 +92,14 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   .dato a::after{content:"";position:absolute;left:0;right:0;top:50%;
     height:44px;transform:translateY(-50%)}
 }
+/* 23-nov · /dario/: un solo CTA bajo la foto, texto en bloques breves, zonas como navegación secundaria */
+.retrato>.foto-col{grid-column:1 / span 5;align-self:start}
+.retrato>.foto-col .ph{display:block;aspect-ratio:4/5;overflow:hidden}
+.retrato>.foto-col .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.foto-cta{margin:20px 0 0}
+.foto-cta .btn{min-height:54px;display:inline-flex;align-items:center}
+.dario-nav{margin-top:32px}
+@media(max-width:860px){.retrato>.foto-col{grid-column:1 / -1}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -130,23 +138,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <p class="idx">Dario</p>
     <h1>Dario Jhangimal</h1>
     <p class="label">Real estate broker · License PN-1240</p>
-    <p class="plain solo-movil"><a class="btn btn--primary" href="#contacto">Let’s talk</a></p>
   </div>
   <div class="wrap g12 retrato">
-    <span class="ph ph--45 c4"><picture>
+    <div class="foto-col"><span class="ph"><picture>
       <source srcset="/images/dario-neutra.webp" type="image/webp">
       <img src="/images/dario-neutra.jpg" width="992" height="1324" alt="Portrait of Dario Jhangimal, real estate broker in Panama" fetchpriority="high" decoding="async">
     </picture></span>
+      <p class="foto-cta"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20saw%20your%20site.%20Here%27s%20what%20I%20have%20or%20what%20I%27m%20looking%20for%20%28web-dario%29." rel="noopener" data-ev="wa-dario">Message me on WhatsApp</a></p></div>
     <div class="c7 reading">
-      <p>I’m an industrial engineer, and I’ve been a real estate broker since 2006.</p>
-      <p>I work on sales, purchases and rentals of property in Panama.</p>
-      <p>My specialty is Panama City: Costa del Este, Costa Sur, San Francisco, Punta Pacífica and other areas of the city. There I track what’s listed, at what asking price and for how long.</p>
-      <p><a class="out" href="/en/areas/">See the areas →</a></p>
-      <p>Outside those areas, and for commercial spaces, land, farms, beach properties, pre-construction or bank-owned properties, I study each case with the same method.</p>
-      <p>I work with other brokers, so your property reaches more buyers. And if another broker has the listing you want, I coordinate with them so you can see it.</p>
-      <p>I’m your contact from start to finish. And if the best decision is not to go ahead, I’ll tell you.</p>
-      <p>Outside work, I train Brazilian jiu-jitsu, and I’m a music lover.</p>
-      <p>Message me on WhatsApp: what you have or what you are looking for, in which area and by when.</p>
+      <p>I’m an industrial engineer by training, and I’ve worked as a real estate broker in Panama since 2006.</p>
+      <p>I’ve built SpotOne Realty around a way of working based on direct contact, comparing options, and reviewing prices and terms before recommending a deal.</p>
+      <p>I work on buying, selling and renting property in Panama, both residential and commercial. I also coordinate with other brokers when the property my client is looking for isn’t in my portfolio.</p>
+      <p class="dario-nav"><a class="out" href="/en/areas/">See the areas →</a></p>
     </div>
   </div>
 </header>
@@ -158,7 +161,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   </div>
   <div class="wrap sec-body">
       <details class="faq-item" open><summary>Are you licensed?</summary><div class="body"><p>Yes. I’m a licensed real estate broker in Panama, license PN-1240, issued by the Junta Técnica de Bienes Raíces (Panama’s real estate licensing board).</p></div></details>
-      <details class="faq-item"><summary>Are you a broker or developer?</summary><div class="body"><p>I work in partnership with other brokers, developers and property managers. If you have a client for something I represent, or a property that suits one of my clients, write to me. Your client stays yours, and we put the commission split in writing before we move ahead.</p></div></details>
+      <details class="faq-item"><summary>Do you work with other brokers, developers and property managers?</summary><div class="body"><p>Yes. If you have a client interested in a property I represent, or a property that could suit one of my clients, let’s talk. Your client stays yours, and we agree the commission in writing.</p></div></details>
   </div>
 </section>
 
@@ -220,6 +223,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   addEventListener('keydown', function(e){ if(e.key==='Escape') abrir(false); });
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","url":"https://www.spotonerealty.com/dario/en/","inLanguage":"en","mainEntity":{"@id":"https://www.spotonerealty.com/#dario"}},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","jobTitle":"Real estate broker","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","knowsAbout":["Real estate in Panama","Property sales and rentals","Bank-owned properties","Industrial engineering"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Real estate broker license","identifier":"PN-1240","validFrom":"2006","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"url":"https://www.spotonerealty.com/dario/","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are you licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes. I’m a licensed real estate broker in Panama, license PN-1240, issued by the Junta Técnica de Bienes Raíces (Panama’s real estate licensing board)."}},{"@type":"Question","name":"Are you a broker or developer?","acceptedAnswer":{"@type":"Answer","text":"I work in partnership with other brokers, developers and property managers. If you have a client for something I represent, or a property that suits one of my clients, write to me. Your client stays yours, and we put the commission split in writing before we move ahead."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","url":"https://www.spotonerealty.com/dario/en/","inLanguage":"en","mainEntity":{"@id":"https://www.spotonerealty.com/#dario"}},{"@type":"Person","@id":"https://www.spotonerealty.com/#dario","name":"Dario Jhangimal","jobTitle":"Real estate broker","description":"Dario Jhangimal has been a real estate broker in Panama since 2006, with license PN-1240, and works on sales, purchases and rentals of property, specializing in Panama City.","knowsAbout":["Real estate in Panama","Property sales and rentals","Bank-owned properties","Industrial engineering"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Real estate broker license","identifier":"PN-1240","validFrom":"2006","recognizedBy":{"@type":"GovernmentOrganization","name":"Junta Técnica de Bienes Raíces de Panamá"}},"url":"https://www.spotonerealty.com/dario/","image":"https://www.spotonerealty.com/images/dario-neutra.jpg","sameAs":["https://www.linkedin.com/in/dario-jhangimal-14449751/","https://instagram.com/spotonerealty"],"brand":{"@id":"https://www.spotonerealty.com/#spotone"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are you licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes. I’m a licensed real estate broker in Panama, license PN-1240, issued by the Junta Técnica de Bienes Raíces (Panama’s real estate licensing board)."}},{"@type":"Question","name":"Do you work with other brokers, developers and property managers?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you have a client interested in a property I represent, or a property that could suit one of my clients, let’s talk. Your client stays yours, and we agree the commission in writing."}}]}]}</script>
 </body>
 </html>
