@@ -1651,3 +1651,8 @@ a.out,button.out,.locate,.calc summary,.lang a,.sf-lang a,.mm-lang a,
 .eyebrow,.idx,.idx span,.label,.cat,.card-kicker,.feature-tag,.sf h2,.sf-h,
 .lang,.mm-lang,.sf-lang,.stat small,.crit-back,.crit-tag,.crit-rel-l,.crit-label,
 .cuenta,.qh,th{text-transform:none!important;letter-spacing:0!important}
+
+/* 23-nov · cifras de las fichas a la escala de Peatonal: precio y m² se leen como dato, no como leyenda */
+body.casa .hero .stat{font-size:40px;line-height:44px;font-weight:500}
+body.casa .hero .stat small{font-size:14px;line-height:22px;margin-top:6px;color:var(--on-navy-muted)}
+@media(max-width:860px){body.casa .hero .stat{font-size:30px;line-height:36px}}

@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin>
 
-<link rel="stylesheet" href="/css/spotone.css?v=30">
+<link rel="stylesheet" href="/css/spotone.css?v=31">
 <style>
 /* ---------------------------------------------------------------
    Plaza La Peatonal 68 — solo lo propio de esta página.
@@ -296,6 +296,12 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   .piso-d:empty{display:none}
   .piso-d a{margin:0}
 }
+/* 23-nov · héroe con la foto real de la plaza de noche (vista general, no un local) */
+.phero{position:relative;background:var(--navy) url(/images/plaza-noche-32-1320.webp) center 60%/cover no-repeat}
+.phero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,14,30,.92) 0,rgba(5,14,30,.80) 45%,rgba(5,14,30,.55) 100%),linear-gradient(0deg,rgba(5,14,30,.85) 0,rgba(5,14,30,0) 55%)}
+.phero>.wrap{position:relative;z-index:1}
+.phero .ph-cap{position:absolute;right:24px;bottom:16px;z-index:1;margin:0;font-size:13px;line-height:20px;color:rgba(244,241,234,.7)}
+@media(max-width:860px){.phero{background-position:60% 50%}.phero::before{background:linear-gradient(0deg,rgba(5,14,30,.94) 0,rgba(5,14,30,.86) 55%,rgba(5,14,30,.62) 100%)}.phero .ph-cap{right:16px;bottom:10px}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -333,6 +339,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 
 <!-- 00 · Hero -->
 <section class="phero">
+  <p class="ph-cap">The plaza at night</p>
   <div class="wrap">
     <p class="idx"><span>Commercial space for rent</span> <span class="sep" aria-hidden="true">·</span> <span>San Francisco, Panama City</span></p>
     <h1>Plaza La Peatonal 68</h1>
