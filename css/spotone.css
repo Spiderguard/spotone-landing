@@ -1691,3 +1691,13 @@ a.card:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
 .btn:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 p>.btn:only-child{margin-top:8px}
 @media(max-width:560px){.actions .btn,p>.btn:only-child{width:100%}}
+
+/* 23-nov · pie del menú móvil: idioma como selector discreto y una sola acción de contacto (WhatsApp); el teléfono, secundario. Correo e Instagram quedan en el pie del sitio. */
+.mm .mm-lang{align-items:center;gap:24px;margin-top:var(--s5);padding:2px 0;border-bottom:1px solid var(--line);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;font-weight:400}
+.mm .mm-lang-l{margin-right:auto;color:var(--muted)}
+.mm .mm-lang a{min-height:44px;display:inline-flex;align-items:center;color:var(--muted);text-decoration:none}
+.mm .mm-lang a.active{color:var(--ink);font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.mm .mm-foot{gap:4px;padding:var(--s5) 0 calc(var(--s5) + env(safe-area-inset-bottom))}
+.mm .mm-wa{width:100%;justify-content:center;color:var(--ivory)}
+.mm .mm-wa .wa-ico{width:18px;height:18px;flex:none}
+.mm .mm-tel{align-self:center;min-height:44px;display:inline-flex;align-items:center;color:var(--muted);font-size:var(--fs-note)}
