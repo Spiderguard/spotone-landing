@@ -141,7 +141,6 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 <style>
 .hero .puertas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;max-width:none}
 .hero .puertas .out{color:var(--ivory)}.hero .puertas .out:hover{color:var(--sky)}
-#duenos .reloc-head h2 em{font-weight:300}
 .serv h3 a{color:inherit;text-decoration:none;display:inline-block;padding:8px 0;margin:-8px 0}.serv h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:860px){.hero .puertas{flex-direction:column;gap:14px}}
 /* 22-nov · retrato de Dario: más chico, proporción real 3:4, sin recorte, centrado con el texto */
@@ -154,6 +153,15 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-mas{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .prop-mas p{margin:0;max-width:40em;color:var(--muted)}
 @media(max-width:860px){.prop-mas{margin-top:40px}}
+/* 23-nov · Dueños: titular de servicio, dos botones y el terreno como enlace; a la derecha los cuatro pasos */
+.duenos-acc{margin-top:32px;display:grid;grid-template-columns:minmax(0,320px);gap:12px}
+.duenos-acc a{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:54px;padding:14px 20px;box-sizing:border-box;border:1px solid rgba(244,241,234,.85);color:var(--ivory);text-decoration:none;font-size:16px;line-height:24px;font-weight:500}
+.duenos-acc a:first-child{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
+.duenos-acc a:hover{background:rgba(244,241,234,.12)}.duenos-acc a:first-child:hover{background:#fff}
+.duenos-acc a:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+.duenos-ter{margin-top:16px}
+.duenos-ter .out{margin:0}
+@media(max-width:860px){.duenos-acc{grid-template-columns:1fr}}
 /* 23-nov · Compradores: una acción principal, tres ventajas y la navegación al final; acciones de dueños en su sección */
 .compra-cta{margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .compra-cta .btn{min-height:54px;display:inline-flex;align-items:center}
@@ -316,11 +324,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
   <div class="band-ph band-ph--sinfoto">
     <div class="wrap reloc-in">
       <div class="reloc-head">
-      <p class="idx">Si tienes una propiedad</p>
-      <h2>El mercado se lee. <em>No se adivina.</em></h2>
-      <p class="lead">Antes de publicar, reviso con qué compite hoy tu propiedad.</p>
-      <a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20o%20alquilar%20mi%20propiedad%20%28web%29." rel="noopener" data-ev="wa-duenos">Cuéntame de tu propiedad por WhatsApp →</a>
-      <p class="duenos-opc" aria-label="Para dueños"><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20alquilar%20mi%20propiedad%20%28web-arrendar%29." rel="noopener">Quiero alquilar mi propiedad →</a><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20mi%20propiedad%20%28web-vender%29." rel="noopener">Quiero vender →</a><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20un%20terreno%20%28web-terreno%29." rel="noopener">Tengo un terreno →</a></p>
+      <p class="idx">Para propietarios</p>
+      <h2>¿Quieres vender o alquilar tu propiedad?</h2>
+      <p class="lead">Comparo tu propiedad con otras anunciadas en la zona y reviso precio, condiciones y presentación antes de recomendar los siguientes pasos.</p>
+      <div class="duenos-acc"><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20vender%20una%20propiedad.%20Zona%3A%20__%2C%20tipo%3A%20__%20%28web-vender%29." rel="noopener" data-ev="wa-duenos-vender">Quiero vender <span aria-hidden="true">→</span></a><a href="https://wa.me/50766758127?text=Hola%20Dario%2C%20quiero%20poner%20una%20propiedad%20en%20alquiler.%20Zona%3A%20__%2C%20tipo%3A%20__%20%28web-arrendar%29." rel="noopener" data-ev="wa-duenos-alquilar">Quiero poner en alquiler <span aria-hidden="true">→</span></a></div>
+      <p class="duenos-ter"><a class="out" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20tengo%20un%20terreno%20%28web-terreno%29." rel="noopener" data-ev="wa-duenos-terreno">Tengo un terreno o finca →</a></p>
       </div>
       <ul class="pasos" aria-label="Qué hago con tu propiedad">
         <li><h3>Con qué compite</h3><p>Lo que hoy se ofrece parecido en tu zona y en tu edificio, y a qué precio se pide.</p></li>
