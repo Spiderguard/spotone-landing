@@ -154,6 +154,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .prop-mas{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .prop-mas p{margin:0;max-width:40em;color:var(--muted)}
 @media(max-width:860px){.prop-mas{margin-top:40px}}
+/* 23-nov · CAUSA: spotone.css pone .hero{min-height:0} en móvil y la home no lo reponía. La portada ocupa una pantalla completa
+   (el héroe ya sube bajo la barra con margin-top negativo, así que 100svh no suma la barra dos veces). Fijo: no revertir. */
+@media(max-width:860px){
+  .inicio .hero{min-height:100vh;min-height:100svh;justify-content:center}
+  .inicio .hero>.wrap{padding-top:calc(var(--hdr-h-sm) + 32px);padding-bottom:48px}
+}
 /* 23-nov · CTA del héroe: dos botones iguales (lado a lado en escritorio, apilados en móvil) y WhatsApp centrado debajo del conjunto */
 .hero .acciones{order:3;display:grid;width:max-content;max-width:100%}
 .hero h1 + .acciones{margin-top:8px}
