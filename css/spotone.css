@@ -1677,3 +1677,13 @@ a.card .dato,a.card .limite{margin-bottom:20px}
 a.card:hover .card-cta,a.card:focus-visible .card-cta{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
 a.card .card-cta .wa-ico{width:18px;height:18px;flex:none}
 a.card:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
+
+/* --- 23-nov · regla global de CTA (aprobada por Darío): acción principal de sección = sólido (btn--primary / btn--light en fondo oscuro);
+   segunda acción = borde (btn--ghost / btn--onnavy en fondo oscuro); enlaces dentro de textos = subrayados (.out). Un solo componente: .btn --- */
+.btn{min-height:48px;height:auto;padding:12px 24px;gap:8px;text-align:center;max-width:100%;box-sizing:border-box;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn--ghost{background:transparent;color:var(--ink);border-color:rgba(26,26,24,.30)}
+.btn--ghost:hover,.btn--ghost:focus-visible{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.btn--onnavy:hover,.btn--onnavy:focus-visible{background:rgba(244,241,234,.08);border-color:var(--ivory)}
+.btn:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+p>.btn:only-child{margin-top:8px}
+@media(max-width:560px){.actions .btn,p>.btn:only-child{width:100%}}
