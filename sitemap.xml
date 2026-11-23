@@ -67,6 +67,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.spotonerealty.com/corredores/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/corredores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/brokers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/corredores/"/>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.spotonerealty.com/criterio/a-price-without-method-is-a-rumor/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spotonerealty.com/criterio/precio-sin-metodo-es-rumor/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/criterio/a-price-without-method-is-a-rumor/"/>
@@ -1231,6 +1239,14 @@
     <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/areas/santa-maria/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/zonas/santa-maria/"/>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.spotonerealty.com/en/brokers/</loc>
+    <xhtml:link rel="alternate" hreflang="es-PA" href="https://www.spotonerealty.com/corredores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spotonerealty.com/en/brokers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spotonerealty.com/corredores/"/>
     <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>

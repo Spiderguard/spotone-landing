@@ -39,6 +39,8 @@ INCLUDE_GLOBS = [
     "dario/en/index.html",
     "contacto/index.html",
     "contact/index.html",
+    "corredores/index.html",
+    "en/brokers/index.html",
     "criterio/index.html",
     "criterio/en/index.html",
     "criterio/*/index.html",
