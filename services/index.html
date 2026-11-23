@@ -30,6 +30,12 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader.woff2" crossorigin fetchpriority="low">
 <link rel="stylesheet" href="/css/spotone.css?v=39">
 <style>
+/* 23-nov · sin el rótulo redundante; las cuatro formas siguen a la introducción sin vacío. «Ver las zonas» = botón secundario ajustado al texto. */
+header.hero--ivory + #servicios{padding-top:40px}
+header.hero--ivory + #servicios > .sec-body{margin-top:0}
+@media(max-width:860px){header.hero--ivory + #servicios{padding-top:24px}.hero .plain + .plain.solo-movil{margin-top:12px}}
+@media(min-width:561px){.hero .plain .btn--ghost{justify-self:start;width:auto}}
+
 @font-face{font-family:'Newsreader';src:url(/fonts/newsreader.woff2) format('woff2');font-weight:300 500;font-style:normal;font-display:swap}
 @font-face{font-family:'Hanken Grotesk';src:url(/fonts/hanken.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
@@ -143,14 +149,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
     <h1>Four ways to work together.</h1>
     <p class="lead">I work on sales, purchases and rentals of residential and commercial property in Panama. My specialty is Panama City: Costa del Este, Costa Sur, San Francisco, Punta Pacífica and other areas of the city. There I track what competes, and at what price. Outside the city, at the beach, in the interior or anywhere else in the country, I work case by case with the same method.</p>
     <p class="plain"><a class="btn btn--ghost" href="/en/areas/">See the areas →</a></p>
-    <p class="plain solo-movil"><a class="btn" href="#contacto">Let’s talk</a></p>
+    <p class="plain solo-movil"><a class="btn btn--primary" href="#contacto">Let’s talk</a></p>
   </div>
 </header>
 
-<section class="sec t-soft" id="servicios">
-  <div class="wrap sec-head">
-    <p class="idx">The four ways</p>
-  </div>
+<section class="sec t-soft" id="servicios" aria-label="Four ways to work together">
   <div class="wrap sec-body">
     <div class="mods">
       <div><div><h3>Selling or renting out your property</h3></div><div><p>Before a property goes live, I look at what it’s up against: what else is listed nearby, which of those have adjusted their price recently, and how long they’ve been listed. With that comparison I propose the asking price, the angle, the likely buyer and where it gets advertised.</p></div></div>
