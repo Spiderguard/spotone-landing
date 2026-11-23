@@ -114,24 +114,32 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
 .filtros-n .quitar{all:unset;cursor:pointer;margin-left:12px;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .filtros-n .quitar:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 
-/* 22-nov noche · panel «Filtrar»: grupos desplegables (Baymard/NN/g: divulgación progresiva). En móvil cerrados; en escritorio abiertos. */
-.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.mas .grp{border-bottom:1px solid var(--line)}
-.mas .grp>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:16px;color:var(--ink)}
-.mas .grp>summary::-webkit-details-marker{display:none}
-.mas .grp>summary .g-v{margin-left:auto;color:var(--muted);font-size:15px}
-.mas .grp>summary::after{content:"+";width:16px;text-align:center;color:var(--ink)}
-.mas .grp[open]>summary::after{content:"–"}
-.mas .grp>fieldset{padding:0 0 16px}
-.mas .grp[hidden]{display:none!important}
-.mas-pie{display:flex;align-items:center;gap:24px;margin-top:20px}
-.mas-pie .ver-res{min-height:46px;padding:0 20px;border:1px solid var(--navy);background:var(--navy);color:var(--ivory);font:500 15px 'Hanken Grotesk',Arial,sans-serif;cursor:pointer}
+/* 22-nov noche · «Filtrar» abre un PANEL aparte (no empuja las tarjetas). Escritorio: lateral derecho de 440 px. Móvil: pantalla completa.
+   Dentro: Tipo → Zona → Precio (según operación) → Recámaras (solo residencial), como listas desplegables con conteo. */
+.pfiltros details.mas>summary::after,.pfiltros details.mas[open]>summary::after{content:none!important}
+.pfiltros details.mas .mas-in{position:fixed;top:0;right:0;bottom:0;z-index:1001;width:440px;max-width:100%;margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:0;flex-wrap:nowrap;background:var(--ivory,#F8F6F1);box-shadow:-1px 0 0 var(--line)}
+.mas-fondo{position:fixed;inset:0;z-index:1000;background:rgba(10,15,30,.35)}
+.mas-cab{display:flex;align-items:center;justify-content:space-between;min-height:64px;padding:0 24px;border-bottom:1px solid var(--line)}
+.mas-t{margin:0;font-family:'Newsreader',Georgia,serif;font-size:23px;line-height:28px;color:var(--ink)}
+.mas-x{all:unset;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:26px;line-height:1;color:var(--ink);margin-right:-12px}
+.mas-x:focus-visible{outline:2px solid var(--sky)}
+.mas-cuerpo{flex:1;overflow:auto;padding:8px 24px 24px}
+.campo{display:block;padding:16px 0 0}
+.campo[hidden]{display:none!important}
+.campo-t{display:block;margin-bottom:8px;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:14px;color:var(--muted)}
+.campo select{-webkit-appearance:none;appearance:none;width:100%;min-height:48px;padding:0 40px 0 14px;border:1px solid rgba(26,26,24,.30);border-radius:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231A1A18' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center;font:400 16px 'Hanken Grotesk',Arial,sans-serif;color:var(--ink);cursor:pointer}
+.campo select:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
+.mas-pie{display:flex;align-items:center;gap:24px;padding:16px 24px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.mas-pie .ver-res{flex:1;min-height:48px;border:1px solid var(--navy);background:var(--navy);color:var(--ivory);font:500 15px 'Hanken Grotesk',Arial,sans-serif;cursor:pointer}
 .mas-pie .ver-res:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
-.filtros-n .fq{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;margin:4px 8px 0 0;border:1px solid var(--line-ui,rgba(26,26,24,.3));color:var(--ink);font-size:14px}
+.mas-pie .limpiar[hidden]{display:none}
+html.filtros-abiertos{overflow:hidden}
+#filtros-n{scroll-margin-top:96px}
+.filtros-n .fq{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;margin:4px 8px 0 0;border:1px solid rgba(26,26,24,.30);color:var(--ink);font-size:14px}
 .filtros-n .fq:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 .filtros-n .fq-x{font-size:16px;line-height:1}
 .filtros-n .fq-l{display:block;margin-top:8px}
-@media(min-width:861px){.mas .grp>summary{pointer-events:none;min-height:40px;color:var(--muted);font-size:15px}.mas .grp>summary::after,.mas .grp[open]>summary::after{content:none}.mas .grp>summary .g-v{display:none}.mas .grp{border-bottom:0}.mas-pie .ver-res{display:none}}
+@media(max-width:860px){.pfiltros details.mas .mas-in{width:100%}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -175,7 +183,7 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
 
 <section class="filtros-sec" id="filtros-sec" hidden>
   <div class="wrap">
-    <div class="pfiltros" id="filtros" role="group" aria-label="Filter properties"><fieldset class="f-op"><legend class="label">Deal</legend><div class="filtros ops"><button type="button" data-k="op" data-v="" aria-pressed="false">All</button><button type="button" data-k="op" data-v="venta" aria-pressed="false">For sale</button><button type="button" data-k="op" data-v="alquiler" aria-pressed="false">For rent</button></div></fieldset><details class="mas"><summary data-base="Filter">Filter</summary><div class="mas-in"><details class="grp" data-g="precio"><summary><span class="g-t">Price</span><span class="g-v"></span></summary><fieldset class="f-precio"><legend class="vh">Price</legend><div class="filtros ops"><button type="button" data-k="precio" data-v="" aria-pressed="false">Any</button><button type="button" data-k="precio" data-v="-300000" data-op="venta" aria-pressed="false">Up to US$300K</button><button type="button" data-k="precio" data-v="300000-600000" data-op="venta" aria-pressed="false">US$300K–600K</button><button type="button" data-k="precio" data-v="600000-" data-op="venta" aria-pressed="false">Over US$600K</button><button type="button" data-k="precio" data-v="-1500" data-op="alquiler" aria-pressed="false">Up to US$1,500</button><button type="button" data-k="precio" data-v="1500-2500" data-op="alquiler" aria-pressed="false">US$1,500–2,500</button><button type="button" data-k="precio" data-v="2500-" data-op="alquiler" aria-pressed="false">Over US$2,500</button></div></fieldset></details><details class="grp" data-g="rec"><summary><span class="g-t">Bedrooms (minimum)</span><span class="g-v"></span></summary><fieldset class="f-rec"><legend class="vh">Bedrooms (minimum)</legend><div class="filtros ops"><button type="button" data-k="rec" data-v="" aria-pressed="false">Any</button><button type="button" data-k="rec" data-v="1" aria-pressed="false">1+</button><button type="button" data-k="rec" data-v="2" aria-pressed="false">2+</button><button type="button" data-k="rec" data-v="3" aria-pressed="false">3+</button><button type="button" data-k="rec" data-v="4" aria-pressed="false">4+</button></div></fieldset></details><details class="grp" data-g="tipo"><summary><span class="g-t">Type</span><span class="g-v"></span></summary><fieldset><legend class="vh">Type</legend><div class="filtros ops"><button type="button" data-k="tipo" data-v="" aria-pressed="false">All</button><button type="button" data-k="tipo" data-v="apartamento" aria-pressed="false">Apartment</button><button type="button" data-k="tipo" data-v="casa" aria-pressed="false">House</button><button type="button" data-k="tipo" data-v="edificio" aria-pressed="false">Building</button><button type="button" data-k="tipo" data-v="local" aria-pressed="false">Retail unit</button><button type="button" data-k="tipo" data-v="oficina" aria-pressed="false">Office</button></div></fieldset></details><details class="grp" data-g="zona"><summary><span class="g-t">Area</span><span class="g-v"></span></summary><fieldset><legend class="vh">Area</legend><div class="filtros ops"><button type="button" data-k="zona" data-v="" aria-pressed="false">All</button><button type="button" data-k="zona" data-v="santa-maria" aria-pressed="false">Santa María</button><button type="button" data-k="zona" data-v="coco-del-mar" aria-pressed="false">Coco del Mar</button><button type="button" data-k="zona" data-v="san-francisco" aria-pressed="false">San Francisco</button><button type="button" data-k="zona" data-v="bella-vista" aria-pressed="false">Bella Vista</button><button type="button" data-k="zona" data-v="costa-del-este" aria-pressed="false">Costa del Este</button><button type="button" data-k="zona" data-v="costa-sur" aria-pressed="false">Costa Sur</button><button type="button" data-k="zona" data-v="coronado" aria-pressed="false">Coronado</button><button type="button" data-k="zona" data-v="ancon" aria-pressed="false">Ancón</button><button type="button" data-k="zona" data-v="san-miguelito" aria-pressed="false">San Miguelito</button></div></fieldset></details><p class="mas-pie"><button type="button" class="ver-res">See properties</button><button type="button" class="limpiar" data-k="reset" data-v="">Clear filters</button></p></div></details></div>
+    <div class="pfiltros" id="filtros" role="group" aria-label="Filter properties"><fieldset class="f-op"><legend class="label">Deal</legend><div class="filtros ops"><button type="button" data-k="op" data-v="" aria-pressed="false">All</button><button type="button" data-k="op" data-v="venta" aria-pressed="false">For sale</button><button type="button" data-k="op" data-v="alquiler" aria-pressed="false">For rent</button></div></fieldset><details class="mas"><summary data-base="Filter">Filter</summary><div class="mas-fondo" aria-hidden="true"></div><div class="mas-in" role="dialog" aria-modal="true" aria-labelledby="mas-t"><div class="mas-cab"><p class="mas-t" id="mas-t">Filter properties</p><button type="button" class="mas-x" aria-label="Close">×</button></div><div class="mas-cuerpo"><label class="campo" data-g="tipo"><span class="campo-t">Property type</span><select data-k="tipo"><option value="">All types</option><option value="apartamento">Apartment</option><option value="casa">House</option><option value="edificio">Building</option><option value="local">Retail unit</option><option value="oficina">Office</option></select></label><label class="campo" data-g="zona"><span class="campo-t">Area</span><select data-k="zona"><option value="">All areas</option><option value="santa-maria">Santa María</option><option value="coco-del-mar">Coco del Mar</option><option value="san-francisco">San Francisco</option><option value="bella-vista">Bella Vista</option><option value="costa-del-este">Costa del Este</option><option value="costa-sur">Costa Sur</option><option value="coronado">Coronado</option><option value="ancon">Ancón</option><option value="san-miguelito">San Miguelito</option></select></label><label class="campo" data-g="precio"><span class="campo-t">Price</span><select data-k="precio"><option value="">Any price</option><option value="-300000" data-op="venta">Up to US$300K</option><option value="300000-600000" data-op="venta">US$300K–600K</option><option value="600000-" data-op="venta">Over US$600K</option><option value="-1500" data-op="alquiler">Up to US$1,500</option><option value="1500-2500" data-op="alquiler">US$1,500–2,500</option><option value="2500-" data-op="alquiler">Over US$2,500</option></select></label><label class="campo" data-g="rec"><span class="campo-t">Bedrooms</span><select data-k="rec"><option value="">Any number</option><option value="1">1 or more</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="4">4 or more</option></select></label></div><div class="mas-pie"><button type="button" class="ver-res">See properties</button><button type="button" class="limpiar">Clear filters</button></div></div></details></div>
     <p class="filtros-n label" id="filtros-n" aria-live="polite" data-uno="property" data-varios="properties"></p>
     <div class="filtros-vacio" id="filtros-vacio" hidden><p class="lead">Nothing here with those filters. Tell me what you are looking for and I will check it against the whole city market.</p><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%20didn%27t%20find%20what%20I%27m%20looking%20for%20on%20your%20site.%20Here%20it%20is%20%28web-prop-filtro%29%3A%20" rel="noopener">Tell me what you need</a></div>
   </div>
@@ -411,78 +419,92 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
 })();
 </script>
 <script>
-// Filtros de /propiedades/ (23-nov, orden de Zillow): operación → precio → recámaras → tipo → zona.
-// Precio y recámaras se leen del texto de cada tarjeta (no hay que mantener atributos a mano).
-// Sin JS la barra queda oculta y se ve todo. El estado vive en la URL (?op=&precio=&rec=&tipo=&zona=).
+// Filtros de /propiedades/ (22-nov noche). La operación siempre a la vista; «Filtrar» abre un panel aparte con
+// Tipo → Zona → Precio (rangos según la operación) → Recámaras (solo tipos residenciales). Opciones y conteos salen
+// de las tarjetas. Precio y recámaras se leen del texto de cada tarjeta. Estado en la URL (?op=&tipo=&zona=&precio=&rec=).
 (function(){
   var bar=document.getElementById('filtros'); if(!bar) return;
   var sec=document.getElementById('filtros-sec'); if(sec) sec.hidden=false;
   var cards=[].slice.call(document.querySelectorAll('.propiedades .card[data-op]'));
   var n=document.getElementById('filtros-n'), vac=document.getElementById('filtros-vacio');
-  var K=['op','precio','rec','tipo','zona'], st={};
+  var det=bar.querySelector('details.mas'), sum=det.querySelector('summary');
+  var K=['op','tipo','zona','precio','rec'], ADIC=['tipo','zona','precio','rec'], NORES=['local','oficina','edificio','terreno'], st={};
   K.forEach(function(k){st[k]='';});
   cards.forEach(function(a){
     var p=a.querySelector('.precio'); var m=p&&p.textContent.replace(/,/g,'').match(/(\d{3,})/); a.dataset.precio=m?m[1]:'';
-    var r=a.textContent.match(/(\d+)\s*(rec[aá]maras?|bedrooms?)/i); a.dataset.rec=r?r[1]:'';
+    var r=a.textContent.match(/(\d+)[\s-]*(rec[aá]maras?|bedrooms?)/i); a.dataset.rec=r?r[1]:'';
   });
   try{var q=new URLSearchParams(location.search);K.forEach(function(k){st[k]=q.get(k)||'';});}catch(e){}
+  // opciones maestras de cada lista (se reconstruyen en cada cambio; iOS no oculta <option hidden>)
+  var sel={}, maestro={};
+  [].forEach.call(bar.querySelectorAll('select[data-k]'),function(s){
+    sel[s.dataset.k]=s; maestro[s.dataset.k]=[].map.call(s.options,function(o){return {v:o.value,t:o.textContent,op:o.dataset.op||''};});
+  });
   function ok(a,k,v){
     if(!v) return true;
     if(k==='precio'){var x=+a.dataset.precio; if(!x) return false; var r=v.split('-'); return (!r[0]||x>=+r[0])&&(!r[1]||x<=+r[1]);}
-    if(k==='rec'){return (+a.dataset.rec||0)>=+v;}
+    if(k==='rec') return (+a.dataset.rec||0)>=+v;
     return a.dataset[k]===v;
   }
   function pasa(a,salvo){return K.every(function(k){return k===salvo||ok(a,k,st[k]);});}
-  function etiqueta(b){ if(!b.dataset.t) b.dataset.t=b.textContent.trim(); return b.dataset.t; }
+  function nombre(k,v){var o=(maestro[k]||[]).filter(function(x){return x.v===v;})[0]; return o?o.t:v;}
   function pinta(){
-    if(st.precio){var pb=bar.querySelector('button[data-k="precio"][data-v="'+st.precio+'"]'); if(!st.op||!pb||pb.dataset.op!==st.op) st.precio='';}
+    if(st.precio){var mp=(maestro.precio||[]).filter(function(x){return x.v===st.precio;})[0]; if(!st.op||!mp||mp.op!==st.op) st.precio='';}
+    if(NORES.indexOf(st.tipo)>-1) st.rec='';
     var c=0;
     cards.forEach(function(a){var y=pasa(a); a.hidden=!y; if(y) c++;});
     [].forEach.call(document.querySelectorAll('section.propiedades'),function(s){s.hidden=!s.querySelector('.card[data-op]:not([hidden])');});
-    [].forEach.call(bar.querySelectorAll('button[data-k]:not(.limpiar)'),function(b){
-      var k=b.dataset.k, v=b.dataset.v, t=etiqueta(b);
-      b.setAttribute('aria-pressed', st[k]===v?'true':'false');
-      var cnt=cards.filter(function(a){return pasa(a,k)&&ok(a,k,v);}).length;
-      b.innerHTML=''; b.appendChild(document.createTextNode(t)); var sp=document.createElement('span'); sp.className='fcount'; sp.textContent=cnt; b.appendChild(sp);
-      if(b.closest('.mas')&&v) b.hidden=(b.dataset.op&&b.dataset.op!==st.op)||(cnt===0&&st[k]!==v);
+    [].forEach.call(bar.querySelectorAll('.f-op button[data-k]'),function(b){b.setAttribute('aria-pressed',st.op===b.dataset.v?'true':'false');});
+    ADIC.forEach(function(k){
+      var s=sel[k]; if(!s) return; var lista=[];
+      maestro[k].forEach(function(o,i){
+        if(!o.v){lista.push({o:o,c:-1,i:i});return;}
+        if(o.op&&o.op!==st.op) return;
+        var cnt=cards.filter(function(a){return pasa(a,k)&&ok(a,k,o.v);}).length;
+        if(cnt===0&&st[k]!==o.v) return;
+        lista.push({o:o,c:cnt,i:i});
+      });
+      if(k==='zona') lista.sort(function(x,y){return x.c<0?-1:y.c<0?1:(y.c-x.c)||x.o.t.localeCompare(y.o.t);});
+      s.innerHTML='';
+      lista.forEach(function(x){var op=document.createElement('option'); op.value=x.o.v; op.textContent=x.c<0?x.o.t:x.o.t+' ('+x.c+')'; s.appendChild(op);});
+      s.value=st[k];
+      var reales=lista.length-1, oculto=reales<1||(k==='precio'&&!st.op)||(k==='rec'&&(NORES.indexOf(st.tipo)>-1||!cards.some(function(a){return pasa(a,'rec')&&+a.dataset.rec>0;})));
+      if(reales===1&&!st[k]&&k!=='tipo') oculto=true;
+      s.closest('.campo').hidden=oculto;
     });
-    // zonas: de más a menos propiedades («Todas» siempre primero)
-    var zw=bar.querySelector('button[data-k="zona"]'); zw=zw&&zw.parentNode;
-    if(zw){[].slice.call(zw.querySelectorAll('button[data-v]:not([data-v=""])')).sort(function(x,y){return (+y.lastChild.textContent)-(+x.lastChild.textContent)||etiqueta(x).localeCompare(etiqueta(y));}).forEach(function(b){zw.appendChild(b);});}
-    var noRes=['local','oficina','edificio','terreno'];
-    [].forEach.call(bar.querySelectorAll('.mas .grp'),function(g){
-      var k=g.dataset.g; var tiene=!!g.querySelector('button[data-v]:not([data-v=""]):not([hidden])');
-      if(k==='rec'&&(noRes.indexOf(st.tipo)>-1||!cards.some(function(a){return pasa(a,'rec')&&+a.dataset.rec>0;}))){tiene=false; st.rec='';}
-      g.hidden=!tiene;
-      var sel=g.querySelector('button[aria-pressed="true"]'); var gv=g.querySelector('.g-v'); if(gv) gv.textContent=sel?etiqueta(sel):'';
-    });
-    var vr=bar.querySelector('.ver-res'); if(vr) vr.textContent=(c===1?'See 1 property':'See %n properties'.replace('%n',c));
     var h=document.querySelector('#venta .sec-head'); if(h) h.hidden=(st.op==='venta');
-    var na=['precio','rec','tipo','zona'].filter(function(k){return st[k];}).length;
-    var sm=bar.querySelector('.mas>summary'); if(sm) sm.firstChild.nodeValue=sm.dataset.base+(na?' ('+na+')':'');
+    var na=ADIC.filter(function(k){return st[k];}).length;
+    sum.firstChild.nodeValue=sum.dataset.base+(na?' ('+na+')':'');
+    var vr=bar.querySelector('.ver-res'); vr.textContent=c===0?'No results':c===1?'See 1 property':'See %n properties'.replace('%n',c);
+    bar.querySelector('.mas-pie .limpiar').hidden=!na;
     n.textContent=c+' '+(c===1?n.dataset.uno:n.dataset.varios);
-    var act=[]; ['precio','rec','tipo','zona'].forEach(function(k){ if(st[k]){ var b=bar.querySelector('button[data-k="'+k+'"][data-v="'+st[k]+'"]'); if(b) act.push([k,(k==='rec'?b.closest('fieldset').querySelector('legend').textContent.replace(/\s*\(.*\)/,'')+' ':'')+etiqueta(b)]); } });
-    if(act.length){ var w=document.createElement('span'); w.className='fq-l';
-      act.forEach(function(x){ var qb=document.createElement('button'); qb.type='button'; qb.className='fq'; qb.setAttribute('aria-label','Remove '+x[1]); qb.innerHTML='<span></span><span class="fq-x" aria-hidden="true">×</span>'; qb.firstChild.textContent=x[1];
-        qb.addEventListener('click',function(){st[x[0]]=''; pinta();}); w.appendChild(qb); });
-      if(act.length>1){ var qa=document.createElement('button'); qa.type='button'; qa.className='quitar'; qa.textContent='Clear all'; qa.addEventListener('click',function(){K.forEach(function(k){if(k!=='op')st[k]='';}); pinta();}); w.appendChild(qa); }
+    if(na){ var w=document.createElement('span'); w.className='fq-l';
+      ADIC.forEach(function(k){ if(!st[k]) return; var t=nombre(k,st[k]); if(k==='rec') t=sel.rec.closest('.campo').querySelector('.campo-t').textContent+': '+t;
+        var b=document.createElement('button'); b.type='button'; b.className='fq'; b.setAttribute('aria-label','Remove '+t);
+        b.innerHTML='<span></span><span class="fq-x" aria-hidden="true">×</span>'; b.firstChild.textContent=t;
+        b.addEventListener('click',function(){st[k]=''; pinta();}); w.appendChild(b); });
+      if(na>1){ var qa=document.createElement('button'); qa.type='button'; qa.className='quitar'; qa.textContent='Clear filters'; qa.addEventListener('click',limpia); w.appendChild(qa); }
       n.appendChild(w); }
     vac.hidden=c>0;
     try{var u=new URLSearchParams();K.forEach(function(k){if(st[k])u.set(k,st[k]);});
-      var s=u.toString();history.replaceState(null,'',location.pathname+(s?'?'+s:'')+location.hash);}catch(e){}
+      var qs=u.toString();history.replaceState(null,'',location.pathname+(qs?'?'+qs:'')+location.hash);}catch(e){}
   }
-  if(st.precio||st.rec||st.tipo||st.zona){var d=bar.querySelector('details.mas'); if(d) d.open=true;}
-  var esc=window.matchMedia&&matchMedia('(min-width:861px)').matches;
-  [].forEach.call(bar.querySelectorAll('.mas .grp'),function(g){ g.open=esc||!!st[g.dataset.g]; });
-  var vrb=bar.querySelector('.ver-res'); if(vrb) vrb.addEventListener('click',function(){ var d=bar.querySelector('details.mas'); if(d) d.open=false; var r=document.querySelector('section.propiedades:not([hidden])'); if(r) r.scrollIntoView({behavior:'smooth',block:'start'}); });
-  bar.addEventListener('click',function(e){
-    var b=e.target.closest('button'); if(!b||!b.dataset.k) return;
-    if(b.dataset.k==='reset'){st.precio='';st.rec='';st.tipo='';st.zona='';} else st[b.dataset.k]=b.dataset.v; pinta();
-    if(window.gtag) try{gtag('event','filtro_propiedades',{filtro:b.dataset.k,valor:b.dataset.v||'todo'});}catch(e){}
-  });
+  function limpia(){ADIC.forEach(function(k){st[k]='';}); pinta();}
+  function cierra(ir){ det.open=false; if(ir){var r=document.getElementById('filtros-n'); if(r) r.scrollIntoView({behavior:'smooth',block:'start'});} }
+  det.addEventListener('toggle',function(){ document.documentElement.classList.toggle('filtros-abiertos',det.open); if(det.open){var s0=bar.querySelector('.campo:not([hidden]) select'); if(s0) s0.focus();} else sum.focus(); });
+  bar.querySelector('.mas-x').addEventListener('click',function(){cierra(false);});
+  bar.querySelector('.mas-fondo').addEventListener('click',function(){cierra(false);});
+  bar.querySelector('.ver-res').addEventListener('click',function(){cierra(true);});
+  bar.querySelector('.mas-pie .limpiar').addEventListener('click',limpia);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&det.open) cierra(false); });
+  bar.addEventListener('change',function(e){ var s=e.target; if(!s.dataset||!s.dataset.k) return; st[s.dataset.k]=s.value; pinta();
+    if(window.gtag) try{gtag('event','filtro_propiedades',{filtro:s.dataset.k,valor:s.value||'todo'});}catch(x){} });
+  bar.querySelector('.f-op').addEventListener('click',function(e){ var b=e.target.closest('button[data-k]'); if(!b) return; st.op=b.dataset.v; pinta();
+    if(window.gtag) try{gtag('event','filtro_propiedades',{filtro:'op',valor:b.dataset.v||'todo'});}catch(x){} });
   pinta();
 })();
 </script>
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://www.spotonerealty.com/properties/#page", "url": "https://www.spotonerealty.com/properties/", "name": "Properties for sale and rent in Panama | SpotOne Realty", "description": "Apartments and houses for sale and rent in Panama City (Santa María, Coco del Mar, San Francisco), a country house in Coronado and commercial units. Licensed broker PN-1240.", "inLanguage": "en", "dateModified": "2026-11-21", "about": {"@id": "https://www.spotonerealty.com/#spotone"}, "breadcrumb": {"@id": "https://www.spotonerealty.com/properties/#breadcrumb"}, "mainEntity": {"@id": "https://www.spotonerealty.com/properties/#lista"}}, {"@type": "ItemList", "@id": "https://www.spotonerealty.com/properties/#lista", "dateModified": "2026-11-21", "numberOfItems": 12, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.spotonerealty.com/the-colonial-santa-maria/en/", "name": "High floor overlooking the racetrack", "item": {"@id": "https://www.spotonerealty.com/the-colonial-santa-maria/en/#listing"}}, {"@type": "ListItem", "position": 2, "url": "https://www.spotonerealty.com/coronado-las-fincas/en/", "name": "Country house on almost 2.5 acres", "item": {"@id": "https://www.spotonerealty.com/coronado-las-fincas/en/#listing"}}, {"@type": "ListItem", "url": "https://www.spotonerealty.com/edificio-el-carmen/en/", "name": "Mixed-use building in El Carmen", "item": {"@id": "https://www.spotonerealty.com/edificio-el-carmen/#listing"}, "position": 3}, {"@type": "ListItem", "position": 4, "name": "Two-story house with a double-height space", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#b28", "url": "https://www.spotonerealty.com/properties/#b28", "name": "Two-story house with a double-height space", "dateModified": "2026-11-20", "offers": {"@type": "Offer", "price": 608800, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 5, "name": "3-bedroom apartment in Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#stangelo", "url": "https://www.spotonerealty.com/properties/#stangelo", "name": "3-bedroom apartment in Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 2200, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 6, "name": "Furnished apartment in Coco del Mar", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#cocoplace", "url": "https://www.spotonerealty.com/properties/#cocoplace", "name": "Furnished apartment in Coco del Mar", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 1850, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"}}}, {"@type": "ListItem", "position": 7, "url": "https://www.spotonerealty.com/peatonal68/en/", "name": "Units at Plaza La Peatonal 68", "item": {"@id": "https://www.spotonerealty.com/peatonal68/en/#listing"}}, {"@type": "ListItem", "position": 8, "name": "Apartment with a 35 m² private terrace", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#victorysport", "url": "https://www.spotonerealty.com/properties/#victorysport", "name": "Apartment with a 35 m² private terrace", "dateModified": "2026-11-21", "offers": {"@type": "Offer", "price": 450000, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 9, "name": "Double-height house on almost 1,000 m² of land", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#diablo", "url": "https://www.spotonerealty.com/properties/#diablo", "name": "Double-height house on almost 1,000 m² of land", "dateModified": "2026-11-14", "offers": {"@type": "Offer", "price": 550000, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 10, "name": "4-bedroom house with garden and terrace", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#eldoral", "url": "https://www.spotonerealty.com/properties/#eldoral", "name": "4-bedroom house with garden and terrace", "dateModified": "2026-11-19", "offers": {"@type": "Offer", "price": 550000, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 11, "name": "127 m² office with floor-to-ceiling windows", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#financialpark", "url": "https://www.spotonerealty.com/properties/#financialpark", "name": "127 m² office with floor-to-ceiling windows", "dateModified": "2026-11-20", "offers": {"@type": "Offer", "price": 293800, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}, {"@type": "ListItem", "position": 12, "name": "19th floor with terrace and ocean view", "item": {"@type": "RealEstateListing", "@id": "https://www.spotonerealty.com/properties/#torrepanorama", "url": "https://www.spotonerealty.com/properties/#torrepanorama", "name": "19th floor with terrace and ocean view", "dateModified": "2026-11-09", "offers": {"@type": "Offer", "price": 425000, "priceCurrency": "USD", "businessFunction": "http://purl.org/goodrelations/v1#Sell"}}}]}, {"@type": "BreadcrumbList", "@id": "https://www.spotonerealty.com/properties/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.spotonerealty.com/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Properties", "item": "https://www.spotonerealty.com/properties/"}]}]}</script>
 </body>
