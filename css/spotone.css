@@ -1727,3 +1727,8 @@ a.card > *:has(+ .card-cta){margin-bottom:16px}
 /* 23-nov · F3: las respuestas de las preguntas frecuentes quedaban en una columna de ~400 px dentro de filas anchas. Ancho de lectura cómodo (~46em ≈ 720 px), todo el ancho en móvil. */
 .faq-item .body{max-width:720px}
 .faq-item .body p{max-width:none}
+/* 23-nov · F3: dos tamaños de botón. La acción principal de un héroe interior o de un cierre es más grande que las secundarias (el héroe de la home queda congelado). */
+body:not(.inicio) .hero .btn--light,.close .actions .btn--light{min-height:56px;padding:0 32px;font-size:16px}
+.close .actions .btn--onnavy{min-height:56px}
+/* FAQ más compacta: misma letra (28/36, adenda), menos aire vertical entre preguntas. */
+.faq-item summary{padding-top:18px;padding-bottom:18px}
