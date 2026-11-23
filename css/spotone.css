@@ -308,6 +308,8 @@ p + p{margin-top:var(--s4)}
   overflow-y:auto;overscroll-behavior:contain;
 }
 .mm[hidden]{display:none}
+/* 23-nov · el menú se mostraba con «hidden=false» pero quedaba fuera de pantalla (translateY -101 %) porque ningún script le pone «.on». Visible = en pantalla. */
+.mm:not([hidden]){transform:translateY(0)}
 .mm.on{transform:translateY(0)}
 .mm-top{display:flex;justify-content:space-between;align-items:center;height:48px;border-bottom:1px solid var(--line)}
 .mm-close{font-size:26px;line-height:1;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin-right:-10px;color:var(--ink)}
