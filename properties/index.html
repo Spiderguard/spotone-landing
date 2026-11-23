@@ -56,16 +56,18 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num,.precio{font-family:'Newsreader',Georgia,se
 .pfiltros{display:flex;flex-wrap:wrap;gap:var(--s4) 56px;align-items:flex-start}
 .pfiltros fieldset{border:0;margin:0;padding:0;min-width:0;min-inline-size:0;max-width:100%}
 .pfiltros legend{padding:0;margin:0 0 4px}
-.pfiltros .filtros{margin:0;gap:8px}
+.pfiltros .filtros{margin:0;gap:0 24px}
 .filtros-n{margin:var(--s4) 0 0;color:var(--muted)}
 .filtros-vacio{padding:var(--s6) 0 0}
 .filtros-vacio p{margin:0 0 var(--s4);max-width:var(--measure)}
-@media(max-width:860px){.pfiltros{flex-direction:column;gap:var(--s3)}.pfiltros fieldset{width:100%}.pfiltros .filtros{gap:8px}}
+@media(max-width:860px){.pfiltros{flex-direction:column;gap:var(--s3)}.pfiltros fieldset{width:100%}.pfiltros .filtros{gap:0 20px}}
 @media(max-width:860px){
   .propiedades .g3{row-gap:var(--s7)}
   .perfiles{grid-template-columns:minmax(0,1fr)}
   .perfiles a{min-height:44px}
 }
+/* 23-nov · móvil: los tres grupos de filtros ocupan menos alto */
+@media(max-width:860px){.pfiltros{gap:4px}.pfiltros legend{margin:0}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>

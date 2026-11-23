@@ -1657,13 +1657,12 @@ body.casa .hero .stat{font-size:40px;line-height:44px;font-weight:500}
 body.casa .hero .stat small{font-size:14px;line-height:22px;margin-top:6px;color:var(--on-navy-muted)}
 @media(max-width:860px){body.casa .hero .stat{font-size:30px;line-height:36px}}
 
-/* 23-nov · Filtros como controles rectangulares compactos con selección evidente
-   (reemplaza «texto subrayado, sin chips» de la regla 11: actualizar el manual). Aplica a Propiedades y Criterio. */
-.filtros{gap:8px}
-.filtros button{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;
-  border:1px solid rgba(26,26,24,.28);font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:var(--ink);background:transparent}
-.filtros button:hover{border-color:var(--ink)}
-.filtros button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+/* 23-nov · Filtros: siguen siendo TEXTO (regla 11 del manual, sin chips). Se refuerza solo el estado activo
+   (tinta, peso 600, subrayado de 2 px) y el área táctil (44 px de alto, sin caja visible). */
+.filtros button{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;
+  font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;font-size:15px;line-height:22px;font-weight:500;color:var(--muted);
+  text-decoration:none}
+.filtros button:hover{color:var(--ink)}
+.filtros button[aria-pressed="true"]{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
 .filtros button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 .filtros button::after{content:none}
-@media(max-width:860px){.filtros{gap:8px}.filtros button{min-height:44px;padding:10px 14px}}
