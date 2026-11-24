@@ -307,7 +307,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 .phero .p-lead{margin:0 0 var(--s5);color:rgba(244,241,234,.9);max-width:32em}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
-<style>#requisitos .pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px}#requisitos .pasos>div,#requisitos .pasos>div+div{margin-top:0;padding-top:24px;border-top:1px solid var(--line)}#requisitos .req-docs{margin:48px 0 16px}#requisitos .req-cols{gap:var(--s5) 64px}#requisitos .fg h3{margin:0 0 8px}#requisitos .fg .frow{display:grid!important;grid-template-columns:minmax(0,11em) minmax(0,1fr)!important;gap:16px;align-items:baseline}#requisitos .fg .frow em{text-align:left;justify-self:start}@media(max-width:860px){#requisitos .pasos{grid-template-columns:1fr;gap:24px 0}#requisitos .req-docs{margin-top:40px}#requisitos .fg .frow{grid-template-columns:1fr!important;gap:2px}}</style>
+<style>#requisitos .req-cols{gap:var(--s5) 64px}#requisitos .fg h3{margin:0 0 8px}#requisitos .req-lista{list-style:none;margin:0;padding:0}#requisitos .req-lista li{padding:14px 0;border-top:1px solid var(--line)}#requisitos .req-lista li:last-child{border-bottom:1px solid var(--line)}</style>
 </head>
 <body class="peatonal">
 <a class="skip" href="#main">Skip to content</a>
@@ -573,29 +573,21 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 </section>
 
 <!-- 05 · Questions -->
-<!-- Cómo alquilar: tres hitos y documentos. -->
+<!-- Documentos para alquilar. -->
 <section class="sec t-soft" id="requisitos">
   <div class="wrap sec-head">
-    <p class="idx">How to rent</p>
-    <h2>How to rent a unit.</h2>
+    <p class="idx">Documents</p>
+    <h2>Documents you need to rent a unit.</h2>
   </div>
   <div class="wrap sec-body req">
-    <div class="pasos">
-      <div><p class="num">01</p><h3>We confirm the unit</h3><p>I go over the unit with you: your type of business, the installations you need and the financial terms.</p></div>
-      <div><p class="num">02</p><h3>Written reservation</h3><p>We agree in writing on the reservation amount, how it is credited and its conditions.</p></div>
-      <div><p class="num">03</p><h3>Lease and handover</h3><p>Once the lease is signed, we arrange the handover and the approved fit-out work.</p></div>
-    </div>
-    <p class="label req-docs">Documents</p>
     <div class="g2 req-cols">
       <div class="fg">
         <h3 class="label">Individual</h3>
-        <div class="frow"><span>For the reservation</span><em>ID of the person signing.</em></div>
-        <div class="frow"><span>For the lease</span><em>Business operation notice (aviso de operaciones) and a utility bill showing the signer’s address.</em></div>
+        <ul class="req-lista"><li>ID of the person signing.</li><li>Business operation notice (aviso de operaciones).</li><li>Utility bill showing the signer’s address.</li></ul>
       </div>
       <div class="fg">
         <h3 class="label">Company</h3>
-        <div class="frow"><span>For the reservation</span><em>Company name, and the legal representative’s name and ID.</em></div>
-        <div class="frow"><span>For the lease</span><em>Business operation notice, Public Registry certificate and a utility bill in the legal representative’s name.</em></div>
+        <ul class="req-lista"><li>Company name.</li><li>Legal representative’s name and ID.</li><li>Business operation notice (aviso de operaciones).</li><li>Public Registry certificate.</li><li>Utility bill in the legal representative’s name.</li></ul>
       </div>
     </div>
   </div>
