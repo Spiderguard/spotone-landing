@@ -1755,7 +1755,7 @@ body:not(.inicio) .hero .btn--light,.close .actions .btn--light{min-height:56px;
 .propiedades-idx .propiedades .g3>.card>.card-cta{margin-top:auto}
 .propiedades-idx .propiedades .g3>.card>.limite{margin-bottom:24px}
 @media(max-width:860px){
-  .propiedades-idx .propiedades .g3>.card{padding:32px 0 40px}
+  .propiedades-idx .propiedades .g3>.card{padding:28px 0 28px}
   .propiedades-idx .propiedades .g3>.card::before{left:0!important;right:0!important}
   .propiedades-idx .propiedades .g3>.card::after{display:none}
   .propiedades-idx .propiedades .g3>.card:first-child{padding-top:0}
