@@ -307,7 +307,7 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 .phero .p-lead{margin:0 0 var(--s5);color:rgba(244,241,234,.9);max-width:32em}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
-<style>#requisitos .pasos{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}#requisitos .pasos>div,#requisitos .pasos>div+div{margin-top:0;padding-top:24px;border-top:1px solid var(--line)}#requisitos .req-docs{margin:48px 0 16px}#requisitos .req-cols{gap:var(--s5) 64px}#requisitos .fg h3{margin:0 0 8px}#requisitos .fg .frow{display:grid!important;grid-template-columns:minmax(0,11em) minmax(0,1fr)!important;gap:16px;align-items:baseline}#requisitos .fg .frow em{text-align:left;justify-self:start}@media(max-width:860px){#requisitos .pasos{grid-template-columns:1fr;gap:24px 0}#requisitos .req-docs{margin-top:40px}#requisitos .fg .frow{grid-template-columns:1fr!important;gap:2px}}</style>
+<style>#requisitos .pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px}#requisitos .pasos>div,#requisitos .pasos>div+div{margin-top:0;padding-top:24px;border-top:1px solid var(--line)}#requisitos .req-docs{margin:48px 0 16px}#requisitos .req-cols{gap:var(--s5) 64px}#requisitos .fg h3{margin:0 0 8px}#requisitos .fg .frow{display:grid!important;grid-template-columns:minmax(0,11em) minmax(0,1fr)!important;gap:16px;align-items:baseline}#requisitos .fg .frow em{text-align:left;justify-self:start}@media(max-width:860px){#requisitos .pasos{grid-template-columns:1fr;gap:24px 0}#requisitos .req-docs{margin-top:40px}#requisitos .fg .frow{grid-template-columns:1fr!important;gap:2px}}</style>
 </head>
 <body class="peatonal">
 <a class="skip" href="#main">Skip to content</a>
@@ -573,7 +573,35 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 </section>
 
 <!-- 05 · Questions -->
-<section class="sec t-soft" id="faq">
+<!-- Cómo alquilar: tres hitos y documentos. -->
+<section class="sec t-soft" id="requisitos">
+  <div class="wrap sec-head">
+    <p class="idx">How to rent</p>
+    <h2>How to rent a unit.</h2>
+  </div>
+  <div class="wrap sec-body req">
+    <div class="pasos">
+      <div><p class="num">01</p><h3>We confirm the unit</h3><p>I go over the unit with you: your type of business, the installations you need and the financial terms.</p></div>
+      <div><p class="num">02</p><h3>Written reservation</h3><p>We agree in writing on the reservation amount, how it is credited and its conditions.</p></div>
+      <div><p class="num">03</p><h3>Lease and handover</h3><p>Once the lease is signed, we arrange the handover and the approved fit-out work.</p></div>
+    </div>
+    <p class="label req-docs">Documents</p>
+    <div class="g2 req-cols">
+      <div class="fg">
+        <h3 class="label">Individual</h3>
+        <div class="frow"><span>For the reservation</span><em>ID of the person signing.</em></div>
+        <div class="frow"><span>For the lease</span><em>Business operation notice (aviso de operaciones) and a utility bill showing the signer’s address.</em></div>
+      </div>
+      <div class="fg">
+        <h3 class="label">Company</h3>
+        <div class="frow"><span>For the reservation</span><em>Company name, and the legal representative’s name and ID.</em></div>
+        <div class="frow"><span>For the lease</span><em>Business operation notice, Public Registry certificate and a utility bill in the legal representative’s name.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec t-warm" id="faq">
   <div class="wrap sec-head">
     <p class="idx">Questions</p>
     <h2>Questions about the units.</h2>
@@ -595,33 +623,6 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
 </section>
 
 <!-- 06 · Let’s talk -->
-<!-- 24-nov · requisitos para alquilar (Darío vía emails; Nicole e INVERFRAN lo pidieron el 23-nov). Sin cuenta bancaria, meses de gracia ni plazo. -->
-<section class="sec t-warm" id="requisitos">
-  <div class="wrap sec-head">
-    <p class="idx">How to rent</p>
-    <h2>How to rent a unit.</h2>
-  </div>
-  <div class="wrap sec-body req">
-    <div class="pasos">
-      <div><p class="num">01</p><h3>Reservation</h3><p>You reserve the unit with one month’s rent by bank transfer (ACH). The keys are handed over with the reservation so you can start fitting it out.</p></div>
-      <div><p class="num">02</p><h3>Lease</h3><p>The lease is signed within 7 days of the reservation.</p></div>
-    </div>
-    <p class="label req-docs">Documents</p>
-    <div class="g2 req-cols">
-      <div class="fg">
-        <h3 class="label">Individual</h3>
-        <div class="frow"><span>For the reservation</span><em>ID of the person signing.</em></div>
-        <div class="frow"><span>For the lease</span><em>Business operation notice (aviso de operaciones) and a utility bill showing the signer’s address.</em></div>
-      </div>
-      <div class="fg">
-        <h3 class="label">Company</h3>
-        <div class="frow"><span>For the reservation</span><em>Company name, and the legal representative’s name and ID.</em></div>
-        <div class="frow"><span>For the lease</span><em>Business operation notice, Public Registry certificate and a utility bill in the legal representative’s name.</em></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="pclose" id="contacto">
   <div class="wrap">
     <p class="idx">Let’s talk</p>
