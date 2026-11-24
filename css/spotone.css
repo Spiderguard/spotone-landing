@@ -1741,30 +1741,23 @@ body:not(.inicio) .hero .btn--light,.close .actions .btn--light{min-height:56px;
 
 /* 24-nov · retícula de tarjetas de propiedad (ChatGPT/Darío): filetes de 1 px en gris cálido entre columnas y filas,
    sin cajas ni sombras; columnas del mismo ancho; las líneas se dibujan en el espacio entre columnas (::before horizontal, ::after vertical).
-   Etiqueta, título, precio, datos, condición y acción alineados por fila (subgrid). Aplica a toda sección .propiedades (catálogo ES/EN e inicio).
+   El precio sigue a su título y la condición a sus datos; solo la acción va alineada abajo (ChatGPT: no sacrificar proximidad por simetría).
+   Solo catálogo ES/EN (body.propiedades-idx): la portada queda congelada hasta el 22-dic.
    Sin JS se calcula por posición (nth-child); con filtros, el script del catálogo marca ini-fila/fin-fila. En una columna, solo filete horizontal. */
-.propiedades .g3,section.propiedades .sec-body.g3{column-gap:64px!important;row-gap:0!important}
-.propiedades .g3>.card{position:relative;padding:32px 0 40px}
-.propiedades .g3>.card::before{content:"";position:absolute;top:0;left:-32px;right:-32px;height:1px;background:var(--line)}
-.propiedades .g3>.card::after{content:"";position:absolute;top:0;bottom:0;right:-32px;width:1px;background:var(--line)}
-.propiedades .g3:not(.lineas-js)>.card:nth-child(3n+1)::before,.propiedades .g3.lineas-js>.card.ini-fila::before{left:0}
-.propiedades .g3:not(.lineas-js)>.card:nth-child(3n)::before,.propiedades .g3:not(.lineas-js)>.card:last-child::before,.propiedades .g3.lineas-js>.card.fin-fila::before{right:0}
-.propiedades .g3:not(.lineas-js)>.card:nth-child(3n)::after,.propiedades .g3:not(.lineas-js)>.card:last-child::after,.propiedades .g3.lineas-js>.card.fin-fila::after{display:none}
-.propiedades .g3>.card:focus-visible{outline-offset:-3px}
-@supports (grid-template-rows:subgrid){
-  .propiedades .g3>.card{display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0;align-content:start}
-  .propiedades .g3>.card>.ph{grid-row:1}
-  .propiedades .g3>.card>.label{grid-row:2}
-  .propiedades .g3>.card>h3{grid-row:3}
-  .propiedades .g3>.card>.precio{grid-row:4}
-  .propiedades .g3>.card>.dato{grid-row:5}
-  .propiedades .g3>.card>.limite{grid-row:6}
-  .propiedades .g3>.card>.card-cta{grid-row:7;align-self:end;margin-top:16px}
-}
+.propiedades-idx .propiedades .g3,.propiedades-idx .propiedades .sec-body.g3{column-gap:64px!important;row-gap:0!important}
+.propiedades-idx .propiedades .g3>.card{position:relative;padding:32px 0 40px}
+.propiedades-idx .propiedades .g3>.card::before{content:"";position:absolute;top:0;left:-32px;right:-32px;height:1px;background:var(--line)}
+.propiedades-idx .propiedades .g3>.card::after{content:"";position:absolute;top:0;bottom:0;right:-32px;width:1px;background:var(--line)}
+.propiedades-idx .propiedades .g3:not(.lineas-js)>.card:nth-child(3n+1)::before,.propiedades-idx .propiedades .g3.lineas-js>.card.ini-fila::before{left:0}
+.propiedades-idx .propiedades .g3:not(.lineas-js)>.card:nth-child(3n)::before,.propiedades-idx .propiedades .g3:not(.lineas-js)>.card:last-child::before,.propiedades-idx .propiedades .g3.lineas-js>.card.fin-fila::before{right:0}
+.propiedades-idx .propiedades .g3:not(.lineas-js)>.card:nth-child(3n)::after,.propiedades-idx .propiedades .g3:not(.lineas-js)>.card:last-child::after,.propiedades-idx .propiedades .g3.lineas-js>.card.fin-fila::after{display:none}
+.propiedades-idx .propiedades .g3>.card:focus-visible{outline-offset:-3px}
+.propiedades-idx .propiedades .g3>.card>.card-cta{margin-top:auto}
+.propiedades-idx .propiedades .g3>.card>.limite{margin-bottom:24px}
 @media(max-width:860px){
-  .propiedades .g3>.card{padding:32px 0 40px}
-  .propiedades .g3>.card::before{left:0!important;right:0!important}
-  .propiedades .g3>.card::after{display:none}
-  .propiedades .g3>.card:first-child{padding-top:0}
-  .propiedades .g3>.card:first-child::before{display:none}
+  .propiedades-idx .propiedades .g3>.card{padding:32px 0 40px}
+  .propiedades-idx .propiedades .g3>.card::before{left:0!important;right:0!important}
+  .propiedades-idx .propiedades .g3>.card::after{display:none}
+  .propiedades-idx .propiedades .g3>.card:first-child{padding-top:0}
+  .propiedades-idx .propiedades .g3>.card:first-child::before{display:none}
 }
