@@ -11,6 +11,7 @@
 #  - si había cambios sin commit Y la copia estaba atrasada, se detiene: esos cambios se hicieron sobre archivos viejos;
 #  - corre check-propiedades (tarjetas, lista negra y zonas al día con el catálogo);
 #  - si los commits ya están hechos, ahora sí empuja (antes decía «sin cambios» y salía).
+#  - corre presencia_visual.js: foto del héroe y WhatsApp en las fichas, menú móvil y desborde a 390 px.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -45,6 +46,10 @@ python3 build-sitemap.py --check
 
 if [[ -f "$HOME/.spotone/bin/check-propiedades.py" ]]; then
   python3 "$HOME/.spotone/bin/check-propiedades.py" .
+fi
+# 23-nov (aprendizaje Peatonal): comprobación visual en perfil iPhone sobre los archivos locales.
+if [[ -f "$HOME/.spotone/bin/presencia_visual.js" ]]; then
+  node "$HOME/.spotone/bin/presencia_visual.js" .
 fi
 
 git add -A   # .claude/, *.bak* y .DS_Store ya están en .gitignore
