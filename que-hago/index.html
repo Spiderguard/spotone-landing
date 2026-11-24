@@ -111,6 +111,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 #servicios .mods>div h3::before{content:counter(m,decimal-leading-zero)}
 #metodo .pasos>div h3::before{content:counter(p,decimal-leading-zero)}
 #metodo .pasos p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.partida .c-head{grid-column:1 / span 5}
+.partida .c-head h2{margin:0}
+.partida .c7>p:first-child{margin-top:0}
+@media(min-width:861px){.partida .c7{padding-top:calc(var(--lh-label,20px) + 12px)}}
+@media(max-width:860px){.partida .c-head{grid-column:auto}.partida .c-head h2{margin:0 0 var(--gap-lead)}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -167,11 +172,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <section class="sec t-warm" id="bancos">
-  <div class="wrap sec-head">
-    <p class="idx">Bancos</p>
-    <h2>¿Manejas propiedades reposeídas en tu banco?</h2>
-  </div>
-  <div class="wrap g12 sec-body">
+  <div class="wrap g12 partida">
+    <div class="c-head">
+      <p class="idx">Bancos</p>
+      <h2>¿Manejas propiedades reposeídas en tu banco?</h2>
+    </div>
     <div class="c7 reading">
       <p>Las trabajo una por una: antes de recomendarte un precio, reviso con qué compite cada unidad.</p>
       <p>Las comercializo junto con otros corredores para que lleguen a más compradores.</p>
@@ -182,11 +187,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <section class="sec t-soft" id="comercial">
-  <div class="wrap sec-head">
-    <p class="idx">Empresas e inversionistas</p>
-    <h2>Locales, oficinas, bodegas y terrenos.</h2>
-  </div>
-  <div class="wrap g12 sec-body">
+  <div class="wrap g12 partida">
+    <div class="c-head">
+      <p class="idx">Empresas e inversionistas</p>
+      <h2>Locales, oficinas, bodegas y terrenos.</h2>
+    </div>
     <div class="c7 reading">
       <p>Trabajo locales, oficinas, ofibodegas, galeras, edificios y terrenos, en venta y en alquiler.</p>
       <p>Parto de lo que la operación necesita: metraje, carga eléctrica, acceso de camiones y fecha de entrada.</p>

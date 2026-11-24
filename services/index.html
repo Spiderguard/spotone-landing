@@ -111,6 +111,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 #servicios .mods>div h3::before{content:counter(m,decimal-leading-zero)}
 #metodo .pasos>div h3::before{content:counter(p,decimal-leading-zero)}
 #metodo .pasos p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink)}
+.partida .c-head{grid-column:1 / span 5}
+.partida .c-head h2{margin:0}
+.partida .c7>p:first-child{margin-top:0}
+@media(min-width:861px){.partida .c7{padding-top:calc(var(--lh-label,20px) + 12px)}}
+@media(max-width:860px){.partida .c-head{grid-column:auto}.partida .c-head h2{margin:0 0 var(--gap-lead)}}
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
 </head>
@@ -167,11 +172,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <section class="sec t-warm" id="banks">
-  <div class="wrap sec-head">
-    <p class="idx">Banks</p>
-    <h2>Does your bank hold repossessed (REO) properties?</h2>
-  </div>
-  <div class="wrap g12 sec-body">
+  <div class="wrap g12 partida">
+    <div class="c-head">
+      <p class="idx">Banks</p>
+      <h2>Does your bank hold repossessed (REO) properties?</h2>
+    </div>
     <div class="c7 reading">
       <p>I work them one by one: before recommending a price, I review what each unit competes against.</p>
       <p>I market them together with other brokers so they reach more buyers.</p>
@@ -182,11 +187,11 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 </section>
 
 <section class="sec t-soft" id="commercial">
-  <div class="wrap sec-head">
-    <p class="idx">Companies and investors</p>
-    <h2>Retail, offices, warehouses and land.</h2>
-  </div>
-  <div class="wrap g12 sec-body">
+  <div class="wrap g12 partida">
+    <div class="c-head">
+      <p class="idx">Companies and investors</p>
+      <h2>Retail, offices, warehouses and land.</h2>
+    </div>
     <div class="c7 reading">
       <p>I work on retail spaces, offices, flex space, industrial warehouses, buildings and land, for sale and for lease.</p>
       <p>I start from what your business needs: floor area, electrical load, truck access and move-in date.</p>

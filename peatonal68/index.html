@@ -112,6 +112,13 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .locate:hover{color:var(--ink)}
 .uwa{margin:16px 0 0}
 .uwa .btn{width:100%;justify-content:center}
+/* 24-nov · fichas: dato corto, botón junto al precio, condiciones legibles en lista */
+.u .cifra{font-size:32px;line-height:40px}
+.u .uwa{margin:24px 0 0}
+.ucond{list-style:none;margin:24px 0 0;padding:0}
+.ucond li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:24px;color:var(--ink)}
+.ucond li:last-child{border-bottom:1px solid var(--line)}
+.u .uacts{padding-top:24px}
 .lb-wa{position:absolute;left:50%;transform:translateX(-50%);bottom:72px;z-index:2;white-space:nowrap}
 
 /* 03 · la plaza */
@@ -396,12 +403,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Local 4</h3>
         <span class="card-fig">102&nbsp;m²</span>
       </div>
-      <p class="card-meta">Planta baja · 82 + 20&nbsp;m² de terraza · Gas, extracción y aire acondicionado instalados · <span class="nw">8 fotografías</span></p>
+      <p class="card-meta">Planta baja · 82 + 20&nbsp;m² de terraza</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$3,060</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $255 · Aseo incluido · ITBMS aparte</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%204%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l4%29" rel="noopener">Escríbeme por el Local 4</a></p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
           <div><dt>Alquiler mensual</dt><dd>$3,060</dd></div>
@@ -409,12 +417,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Total mensual antes de ITBMS</dt><dd>$3,315</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Ya desocupado: entrega inmediata con lo instalado (gas, extracción y aire acondicionado). El mobiliario y los equipos de las fotos son del inquilino anterior, que los vende aparte.</p>
+      <ul class="ucond"><li>Ya desocupado: entrega inmediata.</li><li>Gas, extracción y aire acondicionado instalados.</li><li>El mobiliario y los equipos de las fotos son del inquilino anterior, que los vende aparte.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l4" data-loc="4">Ver el Local 4 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%204%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l4%29" rel="noopener">Escríbeme por el Local 4</a></p>
     </article>
 
     <article class="card ficha u" id="local-22" data-u="22" data-floor="2" data-area="100">
@@ -429,12 +436,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Local 22</h3>
         <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Segundo piso · Planta abierta · 1 baño · <span class="nw">3 fotografías</span></p>
+      <p class="card-meta">Segundo piso · Planta abierta · 1 baño</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $250 · Aseo $15 · ITBMS aparte</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2022%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l22%29" rel="noopener">Escríbeme por el Local 22</a></p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
           <div><dt>Alquiler mensual</dt><dd>$1,800</dd></div>
@@ -443,12 +451,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Total mensual antes de ITBMS</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Se puede unir con el 23 para 200&nbsp;m². La separación respecto al Local 21 y la condición de entrega quedan por escrito antes de firmar. Gas y aire: los revisamos en el local según tu giro.</p>
+      <ul class="ucond"><li>Se puede unir con el 23 para 200&nbsp;m².</li><li>La separación respecto al Local 21 y la condición de entrega quedan por escrito antes de firmar.</li><li>Gas y aire: los revisamos en el local según tu giro.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l22" data-loc="22">Ver el Local 22 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2022%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l22%29" rel="noopener">Escríbeme por el Local 22</a></p>
     </article>
 
     <article class="card ficha u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
@@ -463,12 +470,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Local 23</h3>
         <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Segundo piso · Vitrina al pasillo · 1 baño interno · <span class="nw">4 fotografías</span></p>
+      <p class="card-meta">Segundo piso · Vitrina al pasillo · 1 baño interno</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Alquiler mensual</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Mantenimiento $250 · Aseo $15 · ITBMS aparte</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2023%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l23%29" rel="noopener">Escríbeme por el Local 23</a></p>
       <details class="calc"><summary>Ver desglose mensual</summary>
         <dl class="ledger">
           <div><dt>Alquiler mensual</dt><dd>$1,800</dd></div>
@@ -477,12 +485,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Total mensual antes de ITBMS</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Se puede unir con el 22 para 200&nbsp;m². Distribución y condición de entrega se confirman antes de contratar. Gas y aire: los revisamos en el local según tu giro.</p>
+      <ul class="ucond"><li>Se puede unir con el 22 para 200&nbsp;m².</li><li>Distribución y condición de entrega se confirman antes de contratar.</li><li>Gas y aire: los revisamos en el local según tu giro.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l23" data-loc="23">Ver el Local 23 →</button>
         <a class="locate" href="#fachada">Ubicar en la fachada ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hola%20Dario%2C%20me%20interesa%20el%20Local%2023%20de%20La%20Peatonal%2068.%20%C2%BFPodemos%20hablar%3F%20%28web-p68-l23%29" rel="noopener">Escríbeme por el Local 23</a></p>
     </article>
 
   </div>
@@ -527,9 +534,9 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   </div>
   <div class="wrap corte">
     <div class="corte-pisos" role="list" aria-label="La plaza por pisos">
-      <div class="piso" role="listitem"><span class="piso-n">2</span><p class="piso-l">Segundo piso</p><p class="piso-g">Actividad física y comercio</p><p class="piso-d"><a href="#local-22">Locales 22 y 23 disponibles</a></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">2</span><p class="piso-l">Segundo piso</p><p class="piso-g">Actividad física y comercio</p><p class="piso-d"><a href="#local-22">Ver locales 22 y 23 →</a></p></div>
       <div class="piso" role="listitem"><span class="piso-n">1</span><p class="piso-l">Primer piso</p><p class="piso-g">Salud, belleza y comercio</p><p class="piso-d"></p></div>
-      <div class="piso" role="listitem"><span class="piso-n">PB</span><p class="piso-l">Planta baja</p><p class="piso-g">Ocho restaurantes</p><p class="piso-d"><a href="#local-4">Local 4 disponible</a></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">PB</span><p class="piso-l">Planta baja</p><p class="piso-g">Ocho restaurantes</p><p class="piso-d"><a href="#local-4">Ver Local 4 →</a></p></div>
     </div>
     <div class="comun">
       <p class="label">Para el Local 4, en planta baja</p>

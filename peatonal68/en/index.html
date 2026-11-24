@@ -111,6 +111,13 @@ h1,h2,h3,.cifra,.stat,.card-fig{font-family:'Newsreader',Georgia,serif}
 .locate:hover{color:var(--ink)}
 .uwa{margin:16px 0 0}
 .uwa .btn{width:100%;justify-content:center}
+/* 24-nov · fichas: dato corto, botón junto al precio, condiciones legibles en lista */
+.u .cifra{font-size:32px;line-height:40px}
+.u .uwa{margin:24px 0 0}
+.ucond{list-style:none;margin:24px 0 0;padding:0}
+.ucond li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:24px;color:var(--ink)}
+.ucond li:last-child{border-bottom:1px solid var(--line)}
+.u .uacts{padding-top:24px}
 .lb-wa{position:absolute;left:50%;transform:translateX(-50%);bottom:72px;z-index:2;white-space:nowrap}
 
 /* 03 · la plaza */
@@ -394,12 +401,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Unit 4</h3>
         <span class="card-fig">102&nbsp;m²</span>
       </div>
-      <p class="card-meta">Street level · 82 + 20&nbsp;m² of terrace · Gas, kitchen exhaust and air conditioning installed · <span class="nw">8 photos</span></p>
+      <p class="card-meta">Street level · 82 + 20&nbsp;m² of terrace</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly rent</span>
         <span class="cifra">$3,060</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance fee $255 · Trash collection included · ITBMS extra</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%204%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l4%29" rel="noopener">Message me about Unit 4</a></p>
       <details class="calc"><summary>See monthly breakdown</summary>
         <dl class="ledger">
           <div><dt>Monthly rent</dt><dd>$3,060</dd></div>
@@ -407,12 +415,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Monthly total before ITBMS</dt><dd>$3,315</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Already vacated: available immediately with what is installed (gas, kitchen exhaust and air conditioning). The furniture and equipment in the photos belong to the previous tenant, who sells them separately.</p>
+      <ul class="ucond"><li>Already vacated: available immediately.</li><li>Gas, kitchen exhaust and air conditioning installed.</li><li>The furniture and equipment in the photos belong to the previous tenant, who sells them separately.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l4" data-loc="4">See Unit 4 →</button>
         <a class="locate" href="#fachada">Show on the facade ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%204%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l4%29" rel="noopener">Message me about Unit 4</a></p>
     </article>
 
     <article class="card ficha u" id="local-22" data-u="22" data-floor="2" data-area="100">
@@ -427,12 +434,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Unit 22</h3>
         <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Level 2 · Open plan · 1 bathroom · <span class="nw">3 photos</span></p>
+      <p class="card-meta">Level 2 · Open plan · 1 bathroom</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly rent</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance fee $250 · Trash collection $15 · ITBMS extra</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%2022%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l22%29" rel="noopener">Message me about Unit 22</a></p>
       <details class="calc"><summary>See monthly breakdown</summary>
         <dl class="ledger">
           <div><dt>Monthly rent</dt><dd>$1,800</dd></div>
@@ -441,12 +449,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Monthly total before ITBMS</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Can be combined with Unit 23 for 200&nbsp;m². The separation from Unit 21 and the handover condition are set out in writing before you sign. Gas and A/C: we check them together on site, against what your business needs.</p>
+      <ul class="ucond"><li>Can be combined with Unit 23 for 200&nbsp;m².</li><li>The separation from Unit 21 and the handover condition are set out in writing before you sign.</li><li>Gas and A/C: we check them together on site, against what your business needs.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l22" data-loc="22">See Unit 22 →</button>
         <a class="locate" href="#fachada">Show on the facade ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%2022%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l22%29" rel="noopener">Message me about Unit 22</a></p>
     </article>
 
     <article class="card ficha u u23" id="local-23" data-u="23" data-floor="2" data-area="100">
@@ -461,12 +468,13 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
         <h3>Unit 23</h3>
         <span class="card-fig">100&nbsp;m²</span>
       </div>
-      <p class="card-meta">Level 2 · Storefront on the corridor · 1 internal bathroom · <span class="nw">4 photos</span></p>
+      <p class="card-meta">Level 2 · Storefront on the corridor · 1 internal bathroom</p>
       <div class="frow" style="margin-top:24px">
         <span style="color:var(--muted);font-size:var(--fs-label);line-height:var(--lh-label)">Monthly rent</span>
         <span class="cifra">$1,800</span>
       </div>
       <p class="nota" style="margin-top:6px">Maintenance fee $250 · Trash collection $15 · ITBMS extra</p>
+      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%2023%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l23%29" rel="noopener">Message me about Unit 23</a></p>
       <details class="calc"><summary>See monthly breakdown</summary>
         <dl class="ledger">
           <div><dt>Monthly rent</dt><dd>$1,800</dd></div>
@@ -475,12 +483,11 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
           <div class="ltot"><dt>Monthly total before ITBMS</dt><dd>$2,065</dd></div>
         </dl>
       </details>
-      <p class="nota" style="margin-top:16px">Can be combined with Unit 22 for 200&nbsp;m². Layout and handover condition are confirmed before signing. Gas and A/C: we check them together on site, against what your business needs.</p>
+      <ul class="ucond"><li>Can be combined with Unit 22 for 200&nbsp;m².</li><li>Layout and handover condition are confirmed before signing.</li><li>Gas and A/C: we check them together on site, against what your business needs.</li></ul>
       <div class="uacts">
         <button class="out" data-gal="l23" data-loc="23">See Unit 23 →</button>
         <a class="locate" href="#fachada">Show on the facade ↑</a>
       </div>
-      <p class="uwa"><a class="btn btn--primary" href="https://wa.me/50766758127?text=Hi%20Dario%2C%20I%27m%20interested%20in%20Unit%2023%20at%20La%20Peatonal%2068.%20Can%20we%20talk%3F%20%28web-p68-l23%29" rel="noopener">Message me about Unit 23</a></p>
     </article>
 
   </div>
@@ -525,9 +532,9 @@ body.peatonal .faq summary{display:flex;align-items:center;justify-content:space
   </div>
   <div class="wrap corte">
     <div class="corte-pisos" role="list" aria-label="The plaza by level">
-      <div class="piso" role="listitem"><span class="piso-n">2</span><p class="piso-l">Level 2</p><p class="piso-g">Fitness and retail</p><p class="piso-d"><a href="#local-22">Units 22 and 23 available</a></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">2</span><p class="piso-l">Level 2</p><p class="piso-g">Fitness and retail</p><p class="piso-d"><a href="#local-22">See units 22 and 23 →</a></p></div>
       <div class="piso" role="listitem"><span class="piso-n">1</span><p class="piso-l">Level 1</p><p class="piso-g">Health, beauty and retail</p><p class="piso-d"></p></div>
-      <div class="piso" role="listitem"><span class="piso-n">SL</span><p class="piso-l">Street level</p><p class="piso-g">Eight restaurants</p><p class="piso-d"><a href="#local-4">Unit 4 available</a></p></div>
+      <div class="piso" role="listitem"><span class="piso-n">SL</span><p class="piso-l">Street level</p><p class="piso-g">Eight restaurants</p><p class="piso-d"><a href="#local-4">See Unit 4 →</a></p></div>
     </div>
     <div class="comun">
       <p class="label">For Unit 4, on the street level</p>
