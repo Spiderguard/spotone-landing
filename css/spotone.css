@@ -1734,3 +1734,5 @@ body:not(.inicio) .hero .btn--light,.close .actions .btn--light{min-height:56px;
 .faq-item summary{padding-top:18px;padding-bottom:18px}
 /* 24-nov · composición: las listas de dos columnas (Qué hago, Relocation) dejaban un hueco central de ~230 px (5 + 5 de 12 columnas). Ahora 6 + 6 con el gutter normal; el texto de cada bloque sigue a ancho de lectura cómodo (~560 px). */
 @media(min-width:861px){.mods>div:nth-child(odd){grid-column:1 / span 6}.mods>div:nth-child(even){grid-column:7 / span 6}}
+/* 24-nov · contraste (ChatGPT/Darío): al volver arriba, el texto pasaba a blanco al instante mientras el fondo marfil tardaba .35 s en irse: logo y menú blancos sobre claro. Al quitar .scrolled, el fondo se va sin transición. */
+.site-header--over:not(.scrolled){transition:none}
