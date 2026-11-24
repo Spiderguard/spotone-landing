@@ -1736,3 +1736,5 @@ body:not(.inicio) .hero .btn--light,.close .actions .btn--light{min-height:56px;
 @media(min-width:861px){.mods>div:nth-child(odd){grid-column:1 / span 6}.mods>div:nth-child(even){grid-column:7 / span 6}}
 /* 24-nov · contraste (ChatGPT/Darío): al volver arriba, el texto pasaba a blanco al instante mientras el fondo marfil tardaba .35 s en irse: logo y menú blancos sobre claro. Al quitar .scrolled, el fondo se va sin transición. */
 .site-header--over:not(.scrolled){transition:none}
+/* 24-nov · tampoco al bajar: durante el fundido de .35 s se veía el texto detrás del encabezado fijo (Zonas). El cambio es inmediato en los dos sentidos. */
+.site-header--over{transition:none}
