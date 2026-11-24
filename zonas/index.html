@@ -50,11 +50,12 @@ h1,h2,h3,.cifra,.stat,.card-fig,.num{font-family:'Newsreader',Georgia,serif}
 .zt td:first-child{color:var(--ink)}
 .zt a{color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
 .zt + .nota,.nota + .nota{margin-top:16px}
+/* 24-nov (ChatGPT/Darío): en móvil la tabla sigue siendo tabla. */
+#ranking .zt td:first-child,#ranking .zt th:first-child{width:3em;color:var(--muted)}
+#ranking .zt td:last-child,#ranking .zt th:last-child{text-align:right;padding-right:0;padding-left:16px}
 @media(max-width:640px){
-  .zt thead{display:none}
-  .zt tr{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
-  .zt td{display:flex;justify-content:space-between;gap:16px;border:0;padding:0}
-  .zt td::before{content:attr(data-l);color:var(--muted)}
+  .zt th,.zt td{padding:10px 8px 10px 0;font-size:15px;line-height:22px}
+  .zt a{min-height:0;display:inline}
 }
 </style>
 <script defer src="/js/spotone-analytics.js"></script>
