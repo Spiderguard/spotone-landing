@@ -12,6 +12,10 @@
 #  - corre check-propiedades (tarjetas, lista negra y zonas al día con el catálogo);
 #  - si los commits ya están hechos, ahora sí empuja (antes decía «sin cambios» y salía).
 #  - corre presencia_visual.js: foto del héroe y WhatsApp en las fichas, menú móvil y desborde a 390 px.
+#
+# 25-nov-2026 (TARA, Bing):
+#  - no publica si faltan BingSiteAuth.xml o la clave de IndexNow (verificaciones de buscadores);
+#  - después del push, indexnow.py verifica producción y avisa solo las URLs nuevas, modificadas o retiradas.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -60,6 +64,22 @@ if [[ "$(git rev-list origin/main..HEAD --count)" -eq 0 ]]; then
   echo "✓ Sin cambios para publicar."
   exit 0
 fi
+# Archivos de verificación de buscadores: nunca se publican sin ellos.
+for f in BingSiteAuth.xml d6e6a6ac3a5e1453499923e089bb6c32.txt; do
+  if ! git cat-file -e "HEAD:$f" 2>/dev/null; then
+    echo "✗ Falta $f en el commit. Es la verificación de Bing/IndexNow: restáuralo antes de publicar."
+    exit 1
+  fi
+done
+
+ANTES=$(git rev-parse origin/main)
 git push -q origin main
 echo "✓ Publicado: $(git rev-parse --short HEAD) · https://www.spotonerealty.com/"
 echo "  GitHub Pages tarda 1–2 minutos. Verifica en vivo con ?nc=1 al final de la URL."
+
+# IndexNow: espera a que producción coincida con el commit y avisa solo lo que cambió.
+# Si falla, la web ya quedó publicada; el aviso se puede repetir sin duplicar:
+#   python3 indexnow.py --desde <commit anterior> --hasta HEAD
+echo "→ IndexNow…"
+python3 indexnow.py --desde "$ANTES" --hasta HEAD || \
+  echo "⚠ IndexNow no se envió (ver ~/.spotone/logs/indexnow.jsonl). La web sí quedó publicada."
