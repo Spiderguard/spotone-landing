@@ -15,7 +15,9 @@
 #
 # 25-nov-2026 (TARA, Bing):
 #  - no publica si faltan BingSiteAuth.xml o la clave de IndexNow (verificaciones de buscadores);
-#  - después del push, indexnow.py verifica producción y avisa solo las URLs nuevas, modificadas o retiradas.
+#  - después del push, indexnow.py verifica producción y avisa solo las URLs nuevas, modificadas o retiradas;
+#    guarda pendientes y un cursor en ~/.spotone/state/indexnow.json, así cubre también lo que se publicó
+#    con «git push» directo y reintenta lo que falló.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -62,6 +64,8 @@ if ! git diff --cached --quiet; then
 fi
 if [[ "$(git rev-list origin/main..HEAD --count)" -eq 0 ]]; then
   echo "✓ Sin cambios para publicar."
+  # Si quedaron URLs pendientes de IndexNow (API caída, corte, Retry-After), se reintentan aquí.
+  python3 indexnow.py --espera 60 || echo "⚠ IndexNow: siguen pendientes (python3 indexnow.py --estado)."
   exit 0
 fi
 # Archivos de verificación de buscadores: nunca se publican sin ellos.
